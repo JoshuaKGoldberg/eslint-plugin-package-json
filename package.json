@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-package-json",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Rules for valid and readable package.json files",
   "keywords": [
     "eslint",
