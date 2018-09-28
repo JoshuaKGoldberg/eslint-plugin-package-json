@@ -1,0 +1,66 @@
+version: 2
+
+# This key means nothing to CircleCI; it's just a place to keep anchored
+# configuration nodes for reuse.
+common_settings:
+  working_directory: &workdir ~/project
+  cache_key: &cachekey 'v1-npm-cache-{{ .Branch }}'
+  docker: &docker_setup
+    - image: 'circleci/node:8.11.2'
+
+  install_latest_npm: &install_latest_npm
+    name: Ensure NPM is up to date
+    command: sudo npm install -g npm@latest
+jobs:
+  test:
+    docker: *docker_setup
+    working_directory: *workdir
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - *cachekey
+            - v1-npm-cache-
+      - run: *install_latest_npm
+      - run: npm ci
+      - run: npm test
+      - save_cache:
+          paths:
+            - ~/.ssh
+            - ~/.npm
+            - /root/.npm
+          key: *cachekey
+      - persist_to_workspace:
+          root: *workdir
+          paths:
+            - .
+  deploy:
+    docker: *docker_setup
+    working_directory: *workdir
+    steps:
+      - attach_workspace:
+          at: *workdir
+      - run: *install_latest_npm
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      - run:
+          name: Publish package
+          command: npm publish --access=public
+
+workflows:
+  version: 2
+  test-and-deploy:
+    jobs:
+      - test:
+          filters:
+            tags:
+              only: /.*/
+      - deploy:
+          requires:
+            - test
+          filters:
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
