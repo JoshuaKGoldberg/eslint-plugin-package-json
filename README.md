@@ -49,7 +49,7 @@ Or, individually configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
--   [`package-json/order-properties`](docs/rules/order-properties.md)`: Require top-level properties to be in a conventional order (`"name"`first, etc.)`.
+-   [`package-json/order-properties`](docs/rules/order-properties.md): Require top-level properties to be in a conventional order (`"name"`first, etc.).
 -   [`package-json/sort-collections`](docs/rules/sort-collections.md): Keep sub-collections like `"dependencies"` and `"scripts"` in alphabetical order.
 -   [`package-json/valid-package-def`](docs/rules/valid-package-def): Validate `package.json` files against the NPM specification.
 
