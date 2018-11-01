@@ -32,7 +32,7 @@ Use the prepackaged config by adding an "extends" property, or appending to an e
 
 ```json
 {
-    "extends": ["eslint:recommended", "plugin:package-json/recommended"]
+    "extends": ["eslint:recommended", "plugin:package-json/recommended"],
     "plugins": ["package-json"]
 }
 ```
