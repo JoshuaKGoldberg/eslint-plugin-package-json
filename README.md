@@ -1,6 +1,6 @@
 # eslint-plugin-package-json
 
-Rules for valid and readable package.json files
+Rules for valid, consistent, and readable package.json files
 
 ## Installation
 
@@ -28,7 +28,16 @@ Add `package-json` to the plugins section of your `.eslintrc` configuration file
 }
 ```
 
-Then configure the rules you want to use under the rules section.
+Use the prepackaged config by adding an "extends" property, or appending to an existing "extends" property:
+
+```json
+{
+    "extends": ["eslint:recommended", "plugin:package-json/recommended"]
+    "plugins": ["package-json"]
+}
+```
+
+Or, individually configure the rules you want to use under the rules section.
 
 ```json
 {
@@ -40,4 +49,8 @@ Then configure the rules you want to use under the rules section.
 
 ## Supported Rules
 
--   Fill in provided rules here
+-   [`package-json/order-properties`](docs/rules/order-properties.md)`: Require top-level properties to be in a conventional order (`"name"`first, etc.)`.
+-   [`package-json/sort-collections`](docs/rules/sort-collections.md): Keep sub-collections like `"dependencies"` and `"scripts"` in alphabetical order.
+-   [`package-json/valid-package-def`](docs/rules/valid-package-def): Validate `package.json` files against the NPM specification.
+
+These rules only run on `package.json` files; they will ignore all other files being linted. They lint `package.json` files at project root, and in any subfolder of the project, making this plugin great for monorepos.

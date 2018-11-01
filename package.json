@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-package-json",
   "version": "0.1.0",
-  "description": "Rules for valid and readable package.json files",
+  "description": "Rules for valid, consistent, and readable package.json files",
   "keywords": [
     "eslint",
     "eslintplugin",
@@ -16,7 +16,7 @@
     "test:debug": "mocha --inspect-brk tests --recursive",
     "test:watch": "mocha tests --recursive --watch",
     "pretest": "npm run format",
-    "format": "prettier --write \"**/*.{js,css,md}\""
+    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,css,md}\" && eslint ./**/*.js"
   },
   "devDependencies": {
     "eslint": "^5.8.0",

@@ -1,6 +1,9 @@
 # Package properties must be declared in standard order (order-properties)
 
-A conventional order exists for `package.json` top-level properties. NPM does not enforce this order, but for consistency and readability, this rule can enforce it. It is especially useful in monorepos, where many `package.json` iles may exist.
+A conventional order exists for `package.json` top-level properties. NPM does
+not enforce this order, but for consistency and readability, this rule can
+enforce it. It is especially useful in monorepos, where many `package.json`
+iles may exist.
 
 ## Rule Details
 
@@ -28,22 +31,52 @@ Examples of **correct** code for this rule:
 
 ### Options
 
-Pass an array of top-level package properties to lint sorting on only those properties. All properties not in this collection will be ignored.
+Pass an array of top-level package properties to lint sorting on only those
+properties. All properties not in this collection will be ignored.
 
 Example:
 
 ```js
-"package-json/sort-collections": ["error", [
-    "devDependencies" // Only sort devDependencies
+"package-json/order-properties": ["error", [
+    "name",
+    "version" // Ensure only that name precedes version
 ]]
 ```
 
 Defaults:
 
 ```json
-["scripts", "devDependencies", "dependencies", "peerDependencies", "config"]
+[
+    "name",
+    "version",
+    "private",
+    "publishConfig",
+    "description",
+    "main",
+    "browser",
+    "files",
+    "bin",
+    "directories",
+    "man",
+    "scripts",
+    "repository",
+    "keywords",
+    "author",
+    "license",
+    "bugs",
+    "homepage",
+    "config",
+    "dependencies",
+    "devDependencies",
+    "peerDependencies",
+    "optionalDependencies",
+    "bundledDependencies",
+    "engines",
+    "os",
+    "cpu"
+]
 ```
 
-Any properties not present in the array of ordered properties will be left in their original positions as much as possible.
-
-This rule is **autofixable**; run `eslint` with the `--fix` option to sort top-level properties in place.
+This rule is **autofixable**; run `eslint` with the `--fix` option to sort
+top-level properties in place. Any properties not present in the array of
+ordered properties will be left in their original positions.

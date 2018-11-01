@@ -12,14 +12,12 @@ var rule = require('../../../lib/rules/order-properties'),
     RuleTester = require('eslint').RuleTester;
 
 //------------------------------------------------------------------------------
-// Tests
+// Valid test cases
 //------------------------------------------------------------------------------
 
-var ruleTester = new RuleTester();
-ruleTester.run('order-properties', rule, {
-    valid: [
-        {
-            code: `module.exports = {
+const valid = [
+    {
+        code: `module.exports = {
   "name": "treat-yo-self",
   "version": "1.1.1",
   "description": "Once a year.",
@@ -28,10 +26,10 @@ ruleTester.run('order-properties', rule, {
     "master"
   ]
 }`,
-            filename: 'package.json'
-        },
-        {
-            code: `module.exports = {
+        filename: 'package.json'
+    },
+    {
+        code: `module.exports = {
   "name": "treat-yo-self",
   "version": "0.1.0",
   "private": true,
@@ -42,14 +40,14 @@ ruleTester.run('order-properties', rule, {
   ]
 }
 `,
-            filename: '/path/to/package.json'
-        },
-        {
-            code: `doStuff({ "not-a-package-json": "so who cares" })`,
-            filename: 'package-lock.json'
-        },
-        {
-            code: `module.exports = {
+        filename: '/path/to/package.json'
+    },
+    {
+        code: `doStuff({ "not-a-package-json": "so who cares" })`,
+        filename: 'package-lock.json'
+    },
+    {
+        code: `module.exports = {
   "version": "1.1.1",
   "name": "treat-yo-self",
   "keywords": [
@@ -59,14 +57,18 @@ ruleTester.run('order-properties', rule, {
   "description": "Once a year."
 }
 `,
-            filename: 'package.json',
-            options: [['version', 'name']]
-        }
-    ],
+        filename: 'package.json',
+        options: [['version', 'name']]
+    }
+];
 
-    invalid: [
-        {
-            code: `module.exports = {
+//------------------------------------------------------------------------------
+// Invalid test cases
+//------------------------------------------------------------------------------
+
+const invalid = [
+    {
+        code: `module.exports = {
   "name": "invalid-top-level-property-order",
   "scripts": {
     "test": "tape"
@@ -79,10 +81,10 @@ ruleTester.run('order-properties', rule, {
     "url": "git+https://github.com/fake/github.git"
   }
 }`,
-            filename: 'path/to/some/package.json',
-            errors: [
-                {
-                    message: new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
+        filename: 'path/to/some/package.json',
+        errors: [
+            {
+                message: new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
 
  \\{
    "name": "invalid\\-top\\-level\\-property\\-order",
@@ -100,11 +102,11 @@ ruleTester.run('order-properties', rule, {
      "url": "git\\+https://github\\.com/fake/github\\.git"
    \\}
 `)
-                }
-            ]
-        },
-        {
-            code: `module.exports = {
+            }
+        ]
+    },
+    {
+        code: `module.exports = {
   "version": "1.1.1",
   "name": "treat-yo-self",
   "keywords": [
@@ -113,10 +115,10 @@ ruleTester.run('order-properties', rule, {
   ],
   "description": "Once a year."
 }`,
-            filename: '/path/to/package.json',
-            errors: [
-                {
-                    message: new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
+        filename: '/path/to/package.json',
+        errors: [
+            {
+                message: new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
 
  \\{
 .*\\+  "version": "1\\.1\\.1",.*
@@ -131,9 +133,9 @@ ruleTester.run('order-properties', rule, {
 .*\\+  "description": "Once a year\\.".*
  \\}
 `)
-                }
-            ],
-            output: `{
+            }
+        ],
+        output: `{
   "name": "treat-yo-self",
   "version": "1.1.1",
   "description": "Once a year.",
@@ -142,11 +144,10 @@ ruleTester.run('order-properties', rule, {
     "master"
   ]
 }
-`,
-            filename: '/path/to/package.json'
-        },
-        {
-            code: `module.exports = {
+`
+    },
+    {
+        code: `module.exports = {
                 "version": "2.0.0",
                 "devDependencies": {},
                 "keywords": ["lol"],
@@ -154,11 +155,11 @@ ruleTester.run('order-properties', rule, {
                 "description": "unsorted properties left in place"
             }`,
 
-            filename: '/another/path/to/package.json',
-            options: [['name', 'devDependencies']],
-            errors: [
-                {
-                    message: new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
+        filename: '/another/path/to/package.json',
+        options: [['name', 'devDependencies']],
+        errors: [
+            {
+                message: new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
 
  \\{
 .*\\-  "name": "sort\\-only\\-some",.*
@@ -172,9 +173,9 @@ ruleTester.run('order-properties', rule, {
    "description": "unsorted properties left in place"
  \\}
 `)
-                }
-            ],
-            output: `{
+            }
+        ],
+        output: `{
   "name": "sort-only-some",
   "devDependencies": {},
   "version": "2.0.0",
@@ -184,6 +185,12 @@ ruleTester.run('order-properties', rule, {
   "description": "unsorted properties left in place"
 }
 `
-        }
-    ]
-});
+    }
+];
+
+//------------------------------------------------------------------------------
+// Run tests
+//------------------------------------------------------------------------------
+
+var ruleTester = new RuleTester();
+ruleTester.run('order-properties', rule, { valid, invalid });
