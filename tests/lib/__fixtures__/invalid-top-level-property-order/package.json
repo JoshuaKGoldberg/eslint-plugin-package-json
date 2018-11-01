@@ -1,0 +1,13 @@
+{
+  "name": "invalid-top-level-property-order",
+  "scripts": {
+    "test": "tape"
+  },
+  "version": "1.0.0",
+  "description": "npm made me this way",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fake/github.git"
+  }
+}

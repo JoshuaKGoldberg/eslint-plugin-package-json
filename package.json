@@ -12,24 +12,33 @@
   "license": "(OSL-3.0 OR AFL-3.0)",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha tests --recursive",
-    "posttest": "npm run format",
+    "test": "nyc --reporter=lcov --reporter=text mocha tests --recursive",
+    "test:debug": "mocha --inspect-brk tests --recursive",
+    "test:watch": "mocha tests --recursive --watch",
+    "pretest": "npm run format",
     "format": "prettier --write \"**/*.{js,css,md}\""
   },
   "devDependencies": {
-    "eslint": "^3.9.1",
+    "eslint": "^5.8.0",
+    "lodash": "^4.17.11",
     "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
     "prettier": "^1.14.3"
   },
   "engines": {
     "node": ">=8.0.0"
   },
   "dependencies": {
+    "disparity": "^2.0.0",
     "package-json-validator": "^0.6.3",
-    "parse-json": "^4.0.0",
     "requireindex": "^1.2.0"
   },
+  "nyc": {
+    "include": [
+      "lib/**"
+    ]
+  },
   "peerDependencies": {
-    "eslint": "^3.9.1"
+    "eslint": ">=4.7.0"
   }
 }

@@ -1,31 +1,49 @@
 # Package properties must be declared in standard order (order-properties)
 
-Please describe the origin of the rule here.
+A conventional order exists for `package.json` top-level properties. NPM does not enforce this order, but for consistency and readability, this rule can enforce it. It is especially useful in monorepos, where many `package.json` iles may exist.
 
 ## Rule Details
 
-This rule aims to...
+This rule detects when properties in `package.json` are out of order.
 
 Examples of **incorrect** code for this rule:
 
-```js
-// fill me in
+```json
+{
+    "version": "1.0.0",
+    "name": "my-package"
+}
 ```
+
+This is an error because "version" should come after "name".
 
 Examples of **correct** code for this rule:
 
-```js
-// fill me in
+```json
+{
+    "name": "my-package",
+    "version": "1.0.0"
+}
 ```
 
 ### Options
 
-If there are any options, describe them here. Otherwise, delete this section.
+Pass an array of top-level package properties to lint sorting on only those properties. All properties not in this collection will be ignored.
 
-## When Not To Use It
+Example:
 
-Give a short description of when it would be appropriate to turn off this rule.
+```js
+"package-json/sort-collections": ["error", [
+    "devDependencies" // Only sort devDependencies
+]]
+```
 
-## Further Reading
+Defaults:
 
-If there are other links that describe the issue this rule addresses, please include them here in a bulleted list.
+```json
+["scripts", "devDependencies", "dependencies", "peerDependencies", "config"]
+```
+
+Any properties not present in the array of ordered properties will be left in their original positions as much as possible.
+
+This rule is **autofixable**; run `eslint` with the `--fix` option to sort top-level properties in place.

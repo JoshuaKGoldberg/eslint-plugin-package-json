@@ -8,7 +8,7 @@
 // Requirements
 //------------------------------------------------------------------------------
 
-var rule = require('../../../lib/rules/alphabetize-collections'),
+var rule = require('../../../lib/rules/sort-collections'),
     RuleTester = require('eslint').RuleTester;
 
 //------------------------------------------------------------------------------
@@ -16,7 +16,7 @@ var rule = require('../../../lib/rules/alphabetize-collections'),
 //------------------------------------------------------------------------------
 
 var ruleTester = new RuleTester();
-ruleTester.run('alphabetize-collections', rule, {
+ruleTester.run('sort-collections', rule, {
     valid: [
         {
             code: `({
@@ -37,6 +37,13 @@ ruleTester.run('alphabetize-collections', rule, {
 })`,
             filename: 'package.json',
             options: [['devDependencies']]
+        },
+        {
+            code: `({
+        "scripts": { "watch": "out of order...", "build": "but okay" }
+})`,
+            filename: 'not-a-package.json',
+            options: [['devDependencies']]
         }
     ],
 
@@ -54,7 +61,13 @@ ruleTester.run('alphabetize-collections', rule, {
                     message: 'Package scripts are not alphabetized',
                     type: 'Property'
                 }
-            ]
+            ],
+            output: `({
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack-dev-server"
+  }
+})`
         }
     ]
 });
