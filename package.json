@@ -29,9 +29,9 @@
   "devDependencies": {
     "eslint": "^5.8.0",
     "lodash": "^4.17.15",
-    "mocha": "^5.2.0",
-    "nyc": "^13.1.0",
-    "prettier": "^1.14.3"
+    "mocha": "^6.2.0",
+    "nyc": "^14.1.1",
+    "prettier": "^1.18.2"
   },
   "dependencies": {
     "disparity": "^2.0.0",
