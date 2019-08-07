@@ -39,7 +39,6 @@ Example of **correct** code for this rule:
 ```
 
 The following code is safe because it is non-namespaced and private.
-ignores it.
 
 ```json
 {

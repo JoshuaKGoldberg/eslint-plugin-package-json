@@ -42,7 +42,7 @@ Examples of **correct** code for this rule:
     "publishConfig": {
         "access": "restricted",
         "registry": "https://alternate.registry"
-    }
+    },
     "version": "1.0.0"
 }
 ```
