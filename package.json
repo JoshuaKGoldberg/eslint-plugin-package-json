@@ -34,7 +34,7 @@
     "prettier": "^1.18.2"
   },
   "dependencies": {
-    "disparity": "^2.0.0",
+    "disparity": "^3.0.0",
     "package-json-validator": "^0.6.3",
     "requireindex": "^1.2.0"
   },
