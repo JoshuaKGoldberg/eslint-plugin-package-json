@@ -128,6 +128,22 @@ ruleTester.run('local-dependency', rule, {
             filename: fileName(
                 '/tests/lib/__fixtures__/unalphabetized-collections/package.json'
             )
+        },
+        {
+            code: `module.exports = {
+                    "name": "pandages",
+                    "version": "1.0.0",
+                    "description": "",
+                    "main": "index.js",
+                    "keywords": [],
+                    "author": "me!",
+                    "license": "ISC",
+                    "dependencies": {
+                        "some-package": "file:./tests/lib/__fixtures__/local-dependency",
+                        "some-other-package": "some-other-package"
+                    }
+            }`,
+            filename: fileName('package.json')
         }
     ],
     invalid: [
@@ -292,6 +308,28 @@ ruleTester.run('local-dependency', rule, {
                 {
                     message:
                         'The package some-package does not exist given the specified path: link:../Local-dependency.'
+                }
+            ]
+        },
+        {
+            code: `module.exports = {
+                    "name": "pandages",
+                    "version": "1.0.0",
+                    "description": "",
+                    "main": "index.js",
+                    "keywords": [],
+                    "author": "me!",
+                    "license": "ISC",
+                    "dependencies": {
+                        "some-package": "file:./tests/lib/__fixtures__/Local-dependency",
+                        "some-other-package": "some-other-package"
+                    }
+            }`,
+            filename: fileName('package.json'),
+            errors: [
+                {
+                    message:
+                        'The package some-package does not exist given the specified path: file:./tests/lib/__fixtures__/Local-dependency.'
                 }
             ]
         }
