@@ -1,7 +1,3 @@
-/**
- * @fileoverview Dependencies, scripts, and configuration values must be declared in alphabetical order.
- * @author Magento Commerce
- */
 'use strict';
 
 //------------------------------------------------------------------------------

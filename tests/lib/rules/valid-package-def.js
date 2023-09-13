@@ -1,7 +1,3 @@
-/**
- * @fileoverview Enforce that package.json has all properties required by NPM spec
- * @author Magento Commerce
- */
 'use strict';
 
 //------------------------------------------------------------------------------

@@ -1,7 +1,3 @@
-/**
- * @fileoverview Package properties must be declared in standard order
- * @author Magento Commerce
- */
 'use strict';
 
 //------------------------------------------------------------------------------
@@ -84,7 +80,8 @@ const invalid = [
         filename: 'path/to/some/package.json',
         errors: [
             {
-                message: new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
+                message:
+                    new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
 
  \\{
    "name": "invalid\\-top\\-level\\-property\\-order",
@@ -118,7 +115,8 @@ const invalid = [
         filename: '/path/to/package.json',
         errors: [
             {
-                message: new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
+                message:
+                    new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
 
  \\{
 .*\\+  "version": "1\\.1\\.1",.*
@@ -159,7 +157,8 @@ const invalid = [
         options: [['name', 'devDependencies']],
         errors: [
             {
-                message: new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
+                message:
+                    new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
 
  \\{
 .*\\-  "name": "sort\\-only\\-some",.*
