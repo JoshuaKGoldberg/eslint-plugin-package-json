@@ -1,53 +1,16 @@
 {
-    "name": "eslint-plugin-package-json",
-    "version": "0.1.3",
-    "description": "Rules for valid, consistent, and readable package.json files",
-    "keywords": [
-      "eslint",
-      "eslintplugin",
-      "eslint-plugin",
-      "magento"
-    ],
-    "author": "Magento Commerce",
-    "license": "(OSL-3.0 OR AFL-3.0)",
-    "main": "lib/index.js",
-    "homepage": "https://github.com/zetlen/eslint-plugin-package-json#readme",
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/zetlen/eslint-plugin-package-json/issues"
-    },
-    "bugs": {
-      "url": "https://github.com/zetlen/eslint-plugin-package-json/issues"
-    },
-    "scripts": {
-      "test": "nyc --reporter=lcov --reporter=text mocha 'tests/lib/rules/local-dependency.js' --recursive",
-      "test:debug": "mocha --inspect-brk tests --recursive",
-      "test:watch": "mocha tests --recursive --watch",
-      "pretest": "npm run format",
-      "format": "prettier --ignore-path .gitignore --write \"**/*.{js,css,md}\" && eslint ./**/*.js"
-    },
-    "devDependencies": {
-      "eslint": "^5.8.0",
-      "lodash": "^4.17.15",
-      "mocha": "^6.2.0",
-      "nyc": "^14.1.1",
-      "prettier": "^1.18.2"
-    },
-    "dependencies": {
-      "disparity": "^3.0.0",
-      "package-json-validator": "^0.6.3",
-      "requireindex": "^1.2.0"
-    },
-    "peerDependencies": {
-      "eslint": ">=4.7.0"
-    },
-    "engines": {
-      "node": ">=8.0.0"
-    },
-    "nyc": {
-      "include": [
-        "lib/**"
-      ]
-    }
+  "name": "valid-local-dependency",
+  "version": "1.0.0",
+  "description":  "Ensures that local dependencies specified in a package.json exist",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^5.2.0",
+    "debug": "^4.1.0"
   }
-  
+}

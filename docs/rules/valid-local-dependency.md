@@ -12,7 +12,6 @@ Examples of **incorrect** code for this rule:
     }
 ```
 
-
 Examples of **correct** code for this rule:
 
 ```json
@@ -24,4 +23,3 @@ Examples of **correct** code for this rule:
 ### Options
 
 This rule has no options.
-
