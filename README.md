@@ -4,27 +4,27 @@ Rules for valid, consistent, and readable package.json files
 
 ## Installation
 
-You'll first need to install [ESLint](http://eslint.org):
+You'll first need to install [ESLint](http://eslint.org) and `eslint-plugin-package-json`:
 
-```
-$ npm i eslint --save-dev
-```
-
-Next, install `eslint-plugin-package-json`:
-
-```
-$ npm install eslint-plugin-package-json --save-dev
+```shell
+$ npm install eslint eslint-plugin-package-json --save-dev
 ```
 
 **Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-package-json` globally.
 
 ## Usage
 
-Add `package-json` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add an override to your ESLint configuration file that specifies this plugin and its processor for your `package.json` file:
 
 ```json
 {
-    "plugins": ["package-json"]
+    "overrides": [
+        {
+            "files": ["package.json"],
+            "plugins": ["package-json"],
+            "processor": ["package-json/processor"]
+        }
+    ]
 }
 ```
 

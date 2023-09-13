@@ -27,7 +27,7 @@
     "format": "prettier --ignore-path .gitignore --write \"**/*.{js,css,md}\" && eslint ./**/*.js"
   },
   "devDependencies": {
-    "eslint": "^5.8.0",
+    "eslint": "^8.49.0",
     "lodash": "^4.17.15",
     "mocha": "^6.2.0",
     "nyc": "^14.1.1",
@@ -35,14 +35,13 @@
   },
   "dependencies": {
     "disparity": "^3.2.0",
-    "package-json-validator": "^0.6.3",
-    "requireindex": "^1.2.0"
+    "package-json-validator": "^0.6.3"
   },
   "peerDependencies": {
-    "eslint": ">=4.7.0"
+    "eslint": ">=8.0.0"
   },
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=18.0.0"
   },
   "nyc": {
     "include": [
