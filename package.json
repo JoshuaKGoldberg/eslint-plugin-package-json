@@ -9,7 +9,7 @@
     "magento"
   ],
   "author": "Magento Commerce",
-  "license": "(OSL-3.0 OR AFL-3.0)",
+  "license": "MIT",
   "main": "lib/index.js",
   "homepage": "https://github.com/zetlen/eslint-plugin-package-json#readme",
   "repository": {
@@ -34,7 +34,7 @@
     "prettier": "^1.18.2"
   },
   "dependencies": {
-    "disparity": "^3.0.0",
+    "disparity": "^3.2.0",
     "package-json-validator": "^0.6.3",
     "requireindex": "^1.2.0"
   },
