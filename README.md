@@ -54,3 +54,7 @@ Or, individually configure the rules you want to use under the rules section.
 -   [`package-json/valid-package-def`](docs/rules/valid-package-def.md): Validate `package.json` files against the NPM specification.
 
 These rules only run on `package.json` files; they will ignore all other files being linted. They lint `package.json` files at project root, and in any subfolder of the project, making this plugin great for monorepos.
+
+## Appreciation
+
+Many thanks to @zetlen for creating the initial version and core infrastructure of this package! 💖
