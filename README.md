@@ -57,4 +57,4 @@ These rules only run on `package.json` files; they will ignore all other files b
 
 ## Appreciation
 
-Many thanks to @zetlen for creating the initial version and core infrastructure of this package! 💖
+Many thanks to [@zetlen](https://github.com/zetlen) for creating the initial version and core infrastructure of this package! 💖
