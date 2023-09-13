@@ -8,7 +8,7 @@
     "eslint-plugin",
     "magento"
   ],
-  "author": "Magento Commerce",
+  "author": "James Zetlen <zetlen@gmail.com>",
   "license": "MIT",
   "main": "lib/index.js",
   "homepage": "https://github.com/zetlen/eslint-plugin-package-json#readme",
