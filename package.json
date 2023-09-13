@@ -23,7 +23,6 @@
     "test": "nyc --reporter=lcov --reporter=text mocha tests --recursive",
     "test:debug": "mocha --inspect-brk tests --recursive",
     "test:watch": "mocha tests --recursive --watch",
-    "lint": "yarn run eslint --ext .json,.js . ",
     "pretest": "npm run format",
     "format": "prettier --ignore-path .gitignore --write \"**/*.{js,css,md}\" && eslint ./**/*.js"
   },
