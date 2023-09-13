@@ -4,6 +4,33 @@ const processor = require('../../../lib/processors/PackageJsonProcessor');
 
 const { preprocess, postprocess } = processor;
 
+describe('isPackageJson', () => {
+    for (const [input, expected] of [
+        ['', false],
+        ['-', false],
+        ['other', false],
+        ['package.js', false],
+        ['package.jsx', false],
+        ['-package.json', false],
+        ['prefix-package.json', false],
+        ['package.json.json', false],
+        ['package.package.json', false],
+        ['package.json.package.json', false],
+        ['package.json-package.json', false],
+        ['package.json', true],
+        ['/package.json', true],
+        ['\\package.json', true],
+        ['prefix/package.json', true],
+        ['prefix\\package.json', true],
+        ['mixed\\prefix/package.json', true],
+        ['mixed/prefix\\package.json', true]
+    ]) {
+        it(input, () => {
+            assert.equal(processor.isPackageJson(input), expected);
+        });
+    }
+});
+
 describe('preprocess', () => {
     it('only returns lintable strings when filename is package.json', () => {
         const result = preprocess('{ "nmae": "invalid" }', 'package-lock.json');
