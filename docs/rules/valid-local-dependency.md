@@ -2,7 +2,7 @@
 
 ## Rule Details
 
-This rule validates the casing for `file:` and `link:` dependencies in a `package.json` file. If the casing of a `link:` or `file:` path is incorrect yarn does not sub out the link when releasing.
+This rule validates the path for `file:` and `link:` dependencies in a `package.json` file - including name casing. If a `link:` or `file:` path is incorrect yarn does not sub out the link when releasing.
 
 Examples of **incorrect** code for this rule:
 
