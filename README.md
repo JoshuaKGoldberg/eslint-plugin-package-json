@@ -4,7 +4,7 @@ Rules for valid, consistent, and readable package.json files
 
 ## Installation
 
-You'll first need to install [ESLint](http://eslint.org) and `eslint-plugin-package-json`:
+You'll first need to install [ESLint](http://eslint.org) >=8 and `eslint-plugin-package-json`:
 
 ```shell
 $ npm install eslint eslint-plugin-package-json --save-dev
@@ -14,37 +14,36 @@ $ npm install eslint eslint-plugin-package-json --save-dev
 
 ## Usage
 
-Add an override to your ESLint configuration file that specifies this plugin and its processor for your `package.json` file:
+Add an override to your ESLint configuration file that specifies this plugin, [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser) and its recommended rules for your `package.json` file:
 
-```json
-{
-    "overrides": [
+```js
+module.exports = {
+    overrides: [
         {
-            "files": ["package.json"],
-            "plugins": ["package-json"],
-            "processor": ["package-json/processor"]
+            extends: ['plugin:package-json/recommended'],
+            files: ['package.json'],
+            parser: 'jsonc-eslint-parser'
+            plugins: ['package-json']
         }
     ]
-}
-```
-
-Use the prepackaged config by adding an "extends" property, or appending to an existing "extends" property:
-
-```json
-{
-    "extends": ["eslint:recommended", "plugin:package-json/recommended"],
-    "plugins": ["package-json"]
-}
+};
 ```
 
 Or, individually configure the rules you want to use under the rules section.
 
-```json
-{
-    "rules": {
-        "package-json/rule-name": 2
-    }
-}
+```js
+module.exports = {
+    overrides: [
+        {
+            files: ['package.json'],
+            parser: 'jsonc-eslint-parser'
+            plugins: ['package-json'],
+            rules: {
+                'package-json/valid-package-def': 'error'
+            }
+        }
+    ]
+};
 ```
 
 ## Supported Rules

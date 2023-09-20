@@ -11,33 +11,36 @@ var rule = require('../../../lib/rules/sort-collections'),
 // Tests
 //------------------------------------------------------------------------------
 
-var ruleTester = new RuleTester();
+var ruleTester = new RuleTester({
+    parser: require.resolve('jsonc-eslint-parser')
+});
+
 ruleTester.run('sort-collections', rule, {
     valid: [
         {
-            code: `({
+            code: `{
   "scripts": {
     "build": "webpack",
     "watch": "webpack-dev-server"
   }
-})`,
+}`,
             filename: 'package.json'
         },
         // ignore if custom include rule
         {
-            code: `({
+            code: `{
   "scripts": {
     "build": "webpack",
     "watch": "webpack-dev-server"
   }
-})`,
+}`,
             filename: 'package.json',
             options: [['devDependencies']]
         },
         {
-            code: `({
+            code: `{
         "scripts": { "watch": "out of order...", "build": "but okay" }
-})`,
+}`,
             filename: 'not-a-package.json',
             options: [['devDependencies']]
         }
@@ -45,25 +48,25 @@ ruleTester.run('sort-collections', rule, {
 
     invalid: [
         {
-            code: `({
+            code: `{
   "scripts": {
     "watch": "webpack-dev-server",
     "build": "webpack"
   }
-})`,
+}`,
             filename: 'package.json',
             errors: [
                 {
                     message: 'Package scripts are not alphabetized',
-                    type: 'Property'
+                    type: 'JSONProperty'
                 }
             ],
-            output: `({
+            output: `{
   "scripts": {
     "build": "webpack",
     "watch": "webpack-dev-server"
   }
-})`
+}`
         }
     ]
 });
