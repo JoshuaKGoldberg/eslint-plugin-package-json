@@ -5,15 +5,12 @@
 //------------------------------------------------------------------------------
 
 var rule = require('../../../lib/rules/valid-package-def'),
-    RuleTester = require('eslint').RuleTester;
+    { ruleTester } = require('./ruleTester');
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-var ruleTester = new RuleTester({
-    parser: require.resolve('jsonc-eslint-parser')
-});
 ruleTester.run('valid-package-def', rule, {
     valid: [
         {

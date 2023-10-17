@@ -1,11 +1,7 @@
 'use strict';
 
 var rule = require('../../../lib/rules/order-properties'),
-    RuleTester = require('eslint').RuleTester;
-
-var ruleTester = new RuleTester({
-    parser: require.resolve('jsonc-eslint-parser')
-});
+    { ruleTester } = require('./ruleTester');
 
 ruleTester.run('order-properties', rule, {
     invalid: [

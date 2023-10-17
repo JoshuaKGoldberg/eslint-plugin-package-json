@@ -5,15 +5,11 @@
 //------------------------------------------------------------------------------
 
 var rule = require('../../../lib/rules/sort-collections'),
-    RuleTester = require('eslint').RuleTester;
+    { ruleTester } = require('./ruleTester');
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
-
-var ruleTester = new RuleTester({
-    parser: require.resolve('jsonc-eslint-parser')
-});
 
 ruleTester.run('sort-collections', rule, {
     valid: [

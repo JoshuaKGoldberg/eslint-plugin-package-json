@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 const path = require('path');
 var rule = require('../../../lib/rules/valid-local-dependency'),
-    RuleTester = require('eslint').RuleTester;
+    { ruleTester } = require('./ruleTester');
 
 //------------------------------------------------------------------------------
 // Tests
@@ -18,10 +18,6 @@ var rule = require('../../../lib/rules/valid-local-dependency'),
 const fileName = partialPath => {
     return path.join(process.cwd(), partialPath);
 };
-
-var ruleTester = new RuleTester({
-    parser: require.resolve('jsonc-eslint-parser')
-});
 
 ruleTester.run('valid-local-dependency', rule, {
     valid: [
