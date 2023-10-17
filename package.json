@@ -30,7 +30,7 @@
         "eslint": "^8.49.0",
         "jsonc-eslint-parser": "^2.3.0",
         "lodash": "^4.17.15",
-        "mocha": "^6.2.0",
+        "mocha": "^10.2.0",
         "nyc": "^14.1.1",
         "prettier": "^1.18.2"
     },
