@@ -5,17 +5,16 @@
 //------------------------------------------------------------------------------
 
 var rule = require('../../../lib/rules/valid-package-def'),
-    RuleTester = require('eslint').RuleTester;
+    { ruleTester } = require('./ruleTester');
 
 //------------------------------------------------------------------------------
 // Tests
 //------------------------------------------------------------------------------
 
-var ruleTester = new RuleTester();
 ruleTester.run('valid-package-def', rule, {
     valid: [
         {
-            code: `module.exports = {
+            code: `{
   "name": "pandages",
   "version": "1.0.0",
   "description": "",
@@ -27,7 +26,7 @@ ruleTester.run('valid-package-def', rule, {
             filename: 'package.json'
         },
         {
-            code: `module.export = {
+            code: `{
   "name": "pandages-subpackage",
   "version": "1.0.0",
   "description": "",
@@ -47,7 +46,7 @@ ruleTester.run('valid-package-def', rule, {
 
     invalid: [
         {
-            code: `module.exports = { "nmae": "invalid-package" }`,
+            code: `{ "nmae": "invalid-package" }`,
 
             filename: 'package.json',
             errors: [
@@ -60,7 +59,7 @@ ruleTester.run('valid-package-def', rule, {
             ]
         },
         {
-            code: `module.exports = { "verison": "wireless" }`,
+            code: `{ "verison": "wireless" }`,
 
             filename: 'packages/nested/package.json',
             errors: [

@@ -1,53 +1,53 @@
 {
-  "name": "eslint-plugin-package-json",
-  "version": "0.2.0",
-  "description": "Rules for valid, consistent, and readable package.json files",
-  "keywords": [
-    "eslint",
-    "eslintplugin",
-    "eslint-plugin",
-    "magento"
-  ],
-  "author": "James Zetlen <zetlen@gmail.com>",
-  "license": "MIT",
-  "main": "lib/index.js",
-  "homepage": "https://github.com/zetlen/eslint-plugin-package-json#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zetlen/eslint-plugin-package-json/issues"
-  },
-  "bugs": {
-    "url": "https://github.com/zetlen/eslint-plugin-package-json/issues"
-  },
-  "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text mocha tests --recursive",
-    "test:debug": "mocha --inspect-brk tests --recursive",
-    "test:watch": "mocha tests --recursive --watch",
-    "pretest": "npm run format",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.{js,css,md}\" && eslint ./**/*.js"
-  },
-  "devDependencies": {
-    "eslint": "^5.8.0",
-    "lodash": "^4.17.15",
-    "mocha": "^6.2.0",
-    "nyc": "^14.1.1",
-    "prettier": "^1.18.2"
-  },
-  "dependencies": {
-    "disparity": "^3.2.0",
-    "package-json-validator": "^0.6.3",
-    "requireindex": "^1.2.0",
-    "sort-package-json": "^1.57.0"
-  },
-  "peerDependencies": {
-    "eslint": ">=4.7.0"
-  },
-  "engines": {
-    "node": ">=8.0.0"
-  },
-  "nyc": {
-    "include": [
-      "lib/**"
-    ]
-  }
+    "name": "eslint-plugin-package-json",
+    "version": "0.2.0",
+    "description": "Rules for valid, consistent, and readable package.json files",
+    "keywords": [
+        "eslint",
+        "eslintplugin",
+        "eslint-plugin",
+        "magento"
+    ],
+    "author": "James Zetlen <zetlen@gmail.com>",
+    "license": "MIT",
+    "main": "lib/index.js",
+    "homepage": "https://github.com/zetlen/eslint-plugin-package-json#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/zetlen/eslint-plugin-package-json/issues"
+    },
+    "bugs": {
+        "url": "https://github.com/zetlen/eslint-plugin-package-json/issues"
+    },
+    "scripts": {
+        "test": "nyc --reporter=lcov --reporter=text mocha tests --recursive",
+        "test:debug": "mocha --inspect-brk tests --recursive",
+        "test:watch": "mocha tests --recursive --watch",
+        "pretest": "npm run format",
+        "format": "prettier --ignore-path .gitignore --write \"**/*.{js,css,md}\" && eslint ./**/*.js"
+    },
+    "devDependencies": {
+        "eslint": "^8.49.0",
+        "jsonc-eslint-parser": "^2.3.0",
+        "lodash": "^4.17.15",
+        "mocha": "^6.2.0",
+        "nyc": "^14.1.1",
+        "prettier": "^1.18.2"
+    },
+    "dependencies": {
+        "package-json-validator": "^0.6.3",
+        "sort-package-json": "^1.57.0"
+    },
+    "peerDependencies": {
+        "eslint": ">=8.0.0",
+        "jsonc-eslint-parser": "^2.0.0"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "nyc": {
+        "include": [
+            "lib/**"
+        ]
+    }
 }

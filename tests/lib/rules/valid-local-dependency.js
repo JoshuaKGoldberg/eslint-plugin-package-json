@@ -9,7 +9,7 @@
 //------------------------------------------------------------------------------
 const path = require('path');
 var rule = require('../../../lib/rules/valid-local-dependency'),
-    RuleTester = require('eslint').RuleTester;
+    { ruleTester } = require('./ruleTester');
 
 //------------------------------------------------------------------------------
 // Tests
@@ -19,11 +19,10 @@ const fileName = partialPath => {
     return path.join(process.cwd(), partialPath);
 };
 
-var ruleTester = new RuleTester();
 ruleTester.run('valid-local-dependency', rule, {
     valid: [
         {
-            code: `module.exports = {
+            code: `{
                     "dependencies": {
                         "some-package": "link:./tests/lib/__fixtures__/valid-local-dependency",
                         "some-other-package": "some-other-package"
@@ -32,7 +31,7 @@ ruleTester.run('valid-local-dependency', rule, {
             filename: fileName('package.json')
         },
         {
-            code: `module.exports = {
+            code: `{
                     "peerDependencies": {
                         "some-package": "link:./tests/lib/__fixtures__/valid-local-dependency",
                         "some-other-package": "some-other-package"
@@ -41,7 +40,7 @@ ruleTester.run('valid-local-dependency', rule, {
             filename: fileName('package.json')
         },
         {
-            code: `module.exports = {
+            code: `{
                     "devDependencies": {
                         "some-package": "link:./tests/lib/__fixtures__/valid-local-dependency",
                         "some-other-package": "some-other-package"
@@ -50,7 +49,7 @@ ruleTester.run('valid-local-dependency', rule, {
             filename: fileName('package.json')
         },
         {
-            code: `module.exports = {
+            code: `{
                     "name": "pandages",
                     "version": "1.0.0",
                     "description": "",
@@ -62,7 +61,7 @@ ruleTester.run('valid-local-dependency', rule, {
             filename: fileName('package.json')
         },
         {
-            code: `module.exports = {
+            code: `{
                     "dependencies": {
                         "some-other-package": "some-other-package"
                     }
@@ -70,7 +69,7 @@ ruleTester.run('valid-local-dependency', rule, {
             filename: fileName('package.json')
         },
         {
-            code: `module.exports = {
+            code: `{
                     "dependencies": {
                         "some-package": "link:./tests/lib/__fixtures__/Valid-local-dependency",
                     }
@@ -78,7 +77,7 @@ ruleTester.run('valid-local-dependency', rule, {
             filename: fileName('not-package.json')
         },
         {
-            code: `module.exports = {
+            code: `{
                     "dependencies": {
                         "some-package": "link:../valid-local-dependency"
                     }
@@ -88,7 +87,7 @@ ruleTester.run('valid-local-dependency', rule, {
             )
         },
         {
-            code: `module.exports = {
+            code: `{
                     "dependencies": {
                         "some-package": "file:./tests/lib/__fixtures__/valid-local-dependency",
                         "some-other-package": "some-other-package"
@@ -97,7 +96,7 @@ ruleTester.run('valid-local-dependency', rule, {
             filename: fileName('package.json')
         },
         {
-            code: `module.exports = {
+            code: `{
                     "dependencies": {
                         "some-package": "file:./tests/lib/__fixtures__/valid-local-dependency/gotcha/package.json/gotcha",
                         "some-other-package": "some-other-package"
@@ -108,7 +107,7 @@ ruleTester.run('valid-local-dependency', rule, {
     ],
     invalid: [
         {
-            code: `module.exports = {
+            code: `{
                         "license": "ISC",
                         "dependencies": {
                             "some-package": "link:./tests/lib/__fixtures__/Valid-local-dependency",
@@ -124,7 +123,7 @@ ruleTester.run('valid-local-dependency', rule, {
             ]
         },
         {
-            code: `module.exports = {
+            code: `{
                     "peerDependencies": {
                         "some-package": "link:./tests/lib/__fixtures__/Valid-local-dependency",
                         "some-other-package": "some-other-package"
@@ -139,7 +138,7 @@ ruleTester.run('valid-local-dependency', rule, {
             ]
         },
         {
-            code: `module.exports = {
+            code: `{
                     "devDependencies": {
                         "some-package": "link:./tests/lib/__fixtures__/Valid-local-dependency",
                         "some-other-package": "some-other-package"
@@ -154,7 +153,7 @@ ruleTester.run('valid-local-dependency', rule, {
             ]
         },
         {
-            code: `module.exports = {
+            code: `{
                     "dependencies": {
                         "some-package": "link:./tests/lib/__fixtures__/dependency",
                         "some-other-package": "some-other-package"
@@ -169,7 +168,7 @@ ruleTester.run('valid-local-dependency', rule, {
             ]
         },
         {
-            code: `module.exports = {
+            code: `{
                         "dependencies": {
                         "some-package": "link:./tests/lib/__fixtures__/Valid-local-dependency",
                         "some-other-package": "some-other-package"
@@ -192,7 +191,7 @@ ruleTester.run('valid-local-dependency', rule, {
             ]
         },
         {
-            code: `module.exports = {
+            code: `{
                             "dependencies": {
                                 "some-package": "link:./tests/lib/__fixtures__/Valid-local-dependency",
                                 "another-path": "link:./tests/lib/__fixtures__/valid-local-dependency",
@@ -208,7 +207,7 @@ ruleTester.run('valid-local-dependency', rule, {
             ]
         },
         {
-            code: `module.exports = {
+            code: `{
                     "dependencies": {
                         "some-package": "link:../Valid-local-dependency"
                     }
@@ -224,7 +223,7 @@ ruleTester.run('valid-local-dependency', rule, {
             ]
         },
         {
-            code: `module.exports = {
+            code: `{
                     "dependencies": {
                         "some-package": "file:./tests/lib/__fixtures__/Valid-local-dependency",
                         "some-other-package": "some-other-package"
@@ -239,7 +238,7 @@ ruleTester.run('valid-local-dependency', rule, {
             ]
         },
         {
-            code: `module.exports = {
+            code: `{
                     "dependencies": {
                         "some-package": "file:./tests/lib/__fixtures__/Valid-local-dependency/gotcha/package.json/gotcha",
                         "some-other-package": "some-other-package"
