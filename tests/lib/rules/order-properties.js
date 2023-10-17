@@ -46,15 +46,47 @@ const valid = [
         code: `module.exports = {
   "version": "1.1.1",
   "name": "treat-yo-self",
+  "description": "Once a year.",
   "keywords": [
     "modern",
     "master"
-  ],
-  "description": "Once a year."
+  ]
 }
 `,
         filename: 'package.json',
-        options: [['version', 'name']]
+        options: [{ order: ['version', 'name'] }]
+    },
+    {
+        code: `module.exports = {
+"name": "treat-yo-self",
+"version": "1.1.1",
+"description": "Once a year.",
+"keywords": [
+  "modern",
+  "master"
+],
+"exports": {
+  "import": "./index.js",
+  "require": "./index.js"
+},
+"main": "index.js"
+}`,
+        filename: 'package.json',
+        options: [{ order: 'sort-package-json' }]
+    },
+    {
+        code: `module.exports = {
+"name": "treat-yo-self",
+"version": "1.1.1",
+"description": "Once a year.",
+"main": "index.js",
+"exports": {
+"import": "./index.js",
+"require": "./index.js"
+}
+}`,
+        filename: 'package.json',
+        options: [{ order: 'legacy' }]
     }
 ];
 
@@ -80,8 +112,7 @@ const invalid = [
         filename: 'path/to/some/package.json',
         errors: [
             {
-                message:
-                    new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
+                message: new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
 
  \\{
    "name": "invalid\\-top\\-level\\-property\\-order",
@@ -115,8 +146,7 @@ const invalid = [
         filename: '/path/to/package.json',
         errors: [
             {
-                message:
-                    new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
+                message: new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
 
  \\{
 .*\\+  "version": "1\\.1\\.1",.*
@@ -154,11 +184,20 @@ const invalid = [
             }`,
 
         filename: '/another/path/to/package.json',
-        options: [['name', 'devDependencies']],
+        options: [
+            {
+                order: [
+                    'name',
+                    'devDependencies',
+                    'version',
+                    'keywords',
+                    'dependencies'
+                ]
+            }
+        ],
         errors: [
             {
-                message:
-                    new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
+                message: new RegExp(`Package top\\-level properties are not ordered in the NPM standard way:
 
  \\{
 .*\\-  "name": "sort\\-only\\-some",.*
