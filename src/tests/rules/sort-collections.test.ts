@@ -1,11 +1,5 @@
-'use strict';
-
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
-var rule = require('../../../lib/rules/sort-collections'),
-    { ruleTester } = require('./ruleTester');
+import rule from '../../rules/sort-collections';
+import { ruleTester } from './ruleTester.js';
 
 //------------------------------------------------------------------------------
 // Tests

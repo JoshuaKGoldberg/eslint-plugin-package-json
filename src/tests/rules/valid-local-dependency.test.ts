@@ -1,21 +1,9 @@
-/**
- * @fileoverview Checks existence of local dependencies in the package.json
- * @author Kendall Gassner
- */
-'use strict';
+import path from 'path';
 
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-const path = require('path');
-var rule = require('../../../lib/rules/valid-local-dependency'),
-    { ruleTester } = require('./ruleTester');
+import rule from '../../rules/valid-local-dependency';
+import { ruleTester } from './ruleTester.js';
 
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
-
-const fileName = partialPath => {
+const fileName = (partialPath: string) => {
     return path.join(process.cwd(), partialPath);
 };
 

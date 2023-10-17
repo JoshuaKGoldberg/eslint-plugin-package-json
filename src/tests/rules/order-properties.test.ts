@@ -1,7 +1,5 @@
-'use strict';
-
-var rule = require('../../../lib/rules/order-properties'),
-    { ruleTester } = require('./ruleTester');
+import rule from '../../rules/order-properties';
+import { ruleTester } from './ruleTester';
 
 ruleTester.run('order-properties', rule, {
     invalid: [
