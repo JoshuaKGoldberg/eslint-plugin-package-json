@@ -31,19 +31,28 @@ Examples of **correct** code for this rule:
 
 ### Options
 
-Pass an array of top-level package properties to lint sorting on only those
-properties. All properties not in this collection will be ignored.
-
-Example:
-
 ```js
-"package-json/order-properties": ["error", [
-    "name",
-    "version" // Ensure only that name precedes version
-]]
+"package-json/order-properties": ["error", {
+    order: "sort-package-json"
+}]
 ```
 
-Defaults:
+#### Order
+
+The `order` property specifies the sorting order of package properties. Pass in:
+
+-   `"legacy"` - to order properties specified by [npm documentation](https://docs.npmjs.com/cli/v10/configuring-npm/package-json).
+-   `"sort-package-json"` - to order properties by the default order specified in [sort-package-json](https://github.com/keithamus/sort-package-json).
+-   `Array<string>` - to specify an array of top-level package properties to lint sorting on only those
+    properties. All properties not in this collection will be sorted by "sort-package-json" specifications.
+
+```tsx
+interface {
+    order?: "legacy" | "sort-package-json" | Array<string>
+}
+```
+
+Default: `legacy`
 
 ```json
 [
