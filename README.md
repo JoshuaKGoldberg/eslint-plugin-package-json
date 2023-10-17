@@ -2,6 +2,10 @@
 
 Rules for valid, consistent, and readable package.json files
 
+> ⚠️ This README.md is for the `0.3.x` versions of this package.
+> Those versions are tagged as `beta` on npm.
+> For 0.2.x, see [the latest 0.2.x README.md](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/tree/a1c3bf76fb1a55e85f071051be55dc06ebb47c8b).
+
 ## Installation
 
 You'll first need to install [ESLint](http://eslint.org) >=8 and `eslint-plugin-package-json`:
