@@ -27,11 +27,11 @@ export default createRule({
     create: function(context) {
         return {
             'Program:exit'() {
-                const { errors } = PackageValidator.validate(
+                const validation = PackageValidator.validate(
                     context.sourceCode.text
-                );
+                ) as PackageValidator.ValidationSuccessResult;
 
-                (errors || []).filter(isUsableError).forEach(
+                validation.errors?.filter(isUsableError).forEach(
                     message =>
                         message &&
                         context.report({

@@ -29,6 +29,7 @@
         "@types/eslint": "^8.44.4",
         "@types/estree": "^1.0.2",
         "@types/node": "^20.8.6",
+        "@types/package-json-validator": "^0.6.0",
         "console-fail-test": "^0.2.3",
         "eslint": "^8.49.0",
         "jsonc-eslint-parser": "^2.3.0",
