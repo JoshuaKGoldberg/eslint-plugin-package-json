@@ -26,7 +26,7 @@ module.exports = {
         {
             extends: ['plugin:package-json/recommended'],
             files: ['package.json'],
-            parser: 'jsonc-eslint-parser'
+            parser: 'jsonc-eslint-parser',
             plugins: ['package-json']
         }
     ]
