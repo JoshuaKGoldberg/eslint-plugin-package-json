@@ -33,8 +33,8 @@ export default createRule({
     create(context) {
         const toSort = context.options[0] || defaultCollections;
         return {
-            'JSONProperty:exit'(node: ESTree.Node) {
-                const { key, value } = (node as unknown) as AST.JSONProperty & {
+            'JSONProperty:exit'(node) {
+                const { key, value } = node as AST.JSONProperty & {
                     key: AST.JSONStringLiteral;
                 };
 
@@ -58,7 +58,7 @@ export default createRule({
                         )
                     ) {
                         context.report({
-                            node,
+                            node: (node as unknown) as ESTree.Node,
                             loc: collection.loc,
                             message: 'Package {{ key }} are not alphabetized',
                             data: {

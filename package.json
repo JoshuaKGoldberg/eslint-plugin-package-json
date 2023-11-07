@@ -32,7 +32,7 @@
         "@types/package-json-validator": "^0.6.0",
         "console-fail-test": "^0.2.3",
         "eslint": "^8.49.0",
-        "jsonc-eslint-parser": "^2.3.0",
+        "jsonc-eslint-parser": "^2.4.0",
         "prettier": "^1.18.2",
         "typescript": "^5.2.2",
         "vitest": "^0.34.6"

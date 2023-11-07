@@ -1,5 +1,5 @@
 import { AST, Rule, SourceCode } from 'eslint';
-import { AST as JsonAST } from "jsonc-eslint-parser"
+import { AST as JsonAST, RuleListener } from "jsonc-eslint-parser"
 import type * as ESTree from 'estree';
 
 const isPackageJson = (filePath: string) =>
@@ -29,9 +29,11 @@ export interface PackageJsonRuleContext extends Rule.RuleContext {
     sourceCode: PackageJsonSourceCode;
 }
 
-export interface PackageJsonRuleModule extends Rule.RuleModule {
-    create(context: PackageJsonRuleContext): Rule.RuleListener;
-}
+export interface PackageJsonRuleModule {
+    meta: Rule.RuleMetaData;
+    create(context: PackageJsonRuleContext): RuleListener;
+  }
+
 
 export function createRule(rule: PackageJsonRuleModule) {
     return {
