@@ -1,16 +1,12 @@
-/**
- * @fileoverview Checks existence of local dependencies in the package.json
- * @author Kendall Gassner
- */
-'use strict';
-const path = require('path');
-const { createRule } = require('../createRule');
+import path from 'path';
+
+import { createRule } from '../createRule.js';
 
 //------------------------------------------------------------------------------
 // Rule Definition
 //------------------------------------------------------------------------------
 
-module.exports = createRule({
+export default createRule({
     meta: {
         docs: {
             description:
@@ -23,7 +19,10 @@ module.exports = createRule({
     create: function(context) {
         return {
             'Program:exit'() {
-                const original = JSON.parse(context.sourceCode.text);
+                const original = JSON.parse(context.sourceCode.text) as Record<
+                    string,
+                    Record<string, string>
+                >;
                 const {
                     dependencies,
                     peerDependencies,
@@ -38,11 +37,9 @@ module.exports = createRule({
 
                 depObjs.forEach(obj =>
                     obj.forEach(([key, value]) => {
-                        const response = localPath => {
+                        const response = (localPath: string | RegExp) => {
                             const filePath = path.join(
-                                context
-                                    .getFilename()
-                                    .replace(/package\.json/g, '/'),
+                                context.filename.replace(/package\.json/g, '/'),
                                 value.replace(new RegExp(localPath, 'g'), ''),
                                 '/package.json'
                             );

@@ -1,10 +1,6 @@
-'use strict';
-const { createRule } = require('../createRule');
-const sortPackageJson = require('sort-package-json');
+import sortPackageJson from 'sort-package-json';
 
-//------------------------------------------------------------------------------
-// Rule Definition
-//------------------------------------------------------------------------------
+import { createRule } from '../createRule.js';
 
 const standardOrderLegacy = [
     'name',
@@ -37,7 +33,7 @@ const standardOrderLegacy = [
     'cpu'
 ];
 
-module.exports = createRule({
+export default createRule({
     meta: {
         docs: {
             description:
@@ -91,8 +87,20 @@ module.exports = createRule({
 
                 const { properties } = ast.body[0].expression;
 
+                // console.log({ orderedSource });
+
                 for (let i = 0; i < properties.length; i += 1) {
+                    // console.log(
+                    //     properties.map(p => p.value),
+                    //     'vs',
+                    //     orderedKeys
+                    // );
                     if (properties[i].value !== orderedKeys[i]) {
+                        // console.log(
+                        //     'JOSH SAYS HI',
+                        //     properties[i].value.value,
+                        //     orderedKeys[i]
+                        // );
                         context.report({
                             node: context.sourceCode.ast,
                             message:

@@ -1,12 +1,12 @@
 jobs:
-  test:
+  tsc:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/prepare
-      - run: npm run test
+      - run: npm run tsc
 
-name: Test
+name: Type Check
 
 on:
   pull_request: ~

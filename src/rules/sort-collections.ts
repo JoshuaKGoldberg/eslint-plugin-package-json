@@ -1,10 +1,8 @@
-'use strict';
+import * as ESTree from 'estree';
+import { AST } from 'jsonc-eslint-parser';
 
-const { createRule } = require('../createRule');
+import { createRule } from '../createRule.js';
 
-//------------------------------------------------------------------------------
-// Rule Definition
-//------------------------------------------------------------------------------
 const defaultCollections = [
     'scripts',
     'devDependencies',
@@ -12,7 +10,8 @@ const defaultCollections = [
     'peerDependencies',
     'config'
 ];
-module.exports = createRule({
+
+export default createRule({
     meta: {
         docs: {
             description:
@@ -35,38 +34,49 @@ module.exports = createRule({
         const toSort = context.options[0] || defaultCollections;
         return {
             'JSONProperty:exit'(node) {
-                const collection = node.value;
+                const { key, value } = node as AST.JSONProperty & {
+                    key: AST.JSONStringLiteral;
+                };
+
+                const collection = value;
                 if (
                     collection.type === 'JSONObjectExpression' &&
-                    toSort.includes(node.key.value)
+                    toSort.includes(key.value)
                 ) {
                     const currentOrder = collection.properties;
                     const desiredOrder = currentOrder
                         .slice()
-                        .sort((a, b) => (a.key.value > b.key.value ? 1 : -1));
+                        .sort((a, b) =>
+                            (a.key as AST.JSONStringLiteral).value >
+                            (b.key as AST.JSONStringLiteral).value
+                                ? 1
+                                : -1
+                        );
                     if (
                         currentOrder.some(
                             (property, i) => desiredOrder[i] !== property
                         )
                     ) {
                         context.report({
-                            node,
+                            node: (node as unknown) as ESTree.Node,
                             loc: collection.loc,
                             message: 'Package {{ key }} are not alphabetized',
                             data: {
-                                key: node.key.value
+                                key: key.value
                             },
                             fix(fixer) {
                                 return fixer.replaceText(
-                                    collection,
+                                    (collection as unknown) as ESTree.Node,
                                     JSON.stringify(
-                                        desiredOrder.reduce((out, property) => {
+                                        desiredOrder.reduce<
+                                            Record<string, unknown>
+                                        >((out, property) => {
                                             out[
-                                                property.key.value
+                                                (property.key as AST.JSONStringLiteral).value
                                             ] = JSON.parse(
-                                                context
-                                                    .getSourceCode()
-                                                    .getText(property.value)
+                                                context.sourceCode.getText(
+                                                    (property.value as unknown) as ESTree.Node
+                                                )
                                             );
                                             return out;
                                         }, {}),

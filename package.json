@@ -20,19 +20,22 @@
         "url": "https://github.com/zetlen/eslint-plugin-package-json/issues"
     },
     "scripts": {
-        "test": "nyc --reporter=lcov --reporter=text mocha tests --recursive",
-        "test:debug": "mocha --inspect-brk tests --recursive",
-        "test:watch": "mocha tests --recursive --watch",
-        "pretest": "npm run format",
-        "format": "prettier --ignore-path .gitignore --write \"**/*.{js,css,md}\" && eslint ./**/*.js"
+        "lint": "eslint",
+        "test": "vitest",
+        "tsc": "tsc",
+        "format": "prettier --ignore-path .gitignore --write \"**/*.{js,css,md}\""
     },
     "devDependencies": {
+        "@types/eslint": "^8.44.4",
+        "@types/estree": "^1.0.2",
+        "@types/node": "^20.8.6",
+        "@types/package-json-validator": "^0.6.0",
+        "console-fail-test": "^0.2.3",
         "eslint": "^8.49.0",
-        "jsonc-eslint-parser": "^2.3.0",
-        "lodash": "^4.17.15",
-        "mocha": "^6.2.0",
-        "nyc": "^14.1.1",
-        "prettier": "^1.18.2"
+        "jsonc-eslint-parser": "^2.4.0",
+        "prettier": "^1.18.2",
+        "typescript": "^5.2.2",
+        "vitest": "^0.34.6"
     },
     "dependencies": {
         "package-json-validator": "^0.6.3",
@@ -44,10 +47,5 @@
     },
     "engines": {
         "node": ">=18.0.0"
-    },
-    "nyc": {
-        "include": [
-            "lib/**"
-        ]
     }
 }

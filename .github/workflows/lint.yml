@@ -1,12 +1,12 @@
 jobs:
-  test:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/prepare
-      - run: npm run test
+      - run: npm run lint
 
-name: Test
+name: Lint
 
 on:
   pull_request: ~

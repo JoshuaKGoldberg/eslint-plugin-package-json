@@ -1,21 +1,9 @@
-/**
- * @fileoverview Checks existence of local dependencies in the package.json
- * @author Kendall Gassner
- */
-'use strict';
+import path from 'path';
 
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-const path = require('path');
-var rule = require('../../../lib/rules/valid-local-dependency'),
-    { ruleTester } = require('./ruleTester');
+import rule from '../../rules/valid-local-dependency';
+import { ruleTester } from './ruleTester.js';
 
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
-
-const fileName = partialPath => {
+const fileName = (partialPath: string) => {
     return path.join(process.cwd(), partialPath);
 };
 
@@ -24,7 +12,7 @@ ruleTester.run('valid-local-dependency', rule, {
         {
             code: `{
                     "dependencies": {
-                        "some-package": "link:./tests/lib/__fixtures__/valid-local-dependency",
+                        "some-package": "link:./src/tests/__fixtures__/valid-local-dependency",
                         "some-other-package": "some-other-package"
                     }
             }`,
@@ -33,7 +21,7 @@ ruleTester.run('valid-local-dependency', rule, {
         {
             code: `{
                     "peerDependencies": {
-                        "some-package": "link:./tests/lib/__fixtures__/valid-local-dependency",
+                        "some-package": "link:./src/tests/__fixtures__/valid-local-dependency",
                         "some-other-package": "some-other-package"
                     }
                 }`,
@@ -42,7 +30,7 @@ ruleTester.run('valid-local-dependency', rule, {
         {
             code: `{
                     "devDependencies": {
-                        "some-package": "link:./tests/lib/__fixtures__/valid-local-dependency",
+                        "some-package": "link:./src/tests/__fixtures__/valid-local-dependency",
                         "some-other-package": "some-other-package"
                     }
             }`,
@@ -71,7 +59,7 @@ ruleTester.run('valid-local-dependency', rule, {
         {
             code: `{
                     "dependencies": {
-                        "some-package": "link:./tests/lib/__fixtures__/Invalid-local-dependency",
+                        "some-package": "link:./src/tests/__fixtures__/Invalid-local-dependency",
                     }
             }`,
             filename: fileName('not-package.json')
@@ -83,13 +71,13 @@ ruleTester.run('valid-local-dependency', rule, {
                     }
             }`,
             filename: fileName(
-                '/tests/lib/__fixtures__/unalphabetized-collections/package.json'
+                '/src/tests/__fixtures__/unalphabetized-collections/package.json'
             )
         },
         {
             code: `{
                     "dependencies": {
-                        "some-package": "file:./tests/lib/__fixtures__/valid-local-dependency",
+                        "some-package": "file:./src/tests/__fixtures__/valid-local-dependency",
                         "some-other-package": "some-other-package"
                     }
             }`,
@@ -98,7 +86,7 @@ ruleTester.run('valid-local-dependency', rule, {
         {
             code: `{
                     "dependencies": {
-                        "some-package": "file:./tests/lib/__fixtures__/valid-local-dependency/gotcha/package.json/gotcha",
+                        "some-package": "file:./src/tests/__fixtures__/valid-local-dependency/gotcha/package.json/gotcha",
                         "some-other-package": "some-other-package"
                     }
             }`,
@@ -110,7 +98,7 @@ ruleTester.run('valid-local-dependency', rule, {
             code: `{
                         "license": "ISC",
                         "dependencies": {
-                            "some-package": "link:./tests/lib/__fixtures__/Invalid-local-dependency",
+                            "some-package": "link:./src/tests/__fixtures__/Invalid-local-dependency",
                             "some-other-package": "some-other-package"
                         }
             }`,
@@ -118,14 +106,14 @@ ruleTester.run('valid-local-dependency', rule, {
             errors: [
                 {
                     message:
-                        'The package some-package does not exist given the specified path: link:./tests/lib/__fixtures__/Invalid-local-dependency.'
+                        'The package some-package does not exist given the specified path: link:./src/tests/__fixtures__/Invalid-local-dependency.'
                 }
             ]
         },
         {
             code: `{
                     "peerDependencies": {
-                        "some-package": "link:./tests/lib/__fixtures__/Invalid-local-dependency",
+                        "some-package": "link:./src/tests/__fixtures__/Invalid-local-dependency",
                         "some-other-package": "some-other-package"
                     }
             }`,
@@ -133,14 +121,14 @@ ruleTester.run('valid-local-dependency', rule, {
             errors: [
                 {
                     message:
-                        'The package some-package does not exist given the specified path: link:./tests/lib/__fixtures__/Invalid-local-dependency.'
+                        'The package some-package does not exist given the specified path: link:./src/tests/__fixtures__/Invalid-local-dependency.'
                 }
             ]
         },
         {
             code: `{
                     "devDependencies": {
-                        "some-package": "link:./tests/lib/__fixtures__/Invalid-local-dependency",
+                        "some-package": "link:./src/tests/__fixtures__/Invalid-local-dependency",
                         "some-other-package": "some-other-package"
                     }
             }`,
@@ -148,14 +136,14 @@ ruleTester.run('valid-local-dependency', rule, {
             errors: [
                 {
                     message:
-                        'The package some-package does not exist given the specified path: link:./tests/lib/__fixtures__/Invalid-local-dependency.'
+                        'The package some-package does not exist given the specified path: link:./src/tests/__fixtures__/Invalid-local-dependency.'
                 }
             ]
         },
         {
             code: `{
                     "dependencies": {
-                        "some-package": "link:./tests/lib/__fixtures__/dependency",
+                        "some-package": "link:./src/tests/__fixtures__/dependency",
                         "some-other-package": "some-other-package"
                     }
             }`,
@@ -163,18 +151,18 @@ ruleTester.run('valid-local-dependency', rule, {
             errors: [
                 {
                     message:
-                        'The package some-package does not exist given the specified path: link:./tests/lib/__fixtures__/dependency.'
+                        'The package some-package does not exist given the specified path: link:./src/tests/__fixtures__/dependency.'
                 }
             ]
         },
         {
             code: `{
                         "dependencies": {
-                        "some-package": "link:./tests/lib/__fixtures__/Invalid-local-dependency",
+                        "some-package": "link:./src/tests/__fixtures__/Invalid-local-dependency",
                         "some-other-package": "some-other-package"
                         },
                         "peerDependencies": {
-                            "peer-package": "link:./tests/lib/__fixtures__/Invalid-local-dependency",
+                            "peer-package": "link:./src/tests/__fixtures__/Invalid-local-dependency",
                             "some-other-package": "some-other-package"
                         }
                     }`,
@@ -182,19 +170,19 @@ ruleTester.run('valid-local-dependency', rule, {
             errors: [
                 {
                     message:
-                        'The package some-package does not exist given the specified path: link:./tests/lib/__fixtures__/Invalid-local-dependency.'
+                        'The package some-package does not exist given the specified path: link:./src/tests/__fixtures__/Invalid-local-dependency.'
                 },
                 {
                     message:
-                        'The package peer-package does not exist given the specified path: link:./tests/lib/__fixtures__/Invalid-local-dependency.'
+                        'The package peer-package does not exist given the specified path: link:./src/tests/__fixtures__/Invalid-local-dependency.'
                 }
             ]
         },
         {
             code: `{
                             "dependencies": {
-                                "some-package": "link:./tests/lib/__fixtures__/Invalid-local-dependency",
-                                "another-path": "link:./tests/lib/__fixtures__/valid-local-dependency",
+                                "some-package": "link:./src/tests/__fixtures__/Invalid-local-dependency",
+                                "another-path": "link:./src/tests/__fixtures__/valid-local-dependency",
                                 "some-other-package": "some-other-package"
                             }
             }`,
@@ -202,7 +190,7 @@ ruleTester.run('valid-local-dependency', rule, {
             errors: [
                 {
                     message:
-                        'The package some-package does not exist given the specified path: link:./tests/lib/__fixtures__/Invalid-local-dependency.'
+                        'The package some-package does not exist given the specified path: link:./src/tests/__fixtures__/Invalid-local-dependency.'
                 }
             ]
         },
@@ -213,7 +201,7 @@ ruleTester.run('valid-local-dependency', rule, {
                     }
             }`,
             filename: fileName(
-                'tests/lib/__fixtures__/unalphabetized-collections/package.json'
+                'src/tests/__fixtures__/unalphabetized-collections/package.json'
             ),
             errors: [
                 {
@@ -225,7 +213,7 @@ ruleTester.run('valid-local-dependency', rule, {
         {
             code: `{
                     "dependencies": {
-                        "some-package": "file:./tests/lib/__fixtures__/Invalid-local-dependency",
+                        "some-package": "file:./src/tests/__fixtures__/Invalid-local-dependency",
                         "some-other-package": "some-other-package"
                     }
             }`,
@@ -233,14 +221,14 @@ ruleTester.run('valid-local-dependency', rule, {
             errors: [
                 {
                     message:
-                        'The package some-package does not exist given the specified path: file:./tests/lib/__fixtures__/Invalid-local-dependency.'
+                        'The package some-package does not exist given the specified path: file:./src/tests/__fixtures__/Invalid-local-dependency.'
                 }
             ]
         },
         {
             code: `{
                     "dependencies": {
-                        "some-package": "file:./tests/lib/__fixtures__/Invalid-local-dependency/gotcha/package.json/gotcha",
+                        "some-package": "file:./src/tests/__fixtures__/Invalid-local-dependency/gotcha/package.json/gotcha",
                         "some-other-package": "some-other-package"
                     }
             }`,
@@ -248,7 +236,7 @@ ruleTester.run('valid-local-dependency', rule, {
             errors: [
                 {
                     message:
-                        'The package some-package does not exist given the specified path: file:./tests/lib/__fixtures__/Invalid-local-dependency/gotcha/package.json/gotcha.'
+                        'The package some-package does not exist given the specified path: file:./src/tests/__fixtures__/Invalid-local-dependency/gotcha/package.json/gotcha.'
                 }
             ]
         }

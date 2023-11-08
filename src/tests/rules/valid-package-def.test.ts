@@ -1,15 +1,5 @@
-'use strict';
-
-//------------------------------------------------------------------------------
-// Requirements
-//------------------------------------------------------------------------------
-
-var rule = require('../../../lib/rules/valid-package-def'),
-    { ruleTester } = require('./ruleTester');
-
-//------------------------------------------------------------------------------
-// Tests
-//------------------------------------------------------------------------------
+import rule from '../../rules/valid-package-def.js';
+import { ruleTester } from './ruleTester.js';
 
 ruleTester.run('valid-package-def', rule, {
     valid: [

@@ -1,12 +1,9 @@
-'use strict';
-
-var rule = require('../../../lib/rules/order-properties'),
-    { ruleTester } = require('./ruleTester');
+import rule from '../../rules/order-properties';
+import { ruleTester } from './ruleTester';
 
 ruleTester.run('order-properties', rule, {
     invalid: [
         {
-            only: true,
             code: `{
     "name": "invalid-top-level-property-order",
     "scripts": {
@@ -44,7 +41,6 @@ ruleTester.run('order-properties', rule, {
 `
         },
         {
-            only: true,
             code: `{
     "name": "invalid-top-level-property-order",
     "scripts": {
@@ -83,7 +79,6 @@ ruleTester.run('order-properties', rule, {
 `
         },
         {
-            only: true,
             code: `{
     "name": "invalid-top-level-property-order",
     "scripts": {
@@ -122,7 +117,6 @@ ruleTester.run('order-properties', rule, {
 `
         },
         {
-            only: true,
             code: `{
     "name": "invalid-top-level-property-order",
     "scripts": {
@@ -162,8 +156,7 @@ ruleTester.run('order-properties', rule, {
         }
     ],
     valid: [
-        {
-            code: `{
+        `{
       "name": "treat-yo-self",
       "version": "1.1.1",
       "description": "Once a year.",
@@ -172,10 +165,7 @@ ruleTester.run('order-properties', rule, {
         "master"
       ]
     }`,
-            filename: 'package.json'
-        },
-        {
-            code: `{
+        `{
       "name": "treat-yo-self",
       "version": "0.1.0",
       "private": true,
@@ -185,8 +175,7 @@ ruleTester.run('order-properties', rule, {
         "master"
       ]
     }
-    `
-        },
+    `,
         {
             code: `{
       "version": "1.1.1",

@@ -1,10 +1,6 @@
 'use strict';
-const { PJV: PackageValidator } = require('package-json-validator');
-const { createRule } = require('../createRule');
-
-//------------------------------------------------------------------------------
-// Rule Definition
-//------------------------------------------------------------------------------
+import { PJV as PackageValidator } from 'package-json-validator';
+import { createRule } from '../createRule.js';
 
 // package-json-validator does not correctly recognize shorthand for repositories and alternate dependency statements, so we discard those values.
 // it also enforces a stricter code for NPM than is really appropriate,
@@ -15,10 +11,10 @@ const unusedErrorPatterns = [
     /^author field should have name/i
 ];
 
-const isUsableError = errorText =>
+const isUsableError = (errorText: string) =>
     unusedErrorPatterns.every(pattern => !pattern.test(errorText));
 
-module.exports = createRule({
+export default createRule({
     meta: {
         docs: {
             description:
@@ -31,11 +27,11 @@ module.exports = createRule({
     create: function(context) {
         return {
             'Program:exit'() {
-                const { errors } = PackageValidator.validate(
+                const validation = PackageValidator.validate(
                     context.sourceCode.text
-                );
+                ) as PackageValidator.ValidationSuccessResult;
 
-                (errors || []).filter(isUsableError).forEach(
+                validation.errors?.filter(isUsableError).forEach(
                     message =>
                         message &&
                         context.report({

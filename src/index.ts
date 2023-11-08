@@ -1,9 +1,9 @@
 'use strict';
 
-const orderProperties = require('./rules/order-properties');
-const sortCollections = require('./rules/sort-collections');
-const validLocalDependency = require('./rules/valid-local-dependency');
-const validPackageDef = require('./rules/valid-package-def');
+import orderProperties from './rules/order-properties';
+import sortCollections from './rules/sort-collections';
+import validLocalDependency from './rules/valid-local-dependency';
+import validPackageDef from './rules/valid-package-def';
 
 module.exports = {
     configs: {

@@ -11,7 +11,7 @@ Rules for valid, consistent, and readable package.json files
 You'll first need to install [ESLint](http://eslint.org) >=8 and `eslint-plugin-package-json`:
 
 ```shell
-$ npm install eslint eslint-plugin-package-json --save-dev
+$ npm install eslint eslint-plugin-package-json jsonc-eslint-parser --save-dev
 ```
 
 **Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-package-json` globally.
@@ -40,7 +40,7 @@ module.exports = {
     overrides: [
         {
             files: ['package.json'],
-            parser: 'jsonc-eslint-parser'
+            parser: 'jsonc-eslint-parser',
             plugins: ['package-json'],
             rules: {
                 'package-json/valid-package-def': 'error'
