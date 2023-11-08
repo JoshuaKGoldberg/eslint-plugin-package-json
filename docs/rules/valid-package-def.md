@@ -1,4 +1,6 @@
-# Enforce that package.json has all properties required by NPM spec (valid-package-def)
+# Enforce that package.json has all properties required by NPM spec (`package-json/valid-package-def`)
+
+<!-- end auto-generated rule header -->
 
 NPM issues warnings after install if the `package.json` has a missing or
 invalid required property. This rule uses [`package-json-validator`][pjv] to
@@ -42,10 +44,6 @@ Examples of **correct** code for this rule:
     "license": "ISC"
 }
 ```
-
-### Options
-
-This rule has no options.
 
 ## When Not To Use It
 

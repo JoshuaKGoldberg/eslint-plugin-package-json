@@ -52,10 +52,18 @@ module.exports = {
 
 ## Supported Rules
 
--   [`package-json/order-properties`](docs/rules/order-properties.md): Require top-level properties to be in a conventional order (`"name"`first, etc.).
--   [`package-json/sort-collections`](docs/rules/sort-collections.md): Keep sub-collections like `"dependencies"` and `"scripts"` in alphabetical order.
--   [`package-json/valid-package-def`](docs/rules/valid-package-def.md): Validate `package.json` files against the NPM specification.
--   [`package-json/valid-local-dependency`](docs/rules/valid-local-dependency.md): Validates the casing for `file:` and `link:` dependencies in the `package.json` files.
+<!-- begin auto-generated rules list -->
+
+🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).
+
+| Name                                                           | Description                                                                             | 🔧 |
+| :------------------------------------------------------------- | :-------------------------------------------------------------------------------------- | :- |
+| [order-properties](docs/rules/order-properties.md)             | Package properties must be declared in standard order                                   | 🔧 |
+| [sort-collections](docs/rules/sort-collections.md)             | Dependencies, scripts, and configuration values must be declared in alphabetical order. | 🔧 |
+| [valid-local-dependency](docs/rules/valid-local-dependency.md) | Checks existence of local dependencies in the package.json                              |    |
+| [valid-package-def](docs/rules/valid-package-def.md)           | Enforce that package.json has all properties required by NPM spec                       |    |
+
+<!-- end auto-generated rules list -->
 
 These rules only run on `package.json` files; they will ignore all other files being linted. They lint `package.json` files at project root, and in any subfolder of the project, making this plugin great for monorepos.
 

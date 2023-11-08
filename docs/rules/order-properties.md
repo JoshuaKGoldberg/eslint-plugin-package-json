@@ -1,4 +1,8 @@
-# Package properties must be declared in standard order (order-properties)
+# Package properties must be declared in standard order (`package-json/order-properties`)
+
+🔧 This rule is automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
+
+<!-- end auto-generated rule header -->
 
 A conventional order exists for `package.json` top-level properties. NPM does
 not enforce this order, but for consistency and readability, this rule can

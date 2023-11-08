@@ -21,8 +21,10 @@
     },
     "scripts": {
         "lint": "eslint",
+        "lint:eslint-docs": "npm run update:eslint-docs -- --check",
         "test": "vitest",
         "tsc": "tsc",
+        "update:eslint-docs": "eslint-doc-generator",
         "format": "prettier --ignore-path .gitignore --write \"**/*.{js,css,md}\""
     },
     "devDependencies": {
@@ -32,6 +34,7 @@
         "@types/package-json-validator": "^0.6.0",
         "console-fail-test": "^0.2.3",
         "eslint": "^8.49.0",
+        "eslint-doc-generator": "^1.5.4",
         "jsonc-eslint-parser": "^2.4.0",
         "prettier": "^1.18.2",
         "typescript": "^5.2.2",
