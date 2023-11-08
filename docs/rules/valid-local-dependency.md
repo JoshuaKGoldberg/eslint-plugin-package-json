@@ -1,4 +1,6 @@
-# Ensures that local dependencies specified in a package.json exist
+# Checks existence of local dependencies in the package.json (`package-json/valid-local-dependency`)
+
+<!-- end auto-generated rule header -->
 
 ## Rule Details
 
@@ -19,7 +21,3 @@ Examples of **correct** code for this rule:
             "some-package": "link:../folder",
     }
 ```
-
-### Options
-
-This rule has no options.

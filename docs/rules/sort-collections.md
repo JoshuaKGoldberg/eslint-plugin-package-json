@@ -1,4 +1,8 @@
-# Dependencies, scripts, and configuration values must be declared in alphabetical order. (sort-collections)
+# Dependencies, scripts, and configuration values must be declared in alphabetical order (`package-json/sort-collections`)
+
+🔧 This rule is automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
+
+<!-- end auto-generated rule header -->
 
 Whenever NPM changes package dependencies through `npm install`, it lexically sorts (that is, alphabetizes by package name) all dependencies in `package.json`. Nevertheless, sometimes a developer will manually update `package.json` and leave dependencies out of order, leading to "noise" in changesets when a later change re-sorts the packages. This rule aims to keep the dependency collections sorted in every commit.
 
