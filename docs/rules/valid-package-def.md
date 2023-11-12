@@ -15,16 +15,16 @@ Examples of **incorrect** code for this rule:
 
 ```json
 {
-    "name": "noncompliant-version",
-    "version": "1.X.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
+	"author": "",
+	"description": "",
+	"keywords": [],
+	"license": "ISC",
+	"main": "index.js",
+	"name": "noncompliant-version",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"version": "1.X.0"
 }
 ```
 
@@ -32,16 +32,16 @@ Examples of **correct** code for this rule:
 
 ```json
 {
-    "name": "compliant-version",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
+	"author": "",
+	"description": "",
+	"keywords": [],
+	"license": "ISC",
+	"main": "index.js",
+	"name": "compliant-version",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"version": "1.0.0"
 }
 ```
 

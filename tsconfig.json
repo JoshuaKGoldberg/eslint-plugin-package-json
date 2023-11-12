@@ -1,13 +1,17 @@
 {
-    "compilerOptions": {
-        "declaration": true,
-        "declarationMap": true,
-        "esModuleInterop": true,
-        "module": "CommonJS",
-        "moduleResolution": "Node10",
-        "strict": true,
-        "target": "ES2021",
-        "outDir": "lib"
-    },
-    "include": ["src"]
+	"compilerOptions": {
+		"declaration": true,
+		"declarationMap": true,
+		"esModuleInterop": true,
+		"module": "CommonJS",
+		"moduleResolution": "Node10",
+		"noEmit": true,
+		"outDir": "lib",
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
+		"target": "ES2021"
+	},
+	"include": ["src"]
 }

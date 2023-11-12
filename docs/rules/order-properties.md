@@ -7,7 +7,7 @@
 A conventional order exists for `package.json` top-level properties. NPM does
 not enforce this order, but for consistency and readability, this rule can
 enforce it. It is especially useful in monorepos, where many `package.json`
-iles may exist.
+files may exist.
 
 ## Rule Details
 
@@ -17,8 +17,8 @@ Examples of **incorrect** code for this rule:
 
 ```json
 {
-    "version": "1.0.0",
-    "name": "my-package"
+	"name": "my-package",
+	"version": "1.0.0"
 }
 ```
 
@@ -28,8 +28,8 @@ Examples of **correct** code for this rule:
 
 ```json
 {
-    "name": "my-package",
-    "version": "1.0.0"
+	"name": "my-package",
+	"version": "1.0.0"
 }
 ```
 
@@ -60,33 +60,33 @@ Default: `legacy`
 
 ```json
 [
-    "name",
-    "version",
-    "private",
-    "publishConfig",
-    "description",
-    "main",
-    "browser",
-    "files",
-    "bin",
-    "directories",
-    "man",
-    "scripts",
-    "repository",
-    "keywords",
-    "author",
-    "license",
-    "bugs",
-    "homepage",
-    "config",
-    "dependencies",
-    "devDependencies",
-    "peerDependencies",
-    "optionalDependencies",
-    "bundledDependencies",
-    "engines",
-    "os",
-    "cpu"
+	"name",
+	"version",
+	"private",
+	"publishConfig",
+	"description",
+	"main",
+	"browser",
+	"files",
+	"bin",
+	"directories",
+	"man",
+	"scripts",
+	"repository",
+	"keywords",
+	"author",
+	"license",
+	"bugs",
+	"homepage",
+	"config",
+	"dependencies",
+	"devDependencies",
+	"peerDependencies",
+	"optionalDependencies",
+	"bundledDependencies",
+	"engines",
+	"os",
+	"cpu"
 ]
 ```
 
