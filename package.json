@@ -15,7 +15,17 @@
 		"name": "James Zetlan",
 		"email": "zetlan@gmail.com"
 	},
-	"type": "module",
+	"type": "commonjs",
+	"exports": {
+		".": {
+			"types": {
+				"import": "./lib/index.d.mts",
+				"require": "./lib/index.d.ts"
+			},
+			"import": "./lib/index.mjs",
+			"require": "./lib/index.js"
+		}
+	},
 	"main": "./lib/index.js",
 	"files": [
 		"lib/",
@@ -27,6 +37,7 @@
 		"build": "tsup",
 		"format": "prettier \"**/*\" --ignore-unknown",
 		"lint": "eslint . .*js --max-warnings 0 --report-unused-disable-directives",
+		"lint:eslint-docs": "npm run update:eslint-docs -- --check",
 		"lint:knip": "knip",
 		"lint:md": "markdownlint \"**/*.md\" \".github/**/*.md\" --rules sentences-per-line",
 		"lint:package-json": "npmPkgJsonLint .",
@@ -35,7 +46,8 @@
 		"prepare": "husky install",
 		"should-semantic-release": "should-semantic-release --verbose",
 		"test": "vitest",
-		"tsc": "tsc"
+		"tsc": "tsc",
+		"update:eslint-docs": "eslint-doc-generator"
 	},
 	"lint-staged": {
 		"*": "prettier --ignore-unknown --write"

@@ -4,10 +4,9 @@
 
 <!-- end auto-generated rule header -->
 
-A conventional order exists for `package.json` top-level properties. NPM does
-not enforce this order, but for consistency and readability, this rule can
-enforce it. It is especially useful in monorepos, where many `package.json`
-files may exist.
+A conventional order exists for `package.json` top-level properties.
+npm does not enforce this order, but for consistency and readability, this rule can enforce it.
+It is especially useful in monorepos, where many `package.json` files may exist.
 
 ## Rule Details
 
@@ -43,12 +42,14 @@ Examples of **correct** code for this rule:
 
 #### Order
 
-The `order` property specifies the sorting order of package properties. Pass in:
+The `order` property specifies the sorting order of package properties.
+Pass in:
 
 -   `"legacy"` - to order properties specified by [npm documentation](https://docs.npmjs.com/cli/v10/configuring-npm/package-json).
 -   `"sort-package-json"` - to order properties by the default order specified in [sort-package-json](https://github.com/keithamus/sort-package-json).
 -   `Array<string>` - to specify an array of top-level package properties to lint sorting on only those
-    properties. All properties not in this collection will be sorted by "sort-package-json" specifications.
+    properties.
+    All properties not in this collection will be sorted by "sort-package-json" specifications.
 
 ```tsx
 interface {
@@ -90,6 +91,5 @@ Default: `legacy`
 ]
 ```
 
-This rule is **autofixable**; run `eslint` with the `--fix` option to sort
-top-level properties in place. Any properties not present in the array of
-ordered properties will be left in their original positions.
+This rule is **autofixable**; run `eslint` with the `--fix` option to sort top-level properties in place.
+Any properties not present in the array of ordered properties will be left in their original positions.
