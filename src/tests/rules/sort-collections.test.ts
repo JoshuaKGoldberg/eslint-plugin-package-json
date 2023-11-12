@@ -8,7 +8,6 @@ import { ruleTester } from "./ruleTester.js";
 ruleTester.run("sort-collections", rule, {
 	invalid: [
 		{
-			only: true,
 			code: `{
 	"scripts": {
 		"watch": "webpack-dev-server",

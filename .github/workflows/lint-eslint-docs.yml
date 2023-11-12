@@ -1,10 +1,10 @@
 jobs:
-  tsc:
+  lint_eslint_docs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/prepare
-      - run: npm run tsc
+      - run: npm run build
       - run: npm run lint:eslint-docs
 
 name: Lint ESLint Docs

@@ -29,7 +29,7 @@
 You'll first need to install [ESLint](http://eslint.org) >=8 and `eslint-plugin-package-json`:
 
 ```shell
-$ npm install eslint eslint-plugin-package-json jsonc-eslint-parser --save-dev
+npm install eslint eslint-plugin-package-json jsonc-eslint-parser --save-dev
 ```
 
 **Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-package-json` globally.
