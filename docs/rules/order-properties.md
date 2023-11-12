@@ -34,10 +34,15 @@ Examples of **correct** code for this rule:
 
 ### Options
 
-```js
-"package-json/order-properties": ["error", {
-    order: "sort-package-json"
-}]
+```json
+{
+	"package-json/order-properties": [
+		"error",
+		{
+			"order": "sort-package-json"
+		}
+	]
+}
 ```
 
 #### Order
@@ -53,7 +58,7 @@ Pass in:
 
 ```tsx
 interface {
-    order?: "legacy" | "sort-package-json" | Array<string>
+	order?: "legacy" | "sort-package-json" | Array<string>
 }
 ```
 

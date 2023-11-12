@@ -26,19 +26,23 @@ export interface PackageJsonSourceCode extends SourceCode {
 	ast: PackageJsonAst;
 }
 
-export interface PackageJsonRuleContext extends Rule.RuleContext {
+export interface PackageJsonRuleContext<Options extends unknown[] = unknown[]>
+	extends Rule.RuleContext {
+	options: Options;
 	sourceCode: PackageJsonSourceCode;
 }
 
-export interface PackageJsonRuleModule {
-	create(context: PackageJsonRuleContext): RuleListener;
+export interface PackageJsonRuleModule<Options extends unknown[] = unknown[]> {
+	create(context: PackageJsonRuleContext<Options>): RuleListener;
 	meta: Rule.RuleMetaData;
 }
 
-export function createRule(rule: PackageJsonRuleModule) {
+export function createRule<Options extends unknown[]>(
+	rule: PackageJsonRuleModule<Options>,
+) {
 	return {
 		...rule,
-		create(context: PackageJsonRuleContext) {
+		create(context: PackageJsonRuleContext<Options>) {
 			if (!isPackageJson(context.filename)) {
 				return {};
 			}

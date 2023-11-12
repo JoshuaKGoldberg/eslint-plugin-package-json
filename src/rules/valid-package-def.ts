@@ -23,14 +23,14 @@ export default createRule({
 					context.sourceCode.text,
 				) as PackageValidator.ValidationSuccessResult;
 
-				validation.errors?.filter(isUsableError).forEach(
-					(message) =>
-						message &&
+				validation.errors?.filter(isUsableError).forEach((message) => {
+					if (message) {
 						context.report({
 							message,
 							node: context.sourceCode.ast,
-						}),
-				);
+						});
+					}
+				});
 			},
 		};
 	},

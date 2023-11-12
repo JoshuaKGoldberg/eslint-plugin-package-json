@@ -72,10 +72,15 @@ Pass an array of top-level package properties to lint sorting on those collectio
 
 Example:
 
-```js
-"package-json/sort-collections": ["error", [
-    "devDependencies" // Only sort devDependencies
-]]
+```jsonc
+{
+	"package-json/sort-collections": [
+		"error",
+		[
+			"devDependencies" // Only sort devDependencies
+		]
+	]
+}
 ```
 
 Defaults:

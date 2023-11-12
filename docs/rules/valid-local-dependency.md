@@ -9,15 +9,19 @@ This rule validates the path for `file:` and `link:` dependencies in a `package.
 Examples of **incorrect** code for this rule (when `../folder` is the correct path):
 
 ```json
-    "devDependencies": {
-            "some-package": "link:../Folder",
-    }
+{
+	"devDependencies": {
+		"some-package": "link:../Folder"
+	}
+}
 ```
 
 Examples of **correct** code for this rule:
 
 ```json
-    "devDependencies": {
-            "some-package": "link:../folder",
-    }
+{
+	"devDependencies": {
+		"some-package": "link:../folder"
+	}
+}
 ```

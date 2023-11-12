@@ -11,7 +11,9 @@ const defaultCollections = [
 	"config",
 ];
 
-export default createRule({
+type Options = string[];
+
+export default createRule<Options>({
 	create(context) {
 		const toSort = context.options[0] || defaultCollections;
 		return {

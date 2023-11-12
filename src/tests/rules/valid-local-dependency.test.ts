@@ -1,6 +1,6 @@
 import path from "path";
 
-import rule from "../../rules/valid-local-dependency";
+import rule from "../../rules/valid-local-dependency.js";
 import { ruleTester } from "./ruleTester.js";
 
 const fileName = (partialPath: string) => {

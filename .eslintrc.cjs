@@ -36,6 +36,9 @@ module.exports = {
 				],
 				"operator-assignment": "error",
 
+				// These too-strict-by-default rules need to be configured
+				"n/no-missing-import": ["error", { allowModules: ["estree"] }],
+
 				// These on-by-default rules don't work well for this repo and we like them off.
 				"jsdoc/require-jsdoc": "off",
 				"jsdoc/require-param": "off",

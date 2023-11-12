@@ -12,7 +12,7 @@ export default createRule({
 			"Program:exit"() {
 				const original = JSON.parse(context.sourceCode.text) as Record<
 					string,
-					Record<string, string>
+					unknown
 				>;
 				const { dependencies, devDependencies, peerDependencies } =
 					original;
@@ -21,7 +21,7 @@ export default createRule({
 					Object.entries(dependencies || {}),
 					Object.entries(peerDependencies || {}),
 					Object.entries(devDependencies || {}),
-				];
+				] as [string, string][][];
 
 				depObjs.forEach((obj) => {
 					obj.forEach(([key, value]) => {
@@ -39,7 +39,7 @@ export default createRule({
 										node: context.sourceCode.ast,
 									});
 								}
-							} catch (e) {
+							} catch {
 								context.report({
 									message: `The package ${key} does not exist given the specified path: ${value}.`,
 									node: context.sourceCode.ast,

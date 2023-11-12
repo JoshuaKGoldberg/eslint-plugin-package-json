@@ -1,5 +1,5 @@
-import rule from "../../rules/order-properties";
-import { ruleTester } from "./ruleTester";
+import rule from "../../rules/order-properties.js";
+import { ruleTester } from "./ruleTester.js";
 
 ruleTester.run("order-properties", rule, {
 	invalid: [

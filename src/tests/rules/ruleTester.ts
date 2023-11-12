@@ -1,6 +1,6 @@
 import { RuleTester } from "eslint";
 
-import { PackageJsonRuleModule } from "../../createRule";
+import type { PackageJsonRuleModule } from "../../createRule.js";
 
 export type JsonRuleTester = RuleTester & {
 	run: (
