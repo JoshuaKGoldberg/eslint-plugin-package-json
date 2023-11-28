@@ -25,7 +25,9 @@
 		"quickstart",
 		"ruleset",
 		"tsup",
+		"vuejs",
 		"wontfix",
+		"yudai",
 		"zetlan",
 		"zetlen"
 	]

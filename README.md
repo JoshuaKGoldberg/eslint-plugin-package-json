@@ -75,12 +75,13 @@ module.exports = {
 
 🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).
 
-| Name                                                           | Description                                                                             | 🔧 |
-| :------------------------------------------------------------- | :-------------------------------------------------------------------------------------- | :- |
-| [order-properties](docs/rules/order-properties.md)             | Package properties must be declared in standard order                                   | 🔧 |
-| [sort-collections](docs/rules/sort-collections.md)             | Dependencies, scripts, and configuration values must be declared in alphabetical order. | 🔧 |
-| [valid-local-dependency](docs/rules/valid-local-dependency.md) | Checks existence of local dependencies in the package.json                              |    |
-| [valid-package-def](docs/rules/valid-package-def.md)           | Enforce that package.json has all properties required by NPM spec                       |    |
+| Name                                                                     | Description                                                                             | 🔧 |
+| :----------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- | :- |
+| [order-properties](docs/rules/order-properties.md)                       | Package properties must be declared in standard order                                   | 🔧 |
+| [prefer-repository-shorthand](docs/rules/prefer-repository-shorthand.md) | Enforce shorthand declaration for GitHub repository.                                    | 🔧 |
+| [sort-collections](docs/rules/sort-collections.md)                       | Dependencies, scripts, and configuration values must be declared in alphabetical order. | 🔧 |
+| [valid-local-dependency](docs/rules/valid-local-dependency.md)           | Checks existence of local dependencies in the package.json                              |    |
+| [valid-package-def](docs/rules/valid-package-def.md)                     | Enforce that package.json has all properties required by NPM spec                       |    |
 
 <!-- end auto-generated rules list -->
 <!-- prettier-ignore-end -->
