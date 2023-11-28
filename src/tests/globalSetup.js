@@ -1,5 +1,5 @@
-import * as vitest from 'vitest';
-import { RuleTester } from 'eslint';
+import { RuleTester } from "eslint";
+import * as vitest from "vitest";
 
 RuleTester.afterAll = vitest.afterAll;
 RuleTester.describe = vitest.describe;

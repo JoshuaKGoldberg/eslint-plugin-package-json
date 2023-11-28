@@ -4,7 +4,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/prepare
-      - run: npm run test
+      - run: pnpm run test --coverage
+      - name: Codecov
+        uses: codecov/codecov-action@v3
 
 name: Test
 
