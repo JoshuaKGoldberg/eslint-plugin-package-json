@@ -60,20 +60,8 @@ export default createRule<Options>({
 
 				const { properties } = ast.body[0].expression;
 
-				// console.log({ orderedSource });
-
 				for (let i = 0; i < properties.length; i += 1) {
-					// console.log(
-					//     properties.map(p => p.value),
-					//     'vs',
-					//     orderedKeys
-					// );
 					if (properties[i].value !== orderedKeys[i]) {
-						// console.log(
-						//     'JOSH SAYS HI',
-						//     properties[i].value.value,
-						//     orderedKeys[i]
-						// );
 						context.report({
 							fix(fixer) {
 								return fixer.replaceText(
