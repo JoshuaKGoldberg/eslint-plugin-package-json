@@ -98,8 +98,8 @@ devDependencies:
     specifier: ^0.32.0
     version: 0.32.1
   markdownlint-cli:
-    specifier: ^0.37.0
-    version: 0.37.0
+    specifier: ^0.38.0
+    version: 0.38.0
   npm-package-json-lint:
     specifier: ^7.1.0
     version: 7.1.0(typescript@5.2.2)
@@ -809,7 +809,7 @@ packages:
       debug: 4.3.4
       espree: 9.6.1
       globals: 13.23.0
-      ignore: 5.2.4
+      ignore: 5.3.0
       import-fresh: 3.3.0
       js-yaml: 4.1.0
       minimatch: 3.1.2
@@ -1342,7 +1342,7 @@ packages:
     hasBin: true
     dependencies:
       commander: 4.1.1
-      ignore: 5.2.4
+      ignore: 5.3.0
       p-map: 4.0.0
     dev: true
 
@@ -1442,7 +1442,7 @@ packages:
       debug: 4.3.4
       eslint: 8.53.0
       graphemer: 1.4.0
-      ignore: 5.2.4
+      ignore: 5.3.0
       natural-compare: 1.4.0
       semver: 7.5.4
       ts-api-utils: 1.0.3(typescript@5.2.2)
@@ -2290,11 +2290,6 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
-  /commander@11.0.0:
-    resolution: {integrity: sha512-9HMlXtt/BNoYr8ooyjjNRdIilOTkVJXB+GhxMTtOKwk0R4j4lS4NpjuqmRxroBfnfTSHQIHQB7wryHhXarNjmQ==}
-    engines: {node: '>=16'}
-    dev: true
-
   /commander@11.1.0:
     resolution: {integrity: sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ==}
     engines: {node: '>=16'}
@@ -3115,7 +3110,7 @@ packages:
     dependencies:
       escape-string-regexp: 1.0.5
       eslint: 8.53.0
-      ignore: 5.2.4
+      ignore: 5.3.0
     dev: true
 
   /eslint-plugin-jsdoc@46.9.0(eslint@8.53.0):
@@ -3174,7 +3169,7 @@ packages:
       eslint: 8.53.0
       eslint-plugin-es-x: 7.3.0(eslint@8.53.0)
       get-tsconfig: 4.7.2
-      ignore: 5.2.4
+      ignore: 5.3.0
       is-builtin-module: 3.2.1
       is-core-module: 2.13.1
       minimatch: 3.1.2
@@ -3319,7 +3314,7 @@ packages:
       glob-parent: 6.0.2
       globals: 13.23.0
       graphemer: 1.4.0
-      ignore: 5.2.4
+      ignore: 5.3.0
       imurmurhash: 0.1.4
       is-glob: 4.0.3
       is-path-inside: 3.0.3
@@ -3823,7 +3818,7 @@ packages:
       dir-glob: 3.0.1
       fast-glob: 3.3.2
       glob: 7.2.3
-      ignore: 5.2.4
+      ignore: 5.3.0
       merge2: 1.4.1
       slash: 3.0.0
     dev: false
@@ -3835,7 +3830,7 @@ packages:
       array-union: 2.1.0
       dir-glob: 3.0.1
       fast-glob: 3.3.2
-      ignore: 5.2.4
+      ignore: 5.3.0
       merge2: 1.4.1
       slash: 3.0.0
     dev: true
@@ -3846,7 +3841,7 @@ packages:
     dependencies:
       dir-glob: 3.0.1
       fast-glob: 3.3.2
-      ignore: 5.2.4
+      ignore: 5.3.0
       merge2: 1.4.1
       slash: 4.0.0
     dev: true
@@ -3857,7 +3852,7 @@ packages:
     dependencies:
       '@sindresorhus/merge-streams': 1.0.0
       fast-glob: 3.3.2
-      ignore: 5.2.4
+      ignore: 5.3.0
       path-type: 5.0.0
       slash: 5.1.0
       unicorn-magic: 0.1.0
@@ -4076,8 +4071,8 @@ packages:
     resolution: {integrity: sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==}
     dev: true
 
-  /ignore@5.2.4:
-    resolution: {integrity: sha512-MAb38BcSbH0eHNBxn7ql2NH/kX33OkB3lZ1BNdh7ENeRChHTYsTvWrMubiIAMNS2llXEEgZ1MUOBtXChP3kaFQ==}
+  /ignore@5.3.0:
+    resolution: {integrity: sha512-g7dmpshy+gD7mh88OC9NwSGTKoc3kyLAZQRU1mt53Aw/vnvfXnbC+F/7F7QoYVKbV+KNvJx8wArewKy1vXMtlg==}
     engines: {node: '>= 4'}
 
   /import-fresh@3.3.0:
@@ -4989,17 +4984,6 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /markdown-it@13.0.1:
-    resolution: {integrity: sha512-lTlxriVoy2criHP0JKRhO2VDG9c2ypWCsT237eDiLqi09rmbKoUetyGHq2uOIRoRS//kfoJckS0eUzzkDR+k2Q==}
-    hasBin: true
-    dependencies:
-      argparse: 2.0.1
-      entities: 3.0.1
-      linkify-it: 4.0.1
-      mdurl: 1.0.1
-      uc.micro: 1.0.6
-    dev: true
-
   /markdown-it@13.0.2:
     resolution: {integrity: sha512-FtwnEuuK+2yVU7goGn/MJ0WBZMM9ZPgU9spqlFs7/A/pDIUNSOQZhUgOqYCficIuR2QaFnrt8LHqBWsbTAoI5w==}
     hasBin: true
@@ -5015,18 +4999,18 @@ packages:
     resolution: {integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==}
     dev: true
 
-  /markdownlint-cli@0.37.0:
-    resolution: {integrity: sha512-hNKAc0bWBBuVhJbSWbUhRzavstiB4o1jh3JeSpwC4/dt6eJ54lRfYHRxVdzVp4qGWBKbeE6Pg490PFEfrKjqSg==}
-    engines: {node: '>=16'}
+  /markdownlint-cli@0.38.0:
+    resolution: {integrity: sha512-qkZRKJ4LVq6CJIkRIuJsEHvhWhm+FP0E7yhHvOMrrgdykgFWNYD4wuhZTjvigbJLTKPooP79yPiUDDZBCBI5JA==}
+    engines: {node: '>=18'}
     hasBin: true
     dependencies:
-      commander: 11.0.0
+      commander: 11.1.0
       get-stdin: 9.0.0
       glob: 10.3.10
-      ignore: 5.2.4
+      ignore: 5.3.0
       js-yaml: 4.1.0
       jsonc-parser: 3.2.0
-      markdownlint: 0.31.1
+      markdownlint: 0.32.1
       minimatch: 9.0.3
       run-con: 1.3.2
     dev: true
@@ -5034,14 +5018,6 @@ packages:
   /markdownlint-micromark@0.1.7:
     resolution: {integrity: sha512-BbRPTC72fl5vlSKv37v/xIENSRDYL/7X/XoFzZ740FGEbs9vZerLrIkFRY0rv7slQKxDczToYuMmqQFN61fi4Q==}
     engines: {node: '>=16'}
-    dev: true
-
-  /markdownlint@0.31.1:
-    resolution: {integrity: sha512-CKMR2hgcIBrYlIUccDCOvi966PZ0kJExDrUi1R+oF9PvqQmCrTqjOsgIvf2403OmJ+CWomuzDoylr6KbuMyvHA==}
-    engines: {node: '>=16'}
-    dependencies:
-      markdown-it: 13.0.1
-      markdownlint-micromark: 0.1.7
     dev: true
 
   /markdownlint@0.32.1:
@@ -5374,7 +5350,7 @@ packages:
       cosmiconfig: 8.3.6(typescript@5.2.2)
       debug: 4.3.4
       globby: 11.1.0
-      ignore: 5.2.4
+      ignore: 5.3.0
       is-plain-obj: 3.0.0
       jsonc-parser: 3.2.0
       log-symbols: 4.1.0
