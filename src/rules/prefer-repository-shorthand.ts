@@ -45,8 +45,7 @@ export default createRule({
 						);
 						if (
 							!directoryProperty &&
-							typeProperty &&
-							typeProperty.value.type === "JSONLiteral" &&
+							typeProperty?.value.type === "JSONLiteral" &&
 							typeProperty.value.value === "git" &&
 							urlProperty &&
 							urlProperty.value.type === "JSONLiteral" &&
