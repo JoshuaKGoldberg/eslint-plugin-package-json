@@ -14,7 +14,7 @@ Examples of **incorrect** code for this rule:
 {
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/vuejs/core"
+		"url": "https://github.com/JoshuaKGoldberg/create-typescript-app"
 	}
 }
 ```
@@ -23,6 +23,6 @@ Examples of **correct** code for this rule:
 
 ```json
 {
-	"repository": "vuejs/core"
+	"repository": "JoshuaKGoldberg/create-typescript-app"
 }
 ```

@@ -26,7 +26,7 @@ ruleTester.run("prefer-repository-shorthand", rule, {
 			code: `{
 	"repository": {
 	  "type": "git",
-	  "url": "git+https://github.com/vuejs/core.git"
+	  "url": "git+https://github.com/JoshuaKGoldberg/create-typescript-app.git"
 	}
 }`,
 			errors: [
@@ -38,14 +38,14 @@ ruleTester.run("prefer-repository-shorthand", rule, {
 			],
 			filename: "package.json",
 			output: `{
-	"repository": "vuejs/core"
+	"repository": "JoshuaKGoldberg/create-typescript-app"
 }`,
 		},
 		{
 			code: `{
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com/yudai-nkt/eslint-plugin-uvu.git"
+		"url": "git+ssh://git@github.com/JoshuaKGoldberg/create-typescript-app.git"
 	}
 }`,
 			errors: [
@@ -57,7 +57,7 @@ ruleTester.run("prefer-repository-shorthand", rule, {
 			],
 			filename: "package.json",
 			output: `{
-	"repository": "yudai-nkt/eslint-plugin-uvu"
+	"repository": "JoshuaKGoldberg/create-typescript-app"
 }`,
 		},
 		{
