@@ -1,5 +1,5 @@
 import type ESTree from "estree";
-import type { JSONLiteral } from "jsonc-eslint-parser/lib/parser/ast.js";
+import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { createRule } from "../createRule.js";
 
@@ -60,7 +60,7 @@ export default createRule({
 										JSON.stringify(
 											cleanGitHubUrl(
 												(
-													urlProperty.value as JSONLiteral
+													urlProperty.value as JsonAST.JSONLiteral
 												).value as string,
 											),
 										),
