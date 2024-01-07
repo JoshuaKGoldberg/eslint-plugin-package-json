@@ -3,28 +3,22 @@ import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { createRule } from "../createRule.js";
 
-const isGitHubUrl = (url: string) =>
-	/^(?:git\+)?(?:ssh:\/\/git@|http?s:\/\/)?(?:www\.)?github\.com\/.*\/.*/.test(
-		url,
-	);
+const githubUrlRegex =
+	/^(?:git\+)?(?:ssh:\/\/git@|http?s:\/\/)?(?:www\.)?github\.com\//;
+
+const isGitHubUrl = (url: string) => githubUrlRegex.test(url);
 
 const cleanGitHubUrl = (url: string) =>
-	url
-		.replace(
-			/^(?:git\+)?(?:ssh:\/\/git@|http?s:\/\/)?(?:www\.)?github\.com\//,
-			"",
-		)
-		.replace(/\.git$/, "");
+	url.replace(githubUrlRegex, "").replace(/\.git$/, "");
 
 export default createRule({
 	create(context) {
 		return {
 			JSONProperty: (node) => {
-				const message =
-					"Use shorthand repository URL for GitHub repository";
 				if (
 					node.key.type === "JSONLiteral" &&
-					node.key.value === "repository"
+					node.key.value === "repository" &&
+					node.parent.parent.parent.type === "Program"
 				) {
 					if (node.value.type === "JSONObjectExpression") {
 						const { properties } = node.value;
@@ -65,7 +59,7 @@ export default createRule({
 										),
 									);
 								},
-								message,
+								messageId: "useShorthand",
 								node: node.value as unknown as ESTree.Node,
 							});
 						}
@@ -81,7 +75,7 @@ export default createRule({
 										JSON.stringify(cleanGitHubUrl(value)),
 									);
 								},
-								message,
+								messageId: "useShorthand",
 								node: node.value as unknown as ESTree.Node,
 							});
 						}
@@ -98,5 +92,8 @@ export default createRule({
 			recommended: true,
 		},
 		fixable: "code",
+		messages: {
+			useShorthand: "Use shorthand repository URL for GitHub repository",
+		},
 	},
 });
