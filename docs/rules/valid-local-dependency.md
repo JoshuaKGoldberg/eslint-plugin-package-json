@@ -1,5 +1,7 @@
 # Checks existence of local dependencies in the package.json (`package-json/valid-local-dependency`)
 
+💼 This rule is enabled in the ✅ `recommended` config.
+
 <!-- end auto-generated rule header -->
 
 ## Rule Details
