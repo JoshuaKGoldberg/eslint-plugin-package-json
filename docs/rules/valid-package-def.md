@@ -1,13 +1,11 @@
-# Enforce that package.json has all properties required by NPM spec (`package-json/valid-package-def`)
+# Enforce that package.json has all properties required by the npm spec (`package-json/valid-package-def`)
 
 💼 This rule is enabled in the ✅ `recommended` config.
 
 <!-- end auto-generated rule header -->
 
-NPM issues warnings after install if the `package.json` has a missing or
-invalid required property. This rule uses [`package-json-validator`][pjv] to
-validate all `package.json` files against the [NPM specification][npm-spec],
-and add any violations to lint warnings.
+npm issues warnings after install if the `package.json` has a missing or invalid required property.
+This rule uses [`package-json-validator`][pjv] to validate all `package.json` files against the [npm specification][npm-spec], and add any violations to lint warnings.
 
 ## Rule Details
 
@@ -49,9 +47,8 @@ Examples of **correct** code for this rule:
 
 ## When Not To Use It
 
-NPM may complain, but it works perfectly with many package files that do not
-violate spec. Use this rule only to keep `package.json` files conforming to a
-strict ruleset.
+npm may complain, but it works perfectly with many package files that do not violate spec.
+If you don't mind those complaints then you can disable this rule.
 
 [pjv]: https://github.com/gorillamania/package.json-validator
 [npm-spec]: https://docs.npmjs.com/files/package.json

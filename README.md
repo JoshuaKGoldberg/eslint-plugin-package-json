@@ -10,15 +10,9 @@
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- prettier-ignore-end -->
 </a>
-	<a href="https://codecov.io/gh/JoshuaKGoldberg/eslint-plugin-package-json" target="_blank">
-		<img alt="Codecov Test Coverage" src="https://codecov.io/gh/JoshuaKGoldberg/eslint-plugin-package-json/branch/main/graph/badge.svg"/>
-	</a>
-	<a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/blob/main/.github/CODE_OF_CONDUCT.md" target="_blank">
-		<img alt="Contributor Covenant" src="https://img.shields.io/badge/code_of_conduct-enforced-21bb42" />
-	</a>
-	<a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/blob/main/LICENSE.md" target="_blank">
-		<img alt="License: MIT" src="https://img.shields.io/github/license/JoshuaKGoldberg/eslint-plugin-package-json?color=21bb42">
-	</a>
+	<a href="https://codecov.io/gh/JoshuaKGoldberg/eslint-plugin-package-json" target="_blank"><img alt="Codecov Test Coverage" src="https://codecov.io/gh/JoshuaKGoldberg/eslint-plugin-package-json/branch/main/graph/badge.svg"/></a>
+	<a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/blob/main/.github/CODE_OF_CONDUCT.md" target="_blank"><img alt="Contributor Covenant" src="https://img.shields.io/badge/code_of_conduct-enforced-21bb42" /></a>
+	<a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/blob/main/LICENSE.md" target="_blank"><img alt="License: MIT" src="https://img.shields.io/github/license/JoshuaKGoldberg/eslint-plugin-package-json?color=21bb42"></a>
 	<img alt="Style: Prettier" src="https://img.shields.io/badge/style-prettier-21bb42.svg" />
 	<img alt="TypeScript: Strict" src="https://img.shields.io/badge/typescript-strict-21bb42.svg" />
 	<img alt="npm package version" src="https://img.shields.io/npm/v/eslint-plugin-package-json?color=21bb42" />
@@ -26,17 +20,15 @@
 
 ## Installation
 
-You'll first need to install [ESLint](http://eslint.org) >=8 and `eslint-plugin-package-json`:
+This package requires [ESLint](http://eslint.org) 8 and [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser):
 
 ```shell
 npm install eslint eslint-plugin-package-json jsonc-eslint-parser --save-dev
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-package-json` globally.
-
 ## Usage
 
-Add an override to your ESLint configuration file that specifies this plugin, [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser) and its recommended rules for your `package.json` file:
+Add an override to your ESLint configuration file that specifies this plugin, [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser), and its recommended rules for your `package.json` file:
 
 ```js
 module.exports = {
@@ -51,12 +43,14 @@ module.exports = {
 };
 ```
 
-Or, individually configure the rules you want to use under the rules section.
+You may also want to individually configure rules.
+See [ESLint's _Configure Rules_ guide](https://eslint.org/docs/latest/use/configure/rules) for details on how to customize your rules.
 
 ```js
 module.exports = {
 	overrides: [
 		{
+			extends: ["plugin:package-json/recommended"],
 			files: ["package.json"],
 			parser: "jsonc-eslint-parser",
 			plugins: ["package-json"],
@@ -83,7 +77,7 @@ module.exports = {
 | [prefer-repository-shorthand](docs/rules/prefer-repository-shorthand.md) | Enforce shorthand declaration for GitHub repository.                                    | ✅  | 🔧 |
 | [sort-collections](docs/rules/sort-collections.md)                       | Dependencies, scripts, and configuration values must be declared in alphabetical order. | ✅  | 🔧 |
 | [valid-local-dependency](docs/rules/valid-local-dependency.md)           | Checks existence of local dependencies in the package.json                              | ✅  |    |
-| [valid-package-def](docs/rules/valid-package-def.md)                     | Enforce that package.json has all properties required by NPM spec                       | ✅  |    |
+| [valid-package-def](docs/rules/valid-package-def.md)                     | Enforce that package.json has all properties required by the npm spec                   | ✅  |    |
 
 <!-- end auto-generated rules list -->
 <!-- prettier-ignore-end -->

@@ -8,7 +8,8 @@
 
 A conventional order exists for `package.json` top-level properties.
 npm does not enforce this order, but for consistency and readability, this rule can enforce it.
-It is especially useful in monorepos, where many `package.json` files may exist.
+
+> 💡 This rule is especially useful in monorepos with many `package.json` files that would ideally be consistently ordered.
 
 ## Rule Details
 
@@ -16,12 +17,16 @@ This rule detects when properties in `package.json` are out of order.
 
 Examples of **incorrect** code for this rule:
 
+<!-- eslint-disable jsonc/sort-keys -->
+
 ```json
 {
-	"name": "my-package",
-	"version": "1.0.0"
+	"version": "1.0.0",
+	"name": "my-package"
 }
 ```
+
+<!-- eslint-enable jsonc/sort-keys -->
 
 This is an error because "version" should come after "name".
 

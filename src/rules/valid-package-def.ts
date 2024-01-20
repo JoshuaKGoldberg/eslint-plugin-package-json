@@ -4,7 +4,7 @@ import { PJV as PackageValidator } from "package-json-validator";
 import { createRule } from "../createRule.js";
 
 // package-json-validator does not correctly recognize shorthand for repositories and alternate dependency statements, so we discard those values.
-// it also enforces a stricter code for NPM than is really appropriate,
+// it also enforces a stricter code for npm than is really appropriate,
 // so we disable some other errors here.
 const unusedErrorPatterns = [
 	/^Url not valid/i,
@@ -39,7 +39,7 @@ export default createRule({
 		docs: {
 			category: "Best Practices",
 			description:
-				"Enforce that package.json has all properties required by NPM spec",
+				"Enforce that package.json has all properties required by the npm spec",
 			recommended: true,
 		},
 	},
