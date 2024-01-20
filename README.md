@@ -82,6 +82,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [order-properties](docs/rules/order-properties.md)                       | Package properties must be declared in standard order                                           | ✅  | 🔧 |    |
 | [prefer-repository-shorthand](docs/rules/prefer-repository-shorthand.md) | Enforce shorthand declaration for GitHub repository.                                            | ✅  | 🔧 |    |
 | [sort-collections](docs/rules/sort-collections.md)                       | Dependencies, scripts, and configuration values must be declared in alphabetical order.         | ✅  | 🔧 |    |
+| [unique-dependencies](docs/rules/unique-dependencies.md)                 | Enforce that if repository directory is specified, it matches the path to the package.json file | ✅  |    | 💡 |
 | [valid-local-dependency](docs/rules/valid-local-dependency.md)           | Checks existence of local dependencies in the package.json                                      | ✅  |    |    |
 | [valid-package-def](docs/rules/valid-package-def.md)                     | Enforce that package.json has all properties required by the npm spec                           | ✅  |    |    |
 | [valid-repository-directory](docs/rules/valid-repository-directory.md)   | Enforce that if repository directory is specified, it matches the path to the package.json file | ✅  |    | 💡 |
