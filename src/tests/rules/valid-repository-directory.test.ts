@@ -95,21 +95,26 @@ ruleTester.run("valid-repository-directory", rule, {
 		`{ "repository": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json" }`,
 		`{ "repository": { "directory": null } }`,
 		`{ "repository": { "directory": {} } }`,
-		`{ "repository": { "directory": 123 } }`,
+		`{
+	"repository": {
+		"directory": 123
+	}
+}
+`,
 		{
 			code: `{
-"repository": {
-	"directory": "nested"
-}
+	"repository": {
+		"directory": "nested"
+	}
 }
 `,
 			filename: "nested/package.json",
 		},
 		{
 			code: `{
-"repository": {
-	"directory": "deeply/nested"
-}
+	"repository": {
+		"directory": "deeply/nested"
+	}
 }
 `,
 			filename: "deeply/nested/package.json",
