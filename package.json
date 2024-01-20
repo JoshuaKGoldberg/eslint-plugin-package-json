@@ -51,7 +51,8 @@
 	},
 	"dependencies": {
 		"package-json-validator": "^0.6.3",
-		"sort-package-json": "^1.57.0"
+		"sort-package-json": "^1.57.0",
+		"validate-npm-package-name": "^5.0.0"
 	},
 	"devDependencies": {
 		"@release-it/conventional-changelog": "^8.0.1",
@@ -59,6 +60,7 @@
 		"@types/estree": "^1.0.5",
 		"@types/node": "^20.11.5",
 		"@types/package-json-validator": "^0.6.1",
+		"@types/validate-npm-package-name": "^4.0.2",
 		"@typescript-eslint/eslint-plugin": "^6.19.0",
 		"@typescript-eslint/parser": "^6.19.0",
 		"@vitest/coverage-v8": "^1.2.1",
