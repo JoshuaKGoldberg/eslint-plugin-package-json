@@ -1,3 +1,9 @@
+## [0.8.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.8.0...v0.8.1) (2024-01-20)
+
+### Bug Fixes
+
+-   correct order-properties key checks ([#129](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/129)) ([a635c27](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/a635c279552beea4b0e5a611321d9f92083416e4)), closes [#127](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/127) [#128](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/128) [#127](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/127) [#128](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/128)
+
 # [0.8.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.7.0...v0.8.0) (2024-01-20)
 
 ### Features
