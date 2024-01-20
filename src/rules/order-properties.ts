@@ -54,7 +54,7 @@ export default createRule<Options>({
 						? undefined
 						: {
 								sortOrder: requiredOrder,
-						  },
+							},
 				);
 				const orderedKeys = Object.keys(orderedSource);
 

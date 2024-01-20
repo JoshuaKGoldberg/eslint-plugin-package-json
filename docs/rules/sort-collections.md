@@ -79,9 +79,9 @@ Example:
 	"package-json/sort-collections": [
 		"error",
 		[
-			"devDependencies" // Only sort devDependencies
-		]
-	]
+			"devDependencies", // Only sort devDependencies
+		],
+	],
 }
 ```
 
