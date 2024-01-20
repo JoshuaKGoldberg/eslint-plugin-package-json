@@ -94,6 +94,24 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "kristjanesperanto",
+      "name": "Kristjan ESPERANTO",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35647502?v=4",
+      "profile": "https://github.com/KristjanESPERANTO",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "ota-meshi",
+      "name": "Yosuke Ota",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16508807?v=4",
+      "profile": "https://ota-meshi.github.io/",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

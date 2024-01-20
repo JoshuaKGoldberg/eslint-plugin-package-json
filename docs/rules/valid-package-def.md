@@ -1,5 +1,7 @@
 # Enforce that package.json has all properties required by NPM spec (`package-json/valid-package-def`)
 
+💼 This rule is enabled in the ✅ `recommended` config.
+
 <!-- end auto-generated rule header -->
 
 NPM issues warnings after install if the `package.json` has a missing or
