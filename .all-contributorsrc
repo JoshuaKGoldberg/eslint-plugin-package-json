@@ -23,7 +23,8 @@
         "code",
         "infra",
         "doc",
-        "maintenance"
+        "maintenance",
+        "ideas"
       ]
     },
     {
@@ -93,6 +94,42 @@
       "profile": "http://technotes.khitrenovich.com/",
       "contributions": [
         "ideas"
+      ]
+    },
+    {
+      "login": "andreaslindbergpaf",
+      "name": "Andreas Lindberg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59874563?v=4",
+      "profile": "https://github.com/AndreasLindbergPAF",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "azat-io",
+      "name": "Azat S.",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5698350?v=4",
+      "profile": "https://azat.io",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "kristjanesperanto",
+      "name": "Kristjan ESPERANTO",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35647502?v=4",
+      "profile": "https://github.com/KristjanESPERANTO",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "ota-meshi",
+      "name": "Yosuke Ota",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16508807?v=4",
+      "profile": "https://ota-meshi.github.io/",
+      "contributions": [
+        "bug"
       ]
     }
   ],
