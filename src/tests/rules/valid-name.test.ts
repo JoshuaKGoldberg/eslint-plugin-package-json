@@ -90,6 +90,7 @@ ruleTester.run("valid-name", rule, {
 	],
 	valid: [
 		"{}",
-		//
+		`{ "name": "valid-package-name" }`,
+		`{ "name": "@scoped/valid-package-name" }`,
 	],
 });
