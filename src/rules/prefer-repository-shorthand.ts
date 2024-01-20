@@ -1,7 +1,7 @@
 import type ESTree from "estree";
-import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { createRule } from "../createRule.js";
+import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.js";
 
 const githubUrlRegex =
 	/^(?:git\+)?(?:ssh:\/\/git@|http?s:\/\/)?(?:www\.)?github\.com\//;
@@ -10,22 +10,6 @@ const isGitHubUrl = (url: string) => githubUrlRegex.test(url);
 
 const cleanGitHubUrl = (url: string) =>
 	url.replace(githubUrlRegex, "").replace(/\.git$/, "");
-
-type JSONPropertyWithKeyAndValue<Value extends string> =
-	JsonAST.JSONProperty & {
-		key: JsonAST.JSONStringLiteral;
-		value: Value;
-	};
-
-function findJSONLiteralWithValue<Value extends string>(
-	properties: JsonAST.JSONProperty[],
-	value: Value,
-) {
-	return properties.find(
-		(property): property is JSONPropertyWithKeyAndValue<Value> =>
-			property.key.type === "JSONLiteral" && property.key.value === value,
-	);
-}
 
 export default createRule({
 	create(context) {
@@ -42,11 +26,11 @@ export default createRule({
 				if (node.value.type === "JSONObjectExpression") {
 					const { properties } = node.value;
 
-					if (findJSONLiteralWithValue(properties, "directory")) {
+					if (findPropertyWithKeyValue(properties, "directory")) {
 						return;
 					}
 
-					const typeProperty = findJSONLiteralWithValue(
+					const typeProperty = findPropertyWithKeyValue(
 						properties,
 						"type",
 					);
@@ -57,7 +41,7 @@ export default createRule({
 						return;
 					}
 
-					const urlProperty = findJSONLiteralWithValue(
+					const urlProperty = findPropertyWithKeyValue(
 						properties,
 						"url",
 					);

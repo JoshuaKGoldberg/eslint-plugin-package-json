@@ -69,15 +69,17 @@ module.exports = {
 
 💼 Configurations enabled in.\
 ✅ Set in the `recommended` configuration.\
-🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).
+🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).\
+💡 Manually fixable by [editor suggestions](https://eslint.org/docs/developer-guide/working-with-rules#providing-suggestions).
 
-| Name                                                                     | Description                                                                             | 💼 | 🔧 |
-| :----------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- | :- | :- |
-| [order-properties](docs/rules/order-properties.md)                       | Package properties must be declared in standard order                                   | ✅  | 🔧 |
-| [prefer-repository-shorthand](docs/rules/prefer-repository-shorthand.md) | Enforce shorthand declaration for GitHub repository.                                    | ✅  | 🔧 |
-| [sort-collections](docs/rules/sort-collections.md)                       | Dependencies, scripts, and configuration values must be declared in alphabetical order. | ✅  | 🔧 |
-| [valid-local-dependency](docs/rules/valid-local-dependency.md)           | Checks existence of local dependencies in the package.json                              | ✅  |    |
-| [valid-package-def](docs/rules/valid-package-def.md)                     | Enforce that package.json has all properties required by the npm spec                   | ✅  |    |
+| Name                                                                     | Description                                                                                     | 💼 | 🔧 | 💡 |
+| :----------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------- | :- | :- | :- |
+| [order-properties](docs/rules/order-properties.md)                       | Package properties must be declared in standard order                                           | ✅  | 🔧 |    |
+| [prefer-repository-shorthand](docs/rules/prefer-repository-shorthand.md) | Enforce shorthand declaration for GitHub repository.                                            | ✅  | 🔧 |    |
+| [sort-collections](docs/rules/sort-collections.md)                       | Dependencies, scripts, and configuration values must be declared in alphabetical order.         | ✅  | 🔧 |    |
+| [valid-local-dependency](docs/rules/valid-local-dependency.md)           | Checks existence of local dependencies in the package.json                                      | ✅  |    |    |
+| [valid-package-def](docs/rules/valid-package-def.md)                     | Enforce that package.json has all properties required by the npm spec                           | ✅  |    |    |
+| [valid-repository-directory](docs/rules/valid-repository-directory.md)   | Enforce that if repository directory is specified, it matches the path to the package.json file | ✅  |    | 💡 |
 
 <!-- end auto-generated rules list -->
 <!-- prettier-ignore-end -->
