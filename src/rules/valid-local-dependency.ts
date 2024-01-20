@@ -2,10 +2,6 @@ import path from "path";
 
 import { createRule } from "../createRule.js";
 
-//------------------------------------------------------------------------------
-// Rule Definition
-//------------------------------------------------------------------------------
-
 export default createRule({
 	create(context) {
 		return {

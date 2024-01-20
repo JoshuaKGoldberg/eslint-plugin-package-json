@@ -1,4 +1,3 @@
-"use strict";
 import { PJV as PackageValidator } from "package-json-validator";
 
 import { createRule } from "../createRule.js";
