@@ -43,7 +43,11 @@ export default createRule<Options>({
 			"Program:exit"() {
 				const { ast, text } = context.sourceCode;
 
-				const options = context.options[0] ?? { order: "legacy" };
+				const options = {
+					order: "sort-package-json",
+					...context.options[0],
+				} satisfies Options[0];
+
 				const requiredOrder =
 					options.order === "legacy"
 						? standardOrderLegacy

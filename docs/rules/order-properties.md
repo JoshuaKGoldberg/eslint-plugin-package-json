@@ -69,39 +69,9 @@ interface {
 }
 ```
 
-Default: `legacy`
+Default: `"sort-package-json"`
 
-```json
-[
-	"name",
-	"version",
-	"private",
-	"publishConfig",
-	"description",
-	"main",
-	"browser",
-	"files",
-	"bin",
-	"directories",
-	"man",
-	"scripts",
-	"repository",
-	"keywords",
-	"author",
-	"license",
-	"bugs",
-	"homepage",
-	"config",
-	"dependencies",
-	"devDependencies",
-	"peerDependencies",
-	"optionalDependencies",
-	"bundledDependencies",
-	"engines",
-	"os",
-	"cpu"
-]
-```
+> ⚠️ The default value for `order` changed from `"legacy"` to `"sort-package-json"` in v0.6.0.
 
 This rule is **autofixable**; run `eslint` with the `--fix` option to sort top-level properties in place.
 Any properties not present in the array of ordered properties will be left in their original positions.
