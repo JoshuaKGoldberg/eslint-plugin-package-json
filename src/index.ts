@@ -12,6 +12,10 @@ export const rules = {
 
 export const configs = {
 	recommended: {
-		rules,
+		rules: Object.fromEntries(
+			Object.entries(rules)
+				.filter(([, rule]) => rule.meta.docs?.recommended)
+				.map(([name]) => ["package-json/" + name, "error" as const]),
+		),
 	},
 };
