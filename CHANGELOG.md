@@ -1,3 +1,9 @@
+# [0.6.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.5.0...v0.6.0) (2024-01-20)
+
+### Features
+
+-   change order-properties order default to sort-package-json ([#122](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/122)) ([246261d](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/246261dff5838c42add53fd45c03a5eadc495d83)), closes [#58](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/58)
+
 # [0.5.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.4.0...v0.5.0) (2024-01-20)
 
 ### Features
