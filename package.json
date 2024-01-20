@@ -6,10 +6,7 @@
 	"bugs": {
 		"url": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues"
 	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json"
-	},
+	"repository": "JoshuaKGoldberg/eslint-plugin-package-json",
 	"license": "MIT",
 	"author": {
 		"name": "James Zetlan",
