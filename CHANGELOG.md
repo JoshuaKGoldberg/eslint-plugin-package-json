@@ -1,3 +1,9 @@
+# [0.7.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.6.0...v0.7.0) (2024-01-20)
+
+### Features
+
+-   added valid-repository-directory rule ([#123](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/123)) ([84035c3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/84035c3f2bac376567eef767ba21f354a0d93f54)), closes [#53](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/53)
+
 # [0.6.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.5.0...v0.6.0) (2024-01-20)
 
 ### Features
