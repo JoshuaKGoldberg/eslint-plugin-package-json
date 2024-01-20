@@ -18,9 +18,9 @@ export default createRule({
 					original;
 
 				const depObjs = [
-					Object.entries(dependencies || {}),
-					Object.entries(peerDependencies || {}),
-					Object.entries(devDependencies || {}),
+					Object.entries(dependencies ?? {}),
+					Object.entries(peerDependencies ?? {}),
+					Object.entries(devDependencies ?? {}),
 				] as [string, string][][];
 
 				depObjs.forEach((obj) => {
