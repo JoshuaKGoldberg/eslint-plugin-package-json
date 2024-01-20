@@ -1,0 +1,16 @@
+{
+	"name": "valid-local-dependency",
+	"version": "1.0.0",
+	"description": "Ensures that local dependencies specified in a package.json exist",
+	"license": "ISC",
+	"author": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"debug": "^4.1.0",
+		"mocha": "^10.0.0"
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"name": "unalphabetized-collections",
+	"version": "1.0.0",
+	"description": "deps all unalphabetized and stuff",
+	"license": "ISC",
+	"author": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"debug": "^4.1.0",
+		"mocha": "^10.0.0"
+	}
+}

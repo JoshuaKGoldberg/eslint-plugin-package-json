@@ -1,0 +1,15 @@
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/prepare
+      - run: npm run format -- --check
+
+name: Format
+
+on:
+  pull_request: ~
+  push:
+    branches:
+      - main

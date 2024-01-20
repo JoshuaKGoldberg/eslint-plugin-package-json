@@ -1,4 +1,8 @@
-# Enforce that package.json has all properties required by NPM spec (valid-package-def)
+# Enforce that package.json has all properties required by NPM spec (`package-json/valid-package-def`)
+
+💼 This rule is enabled in the ✅ `recommended` config.
+
+<!-- end auto-generated rule header -->
 
 NPM issues warnings after install if the `package.json` has a missing or
 invalid required property. This rule uses [`package-json-validator`][pjv] to
@@ -13,16 +17,16 @@ Examples of **incorrect** code for this rule:
 
 ```json
 {
-    "name": "noncompliant-version",
-    "version": "1.X.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
+	"author": "",
+	"description": "",
+	"keywords": [],
+	"license": "ISC",
+	"main": "index.js",
+	"name": "noncompliant-version",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"version": "1.X.0"
 }
 ```
 
@@ -30,22 +34,18 @@ Examples of **correct** code for this rule:
 
 ```json
 {
-    "name": "compliant-version",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC"
+	"author": "",
+	"description": "",
+	"keywords": [],
+	"license": "ISC",
+	"main": "index.js",
+	"name": "compliant-version",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"version": "1.0.0"
 }
 ```
-
-### Options
-
-This rule has no options.
 
 ## When Not To Use It
 

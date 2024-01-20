@@ -1,4 +1,10 @@
-# Dependencies, scripts, and configuration values must be declared in alphabetical order. (sort-collections)
+# Dependencies, scripts, and configuration values must be declared in alphabetical order (`package-json/sort-collections`)
+
+💼 This rule is enabled in the ✅ `recommended` config.
+
+🔧 This rule is automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
+
+<!-- end auto-generated rule header -->
 
 Whenever NPM changes package dependencies through `npm install`, it lexically sorts (that is, alphabetizes by package name) all dependencies in `package.json`. Nevertheless, sometimes a developer will manually update `package.json` and leave dependencies out of order, leading to "noise" in changesets when a later change re-sorts the packages. This rule aims to keep the dependency collections sorted in every commit.
 
@@ -10,11 +16,11 @@ The following patterns are considered errors:
 
 ```json
 {
-    "scripts": {
-        "test": "jest",
-        "lint": "eslint .",
-        "start": "node server.js"
-    }
+	"scripts": {
+		"lint": "eslint .",
+		"start": "node server.js",
+		"test": "jest"
+	}
 }
 ```
 
@@ -22,14 +28,14 @@ In the above `scripts` collection, `test` should be moved to the last line, afte
 
 ```json
 {
-    "devDependencies": {
-        "eslint": "^5.8.0",
-        "mocha": "^5.2.0",
-        "prettier": "^1.14.3",
-        "nyc": "^13.1.0",
-        "lodash.debounce": "4.17.11",
-        "lodash": "^4.17.11"
-    }
+	"devDependencies": {
+		"eslint": "^5.8.0",
+		"lodash": "^4.17.11",
+		"lodash.debounce": "4.17.11",
+		"mocha": "^5.2.0",
+		"nyc": "^13.1.0",
+		"prettier": "^1.14.3"
+	}
 }
 ```
 
@@ -39,24 +45,24 @@ The following patterns are **not** considered errors:
 
 ```json
 {
-    "scripts": {
-        "lint": "eslint .",
-        "start": "node server.js",
-        "test": "jest"
-    }
+	"scripts": {
+		"lint": "eslint .",
+		"start": "node server.js",
+		"test": "jest"
+	}
 }
 ```
 
 ```json
 {
-    "devDependencies": {
-        "eslint": "^5.8.0",
-        "lodash": "^4.17.11",
-        "lodash.debounce": "4.17.11",
-        "mocha": "^5.2.0",
-        "nyc": "^13.1.0",
-        "prettier": "^1.14.3"
-    }
+	"devDependencies": {
+		"eslint": "^5.8.0",
+		"lodash": "^4.17.11",
+		"lodash.debounce": "4.17.11",
+		"mocha": "^5.2.0",
+		"nyc": "^13.1.0",
+		"prettier": "^1.14.3"
+	}
 }
 ```
 
@@ -68,10 +74,15 @@ Pass an array of top-level package properties to lint sorting on those collectio
 
 Example:
 
-```js
-"package-json/sort-collections": ["error", [
-    "devDependencies" // Only sort devDependencies
-]]
+```jsonc
+{
+	"package-json/sort-collections": [
+		"error",
+		[
+			"devDependencies" // Only sort devDependencies
+		]
+	]
+}
 ```
 
 Defaults:
