@@ -74,7 +74,7 @@ ruleTester.run("valid-name", rule, {
 		},
 		{
 			code: `{
-	"name": " leading-space:and:weirdchars!"
+	"name": " leading-space:and:weird:chars!"
 }
 `,
 			errors: [
