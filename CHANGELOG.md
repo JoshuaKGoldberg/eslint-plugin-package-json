@@ -1,3 +1,9 @@
+# [0.10.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.9.0...v0.10.0) (2024-01-20)
+
+### Features
+
+-   added valid-version rule ([#135](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/135)) ([6e8b6fb](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/6e8b6fbe777d03731f5552c980eaad4e5f8d4dad)), closes [#130](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/130)
+
 # [0.9.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.8.1...v0.9.0) (2024-01-20)
 
 ### Features
