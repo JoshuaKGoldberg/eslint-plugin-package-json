@@ -29,13 +29,13 @@ ruleTester.run("order-properties", rule, {
   "name": "invalid-top-level-property-order",
   "version": "1.0.0",
   "description": "npm made me this way",
-  "main": "index.js",
-  "scripts": {
-    "test": "tape"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fake/github.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "tape"
   }
 }
 `,
