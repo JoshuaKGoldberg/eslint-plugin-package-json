@@ -1,3 +1,5 @@
+import type { AST as JsonAST } from "jsonc-eslint-parser";
+
 import sortPackageJson from "sort-package-json";
 
 import { createRule } from "../createRule.js";
@@ -65,7 +67,10 @@ export default createRule<Options>({
 				const { properties } = ast.body[0].expression;
 
 				for (let i = 0; i < properties.length; i += 1) {
-					if (properties[i].value !== orderedKeys[i]) {
+					if (
+						(properties[i].key as JsonAST.JSONStringLiteral)
+							.value !== orderedKeys[i]
+					) {
 						context.report({
 							fix(fixer) {
 								return fixer.replaceText(
