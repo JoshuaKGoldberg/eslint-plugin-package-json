@@ -6,7 +6,8 @@
 
 ## Rule Details
 
-This rule validates url for `repository` in a `package.json` and recommends a shortened version for GitHub repositories.
+This rule enforces that `repository` entries in a `package.json` use shorthand notation to refer to GitHub repositories when possible.
+Instead of specifying a full URL like `"https://github.com/JoshuaKGoldberg/eslint-plugin-package-json"`, the shorthand `"JoshuaKGoldberg/eslint-plugin-package-json"` is equivalent and more succinct.
 
 Examples of **incorrect** code for this rule:
 
