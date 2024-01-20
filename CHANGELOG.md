@@ -1,3 +1,9 @@
+# [0.8.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.7.0...v0.8.0) (2024-01-20)
+
+### Features
+
+-   added unique-dependencies rule ([#126](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/126)) ([a9417d1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/a9417d1685808dd8e4c27eff9e3b9c7399be6e1b)), closes [#50](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/50)
+
 # [0.7.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.6.0...v0.7.0) (2024-01-20)
 
 ### Features
