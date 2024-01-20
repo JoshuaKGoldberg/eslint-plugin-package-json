@@ -13,7 +13,7 @@ ruleTester.run("prefer-repository-shorthand", rule, {
 			errors: [
 				{
 					message:
-						"Use shorthand repository URL for GitHub repository",
+						"Prefer a shorthand locator for a GitHub repository.",
 					type: "JSONObjectExpression",
 				},
 			],
@@ -32,7 +32,7 @@ ruleTester.run("prefer-repository-shorthand", rule, {
 			errors: [
 				{
 					message:
-						"Use shorthand repository URL for GitHub repository",
+						"Prefer a shorthand locator for a GitHub repository.",
 					type: "JSONObjectExpression",
 				},
 			],
@@ -51,7 +51,7 @@ ruleTester.run("prefer-repository-shorthand", rule, {
 			errors: [
 				{
 					message:
-						"Use shorthand repository URL for GitHub repository",
+						"Prefer a shorthand locator for a GitHub repository.",
 					type: "JSONObjectExpression",
 				},
 			],
@@ -67,7 +67,7 @@ ruleTester.run("prefer-repository-shorthand", rule, {
 			errors: [
 				{
 					message:
-						"Use shorthand repository URL for GitHub repository",
+						"Prefer a shorthand locator for a GitHub repository.",
 					type: "JSONLiteral",
 				},
 			],
@@ -84,6 +84,14 @@ ruleTester.run("prefer-repository-shorthand", rule, {
 				"type": "git",
 				"url": "https://github.com/facebook/react.git",
 				"directory": "packages/react"
+			}
+		}`,
+			filename: "package.json",
+		},
+		{
+			code: `{
+			"repository": {
+				"url": "https://github.com/facebook/react.git",
 			}
 		}`,
 			filename: "package.json",

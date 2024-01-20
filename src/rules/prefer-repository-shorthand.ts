@@ -11,74 +11,91 @@ const isGitHubUrl = (url: string) => githubUrlRegex.test(url);
 const cleanGitHubUrl = (url: string) =>
 	url.replace(githubUrlRegex, "").replace(/\.git$/, "");
 
+type JSONPropertyWithKeyAndValue<Value extends string> =
+	JsonAST.JSONProperty & {
+		key: JsonAST.JSONStringLiteral;
+		value: Value;
+	};
+
+function findJSONLiteralWithValue<Value extends string>(
+	properties: JsonAST.JSONProperty[],
+	value: Value,
+) {
+	return properties.find(
+		(property): property is JSONPropertyWithKeyAndValue<Value> =>
+			property.key.type === "JSONLiteral" && property.key.value === value,
+	);
+}
+
 export default createRule({
 	create(context) {
 		return {
-			JSONProperty: (node) => {
+			JSONProperty(node) {
 				if (
-					node.key.type === "JSONLiteral" &&
-					node.key.value === "repository" &&
-					node.parent.parent.parent.type === "Program"
+					node.key.type !== "JSONLiteral" ||
+					node.key.value !== "repository" ||
+					node.parent.parent.parent.type !== "Program"
 				) {
-					if (node.value.type === "JSONObjectExpression") {
-						const { properties } = node.value;
-						const typeProperty = properties.find(
-							(property) =>
-								property.key.type === "JSONLiteral" &&
-								property.key.value === "type",
-						);
-						const urlProperty = properties.find(
-							(property) =>
-								property.key.type === "JSONLiteral" &&
-								property.key.value === "url",
-						);
-						const directoryProperty = properties.find(
-							(property) =>
-								property.key.type === "JSONLiteral" &&
-								property.key.value === "directory",
-						);
-						if (
-							!directoryProperty &&
-							typeProperty?.value.type === "JSONLiteral" &&
-							typeProperty.value.value === "git" &&
-							urlProperty &&
-							urlProperty.value.type === "JSONLiteral" &&
-							typeof urlProperty.value.value === "string" &&
-							isGitHubUrl(urlProperty.value.value)
-						) {
-							context.report({
-								fix(fixer) {
-									return fixer.replaceText(
-										node.value as unknown as ESTree.Node,
-										JSON.stringify(
-											cleanGitHubUrl(
-												(
-													urlProperty.value as JsonAST.JSONLiteral
-												).value as string,
-											),
-										),
-									);
-								},
-								messageId: "useShorthand",
-								node: node.value as unknown as ESTree.Node,
-							});
-						}
+					return;
+				}
+
+				if (node.value.type === "JSONObjectExpression") {
+					const { properties } = node.value;
+
+					if (findJSONLiteralWithValue(properties, "directory")) {
+						return;
 					}
 
-					if (node.value.type === "JSONLiteral") {
-						const { value } = node.value;
-						if (typeof value === "string" && isGitHubUrl(value)) {
-							context.report({
-								fix(fixer) {
-									return fixer.replaceText(
-										node.value as unknown as ESTree.Node,
-										JSON.stringify(cleanGitHubUrl(value)),
-									);
-								},
-								messageId: "useShorthand",
-								node: node.value as unknown as ESTree.Node,
-							});
-						}
+					const typeProperty = findJSONLiteralWithValue(
+						properties,
+						"type",
+					);
+					if (
+						typeProperty?.value.type !== "JSONLiteral" ||
+						typeProperty.value.value !== "git"
+					) {
+						return;
+					}
+
+					const urlProperty = findJSONLiteralWithValue(
+						properties,
+						"url",
+					);
+					if (
+						urlProperty?.value.type !== "JSONLiteral" ||
+						typeof urlProperty.value.value !== "string" ||
+						!isGitHubUrl(urlProperty.value.value)
+					) {
+						return;
+					}
+
+					const url = urlProperty.value.value;
+
+					context.report({
+						fix(fixer) {
+							return fixer.replaceText(
+								node.value as unknown as ESTree.Node,
+								JSON.stringify(cleanGitHubUrl(url)),
+							);
+						},
+						messageId: "preferShorthand",
+						node: node.value as unknown as ESTree.Node,
+					});
+				}
+
+				if (node.value.type === "JSONLiteral") {
+					const { value } = node.value;
+					if (typeof value === "string" && isGitHubUrl(value)) {
+						context.report({
+							fix(fixer) {
+								return fixer.replaceText(
+									node.value as unknown as ESTree.Node,
+									JSON.stringify(cleanGitHubUrl(value)),
+								);
+							},
+							messageId: "preferShorthand",
+							node: node.value as unknown as ESTree.Node,
+						});
 					}
 				}
 			},
@@ -93,7 +110,8 @@ export default createRule({
 		},
 		fixable: "code",
 		messages: {
-			useShorthand: "Use shorthand repository URL for GitHub repository",
+			preferShorthand:
+				"Prefer a shorthand locator for a GitHub repository.",
 		},
 	},
 });
