@@ -1,3 +1,9 @@
+# [0.9.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.8.1...v0.9.0) (2024-01-20)
+
+### Features
+
+-   added valid-name rule ([#134](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/134)) ([ecf9266](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/ecf926602f760c3edf1a832615624210a90ed3ed)), closes [#131](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/131)
+
 ## [0.8.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.8.0...v0.8.1) (2024-01-20)
 
 ### Bug Fixes
