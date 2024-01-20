@@ -6,7 +6,7 @@
 	<a href="#contributors" target="_blank">
 <!-- prettier-ignore-start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<img alt="All Contributors: 9 👪" src="https://img.shields.io/badge/all_contributors-9_👪-21bb42.svg" />
+<img alt="All Contributors: 10 👪" src="https://img.shields.io/badge/all_contributors-10_👪-21bb42.svg" />
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- prettier-ignore-end -->
 </a>
@@ -73,14 +73,16 @@ module.exports = {
 <!-- prettier-ignore-start -->
 <!-- begin auto-generated rules list -->
 
+💼 Configurations enabled in.\
+✅ Set in the `recommended` configuration.\
 🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).
 
-| Name                                                           | Description                                                                             | 🔧 |
-| :------------------------------------------------------------- | :-------------------------------------------------------------------------------------- | :- |
-| [order-properties](docs/rules/order-properties.md)             | Package properties must be declared in standard order                                   | 🔧 |
-| [sort-collections](docs/rules/sort-collections.md)             | Dependencies, scripts, and configuration values must be declared in alphabetical order. | 🔧 |
-| [valid-local-dependency](docs/rules/valid-local-dependency.md) | Checks existence of local dependencies in the package.json                              |    |
-| [valid-package-def](docs/rules/valid-package-def.md)           | Enforce that package.json has all properties required by NPM spec                       |    |
+| Name                                                           | Description                                                                             | 💼 | 🔧 |
+| :------------------------------------------------------------- | :-------------------------------------------------------------------------------------- | :- | :- |
+| [order-properties](docs/rules/order-properties.md)             | Package properties must be declared in standard order                                   | ✅  | 🔧 |
+| [sort-collections](docs/rules/sort-collections.md)             | Dependencies, scripts, and configuration values must be declared in alphabetical order. | ✅  | 🔧 |
+| [valid-local-dependency](docs/rules/valid-local-dependency.md) | Checks existence of local dependencies in the package.json                              | ✅  |    |
+| [valid-package-def](docs/rules/valid-package-def.md)           | Enforce that package.json has all properties required by NPM spec                       | ✅  |    |
 
 <!-- end auto-generated rules list -->
 <!-- prettier-ignore-end -->
@@ -106,6 +108,7 @@ These rules only run on `package.json` files; they will ignore all other files b
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/sirugh"><img src="https://avatars.githubusercontent.com/u/1278869?v=4?s=100" width="100px;" alt="Stephen"/><br /><sub><b>Stephen</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=sirugh" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://ota-meshi.github.io/"><img src="https://avatars.githubusercontent.com/u/16508807?v=4?s=100" width="100px;" alt="Yosuke Ota"/><br /><sub><b>Yosuke Ota</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3Aota-meshi" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/b3rnhard"><img src="https://avatars.githubusercontent.com/u/10774404?v=4?s=100" width="100px;" alt="b3rnhard"/><br /><sub><b>b3rnhard</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3Ab3rnhard" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
