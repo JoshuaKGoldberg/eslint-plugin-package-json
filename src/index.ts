@@ -6,6 +6,7 @@ import validLocalDependency from "./rules/valid-local-dependency.js";
 import validName from "./rules/valid-name.js";
 import validPackageDef from "./rules/valid-package-def.js";
 import validRepositoryDirectory from "./rules/valid-repository-directory.js";
+import validVersion from "./rules/valid-version.js";
 
 export const rules = {
 	"order-properties": orderProperties,
@@ -16,6 +17,7 @@ export const rules = {
 	"valid-name": validName,
 	"valid-package-def": validPackageDef,
 	"valid-repository-directory": validRepositoryDirectory,
+	"valid-version": validVersion,
 };
 
 export const configs = {
