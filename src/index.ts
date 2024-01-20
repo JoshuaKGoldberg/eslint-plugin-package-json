@@ -3,6 +3,7 @@ import preferRepositoryShorthand from "./rules/prefer-repository-shorthand.js";
 import sortCollections from "./rules/sort-collections.js";
 import uniqueDependencies from "./rules/unique-dependencies.js";
 import validLocalDependency from "./rules/valid-local-dependency.js";
+import validName from "./rules/valid-name.js";
 import validPackageDef from "./rules/valid-package-def.js";
 import validRepositoryDirectory from "./rules/valid-repository-directory.js";
 
@@ -12,6 +13,7 @@ export const rules = {
 	"sort-collections": sortCollections,
 	"unique-dependencies": uniqueDependencies,
 	"valid-local-dependency": validLocalDependency,
+	"valid-name": validName,
 	"valid-package-def": validPackageDef,
 	"valid-repository-directory": validRepositoryDirectory,
 };
