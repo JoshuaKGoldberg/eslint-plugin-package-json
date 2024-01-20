@@ -54,7 +54,7 @@
 	},
 	"dependencies": {
 		"package-json-validator": "^0.6.3",
-		"sort-package-json": "^1.57.0"
+		"sort-package-json": "^2.0.0"
 	},
 	"devDependencies": {
 		"@release-it/conventional-changelog": "^8.0.0",
