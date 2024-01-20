@@ -33,13 +33,6 @@ describe("configs", () => {
 				message: message.message,
 				ruleId: message.ruleId,
 			})),
-		).toEqual([
-			// Our package.json differs from the recommended key order.
-			{
-				message:
-					"Package top-level properties are not ordered in the npm standard way. Run the ESLint auto-fixer to correct.",
-				ruleId: "package-json/order-properties",
-			},
-		]);
+		).toEqual([]);
 	});
 });
