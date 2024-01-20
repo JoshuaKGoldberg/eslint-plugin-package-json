@@ -6,7 +6,7 @@
 	<a href="#contributors" target="_blank">
 <!-- prettier-ignore-start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<img alt="All Contributors: 9 👪" src="https://img.shields.io/badge/all_contributors-9_👪-21bb42.svg" />
+<img alt="All Contributors: 12 👪" src="https://img.shields.io/badge/all_contributors-12_👪-21bb42.svg" />
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- prettier-ignore-end -->
 </a>
@@ -73,14 +73,16 @@ module.exports = {
 <!-- prettier-ignore-start -->
 <!-- begin auto-generated rules list -->
 
+💼 Configurations enabled in.\
+✅ Set in the `recommended` configuration.\
 🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).
 
-| Name                                                           | Description                                                                             | 🔧 |
-| :------------------------------------------------------------- | :-------------------------------------------------------------------------------------- | :- |
-| [order-properties](docs/rules/order-properties.md)             | Package properties must be declared in standard order                                   | 🔧 |
-| [sort-collections](docs/rules/sort-collections.md)             | Dependencies, scripts, and configuration values must be declared in alphabetical order. | 🔧 |
-| [valid-local-dependency](docs/rules/valid-local-dependency.md) | Checks existence of local dependencies in the package.json                              |    |
-| [valid-package-def](docs/rules/valid-package-def.md)           | Enforce that package.json has all properties required by NPM spec                       |    |
+| Name                                                           | Description                                                                             | 💼 | 🔧 |
+| :------------------------------------------------------------- | :-------------------------------------------------------------------------------------- | :- | :- |
+| [order-properties](docs/rules/order-properties.md)             | Package properties must be declared in standard order                                   | ✅  | 🔧 |
+| [sort-collections](docs/rules/sort-collections.md)             | Dependencies, scripts, and configuration values must be declared in alphabetical order. | ✅  | 🔧 |
+| [valid-local-dependency](docs/rules/valid-local-dependency.md) | Checks existence of local dependencies in the package.json                              | ✅  |    |
+| [valid-package-def](docs/rules/valid-package-def.md)           | Enforce that package.json has all properties required by NPM spec                       | ✅  |    |
 
 <!-- end auto-generated rules list -->
 <!-- prettier-ignore-end -->
@@ -97,15 +99,18 @@ These rules only run on `package.json` files; they will ignore all other files b
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/AndreasLindbergPAF"><img src="https://avatars.githubusercontent.com/u/59874563?v=4?s=100" width="100px;" alt="Andreas Lindberg"/><br /><sub><b>Andreas Lindberg</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3Aandreaslindbergpaf" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://azat.io"><img src="https://avatars.githubusercontent.com/u/5698350?v=4?s=100" width="100px;" alt="Azat S."/><br /><sub><b>Azat S.</b></sub></a><br /><a href="#ideas-azat-io" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Zamiell"><img src="https://avatars.githubusercontent.com/u/5511220?v=4?s=100" width="100px;" alt="James"/><br /><sub><b>James</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=Zamiell" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/zetlen"><img src="https://avatars.githubusercontent.com/u/1643758?v=4?s=100" width="100px;" alt="James Zetlen"/><br /><sub><b>James Zetlen</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=zetlen" title="Code">💻</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3Azetlen" title="Bug reports">🐛</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=zetlen" title="Documentation">📖</a> <a href="#infra-zetlen" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-zetlen" title="Maintenance">🚧</a> <a href="#tool-zetlen" title="Tools">🔧</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://piranna.github.io/"><img src="https://avatars.githubusercontent.com/u/532414?v=4?s=100" width="100px;" alt="Jesús Leganés-Combarro"/><br /><sub><b>Jesús Leganés-Combarro</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=piranna" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://www.joshuakgoldberg.com/"><img src="https://avatars.githubusercontent.com/u/3335181?v=4?s=100" width="100px;" alt="Josh Goldberg ✨"/><br /><sub><b>Josh Goldberg ✨</b></sub></a><br /><a href="#tool-JoshuaKGoldberg" title="Tools">🔧</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3AJoshuaKGoldberg" title="Bug reports">🐛</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=JoshuaKGoldberg" title="Code">💻</a> <a href="#infra-JoshuaKGoldberg" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=JoshuaKGoldberg" title="Documentation">📖</a> <a href="#maintenance-JoshuaKGoldberg" title="Maintenance">🚧</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/kendallgassner"><img src="https://avatars.githubusercontent.com/u/15275462?v=4?s=100" width="100px;" alt="Kendall Gassner"/><br /><sub><b>Kendall Gassner</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=kendallgassner" title="Code">💻</a> <a href="#maintenance-kendallgassner" title="Maintenance">🚧</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/nschonni"><img src="https://avatars.githubusercontent.com/u/1297909?v=4?s=100" width="100px;" alt="Nick Schonning"/><br /><sub><b>Nick Schonning</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=nschonni" title="Code">💻</a></td>
     </tr>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/KristjanESPERANTO"><img src="https://avatars.githubusercontent.com/u/35647502?v=4?s=100" width="100px;" alt="Kristjan ESPERANTO"/><br /><sub><b>Kristjan ESPERANTO</b></sub></a><br /><a href="#ideas-kristjanesperanto" title="Ideas, Planning, & Feedback">🤔</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/nschonni"><img src="https://avatars.githubusercontent.com/u/1297909?v=4?s=100" width="100px;" alt="Nick Schonning"/><br /><sub><b>Nick Schonning</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=nschonni" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/sirugh"><img src="https://avatars.githubusercontent.com/u/1278869?v=4?s=100" width="100px;" alt="Stephen"/><br /><sub><b>Stephen</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=sirugh" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://ota-meshi.github.io/"><img src="https://avatars.githubusercontent.com/u/16508807?v=4?s=100" width="100px;" alt="Yosuke Ota"/><br /><sub><b>Yosuke Ota</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3Aota-meshi" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/b3rnhard"><img src="https://avatars.githubusercontent.com/u/10774404?v=4?s=100" width="100px;" alt="b3rnhard"/><br /><sub><b>b3rnhard</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3Ab3rnhard" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
