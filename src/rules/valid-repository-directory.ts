@@ -4,7 +4,7 @@ import * as ESTree from "estree";
 import * as path from "node:path";
 
 import { createRule } from "../createRule.js";
-import { findJSONLiteralWithValue } from "../utils/findJSONLiteralWithValue.js";
+import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.js";
 
 export default createRule({
 	create(context) {
@@ -14,7 +14,7 @@ export default createRule({
 					value: JsonAST.JSONObjectExpression;
 				},
 			) {
-				const directoryProperty = findJSONLiteralWithValue(
+				const directoryProperty = findPropertyWithKeyValue(
 					node.value.properties,
 					"directory",
 				);

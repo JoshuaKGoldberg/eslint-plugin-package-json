@@ -1,7 +1,7 @@
 import type ESTree from "estree";
 
 import { createRule } from "../createRule.js";
-import { findJSONLiteralWithValue } from "../utils/findJSONLiteralWithValue.js";
+import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.js";
 
 const githubUrlRegex =
 	/^(?:git\+)?(?:ssh:\/\/git@|http?s:\/\/)?(?:www\.)?github\.com\//;
@@ -26,11 +26,11 @@ export default createRule({
 				if (node.value.type === "JSONObjectExpression") {
 					const { properties } = node.value;
 
-					if (findJSONLiteralWithValue(properties, "directory")) {
+					if (findPropertyWithKeyValue(properties, "directory")) {
 						return;
 					}
 
-					const typeProperty = findJSONLiteralWithValue(
+					const typeProperty = findPropertyWithKeyValue(
 						properties,
 						"type",
 					);
@@ -41,7 +41,7 @@ export default createRule({
 						return;
 					}
 
-					const urlProperty = findJSONLiteralWithValue(
+					const urlProperty = findPropertyWithKeyValue(
 						properties,
 						"url",
 					);

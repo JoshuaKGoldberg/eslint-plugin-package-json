@@ -6,7 +6,7 @@ export type JSONPropertyWithKeyAndValue<Value extends string> =
 		value: Value;
 	};
 
-export function findJSONLiteralWithValue<Value extends string>(
+export function findPropertyWithKeyValue<Value extends string>(
 	properties: JsonAST.JSONProperty[],
 	value: Value,
 ) {
