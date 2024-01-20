@@ -61,6 +61,12 @@ module.exports = {
 };
 ```
 
+### Usage Alongside Prettier
+
+**[`prettier-plugin-packagejson`](https://github.com/matzkoh/prettier-plugin-packagejson)** is a [Prettier plugin](https://prettier.io/docs/en/plugins) that enforces the same `package.json` keys ordering as the [`order-properties`](docs/rules/order-properties.md) and [sort-collections](docs/rules/sort-collections.md) rules with default options.
+We recommend using both the Prettier plugin and `extends: ["plugin:package-json/recommended"]`.
+The default settings don't conflict, and Prettier plugins can quickly fix up ordering in your editor on save and/or as a Git hook.
+
 ## Supported Rules
 
 <!-- prettier-ignore-start -->
@@ -83,7 +89,8 @@ module.exports = {
 <!-- end auto-generated rules list -->
 <!-- prettier-ignore-end -->
 
-These rules only run on `package.json` files; they will ignore all other files being linted. They lint `package.json` files at project root, and in any subfolder of the project, making this plugin great for monorepos.
+These rules only run on `package.json` files; they will ignore all other files being linted.
+They can lint `package.json` files at project root and in any subfolder of the project, making this plugin great for monorepos.
 
 ## Contributors
 
