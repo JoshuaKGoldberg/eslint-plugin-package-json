@@ -1,10 +1,10 @@
 {
 	"name": "eslint-plugin-package-json",
-	"version": "0.3.2",
+	"version": "0.4.0",
 	"description": "Rules for consistent, readable, and valid package.json files. 🗂️",
-	"homepage": "https://github.com/zetlen/eslint-plugin-package-json#readme",
+	"homepage": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json#readme",
 	"bugs": {
-		"url": "https://github.com/zetlen/eslint-plugin-package-json/issues"
+		"url": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues"
 	},
 	"repository": "JoshuaKGoldberg/eslint-plugin-package-json",
 	"license": "MIT",
@@ -79,9 +79,9 @@
 		"eslint-plugin-yml": "^1.10.0",
 		"husky": "^8.0.3",
 		"jsonc-eslint-parser": "^2.4.0",
-		"knip": "^3.0.0",
+		"knip": "^4.0.0",
 		"lint-staged": "^15.1.0",
-		"markdownlint": "^0.32.0",
+		"markdownlint": "^0.33.0",
 		"markdownlint-cli": "^0.38.0",
 		"npm-package-json-lint": "^7.1.0",
 		"npm-package-json-lint-config-default": "^6.0.0",
@@ -99,7 +99,7 @@
 		"eslint": ">=8.0.0",
 		"jsonc-eslint-parser": "^2.0.0"
 	},
-	"packageManager": "pnpm@8.14.0",
+	"packageManager": "pnpm@8.14.1",
 	"engines": {
 		"node": ">=18"
 	},
