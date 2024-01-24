@@ -19,15 +19,19 @@ This rule aims to keep the dependency collections sorted in every commit.
 
 The following patterns are considered errors:
 
+<!-- eslint-disable jsonc/sort-keys -->
+
 ```json
 {
 	"scripts": {
 		"lint": "eslint .",
-		"start": "node server.js",
-		"test": "jest"
+		"test": "jest",
+		"start": "node server.js"
 	}
 }
 ```
+
+<!-- eslint-enable jsonc/sort-keys -->
 
 In the above `scripts` collection, `test` should be moved to the last line, after `lint` and `start`.
 
