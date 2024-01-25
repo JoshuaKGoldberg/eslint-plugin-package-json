@@ -1,3 +1,9 @@
+## [0.10.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.10.0...v0.10.1) (2024-01-25)
+
+### Bug Fixes
+
+-   incorrect example in 'sort-collections' ([#137](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/137)) ([88a94a0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/88a94a06e0db5624f83fab22144d7096a0cd1a3a)), closes [#136](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/136)
+
 # [0.10.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.9.0...v0.10.0) (2024-01-20)
 
 ### Features
