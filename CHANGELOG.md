@@ -1,3 +1,9 @@
+## [0.10.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.10.1...v0.10.2) (2024-02-01)
+
+### Bug Fixes
+
+-   support Windows paths, again ([#144](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/144)) ([27243fa](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/27243fa5e6d0d59362e19f49135f69300949d282)), closes [#142](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/142) [#30](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/30)
+
 ## [0.10.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.10.0...v0.10.1) (2024-01-25)
 
 ### Bug Fixes
