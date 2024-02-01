@@ -3,7 +3,7 @@ import type * as ESTree from "estree";
 import { AST, Rule, SourceCode } from "eslint";
 import { AST as JsonAST, RuleListener } from "jsonc-eslint-parser";
 
-import { isPackageJson } from "./utils/isPackageJson";
+import { isPackageJson } from "./utils/isPackageJson.js";
 
 export type JsonAstBodyProperty = JsonAST.JSONProperty & {
 	value: string;
