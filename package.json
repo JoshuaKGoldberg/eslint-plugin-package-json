@@ -103,7 +103,7 @@
 		"eslint": ">=8.0.0",
 		"jsonc-eslint-parser": "^2.0.0"
 	},
-	"packageManager": "pnpm@8.15.2",
+	"packageManager": "pnpm@8.15.3",
 	"engines": {
 		"node": ">=18"
 	},
