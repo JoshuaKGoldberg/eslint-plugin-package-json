@@ -6,7 +6,7 @@
 	<a href="#contributors" target="_blank">
 <!-- prettier-ignore-start -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<img alt="All Contributors: 13 👪" src="https://img.shields.io/badge/all_contributors-13_👪-21bb42.svg" />
+<img alt="All Contributors: 14 👪" src="https://img.shields.io/badge/all_contributors-14_👪-21bb42.svg" />
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <!-- prettier-ignore-end -->
 </a>
@@ -117,6 +117,7 @@ They can lint `package.json` files at project root and in any subfolder of the p
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/KristjanESPERANTO"><img src="https://avatars.githubusercontent.com/u/35647502?v=4?s=100" width="100px;" alt="Kristjan ESPERANTO"/><br /><sub><b>Kristjan ESPERANTO</b></sub></a><br /><a href="#ideas-kristjanesperanto" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3Akristjanesperanto" title="Bug reports">🐛</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=kristjanesperanto" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/nschonni"><img src="https://avatars.githubusercontent.com/u/1297909?v=4?s=100" width="100px;" alt="Nick Schonning"/><br /><sub><b>Nick Schonning</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=nschonni" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/sirugh"><img src="https://avatars.githubusercontent.com/u/1278869?v=4?s=100" width="100px;" alt="Stephen"/><br /><sub><b>Stephen</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=sirugh" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://hyoban.cc"><img src="https://avatars.githubusercontent.com/u/38493346?v=4?s=100" width="100px;" alt="Stephen Zhou"/><br /><sub><b>Stephen Zhou</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3Ahyoban" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://ota-meshi.github.io/"><img src="https://avatars.githubusercontent.com/u/16508807?v=4?s=100" width="100px;" alt="Yosuke Ota"/><br /><sub><b>Yosuke Ota</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3Aota-meshi" title="Bug reports">🐛</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=ota-meshi" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/b3rnhard"><img src="https://avatars.githubusercontent.com/u/10774404?v=4?s=100" width="100px;" alt="b3rnhard"/><br /><sub><b>b3rnhard</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3Ab3rnhard" title="Bug reports">🐛</a></td>
     </tr>
