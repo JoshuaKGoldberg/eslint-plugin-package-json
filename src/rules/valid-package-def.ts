@@ -7,7 +7,7 @@ import { createRule } from "../createRule.js";
 // so we disable some other errors here.
 const unusedErrorPatterns = [
 	/^Url not valid/i,
-	/^Invalid version range for .+?: file:/i,
+	/^Invalid version range for .+?: (?:file|npm):/i,
 	/^author field should have name/i,
 ];
 
