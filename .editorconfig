@@ -11,3 +11,6 @@ trim_trailing_whitespace = true
 [{package.json,*.yml}]
 indent_size = 2
 indent_style = space
+
+[*.test.ts]
+trim_trailing_whitespace = false

@@ -1,4 +1,4 @@
-import rule from "../../rules/prefer-repository-shorthand.js";
+import { rule } from "../../rules/prefer-repository-shorthand.js";
 import { ruleTester } from "./ruleTester.js";
 
 ruleTester.run("prefer-repository-shorthand", rule, {

@@ -5,7 +5,7 @@ import validate from "validate-npm-package-name";
 
 import { createRule } from "../createRule.js";
 
-export default createRule({
+export const rule = createRule({
 	create(context) {
 		return {
 			"Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.value=name]"(

@@ -39,7 +39,7 @@ type Order = "legacy" | "sort-package-json";
 
 type Options = [{ order: Order }?];
 
-export default createRule<Options>({
+export const rule = createRule<Options>({
 	create(context) {
 		return {
 			"Program:exit"() {

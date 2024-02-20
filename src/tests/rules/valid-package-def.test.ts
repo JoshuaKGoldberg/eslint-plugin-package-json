@@ -1,4 +1,4 @@
-import rule from "../../rules/valid-package-def.js";
+import { rule } from "../../rules/valid-package-def.js";
 import { ruleTester } from "./ruleTester.js";
 
 ruleTester.run("valid-package-def", rule, {

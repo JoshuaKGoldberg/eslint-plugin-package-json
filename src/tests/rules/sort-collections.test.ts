@@ -1,4 +1,4 @@
-import rule from "../../rules/sort-collections.js";
+import { rule } from "../../rules/sort-collections.js";
 import { ruleTester } from "./ruleTester.js";
 
 //------------------------------------------------------------------------------

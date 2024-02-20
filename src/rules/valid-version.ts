@@ -5,7 +5,7 @@ import semver from "semver";
 
 import { createRule } from "../createRule.js";
 
-export default createRule({
+export const rule = createRule({
 	create(context) {
 		return {
 			"Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.value=version]"(

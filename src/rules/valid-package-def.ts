@@ -14,7 +14,7 @@ const unusedErrorPatterns = [
 const isUsableError = (errorText: string) =>
 	unusedErrorPatterns.every((pattern) => !pattern.test(errorText));
 
-export default createRule({
+export const rule = createRule({
 	create(context) {
 		return {
 			"Program:exit"() {
