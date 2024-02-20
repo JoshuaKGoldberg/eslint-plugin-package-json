@@ -44,7 +44,7 @@
 		"should-semantic-release": "should-semantic-release --verbose",
 		"test": "vitest",
 		"tsc": "tsc",
-		"update:eslint-docs": "eslint-doc-generator"
+		"update:eslint-docs": "eslint-doc-generator --ignore-config \"recommended-flat\""
 	},
 	"lint-staged": {
 		"*": "prettier --ignore-unknown --write"
