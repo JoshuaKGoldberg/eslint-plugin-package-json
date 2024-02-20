@@ -17,7 +17,7 @@ describe("configs", () => {
 			},
 			fix: true,
 			plugins: {
-				"package-json": plugin as ESLint.Plugin,
+				"package-json": plugin as unknown as ESLint.Plugin,
 			},
 			useEslintrc: false,
 		});
