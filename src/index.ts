@@ -1,4 +1,3 @@
-import { ESLint, Linter } from "eslint";
 import parserJsonc from "jsonc-eslint-parser";
 import { createRequire } from "node:module";
 
@@ -41,11 +40,24 @@ const recommendedRuleSettings = Object.fromEntries(
 		.map(([name]) => ["package-json/" + name, "error" as const]),
 );
 
+interface Configs {
+	recommended: {
+		rules: typeof recommendedRuleSettings;
+	};
+	"recommended-flat": {
+		files: string[];
+		languageOptions: {
+			parser: typeof parserJsonc;
+		};
+		plugins: {
+			"package-json": typeof plugin;
+		};
+		rules: typeof recommendedRuleSettings;
+	};
+}
+
 const plugin = {
-	configs: {} as Record<
-		"recommended" | "recommended-flat",
-		ESLint.ConfigData | Linter.FlatConfig | Linter.FlatConfig[]
-	>,
+	configs: {} as Configs,
 	meta: {
 		name,
 		version,
@@ -59,9 +71,9 @@ export const configs = {
 	},
 	["recommended-flat"]: {
 		files: ["**/package.json"],
-		// languageOptions: {
-		// 	parser: parserJsonc,
-		// },
+		languageOptions: {
+			parser: parserJsonc,
+		},
 		plugins: {
 			"package-json": plugin,
 		},
