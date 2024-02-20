@@ -1,3 +1,9 @@
+## [0.10.4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.10.3...v0.10.4) (2024-02-20)
+
+### Bug Fixes
+
+-   can not import in ESM package ([#159](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/159)) ([2ce1881](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/2ce188156d0b91fdcb9606e069a45148c673e6c0)), closes [#152](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/152) [#157](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/157)
+
 ## [0.10.3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.10.2...v0.10.3) (2024-02-20)
 
 ### Bug Fixes
