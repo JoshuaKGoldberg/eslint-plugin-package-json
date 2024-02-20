@@ -1,3 +1,9 @@
+## [0.10.3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.10.2...v0.10.3) (2024-02-20)
+
+### Bug Fixes
+
+-   ignore npm alias version range error ([#156](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/156)) ([4436638](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4436638aba4eb727d4d09cc3e33bca04faf18620)), closes [#153](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/153)
+
 ## [0.10.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.10.1...v0.10.2) (2024-02-01)
 
 ### Bug Fixes
