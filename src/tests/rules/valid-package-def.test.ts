@@ -61,5 +61,21 @@ ruleTester.run("valid-package-def", rule, {
 
 			filename: "not-a-package.json",
 		},
+		{
+			code: `{
+  "name": "pandas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "me!",
+  "license": "ISC",
+  "dependencies": {
+    "foo": "npm:bar@^1.0.0",
+    "baz": "file:../baz"
+  }
+}`,
+			filename: "package.json",
+		},
 	],
 });
