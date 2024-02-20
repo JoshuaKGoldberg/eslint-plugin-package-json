@@ -1,4 +1,4 @@
-import rule from "../../rules/valid-version.js";
+import { rule } from "../../rules/valid-version.js";
 import { ruleTester } from "./ruleTester.js";
 
 ruleTester.run("valid-version", rule, {

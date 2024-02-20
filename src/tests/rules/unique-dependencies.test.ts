@@ -1,4 +1,4 @@
-import rule from "../../rules/unique-dependencies.js";
+import { rule } from "../../rules/unique-dependencies.js";
 import { ruleTester } from "./ruleTester.js";
 
 ruleTester.run("unique-dependencies", rule, {

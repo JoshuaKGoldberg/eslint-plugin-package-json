@@ -13,7 +13,7 @@ const defaultCollections = [
 
 type Options = string[];
 
-export default createRule<Options>({
+export const rule = createRule<Options>({
 	create(context) {
 		const toSort = context.options[0] || defaultCollections;
 		return {

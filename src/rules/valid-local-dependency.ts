@@ -2,7 +2,7 @@ import path from "path";
 
 import { createRule } from "../createRule.js";
 
-export default createRule({
+export const rule = createRule({
 	create(context) {
 		return {
 			"Program:exit"() {

@@ -1,12 +1,12 @@
-import orderProperties from "./rules/order-properties.js";
-import preferRepositoryShorthand from "./rules/prefer-repository-shorthand.js";
-import sortCollections from "./rules/sort-collections.js";
-import uniqueDependencies from "./rules/unique-dependencies.js";
-import validLocalDependency from "./rules/valid-local-dependency.js";
-import validName from "./rules/valid-name.js";
-import validPackageDef from "./rules/valid-package-def.js";
-import validRepositoryDirectory from "./rules/valid-repository-directory.js";
-import validVersion from "./rules/valid-version.js";
+import { rule as orderProperties } from "./rules/order-properties.js";
+import { rule as preferRepositoryShorthand } from "./rules/prefer-repository-shorthand.js";
+import { rule as sortCollections } from "./rules/sort-collections.js";
+import { rule as uniqueDependencies } from "./rules/unique-dependencies.js";
+import { rule as validLocalDependency } from "./rules/valid-local-dependency.js";
+import { rule as validName } from "./rules/valid-name.js";
+import { rule as validPackageDef } from "./rules/valid-package-def.js";
+import { rule as validRepositoryDirectory } from "./rules/valid-repository-directory.js";
+import { rule as validVersion } from "./rules/valid-version.js";
 
 export const rules = {
 	"order-properties": orderProperties,

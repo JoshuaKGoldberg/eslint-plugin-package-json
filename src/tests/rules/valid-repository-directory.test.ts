@@ -1,4 +1,4 @@
-import rule from "../../rules/valid-repository-directory.js";
+import { rule } from "../../rules/valid-repository-directory.js";
 import { ruleTester } from "./ruleTester.js";
 
 ruleTester.run("valid-repository-directory", rule, {

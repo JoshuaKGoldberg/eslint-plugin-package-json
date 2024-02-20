@@ -1,4 +1,4 @@
-import rule from "../../rules/valid-name.js";
+import { rule } from "../../rules/valid-name.js";
 import { ruleTester } from "./ruleTester.js";
 
 ruleTester.run("valid-name", rule, {

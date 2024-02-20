@@ -15,7 +15,7 @@ const dependencyPropertyNames = new Set([
 	"overrides",
 ]);
 
-export default createRule({
+export const rule = createRule({
 	create(context) {
 		function check(
 			elements: (JsonAST.JSONNode | null)[],

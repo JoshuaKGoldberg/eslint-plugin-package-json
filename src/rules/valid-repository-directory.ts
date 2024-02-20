@@ -6,7 +6,7 @@ import * as path from "node:path";
 import { createRule } from "../createRule.js";
 import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.js";
 
-export default createRule({
+export const rule = createRule({
 	create(context) {
 		return {
 			"Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.value=repository][value.type=JSONObjectExpression]"(

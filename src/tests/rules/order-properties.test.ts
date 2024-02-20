@@ -1,4 +1,4 @@
-import rule from "../../rules/order-properties.js";
+import { rule } from "../../rules/order-properties.js";
 import { ruleTester } from "./ruleTester.js";
 
 ruleTester.run("order-properties", rule, {

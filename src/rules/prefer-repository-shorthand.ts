@@ -11,7 +11,7 @@ const isGitHubUrl = (url: string) => githubUrlRegex.test(url);
 const cleanGitHubUrl = (url: string) =>
 	url.replace(githubUrlRegex, "").replace(/\.git$/, "");
 
-export default createRule({
+export const rule = createRule({
 	create(context) {
 		return {
 			JSONProperty(node) {
