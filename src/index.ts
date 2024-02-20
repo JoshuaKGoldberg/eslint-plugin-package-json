@@ -1,3 +1,4 @@
+import { ESLint, Linter } from "eslint";
 import parserJsonc from "jsonc-eslint-parser";
 import { createRequire } from "node:module";
 
@@ -11,8 +12,13 @@ import { rule as validPackageDef } from "./rules/valid-package-def.js";
 import { rule as validRepositoryDirectory } from "./rules/valid-repository-directory.js";
 import { rule as validVersion } from "./rules/valid-version.js";
 
-const require = createRequire(import.meta.url);
-const { name, version } = require("../package.json") as {
+declare const TSUP_FORMAT: "cjs" | "esm";
+const req =
+	typeof TSUP_FORMAT === "undefined" || TSUP_FORMAT === "cjs"
+		? require
+		: createRequire(import.meta.url);
+
+const { name, version } = req("../package.json") as {
 	name: string;
 	version: string;
 };
@@ -35,24 +41,11 @@ const recommendedRuleSettings = Object.fromEntries(
 		.map(([name]) => ["package-json/" + name, "error" as const]),
 );
 
-interface Configs {
-	recommended: {
-		rules: typeof recommendedRuleSettings;
-	};
-	"recommended-flat": {
-		files: string[];
-		languageOptions: {
-			parser: typeof parserJsonc;
-		};
-		plugins: {
-			"package-json": typeof plugin;
-		};
-		rules: typeof recommendedRuleSettings;
-	};
-}
-
 const plugin = {
-	configs: {} as Configs,
+	configs: {} as Record<
+		"recommended" | "recommended-flat",
+		ESLint.ConfigData | Linter.FlatConfig | Linter.FlatConfig[]
+	>,
 	meta: {
 		name,
 		version,
@@ -66,9 +59,9 @@ export const configs = {
 	},
 	["recommended-flat"]: {
 		files: ["**/package.json"],
-		languageOptions: {
-			parser: parserJsonc,
-		},
+		// languageOptions: {
+		// 	parser: parserJsonc,
+		// },
 		plugins: {
 			"package-json": plugin,
 		},
