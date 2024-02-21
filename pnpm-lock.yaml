@@ -131,8 +131,8 @@ devDependencies:
     specifier: ^17.0.1
     version: 17.0.1(typescript@5.3.3)
   should-semantic-release:
-    specifier: ^0.2.1
-    version: 0.2.1
+    specifier: ^0.3.0
+    version: 0.3.0
   tsup:
     specifier: ^8.0.1
     version: 8.0.1(typescript@5.3.3)
@@ -6630,8 +6630,8 @@ packages:
       rechoir: 0.6.2
     dev: true
 
-  /should-semantic-release@0.2.1:
-    resolution: {integrity: sha512-YZ4woZpk11mIj1Aq4I70w6Rm4oOWqMqROHdZuX08nT2JADuW12vb6S5GFtQd+lUdedYbmI6WInD8dF4zuq1a1Q==}
+  /should-semantic-release@0.3.0:
+    resolution: {integrity: sha512-eq38AbfrOc0IoRG2cJ0MSXBa/XoECFTv545GNIZewCSmnJx/MqK0E7vddM+y29F7/PYgcYvqwfiHOEiO8caSLw==}
     engines: {node: '>=18'}
     hasBin: true
     dependencies:
