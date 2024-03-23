@@ -13,7 +13,7 @@ import { rule as validVersion } from "./rules/valid-version.js";
 
 const require = createRequire(import.meta.url || __filename);
 
-const { name, version } = req("../package.json") as {
+const { name, version } = require("../package.json") as {
 	name: string;
 	version: string;
 };
@@ -71,9 +71,9 @@ export const configs = {
 			parser: parserJsonc,
 		},
 		plugins: {
-   			get "package-json"() {
-   			  return plugin;
-   			}
+			get "package-json"() {
+				return plugin;
+			},
 		},
 		rules: recommendedRuleSettings,
 	},
