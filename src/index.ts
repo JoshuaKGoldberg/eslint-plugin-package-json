@@ -11,11 +11,7 @@ import { rule as validPackageDef } from "./rules/valid-package-def.js";
 import { rule as validRepositoryDirectory } from "./rules/valid-repository-directory.js";
 import { rule as validVersion } from "./rules/valid-version.js";
 
-declare const TSUP_FORMAT: "cjs" | "esm";
-const req =
-	typeof TSUP_FORMAT === "undefined" || TSUP_FORMAT === "cjs"
-		? require
-		: createRequire(import.meta.url);
+const require = createRequire(import.meta.url || __filename);
 
 const { name, version } = req("../package.json") as {
 	name: string;
