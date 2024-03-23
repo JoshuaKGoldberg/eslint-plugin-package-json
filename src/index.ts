@@ -36,24 +36,24 @@ const recommendedRuleSettings = Object.fromEntries(
 		.map(([name]) => ["package-json/" + name, "error" as const]),
 );
 
-interface Configs {
-	recommended: {
-		rules: typeof recommendedRuleSettings;
-	};
-	"recommended-flat": {
-		files: string[];
-		languageOptions: {
-			parser: typeof parserJsonc;
-		};
-		plugins: {
-			"package-json": typeof plugin;
-		};
-		rules: typeof recommendedRuleSettings;
-	};
-}
-
 const plugin = {
-	configs: {} as Configs,
+	configs: {
+		recommended: {
+			files: ["**/package.json"],
+			languageOptions: {
+				parser: parserJsonc,
+			},
+			plugins: {
+				get "package-json"() {
+					return plugin;
+				},
+			},
+			rules: recommendedRuleSettings,
+		},
+		"recommended-legacy": {
+			rules: recommendedRuleSettings,
+		},
+	},
 	meta: {
 		name,
 		version,
@@ -61,24 +61,6 @@ const plugin = {
 	rules,
 };
 
-export const configs = {
-	recommended: {
-		rules: recommendedRuleSettings,
-	},
-	["recommended-flat"]: {
-		files: ["**/package.json"],
-		languageOptions: {
-			parser: parserJsonc,
-		},
-		plugins: {
-			get "package-json"() {
-				return plugin;
-			},
-		},
-		rules: recommendedRuleSettings,
-	},
-};
-
-Object.assign(plugin.configs, configs);
+export const configs = plugin.configs;
 
 export default plugin;
