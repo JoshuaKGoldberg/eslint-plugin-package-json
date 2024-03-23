@@ -1,4 +1,4 @@
-import parserJsonc from "jsonc-eslint-parser";
+import * as parserJsonc from "jsonc-eslint-parser";
 import { createRequire } from "node:module";
 
 import { rule as orderProperties } from "./rules/order-properties.js";
