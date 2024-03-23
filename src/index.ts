@@ -71,7 +71,9 @@ export const configs = {
 			parser: parserJsonc,
 		},
 		plugins: {
-			"package-json": plugin,
+   			get "package-json"() {
+   			  return plugin;
+   			}
 		},
 		rules: recommendedRuleSettings,
 	},
