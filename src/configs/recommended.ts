@@ -38,6 +38,4 @@ const recommended = {
 	rules: plugin.rules,
 };
 
-export const configs = recommended.configs;
-export const rules = recommended.rules;
-export const meta = recommended.meta;
+export default recommended;
