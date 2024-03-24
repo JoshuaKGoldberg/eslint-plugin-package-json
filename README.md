@@ -27,6 +27,42 @@ npm install eslint eslint-plugin-package-json jsonc-eslint-parser --save-dev
 
 ## Usage
 
+### Flat Config
+
+This plugin's recommended configuration enables its rules on `**/package.json` files, parsing them with [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser):
+
+In your ESLint configuration file:
+
+```ts
+import packageJson from "eslint-plugin-package-json/configs/recommended";
+
+export default [
+	// your other ESLint configurations
+	packageJson,
+];
+```
+
+If you want to override the recommended rules:
+
+```ts
+import packageJson from "eslint-plugin-package-json/configs/recommended";
+
+export default [
+	// your other ESLint configurations
+	{
+		...packageJson,
+		rules: {
+			...packageJson.rules,
+			"package-json/valid-package-def": "off",
+		},
+	},
+];
+```
+
+See [ESLint's _Configuration Files_ guide](https://eslint.org/docs/latest/use/configure/configuration-files-new) for details on how to customize your rules and other config settings.
+
+### Legacy Config
+
 Add an override to your ESLint configuration file that specifies this plugin, [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser), and its recommended rules for your `package.json` file:
 
 ```js
@@ -64,7 +100,7 @@ module.exports = {
 ### Usage Alongside Prettier
 
 **[`prettier-plugin-packagejson`](https://github.com/matzkoh/prettier-plugin-packagejson)** is a [Prettier plugin](https://prettier.io/docs/en/plugins) that enforces the same `package.json` keys ordering as the [`order-properties`](docs/rules/order-properties.md) and [sort-collections](docs/rules/sort-collections.md) rules with default options.
-We recommend using both the Prettier plugin and `extends: ["plugin:package-json/recommended"]`.
+We recommend using both the Prettier plugin and `eslint-plugin-package-json`'s recommended configuration.
 The default settings don't conflict, and Prettier plugins can quickly fix up ordering in your editor on save and/or as a Git hook.
 
 ## Supported Rules
@@ -75,7 +111,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 💼 Configurations enabled in.\
 ✅ Set in the `recommended` configuration.\
 🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).\
-💡 Manually fixable by [editor suggestions](https://eslint.org/docs/developer-guide/working-with-rules#providing-suggestions).
+💡 Manually fixable by [editor suggestions](https://eslint.org/docs/latest/use/core-concepts#rule-suggestions).
 
 | Name                                                                     | Description                                                                                     | 💼 | 🔧 | 💡 |
 | :----------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------- | :- | :- | :- |
