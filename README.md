@@ -27,6 +27,38 @@ npm install eslint eslint-plugin-package-json jsonc-eslint-parser --save-dev
 
 ## Usage
 
+### Flat Config
+
+In your ESLint configuration file:
+
+```js
+import packageJson from "eslint-plugin-package-json/configs/recommended";
+
+export default [
+	// your other ESLint configurations
+	packageJson,
+];
+```
+
+If you want to override the recommended rules:
+
+```js
+import packageJson from "eslint-plugin-package-json/configs/recommended";
+
+export default [
+	// your other ESLint configurations
+	{
+		...packageJson,
+		rules: {
+			...packageJson.rules,
+			"package-json/valid-package-def": "off",
+		},
+	},
+];
+```
+
+### Legacy Config
+
 Add an override to your ESLint configuration file that specifies this plugin, [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser), and its recommended rules for your `package.json` file:
 
 ```js
