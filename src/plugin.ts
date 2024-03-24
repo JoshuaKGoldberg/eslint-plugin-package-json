@@ -17,7 +17,7 @@ const { name, version } = require("../package.json") as {
 	version: string;
 };
 
-const allRules = {
+const rules = {
 	"order-properties": orderProperties,
 	"prefer-repository-shorthand": preferRepositoryShorthand,
 	"sort-collections": sortCollections,

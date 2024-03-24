@@ -29,9 +29,11 @@ npm install eslint eslint-plugin-package-json jsonc-eslint-parser --save-dev
 
 ### Flat Config
 
+This plugin's recommended configuration enables its rules on `**/package.json` files, parsing them with [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser):
+
 In your ESLint configuration file:
 
-```js
+```ts
 import packageJson from "eslint-plugin-package-json/configs/recommended";
 
 export default [
@@ -56,6 +58,8 @@ export default [
 	},
 ];
 ```
+
+See [ESLint's _Configuration Files_ guide](https://eslint.org/docs/latest/use/configure/configuration-files-new) for details on how to customize your rules and other config settings.
 
 ### Legacy Config
 
