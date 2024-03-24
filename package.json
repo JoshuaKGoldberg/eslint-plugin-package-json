@@ -52,7 +52,7 @@
 		"should-semantic-release": "should-semantic-release --verbose",
 		"test": "vitest",
 		"tsc": "tsc",
-		"update:eslint-docs": "eslint-doc-generator --ignore-config \"recommended-legacy\""
+		"update:eslint-docs": "eslint-doc-generator"
 	},
 	"lint-staged": {
 		"*": "prettier --ignore-unknown --write"
