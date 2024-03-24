@@ -34,11 +34,11 @@ export const plugin = {
 		name,
 		version,
 	},
-	rules: allRules,
+	rules,
 };
 
 export const recommendedRuleSettings = Object.fromEntries(
-	Object.entries(allRules)
+	Object.entries(rules)
 		.filter(([, rule]) => rule.meta.docs?.recommended)
 		.map(([name]) => ["package-json/" + name, "error" as const]),
 );

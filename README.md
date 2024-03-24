@@ -44,7 +44,7 @@ export default [
 
 If you want to override the recommended rules:
 
-```js
+```ts
 import packageJson from "eslint-plugin-package-json/configs/recommended";
 
 export default [
@@ -100,7 +100,7 @@ module.exports = {
 ### Usage Alongside Prettier
 
 **[`prettier-plugin-packagejson`](https://github.com/matzkoh/prettier-plugin-packagejson)** is a [Prettier plugin](https://prettier.io/docs/en/plugins) that enforces the same `package.json` keys ordering as the [`order-properties`](docs/rules/order-properties.md) and [sort-collections](docs/rules/sort-collections.md) rules with default options.
-We recommend using both the Prettier plugin and `extends: ["plugin:package-json/recommended"]`.
+We recommend using both the Prettier plugin and `eslint-plugin-package-json`'s recommended configuration.
 The default settings don't conflict, and Prettier plugins can quickly fix up ordering in your editor on save and/or as a Git hook.
 
 ## Supported Rules
