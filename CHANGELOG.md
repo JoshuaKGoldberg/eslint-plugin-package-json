@@ -1,3 +1,9 @@
+# [0.11.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.10.4...v0.11.0) (2024-03-24)
+
+### Features
+
+-   support flat config ([#161](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/161)) ([bf31a6c](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/bf31a6cb491afe0d43b29bc830d3b4c24bd1cf6d)), closes [#91](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/91)
+
 ## [0.10.4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.10.3...v0.10.4) (2024-02-20)
 
 ### Bug Fixes
