@@ -47,7 +47,7 @@ module.exports = {
 			},
 		},
 		{
-			files: "**/*.md/*.ts",
+			files: ["**/*.md/*.ts", "**/*.md/*.js"],
 			rules: {
 				"n/no-missing-import": [
 					"error",
