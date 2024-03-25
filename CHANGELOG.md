@@ -1,3 +1,9 @@
+# [0.12.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.11.0...v0.12.0) (2024-03-25)
+
+### Features
+
+-   switch prefer-repository-shorthand to repository-shorthand ([#248](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/248)) ([580edb3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/580edb3957cd4d8229bf73c10b1f7f65f79dc53f)), closes [#223](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/223)
+
 # [0.11.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.10.4...v0.11.0) (2024-03-24)
 
 ### Features
