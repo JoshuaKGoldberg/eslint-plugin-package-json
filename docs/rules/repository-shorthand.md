@@ -54,7 +54,7 @@ The `form` property specifies whether to use:
 
 The `object` form is generally recommended as that's what `npm publish` prefers.
 
-> Once npm drops support for the `"shorthand"` form, this rule will likely remove its options.
+> If and when npm drops support for the `"shorthand"` form, this rule will likely remove its options.
 
 ## Further Reading
 
