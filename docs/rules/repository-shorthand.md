@@ -17,7 +17,7 @@ Examples of **incorrect** code for this rule with the default options:
 
 ```json
 {
-	"repository": "JoshuaKGoldberg/create-typescript-app"
+	"repository": "JoshuaKGoldberg/eslint-plugin-package-json"
 }
 ```
 
@@ -27,7 +27,7 @@ Examples of **correct** code for this rule with the default options:
 {
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/JoshuaKGoldberg/create-typescript-app"
+		"url": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json"
 	}
 }
 ```
