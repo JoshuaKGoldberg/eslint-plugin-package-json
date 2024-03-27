@@ -146,6 +146,15 @@
         "code",
         "ideas"
       ]
+    },
+    {
+      "login": "altano",
+      "name": "Alan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1009?v=4",
+      "profile": "https://alan.norbauer.com",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,
