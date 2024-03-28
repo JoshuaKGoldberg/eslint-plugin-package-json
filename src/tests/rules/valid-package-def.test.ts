@@ -72,7 +72,8 @@ ruleTester.run("valid-package-def", rule, {
   "license": "ISC",
   "dependencies": {
     "foo": "npm:bar@^1.0.0",
-    "baz": "file:../baz"
+    "baz": "file:../baz",
+    "bar": "workspace:*"
   }
 }`,
 			filename: "package.json",
