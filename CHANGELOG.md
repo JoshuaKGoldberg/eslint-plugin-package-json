@@ -1,3 +1,9 @@
+## [0.12.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.12.0...v0.12.1) (2024-03-28)
+
+### Bug Fixes
+
+-   **valid-package-def:** ignore pnpm workspace protocol ([#258](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/258)) ([4b061e6](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4b061e6540fb914d004337bb89a90fedfb94b0f7)), closes [#251](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/251)
+
 # [0.12.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.11.0...v0.12.0) (2024-03-25)
 
 ### Features
