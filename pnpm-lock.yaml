@@ -7,7 +7,7 @@ settings:
 dependencies:
   package-json-validator:
     specifier: ^0.6.3
-    version: 0.6.3
+    version: 0.6.4
   semver:
     specifier: ^7.5.4
     version: 7.6.0
@@ -5873,8 +5873,8 @@ packages:
       netmask: 2.0.2
     dev: true
 
-  /package-json-validator@0.6.3:
-    resolution: {integrity: sha512-juKiFboV4UKUvWQ+OSxstnyukhuluyuEoFmgZw1Rx21XzmwlgDWLcbl3qzjA3789IRORYhVFs7cmAO0YFGwHCg==}
+  /package-json-validator@0.6.4:
+    resolution: {integrity: sha512-sp5bWr5eUoVgNV50vsJyil0XCluM+qMvtba8X4ug5Z/0YtYZsePka+tZgqiZnAyFyf5pwXaSDwYncFdSEzX7PA==}
     hasBin: true
     dependencies:
       optimist: 0.6.1
