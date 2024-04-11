@@ -120,10 +120,10 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [sort-collections](docs/rules/sort-collections.md)                     | Dependencies, scripts, and configuration values must be declared in alphabetical order.         | ✅  | 🔧 |    |
 | [unique-dependencies](docs/rules/unique-dependencies.md)               | Enforce that if repository directory is specified, it matches the path to the package.json file | ✅  |    | 💡 |
 | [valid-local-dependency](docs/rules/valid-local-dependency.md)         | Checks existence of local dependencies in the package.json                                      | ✅  |    |    |
-| [valid-name](docs/rules/valid-name.md)                                 | Enforce that package names are valid npm package names                                          | ✅  |    | 💡 |
+| [valid-name](docs/rules/valid-name.md)                                 | Enforce that package names are valid npm package names                                          | ✅  |    |    |
 | [valid-package-def](docs/rules/valid-package-def.md)                   | Enforce that package.json has all properties required by the npm spec                           | ✅  |    |    |
 | [valid-repository-directory](docs/rules/valid-repository-directory.md) | Enforce that if repository directory is specified, it matches the path to the package.json file | ✅  |    | 💡 |
-| [valid-version](docs/rules/valid-version.md)                           | Enforce that package versions are valid semver specifiers                                       | ✅  |    | 💡 |
+| [valid-version](docs/rules/valid-version.md)                           | Enforce that package versions are valid semver specifiers                                       | ✅  |    |    |
 
 <!-- end auto-generated rules list -->
 <!-- prettier-ignore-end -->

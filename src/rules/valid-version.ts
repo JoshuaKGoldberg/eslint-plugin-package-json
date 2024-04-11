@@ -39,7 +39,6 @@ export const rule = createRule({
 				"Enforce that package versions are valid semver specifiers",
 			recommended: true,
 		},
-		hasSuggestions: true,
 		messages: {
 			invalid: "Version is not a valid semver specifier.",
 			type: '"version" should be a string.',
