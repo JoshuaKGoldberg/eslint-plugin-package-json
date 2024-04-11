@@ -48,7 +48,6 @@ export const rule = createRule({
 				"Enforce that package names are valid npm package names",
 			recommended: true,
 		},
-		hasSuggestions: true,
 		messages: {
 			invalid: "Invalid npm package name: {{ complaints }}.",
 			type: '"name" should be a string.',
