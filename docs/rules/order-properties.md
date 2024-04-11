@@ -1,4 +1,4 @@
-# Package properties must be declared in standard order (`package-json/order-properties`)
+# order-properties
 
 💼 This rule is enabled in the ✅ `recommended` config.
 

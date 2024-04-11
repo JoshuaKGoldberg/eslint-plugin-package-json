@@ -1,4 +1,4 @@
-# Enforce that package.json has all properties required by the npm spec (`package-json/valid-package-def`)
+# valid-package-def
 
 💼 This rule is enabled in the ✅ `recommended` config.
 
