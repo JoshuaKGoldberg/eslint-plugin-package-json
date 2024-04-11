@@ -1,4 +1,4 @@
-# Enforce either object or shorthand declaration for repository (`package-json/repository-shorthand`)
+# repository-shorthand
 
 💼 This rule is enabled in the ✅ `recommended` config.
 

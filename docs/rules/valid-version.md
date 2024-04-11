@@ -1,4 +1,4 @@
-# Enforce that package versions are valid semver specifiers (`package-json/valid-version`)
+# valid-version
 
 💼 This rule is enabled in the ✅ `recommended` config.
 

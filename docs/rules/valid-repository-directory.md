@@ -1,4 +1,4 @@
-# Enforce that if repository directory is specified, it matches the path to the package.json file (`package-json/valid-repository-directory`)
+# valid-repository-directory
 
 💼 This rule is enabled in the ✅ `recommended` config.
 

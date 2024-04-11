@@ -1,4 +1,4 @@
-# Enforce that package names are valid npm package names (`package-json/valid-name`)
+# valid-name
 
 💼 This rule is enabled in the ✅ `recommended` config.
 

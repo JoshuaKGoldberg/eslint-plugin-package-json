@@ -1,4 +1,4 @@
-# Dependencies, scripts, and configuration values must be declared in alphabetical order (`package-json/sort-collections`)
+# sort-collections
 
 💼 This rule is enabled in the ✅ `recommended` config.
 

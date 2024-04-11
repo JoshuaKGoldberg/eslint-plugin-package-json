@@ -1,4 +1,4 @@
-# Enforce that if repository directory is specified, it matches the path to the package.json file (`package-json/unique-dependencies`)
+# unique-dependencies
 
 💼 This rule is enabled in the ✅ `recommended` config.
 
