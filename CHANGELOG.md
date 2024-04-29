@@ -1,3 +1,9 @@
+## [0.13.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.13.0...v0.13.1) (2024-04-29)
+
+### Bug Fixes
+
+-   rule order-properties not work ([#315](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/315)) ([3a477f5](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/3a477f5f9e6223bff49d0a3b3cb33633bed7b76e)), closes [#000](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/000)
+
 # [0.13.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.12.1...v0.13.0) (2024-04-29)
 
 ### Bug Fixes
