@@ -1,3 +1,13 @@
+# [0.13.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.12.1...v0.13.0) (2024-04-29)
+
+### Bug Fixes
+
+-   correct suggestion status ([#299](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/299)) ([146e25d](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/146e25dc1f837eb3cd64d4862bf5e035dbb250e2)), closes [#255](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/255)
+
+### Features
+
+-   sort-order rule shouldn't change sub-keys, better auto-fix ([#312](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/312)) ([a894550](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/a89455019be1a41309c7b3cab0a9acefbd7abeb2)), closes [#80](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/80)
+
 ## [0.12.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.12.0...v0.12.1) (2024-03-28)
 
 ### Bug Fixes
