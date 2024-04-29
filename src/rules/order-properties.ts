@@ -100,9 +100,8 @@ export const rule = createRule<Options>({
 								"Package top-level properties are not ordered in the npm standard way. Run the ESLint auto-fixer to correct.",
 							node: context.sourceCode.ast,
 						});
+						break;
 					}
-
-					break;
 				}
 			},
 		};

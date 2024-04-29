@@ -36,6 +36,37 @@ ruleTester.run("order-properties", rule, {
 		},
 		{
 			code: `{
+	"name": "error-not-started-at-first",
+	"main": "index.js",
+	"homepage": "https://example.com",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fake/github.git"
+	}
+}
+`,
+			errors: [
+				{
+					message:
+						"Package top-level properties are not ordered in the npm standard way. Run the ESLint auto-fixer to correct.",
+				},
+			],
+			filename: "package.json",
+			output: `{
+	"name": "error-not-started-at-first",
+	"version": "1.0.0",
+	"homepage": "https://example.com",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fake/github.git"
+	},
+	"main": "index.js"
+}
+`,
+		},
+		{
+			code: `{
 	"main": "index.js",
 	"homepage": "https://example.com",
 	"version": "1.0.0",
