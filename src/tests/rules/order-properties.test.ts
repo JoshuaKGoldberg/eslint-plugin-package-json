@@ -5,7 +5,38 @@ ruleTester.run("order-properties", rule, {
 	invalid: [
 		{
 			code: `{
+	"main": "index.js",
+	"homepage": "https://example.com",
+	"version": "1.0.0",
 	"name": "order-sort-package-json-implicit",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fake/github.git"
+	}
+}
+`,
+			errors: [
+				{
+					message:
+						"Package top-level properties are not ordered in the npm standard way. Run the ESLint auto-fixer to correct.",
+				},
+			],
+			filename: "package.json",
+			output: `{
+	"name": "order-sort-package-json-implicit",
+	"version": "1.0.0",
+	"homepage": "https://example.com",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fake/github.git"
+	},
+	"main": "index.js"
+}
+`,
+		},
+		{
+			code: `{
+	"name": "error-not-started-at-first",
 	"main": "index.js",
 	"homepage": "https://example.com",
 	"version": "1.0.0",
@@ -23,7 +54,7 @@ ruleTester.run("order-properties", rule, {
 			],
 			filename: "package.json",
 			output: `{
-	"name": "order-sort-package-json-implicit",
+	"name": "error-not-started-at-first",
 	"version": "1.0.0",
 	"homepage": "https://example.com",
 	"repository": {
