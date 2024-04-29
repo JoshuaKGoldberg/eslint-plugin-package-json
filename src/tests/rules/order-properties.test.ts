@@ -258,5 +258,17 @@ ruleTester.run("order-properties", rule, {
 }`,
 			options: [{ order: "legacy" }],
 		},
+		{
+			code: `{
+    "name": "only-top-level-keys-are-ordered",
+    "version": "1.0.0",
+    "homepage": "https://example.com",
+    "repository": {
+        "url": "git+https://github.com/fake/github.git",
+        "type": "git"
+    },
+    "main": "index.js"
+}`,
+		},
 	],
 });
