@@ -5,10 +5,10 @@ ruleTester.run("order-properties", rule, {
 	invalid: [
 		{
 			code: `{
+	"name": "order-sort-package-json-implicit",
 	"main": "index.js",
 	"homepage": "https://example.com",
 	"version": "1.0.0",
-	"name": "order-sort-package-json-implicit",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/fake/github.git"
