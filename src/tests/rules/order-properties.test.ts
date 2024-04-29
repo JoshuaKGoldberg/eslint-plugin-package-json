@@ -23,7 +23,69 @@ ruleTester.run("order-properties", rule, {
 			],
 			filename: "package.json",
 			output: `{
-  "name": "order-sort-package-json-implicit",
+	"name": "order-sort-package-json-implicit",
+	"version": "1.0.0",
+	"homepage": "https://example.com",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fake/github.git"
+	},
+	"main": "index.js"
+}
+`,
+		},
+		{
+			code: `{
+	"main": "index.js",
+	"homepage": "https://example.com",
+	"version": "1.0.0",
+	"name": "do-not-sort-sub-keys",
+	"repository": {
+		"url": "git+https://github.com/fake/github.git",
+		"type": "git"
+	}
+}
+`,
+			errors: [
+				{
+					message:
+						"Package top-level properties are not ordered in the npm standard way. Run the ESLint auto-fixer to correct.",
+				},
+			],
+			filename: "package.json",
+			output: `{
+	"name": "do-not-sort-sub-keys",
+	"version": "1.0.0",
+	"homepage": "https://example.com",
+	"repository": {
+		"url": "git+https://github.com/fake/github.git",
+		"type": "git"
+	},
+	"main": "index.js"
+}
+`,
+		},
+		{
+			code: `{
+  "main": "index.js",
+  "homepage": "https://example.com",
+  "version": "1.0.0",
+  "name": "respect-indent",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fake/github.git"
+  }
+}
+`,
+			errors: [
+				{
+					message:
+						"Package top-level properties are not ordered in the npm standard way. Run the ESLint auto-fixer to correct.",
+				},
+			],
+			filename: "package.json",
+			output: `{
+  "name": "respect-indent",
   "version": "1.0.0",
   "homepage": "https://example.com",
   "repository": {
@@ -55,14 +117,14 @@ ruleTester.run("order-properties", rule, {
 			filename: "package.json",
 			options: [{ order: "sort-package-json" }],
 			output: `{
-  "name": "order-sort-package-json-explicit",
-  "version": "1.0.0",
-  "homepage": "https://example.com",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fake/github.git"
-  },
-  "main": "index.js"
+	"name": "order-sort-package-json-explicit",
+	"version": "1.0.0",
+	"homepage": "https://example.com",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fake/github.git"
+	},
+	"main": "index.js"
 }
 `,
 		},
@@ -87,14 +149,14 @@ ruleTester.run("order-properties", rule, {
 			filename: "package.json",
 			options: [{ order: "legacy" }],
 			output: `{
-  "name": "order-legacy",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fake/github.git"
-  },
-  "homepage": "https://example.com"
+	"name": "order-legacy",
+	"version": "1.0.0",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fake/github.git"
+	},
+	"homepage": "https://example.com"
 }
 `,
 		},
@@ -119,14 +181,14 @@ ruleTester.run("order-properties", rule, {
 			filename: "package.json",
 			options: [{ order: ["version", "name", "repository"] }],
 			output: `{
-  "version": "1.0.0",
-  "name": "order-legacy",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fake/github.git"
-  },
-  "homepage": "https://example.com",
-  "main": "index.js"
+	"version": "1.0.0",
+	"name": "order-legacy",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/fake/github.git"
+	},
+	"main": "index.js",
+	"homepage": "https://example.com"
 }
 `,
 		},
@@ -195,6 +257,18 @@ ruleTester.run("order-properties", rule, {
 	}
 }`,
 			options: [{ order: "legacy" }],
+		},
+		{
+			code: `{
+    "name": "only-top-level-keys-are-ordered",
+    "version": "1.0.0",
+    "homepage": "https://example.com",
+    "repository": {
+        "url": "git+https://github.com/fake/github.git",
+        "type": "git"
+    },
+    "main": "index.js"
+}`,
 		},
 	],
 });

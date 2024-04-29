@@ -1,6 +1,9 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
-import sortPackageJson from "sort-package-json";
+import detectIndent from "detect-indent";
+import detectNewline from "detect-newline";
+import sortObjectKeys from "sort-object-keys";
+import { sortOrder } from "sort-package-json";
 
 import { createRule } from "../createRule.js";
 
@@ -35,7 +38,7 @@ const standardOrderLegacy = [
 	"cpu",
 ];
 
-type Order = "legacy" | "sort-package-json";
+type Order = "legacy" | "sort-package-json" | string[];
 
 type Options = [{ order: Order }?];
 
@@ -53,15 +56,15 @@ export const rule = createRule<Options>({
 				const requiredOrder =
 					options.order === "legacy"
 						? standardOrderLegacy
-						: options.order;
-				const orderedSource = sortPackageJson(
-					JSON.parse(text) as object,
-					requiredOrder === "sort-package-json"
-						? undefined
-						: {
-								sortOrder: requiredOrder,
-							},
-				);
+						: options.order === "sort-package-json"
+							? sortOrder
+							: options.order;
+
+				const json = JSON.parse(text) as Record<string, unknown>;
+				const orderedSource = sortObjectKeys(json, [
+					...requiredOrder,
+					...Object.keys(json),
+				]);
 				const orderedKeys = Object.keys(orderedSource);
 
 				const { properties } = ast.body[0].expression;
@@ -73,10 +76,24 @@ export const rule = createRule<Options>({
 					) {
 						context.report({
 							fix(fixer) {
+								const { indent, type } = detectIndent(text);
+								const endCharacters = text.endsWith("\n")
+									? "\n"
+									: "";
+								const newline = detectNewline.graceful(text);
+								let result =
+									JSON.stringify(
+										orderedSource,
+										null,
+										type === "tab" ? "\t" : indent,
+									) + endCharacters;
+								if (newline === "\r\n") {
+									result = result.replace(/\n/g, newline);
+								}
+
 								return fixer.replaceText(
 									context.sourceCode.ast,
-									JSON.stringify(orderedSource, null, 2) +
-										`\n`,
+									result,
 								);
 							},
 							message:
