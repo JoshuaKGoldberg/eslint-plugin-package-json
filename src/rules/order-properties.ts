@@ -69,11 +69,19 @@ export const rule = createRule<Options>({
 
 				const { properties } = ast.body[0].expression;
 
+				// we only need to run fix once
+				let withFix = true;
 				for (let i = 0; i < properties.length; i += 1) {
-					if (
-						(properties[i].key as JsonAST.JSONStringLiteral)
-							.value !== orderedKeys[i]
-					) {
+					const property = properties[i]
+						.key as JsonAST.JSONStringLiteral;
+					const { value } = property;
+
+					if (value === orderedKeys[i]) {
+						continue;
+					}
+
+					if (withFix) {
+						withFix = false;
 						context.report({
 							fix(fixer) {
 								const { indent, type } = detectIndent(text);
@@ -96,11 +104,14 @@ export const rule = createRule<Options>({
 									result,
 								);
 							},
-							message:
-								"Package top-level properties are not ordered in the npm standard way. Run the ESLint auto-fixer to correct.",
-							node: context.sourceCode.ast,
+							loc: properties[i].loc,
+							message: `Package top-level property ${value} is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.`,
 						});
-						break;
+					} else {
+						context.report({
+							loc: properties[i].loc,
+							message: `Package top-level property ${value} is not ordered in the npm standard way.`,
+						});
 					}
 				}
 			},
