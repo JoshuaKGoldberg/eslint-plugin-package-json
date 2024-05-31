@@ -1,3 +1,9 @@
+# [0.14.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.13.1...v0.14.0) (2024-05-31)
+
+### Features
+
+-   add name field to recommended config ([#329](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/329)) ([b7a1a37](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/b7a1a37afb35c8040fa77abaaeb669d3935e5e14)), closes [#308](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/308)
+
 ## [0.13.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.13.0...v0.13.1) (2024-04-29)
 
 ### Bug Fixes
