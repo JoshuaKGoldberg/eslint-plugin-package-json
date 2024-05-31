@@ -22,19 +22,19 @@ ruleTester.run("order-properties", rule, {
 				},
 				{
 					message:
-						'Package top-level property "homepage" is not ordered in the npm standard way.',
+						'Package top-level property "homepage" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "version" is not ordered in the npm standard way.',
+						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "name" is not ordered in the npm standard way.',
+						'Package top-level property "name" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "repository" is not ordered in the npm standard way.',
+						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 			],
 			filename: "package.json",
@@ -69,11 +69,11 @@ ruleTester.run("order-properties", rule, {
 				},
 				{
 					message:
-						'Package top-level property "version" is not ordered in the npm standard way.',
+						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "repository" is not ordered in the npm standard way.',
+						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 			],
 			filename: "package.json",
@@ -108,19 +108,19 @@ ruleTester.run("order-properties", rule, {
 				},
 				{
 					message:
-						'Package top-level property "homepage" is not ordered in the npm standard way.',
+						'Package top-level property "homepage" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "version" is not ordered in the npm standard way.',
+						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "name" is not ordered in the npm standard way.',
+						'Package top-level property "name" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "repository" is not ordered in the npm standard way.',
+						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 			],
 			filename: "package.json",
@@ -155,19 +155,19 @@ ruleTester.run("order-properties", rule, {
 				},
 				{
 					message:
-						'Package top-level property "homepage" is not ordered in the npm standard way.',
+						'Package top-level property "homepage" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "version" is not ordered in the npm standard way.',
+						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "name" is not ordered in the npm standard way.',
+						'Package top-level property "name" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "repository" is not ordered in the npm standard way.',
+						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 			],
 			filename: "package.json",
@@ -202,19 +202,19 @@ ruleTester.run("order-properties", rule, {
 				},
 				{
 					message:
-						'Package top-level property "homepage" is not ordered in the npm standard way.',
+						'Package top-level property "homepage" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "version" is not ordered in the npm standard way.',
+						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "name" is not ordered in the npm standard way.',
+						'Package top-level property "name" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "repository" is not ordered in the npm standard way.',
+						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 			],
 			filename: "package.json",
@@ -250,19 +250,19 @@ ruleTester.run("order-properties", rule, {
 				},
 				{
 					message:
-						'Package top-level property "homepage" is not ordered in the npm standard way.',
+						'Package top-level property "homepage" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "version" is not ordered in the npm standard way.',
+						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "name" is not ordered in the npm standard way.',
+						'Package top-level property "name" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "repository" is not ordered in the npm standard way.',
+						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 			],
 			filename: "package.json",
@@ -298,19 +298,19 @@ ruleTester.run("order-properties", rule, {
 				},
 				{
 					message:
-						'Package top-level property "homepage" is not ordered in the npm standard way.',
+						'Package top-level property "homepage" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "version" is not ordered in the npm standard way.',
+						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "name" is not ordered in the npm standard way.',
+						'Package top-level property "name" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 				{
 					message:
-						'Package top-level property "repository" is not ordered in the npm standard way.',
+						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
 				},
 			],
 			filename: "package.json",

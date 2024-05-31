@@ -69,8 +69,6 @@ export const rule = createRule<Options>({
 
 				const { properties } = ast.body[0].expression;
 
-				// we only need to run fix once
-				let withFix = true;
 				for (let i = 0; i < properties.length; i += 1) {
 					const property = properties[i]
 						.key as JsonAST.JSONStringLiteral;
@@ -80,39 +78,31 @@ export const rule = createRule<Options>({
 						continue;
 					}
 
-					if (withFix) {
-						withFix = false;
-						context.report({
-							fix(fixer) {
-								const { indent, type } = detectIndent(text);
-								const endCharacters = text.endsWith("\n")
-									? "\n"
-									: "";
-								const newline = detectNewline.graceful(text);
-								let result =
-									JSON.stringify(
-										orderedSource,
-										null,
-										type === "tab" ? "\t" : indent,
-									) + endCharacters;
-								if (newline === "\r\n") {
-									result = result.replace(/\n/g, newline);
-								}
+					context.report({
+						fix(fixer) {
+							const { indent, type } = detectIndent(text);
+							const endCharacters = text.endsWith("\n")
+								? "\n"
+								: "";
+							const newline = detectNewline.graceful(text);
+							let result =
+								JSON.stringify(
+									orderedSource,
+									null,
+									type === "tab" ? "\t" : indent,
+								) + endCharacters;
+							if (newline === "\r\n") {
+								result = result.replace(/\n/g, newline);
+							}
 
-								return fixer.replaceText(
-									context.sourceCode.ast,
-									result,
-								);
-							},
-							loc: properties[i].loc,
-							message: `Package top-level property "${value}" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.`,
-						});
-					} else {
-						context.report({
-							loc: properties[i].loc,
-							message: `Package top-level property "${value}" is not ordered in the npm standard way.`,
-						});
-					}
+							return fixer.replaceText(
+								context.sourceCode.ast,
+								result,
+							);
+						},
+						loc: properties[i].loc,
+						message: `Package top-level property "${value}" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.`,
+					});
 				}
 			},
 		};
