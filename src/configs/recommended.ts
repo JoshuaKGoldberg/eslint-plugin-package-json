@@ -7,6 +7,7 @@ const recommended = {
 	languageOptions: {
 		parser: parserJsonc,
 	},
+	name: "package-json/recommended",
 	plugins: {
 		get "package-json"() {
 			return plugin;
