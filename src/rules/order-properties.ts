@@ -105,7 +105,7 @@ export const rule = createRule<Options>({
 								);
 							},
 							loc: properties[i].loc,
-							message: `Package top-level property ${value} is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.`,
+							message: `Package top-level property "${value}" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.`,
 						});
 					} else {
 						context.report({
