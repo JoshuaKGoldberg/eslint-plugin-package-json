@@ -127,11 +127,11 @@ importers:
         specifier: ^0.41.0
         version: 0.41.0
       npm-package-json-lint:
-        specifier: ^7.1.0
-        version: 7.1.0(typescript@5.4.5)
+        specifier: ^8.0.0
+        version: 8.0.0(typescript@5.4.5)
       npm-package-json-lint-config-default:
         specifier: ^7.0.0
-        version: 7.0.0(npm-package-json-lint@7.1.0(typescript@5.4.5))
+        version: 7.0.0(npm-package-json-lint@8.0.0(typescript@5.4.5))
       prettier:
         specifier: ^3.2.4
         version: 3.3.1
@@ -3125,9 +3125,9 @@ packages:
     peerDependencies:
       npm-package-json-lint: ^7.1.0
 
-  npm-package-json-lint@7.1.0:
-    resolution: {integrity: sha512-ypcMpag32TCP89zzLSS+7vjeR2QY613WzmO2upcJgKNWlcswDz8cdb80urbBNHkhSPI40ex3nsKrRDH/WhMYOg==}
-    engines: {node: '>=16.0.0', npm: '>=8.0.0'}
+  npm-package-json-lint@8.0.0:
+    resolution: {integrity: sha512-44xqAKoV0nXnBYYLGUhMItGZb5tW3cLoW3UZxcsaCOX/YAkECrzOQA5F48oAA51vVE5CqAnsJB2CFvtolzMA3Q==}
+    engines: {node: '>=18.0.0', npm: '>=9.0.0'}
     hasBin: true
 
   npm-run-path@4.0.1:
@@ -3995,8 +3995,8 @@ packages:
     resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
     engines: {node: '>=14.16'}
 
-  type-fest@4.18.2:
-    resolution: {integrity: sha512-+suCYpfJLAe4OXS6+PPXjW3urOS4IoP9waSiLuXfLgqZODKw/aWwASvzqE886wA0kQgGy0mIWyhd87VpqIy6Xg==}
+  type-fest@4.20.0:
+    resolution: {integrity: sha512-MBh+PHUHHisjXf4tlx0CFWoMdjx8zCMLJHOjnV1prABYZFHqtFOyauCIK2/7w4oIfwkF8iNhLtnJEfVY2vn3iw==}
     engines: {node: '>=16'}
 
   typed-array-buffer@1.0.2:
@@ -7387,11 +7387,11 @@ snapshots:
 
   normalize-url@8.0.1: {}
 
-  npm-package-json-lint-config-default@7.0.0(npm-package-json-lint@7.1.0(typescript@5.4.5)):
+  npm-package-json-lint-config-default@7.0.0(npm-package-json-lint@8.0.0(typescript@5.4.5)):
     dependencies:
-      npm-package-json-lint: 7.1.0(typescript@5.4.5)
+      npm-package-json-lint: 8.0.0(typescript@5.4.5)
 
-  npm-package-json-lint@7.1.0(typescript@5.4.5):
+  npm-package-json-lint@8.0.0(typescript@5.4.5):
     dependencies:
       ajv: 6.12.6
       ajv-errors: 1.0.1(ajv@6.12.6)
@@ -7408,7 +7408,7 @@ snapshots:
       semver: 7.6.2
       slash: 3.0.0
       strip-json-comments: 3.1.1
-      type-fest: 4.18.2
+      type-fest: 4.20.0
       validate-npm-package-name: 5.0.1
     transitivePeerDependencies:
       - supports-color
@@ -7755,7 +7755,7 @@ snapshots:
     dependencies:
       find-up: 6.3.0
       read-pkg: 8.1.0
-      type-fest: 4.18.2
+      type-fest: 4.20.0
 
   read-pkg-up@7.0.1:
     dependencies:
@@ -7775,7 +7775,7 @@ snapshots:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 6.0.0
       parse-json: 7.1.1
-      type-fest: 4.18.2
+      type-fest: 4.20.0
 
   readable-stream@3.6.2:
     dependencies:
@@ -8329,7 +8329,7 @@ snapshots:
 
   type-fest@3.13.1: {}
 
-  type-fest@4.18.2: {}
+  type-fest@4.20.0: {}
 
   typed-array-buffer@1.0.2:
     dependencies:
