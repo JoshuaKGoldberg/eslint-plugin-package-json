@@ -1,3 +1,9 @@
+# [0.15.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.14.0...v0.15.0) (2024-06-17)
+
+### Features
+
+-   **order-properties:** more precise error reporting ([#328](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/328)) ([4a3fbc8](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4a3fbc8046d4286ca950b1de9000f12bdadfa961)), closes [#320](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/320)
+
 # [0.14.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.13.1...v0.14.0) (2024-05-31)
 
 ### Features
