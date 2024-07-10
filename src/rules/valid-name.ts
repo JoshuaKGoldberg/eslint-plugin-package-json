@@ -22,15 +22,16 @@ export const rule = createRule({
 					return;
 				}
 
+				const privateField = node.parent.properties.find(
+					(p) =>
+						p.key.type === "JSONLiteral" &&
+						p.key.value === "private",
+				);
 				if (
-					node.parent.properties.some(
-						(p) =>
-							p.key.type === "JSONLiteral" &&
-							p.key.value === "private" &&
-							p.value.type === "JSONLiteral" &&
-							(p.value.value === true ||
-								p.value.value === "true"),
-					)
+					privateField &&
+					privateField.value.type === "JSONLiteral" &&
+					(privateField.value.value === true ||
+						privateField.value.value === "true")
 				) {
 					return;
 				}
