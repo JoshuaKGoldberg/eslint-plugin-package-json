@@ -41,7 +41,7 @@ importers:
         version: 1.0.5
       '@types/node':
         specifier: ^20.11.5
-        version: 20.14.9
+        version: 20.14.10
       '@types/package-json-validator':
         specifier: ^0.6.1
         version: 0.6.1
@@ -62,7 +62,7 @@ importers:
         version: 7.14.1(eslint@8.57.0)(typescript@5.5.2)
       '@vitest/coverage-v8':
         specifier: ^1.2.1
-        version: 1.6.0(vitest@1.6.0(@types/node@20.14.9))
+        version: 1.6.0(vitest@1.6.0(@types/node@20.14.10))
       console-fail-test:
         specifier: ^0.2.3
         version: 0.2.3
@@ -104,7 +104,7 @@ importers:
         version: 2.6.0(eslint@8.57.0)
       eslint-plugin-vitest:
         specifier: ^0.4.0
-        version: 0.4.1(@typescript-eslint/eslint-plugin@7.14.1(@typescript-eslint/parser@7.14.1(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0)(typescript@5.5.2)(vitest@1.6.0(@types/node@20.14.9))
+        version: 0.4.1(@typescript-eslint/eslint-plugin@7.14.1(@typescript-eslint/parser@7.14.1(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0)(typescript@5.5.2)(vitest@1.6.0(@types/node@20.14.10))
       eslint-plugin-yml:
         specifier: ^1.12.2
         version: 1.14.0(eslint@8.57.0)
@@ -116,7 +116,7 @@ importers:
         version: 2.4.0
       knip:
         specifier: ^5.0.0
-        version: 5.23.2(@types/node@20.14.9)(typescript@5.5.2)
+        version: 5.23.2(@types/node@20.14.10)(typescript@5.5.2)
       lint-staged:
         specifier: ^15.2.0
         version: 15.2.7
@@ -155,7 +155,7 @@ importers:
         version: 5.5.2
       vitest:
         specifier: ^1.2.1
-        version: 1.6.0(@types/node@20.14.9)
+        version: 1.6.0(@types/node@20.14.10)
       yaml-eslint-parser:
         specifier: ^1.2.2
         version: 1.2.3
@@ -1006,8 +1006,8 @@ packages:
   '@types/minimist@1.2.5':
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
 
-  '@types/node@20.14.9':
-    resolution: {integrity: sha512-06OCtnTXtWOZBJlRApleWndH4JsRVs1pDCc8dLSQp+7PpUpX3ePdHyeNSFTeSe7FtKyQkrlPvHwJOW3SLd8Oyg==}
+  '@types/node@20.14.10':
+    resolution: {integrity: sha512-MdiXf+nDuMvY0gJKxyfZ7/6UFsETO7mGKF54MVD/ekJS6HdFtpZFBgrh6Pseu64XTb2MLyFPlbW6hj8HYRQNOQ==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -4708,7 +4708,7 @@ snapshots:
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 20.14.9
+      '@types/node': 20.14.10
 
   '@types/http-cache-semantics@4.0.4': {}
 
@@ -4722,7 +4722,7 @@ snapshots:
 
   '@types/minimist@1.2.5': {}
 
-  '@types/node@20.14.9':
+  '@types/node@20.14.10':
     dependencies:
       undici-types: 5.26.5
 
@@ -4903,7 +4903,7 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitest/coverage-v8@1.6.0(vitest@1.6.0(@types/node@20.14.9))':
+  '@vitest/coverage-v8@1.6.0(vitest@1.6.0(@types/node@20.14.10))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -4918,7 +4918,7 @@ snapshots:
       std-env: 3.7.0
       strip-literal: 2.1.0
       test-exclude: 6.0.0
-      vitest: 1.6.0(@types/node@20.14.9)
+      vitest: 1.6.0(@types/node@20.14.10)
     transitivePeerDependencies:
       - supports-color
 
@@ -5789,13 +5789,13 @@ snapshots:
       regexp-ast-analysis: 0.7.1
       scslre: 0.3.0
 
-  eslint-plugin-vitest@0.4.1(@typescript-eslint/eslint-plugin@7.14.1(@typescript-eslint/parser@7.14.1(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0)(typescript@5.5.2)(vitest@1.6.0(@types/node@20.14.9)):
+  eslint-plugin-vitest@0.4.1(@typescript-eslint/eslint-plugin@7.14.1(@typescript-eslint/parser@7.14.1(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0)(typescript@5.5.2)(vitest@1.6.0(@types/node@20.14.10)):
     dependencies:
       '@typescript-eslint/utils': 7.14.1(eslint@8.57.0)(typescript@5.5.2)
       eslint: 8.57.0
     optionalDependencies:
       '@typescript-eslint/eslint-plugin': 7.14.1(@typescript-eslint/parser@7.14.1(eslint@8.57.0)(typescript@5.5.2))(eslint@8.57.0)(typescript@5.5.2)
-      vitest: 1.6.0(@types/node@20.14.9)
+      vitest: 1.6.0(@types/node@20.14.10)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -6510,12 +6510,12 @@ snapshots:
 
   kind-of@6.0.3: {}
 
-  knip@5.23.2(@types/node@20.14.9)(typescript@5.5.2):
+  knip@5.23.2(@types/node@20.14.10)(typescript@5.5.2):
     dependencies:
       '@ericcornelissen/bash-parser': 0.5.3
       '@nodelib/fs.walk': 2.0.0
       '@snyk/github-codeowners': 1.1.0
-      '@types/node': 20.14.9
+      '@types/node': 20.14.10
       easy-table: 1.2.0
       fast-glob: 3.3.2
       jiti: 1.21.6
@@ -7800,13 +7800,13 @@ snapshots:
 
   validate-npm-package-name@5.0.1: {}
 
-  vite-node@1.6.0(@types/node@20.14.9):
+  vite-node@1.6.0(@types/node@20.14.10):
     dependencies:
       cac: 6.7.14
       debug: 4.3.5
       pathe: 1.1.2
       picocolors: 1.0.1
-      vite: 5.2.11(@types/node@20.14.9)
+      vite: 5.2.11(@types/node@20.14.10)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -7817,16 +7817,16 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.2.11(@types/node@20.14.9):
+  vite@5.2.11(@types/node@20.14.10):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.18.0
     optionalDependencies:
-      '@types/node': 20.14.9
+      '@types/node': 20.14.10
       fsevents: 2.3.3
 
-  vitest@1.6.0(@types/node@20.14.9):
+  vitest@1.6.0(@types/node@20.14.10):
     dependencies:
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0
@@ -7845,11 +7845,11 @@ snapshots:
       strip-literal: 2.1.0
       tinybench: 2.8.0
       tinypool: 0.8.4
-      vite: 5.2.11(@types/node@20.14.9)
-      vite-node: 1.6.0(@types/node@20.14.9)
+      vite: 5.2.11(@types/node@20.14.10)
+      vite-node: 1.6.0(@types/node@20.14.10)
       why-is-node-running: 2.2.2
     optionalDependencies:
-      '@types/node': 20.14.9
+      '@types/node': 20.14.10
     transitivePeerDependencies:
       - less
       - lightningcss
