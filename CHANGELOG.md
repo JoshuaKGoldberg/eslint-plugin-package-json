@@ -1,3 +1,9 @@
+## [0.15.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.1...v0.15.2) (2024-07-10)
+
+### Bug Fixes
+
+-   skip check for name to match npm package when private is true ([#455](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/455)) ([cc10e05](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/cc10e052911688ca7cacb9761c2db7c24c826d3e)), closes [#000](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/000)
+
 ## [0.15.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.0...v0.15.1) (2024-07-10)
 
 ### Bug Fixes
