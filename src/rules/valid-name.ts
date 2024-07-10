@@ -22,6 +22,19 @@ export const rule = createRule({
 					return;
 				}
 
+				if (
+					node.parent.properties.some(
+						(p) =>
+							p.key.type === "JSONLiteral" &&
+							p.key.value === "private" &&
+							p.value.type === "JSONLiteral" &&
+							(p.value.value === true ||
+								p.value.value === "true"),
+					)
+				) {
+					return;
+				}
+
 				const { errors, warnings } = validate(node.value.value);
 				const complaints = [...(errors ?? []), ...(warnings ?? [])];
 				if (!complaints.length) {
