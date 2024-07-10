@@ -87,10 +87,28 @@ ruleTester.run("valid-name", rule, {
 				},
 			],
 		},
+		{
+			code: `{
+	"name": "InvalidPackageNameWithPrivateFalse",
+	"private": false
+}
+`,
+			errors: [
+				{
+					data: {
+						complaints:
+							"name can no longer contain capital letters",
+					},
+					messageId: "invalid",
+				},
+			],
+		},
 	],
 	valid: [
 		"{}",
 		`{ "name": "valid-package-name" }`,
 		`{ "name": "@scoped/valid-package-name" }`,
+		`{ "name": "InvalidPackageNameWithPrivateTrue", "private": true }`,
+		`{ "name": "InvalidPackageNameWithPrivateTrue", "private": "true" }`,
 	],
 });
