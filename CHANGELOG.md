@@ -1,3 +1,9 @@
+## [0.15.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.0...v0.15.1) (2024-07-10)
+
+### Bug Fixes
+
+-   update package-json-validator ([#456](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/456)) ([1a8bda4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/1a8bda47891c14c7434ad6242f33f9ad7c2e940f)), closes [#250](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/250)
+
 # [0.15.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.14.0...v0.15.0) (2024-06-17)
 
 ### Features
