@@ -15,8 +15,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0
       package-json-validator:
-        specifier: ^0.6.3
-        version: 0.6.4
+        specifier: ^0.6.5
+        version: 0.6.5
       semver:
         specifier: ^7.5.4
         version: 7.6.2
@@ -3260,8 +3260,8 @@ packages:
     resolution: {integrity: sha512-5NPgf87AT2STgwa2ntRMr45jTKrYBGkVU36yT0ig/n/GMAa3oPqhZfIQ2kMEimReg0+t9kZViDVZ83qfVUlckg==}
     engines: {node: '>= 14'}
 
-  package-json-validator@0.6.4:
-    resolution: {integrity: sha512-sp5bWr5eUoVgNV50vsJyil0XCluM+qMvtba8X4ug5Z/0YtYZsePka+tZgqiZnAyFyf5pwXaSDwYncFdSEzX7PA==}
+  package-json-validator@0.6.5:
+    resolution: {integrity: sha512-fEG8kM+EfX0j7TbTWAv6/0NRkid0fUHm2afJx35en3+IlrJ6dRQfKUCpuUl/bGM6MvQ0MxAlpaXkJtYVMp0F4A==}
     hasBin: true
 
   package-json@8.1.1:
@@ -7596,7 +7596,7 @@ snapshots:
       degenerator: 5.0.1
       netmask: 2.0.2
 
-  package-json-validator@0.6.4:
+  package-json-validator@0.6.5:
     dependencies:
       optimist: 0.6.1
 
