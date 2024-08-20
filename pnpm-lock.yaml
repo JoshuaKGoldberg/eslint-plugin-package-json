@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       detect-indent:
-        specifier: 6.1.0
-        version: 6.1.0
+        specifier: 7.0.1
+        version: 7.0.1
       detect-newline:
         specifier: 3.1.0
         version: 3.1.0
