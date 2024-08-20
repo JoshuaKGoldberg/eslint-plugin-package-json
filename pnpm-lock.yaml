@@ -12,8 +12,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0
       detect-newline:
-        specifier: 3.1.0
-        version: 3.1.0
+        specifier: 4.0.1
+        version: 4.0.1
       package-json-validator:
         specifier: ^0.6.5
         version: 0.6.5
