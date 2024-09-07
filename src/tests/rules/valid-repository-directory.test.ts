@@ -1,91 +1,66 @@
+import path from "node:path";
+
 import { rule } from "../../rules/valid-repository-directory.js";
 import { ruleTester } from "./ruleTester.js";
 
-ruleTester.run("valid-repository-directory", rule, {
+ruleTester.run("valid-repository-directory (no repository)", rule, {
 	invalid: [
 		{
 			code: `{
 	"repository": {
-		"directory": "nested/package.json"
+		"directory": "nonexistent"
 	}
 }
 `,
 			errors: [
 				{
 					column: 16,
-					endColumn: 37,
+					endColumn: 29,
 					line: 3,
 					messageId: "mismatched",
-					suggestions: [
-						{
-							messageId: "replace",
-							output: `{
-	"repository": {
-		"directory": "."
-	}
-}
-`,
-						},
-					],
+					suggestions: [],
 				},
 			],
-			filename: "package.json",
+			filename: "/Users/face/src/package.json",
+			name: `invalid directory`,
 		},
 		{
 			code: `{
-	"repository": {
-		"directory": "incorrect/package.json"
-	}
+    "repository": {
+        "directory": "book"
+    }
 }
 `,
 			errors: [
 				{
-					column: 16,
-					endColumn: 40,
+					column: 22,
+					endColumn: 28,
 					line: 3,
 					messageId: "mismatched",
-					suggestions: [
-						{
-							messageId: "replace",
-							output: `{
-	"repository": {
-		"directory": "correct"
-	}
-}
-`,
-						},
-					],
+					suggestions: [],
 				},
 			],
-			filename: "correct/package.json",
+			filename: "/Users/face/bookkeeper/package.json",
+			name: `don't match on path substring`,
 		},
 		{
 			code: `{
-	"repository": {
-		"directory": "incorrect/package.json"
-	}
+    "repository": {
+        "directory": "src"
+    }
 }
 `,
 			errors: [
 				{
-					column: 16,
-					endColumn: 40,
+					column: 22,
+					endColumn: 27,
 					line: 3,
 					messageId: "mismatched",
-					suggestions: [
-						{
-							messageId: "replace",
-							output: `{
-	"repository": {
-		"directory": "deeply/nested"
-	}
-}
-`,
-						},
-					],
+					suggestions: [],
 				},
 			],
-			filename: "deeply/nested/package.json",
+			filename: "/Users/face/src/project/package.json",
+			name: `path is valid, but not end of path`,
 		},
 	],
 	valid: [
@@ -103,12 +78,12 @@ ruleTester.run("valid-repository-directory", rule, {
 `,
 		{
 			code: `{
-	"repository": {
-		"directory": "nested"
-	}
+    "repository": {
+        "directory": "project"
+    }
 }
 `,
-			filename: "nested/package.json",
+			filename: "/Users/face/src/project/package.json",
 		},
 		{
 			code: `{
@@ -117,7 +92,89 @@ ruleTester.run("valid-repository-directory", rule, {
 	}
 }
 `,
-			filename: "deeply/nested/package.json",
+			filename: "/Users/face/src/deeply/nested/package.json",
+		},
+		{
+			code: `{ "repository": { "directory": "/Users/face/src/project" } }`,
+			filename: `/Users/face/src/project/package.json`,
+			name: `full, absolute path to package.json`,
+		},
+	],
+});
+
+const thisRepoDirectory = path.resolve(__dirname, "..", "..", "..");
+ruleTester.run("valid-repository-directory (this repository)", rule, {
+	invalid: [
+		{
+			code: `{
+	"repository": {
+		"directory": "nonexistent"
+	}
+}
+`,
+			errors: [
+				{
+					column: 16,
+					endColumn: 29,
+					line: 3,
+					messageId: "mismatched",
+					suggestions: [
+						{
+							messageId: "replace",
+							output: `{
+	"repository": {
+		"directory": ""
+	}
+}
+`,
+						},
+					],
+				},
+			],
+			filename: `${thisRepoDirectory}/package.json`,
+			name: `root package.json`,
+		},
+		{
+			code: `{
+	"repository": {
+		"directory": "nonexistent"
+	}
+}
+`,
+			errors: [
+				{
+					column: 16,
+					endColumn: 29,
+					line: 3,
+					messageId: "mismatched",
+					suggestions: [
+						{
+							messageId: "replace",
+							output: `{
+	"repository": {
+		"directory": "src/tests/__fixtures__/valid-local-dependency"
+	}
+}
+`,
+						},
+					],
+				},
+			],
+			filename: `${thisRepoDirectory}/src/tests/__fixtures__/valid-local-dependency/package.json`,
+			name: `nested package.json`,
+		},
+	],
+	valid: [
+		{
+			code: `{ "repository": { "directory": "" } }`,
+			filename: `${thisRepoDirectory}/package.json`,
+
+			name: `root package.json`,
+		},
+		{
+			code: `{ "repository": { "directory": "src/tests/__fixtures__/valid-local-dependency" } }`,
+			filename: `${thisRepoDirectory}/src/tests/__fixtures__/valid-local-dependency/package.json`,
+			name: `nested package.json`,
 		},
 	],
 });
