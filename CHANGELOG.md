@@ -1,3 +1,9 @@
+## [0.15.3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.2...v0.15.3) (2024-09-12)
+
+### Bug Fixes
+
+-   **valid-repository-directory:** use repository root for more accurate linting ([#498](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/498)) ([d149400](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/d1494001a7cbf3fa95041179004fa8ad03ef0d34)), closes [#252](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/252)
+
 ## [0.15.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.1...v0.15.2) (2024-07-10)
 
 ### Bug Fixes
