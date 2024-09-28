@@ -30,8 +30,8 @@ importers:
         specifier: ^1.57.0
         version: 1.57.0
       validate-npm-package-name:
-        specifier: ^5.0.0
-        version: 5.0.1
+        specifier: ^6.0.0
+        version: 6.0.0
     devDependencies:
       '@release-it/conventional-changelog':
         specifier: ^8.0.1
@@ -3866,6 +3866,10 @@ packages:
   validate-npm-package-name@5.0.1:
     resolution: {integrity: sha512-OljLrQ9SQdOUqTaQxqL5dEfZWrXExyyWsozYlAWFawPVNuD83igl7uJD2RTkNMbniIYgt8l81eCJGIdQF7avLQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
+
+  validate-npm-package-name@6.0.0:
+    resolution: {integrity: sha512-d7KLgL1LD3U3fgnvWEY1cQXoO/q6EQ1BSz48Sa149V/5zVTAbgmZIpyI8TRi6U9/JNyeYLlTKsEMPtLC27RFUg==}
+    engines: {node: ^18.17.0 || >=20.5.0}
 
   vite-node@1.6.0:
     resolution: {integrity: sha512-de6HJgzC+TFzOu0NTC4RAIsyf/DY/ibWDYQUcuEA84EMHhcefTUGkjFHKKEJhQN4A+6I0u++kr3l36ZF2d7XRw==}
@@ -7828,6 +7832,8 @@ snapshots:
       spdx-expression-parse: 3.0.1
 
   validate-npm-package-name@5.0.1: {}
+
+  validate-npm-package-name@6.0.0: {}
 
   vite-node@1.6.0(@types/node@22.7.1):
     dependencies:
