@@ -44,7 +44,7 @@ importers:
         version: 1.0.6
       '@types/node':
         specifier: ^22.0.0
-        version: 22.7.4
+        version: 22.7.5
       '@types/package-json-validator':
         specifier: ^0.6.1
         version: 0.6.1
@@ -65,7 +65,7 @@ importers:
         version: 8.8.1(eslint@8.57.1)(typescript@5.6.2)
       '@vitest/coverage-v8':
         specifier: ^1.2.1
-        version: 1.6.0(vitest@1.6.0(@types/node@22.7.4))
+        version: 1.6.0(vitest@1.6.0(@types/node@22.7.5))
       console-fail-test:
         specifier: ^0.5.0
         version: 0.5.0
@@ -107,7 +107,7 @@ importers:
         version: 2.6.0(eslint@8.57.1)
       eslint-plugin-vitest:
         specifier: ^0.4.0
-        version: 0.4.1(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@8.8.1(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2)(vitest@1.6.0(@types/node@22.7.4))
+        version: 0.4.1(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@8.8.1(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2)(vitest@1.6.0(@types/node@22.7.5))
       eslint-plugin-yml:
         specifier: ^1.12.2
         version: 1.14.0(eslint@8.57.1)
@@ -119,7 +119,7 @@ importers:
         version: 2.4.0
       knip:
         specifier: ^5.0.0
-        version: 5.32.0(@types/node@22.7.4)(typescript@5.6.2)
+        version: 5.32.0(@types/node@22.7.5)(typescript@5.6.2)
       lint-staged:
         specifier: ^15.2.0
         version: 15.2.10
@@ -158,7 +158,7 @@ importers:
         version: 5.6.2
       vitest:
         specifier: ^1.2.1
-        version: 1.6.0(@types/node@22.7.4)
+        version: 1.6.0(@types/node@22.7.5)
       yaml-eslint-parser:
         specifier: ^1.2.2
         version: 1.2.3
@@ -993,8 +993,8 @@ packages:
   '@types/minimist@1.2.5':
     resolution: {integrity: sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==}
 
-  '@types/node@22.7.4':
-    resolution: {integrity: sha512-y+NPi1rFzDs1NdQHHToqeiX2TIS79SWEAw9GYhkkx8bD0ChpfqC+n2j5OXOCpzfojBEBt6DnEnnG9MY0zk1XLg==}
+  '@types/node@22.7.5':
+    resolution: {integrity: sha512-jML7s2NAzMWc//QSJ1a3prpk78cOPchGvXJsC3C6R6PSMoooztvRVQEz89gmBTBY1SPMaqo5teB4uNHPdetShQ==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -4599,7 +4599,7 @@ snapshots:
   '@types/glob@7.2.0':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 22.7.4
+      '@types/node': 22.7.5
 
   '@types/json-schema@7.0.15': {}
 
@@ -4611,7 +4611,7 @@ snapshots:
 
   '@types/minimist@1.2.5': {}
 
-  '@types/node@22.7.4':
+  '@types/node@22.7.5':
     dependencies:
       undici-types: 6.19.8
 
@@ -4819,7 +4819,7 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitest/coverage-v8@1.6.0(vitest@1.6.0(@types/node@22.7.4))':
+  '@vitest/coverage-v8@1.6.0(vitest@1.6.0(@types/node@22.7.5))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -4834,7 +4834,7 @@ snapshots:
       std-env: 3.7.0
       strip-literal: 2.1.0
       test-exclude: 6.0.0
-      vitest: 1.6.0(@types/node@22.7.4)
+      vitest: 1.6.0(@types/node@22.7.5)
     transitivePeerDependencies:
       - supports-color
 
@@ -5694,13 +5694,13 @@ snapshots:
       regexp-ast-analysis: 0.7.1
       scslre: 0.3.0
 
-  eslint-plugin-vitest@0.4.1(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@8.8.1(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2)(vitest@1.6.0(@types/node@22.7.4)):
+  eslint-plugin-vitest@0.4.1(@typescript-eslint/eslint-plugin@7.18.0(@typescript-eslint/parser@8.8.1(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2)(vitest@1.6.0(@types/node@22.7.5)):
     dependencies:
       '@typescript-eslint/utils': 7.18.0(eslint@8.57.1)(typescript@5.6.2)
       eslint: 8.57.1
     optionalDependencies:
       '@typescript-eslint/eslint-plugin': 7.18.0(@typescript-eslint/parser@8.8.1(eslint@8.57.1)(typescript@5.6.2))(eslint@8.57.1)(typescript@5.6.2)
-      vitest: 1.6.0(@types/node@22.7.4)
+      vitest: 1.6.0(@types/node@22.7.5)
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -6382,11 +6382,11 @@ snapshots:
 
   kind-of@6.0.3: {}
 
-  knip@5.32.0(@types/node@22.7.4)(typescript@5.6.2):
+  knip@5.32.0(@types/node@22.7.5)(typescript@5.6.2):
     dependencies:
       '@nodelib/fs.walk': 1.2.8
       '@snyk/github-codeowners': 1.1.0
-      '@types/node': 22.7.4
+      '@types/node': 22.7.5
       easy-table: 1.2.0
       enhanced-resolve: 5.17.1
       fast-glob: 3.3.2
@@ -7643,13 +7643,13 @@ snapshots:
 
   validate-npm-package-name@6.0.0: {}
 
-  vite-node@1.6.0(@types/node@22.7.4):
+  vite-node@1.6.0(@types/node@22.7.5):
     dependencies:
       cac: 6.7.14
       debug: 4.3.7
       pathe: 1.1.2
       picocolors: 1.1.0
-      vite: 5.2.11(@types/node@22.7.4)
+      vite: 5.2.11(@types/node@22.7.5)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -7660,16 +7660,16 @@ snapshots:
       - supports-color
       - terser
 
-  vite@5.2.11(@types/node@22.7.4):
+  vite@5.2.11(@types/node@22.7.5):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.22.0
     optionalDependencies:
-      '@types/node': 22.7.4
+      '@types/node': 22.7.5
       fsevents: 2.3.3
 
-  vitest@1.6.0(@types/node@22.7.4):
+  vitest@1.6.0(@types/node@22.7.5):
     dependencies:
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0
@@ -7688,11 +7688,11 @@ snapshots:
       strip-literal: 2.1.0
       tinybench: 2.8.0
       tinypool: 0.8.4
-      vite: 5.2.11(@types/node@22.7.4)
-      vite-node: 1.6.0(@types/node@22.7.4)
+      vite: 5.2.11(@types/node@22.7.5)
+      vite-node: 1.6.0(@types/node@22.7.5)
       why-is-node-running: 2.2.2
     optionalDependencies:
-      '@types/node': 22.7.4
+      '@types/node': 22.7.5
     transitivePeerDependencies:
       - less
       - lightningcss
