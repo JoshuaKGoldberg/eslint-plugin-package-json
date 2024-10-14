@@ -68,7 +68,7 @@
 		"validate-npm-package-name": "^6.0.0"
 	},
 	"devDependencies": {
-		"@release-it/conventional-changelog": "^8.0.1",
+		"@release-it/conventional-changelog": "^9.0.0",
 		"@types/eslint": "^8.56.2",
 		"@types/estree": "^1.0.5",
 		"@types/node": "^22.0.0",
