@@ -8,3 +8,5 @@ export const configs = {
 		rules: recommendedRuleSettings,
 	},
 };
+
+export default plugin;
