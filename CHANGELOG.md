@@ -1,3 +1,9 @@
+## [0.15.5](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.4...v0.15.5) (2024-11-06)
+
+### Bug Fixes
+
+-   add plugin export ([#609](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/609)) ([a2c83b4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/a2c83b42c231129efb97ec29a29f6ae361adcc26)), closes [#000](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/000)
+
 ## [0.15.4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.3...v0.15.4) (2024-10-18)
 
 ### Bug Fixes
