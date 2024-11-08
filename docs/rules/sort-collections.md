@@ -97,7 +97,14 @@ Example:
 Defaults:
 
 ```json
-["scripts", "devDependencies", "dependencies", "peerDependencies", "config"]
+[
+	"scripts",
+	"devDependencies",
+	"dependencies",
+	"peerDependencies",
+	"config",
+	"exports"
+]
 ```
 
 This rule is **autofixable**; run `eslint` with the `--fix` option to sort any incorrect collections in place.
