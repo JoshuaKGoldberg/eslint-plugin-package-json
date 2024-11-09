@@ -9,6 +9,7 @@ const defaultCollections = [
 	"dependencies",
 	"peerDependencies",
 	"config",
+	"exports",
 ];
 
 type Options = string[];

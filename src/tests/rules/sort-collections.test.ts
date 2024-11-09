@@ -28,6 +28,35 @@ ruleTester.run("sort-collections", rule, {
   }
 }`,
 		},
+		{
+			code: `{
+	"exports": {
+		"./package.json": "./package.json",
+		".": {
+			"import": "./index.mjs",
+			"require": "./index.js",
+			"types": "./index.d.ts"
+		}
+	}
+}`,
+			errors: [
+				{
+					message: "Package exports are not alphabetized",
+					type: "JSONProperty",
+				},
+			],
+			filename: "package.json",
+			output: `{
+	"exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./package.json": "./package.json"
+  }
+}`,
+		},
 	],
 
 	valid: [
