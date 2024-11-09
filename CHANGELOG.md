@@ -1,3 +1,9 @@
+## [0.15.6](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.5...v0.15.6) (2024-11-09)
+
+### Bug Fixes
+
+-   add sorting exports field ([#615](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/615)) ([116c74b](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/116c74be65089d7cfb39f3dae2fcae18fe19a263)), closes [#000](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/000)
+
 ## [0.15.5](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.4...v0.15.5) (2024-11-06)
 
 ### Bug Fixes
