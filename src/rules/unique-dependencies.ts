@@ -96,7 +96,7 @@ export const rule = createRule({
 		docs: {
 			category: "Best Practices",
 			description:
-				"Enforce that if repository directory is specified, it matches the path to the package.json file",
+				"Checks a dependency isn't specified more than once (i.e. in `dependencies` and `devDependencies`)",
 			recommended: true,
 		},
 		hasSuggestions: true,
