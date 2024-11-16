@@ -30,6 +30,31 @@ ruleTester.run("sort-collections", rule, {
 		},
 		{
 			code: `{
+	"scripts": {
+		"build": "webpack",
+		"postwatch": "echo test",
+		"prebuild": "echo test",
+		"watch": "webpack-dev-server"
+	}
+}`,
+			errors: [
+				{
+					message: "Package scripts are not alphabetized",
+					type: "JSONProperty",
+				},
+			],
+			filename: "package.json",
+			output: `{
+	"scripts": {
+    "prebuild": "echo test",
+    "build": "webpack",
+    "watch": "webpack-dev-server",
+    "postwatch": "echo test"
+  }
+}`,
+		},
+		{
+			code: `{
 	"exports": {
 		"./package.json": "./package.json",
 		".": {
