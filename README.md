@@ -19,10 +19,10 @@
 
 ## Installation
 
-This package requires [ESLint](http://eslint.org) 8 and [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser):
+This package requires [ESLint](http://eslint.org) >=8:
 
 ```shell
-npm install eslint eslint-plugin-package-json jsonc-eslint-parser --save-dev
+npm install eslint eslint-plugin-package-json --save-dev
 ```
 
 ## Usage
@@ -63,7 +63,13 @@ See [ESLint's _Configuration Files_ guide](https://eslint.org/docs/latest/use/co
 
 ### Legacy Config
 
-Add an override to your ESLint configuration file that specifies this plugin, [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser), and its recommended rules for your `package.json` file:
+Usage with ESLint's legacy ("eslintrc") format requires also installing [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser):
+
+```shell
+npm install jsonc-eslint-parser --save-dev
+```
+
+Add an override to your ESLint configuration file that specifies `jsonc-eslint-parser`, this plugin, and its recommended rules for your `package.json` file:
 
 ```js
 module.exports = {
