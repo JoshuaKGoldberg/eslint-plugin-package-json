@@ -29,7 +29,7 @@ npm install eslint eslint-plugin-package-json --save-dev
 
 ### Flat Config
 
-This plugin's recommended configuration enables its rules on `**/package.json` files, parsing them with [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser):
+This plugin's recommended configuration enables its rules on `**/package.json` files, parsing them with [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser).
 
 In your ESLint configuration file:
 
