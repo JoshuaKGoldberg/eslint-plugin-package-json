@@ -112,5 +112,29 @@ ruleTester.run("sort-collections", rule, {
 			filename: "not-a-package.json",
 			options: [["devDependencies"]],
 		},
+		{
+			code: `{
+	"scripts": {
+		"lint": "echo test",
+        "poster": "echo test"
+	}
+}`,
+		},
+		{
+			code: `{
+	"scripts": {
+		"pretest": "echo test",
+        "watch": "echo test"
+	}
+}`,
+		},
+		{
+			code: `{
+	"scripts": {
+        "postwatch": "echo test",
+		"pretest": "echo test"
+	}
+}`,
+		},
 	],
 });
