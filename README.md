@@ -137,6 +137,11 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 These rules only run on `package.json` files; they will ignore all other files being linted.
 They can lint `package.json` files at project root and in any subfolder of the project, making this plugin great for monorepos.
 
+## Development
+
+See [`.github/CONTRIBUTING.md`](./.github/CONTRIBUTING.md), then [`.github/DEVELOPMENT.md`](./.github/DEVELOPMENT.md).
+Thanks! 💖
+
 ## Contributors
 
 <!-- spellchecker: disable -->
