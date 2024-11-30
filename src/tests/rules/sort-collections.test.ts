@@ -55,6 +55,69 @@ ruleTester.run("sort-collections", rule, {
 		},
 		{
 			code: `{
+	"scripts": {
+		"postbuild": "echo test",
+		"build": "echo test"
+	}
+}`,
+			errors: [
+				{
+					message: "Package scripts are not alphabetized",
+					type: "JSONProperty",
+				},
+			],
+			filename: "package.json",
+			output: `{
+	"scripts": {
+    "build": "echo test",
+    "postbuild": "echo test"
+  }
+}`,
+		},
+		{
+			code: `{
+	"scripts": {
+		"build": "echo test",
+		"prebuild": "echo test"
+	}
+}`,
+			errors: [
+				{
+					message: "Package scripts are not alphabetized",
+					type: "JSONProperty",
+				},
+			],
+			filename: "package.json",
+			output: `{
+	"scripts": {
+    "prebuild": "echo test",
+    "build": "echo test"
+  }
+}`,
+		},
+		{
+			code: `{
+	"scripts": {
+		"prebuild": "echo test",
+		"postbuild": "echo test"
+	}
+}`,
+			errors: [
+				{
+					message: "Package scripts are not alphabetized",
+					type: "JSONProperty",
+				},
+			],
+			filename: "package.json",
+			output: `{
+	"scripts": {
+    "postbuild": "echo test",
+    "prebuild": "echo test"
+  }
+}`,
+		},
+		{
+			code: `{
 	"exports": {
 		"./package.json": "./package.json",
 		".": {
@@ -133,6 +196,15 @@ ruleTester.run("sort-collections", rule, {
 	"scripts": {
         "postwatch": "echo test",
 		"pretest": "echo test"
+	}
+}`,
+		},
+		{
+			code: `{
+	"scripts": {
+        "prebuild": "echo test",
+		"build": "echo test",
+        "postbuild": "echo test"
 	}
 }`,
 		},
