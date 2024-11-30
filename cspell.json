@@ -23,6 +23,7 @@
 		"npmpackagejsonlintrc",
 		"outro",
 		"packagejson",
+		"postwatch",
 		"quickstart",
 		"ruleset",
 		"tsup",
