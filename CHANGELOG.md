@@ -1,3 +1,9 @@
+# [0.16.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.6...v0.16.0) (2024-11-30)
+
+### Features
+
+-   **sort-collections:** should sort `overrides` ([#668](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/668)) ([18129cd](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/18129cd5c4a0bf45709ea7fcb9fb316c2a639a71)), closes [#619](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/619)
+
 ## [0.15.6](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.5...v0.15.6) (2024-11-09)
 
 ### Bug Fixes
