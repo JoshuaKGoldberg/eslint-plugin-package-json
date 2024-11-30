@@ -30,14 +30,56 @@ export const rule = createRule<Options>({
 					toSort.includes(key.value)
 				) {
 					const currentOrder = collection.properties;
-					const desiredOrder = currentOrder
-						.slice()
-						.sort((a, b) =>
-							(a.key as AST.JSONStringLiteral).value >
-							(b.key as AST.JSONStringLiteral).value
-								? 1
-								: -1,
-						);
+					const scripts = new Set(
+						currentOrder.map(
+							(prop) => (prop.key as AST.JSONStringLiteral).value,
+						),
+					);
+
+					const desiredOrder = currentOrder.slice().sort((a, b) => {
+						let aKey = (a.key as AST.JSONStringLiteral).value;
+						let bKey = (b.key as AST.JSONStringLiteral).value;
+
+						if (key.value !== "scripts") {
+							return aKey > bKey ? 1 : -1;
+						} else {
+							let modifier = 0;
+
+							if (
+								aKey.startsWith("pre") &&
+								scripts.has(aKey.substring(3))
+							) {
+								aKey = aKey.substring(3);
+								modifier -= 1;
+							} else if (
+								aKey.startsWith("post") &&
+								scripts.has(aKey.substring(4))
+							) {
+								aKey = aKey.substring(4);
+								modifier += 1;
+							}
+
+							if (
+								bKey.startsWith("pre") &&
+								scripts.has(bKey.substring(3))
+							) {
+								bKey = bKey.substring(3);
+								modifier += 1;
+							} else if (
+								bKey.startsWith("post") &&
+								scripts.has(bKey.substring(4))
+							) {
+								bKey = bKey.substring(4);
+								modifier -= 1;
+							}
+
+							if (aKey === bKey) {
+								return modifier;
+							}
+
+							return aKey > bKey ? 1 : -1;
+						}
+					});
 					if (
 						currentOrder.some(
 							(property, i) => desiredOrder[i] !== property,
