@@ -204,6 +204,15 @@
         "tool",
         "doc"
       ]
+    },
+    {
+      "login": "sasial-dev",
+      "name": "Sasial",
+      "avatar_url": "https://avatars.githubusercontent.com/u/44125644?v=4",
+      "profile": "https://sasial.dev",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
