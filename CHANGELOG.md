@@ -1,3 +1,9 @@
+# [0.17.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.16.0...v0.17.0) (2024-11-30)
+
+### Features
+
+-   sort alphabetically with co-located hooks for `scripts` ([#632](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/632)) ([4ccae4f](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4ccae4f58e1695b792dd3d0daf46cedc134d9541)), closes [#499](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/499) [#499](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/499)
+
 # [0.16.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.6...v0.16.0) (2024-11-30)
 
 ### Features
