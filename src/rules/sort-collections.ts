@@ -8,6 +8,7 @@ const defaultCollections = [
 	"devDependencies",
 	"dependencies",
 	"peerDependencies",
+	"overrides",
 	"config",
 	"exports",
 ];
