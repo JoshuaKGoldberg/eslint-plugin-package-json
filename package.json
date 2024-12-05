@@ -64,7 +64,7 @@
 		"package-json-validator": "^0.7.0",
 		"semver": "^7.5.4",
 		"sort-object-keys": "^1.1.3",
-		"sort-package-json": "^1.57.0",
+		"sort-package-json": "^2.12.0",
 		"validate-npm-package-name": "^6.0.0"
 	},
 	"devDependencies": {
