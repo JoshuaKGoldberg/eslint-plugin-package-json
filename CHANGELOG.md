@@ -1,3 +1,9 @@
+# [0.18.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.17.0...v0.18.0) (2024-12-05)
+
+### Features
+
+-   update sort-package-json to 12 ([#680](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/680)) ([566e85b](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/566e85b27ecff4997cd08e1fa00611b1b0e61db0)), closes [#679](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/679)
+
 # [0.17.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.16.0...v0.17.0) (2024-11-30)
 
 ### Features
