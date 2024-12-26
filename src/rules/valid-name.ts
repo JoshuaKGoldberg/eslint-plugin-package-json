@@ -55,6 +55,7 @@ export const rule = createRule({
 		};
 	},
 
+	// eslint-disable-next-line eslint-plugin/require-meta-type, eslint-plugin/require-meta-schema
 	meta: {
 		docs: {
 			category: "Best Practices",

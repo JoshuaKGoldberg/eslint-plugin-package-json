@@ -92,6 +92,7 @@ export const rule = createRule({
 		};
 	},
 
+	// eslint-disable-next-line eslint-plugin/require-meta-schema, eslint-plugin/require-meta-type
 	meta: {
 		docs: {
 			category: "Best Practices",

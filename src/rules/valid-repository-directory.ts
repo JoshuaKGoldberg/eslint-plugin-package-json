@@ -118,6 +118,7 @@ export const rule = createRule({
 											`"${expected}"`,
 										);
 									},
+									// eslint-disable-next-line eslint-plugin/no-missing-placeholders
 									messageId: "replace",
 								},
 							],
@@ -128,6 +129,7 @@ export const rule = createRule({
 		};
 	},
 
+	// eslint-disable-next-line eslint-plugin/require-meta-type, eslint-plugin/require-meta-schema
 	meta: {
 		docs: {
 			category: "Best Practices",

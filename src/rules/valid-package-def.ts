@@ -25,6 +25,7 @@ export const rule = createRule({
 				validation.errors?.filter(isUsableError).forEach((message) => {
 					if (message) {
 						context.report({
+							// eslint-disable-next-line eslint-plugin/prefer-message-ids
 							message,
 							node: context.sourceCode.ast,
 						});
@@ -34,6 +35,7 @@ export const rule = createRule({
 		};
 	},
 
+	// eslint-disable-next-line eslint-plugin/prefer-message-ids, eslint-plugin/require-meta-type, eslint-plugin/require-meta-schema
 	meta: {
 		docs: {
 			category: "Best Practices",

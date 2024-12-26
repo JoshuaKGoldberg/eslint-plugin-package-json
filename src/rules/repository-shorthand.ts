@@ -131,6 +131,7 @@ export const rule = createRule<Options>({
 		};
 	},
 
+	// eslint-disable-next-line eslint-plugin/require-meta-type
 	meta: {
 		docs: {
 			category: "Best Practices",
