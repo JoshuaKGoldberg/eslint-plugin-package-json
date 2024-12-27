@@ -31,12 +31,14 @@ export const rule = createRule({
 							try {
 								if (!require.resolve(filePath)) {
 									context.report({
+										// eslint-disable-next-line eslint-plugin/prefer-message-ids
 										message: `The package ${key} does not exist given the specified path: ${value}.`,
 										node: context.sourceCode.ast,
 									});
 								}
 							} catch {
 								context.report({
+									// eslint-disable-next-line eslint-plugin/prefer-message-ids
 									message: `The package ${key} does not exist given the specified path: ${value}.`,
 									node: context.sourceCode.ast,
 								});
@@ -56,6 +58,7 @@ export const rule = createRule({
 		};
 	},
 
+	// eslint-disable-next-line eslint-plugin/require-meta-schema, eslint-plugin/require-meta-type, eslint-plugin/prefer-message-ids
 	meta: {
 		docs: {
 			category: "Best Practices",

@@ -115,6 +115,7 @@ export const rule = createRule<Options>({
 								);
 							},
 							loc: collection.loc,
+							// eslint-disable-next-line eslint-plugin/prefer-message-ids
 							message: "Package {{ key }} are not alphabetized",
 							node: node as unknown as ESTree.Node,
 						});
@@ -124,6 +125,7 @@ export const rule = createRule<Options>({
 		};
 	},
 
+	// eslint-disable-next-line eslint-plugin/prefer-message-ids, eslint-plugin/require-meta-type
 	meta: {
 		docs: {
 			category: "Best Practices",
