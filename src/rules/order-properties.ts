@@ -79,6 +79,9 @@ export const rule = createRule<Options>({
 					}
 
 					context.report({
+						data: {
+							property: value,
+						},
 						fix(fixer) {
 							const { indent, type } = detectIndent(text);
 							const endCharacters = text.endsWith("\n")
@@ -101,15 +104,12 @@ export const rule = createRule<Options>({
 							);
 						},
 						loc: properties[i].loc,
-						// eslint-disable-next-line eslint-plugin/prefer-message-ids
-						message: `Package top-level property "${value}" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.`,
+						messageId: "incorrectOrder",
 					});
 				}
 			},
 		};
 	},
-
-	// eslint-disable-next-line eslint-plugin/prefer-message-ids, eslint-plugin/require-meta-type
 	meta: {
 		docs: {
 			category: "Best Practices",
@@ -118,6 +118,10 @@ export const rule = createRule<Options>({
 			recommended: true,
 		},
 		fixable: "code",
+		messages: {
+			incorrectOrder:
+				'Package top-level property "{{property}}" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+		},
 		schema: [
 			{
 				properties: {
@@ -139,5 +143,6 @@ export const rule = createRule<Options>({
 				type: "object",
 			},
 		],
+		type: "layout",
 	},
 });

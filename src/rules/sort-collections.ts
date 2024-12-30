@@ -115,8 +115,7 @@ export const rule = createRule<Options>({
 								);
 							},
 							loc: collection.loc,
-							// eslint-disable-next-line eslint-plugin/prefer-message-ids
-							message: "Package {{ key }} are not alphabetized",
+							messageId: "notAlphabetized",
 							node: node as unknown as ESTree.Node,
 						});
 					}
@@ -125,7 +124,6 @@ export const rule = createRule<Options>({
 		};
 	},
 
-	// eslint-disable-next-line eslint-plugin/prefer-message-ids, eslint-plugin/require-meta-type
 	meta: {
 		docs: {
 			category: "Best Practices",
@@ -134,6 +132,9 @@ export const rule = createRule<Options>({
 			recommended: true,
 		},
 		fixable: "code",
+		messages: {
+			notAlphabetized: "Package {{ key }} are not alphabetized",
+		},
 		schema: [
 			{
 				items: {
@@ -142,5 +143,6 @@ export const rule = createRule<Options>({
 				type: "array",
 			},
 		],
+		type: "layout",
 	},
 });

@@ -112,13 +112,13 @@ export const rule = createRule({
 							node: directoryProperty.value as unknown as ESTree.Node,
 							suggest: [
 								{
+									data: { expected },
 									fix(fixer) {
 										return fixer.replaceText(
 											directoryProperty.value as unknown as ESTree.Node,
 											`"${expected}"`,
 										);
 									},
-									// eslint-disable-next-line eslint-plugin/no-missing-placeholders
 									messageId: "replace",
 								},
 							],
@@ -129,7 +129,6 @@ export const rule = createRule({
 		};
 	},
 
-	// eslint-disable-next-line eslint-plugin/require-meta-type, eslint-plugin/require-meta-schema
 	meta: {
 		docs: {
 			category: "Best Practices",
@@ -142,5 +141,7 @@ export const rule = createRule({
 			mismatched: "Directory does not match package.json directory.",
 			replace: "Replace with '{{ expected }}'.",
 		},
+		schema: [],
+		type: "suggestion",
 	},
 });

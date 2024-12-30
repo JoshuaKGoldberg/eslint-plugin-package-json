@@ -35,7 +35,7 @@ export const rule = createRule({
 		};
 	},
 
-	// eslint-disable-next-line eslint-plugin/prefer-message-ids, eslint-plugin/require-meta-type, eslint-plugin/require-meta-schema
+	// eslint-disable-next-line eslint-plugin/prefer-message-ids
 	meta: {
 		docs: {
 			category: "Best Practices",
@@ -43,5 +43,7 @@ export const rule = createRule({
 				"Enforce that package.json has all properties required by the npm spec",
 			recommended: true,
 		},
+		schema: [],
+		type: "problem",
 	},
 });

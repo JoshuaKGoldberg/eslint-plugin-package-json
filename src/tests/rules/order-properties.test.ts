@@ -17,24 +17,24 @@ ruleTester.run("order-properties", rule, {
 `,
 			errors: [
 				{
-					message:
-						'Package top-level property "main" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "main" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "homepage" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "homepage" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "version" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "name" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "name" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "repository" },
+					messageId: "incorrectOrder",
 				},
 			],
 			filename: "package.json",
@@ -64,16 +64,16 @@ ruleTester.run("order-properties", rule, {
 `,
 			errors: [
 				{
-					message:
-						'Package top-level property "main" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "main" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "version" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "repository" },
+					messageId: "incorrectOrder",
 				},
 			],
 			filename: "package.json",
@@ -103,24 +103,24 @@ ruleTester.run("order-properties", rule, {
 `,
 			errors: [
 				{
-					message:
-						'Package top-level property "main" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "main" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "homepage" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "homepage" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "version" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "name" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "name" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "repository" },
+					messageId: "incorrectOrder",
 				},
 			],
 			filename: "package.json",
@@ -150,24 +150,24 @@ ruleTester.run("order-properties", rule, {
 `,
 			errors: [
 				{
-					message:
-						'Package top-level property "main" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "main" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "homepage" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "homepage" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "version" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "name" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "name" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "repository" },
+					messageId: "incorrectOrder",
 				},
 			],
 			filename: "package.json",
@@ -197,24 +197,24 @@ ruleTester.run("order-properties", rule, {
 `,
 			errors: [
 				{
-					message:
-						'Package top-level property "main" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "main" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "homepage" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "homepage" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "version" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "name" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "name" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "repository" },
+					messageId: "incorrectOrder",
 				},
 			],
 			filename: "package.json",
@@ -245,24 +245,24 @@ ruleTester.run("order-properties", rule, {
 `,
 			errors: [
 				{
-					message:
-						'Package top-level property "main" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "main" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "homepage" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "homepage" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "version" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "name" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "name" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "repository" },
+					messageId: "incorrectOrder",
 				},
 			],
 			filename: "package.json",
@@ -293,24 +293,24 @@ ruleTester.run("order-properties", rule, {
 `,
 			errors: [
 				{
-					message:
-						'Package top-level property "main" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "main" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "homepage" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "homepage" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "version" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "version" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "name" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "name" },
+					messageId: "incorrectOrder",
 				},
 				{
-					message:
-						'Package top-level property "repository" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+					data: { property: "repository" },
+					messageId: "incorrectOrder",
 				},
 			],
 			filename: "package.json",
