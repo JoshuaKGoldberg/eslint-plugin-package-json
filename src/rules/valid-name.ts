@@ -55,7 +55,6 @@ export const rule = createRule({
 		};
 	},
 
-	// eslint-disable-next-line eslint-plugin/require-meta-type, eslint-plugin/require-meta-schema
 	meta: {
 		docs: {
 			category: "Best Practices",
@@ -67,5 +66,7 @@ export const rule = createRule({
 			invalid: "Invalid npm package name: {{ complaints }}.",
 			type: '"name" should be a string.',
 		},
+		schema: [],
+		type: "problem",
 	},
 });

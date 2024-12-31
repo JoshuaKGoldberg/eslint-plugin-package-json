@@ -19,8 +19,11 @@ ruleTester.run("valid-local-dependency", rule, {
 			}`,
 			errors: [
 				{
-					message:
-						"The package some-package does not exist given the specified path: link:./src/tests/__fixtures__/Invalid-local-dependency.",
+					data: {
+						package: "some-package",
+						path: "link:./src/tests/__fixtures__/Invalid-local-dependency",
+					},
+					messageId: "invalidPath",
 				},
 			],
 			filename: fileName("package.json"),
@@ -34,8 +37,11 @@ ruleTester.run("valid-local-dependency", rule, {
 			}`,
 			errors: [
 				{
-					message:
-						"The package some-package does not exist given the specified path: link:./src/tests/__fixtures__/Invalid-local-dependency.",
+					data: {
+						package: "some-package",
+						path: "link:./src/tests/__fixtures__/Invalid-local-dependency",
+					},
+					messageId: "invalidPath",
 				},
 			],
 			filename: fileName("package.json"),
@@ -49,8 +55,11 @@ ruleTester.run("valid-local-dependency", rule, {
 			}`,
 			errors: [
 				{
-					message:
-						"The package some-package does not exist given the specified path: link:./src/tests/__fixtures__/Invalid-local-dependency.",
+					data: {
+						package: "some-package",
+						path: "link:./src/tests/__fixtures__/Invalid-local-dependency",
+					},
+					messageId: "invalidPath",
 				},
 			],
 			filename: fileName("package.json"),
@@ -64,8 +73,11 @@ ruleTester.run("valid-local-dependency", rule, {
 			}`,
 			errors: [
 				{
-					message:
-						"The package some-package does not exist given the specified path: link:./src/tests/__fixtures__/dependency.",
+					data: {
+						package: "some-package",
+						path: "link:./src/tests/__fixtures__/dependency",
+					},
+					messageId: "invalidPath",
 				},
 			],
 			filename: fileName("package.json"),
@@ -83,12 +95,18 @@ ruleTester.run("valid-local-dependency", rule, {
 					}`,
 			errors: [
 				{
-					message:
-						"The package some-package does not exist given the specified path: link:./src/tests/__fixtures__/Invalid-local-dependency.",
+					data: {
+						package: "some-package",
+						path: "link:./src/tests/__fixtures__/Invalid-local-dependency",
+					},
+					messageId: "invalidPath",
 				},
 				{
-					message:
-						"The package peer-package does not exist given the specified path: link:./src/tests/__fixtures__/Invalid-local-dependency.",
+					data: {
+						package: "peer-package",
+						path: "link:./src/tests/__fixtures__/Invalid-local-dependency",
+					},
+					messageId: "invalidPath",
 				},
 			],
 			filename: fileName("package.json"),
@@ -103,8 +121,11 @@ ruleTester.run("valid-local-dependency", rule, {
 			}`,
 			errors: [
 				{
-					message:
-						"The package some-package does not exist given the specified path: link:./src/tests/__fixtures__/Invalid-local-dependency.",
+					data: {
+						package: "some-package",
+						path: "link:./src/tests/__fixtures__/Invalid-local-dependency",
+					},
+					messageId: "invalidPath",
 				},
 			],
 			filename: fileName("package.json"),
@@ -117,8 +138,11 @@ ruleTester.run("valid-local-dependency", rule, {
 			}`,
 			errors: [
 				{
-					message:
-						"The package some-package does not exist given the specified path: link:../Invalid-local-dependency.",
+					data: {
+						package: "some-package",
+						path: "link:../Invalid-local-dependency",
+					},
+					messageId: "invalidPath",
 				},
 			],
 			filename: fileName(
@@ -134,8 +158,11 @@ ruleTester.run("valid-local-dependency", rule, {
 			}`,
 			errors: [
 				{
-					message:
-						"The package some-package does not exist given the specified path: file:./src/tests/__fixtures__/Invalid-local-dependency.",
+					data: {
+						package: "some-package",
+						path: "file:./src/tests/__fixtures__/Invalid-local-dependency",
+					},
+					messageId: "invalidPath",
 				},
 			],
 			filename: fileName("package.json"),
@@ -149,8 +176,11 @@ ruleTester.run("valid-local-dependency", rule, {
 			}`,
 			errors: [
 				{
-					message:
-						"The package some-package does not exist given the specified path: file:./src/tests/__fixtures__/Invalid-local-dependency/gotcha/package.json/gotcha.",
+					data: {
+						package: "some-package",
+						path: "file:./src/tests/__fixtures__/Invalid-local-dependency/gotcha/package.json/gotcha",
+					},
+					messageId: "invalidPath",
 				},
 			],
 			filename: fileName("package.json"),

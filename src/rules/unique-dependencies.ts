@@ -92,7 +92,6 @@ export const rule = createRule({
 		};
 	},
 
-	// eslint-disable-next-line eslint-plugin/require-meta-schema, eslint-plugin/require-meta-type
 	meta: {
 		docs: {
 			category: "Best Practices",
@@ -106,5 +105,7 @@ export const rule = createRule({
 				"Package name is overridden by a duplicate listing later on.",
 			remove: "Remove this redundant dependency listing.",
 		},
+		schema: [],
+		type: "suggestion",
 	},
 });

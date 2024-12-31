@@ -16,7 +16,8 @@ ruleTester.run("sort-collections", rule, {
 }`,
 			errors: [
 				{
-					message: "Package scripts are not alphabetized",
+					data: { key: "scripts" },
+					messageId: "notAlphabetized",
 					type: "JSONProperty",
 				},
 			],
@@ -39,7 +40,8 @@ ruleTester.run("sort-collections", rule, {
 }`,
 			errors: [
 				{
-					message: "Package scripts are not alphabetized",
+					data: { key: "scripts" },
+					messageId: "notAlphabetized",
 					type: "JSONProperty",
 				},
 			],
@@ -62,7 +64,8 @@ ruleTester.run("sort-collections", rule, {
 }`,
 			errors: [
 				{
-					message: "Package scripts are not alphabetized",
+					data: { key: "scripts" },
+					messageId: "notAlphabetized",
 					type: "JSONProperty",
 				},
 			],
@@ -83,7 +86,8 @@ ruleTester.run("sort-collections", rule, {
 }`,
 			errors: [
 				{
-					message: "Package scripts are not alphabetized",
+					data: { key: "scripts" },
+					messageId: "notAlphabetized",
 					type: "JSONProperty",
 				},
 			],
@@ -104,7 +108,8 @@ ruleTester.run("sort-collections", rule, {
 }`,
 			errors: [
 				{
-					message: "Package scripts are not alphabetized",
+					data: { key: "scripts" },
+					messageId: "notAlphabetized",
 					type: "JSONProperty",
 				},
 			],
@@ -129,7 +134,8 @@ ruleTester.run("sort-collections", rule, {
 }`,
 			errors: [
 				{
-					message: "Package exports are not alphabetized",
+					data: { key: "exports" },
+					messageId: "notAlphabetized",
 					type: "JSONProperty",
 				},
 			],
