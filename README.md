@@ -178,7 +178,7 @@ Thanks! 💖
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/b3rnhard"><img src="https://avatars.githubusercontent.com/u/10774404?v=4?s=100" width="100px;" alt="b3rnhard"/><br /><sub><b>b3rnhard</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3Ab3rnhard" title="Bug reports">🐛</a></td>
     </tr>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/michaelfaith"><img src="https://avatars.githubusercontent.com/u/8071845?v=4?s=100" width="100px;" alt="michael faith"/><br /><sub><b>michael faith</b></sub></a><br /><a href="#infra-michaelfaith" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/michaelfaith"><img src="https://avatars.githubusercontent.com/u/8071845?v=4?s=100" width="100px;" alt="michael faith"/><br /><sub><b>michael faith</b></sub></a><br /><a href="#infra-michaelfaith" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=michaelfaith" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
