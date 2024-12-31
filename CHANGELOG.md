@@ -1,3 +1,11 @@
+# Changelog
+
+# [0.19.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.18.0...v0.19.0) (2024-12-31)
+
+### Features
+
+-   **valid-package-definition:** rename rule from valid-package-def ([#711](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/711)) ([4f3907b](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4f3907b83ce1ddadcfbb572e70559e22b9c4a917)), closes [#132](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/132) [#132](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/132)
+
 # [0.18.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.17.0...v0.18.0) (2024-12-05)
 
 ### Features
