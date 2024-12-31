@@ -1,12 +1,14 @@
 import { createRequire } from "node:module";
 
+import type { PackageJsonRuleModule } from "./createRule.js";
+
 import { rule as orderProperties } from "./rules/order-properties.js";
 import { rule as preferRepositoryShorthand } from "./rules/repository-shorthand.js";
 import { rule as sortCollections } from "./rules/sort-collections.js";
 import { rule as uniqueDependencies } from "./rules/unique-dependencies.js";
 import { rule as validLocalDependency } from "./rules/valid-local-dependency.js";
 import { rule as validName } from "./rules/valid-name.js";
-import { rule as validPackageDef } from "./rules/valid-package-def.js";
+import { rule as validPackageDefinition } from "./rules/valid-package-definition.js";
 import { rule as validRepositoryDirectory } from "./rules/valid-repository-directory.js";
 import { rule as validVersion } from "./rules/valid-version.js";
 
@@ -17,14 +19,27 @@ const { name, version } = require("../package.json") as {
 	version: string;
 };
 
-const rules = {
+const rules: Record<string, PackageJsonRuleModule> = {
 	"order-properties": orderProperties,
 	"repository-shorthand": preferRepositoryShorthand,
 	"sort-collections": sortCollections,
 	"unique-dependencies": uniqueDependencies,
 	"valid-local-dependency": validLocalDependency,
 	"valid-name": validName,
-	"valid-package-def": validPackageDef,
+	/** @deprecated use 'valid-package-definition' instead */
+	"valid-package-def": {
+		...validPackageDefinition,
+		meta: {
+			...validPackageDefinition.meta,
+			deprecated: true,
+			docs: {
+				...validPackageDefinition.meta.docs,
+				recommended: false,
+			},
+			replacedBy: ["valid-package-definition"],
+		},
+	},
+	"valid-package-definition": validPackageDefinition,
 	"valid-repository-directory": validRepositoryDirectory,
 	"valid-version": validVersion,
 };

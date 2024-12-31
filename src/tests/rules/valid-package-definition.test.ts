@@ -1,7 +1,7 @@
-import { rule } from "../../rules/valid-package-def.js";
+import { rule } from "../../rules/valid-package-definition.js";
 import { ruleTester } from "./ruleTester.js";
 
-ruleTester.run("valid-package-def", rule, {
+ruleTester.run("valid-package-definition", rule, {
 	invalid: [
 		{
 			code: `{ "mane": "invalid-package" }`,

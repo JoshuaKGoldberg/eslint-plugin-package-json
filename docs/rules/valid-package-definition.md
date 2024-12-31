@@ -1,6 +1,6 @@
-# valid-package-def
+# valid-package-definition
 
-❌ This rule is deprecated. It was replaced by [`package-json/valid-package-definition`](valid-package-definition.md).
+💼 This rule is enabled in the ✅ `recommended` config.
 
 <!-- end auto-generated rule header -->
 
