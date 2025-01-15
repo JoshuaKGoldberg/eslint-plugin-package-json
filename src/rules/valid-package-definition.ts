@@ -20,7 +20,7 @@ export const rule = createRule({
 			"Program:exit"() {
 				const validation = PackageValidator.validate(
 					context.sourceCode.text,
-				) as PackageValidator.ValidationSuccessResult;
+				);
 
 				validation.errors?.filter(isUsableError).forEach((message) => {
 					if (message) {
