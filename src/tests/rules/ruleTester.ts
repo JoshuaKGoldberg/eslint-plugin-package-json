@@ -15,8 +15,10 @@ export type JsonRuleTesterRun = (
 	},
 ) => void;
 
+import jsoncESLintParser from "jsonc-eslint-parser";
+
 export const ruleTester = new RuleTester({
-	languageOptions: { parser: require("jsonc-eslint-parser") },
+	languageOptions: { parser: jsoncESLintParser },
 }) as JsonRuleTester;
 
 const originalRun = ruleTester.run;
