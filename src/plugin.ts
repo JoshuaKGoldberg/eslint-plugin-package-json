@@ -26,6 +26,10 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"unique-dependencies": uniqueDependencies,
 	"valid-local-dependency": validLocalDependency,
 	"valid-name": validName,
+	"valid-package-definition": validPackageDefinition,
+	"valid-repository-directory": validRepositoryDirectory,
+	"valid-version": validVersion,
+
 	/** @deprecated use 'valid-package-definition' instead */
 	"valid-package-def": {
 		...validPackageDefinition,
@@ -39,9 +43,6 @@ const rules: Record<string, PackageJsonRuleModule> = {
 			replacedBy: ["valid-package-definition"],
 		},
 	},
-	"valid-package-definition": validPackageDefinition,
-	"valid-repository-directory": validRepositoryDirectory,
-	"valid-version": validVersion,
 };
 
 export const plugin = {
