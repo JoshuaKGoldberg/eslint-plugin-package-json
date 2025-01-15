@@ -6,13 +6,13 @@ import { createRule } from "../createRule.js";
 import { isJSONStringLiteral, isNotNullish } from "../utils/predicates.js";
 
 const dependencyPropertyNames = new Set([
-	"bundleDependencies",
 	"bundledDependencies",
+	"bundleDependencies",
 	"dependencies",
 	"devDependencies",
 	"optionalDependencies",
-	"peerDependencies",
 	"overrides",
+	"peerDependencies",
 ]);
 
 export const rule = createRule({

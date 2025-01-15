@@ -5,12 +5,12 @@ import { AST as JsonAST, RuleListener } from "jsonc-eslint-parser";
 
 import { isPackageJson } from "./utils/isPackageJson.js";
 
-export type JsonAstBodyProperty = JsonAST.JSONProperty & {
-	value: string;
-};
-
 export type JsonAstBodyExpression = ESTree.Expression & {
 	properties: JsonAstBodyProperty[];
+};
+
+export type JsonAstBodyProperty = JsonAST.JSONProperty & {
+	value: string;
 };
 
 export interface JsonAstBodyStatement extends ESTree.ExpressionStatement {
@@ -19,10 +19,6 @@ export interface JsonAstBodyStatement extends ESTree.ExpressionStatement {
 
 export interface PackageJsonAst extends AST.Program {
 	body: [JsonAstBodyStatement];
-}
-
-export interface PackageJsonSourceCode extends SourceCode {
-	ast: PackageJsonAst;
 }
 
 export interface PackageJsonRuleContext<Options extends unknown[] = unknown[]>
@@ -34,6 +30,10 @@ export interface PackageJsonRuleContext<Options extends unknown[] = unknown[]>
 export interface PackageJsonRuleModule<Options extends unknown[] = unknown[]> {
 	create(context: PackageJsonRuleContext<Options>): RuleListener;
 	meta: Rule.RuleMetaData;
+}
+
+export interface PackageJsonSourceCode extends SourceCode {
+	ast: PackageJsonAst;
 }
 
 export function createRule<Options extends unknown[]>(

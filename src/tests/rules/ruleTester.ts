@@ -2,6 +2,10 @@ import { RuleTester } from "eslint";
 
 import type { PackageJsonRuleModule } from "../../createRule.js";
 
+export type JsonRuleTester = RuleTester & {
+	run: JsonRuleTesterRun;
+};
+
 export type JsonRuleTesterRun = (
 	name: string,
 	rule: PackageJsonRuleModule,
@@ -11,12 +15,8 @@ export type JsonRuleTesterRun = (
 	},
 ) => void;
 
-export type JsonRuleTester = RuleTester & {
-	run: JsonRuleTesterRun;
-};
-
 export const ruleTester = new RuleTester({
-	parser: require.resolve("jsonc-eslint-parser"),
+	languageOptions: { parser: require("jsonc-eslint-parser") },
 }) as JsonRuleTester;
 
 const originalRun = ruleTester.run;

@@ -38,9 +38,9 @@ const standardOrderLegacy = [
 	"cpu",
 ];
 
-type Order = "legacy" | "sort-package-json" | string[];
-
 type Options = [{ order: Order }?];
+
+type Order = "legacy" | "sort-package-json" | string[];
 
 export const rule = createRule<Options>({
 	create(context) {
