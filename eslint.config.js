@@ -65,6 +65,16 @@ module.exports = tseslint.config(
 			"no-useless-rename": "error",
 			"object-shorthand": "error",
 			"operator-assignment": "error",
+			"perfectionist/sort-objects": [
+				"error",
+				{
+					customGroups: {
+						programExit: "Program:exit",
+					},
+					groups: ["unknown", "programExit"],
+					type: "alphabetical",
+				},
+			],
 		},
 		settings: {
 			perfectionist: { partitionByComment: true, type: "natural" },
