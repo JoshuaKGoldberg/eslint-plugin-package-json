@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.20.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.19.0...v0.20.0) (2025-01-17)
+
+### Features
+
+-   **no-redundant-files:** add new rule ([#721](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/721)) ([1167f5e](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/1167f5ea698bf09e2dfe77147464cc3a3d5ee6e7)), closes [#686](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/686) [#686](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/686)
+
 # [0.19.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.18.0...v0.19.0) (2024-12-31)
 
 ### Features
