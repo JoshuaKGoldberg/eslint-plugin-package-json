@@ -1,7 +1,7 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { createRule } from "../createRule";
-import { isString } from "../utils/predicates";
+import { isString, omit } from "../utils/predicates";
 
 export const rule = createRule({
 	create(context) {
@@ -14,25 +14,15 @@ export const rule = createRule({
 		const arrayFields = ["files"];
 
 		return {
-			"Program > JSONExpressionStatement > JSONObjectExpression"(
-				node: JsonAST.JSONObjectExpression,
-			) {
-				function getRange(
-					properties: JsonAST.JSONProperty[],
-					property: JsonAST.JSONProperty,
-					index: number,
-				): [number, number] {
-					const isLastProperty = properties.length - 1 === index;
-					// if the property is last, we should remove ',' before this property
-					const start = isLastProperty
-						? properties.slice(-2)[0].range[1]
-						: property.range[0];
-					// if the property isn't last, we should remove ',' after this property
-					const end = property.range[1] + (isLastProperty ? 0 : 1);
-					return [start, end];
-				}
+			"Program:exit"() {
+				const { ast, text } = context.sourceCode;
 
-				node.properties.forEach((property, index) => {
+				const json = JSON.parse(text) as Record<string, unknown>;
+				const { properties } = ast.body[0].expression;
+
+				for (let i = 0; i < properties.length; i += 1) {
+					const property = properties[i];
+
 					if (
 						property.key.type === "JSONLiteral" &&
 						isString(property.key.value) &&
@@ -40,16 +30,22 @@ export const rule = createRule({
 						property.value.type === "JSONObjectExpression" &&
 						!property.value.properties.length
 					) {
+						const field = property.key.value;
 						context.report({
 							data: {
-								property: property.key.value,
+								field,
 							},
 							fix(fixer) {
-								return fixer.removeRange(
-									getRange(node.properties, property, index),
+								return fixer.replaceText(
+									ast,
+									JSON.stringify(
+										omit(json, [field]),
+										null,
+										2,
+									),
 								);
 							},
-							loc: property.loc,
+							loc: properties[i].loc,
 							messageId: "emptyFields",
 						});
 					} else if (
@@ -59,20 +55,26 @@ export const rule = createRule({
 						property.value.type === "JSONArrayExpression" &&
 						!property.value.elements.length
 					) {
+						const field = property.key.value;
 						context.report({
 							data: {
-								property: property.key.value,
+								field,
 							},
 							fix(fixer) {
-								return fixer.removeRange(
-									getRange(node.properties, property, index),
+								return fixer.replaceText(
+									ast,
+									JSON.stringify(
+										omit(json, [field]),
+										null,
+										2,
+									),
 								);
 							},
-							loc: property.loc,
+							loc: properties[i].loc,
 							messageId: "emptyFields",
 						});
 					}
-				});
+				}
 			},
 		};
 	},
@@ -84,7 +86,7 @@ export const rule = createRule({
 		},
 		hasSuggestions: true,
 		messages: {
-			emptyFields: 'Should remove empty "{{property}}"',
+			emptyFields: 'Should remove empty "{{field}}"',
 		},
 		fixable: "whitespace",
 		schema: [],
