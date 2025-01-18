@@ -1,7 +1,7 @@
-import type { AST as JsonAST } from "jsonc-eslint-parser";
-
 import { createRule } from "../createRule";
 import { isString, omit } from "../utils/predicates";
+import detectNewline from "detect-newline";
+import detectIndent from "detect-indent";
 
 export const rule = createRule({
 	create(context) {
@@ -31,21 +31,26 @@ export const rule = createRule({
 						!property.value.properties.length
 					) {
 						const field = property.key.value;
+						const { indent, type } = detectIndent(text);
+						const endCharacters = text.endsWith("\n") ? "\n" : "";
+						const newline = detectNewline.graceful(text);
+						let result =
+							JSON.stringify(
+								omit(json, [field]),
+								null,
+								type === "tab" ? "\t" : indent,
+							) + endCharacters;
+						if (newline === "\r\n") {
+							result = result.replace(/\n/g, newline);
+						}
 						context.report({
 							data: {
-								field,
+								property: field,
 							},
 							fix(fixer) {
-								return fixer.replaceText(
-									ast,
-									JSON.stringify(
-										omit(json, [field]),
-										null,
-										2,
-									),
-								);
+								return fixer.replaceText(ast, result);
 							},
-							loc: properties[i].loc,
+							loc: property.loc,
 							messageId: "emptyFields",
 						});
 					} else if (
@@ -56,21 +61,26 @@ export const rule = createRule({
 						!property.value.elements.length
 					) {
 						const field = property.key.value;
+						const { indent, type } = detectIndent(text);
+						const endCharacters = text.endsWith("\n") ? "\n" : "";
+						const newline = detectNewline.graceful(text);
+						let result =
+							JSON.stringify(
+								omit(json, [field]),
+								null,
+								type === "tab" ? "\t" : indent,
+							) + endCharacters;
+						if (newline === "\r\n") {
+							result = result.replace(/\n/g, newline);
+						}
 						context.report({
 							data: {
-								field,
+								property: field,
 							},
 							fix(fixer) {
-								return fixer.replaceText(
-									ast,
-									JSON.stringify(
-										omit(json, [field]),
-										null,
-										2,
-									),
-								);
+								return fixer.replaceText(ast, result);
 							},
-							loc: properties[i].loc,
+							loc: property.loc,
 							messageId: "emptyFields",
 						});
 					}
@@ -86,7 +96,7 @@ export const rule = createRule({
 		},
 		hasSuggestions: true,
 		messages: {
-			emptyFields: 'Should remove empty "{{field}}"',
+			emptyFields: 'Should remove empty "{{property}}"',
 		},
 		fixable: "whitespace",
 		schema: [],
