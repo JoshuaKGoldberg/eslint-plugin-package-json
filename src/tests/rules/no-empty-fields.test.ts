@@ -46,7 +46,9 @@ ruleTester.run("no-empty-fields", rule, {
 		{
 			code: `{
     "name": "test",
-    "files": ["index.js", "test.js"],
+    "files": [
+	    "index.js"
+	],
     "peerDependencies": {}
 }
 `,
@@ -58,10 +60,9 @@ ruleTester.run("no-empty-fields", rule, {
 			],
 			output: `{
     "name": "test",
-	"files": [
-	    "index.js",
-		"test.js"
-	]
+    "files": [
+        "index.js"
+    ]
 }
 `,
 		},
