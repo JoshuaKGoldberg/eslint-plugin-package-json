@@ -11,3 +11,7 @@ export function isNotNullish<T extends NonNullable<unknown>>(
 ): value is T {
 	return value !== null && value !== undefined;
 }
+
+export function isString(value: unknown): value is string {
+	return typeof value === "string";
+}
