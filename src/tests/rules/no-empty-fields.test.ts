@@ -26,6 +26,79 @@ ruleTester.run("no-empty-fields", rule, {
 }
 `,
 		},
+		{
+			code: `{
+    "name": "test",
+    "dependencies": {}
+}
+`,
+			errors: [
+				{
+					data: { property: "dependencies" },
+					messageId: "emptyFields",
+				},
+			],
+			output: `{
+    "name": "test"
+}
+`,
+		},
+		{
+			code: `{
+    "name": "test",
+    "files": ["index.js", "test.js"],
+    "peerDependencies": {}
+}
+`,
+			errors: [
+				{
+					data: { property: "peerDependencies" },
+					messageId: "emptyFields",
+				},
+			],
+			output: `{
+    "name": "test",
+	"files": [
+	    "index.js",
+		"test.js"
+	]
+}
+`,
+		},
+		{
+			code: `{
+    "name": "test",
+    "scripts": {}
+}
+`,
+			errors: [
+				{
+					data: { property: "scripts" },
+					messageId: "emptyFields",
+				},
+			],
+			output: `{
+    "name": "test"
+}
+`,
+		},
+		{
+			code: `{
+    "name": "test",
+    "devDependencies": {}
+}
+`,
+			errors: [
+				{
+					data: { property: "devDependencies" },
+					messageId: "emptyFields",
+				},
+			],
+			output: `{
+    "name": "test"
+}
+`,
+		},
 	],
 	valid: [
 		`{ "name": "test", "files": ["index.js"] }`,
