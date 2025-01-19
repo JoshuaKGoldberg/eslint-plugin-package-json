@@ -18,8 +18,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0
       package-json-validator:
-        specifier: ^0.7.0
-        version: 0.7.3
+        specifier: ^0.8.0
+        version: 0.8.0
       semver:
         specifier: ^7.5.4
         version: 7.6.3
@@ -48,9 +48,6 @@ importers:
       '@types/node':
         specifier: ^22.0.0
         version: 22.10.7
-      '@types/package-json-validator':
-        specifier: ^0.6.1
-        version: 0.6.1
       '@types/semver':
         specifier: ^7.5.6
         version: 7.5.8
@@ -1127,9 +1124,6 @@ packages:
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
-
-  '@types/package-json-validator@0.6.1':
-    resolution: {integrity: sha512-lXxAia/q6DYCggxkOLL0L8hQOQYSF+Gef08rvMQmbEvjCweRWTFr+DlT5c20OsPZBksjulNxHZw+KIES4J04VA==}
 
   '@types/parse-path@7.0.3':
     resolution: {integrity: sha512-LriObC2+KYZD3FzCrgWGv/qufdUy4eXrxcLgQMfYXgPbLIecKIsVBaQgUPmxSSLcjmYbDTQbMgr6qr6l/eb7Bg==}
@@ -2870,8 +2864,8 @@ packages:
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
-  package-json-validator@0.7.3:
-    resolution: {integrity: sha512-QWUV5rMxLe/QNMJ1t+/xYC8xY15lcAfcsKE/JAqTUt0KKhvO0idz4ZQdXvhLzz2Rf3KcEtaI5ZxsvgOrKIYRuA==}
+  package-json-validator@0.8.0:
+    resolution: {integrity: sha512-Tkk4C4gQLSfSOwJLAGvJ1VGq1UN8SFzJszkPOqQXu0aMiZPHZ0iteAc30Ui6cgcdBwY5Z5kKCkLVd8RSJLzGsA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -4562,8 +4556,6 @@ snapshots:
       undici-types: 6.20.0
 
   '@types/normalize-package-data@2.4.4': {}
-
-  '@types/package-json-validator@0.6.1': {}
 
   '@types/parse-path@7.0.3': {}
 
@@ -6601,7 +6593,7 @@ snapshots:
 
   package-json-from-dist@1.0.1: {}
 
-  package-json-validator@0.7.3:
+  package-json-validator@0.8.0:
     dependencies:
       yargs: 17.7.2
 
