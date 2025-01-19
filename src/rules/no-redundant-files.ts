@@ -1,3 +1,4 @@
+import { fixRemoveArrayElement } from "eslint-fix-utils";
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import * as ESTree from "estree";
@@ -58,39 +59,11 @@ export const rule = createRule({
 					node: element as unknown as ESTree.Node,
 					suggest: [
 						{
-							*fix(fixer) {
-								yield fixer.remove(
-									element as unknown as ESTree.Node,
-								);
-
-								// If this is not the last entry, then we need to remove the comma from this line.
-								const tokenFromCurrentLine =
-									context.sourceCode.getTokenAfter(
-										element as unknown as ESTree.Node,
-									);
-								if (tokenFromCurrentLine?.value === ",") {
-									yield fixer.remove(tokenFromCurrentLine);
-								}
-
-								// If this is the last line and it's not the only entry, then the line above this one
-								// will become the last line, and should not have a trailing comma.
-								if (
-									index > 0 &&
-									tokenFromCurrentLine?.value !== ","
-								) {
-									const tokenFromPreviousLine =
-										context.sourceCode.getTokenAfter(
-											elements[
-												index - 1
-											] as unknown as ESTree.Node,
-										);
-									if (tokenFromPreviousLine?.value === ",") {
-										yield fixer.remove(
-											tokenFromPreviousLine,
-										);
-									}
-								}
-							},
+							fix: fixRemoveArrayElement(
+								context,
+								index,
+								elements as unknown as ESTree.Expression[],
+							),
 							messageId: "remove",
 						},
 					],
