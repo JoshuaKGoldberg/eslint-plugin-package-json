@@ -1,6 +1,6 @@
-import { fixRemoveArrayElement } from "eslint-fix-utils";
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
+import { fixRemoveArrayElement } from "eslint-fix-utils";
 import * as ESTree from "estree";
 
 import { createRule } from "../createRule.js";

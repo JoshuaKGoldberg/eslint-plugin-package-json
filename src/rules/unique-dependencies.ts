@@ -1,9 +1,9 @@
+import type { AST as JsonAST } from "jsonc-eslint-parser";
+
 import {
 	fixRemoveArrayElement,
 	fixRemoveObjectProperty,
 } from "eslint-fix-utils";
-import type { AST as JsonAST } from "jsonc-eslint-parser";
-
 import * as ESTree from "estree";
 
 import { createRule } from "../createRule.js";
@@ -85,6 +85,7 @@ export const rule = createRule({
 							node.value.properties.map(
 								(property) => property.key,
 							),
+							// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 							(property) => property.parent!,
 						);
 						break;
