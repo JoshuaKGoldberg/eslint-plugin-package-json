@@ -1,6 +1,6 @@
 {
 	"name": "eslint-plugin-package-json",
-	"version": "0.19.0",
+	"version": "0.20.0",
 	"description": "Rules for consistent, readable, and valid package.json files. 🗂️",
 	"homepage": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json#readme",
 	"bugs": {
@@ -109,7 +109,7 @@
 		"eslint": ">=8.0.0",
 		"jsonc-eslint-parser": "^2.0.0"
 	},
-	"packageManager": "pnpm@9.15.3",
+	"packageManager": "pnpm@9.15.4",
 	"engines": {
 		"node": ">=18"
 	},
