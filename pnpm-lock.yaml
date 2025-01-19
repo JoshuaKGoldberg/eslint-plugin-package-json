@@ -18,8 +18,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0
       package-json-validator:
-        specifier: ^0.7.0
-        version: 0.7.3
+        specifier: ^0.8.0
+        version: 0.8.0
       semver:
         specifier: ^7.5.4
         version: 7.6.3
@@ -2870,8 +2870,8 @@ packages:
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
-  package-json-validator@0.7.3:
-    resolution: {integrity: sha512-QWUV5rMxLe/QNMJ1t+/xYC8xY15lcAfcsKE/JAqTUt0KKhvO0idz4ZQdXvhLzz2Rf3KcEtaI5ZxsvgOrKIYRuA==}
+  package-json-validator@0.8.0:
+    resolution: {integrity: sha512-Tkk4C4gQLSfSOwJLAGvJ1VGq1UN8SFzJszkPOqQXu0aMiZPHZ0iteAc30Ui6cgcdBwY5Z5kKCkLVd8RSJLzGsA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -6601,7 +6601,7 @@ snapshots:
 
   package-json-from-dist@1.0.1: {}
 
-  package-json-validator@0.7.3:
+  package-json-validator@0.8.0:
     dependencies:
       yargs: 17.7.2
 
