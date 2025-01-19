@@ -12,7 +12,7 @@ It will always include the following files, if present:
 
 - `package.json`
 - `README`
-  <!-- cspell:disable-next-line -->
+      <!-- cspell:disable-next-line -->
 - `LICENSE` / `LICENCE`
 
 Additionally, it will include any files that are declared in the `main` and `bin`
