@@ -102,7 +102,7 @@ Defaults:
 	"devDependencies",
 	"dependencies",
 	"peerDependencies",
-    "overrides",
+	"overrides",
 	"config",
 	"exports"
 ]
