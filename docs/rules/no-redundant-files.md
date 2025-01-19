@@ -10,10 +10,10 @@ include certain files, based on a number of circumstances.
 
 It will always include the following files, if present:
 
--   `package.json`
--   `README`
-<!-- cspell:disable-next-line -->
--   `LICENSE` / `LICENCE`
+- `package.json`
+- `README`
+      <!-- cspell:disable-next-line -->
+- `LICENSE` / `LICENCE`
 
 Additionally, it will include any files that are declared in the `main` and `bin`
 fields of the `package.json`.
