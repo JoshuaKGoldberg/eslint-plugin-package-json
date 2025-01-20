@@ -6,11 +6,9 @@ import { createRule } from "../createRule";
 
 export const rule = createRule({
 	create(context) {
-		const report = (
-			node: JsonAST.JSONProperty & { key: JsonAST.JSONStringLiteral },
-		) => {
+		const report = (node: JsonAST.JSONProperty) => {
 			context.report({
-				data: { field: node.key.value },
+				data: { field: (node.key as JsonAST.JSONStringLiteral).value },
 				messageId: "emptyFields",
 				node: node as unknown as ESTree.Node,
 				suggest: [
@@ -45,13 +43,19 @@ export const rule = createRule({
 		};
 		return {
 			JSONArrayExpression(node: JsonAST.JSONArrayExpression) {
-				if (!node.elements.length) {
-					report(node.parent as any);
+				if (
+					!node.elements.length &&
+					node.parent.type === "JSONProperty"
+				) {
+					report(node.parent);
 				}
 			},
 			JSONObjectExpression(node: JsonAST.JSONObjectExpression) {
-				if (!node.properties.length) {
-					report(node.parent as any);
+				if (
+					!node.properties.length &&
+					node.parent.type === "JSONProperty"
+				) {
+					report(node.parent);
 				}
 			},
 		};
@@ -62,7 +66,6 @@ export const rule = createRule({
 			description: "Remove empty fields",
 			recommended: true,
 		},
-		fixable: "code",
 		hasSuggestions: true,
 		messages: {
 			emptyFields: 'Should remove empty "{{field}}"',
