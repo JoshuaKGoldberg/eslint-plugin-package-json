@@ -32,31 +32,16 @@ export const rule = createRule({
 						suggest: [
 							{
 								*fix(fixer) {
-									yield fixer.remove(
-										node as unknown as ESTree.Node,
-									);
-
-									const tokenFromCurrentLine =
-										context.sourceCode.getTokenAfter(
-											node as unknown as ESTree.Node,
-										);
-
-									if (tokenFromCurrentLine?.value === ",") {
-										yield fixer.remove(
-											tokenFromCurrentLine,
-										);
-									}
-
-									const tokenFromPreviousLine =
-										context.sourceCode.getTokenAfter(
-											node as unknown as ESTree.Node,
-										);
 									const keys = Object.keys(
 										JSON.parse(context.sourceCode.text),
 									);
 									const index = keys.findIndex(
 										(key) => key === node.key.value,
 									);
+									const tokenFromPreviousLine =
+										context.sourceCode.getTokenAfter(
+											node as unknown as ESTree.Node,
+										);
 									if (
 										tokenFromPreviousLine?.value === "," &&
 										index === keys.length - 1
@@ -65,6 +50,20 @@ export const rule = createRule({
 											tokenFromPreviousLine,
 										);
 									}
+
+									const tokenFromCurrentLine =
+										context.sourceCode.getTokenAfter(
+											node as unknown as ESTree.Node,
+										);
+									if (tokenFromCurrentLine?.value === ",") {
+										yield fixer.remove(
+											tokenFromCurrentLine,
+										);
+									}
+
+									yield fixer.remove(
+										node as unknown as ESTree.Node,
+									);
 								},
 								messageId: "remove",
 							},
@@ -86,6 +85,7 @@ export const rule = createRule({
 			remove: "Remove this empty field.",
 		},
 		schema: [],
+		fixable: "code",
 		type: "suggestion",
 	},
 });
