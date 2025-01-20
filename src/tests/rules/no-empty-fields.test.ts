@@ -196,6 +196,55 @@ ruleTester.run("no-empty-fields", rule, {
 				},
 			],
 		},
+		{
+			code: `{
+\t\t"name": "test",
+\t\t"files": [],
+\t\t"dependencies": {
+\t\t\t\t"@altano/repository-tools": "^0.1.1",
+\t\t\t\t"test": []
+\t\t}
+}
+`,
+			errors: [
+				{
+					data: { field: "files" },
+					messageId: "emptyFields",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+\t\t"name": "test",
+\t\t
+\t\t"dependencies": {
+\t\t\t\t"@altano/repository-tools": "^0.1.1",
+\t\t\t\t"test": []
+\t\t}
+}
+`,
+						},
+					],
+				},
+				{
+					data: { field: "test" },
+					messageId: "emptyFields",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+\t\t"name": "test",
+\t\t"files": [],
+\t\t"dependencies": {
+\t\t\t\t"@altano/repository-tools": "^0.1.1"
+\t\t\t\t
+\t\t}
+}
+`,
+						},
+					],
+				},
+			],
+		},
 	],
 	valid: [
 		`{ "name": "test", "files": ["index.js"] }`,
