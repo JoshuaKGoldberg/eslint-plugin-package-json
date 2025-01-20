@@ -14,17 +14,22 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
-					data: { property: "files" },
+					data: { field: "files" },
 					messageId: "emptyFields",
-				},
-			],
-			output: `{
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
     "name": "test",
     "dependencies": {
         "@altano/repository-tools": "^0.1.1"
     }
 }
 `,
+						},
+					],
+				},
+			],
 		},
 		{
 			code: `{
@@ -34,14 +39,20 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
-					data: { property: "dependencies" },
+					data: { field: "dependencies" },
 					messageId: "emptyFields",
-				},
-			],
-			output: `{
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
     "name": "test"
+    
 }
 `,
+						},
+					],
+				},
+			],
 		},
 		{
 			code: `{
@@ -54,17 +65,22 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
-					data: { property: "peerDependencies" },
+					data: { field: "peerDependencies" },
 					messageId: "emptyFields",
-				},
-			],
-			output: `{
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
     "name": "test",
     "files": [
         "index.js"
     ]
 }
 `,
+						},
+					],
+				},
+			],
 		},
 		{
 			code: `{
@@ -74,14 +90,19 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
-					data: { property: "scripts" },
+					data: { field: "scripts" },
 					messageId: "emptyFields",
-				},
-			],
-			output: `{
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
     "name": "test"
 }
 `,
+						},
+					],
+				},
+			],
 		},
 		{
 			code: `{
@@ -91,14 +112,19 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
-					data: { property: "devDependencies" },
+					data: { field: "devDependencies" },
 					messageId: "emptyFields",
-				},
-			],
-			output: `{
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
     "name": "test"
 }
 `,
+						},
+					],
+				},
+			],
 		},
 	],
 	valid: [

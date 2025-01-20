@@ -1,89 +1,75 @@
 import { createRule } from "../createRule";
-import { isString, omit } from "../utils/predicates";
-import detectNewline from "detect-newline";
-import detectIndent from "detect-indent";
+import type { AST as JsonAST } from "jsonc-eslint-parser";
+
+import * as ESTree from "estree";
 
 export const rule = createRule({
 	create(context) {
-		const objectFields = [
-			"peerDependencies",
-			"scripts",
-			"dependencies",
-			"devDependencies",
-		];
-		const arrayFields = ["files"];
-
 		return {
-			"Program:exit"() {
-				const { ast, text } = context.sourceCode;
+			"Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.type=JSONLiteral]"(
+				node: JsonAST.JSONProperty & {
+					key: JsonAST.JSONStringLiteral;
+				},
+			) {
+				if (
+					!["JSONArrayExpression", "JSONObjectExpression"].includes(
+						node.value.type,
+					)
+				) {
+					return;
+				}
 
-				const json = JSON.parse(text) as Record<string, unknown>;
-				const { properties } = ast.body[0].expression;
+				if (
+					(node.value.type === "JSONArrayExpression" &&
+						!node.value.elements.length) ||
+					(node.value.type === "JSONObjectExpression" &&
+						!node.value.properties.length)
+				) {
+					context.report({
+						data: { field: node.key.value },
+						messageId: "emptyFields",
+						node: node as unknown as ESTree.Node,
+						suggest: [
+							{
+								*fix(fixer) {
+									yield fixer.remove(
+										node as unknown as ESTree.Node,
+									);
 
-				for (let i = 0; i < properties.length; i += 1) {
-					const property = properties[i];
+									const tokenFromCurrentLine =
+										context.sourceCode.getTokenAfter(
+											node as unknown as ESTree.Node,
+										);
 
-					if (
-						property.key.type === "JSONLiteral" &&
-						isString(property.key.value) &&
-						objectFields.includes(property.key.value) &&
-						property.value.type === "JSONObjectExpression" &&
-						!property.value.properties.length
-					) {
-						const field = property.key.value;
-						const { indent, type } = detectIndent(text);
-						const endCharacters = text.endsWith("\n") ? "\n" : "";
-						const newline = detectNewline.graceful(text);
-						let result =
-							JSON.stringify(
-								omit(json, [field]),
-								null,
-								type === "tab" ? "\t" : indent,
-							) + endCharacters;
-						if (newline === "\r\n") {
-							result = result.replace(/\n/g, newline);
-						}
-						context.report({
-							data: {
-								property: field,
+									if (tokenFromCurrentLine?.value === ",") {
+										yield fixer.remove(
+											tokenFromCurrentLine,
+										);
+									}
+
+									const tokenFromPreviousLine =
+										context.sourceCode.getTokenAfter(
+											node as unknown as ESTree.Node,
+										);
+									const keys = Object.keys(
+										JSON.parse(context.sourceCode.text),
+									);
+									const index = keys.findIndex(
+										(key) => key === node.key.value,
+									);
+									if (
+										tokenFromPreviousLine?.value === "," &&
+										index === keys.length - 1
+									) {
+										yield fixer.remove(
+											tokenFromPreviousLine,
+										);
+									}
+								},
+								messageId: "remove",
 							},
-							fix(fixer) {
-								return fixer.replaceText(ast, result);
-							},
-							loc: property.loc,
-							messageId: "emptyFields",
-						});
-					} else if (
-						property.key.type === "JSONLiteral" &&
-						isString(property.key.value) &&
-						arrayFields.includes(property.key.value) &&
-						property.value.type === "JSONArrayExpression" &&
-						!property.value.elements.length
-					) {
-						const field = property.key.value;
-						const { indent, type } = detectIndent(text);
-						const endCharacters = text.endsWith("\n") ? "\n" : "";
-						const newline = detectNewline.graceful(text);
-						let result =
-							JSON.stringify(
-								omit(json, [field]),
-								null,
-								type === "tab" ? "\t" : indent,
-							) + endCharacters;
-						if (newline === "\r\n") {
-							result = result.replace(/\n/g, newline);
-						}
-						context.report({
-							data: {
-								property: field,
-							},
-							fix(fixer) {
-								return fixer.replaceText(ast, result);
-							},
-							loc: property.loc,
-							messageId: "emptyFields",
-						});
-					}
+						],
+					});
 				}
 			},
 		};
@@ -96,9 +82,9 @@ export const rule = createRule({
 		},
 		hasSuggestions: true,
 		messages: {
-			emptyFields: 'Should remove empty "{{property}}"',
+			emptyFields: 'Should remove empty "{{field}}"',
+			remove: "Remove this empty field.",
 		},
-		fixable: "whitespace",
 		schema: [],
 		type: "suggestion",
 	},
