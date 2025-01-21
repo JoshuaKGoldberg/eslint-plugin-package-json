@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.20.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.20.0...v0.20.1) (2025-01-19)
+
+### Bug Fixes
+
+-   bump package-json-validator dep to 0.8 ([#735](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/735)) ([29a9722](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/29a9722c15d39984ea99c2be346e20c2f4f9c76e)), closes [#734](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/734)
+
 # [0.20.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.19.0...v0.20.0) (2025-01-17)
 
 ### Features
