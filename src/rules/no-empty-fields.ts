@@ -67,12 +67,12 @@ export const rule = createRule({
 	meta: {
 		docs: {
 			category: "Best Practices",
-			description: "Remove empty fields",
+			description: "Reports on unnecessary empty arrays and objects.",
 			recommended: true,
 		},
 		hasSuggestions: true,
 		messages: {
-			emptyFields: 'Should remove empty "{{field}}"',
+			emptyFields: 'This empty "{{field}}" does nothing and can be removed.',
 			remove: "Remove this empty field.",
 		},
 		schema: [],
