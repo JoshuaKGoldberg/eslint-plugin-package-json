@@ -225,6 +225,15 @@
         "code",
         "maintenance"
       ]
+    },
+    {
+      "login": "chouchouji",
+      "name": "chouchouji",
+      "avatar_url": "https://avatars.githubusercontent.com/u/70570907?v=4",
+      "profile": "https://github.com/chouchouji",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
