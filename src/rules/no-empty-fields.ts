@@ -6,10 +6,12 @@ import { createRule, PackageJsonRuleContext } from "../createRule";
 
 const report = (
 	context: PackageJsonRuleContext,
-	node: JsonAST.JSONProperty,
+	node:
+		| JsonAST.JSONArrayExpression
+		| JsonAST.JSONObjectExpression
+		| JsonAST.JSONProperty,
 ) => {
 	context.report({
-		data: { field: (node.key as JsonAST.JSONStringLiteral).value },
 		messageId: "emptyFields",
 		node: node as unknown as ESTree.Node,
 		suggest: [
@@ -43,23 +45,23 @@ const report = (
 	});
 };
 
+const getNode = (
+	node: JsonAST.JSONArrayExpression | JsonAST.JSONObjectExpression,
+) => {
+	return node.parent.type === "JSONProperty" ? node.parent : node;
+};
+
 export const rule = createRule({
 	create(context) {
 		return {
 			JSONArrayExpression(node: JsonAST.JSONArrayExpression) {
-				if (
-					!node.elements.length &&
-					node.parent.type === "JSONProperty"
-				) {
-					report(context, node.parent);
+				if (!node.elements.length) {
+					report(context, getNode(node));
 				}
 			},
 			JSONObjectExpression(node: JsonAST.JSONObjectExpression) {
-				if (
-					!node.properties.length &&
-					node.parent.type === "JSONProperty"
-				) {
-					report(context, node.parent);
+				if (!node.properties.length) {
+					report(context, getNode(node));
 				}
 			},
 		};
@@ -72,7 +74,8 @@ export const rule = createRule({
 		},
 		hasSuggestions: true,
 		messages: {
-			emptyFields: 'This empty "{{field}}" does nothing and can be removed.',
+			emptyFields:
+				'This empty "{{field}}" does nothing and can be removed.',
 			remove: "Remove this empty field.",
 		},
 		schema: [],
