@@ -12,6 +12,8 @@ describe("isPackageJson", () => {
 		["-package.json", false],
 		["prefix-package.json", false],
 		["package.json.json", false],
+		["package.nls.json", false],
+		["package.nls.zh-cn.json", false],
 		["package.package.json", false],
 		["package.json.package.json", false],
 		["package.json-package.json", false],
