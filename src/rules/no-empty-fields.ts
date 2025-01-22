@@ -4,6 +4,40 @@ import * as ESTree from "estree";
 
 import { createRule, PackageJsonRuleContext } from "../createRule";
 
+const getDataAndMessageId = (
+	node:
+		| JsonAST.JSONArrayExpression
+		| JsonAST.JSONObjectExpression
+		| JsonAST.JSONProperty,
+): {
+	data: Record<string, string>;
+	messageId: "emptyFields" | "emptyExpression";
+} => {
+	switch (node.type) {
+		case "JSONProperty":
+			return {
+				data: {
+					field: (node.key as JsonAST.JSONStringLiteral).value,
+				},
+				messageId: "emptyFields",
+			};
+		case "JSONArrayExpression":
+			return {
+				data: {
+					expressionType: "array",
+				},
+				messageId: "emptyExpression",
+			};
+		case "JSONObjectExpression":
+			return {
+				data: {
+					expressionType: "object",
+				},
+				messageId: "emptyExpression",
+			};
+	}
+};
+
 const report = (
 	context: PackageJsonRuleContext,
 	node:
@@ -11,8 +45,10 @@ const report = (
 		| JsonAST.JSONObjectExpression
 		| JsonAST.JSONProperty,
 ) => {
+	const { data, messageId } = getDataAndMessageId(node);
 	context.report({
-		messageId: "emptyFields",
+		data,
+		messageId,
 		node: node as unknown as ESTree.Node,
 		suggest: [
 			{
@@ -74,7 +110,10 @@ export const rule = createRule({
 		},
 		hasSuggestions: true,
 		messages: {
-			emptyFields: "This empty field does nothing and can be removed.",
+			emptyFields:
+				"The field '{{field}}' does nothing and can be removed.",
+			emptyExpression:
+				"This {{expressionType}} does nothing and can be removed.",
 			remove: "Remove this empty field.",
 		},
 		schema: [],

@@ -39,7 +39,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
-					messageId: "emptyFields",
+					messageId: "emptyExpression",
 					suggestions: [
 						{
 							messageId: "remove",
@@ -61,7 +61,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
-					messageId: "emptyFields",
+					messageId: "emptyExpression",
 					suggestions: [
 						{
 							messageId: "remove",
@@ -74,7 +74,7 @@ ruleTester.run("no-empty-fields", rule, {
 					],
 				},
 				{
-					messageId: "emptyFields",
+					messageId: "emptyExpression",
 					suggestions: [
 						{
 							messageId: "remove",
