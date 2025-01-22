@@ -11,16 +11,9 @@ const getDataAndMessageId = (
 		| JsonAST.JSONProperty,
 ): {
 	data: Record<string, string>;
-	messageId: "emptyFields" | "emptyExpression";
+	messageId: "emptyExpression" | "emptyFields";
 } => {
 	switch (node.type) {
-		case "JSONProperty":
-			return {
-				data: {
-					field: (node.key as JsonAST.JSONStringLiteral).value,
-				},
-				messageId: "emptyFields",
-			};
 		case "JSONArrayExpression":
 			return {
 				data: {
@@ -34,6 +27,13 @@ const getDataAndMessageId = (
 					expressionType: "object",
 				},
 				messageId: "emptyExpression",
+			};
+		case "JSONProperty":
+			return {
+				data: {
+					field: (node.key as JsonAST.JSONStringLiteral).value,
+				},
+				messageId: "emptyFields",
 			};
 	}
 };
@@ -110,10 +110,10 @@ export const rule = createRule({
 		},
 		hasSuggestions: true,
 		messages: {
-			emptyFields:
-				"The field '{{field}}' does nothing and can be removed.",
 			emptyExpression:
 				"This {{expressionType}} does nothing and can be removed.",
+			emptyFields:
+				"The field '{{field}}' does nothing and can be removed.",
 			remove: "Remove this empty field.",
 		},
 		schema: [],
