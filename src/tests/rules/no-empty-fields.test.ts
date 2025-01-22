@@ -56,6 +56,41 @@ ruleTester.run("no-empty-fields", rule, {
 		{
 			code: `{
 \t\t"name": "test",
+\t\t"config": [ {}, ["test"], [] ]
+}
+`,
+			errors: [
+				{
+					messageId: "emptyFields",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+\t\t"name": "test",
+\t\t"config": [  ["test"], [] ]
+}
+`,
+						},
+					],
+				},
+				{
+					messageId: "emptyFields",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+\t\t"name": "test",
+\t\t"config": [ {}, ["test"]  ]
+}
+`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `{
+\t\t"name": "test",
 \t\t"dependencies": {}
 }
 `,
