@@ -74,8 +74,7 @@ export const rule = createRule({
 		},
 		hasSuggestions: true,
 		messages: {
-			emptyFields:
-				'This empty "{{field}}" does nothing and can be removed.',
+			emptyFields: "This empty field does nothing and can be removed.",
 			remove: "Remove this empty field.",
 		},
 		schema: [],
