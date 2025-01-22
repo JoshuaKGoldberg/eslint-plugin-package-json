@@ -301,6 +301,7 @@ ruleTester.run("no-empty-fields", rule, {
 		`{ "name": "test", "devDependencies": { "eslint": ">=8.0.0" } }`,
 		`{ "name": "test", "scripts": { "lint": "eslint --fix ." } }`,
 		`{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true } } }`,
+		`{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true, "test": [{"test": ["1"]}] } } }`,
 		`{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true, "test": ["field1"] } } }`,
 	],
 });
