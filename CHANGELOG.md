@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.21.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.20.1...v0.21.0) (2025-01-23)
+
+### Features
+
+-   add no-empty-fields rule ([#741](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/741)) ([e57765b](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/e57765b3de7c4703f1c697d54758e5789494281a)), closes [#683](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/683)
+
 ## [0.20.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.20.0...v0.20.1) (2025-01-19)
 
 ### Bug Fixes
