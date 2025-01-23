@@ -17,6 +17,9 @@ importers:
       detect-newline:
         specifier: 3.1.0
         version: 3.1.0
+      eslint-fix-utils:
+        specifier: ^0.2.0
+        version: 0.2.0(@types/estree@1.0.6)(eslint@9.18.0(jiti@2.4.2))
       package-json-validator:
         specifier: ^0.8.0
         version: 0.8.0
@@ -1834,6 +1837,13 @@ packages:
     hasBin: true
     peerDependencies:
       eslint: '>= 8.57.1'
+
+  eslint-fix-utils@0.2.0:
+    resolution: {integrity: sha512-2z/I/1VfyL1mkLjk18W7Q3X+gqzeFmc2aNxSY/RmT6vNPyzQfT1MR/yP/+RUbqRuNUNMhTTYeP7AK7UUpcUD4w==}
+    engines: {node: '>=18.3.0'}
+    peerDependencies:
+      '@types/estree': '>=1'
+      eslint: '>=8'
 
   eslint-json-compat-utils@0.2.1:
     resolution: {integrity: sha512-YzEodbDyW8DX8bImKhAcCeu/L31Dd/70Bidx2Qex9OFUtgzXLqtfWL4Hr5fM/aCCB8QUZLuJur0S9k6UfgFkfg==}
@@ -5347,6 +5357,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
       - typescript
+
+  eslint-fix-utils@0.2.0(@types/estree@1.0.6)(eslint@9.18.0(jiti@2.4.2)):
+    dependencies:
+      '@types/estree': 1.0.6
+      eslint: 9.18.0(jiti@2.4.2)
 
   eslint-json-compat-utils@0.2.1(eslint@9.18.0(jiti@2.4.2))(jsonc-eslint-parser@2.4.0):
     dependencies:

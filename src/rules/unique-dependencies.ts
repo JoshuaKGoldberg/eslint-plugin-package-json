@@ -1,5 +1,9 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
+import {
+	fixRemoveArrayElement,
+	fixRemoveObjectProperty,
+} from "eslint-fix-utils";
 import * as ESTree from "estree";
 
 import { createRule } from "../createRule.js";
@@ -19,7 +23,7 @@ export const rule = createRule({
 	create(context) {
 		function check(
 			elements: (JsonAST.JSONNode | null)[],
-			getNodeToRemove: (element: JsonAST.JSONNode) => ESTree.Node,
+			getNodeToRemove: (element: JsonAST.JSONNode) => JsonAST.JSONNode,
 		) {
 			const seen = new Set();
 
@@ -28,32 +32,33 @@ export const rule = createRule({
 				.filter(isJSONStringLiteral)
 				.reverse()) {
 				if (seen.has(element.value)) {
-					report(element);
+					report(element, elements);
 				} else {
 					seen.add(element.value);
 				}
 			}
 
-			function report(node: JsonAST.JSONNode) {
+			function report(
+				node: JsonAST.JSONNode,
+				elements: (JsonAST.JSONNode | null)[],
+			) {
+				const removal = getNodeToRemove(node);
 				context.report({
 					messageId: "overridden",
 					node: node as unknown as ESTree.Node,
 					suggest: [
 						{
-							fix(fixer) {
-								const removal = getNodeToRemove(node);
-								return [
-									fixer.remove(removal),
-									fixer.remove(
-										// A listing that's overridden can't be last,
-										// so we're guaranteed there's a comma after.
-										// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-										context.sourceCode.getTokenAfter(
-											removal,
-										)!,
-									),
-								];
-							},
+							fix:
+								removal.type === "JSONProperty"
+									? fixRemoveObjectProperty(
+											context,
+											removal as unknown as ESTree.Property,
+										)
+									: fixRemoveArrayElement(
+											context,
+											removal as unknown as ESTree.Expression,
+											elements as unknown as ESTree.ArrayExpression,
+										),
 							messageId: "remove",
 						},
 					],
@@ -73,18 +78,15 @@ export const rule = createRule({
 
 				switch (node.value.type) {
 					case "JSONArrayExpression":
-						check(
-							node.value.elements,
-							(element) => element as unknown as ESTree.Node,
-						);
+						check(node.value.elements, (element) => element);
 						break;
 					case "JSONObjectExpression":
 						check(
 							node.value.properties.map(
 								(property) => property.key,
 							),
-							(property) =>
-								property.parent as unknown as ESTree.Node,
+							// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+							(property) => property.parent!,
 						);
 						break;
 				}
