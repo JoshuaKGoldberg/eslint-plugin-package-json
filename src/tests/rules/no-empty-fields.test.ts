@@ -30,7 +30,6 @@ ruleTester.run("no-empty-fields", rule, {
 					],
 				},
 			],
-			only: true,
 		},
 		{
 			code: `{
