@@ -1,5 +1,9 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
+import {
+	fixRemoveArrayElement,
+	fixRemoveObjectProperty,
+} from "eslint-fix-utils";
 import * as ESTree from "estree";
 
 import { createRule, PackageJsonRuleContext } from "../createRule";
@@ -52,29 +56,17 @@ const report = (
 		node: node as unknown as ESTree.Node,
 		suggest: [
 			{
-				*fix(fixer) {
-					yield fixer.remove(node as unknown as ESTree.Node);
-
-					const tokenFromCurrentLine =
-						context.sourceCode.getTokenAfter(
-							node as unknown as ESTree.Node,
-						);
-					const tokenFromPreviousLine =
-						context.sourceCode.getTokenBefore(
-							node as unknown as ESTree.Node,
-						);
-
-					if (
-						tokenFromPreviousLine?.value === "," &&
-						tokenFromCurrentLine?.value !== ","
-					) {
-						yield fixer.remove(tokenFromPreviousLine);
-					}
-
-					if (tokenFromCurrentLine?.value === ",") {
-						yield fixer.remove(tokenFromCurrentLine);
-					}
-				},
+				fix:
+					node.type === "JSONProperty"
+						? fixRemoveObjectProperty(
+								context,
+								node as unknown as ESTree.Property,
+							)
+						: fixRemoveArrayElement(
+								context,
+								node as unknown as ESTree.Expression,
+								node.parent as unknown as ESTree.ArrayExpression,
+							),
 				messageId: "remove",
 			},
 		],

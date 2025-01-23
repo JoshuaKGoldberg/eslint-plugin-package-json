@@ -18,8 +18,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0
       eslint-fix-utils:
-        specifier: ^0.1.0
-        version: 0.1.0(@types/estree@1.0.6)(eslint@9.18.0(jiti@2.4.2))
+        specifier: ^0.2.0
+        version: 0.2.0(@types/estree@1.0.6)(eslint@9.18.0(jiti@2.4.2))
       package-json-validator:
         specifier: ^0.8.0
         version: 0.8.0
@@ -1838,8 +1838,8 @@ packages:
     peerDependencies:
       eslint: '>= 8.57.1'
 
-  eslint-fix-utils@0.1.0:
-    resolution: {integrity: sha512-wdRrErXHDgdsmPWWOCIeq/wNUksrsRdNYTFur7wCkinCnip6ZBRM8voW28q6+xQEOBOhy6PX+f26xfZXO7fqzA==}
+  eslint-fix-utils@0.2.0:
+    resolution: {integrity: sha512-2z/I/1VfyL1mkLjk18W7Q3X+gqzeFmc2aNxSY/RmT6vNPyzQfT1MR/yP/+RUbqRuNUNMhTTYeP7AK7UUpcUD4w==}
     engines: {node: '>=18.3.0'}
     peerDependencies:
       '@types/estree': '>=1'
@@ -5358,7 +5358,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-fix-utils@0.1.0(@types/estree@1.0.6)(eslint@9.18.0(jiti@2.4.2)):
+  eslint-fix-utils@0.2.0(@types/estree@1.0.6)(eslint@9.18.0(jiti@2.4.2)):
     dependencies:
       '@types/estree': 1.0.6
       eslint: 9.18.0(jiti@2.4.2)

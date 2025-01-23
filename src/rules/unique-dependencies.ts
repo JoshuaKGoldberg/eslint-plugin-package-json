@@ -57,7 +57,7 @@ export const rule = createRule({
 									: fixRemoveArrayElement(
 											context,
 											removal as unknown as ESTree.Expression,
-											elements as unknown as (ESTree.Expression | null)[],
+											elements as unknown as ESTree.ArrayExpression,
 										),
 							messageId: "remove",
 						},
