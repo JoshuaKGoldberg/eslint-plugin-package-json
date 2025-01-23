@@ -7,14 +7,10 @@ import { isJSONStringLiteral, isNotNullish } from "../utils/predicates.js";
 
 const defaultFiles = [
 	/* cspell:disable-next-line */
-	"LICENCE",
-	/* cspell:disable-next-line */
-	"LICENCE.md",
-	"LICENSE",
-	"LICENSE.md",
-	"package.json",
-	"README.md",
-] as const;
+	/^(\.\/)?LICEN(C|S)E(\.|$)/i,
+	/^(\.\/)?README(\.|$)/i,
+	/^(\.\/)?package\.json$/i,
+];
 
 const cachedRegex = new Map<string, RegExp>();
 const getCachedLocalFileRegex = (filename: string) => {
@@ -143,11 +139,8 @@ export const rule = createRule({
 
 							// We can also go ahead and check if this matches one
 							// of the static default files
-							const regex = getCachedLocalFileRegex(
-								element.value,
-							);
 							for (const defaultFile of defaultFiles) {
-								if (regex.test(defaultFile)) {
+								if (defaultFile.test(element.value)) {
 									report(
 										elements,
 										index,

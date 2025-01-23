@@ -51,6 +51,51 @@ ruleTester.run("no-redundant-files", rule, {
 		{
 			code: `{
 \t"files": [
+\t\t"README.a-b-c.md",
+\t\t"./package.json"
+    ]
+}
+`,
+			errors: [
+				{
+					data: { file: "README.a-b-c.md" },
+					line: 3,
+					messageId: "unnecessaryDefault",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+\t"files": [
+\t\t
+\t\t"./package.json"
+    ]
+}
+`,
+						},
+					],
+				},
+				{
+					data: { file: "./package.json" },
+					line: 4,
+					messageId: "unnecessaryDefault",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+\t"files": [
+\t\t"README.a-b-c.md"
+\t\t
+    ]
+}
+`,
+						},
+					],
+				},
+			],
+		},
+		{
+			code: `{
+\t"files": [
 \t\t"CHANGELOG.md",
 \t\t"dist",
 \t\t"CHANGELOG.md"
