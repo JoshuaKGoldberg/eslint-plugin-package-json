@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.21.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.21.0...v0.21.1) (2025-01-24)
+
+### Bug Fixes
+
+-   **no-redundant-files:** detect variations of README.md as redundant ([#765](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/765)) ([7453095](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/745309536c3d2c175591582147028754f9287b1d)), closes [#763](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/763) [#763](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/763)
+
 # [0.21.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.20.1...v0.21.0) (2025-01-23)
 
 ### Features
