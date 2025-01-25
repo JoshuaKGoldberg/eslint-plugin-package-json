@@ -19,8 +19,8 @@ export const rule = createRule({
 					Object.entries(devDependencies ?? {}),
 				] as [string, string][][];
 
-				depObjs.forEach((obj) => {
-					obj.forEach(([key, value]) => {
+				for (const obj of depObjs) {
+					for (const [key, value] of obj) {
 						const response = (localPath: RegExp | string) => {
 							const filePath = path.join(
 								context.filename.replace(/package\.json/g, "/"),
@@ -28,17 +28,10 @@ export const rule = createRule({
 								"/package.json",
 							);
 
+							// Attempt to resolve the file path, and if it fails
+							// and throws, then we know it's invalid.
 							try {
-								if (!require.resolve(filePath)) {
-									context.report({
-										data: {
-											package: key,
-											path: value,
-										},
-										messageId: "invalidPath",
-										node: context.sourceCode.ast,
-									});
-								}
+								require.resolve(filePath);
 							} catch {
 								context.report({
 									data: {
@@ -58,8 +51,8 @@ export const rule = createRule({
 						if (value.startsWith("file:")) {
 							response("file:");
 						}
-					});
-				});
+					}
+				}
 			},
 		};
 	},
