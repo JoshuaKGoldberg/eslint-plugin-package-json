@@ -19,6 +19,7 @@ module.exports = tseslint.config(
 			"lib",
 			"node_modules",
 			"pnpm-lock.yaml",
+			".release-it.js",
 		],
 	},
 	{ linterOptions: { reportUnusedDisableDirectives: "error" } },
