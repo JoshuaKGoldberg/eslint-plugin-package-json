@@ -6,6 +6,7 @@ import { rule as noEmptyFields } from "./rules/no-empty-fields.js";
 import { rule as noRedundantFiles } from "./rules/no-redundant-files.js";
 import { rule as orderProperties } from "./rules/order-properties.js";
 import { rule as preferRepositoryShorthand } from "./rules/repository-shorthand.js";
+import { rule as requireLicense } from "./rules/require-license.js";
 import { rule as sortCollections } from "./rules/sort-collections.js";
 import { rule as uniqueDependencies } from "./rules/unique-dependencies.js";
 import { rule as validLocalDependency } from "./rules/valid-local-dependency.js";
@@ -26,6 +27,7 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"no-redundant-files": noRedundantFiles,
 	"order-properties": orderProperties,
 	"repository-shorthand": preferRepositoryShorthand,
+	"require-license": requireLicense,
 	"sort-collections": sortCollections,
 	"unique-dependencies": uniqueDependencies,
 	"valid-local-dependency": validLocalDependency,
