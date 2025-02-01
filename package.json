@@ -39,7 +39,7 @@
 		"build": "tsup",
 		"format": "prettier \"**/*\" --ignore-unknown",
 		"lint": "eslint . --max-warnings 0",
-		"lint:eslint-docs": "npm run update:eslint-docs -- --check",
+		"lint:eslint-docs": "pnpm update:eslint-docs --check",
 		"lint:knip": "knip",
 		"lint:md": "markdownlint \"**/*.md\" \".github/**/*.md\"",
 		"lint:packages": "pnpm dedupe --check",
