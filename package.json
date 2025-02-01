@@ -33,10 +33,7 @@
 	},
 	"main": "./lib/index.js",
 	"files": [
-		"lib/",
-		"package.json",
-		"LICENSE.md",
-		"README.md"
+		"lib"
 	],
 	"scripts": {
 		"build": "tsup",
