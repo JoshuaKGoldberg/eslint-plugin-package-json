@@ -2,25 +2,21 @@ import type { PackageJsonRuleModule } from "../createRule.js";
 
 import { createRequirePropertyRule } from "../utils/createRequirePropertyRule.js";
 
-interface PropertyRule {
-	isRecommended: boolean;
-	propertyName: string;
-}
-
-// List of all properties we want to create require- rules for.
+// List of all properties we want to create require- rules for,
+// in the format [propertyName, isRecommended]
 const properties = [
-	{ isRecommended: false, propertyName: "author" },
-] satisfies PropertyRule[];
+	["author", false],
+	// TODO: More to come!
+] satisfies [string, boolean][];
 
-/** All require- flavor of rules */
-const rules: Record<string, PackageJsonRuleModule> = {};
-
-// Create all require- rules
-for (const { isRecommended, propertyName } of properties) {
-	rules[`require-${propertyName}`] = createRequirePropertyRule(
-		propertyName,
-		isRecommended,
-	);
-}
-
-export { rules };
+/** All require- flavor rules */
+export const rules = properties.reduce<Record<string, PackageJsonRuleModule>>(
+	(acc, [propertyName, isRecommended]) => {
+		acc[`require-${propertyName}`] = createRequirePropertyRule(
+			propertyName,
+			isRecommended,
+		);
+		return acc;
+	},
+	{},
+);
