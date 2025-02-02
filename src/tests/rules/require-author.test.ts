@@ -27,9 +27,28 @@ ruleTester.run("require-author", rules["require-author"], {
 				},
 			],
 		},
+		{
+			code: `{
+            "name": "foo",
+            "version": "1.0.0",
+            "bin": {
+                "author": "./cli.js"
+            }
+            }
+            `,
+			errors: [
+				{
+					data: { property: "author" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+		},
 	],
 	valid: [
 		`{ "main": "./index.js", "author": "Sophie Trudeau" }`,
 		`{ "author": "Jessica Moss" }`,
+		`{ "author": 123 }`,
+		`{ "author": { "name": "Jessica Moss" } }`,
 	],
 });
