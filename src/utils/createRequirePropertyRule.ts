@@ -1,4 +1,7 @@
+import type { AST as JsonAST } from "jsonc-eslint-parser";
+
 import { createRule } from "../createRule.js";
+import { isJSONStringLiteral } from "./predicates.js";
 
 /**
  * Given a top-level property name, create a rule that requires that property to be present.
@@ -10,14 +13,17 @@ export const createRequirePropertyRule = (
 ) => {
 	return createRule({
 		create(context) {
-			let hasSeen = false;
 			return {
-				[`Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.value=${propertyName}]`]:
-					() => {
-						hasSeen = true;
-					},
-				"Program:exit": () => {
-					if (!hasSeen) {
+				"Program > JSONExpressionStatement > JSONObjectExpression"(
+					node: JsonAST.JSONObjectExpression,
+				) {
+					if (
+						!node.properties.some(
+							(property) =>
+								isJSONStringLiteral(property.key) &&
+								property.key.value === propertyName,
+						)
+					) {
 						context.report({
 							data: { property: propertyName },
 							messageId: "missing",
