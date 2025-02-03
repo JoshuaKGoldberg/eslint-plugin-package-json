@@ -1,4 +1,4 @@
-import { PJV as PackageValidator } from "package-json-validator";
+import { validate } from "package-json-validator";
 
 import { createRule } from "../createRule.js";
 
@@ -18,9 +18,7 @@ export const rule = createRule({
 	create(context) {
 		return {
 			"Program:exit"() {
-				const validation = PackageValidator.validate(
-					context.sourceCode.text,
-				);
+				const validation = validate(context.sourceCode.text);
 
 				validation.errors?.filter(isUsableError).forEach((message) => {
 					if (message) {
