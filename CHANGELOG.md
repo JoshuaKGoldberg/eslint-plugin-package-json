@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.22.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.21.1...v0.22.0) (2025-02-03)
+
+### Features
+
+-   **require-author:** add new `require-author` rule ([#851](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/851)) ([cde68da](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/cde68da27bf87d711a8fb6f90df9f99f7bdb1512)), closes [#795](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/795)
+
 ## [0.21.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.21.0...v0.21.1) (2025-01-24)
 
 ### Bug Fixes
