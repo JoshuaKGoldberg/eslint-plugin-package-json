@@ -127,7 +127,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [order-properties](docs/rules/order-properties.md)                     | Package properties must be declared in standard order                                             | ✅  | 🔧 |    |    |
 | [repository-shorthand](docs/rules/repository-shorthand.md)             | Enforce either object or shorthand declaration for repository.                                    | ✅  | 🔧 |    |    |
 | [require-author](docs/rules/require-author.md)                         | Requires the `author` property to be present.                                                     |    |    |    |    |
-| [require-version](docs/rules/require-version.md)                       | Enforce that the 'version' filed exists                                                           | ✅  |    |    |    |
+| [require-version](docs/rules/require-version.md)                       | Requires the `version` property to be present.                                                    | ✅  |    |    |    |
 | [sort-collections](docs/rules/sort-collections.md)                     | Dependencies, scripts, and configuration values must be declared in alphabetical order.           | ✅  | 🔧 |    |    |
 | [unique-dependencies](docs/rules/unique-dependencies.md)               | Checks a dependency isn't specified more than once (i.e. in `dependencies` and `devDependencies`) | ✅  |    | 💡 |    |
 | [valid-local-dependency](docs/rules/valid-local-dependency.md)         | Checks existence of local dependencies in the package.json                                        | ✅  |    |    |    |
