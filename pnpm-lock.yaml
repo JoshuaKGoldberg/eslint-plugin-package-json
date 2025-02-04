@@ -62,7 +62,7 @@ importers:
         version: 4.0.2
       '@vitest/coverage-v8':
         specifier: ^3.0.0
-        version: 3.0.3(vitest@3.0.3(@types/node@22.13.0)(jiti@2.4.2)(yaml@2.7.0))
+        version: 3.0.4(vitest@3.0.3(@types/node@22.13.0)(jiti@2.4.2)(yaml@2.7.0))
       '@vitest/eslint-plugin':
         specifier: ^1.1.25
         version: 1.1.25(@typescript-eslint/utils@8.22.0(eslint@9.18.0(jiti@2.4.2))(typescript@5.7.3))(eslint@9.18.0(jiti@2.4.2))(typescript@5.7.3)(vitest@3.0.3(@types/node@22.13.0)(jiti@2.4.2)(yaml@2.7.0))
@@ -1064,11 +1064,11 @@ packages:
     resolution: {integrity: sha512-AWpYAXnUgvLNabGTy3uBylkgZoosva/miNd1I8Bz3SjotmQPbVqhO4Cczo8AsZ44XVErEBPr/CRSgaj8sG7g0w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@vitest/coverage-v8@3.0.3':
-    resolution: {integrity: sha512-uVbJ/xhImdNtzPnLyxCZJMTeTIYdgcC2nWtBBBpR1H6z0w8m7D+9/zrDIx2nNxgMg9r+X8+RY2qVpUDeW2b3nw==}
+  '@vitest/coverage-v8@3.0.4':
+    resolution: {integrity: sha512-f0twgRCHgbs24Dp8cLWagzcObXMcuKtAwgxjJV/nnysPAJJk1JiKu/W0gIehZLmkljhJXU/E0/dmuQzsA/4jhA==}
     peerDependencies:
-      '@vitest/browser': 3.0.3
-      vitest: 3.0.3
+      '@vitest/browser': 3.0.4
+      vitest: 3.0.4
     peerDependenciesMeta:
       '@vitest/browser':
         optional: true
@@ -4427,7 +4427,7 @@ snapshots:
       '@typescript-eslint/types': 8.22.0
       eslint-visitor-keys: 4.2.0
 
-  '@vitest/coverage-v8@3.0.3(vitest@3.0.3(@types/node@22.13.0)(jiti@2.4.2)(yaml@2.7.0))':
+  '@vitest/coverage-v8@3.0.4(vitest@3.0.3(@types/node@22.13.0)(jiti@2.4.2)(yaml@2.7.0))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 1.0.2
