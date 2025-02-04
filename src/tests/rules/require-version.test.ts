@@ -26,6 +26,23 @@ ruleTester.run("require-version", rules["require-version"], {
 				},
 			],
 		},
+		{
+			code: `{
+            "name": "foo",
+            "author": "Jessica Moss",
+            "bin": {
+                "version": "1.0.0"
+            }
+            }
+            `,
+			errors: [
+				{
+					data: { property: "version" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+		},
 	],
 	valid: [`{ "version": "1.0.0" }`],
 });
