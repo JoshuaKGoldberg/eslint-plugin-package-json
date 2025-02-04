@@ -1,19 +1,31 @@
-import { rule } from "../../rules/require-version.js";
+import { rules } from "../../rules/require-properties.js";
 import { ruleTester } from "./ruleTester.js";
 
-ruleTester.run("require-version", rule, {
+ruleTester.run("require-version", rules["require-version"], {
 	invalid: [
 		{
-			code: `{
-	"name": "test"
-}
-`,
+			code: "{}",
 			errors: [
 				{
-					messageId: "invalid",
+					data: { property: "version" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+		},
+		{
+			code: `{
+            "name": "foo"
+            }
+            `,
+			errors: [
+				{
+					data: { property: "version" },
+					line: 1,
+					messageId: "missing",
 				},
 			],
 		},
 	],
-	valid: [`{ "version": "1.2.3" }`],
+	valid: [`{ "version": "1.0.0" }`],
 });
