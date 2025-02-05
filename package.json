@@ -37,6 +37,7 @@
 	],
 	"scripts": {
 		"build": "tsup",
+		"dev": "tsup --watch",
 		"format": "prettier \"**/*\" --ignore-unknown",
 		"lint": "eslint . --max-warnings 0",
 		"lint:eslint-docs": "pnpm update:eslint-docs --check",
