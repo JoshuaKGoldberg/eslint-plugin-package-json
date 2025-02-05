@@ -1,10 +1,10 @@
-# require-license
+# valid-license
 
 💼 This rule is enabled in the ✅ `recommended` config.
 
 <!-- end auto-generated rule header -->
 
-This rule applies two validations to the `"licence"` property:
+This rule applies two validations to the `"license"` property:
 
 - It must be a string rather than any other data type
 - It's value should match one of the values provided in the options
@@ -13,9 +13,9 @@ Example of **incorrect** code for this rule:
 
 When the rule is configured with
 
-```ts
+```json
 {
-    "require-license": ["error", "GPL"]
+	"valid-license": ["error", "GPL"]
 }
 ```
 
@@ -27,9 +27,9 @@ When the rule is configured with
 
 When the rule is configured with
 
-```ts
+```json
 {
-    "require-license": ["error", ["MIT", "GPL"]]
+	"valid-license": ["error", ["MIT", "GPL"]]
 }
 ```
 
@@ -43,9 +43,9 @@ Example of **correct** code for this rule:
 
 When the rule is configured with
 
-```ts
+```json
 {
-    "require-license": ["error", "GPL"]
+	"valid-license": ["error", "GPL"]
 }
 ```
 
@@ -57,9 +57,9 @@ When the rule is configured with
 
 When the rule is configured with
 
-```ts
+```json
 {
-    "require-license": ["error", ["Apache", "MIT"]]
+	"valid-license": ["error", ["Apache", "MIT"]]
 }
 ```
 
