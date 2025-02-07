@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.23.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.23.0...v0.23.1) (2025-02-07)
+
+### Bug Fixes
+
+-   **deps:** update dependency semver to v7.7.1 ([#880](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/880)) ([152cfc1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/152cfc10e9cc9e34803e609ec3b12855395093c6))
+
 # [0.23.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.22.0...v0.23.0) (2025-02-04)
 
 ### Features
