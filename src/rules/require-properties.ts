@@ -6,6 +6,7 @@ import { createRequirePropertyRule } from "../utils/createRequirePropertyRule.js
 // in the format [propertyName, isRecommended]
 const properties = [
 	["author", false],
+	["name", true],
 	["version", true],
 	// TODO: More to come!
 ] satisfies [string, boolean][];
