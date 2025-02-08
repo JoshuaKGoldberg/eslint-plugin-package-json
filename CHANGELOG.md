@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.24.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.23.1...v0.24.0) (2025-02-08)
+
+### Features
+
+-   **require-name:** add require-name rule ([#883](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/883)) ([3a82dd8](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/3a82dd82d14b6bc1aaa72cfbc2e68aeb282ce18a)), closes [#808](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/808)
+
 ## [0.23.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.23.0...v0.23.1) (2025-02-07)
 
 ### Bug Fixes
