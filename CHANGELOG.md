@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.25.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.24.0...v0.25.0) (2025-02-09)
+
+### Features
+
+-   **require-keywords:** add require-keywords rule ([#884](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/884)) ([99237f0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/99237f0dc5902bda417345cba681f23a328c5bbe)), closes [#866](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/866)
+
 # [0.24.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.23.1...v0.24.0) (2025-02-08)
 
 ### Features
