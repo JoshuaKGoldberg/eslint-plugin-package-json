@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.26.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.25.0...v0.26.0) (2025-02-10)
+
+### Features
+
+-   **require-files:** add require-files rule ([#887](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/887)) ([4de33de](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4de33de2715579c0d217609cd576d1b3b843d457)), closes [#803](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/803)
+
 # [0.25.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.24.0...v0.25.0) (2025-02-09)
 
 ### Features
