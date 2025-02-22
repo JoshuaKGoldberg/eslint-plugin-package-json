@@ -121,7 +121,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 ❌ Deprecated.
 
 | Name                                                                   | Description                                                                                       | 💼 | 🔧 | 💡 | ❌  |
-| :--------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------ | :- | :- | :- | :- |
+| :--------------------------------------------------------------------- |:--------------------------------------------------------------------------------------------------| :- | :- | :- | :- |
 | [no-empty-fields](docs/rules/no-empty-fields.md)                       | Reports on unnecessary empty arrays and objects.                                                  | ✅  |    | 💡 |    |
 | [no-redundant-files](docs/rules/no-redundant-files.md)                 | Prevents adding unnecessary / redundant files.                                                    |    |    | 💡 |    |
 | [order-properties](docs/rules/order-properties.md)                     | Package properties must be declared in standard order                                             | ✅  | 🔧 |    |    |
@@ -138,11 +138,13 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [valid-package-def](docs/rules/valid-package-def.md)                   | Enforce that package.json has all properties required by the npm spec                             |    |    |    | ❌  |
 | [valid-package-definition](docs/rules/valid-package-definition.md)     | Enforce that package.json has all properties required by the npm spec                             | ✅  |    |    |    |
 | [valid-repository-directory](docs/rules/valid-repository-directory.md) | Enforce that if repository directory is specified, it matches the path to the package.json file   | ✅  |    | 💡 |    |
+| [valid-scripts](docs/rules/valid-scripts.md)                           | Enforce that package scripts properties are valid                                                 | ✅  |    |    |    |
 | [valid-version](docs/rules/valid-version.md)                           | Enforce that package versions are valid semver specifiers                                         | ✅  |    |    |    |
 
 <!-- end auto-generated rules list -->
 <!-- prettier-ignore-end -->
 
+valid semver specifiers
 These rules only run on `package.json` files; they will ignore all other files being linted.
 They can lint `package.json` files at project root and in any subfolder of the project, making this plugin great for monorepos.
 
