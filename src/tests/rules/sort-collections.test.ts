@@ -132,6 +132,7 @@ ruleTester.run("sort-collections", rule, {
 		}
 	}
 }`,
+			options: [["exports"]],
 			errors: [
 				{
 					data: { key: "exports" },
