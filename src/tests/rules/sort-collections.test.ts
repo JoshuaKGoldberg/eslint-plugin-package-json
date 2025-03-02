@@ -215,5 +215,36 @@ ruleTester.run("sort-collections", rule, {
 	}
 }`,
 		},
+		{
+			code: `{
+	"exports": {
+		".": {
+			"import": "./index.mjs",
+			"require": "./index.js",
+			"types": "./index.d.ts"
+		},
+		"./package.json": "./package.json",
+	}
+}`,
+			options: [["exports"]],
+			errors: [
+				{
+					data: { key: "exports" },
+					messageId: "notAlphabetized",
+					type: "JSONProperty",
+				},
+			],
+			filename: "package.json",
+			output: `{
+	"exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "types": "./index.d.ts"
+    },
+    "./package.json": "./package.json"
+  }
+}`,
+		},
 	],
 });
