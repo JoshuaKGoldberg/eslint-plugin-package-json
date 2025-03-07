@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.26.3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.26.2...v0.26.3) (2025-03-07)
+
+### Bug Fixes
+
+-   **deps:** update dependency sort-package-json to v3 ([#939](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/939)) ([a61e725](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/a61e7255f5f0fe70b2c190b38f76d684a9d3e37c))
+
 ## [0.26.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.26.1...v0.26.2) (2025-03-04)
 
 ### Bug Fixes
