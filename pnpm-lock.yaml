@@ -30,8 +30,8 @@ importers:
         specifier: ^1.1.3
         version: 1.1.3
       sort-package-json:
-        specifier: ^2.12.0
-        version: 2.15.1
+        specifier: ^3.0.0
+        version: 3.0.0
       validate-npm-package-name:
         specifier: ^6.0.0
         version: 6.0.0
@@ -3101,6 +3101,10 @@ packages:
 
   sort-package-json@2.15.1:
     resolution: {integrity: sha512-9x9+o8krTT2saA9liI4BljNjwAbvUnWf11Wq+i/iZt8nl2UGYnf3TH5uBydE7VALmP7AGwlfszuEeL8BDyb0YA==}
+    hasBin: true
+
+  sort-package-json@3.0.0:
+    resolution: {integrity: sha512-vfZWx4DnFNB8R9Vg4Dnx21s20auNzWH15ZaCBfADAiyrCwemRmhWstTgvLjMek1DW3+MHcNaqkp86giCF24rMA==}
     hasBin: true
 
   source-map-js@1.2.1:
@@ -6728,6 +6732,17 @@ snapshots:
   sort-object-keys@1.1.3: {}
 
   sort-package-json@2.15.1:
+    dependencies:
+      detect-indent: 7.0.1
+      detect-newline: 4.0.1
+      get-stdin: 9.0.0
+      git-hooks-list: 3.2.0
+      is-plain-obj: 4.1.0
+      semver: 7.7.1
+      sort-object-keys: 1.1.3
+      tinyglobby: 0.2.12
+
+  sort-package-json@3.0.0:
     dependencies:
       detect-indent: 7.0.1
       detect-newline: 4.0.1
