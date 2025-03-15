@@ -34,25 +34,24 @@ This plugin's recommended configuration enables its rules on `**/package.json` f
 In your ESLint configuration file:
 
 ```ts
-import packageJson from "eslint-plugin-package-json/configs/recommended";
+import packageJson from "eslint-plugin-package-json";
 
 export default [
 	// your other ESLint configurations
-	packageJson,
+	packageJson.configs.recommended,
 ];
 ```
 
 If you want to override the recommended rules:
 
 ```ts
-import packageJson from "eslint-plugin-package-json/configs/recommended";
+import packageJson from "eslint-plugin-package-json";
 
 export default [
 	// your other ESLint configurations
+	packageJson.configs.recommended,
 	{
-		...packageJson,
 		rules: {
-			...packageJson.rules,
 			"package-json/valid-package-definition": "off",
 		},
 	},
@@ -75,10 +74,9 @@ Add an override to your ESLint configuration file that specifies `jsonc-eslint-p
 module.exports = {
 	overrides: [
 		{
-			extends: ["plugin:package-json/recommended"],
+			extends: ["plugin:package-json/legacy-recommended"],
 			files: ["package.json"],
 			parser: "jsonc-eslint-parser",
-			plugins: ["package-json"],
 		},
 	],
 };
@@ -91,10 +89,9 @@ See [ESLint's _Configure Rules_ guide](https://eslint.org/docs/latest/use/config
 module.exports = {
 	overrides: [
 		{
-			extends: ["plugin:package-json/recommended"],
+			extends: ["plugin:package-json/legacy-recommended"],
 			files: ["package.json"],
 			parser: "jsonc-eslint-parser",
-			plugins: ["package-json"],
 			rules: {
 				"package-json/valid-package-definition": "error",
 			},

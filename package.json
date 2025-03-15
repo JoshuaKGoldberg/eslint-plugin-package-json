@@ -21,14 +21,6 @@
 			},
 			"import": "./lib/index.mjs",
 			"require": "./lib/index.js"
-		},
-		"./configs/recommended": {
-			"types": {
-				"import": "./lib/configs/recommended.d.mts",
-				"require": "./lib/configs/recommended.d.ts"
-			},
-			"import": "./lib/configs/recommended.mjs",
-			"require": "./lib/configs/recommended.js"
 		}
 	},
 	"main": "./lib/index.js",
