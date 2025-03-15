@@ -48,7 +48,7 @@
 		"should-semantic-release": "should-semantic-release --verbose",
 		"test": "vitest",
 		"tsc": "tsc",
-		"update:eslint-docs": "eslint-doc-generator --rule-doc-title-format name"
+		"update:eslint-docs": "pnpm build && eslint-doc-generator --rule-doc-title-format name"
 	},
 	"lint-staged": {
 		"*": "prettier --ignore-unknown --write"
