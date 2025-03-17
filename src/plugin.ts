@@ -1,3 +1,4 @@
+import * as parserJsonc from "jsonc-eslint-parser";
 import { createRequire } from "node:module";
 
 import type { PackageJsonRuleModule } from "./createRule.js";
@@ -51,16 +52,35 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	},
 };
 
+const recommendedRules = Object.fromEntries(
+	Object.entries(rules)
+		.filter(([, rule]) => rule.meta.docs?.recommended)
+		.map(([name]) => ["package-json/" + name, "error" as const]),
+);
+
 export const plugin = {
+	configs: {
+		"legacy-recommended": {
+			plugins: ["package-json"],
+			rules: recommendedRules,
+		},
+		recommended: {
+			files: ["**/package.json"],
+			languageOptions: {
+				parser: parserJsonc,
+			},
+			name: "package-json/recommended",
+			plugins: {
+				get "package-json"() {
+					return plugin;
+				},
+			},
+			rules: recommendedRules,
+		},
+	},
 	meta: {
 		name,
 		version,
 	},
 	rules,
 };
-
-export const recommendedRuleSettings = Object.fromEntries(
-	Object.entries(rules)
-		.filter(([, rule]) => rule.meta.docs?.recommended)
-		.map(([name]) => ["package-json/" + name, "error" as const]),
-);

@@ -44,6 +44,7 @@ module.exports = tseslint.config(
 				projectService: {
 					allowDefaultProject: [
 						"*.config.*s",
+						".eslint-doc-generatorrc.js",
 						"bin/*.js",
 						"src/tests/*.js",
 					],
