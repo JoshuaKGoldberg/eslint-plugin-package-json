@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.27.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.26.4...v0.27.0) (2025-03-17)
+
+### Features
+
+-   empty feature commit to trigger new minor version ([b6b58d4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/b6b58d46da07dd5f1a51e5b2c71a10803863b113))
+
 ## [0.26.4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.26.3...v0.26.4) (2025-03-17)
 
 ## [0.26.3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.26.2...v0.26.3) (2025-03-07)
