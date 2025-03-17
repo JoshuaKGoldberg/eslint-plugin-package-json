@@ -23,3 +23,5 @@ Example of **correct** code for this rule:
 	"types": "./index.d.ts"
 }
 ```
+
+See [TypeScript Handbook > Publishing](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html) for more information on publishing package types.
