@@ -10,6 +10,7 @@ const properties = [
 	["files", false],
 	["keywords", false],
 	["name", true],
+	["types", false],
 	["version", true],
 	// TODO: More to come!
 ] satisfies [string, boolean][];
