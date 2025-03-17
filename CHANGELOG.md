@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.26.4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.26.3...v0.26.4) (2025-03-17)
+
 ## [0.26.3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.26.2...v0.26.3) (2025-03-07)
 
 ### Bug Fixes
