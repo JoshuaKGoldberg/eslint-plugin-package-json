@@ -187,7 +187,7 @@ Thanks! 💖
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/chouchouji"><img src="https://avatars.githubusercontent.com/u/70570907?v=4?s=100" width="100px;" alt="chouchouji"/><br /><sub><b>chouchouji</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=chouchouji" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/michaelfaith"><img src="https://avatars.githubusercontent.com/u/8071845?v=4?s=100" width="100px;" alt="michael faith"/><br /><sub><b>michael faith</b></sub></a><br /><a href="#infra-michaelfaith" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=michaelfaith" title="Code">💻</a> <a href="#maintenance-michaelfaith" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/michaelfaith"><img src="https://avatars.githubusercontent.com/u/8071845?v=4?s=100" width="100px;" alt="michael faith"/><br /><sub><b>michael faith</b></sub></a><br /><a href="#infra-michaelfaith" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=michaelfaith" title="Code">💻</a> <a href="#maintenance-michaelfaith" title="Maintenance">🚧</a> <a href="#ideas-michaelfaith" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>
 </table>
