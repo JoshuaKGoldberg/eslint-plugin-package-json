@@ -92,7 +92,7 @@ importers:
         version: 5.1.0(eslint@9.23.0(jiti@2.4.2))
       eslint-plugin-n:
         specifier: ^17.15.1
-        version: 17.16.2(eslint@9.23.0(jiti@2.4.2))
+        version: 17.17.0(eslint@9.23.0(jiti@2.4.2))
       eslint-plugin-perfectionist:
         specifier: ^4.6.0
         version: 4.10.1(eslint@9.23.0(jiti@2.4.2))(typescript@5.8.2)
@@ -1758,8 +1758,8 @@ packages:
     peerDependencies:
       eslint: '>=8'
 
-  eslint-plugin-n@17.16.2:
-    resolution: {integrity: sha512-iQM5Oj+9o0KaeLoObJC/uxNGpktZCkYiTTBo8PkRWq3HwNcRxwpvSDFjBhQ5+HLJzBTy+CLDC5+bw0Z5GyhlOQ==}
+  eslint-plugin-n@17.17.0:
+    resolution: {integrity: sha512-2VvPK7Mo73z1rDFb6pTvkH6kFibAmnTubFq5l83vePxu0WiY1s0LOtj2WHb6Sa40R3w4mnh8GFYbHBQyMlotKw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: '>=8.23.0'
@@ -5189,7 +5189,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-n@17.16.2(eslint@9.23.0(jiti@2.4.2)):
+  eslint-plugin-n@17.17.0(eslint@9.23.0(jiti@2.4.2)):
     dependencies:
       '@eslint-community/eslint-utils': 4.5.1(eslint@9.23.0(jiti@2.4.2))
       enhanced-resolve: 5.18.1
