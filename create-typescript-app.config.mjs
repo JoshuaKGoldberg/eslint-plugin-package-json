@@ -20,9 +20,23 @@ export default createConfig({
 				rules: [
 					{
 						entries: {
-							"n/no-extraneous-import": "off",
 							"n/no-missing-import": "off",
-							"n/no-unpublished-import": "off",
+						},
+					},
+					{
+						comment:
+							"Stylistic concerns that don't interfere with Prettier",
+						entries: {
+							"perfectionist/sort-objects": [
+								"error",
+								{
+									customGroups: {
+										programExit: "Program:exit",
+									},
+									groups: ["unknown", "programExit"],
+									type: "alphabetical",
+								},
+							],
 						},
 					},
 				],

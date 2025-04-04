@@ -48,9 +48,17 @@ export default tseslint.config(
 			},
 		},
 		rules: {
-			"n/no-extraneous-import": "off",
 			"n/no-missing-import": "off",
-			"n/no-unpublished-import": "off",
+
+			// Stylistic concerns that don't interfere with Prettier
+			"perfectionist/sort-objects": [
+				"error",
+				{
+					customGroups: { programExit: "Program:exit" },
+					groups: ["unknown", "programExit"],
+					type: "alphabetical",
+				},
+			],
 
 			// Stylistic concerns that don't interfere with Prettier
 			"logical-assignment-operators": [
