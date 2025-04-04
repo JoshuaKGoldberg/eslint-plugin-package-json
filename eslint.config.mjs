@@ -15,7 +15,7 @@ export default tseslint.config(
 	{
 		ignores: [
 			"**/*.snap",
-			".eslint-doc-generatorrc.js",
+			".eslint-doc-generatorrc.mjs",
 			"coverage",
 			"docs/rules/*/*.ts",
 			"lib",
