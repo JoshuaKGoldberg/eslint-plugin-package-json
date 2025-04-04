@@ -104,9 +104,8 @@
 		"vitest": "3.0.9"
 	},
 	"peerDependencies": {
-		"@typescript-eslint/parser": ">=8",
-		"eslint": ">=9",
-		"typescript": ">=5"
+		"eslint": ">=8.0.0",
+		"jsonc-eslint-parser": "^2.0.0"
 	},
 	"packageManager": "pnpm@10.7.0",
 	"engines": {
