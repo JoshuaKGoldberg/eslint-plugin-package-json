@@ -51,16 +51,6 @@ export default tseslint.config(
 			"n/no-missing-import": "off",
 
 			// Stylistic concerns that don't interfere with Prettier
-			"perfectionist/sort-objects": [
-				"error",
-				{
-					customGroups: { programExit: "Program:exit" },
-					groups: ["unknown", "programExit"],
-					type: "alphabetical",
-				},
-			],
-
-			// Stylistic concerns that don't interfere with Prettier
 			"logical-assignment-operators": [
 				"error",
 				"always",
@@ -69,6 +59,14 @@ export default tseslint.config(
 			"no-useless-rename": "error",
 			"object-shorthand": "error",
 			"operator-assignment": "error",
+			"perfectionist/sort-objects": [
+				"error",
+				{
+					customGroups: { programExit: "Program:exit" },
+					groups: ["unknown", "programExit"],
+					type: "alphabetical",
+				},
+			],
 		},
 		settings: {
 			perfectionist: { partitionByComment: true, type: "natural" },
