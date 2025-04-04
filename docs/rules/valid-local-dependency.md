@@ -1,4 +1,4 @@
-# package-json/valid-local-dependency
+# valid-local-dependency
 
 💼 This rule is enabled in the following configs: `legacy-recommended`, ✅ `recommended`.
 

@@ -1,4 +1,4 @@
-# package-json/require-files
+# require-files
 
 <!-- end auto-generated rule header -->
 

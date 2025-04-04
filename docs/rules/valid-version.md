@@ -1,4 +1,4 @@
-# package-json/valid-version
+# valid-version
 
 💼 This rule is enabled in the following configs: `legacy-recommended`, ✅ `recommended`.
 

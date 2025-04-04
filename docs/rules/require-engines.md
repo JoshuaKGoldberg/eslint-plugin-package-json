@@ -1,4 +1,4 @@
-# package-json/require-engines
+# require-engines
 
 <!-- end auto-generated rule header -->
 

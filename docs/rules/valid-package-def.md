@@ -1,4 +1,4 @@
-# package-json/valid-package-def
+# valid-package-def
 
 ❌ This rule is deprecated. It was replaced by [`package-json/valid-package-definition`](valid-package-definition.md).
 

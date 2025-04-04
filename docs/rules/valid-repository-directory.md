@@ -1,4 +1,4 @@
-# package-json/valid-repository-directory
+# valid-repository-directory
 
 💼 This rule is enabled in the following configs: `legacy-recommended`, ✅ `recommended`.
 

@@ -1,4 +1,4 @@
-# package-json/repository-shorthand
+# repository-shorthand
 
 💼 This rule is enabled in the following configs: `legacy-recommended`, ✅ `recommended`.
 

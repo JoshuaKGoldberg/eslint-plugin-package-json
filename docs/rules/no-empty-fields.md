@@ -1,4 +1,4 @@
-# package-json/no-empty-fields
+# no-empty-fields
 
 💼 This rule is enabled in the following configs: `legacy-recommended`, ✅ `recommended`.
 

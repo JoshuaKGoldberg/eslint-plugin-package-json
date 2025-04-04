@@ -1,4 +1,4 @@
-# package-json/require-keywords
+# require-keywords
 
 <!-- end auto-generated rule header -->
 
