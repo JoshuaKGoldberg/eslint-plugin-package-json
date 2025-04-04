@@ -1,4 +1,4 @@
-# require-author
+# package-json/require-author
 
 <!-- end auto-generated rule header -->
 

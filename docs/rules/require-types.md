@@ -1,4 +1,4 @@
-# require-types
+# package-json/require-types
 
 <!-- end auto-generated rule header -->
 

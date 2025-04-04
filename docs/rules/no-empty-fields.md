@@ -1,6 +1,6 @@
-# no-empty-fields
+# package-json/no-empty-fields
 
-💼 This rule is enabled in the ✅ `recommended` config.
+💼 This rule is enabled in the following configs: `legacy-recommended`, ✅ `recommended`.
 
 💡 This rule is manually fixable by [editor suggestions](https://eslint.org/docs/latest/use/core-concepts#rule-suggestions).
 

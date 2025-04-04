@@ -1,4 +1,4 @@
-# no-redundant-files
+# package-json/no-redundant-files
 
 💡 This rule is manually fixable by [editor suggestions](https://eslint.org/docs/latest/use/core-concepts#rule-suggestions).
 
