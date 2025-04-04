@@ -11,9 +11,6 @@ importers:
       '@altano/repository-tools':
         specifier: ^0.1.1
         version: 0.1.1
-      '@typescript-eslint/parser':
-        specifier: '>=8'
-        version: 8.26.1(eslint@9.22.0(jiti@2.4.2))(typescript@5.8.2)
       detect-indent:
         specifier: 6.1.0
         version: 6.1.0
