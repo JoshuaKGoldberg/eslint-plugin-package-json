@@ -114,6 +114,9 @@ importers:
       husky:
         specifier: 9.1.7
         version: 9.1.7
+      jsonc-eslint-parser:
+        specifier: ^2.4.0
+        version: 2.4.0
       knip:
         specifier: 5.46.0
         version: 5.46.0(@types/node@22.13.10)(typescript@5.8.2)
