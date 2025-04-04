@@ -4,6 +4,19 @@ import * as vitest from "vitest";
 
 import type { PackageJsonRuleModule } from "../../createRule.js";
 
+export type JsonRuleTester = RuleTester & {
+	run: JsonRuleTesterRun;
+};
+
+export type JsonRuleTesterRun = (
+	name: string,
+	rule: PackageJsonRuleModule,
+	tests: {
+		invalid?: RuleTester.InvalidTestCase[] | undefined;
+		valid?: (RuleTester.ValidTestCase | string)[] | undefined;
+	},
+) => void;
+
 RuleTester.describe = vitest.describe;
 RuleTester.it = vitest.it;
 RuleTester.itOnly = vitest.it.only;
@@ -26,16 +39,3 @@ ruleTester.run = (name, rule, tests) => {
 		})),
 	});
 };
-
-export type JsonRuleTester = RuleTester & {
-	run: JsonRuleTesterRun;
-};
-
-export type JsonRuleTesterRun = (
-	name: string,
-	rule: PackageJsonRuleModule,
-	tests: {
-		invalid?: RuleTester.InvalidTestCase[] | undefined;
-		valid?: (RuleTester.ValidTestCase | string)[] | undefined;
-	},
-) => void;
