@@ -1,6 +1,7 @@
 {
 	"$schema": "https://unpkg.com/knip@5.46.0/schema.json",
 	"entry": ["src/index.ts", "src/**/*.test.*"],
+	"ignoreDependencies": ["create-typescript-app"],
 	"ignoreExportsUsedInFile": { "interface": true, "type": true },
 	"project": ["src/**/*.ts"]
 }
