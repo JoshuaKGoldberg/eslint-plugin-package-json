@@ -1,252 +1,182 @@
 {
-  "badgeTemplate": "<img alt=\"All Contributors: <%= contributors.length %> 👪\" src=\"https://img.shields.io/badge/all_contributors-<%= contributors.length %>_👪-21bb42.svg\" />",
-  "commit": false,
-  "commitConvention": "angular",
-  "contributors": [
-    {
-      "login": "b3rnhard",
-      "name": "b3rnhard",
-      "avatar_url": "https://avatars.githubusercontent.com/u/10774404?v=4",
-      "profile": "https://github.com/b3rnhard",
-      "contributions": [
-        "bug"
-      ]
-    },
-    {
-      "login": "JoshuaKGoldberg",
-      "name": "Josh Goldberg ✨",
-      "avatar_url": "https://avatars.githubusercontent.com/u/3335181?v=4",
-      "profile": "http://www.joshuakgoldberg.com/",
-      "contributions": [
-        "tool",
-        "bug",
-        "code",
-        "infra",
-        "doc",
-        "maintenance",
-        "ideas"
-      ]
-    },
-    {
-      "login": "kendallgassner",
-      "name": "Kendall Gassner",
-      "avatar_url": "https://avatars.githubusercontent.com/u/15275462?v=4",
-      "profile": "https://github.com/kendallgassner",
-      "contributions": [
-        "code",
-        "maintenance"
-      ]
-    },
-    {
-      "login": "nschonni",
-      "name": "Nick Schonning",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1297909?v=4",
-      "profile": "https://github.com/nschonni",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
-      "login": "piranna",
-      "name": "Jesús Leganés-Combarro",
-      "avatar_url": "https://avatars.githubusercontent.com/u/532414?v=4",
-      "profile": "https://piranna.github.io/",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
-      "login": "sirugh",
-      "name": "Stephen",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1278869?v=4",
-      "profile": "https://github.com/sirugh",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
-      "login": "Zamiell",
-      "name": "James",
-      "avatar_url": "https://avatars.githubusercontent.com/u/5511220?v=4",
-      "profile": "https://github.com/Zamiell",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
-      "login": "zetlen",
-      "name": "James Zetlen",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1643758?v=4",
-      "profile": "https://github.com/zetlen",
-      "contributions": [
-        "code",
-        "bug",
-        "doc",
-        "infra",
-        "maintenance",
-        "tool"
-      ]
-    },
-    {
-      "login": "khitrenovich",
-      "name": "Anton Khitrenovich",
-      "avatar_url": "https://avatars.githubusercontent.com/u/3424762?v=4",
-      "profile": "http://technotes.khitrenovich.com/",
-      "contributions": [
-        "ideas"
-      ]
-    },
-    {
-      "login": "andreaslindbergpaf",
-      "name": "Andreas Lindberg",
-      "avatar_url": "https://avatars.githubusercontent.com/u/59874563?v=4",
-      "profile": "https://github.com/AndreasLindbergPAF",
-      "contributions": [
-        "bug"
-      ]
-    },
-    {
-      "login": "azat-io",
-      "name": "Azat S.",
-      "avatar_url": "https://avatars.githubusercontent.com/u/5698350?v=4",
-      "profile": "https://azat.io",
-      "contributions": [
-        "ideas",
-        "code"
-      ]
-    },
-    {
-      "login": "kristjanesperanto",
-      "name": "Kristjan ESPERANTO",
-      "avatar_url": "https://avatars.githubusercontent.com/u/35647502?v=4",
-      "profile": "https://github.com/KristjanESPERANTO",
-      "contributions": [
-        "ideas",
-        "bug",
-        "code"
-      ]
-    },
-    {
-      "login": "ota-meshi",
-      "name": "Yosuke Ota",
-      "avatar_url": "https://avatars.githubusercontent.com/u/16508807?v=4",
-      "profile": "https://ota-meshi.github.io/",
-      "contributions": [
-        "bug",
-        "code"
-      ]
-    },
-    {
-      "login": "hyoban",
-      "name": "Stephen Zhou",
-      "avatar_url": "https://avatars.githubusercontent.com/u/38493346?v=4",
-      "profile": "https://hyoban.cc",
-      "contributions": [
-        "bug",
-        "code",
-        "ideas",
-        "doc"
-      ]
-    },
-    {
-      "login": "altano",
-      "name": "Alan",
-      "avatar_url": "https://avatars.githubusercontent.com/u/1009?v=4",
-      "profile": "https://alan.norbauer.com",
-      "contributions": [
-        "bug",
-        "code"
-      ]
-    },
-    {
-      "login": "lo1tuma",
-      "name": "Mathias Schreck",
-      "avatar_url": "https://avatars.githubusercontent.com/u/169170?v=4",
-      "profile": "https://github.com/lo1tuma",
-      "contributions": [
-        "ideas"
-      ]
-    },
-    {
-      "login": "heggria",
-      "name": "Heggria",
-      "avatar_url": "https://avatars.githubusercontent.com/u/34475327?v=4",
-      "profile": "http://heggria.site",
-      "contributions": [
-        "ideas"
-      ]
-    },
-    {
-      "login": "cellule",
-      "name": "Michael \"Mike\" Ferris",
-      "avatar_url": "https://avatars.githubusercontent.com/u/4157103?v=4",
-      "profile": "https://github.com/Cellule",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
-      "login": "davidlj95",
-      "name": "David LJ",
-      "avatar_url": "https://avatars.githubusercontent.com/u/8050648?v=4",
-      "profile": "https://davidlj95.com",
-      "contributions": [
-        "doc"
-      ]
-    },
-    {
-      "login": "rakleed",
-      "name": "Pavel",
-      "avatar_url": "https://avatars.githubusercontent.com/u/19418601?v=4",
-      "profile": "https://github.com/rakleed",
-      "contributions": [
-        "ideas",
-        "tool",
-        "doc",
-        "code",
-        "bug"
-      ]
-    },
-    {
-      "login": "sasial-dev",
-      "name": "Sasial",
-      "avatar_url": "https://avatars.githubusercontent.com/u/44125644?v=4",
-      "profile": "https://sasial.dev",
-      "contributions": [
-        "code"
-      ]
-    },
-    {
-      "login": "michaelfaith",
-      "name": "michael faith",
-      "avatar_url": "https://avatars.githubusercontent.com/u/8071845?v=4",
-      "profile": "https://github.com/michaelfaith",
-      "contributions": [
-        "infra",
-        "code",
-        "maintenance",
-        "ideas"
-      ]
-    },
-    {
-      "login": "chouchouji",
-      "name": "chouchouji",
-      "avatar_url": "https://avatars.githubusercontent.com/u/70570907?v=4",
-      "profile": "https://github.com/chouchouji",
-      "contributions": [
-        "code"
-      ]
-    }
-  ],
-  "contributorsPerLine": 7,
-  "contributorsSortAlphabetically": true,
-  "files": [
-    "README.md"
-  ],
-  "imageSize": 100,
-  "projectName": "eslint-plugin-package-json",
-  "projectOwner": "JoshuaKGoldberg",
-  "repoHost": "https://github.com",
-  "repoType": "github",
-  "commitType": "docs"
+	"badgeTemplate": "\t<a href=\"#contributors\" target=\"_blank\"><img alt=\"👪 All Contributors: <%= contributors.length %>\" src=\"https://img.shields.io/badge/%F0%9F%91%AA_all_contributors-<%= contributors.length %>-21bb42.svg\" /></a>",
+	"contributors": [
+		{
+			"login": "b3rnhard",
+			"name": "b3rnhard",
+			"avatar_url": "https://avatars.githubusercontent.com/u/10774404?v=4",
+			"profile": "https://github.com/b3rnhard",
+			"contributions": ["bug"]
+		},
+		{
+			"login": "JoshuaKGoldberg",
+			"name": "Josh Goldberg ✨",
+			"avatar_url": "https://avatars.githubusercontent.com/u/3335181?v=4",
+			"profile": "http://www.joshuakgoldberg.com/",
+			"contributions": [
+				"tool",
+				"bug",
+				"code",
+				"infra",
+				"doc",
+				"maintenance",
+				"ideas",
+				"content",
+				"projectManagement"
+			]
+		},
+		{
+			"login": "kendallgassner",
+			"name": "Kendall Gassner",
+			"avatar_url": "https://avatars.githubusercontent.com/u/15275462?v=4",
+			"profile": "https://github.com/kendallgassner",
+			"contributions": ["code", "maintenance"]
+		},
+		{
+			"login": "nschonni",
+			"name": "Nick Schonning",
+			"avatar_url": "https://avatars.githubusercontent.com/u/1297909?v=4",
+			"profile": "https://github.com/nschonni",
+			"contributions": ["code"]
+		},
+		{
+			"login": "piranna",
+			"name": "Jesús Leganés-Combarro",
+			"avatar_url": "https://avatars.githubusercontent.com/u/532414?v=4",
+			"profile": "https://piranna.github.io/",
+			"contributions": ["code"]
+		},
+		{
+			"login": "sirugh",
+			"name": "Stephen",
+			"avatar_url": "https://avatars.githubusercontent.com/u/1278869?v=4",
+			"profile": "https://github.com/sirugh",
+			"contributions": ["code"]
+		},
+		{
+			"login": "Zamiell",
+			"name": "James",
+			"avatar_url": "https://avatars.githubusercontent.com/u/5511220?v=4",
+			"profile": "https://github.com/Zamiell",
+			"contributions": ["code"]
+		},
+		{
+			"login": "zetlen",
+			"name": "James Zetlen",
+			"avatar_url": "https://avatars.githubusercontent.com/u/1643758?v=4",
+			"profile": "https://github.com/zetlen",
+			"contributions": ["code", "bug", "doc", "infra", "maintenance", "tool"]
+		},
+		{
+			"login": "khitrenovich",
+			"name": "Anton Khitrenovich",
+			"avatar_url": "https://avatars.githubusercontent.com/u/3424762?v=4",
+			"profile": "http://technotes.khitrenovich.com/",
+			"contributions": ["ideas"]
+		},
+		{
+			"login": "andreaslindbergpaf",
+			"name": "Andreas Lindberg",
+			"avatar_url": "https://avatars.githubusercontent.com/u/59874563?v=4",
+			"profile": "https://github.com/AndreasLindbergPAF",
+			"contributions": ["bug"]
+		},
+		{
+			"login": "azat-io",
+			"name": "Azat S.",
+			"avatar_url": "https://avatars.githubusercontent.com/u/5698350?v=4",
+			"profile": "https://azat.io",
+			"contributions": ["ideas", "code"]
+		},
+		{
+			"login": "kristjanesperanto",
+			"name": "Kristjan ESPERANTO",
+			"avatar_url": "https://avatars.githubusercontent.com/u/35647502?v=4",
+			"profile": "https://github.com/KristjanESPERANTO",
+			"contributions": ["ideas", "bug", "code"]
+		},
+		{
+			"login": "ota-meshi",
+			"name": "Yosuke Ota",
+			"avatar_url": "https://avatars.githubusercontent.com/u/16508807?v=4",
+			"profile": "https://ota-meshi.github.io/",
+			"contributions": ["bug", "code"]
+		},
+		{
+			"login": "hyoban",
+			"name": "Stephen Zhou",
+			"avatar_url": "https://avatars.githubusercontent.com/u/38493346?v=4",
+			"profile": "https://hyoban.cc",
+			"contributions": ["bug", "code", "ideas", "doc"]
+		},
+		{
+			"login": "altano",
+			"name": "Alan",
+			"avatar_url": "https://avatars.githubusercontent.com/u/1009?v=4",
+			"profile": "https://alan.norbauer.com",
+			"contributions": ["bug", "code"]
+		},
+		{
+			"login": "lo1tuma",
+			"name": "Mathias Schreck",
+			"avatar_url": "https://avatars.githubusercontent.com/u/169170?v=4",
+			"profile": "https://github.com/lo1tuma",
+			"contributions": ["ideas"]
+		},
+		{
+			"login": "heggria",
+			"name": "Heggria",
+			"avatar_url": "https://avatars.githubusercontent.com/u/34475327?v=4",
+			"profile": "http://heggria.site",
+			"contributions": ["ideas"]
+		},
+		{
+			"login": "cellule",
+			"name": "Michael \"Mike\" Ferris",
+			"avatar_url": "https://avatars.githubusercontent.com/u/4157103?v=4",
+			"profile": "https://github.com/Cellule",
+			"contributions": ["code"]
+		},
+		{
+			"login": "davidlj95",
+			"name": "David LJ",
+			"avatar_url": "https://avatars.githubusercontent.com/u/8050648?v=4",
+			"profile": "https://davidlj95.com",
+			"contributions": ["doc"]
+		},
+		{
+			"login": "rakleed",
+			"name": "Pavel",
+			"avatar_url": "https://avatars.githubusercontent.com/u/19418601?v=4",
+			"profile": "https://github.com/rakleed",
+			"contributions": ["ideas", "tool", "doc", "code", "bug"]
+		},
+		{
+			"login": "sasial-dev",
+			"name": "Sasial",
+			"avatar_url": "https://avatars.githubusercontent.com/u/44125644?v=4",
+			"profile": "https://sasial.dev",
+			"contributions": ["code"]
+		},
+		{
+			"login": "michaelfaith",
+			"name": "michael faith",
+			"avatar_url": "https://avatars.githubusercontent.com/u/8071845?v=4",
+			"profile": "https://github.com/michaelfaith",
+			"contributions": ["infra", "code", "maintenance", "ideas"]
+		},
+		{
+			"login": "chouchouji",
+			"name": "chouchouji",
+			"avatar_url": "https://avatars.githubusercontent.com/u/70570907?v=4",
+			"profile": "https://github.com/chouchouji",
+			"contributions": ["code"]
+		}
+	],
+	"contributorsSortAlphabetically": true,
+	"projectName": "eslint-plugin-package-json",
+	"projectOwner": "JoshuaKGoldberg",
+	"repoType": "github",
+	"commitConvention": "angular"
 }
+

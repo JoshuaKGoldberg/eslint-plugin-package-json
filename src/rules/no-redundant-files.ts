@@ -38,9 +38,6 @@ export const rule = createRule({
 			main?: string;
 		} = { bin: [], files: [] };
 
-		/**
-		 * Report rule violations
-		 */
 		const report = (
 			elements: (JsonAST.JSONExpression | null)[],
 			index: number,

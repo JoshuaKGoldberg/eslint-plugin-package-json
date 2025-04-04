@@ -8,12 +8,11 @@ import { createRule } from "../createRule.js";
 import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.js";
 
 /**
- * Checks if the child path appears at the end of the parent path. e.g.
- *
- *   '/a/b/c', 'c' => true
- *   '/a/b/c', 'b/c' => true
- *   '/a/b/c', 'b' => false
- *   '/a/b/c', 'd' => false
+ * Checks if the child path appears at the end of the parent path.
+ * @example '/a/b/c', 'c' => true
+ * @example '/a/b/c', 'b/c' => true
+ * @example '/a/b/c', 'b' => false
+ * @example '/a/b/c', 'd' => false
  */
 function pathEndsWith(parent: string, child: string): boolean {
 	const segments = parent.split(path.sep);
