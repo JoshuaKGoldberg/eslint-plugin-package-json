@@ -38,9 +38,6 @@ export const rule = createRule({
 			main?: string;
 		} = { bin: [], files: [] };
 
-		/**
-		 * Report rule violations
-		 */
 		const report = (
 			elements: (JsonAST.JSONExpression | null)[],
 			index: number,
@@ -68,6 +65,45 @@ export const rule = createRule({
 		};
 
 		return {
+			"Program:exit"() {
+				// Now that we have all of the entries, we can check for unnecessary files.
+				const files = entryCache.files;
+
+				// Bail out early if there are no files.
+				if (files.length === 0) {
+					return;
+				}
+
+				const validations = [
+					// First check if the "main" entry is included in "files".
+					{
+						files: entryCache.main ? [entryCache.main] : [],
+						messageId: "unnecessaryMain",
+					},
+					// Next check if any "bin" entries are included in "files".
+					{
+						files: entryCache.bin,
+						messageId: "unnecessaryBin",
+					},
+				];
+				for (const validation of validations) {
+					for (const fileToCheck of validation.files) {
+						for (const [index, fileEntry] of files.entries()) {
+							if (
+								isNotNullish(fileEntry) &&
+								isJSONStringLiteral(fileEntry)
+							) {
+								const regex = getCachedLocalFileRegex(
+									fileEntry.value,
+								);
+								if (regex.test(fileToCheck)) {
+									report(files, index, validation.messageId);
+								}
+							}
+						}
+					}
+				}
+			},
 			"Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.value=bin]"(
 				node: JsonAST.JSONProperty,
 			) {
@@ -131,45 +167,6 @@ export const rule = createRule({
 				// "main" should only ever be a string.
 				if (isJSONStringLiteral(node.value)) {
 					entryCache.main = node.value.value;
-				}
-			},
-			"Program:exit"() {
-				// Now that we have all of the entries, we can check for unnecessary files.
-				const files = entryCache.files;
-
-				// Bail out early if there are no files.
-				if (files.length === 0) {
-					return;
-				}
-
-				const validations = [
-					// First check if the "main" entry is included in "files".
-					{
-						files: entryCache.main ? [entryCache.main] : [],
-						messageId: "unnecessaryMain",
-					},
-					// Next check if any "bin" entries are included in "files".
-					{
-						files: entryCache.bin,
-						messageId: "unnecessaryBin",
-					},
-				];
-				for (const validation of validations) {
-					for (const fileToCheck of validation.files) {
-						for (const [index, fileEntry] of files.entries()) {
-							if (
-								isNotNullish(fileEntry) &&
-								isJSONStringLiteral(fileEntry)
-							) {
-								const regex = getCachedLocalFileRegex(
-									fileEntry.value,
-								);
-								if (regex.test(fileToCheck)) {
-									report(files, index, validation.messageId);
-								}
-							}
-						}
-					}
 				}
 			},
 		};

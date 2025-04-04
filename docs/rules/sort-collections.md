@@ -79,18 +79,14 @@ Note that in lexical ordering, `lodash` comes before `lodash.debounce`.
 
 ### Options
 
-Pass an array of top-level package properties to lint sorting on those collections. All of their values must be objects.
+Pass an array of top-level package properties to lint sorting on those collections.
+All of their values must be objects.
 
-Example:
+Example of only sorting devDependencies:
 
-```jsonc
+```json
 {
-	"package-json/sort-collections": [
-		"error",
-		[
-			"devDependencies", // Only sort devDependencies
-		],
-	],
+	"package-json/sort-collections": ["error", ["devDependencies"]]
 }
 ```
 

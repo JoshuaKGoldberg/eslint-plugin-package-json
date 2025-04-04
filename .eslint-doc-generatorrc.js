@@ -1,6 +1,13 @@
+import prettier from "prettier";
+
 /** @type {import('eslint-doc-generator').GenerateOptions} */
 const config = {
-	ignoreConfig: ["legacy-recommended"],
+	postprocess: async (content, path) =>
+		prettier.format(content, {
+			...(await prettier.resolveConfig(path)),
+			parser: "markdown",
+		}),
+	ruleDocTitleFormat: "prefix-name",
 };
 
-module.exports = config;
+export default config;

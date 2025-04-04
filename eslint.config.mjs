@@ -1,21 +1,23 @@
-const comments = require("@eslint-community/eslint-plugin-eslint-comments/configs");
-const eslint = require("@eslint/js");
-const vitest = require("@vitest/eslint-plugin");
-const eslintPlugin = require("eslint-plugin-eslint-plugin");
-const jsdoc = require("eslint-plugin-jsdoc");
-const jsonc = require("eslint-plugin-jsonc");
-const markdown = require("eslint-plugin-markdown");
-const n = require("eslint-plugin-n");
-const perfectionist = require("eslint-plugin-perfectionist");
-const regexp = require("eslint-plugin-regexp");
-const yml = require("eslint-plugin-yml");
-const tseslint = require("typescript-eslint");
+import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
+import eslint from "@eslint/js";
+import vitest from "@vitest/eslint-plugin";
+import eslintPlugin from "eslint-plugin-eslint-plugin";
+import jsdoc from "eslint-plugin-jsdoc";
+import jsonc from "eslint-plugin-jsonc";
+import markdown from "eslint-plugin-markdown";
+import n from "eslint-plugin-n";
+import perfectionist from "eslint-plugin-perfectionist";
+import * as regexp from "eslint-plugin-regexp";
+import yml from "eslint-plugin-yml";
+import tseslint from "typescript-eslint";
 
-module.exports = tseslint.config(
+export default tseslint.config(
 	{
 		ignores: [
 			"**/*.snap",
-			"coverage*",
+			".eslint-doc-generatorrc.js",
+			"coverage",
+			"docs/rules/*/*.ts",
 			"lib",
 			"node_modules",
 			"pnpm-lock.yaml",
@@ -23,8 +25,8 @@ module.exports = tseslint.config(
 	},
 	{ linterOptions: { reportUnusedDisableDirectives: "error" } },
 	eslint.configs.recommended,
-	eslintPlugin.configs["flat/recommended"],
 	comments.recommended,
+	eslintPlugin.configs["flat/recommended"],
 	jsdoc.configs["flat/contents-typescript-error"],
 	jsdoc.configs["flat/logical-typescript-error"],
 	jsdoc.configs["flat/stylistic-typescript-error"],
@@ -38,24 +40,17 @@ module.exports = tseslint.config(
 			tseslint.configs.strictTypeChecked,
 			tseslint.configs.stylisticTypeChecked,
 		],
-		files: ["**/*.js", "**/*.ts"],
+		files: ["**/*.{js,mjs,ts}"],
 		languageOptions: {
 			parserOptions: {
-				projectService: {
-					allowDefaultProject: [
-						"*.config.*s",
-						".eslint-doc-generatorrc.js",
-						"bin/*.js",
-						"src/tests/*.js",
-					],
-				},
-				tsconfigRootDir: __dirname,
+				projectService: { allowDefaultProject: ["*.config.*s"] },
+				tsconfigRootDir: import.meta.dirname,
 			},
 		},
 		rules: {
-			"@typescript-eslint/no-require-imports": "off",
-			"jsdoc/match-description": "off",
+			"n/no-extraneous-import": "off",
 			"n/no-missing-import": "off",
+			"n/no-unpublished-import": "off",
 
 			// Stylistic concerns that don't interfere with Prettier
 			"logical-assignment-operators": [
@@ -66,32 +61,18 @@ module.exports = tseslint.config(
 			"no-useless-rename": "error",
 			"object-shorthand": "error",
 			"operator-assignment": "error",
-			"perfectionist/sort-objects": [
-				"error",
-				{
-					customGroups: {
-						programExit: "Program:exit",
-					},
-					groups: ["unknown", "programExit"],
-					type: "alphabetical",
-				},
-			],
 		},
 		settings: {
 			perfectionist: { partitionByComment: true, type: "natural" },
+			vitest: { typecheck: true },
 		},
 	},
 	{
 		extends: [tseslint.configs.disableTypeChecked],
-		files: ["**/*.md/*.js", "**/*.md/*.ts", "eslint.config.js"],
+		files: ["**/*.md/*.ts"],
+		rules: { "n/no-missing-import": "off" },
 	},
-	{
-		files: ["**/*.md/*.jsonc"],
-		rules: {
-			"jsonc/comma-dangle": "off",
-			"jsonc/no-comments": "off",
-		},
-	},
+	{ files: ["*.mjs"], languageOptions: { sourceType: "module" } },
 	{
 		extends: [vitest.configs.recommended],
 		files: ["**/*.test.*"],

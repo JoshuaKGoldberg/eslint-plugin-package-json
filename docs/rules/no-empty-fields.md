@@ -6,10 +6,8 @@
 
 <!-- end auto-generated rule header -->
 
-This rule flags all empty arrays and objects in a `package.json`,
-as such empty expressions do nothing, and are often the result of a mistake.
-It will report both named properties that are empty, as well as nested arrays and objects
-that are empty.
+This rule flags all empty arrays and objects in a `package.json`, as such empty expressions do nothing, and are often the result of a mistake.
+It will report both named properties that are empty, as well as nested arrays and objects that are empty.
 
 Example of **incorrect** code for this rule:
 

@@ -4,22 +4,23 @@
 
 <!-- end auto-generated rule header -->
 
-This rule checks that the `files` property of a `package.json` doesn't contain
-any redundant or unnecessary file entries. By default, [npm will automatically](https://docs.npmjs.com/cli/v11/configuring-npm/package-json#files)
-include certain files, based on a number of circumstances.
+This rule checks that the `files` property of a `package.json` doesn't contain any redundant or unnecessary file entries.
+By default, [npm will automatically](https://docs.npmjs.com/cli/v11/configuring-npm/package-json#files) include certain files, based on a number of circumstances.
 
 It will always include the following files, if present:
 
--   `package.json`
--   `README`
-<!-- cspell:disable-next-line -->
--   `LICENSE` / `LICENCE`
+<!-- cspell:disable -->
 
-Additionally, it will include any files that are declared in the `main` and `bin`
-fields of the `package.json`.
+- `package.json`
+- `README`
+- `LICENSE` / `LICENCE`
 
-This rule will check that the `files` don't contain any of the above. It will
-also check for duplicate entries.
+<!-- cspell:enable -->
+
+Additionally, it will include any files that are declared in the `main` and `bin` fields of the `package.json`.
+
+This rule will check that the `files` don't contain any of the above.
+It will also check for duplicate entries.
 
 Example of **incorrect** code for this rule:
 
