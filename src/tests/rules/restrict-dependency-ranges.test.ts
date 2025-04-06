@@ -14,7 +14,11 @@ ruleTester.run("restrict-dependency-ranges", rule, {
     "${dependencyType}": {
         "abc": "^1.2.3",
         "def": "1.2.3",
-        "ghi": "~1.2.3"
+        "ghi": "~1.2.3",
+        "jkl": "workspace:*",
+        "mno": "workspace:^",
+        "pqr": "workspace:~",
+        "stu": "*"
     }
 }`,
 			errors: [
@@ -31,7 +35,11 @@ ruleTester.run("restrict-dependency-ranges", rule, {
     "${dependencyType}": {
         "abc": "^1.2.3",
         "def": "^1.2.3",
-        "ghi": "~1.2.3"
+        "ghi": "~1.2.3",
+        "jkl": "workspace:*",
+        "mno": "workspace:^",
+        "pqr": "workspace:~",
+        "stu": "*"
     }
 }`,
 						},
@@ -50,11 +58,68 @@ ruleTester.run("restrict-dependency-ranges", rule, {
     "${dependencyType}": {
         "abc": "^1.2.3",
         "def": "1.2.3",
-        "ghi": "^1.2.3"
+        "ghi": "^1.2.3",
+        "jkl": "workspace:*",
+        "mno": "workspace:^",
+        "pqr": "workspace:~",
+        "stu": "*"
     }
 }`,
 						},
 					],
+				},
+				{
+					data: {
+						rangeTypes: "caret",
+					},
+					line: 6,
+					messageId: "wrongRangeType",
+					suggestions: [
+						{
+							messageId: "changeToCaret",
+							output: `{
+    "${dependencyType}": {
+        "abc": "^1.2.3",
+        "def": "1.2.3",
+        "ghi": "~1.2.3",
+        "jkl": "workspace:^",
+        "mno": "workspace:^",
+        "pqr": "workspace:~",
+        "stu": "*"
+    }
+}`,
+						},
+					],
+				},
+				{
+					data: {
+						rangeTypes: "caret",
+					},
+					line: 8,
+					messageId: "wrongRangeType",
+					suggestions: [
+						{
+							messageId: "changeToCaret",
+							output: `{
+    "${dependencyType}": {
+        "abc": "^1.2.3",
+        "def": "1.2.3",
+        "ghi": "~1.2.3",
+        "jkl": "workspace:*",
+        "mno": "workspace:^",
+        "pqr": "workspace:^",
+        "stu": "*"
+    }
+}`,
+						},
+					],
+				},
+				{
+					data: {
+						rangeTypes: "caret",
+					},
+					line: 9,
+					messageId: "wrongRangeType",
 				},
 			],
 			filename: "package.json",
@@ -73,7 +138,11 @@ ruleTester.run("restrict-dependency-ranges", rule, {
     "${dependencyType}": {
         "abc": "^1.2.3",
         "def": "1.2.3",
-        "ghi": "~1.2.3"
+        "ghi": "~1.2.3",
+        "jkl": "workspace:*",
+        "mno": "workspace:^",
+        "pqr": "workspace:~",
+        "stu": "*"
     }
 }`,
 			errors: [
@@ -90,7 +159,11 @@ ruleTester.run("restrict-dependency-ranges", rule, {
     "${dependencyType}": {
         "abc": "1.2.3",
         "def": "1.2.3",
-        "ghi": "~1.2.3"
+        "ghi": "~1.2.3",
+        "jkl": "workspace:*",
+        "mno": "workspace:^",
+        "pqr": "workspace:~",
+        "stu": "*"
     }
 }`,
 						},
@@ -109,11 +182,68 @@ ruleTester.run("restrict-dependency-ranges", rule, {
     "${dependencyType}": {
         "abc": "^1.2.3",
         "def": "1.2.3",
-        "ghi": "1.2.3"
+        "ghi": "1.2.3",
+        "jkl": "workspace:*",
+        "mno": "workspace:^",
+        "pqr": "workspace:~",
+        "stu": "*"
     }
 }`,
 						},
 					],
+				},
+				{
+					data: {
+						rangeTypes: "pin",
+					},
+					line: 7,
+					messageId: "wrongRangeType",
+					suggestions: [
+						{
+							messageId: "changeToPin",
+							output: `{
+    "${dependencyType}": {
+        "abc": "^1.2.3",
+        "def": "1.2.3",
+        "ghi": "~1.2.3",
+        "jkl": "workspace:*",
+        "mno": "workspace:*",
+        "pqr": "workspace:~",
+        "stu": "*"
+    }
+}`,
+						},
+					],
+				},
+				{
+					data: {
+						rangeTypes: "pin",
+					},
+					line: 8,
+					messageId: "wrongRangeType",
+					suggestions: [
+						{
+							messageId: "changeToPin",
+							output: `{
+    "${dependencyType}": {
+        "abc": "^1.2.3",
+        "def": "1.2.3",
+        "ghi": "~1.2.3",
+        "jkl": "workspace:*",
+        "mno": "workspace:^",
+        "pqr": "workspace:*",
+        "stu": "*"
+    }
+}`,
+						},
+					],
+				},
+				{
+					data: {
+						rangeTypes: "pin",
+					},
+					line: 9,
+					messageId: "wrongRangeType",
 				},
 			],
 			filename: "package.json",
@@ -132,7 +262,11 @@ ruleTester.run("restrict-dependency-ranges", rule, {
     "${dependencyType}": {
         "abc": "^1.2.3",
         "def": "1.2.3",
-        "ghi": "~1.2.3"
+        "ghi": "~1.2.3",
+        "jkl": "workspace:*",
+        "mno": "workspace:^",
+        "pqr": "workspace:~",
+        "stu": "*"
     }
 }`,
 			errors: [
@@ -149,7 +283,11 @@ ruleTester.run("restrict-dependency-ranges", rule, {
     "${dependencyType}": {
         "abc": "~1.2.3",
         "def": "1.2.3",
-        "ghi": "~1.2.3"
+        "ghi": "~1.2.3",
+        "jkl": "workspace:*",
+        "mno": "workspace:^",
+        "pqr": "workspace:~",
+        "stu": "*"
     }
 }`,
 						},
@@ -168,11 +306,68 @@ ruleTester.run("restrict-dependency-ranges", rule, {
     "${dependencyType}": {
         "abc": "^1.2.3",
         "def": "~1.2.3",
-        "ghi": "~1.2.3"
+        "ghi": "~1.2.3",
+        "jkl": "workspace:*",
+        "mno": "workspace:^",
+        "pqr": "workspace:~",
+        "stu": "*"
     }
 }`,
 						},
 					],
+				},
+				{
+					data: {
+						rangeTypes: "tilde",
+					},
+					line: 6,
+					messageId: "wrongRangeType",
+					suggestions: [
+						{
+							messageId: "changeToTilde",
+							output: `{
+    "${dependencyType}": {
+        "abc": "^1.2.3",
+        "def": "1.2.3",
+        "ghi": "~1.2.3",
+        "jkl": "workspace:~",
+        "mno": "workspace:^",
+        "pqr": "workspace:~",
+        "stu": "*"
+    }
+}`,
+						},
+					],
+				},
+				{
+					data: {
+						rangeTypes: "tilde",
+					},
+					line: 7,
+					messageId: "wrongRangeType",
+					suggestions: [
+						{
+							messageId: "changeToTilde",
+							output: `{
+    "${dependencyType}": {
+        "abc": "^1.2.3",
+        "def": "1.2.3",
+        "ghi": "~1.2.3",
+        "jkl": "workspace:*",
+        "mno": "workspace:~",
+        "pqr": "workspace:~",
+        "stu": "*"
+    }
+}`,
+						},
+					],
+				},
+				{
+					data: {
+						rangeTypes: "tilde",
+					},
+					line: 9,
+					messageId: "wrongRangeType",
 				},
 			],
 			filename: "package.json",
@@ -239,7 +434,21 @@ ruleTester.run("restrict-dependency-ranges", rule, {
 	],
 
 	valid: [
-		{ code: "{}", name: "empty package.json" },
+		{
+			code: `{
+	"dependencies": {
+		"abc": "^1.2.3",
+        "def": "workspace:~1.2.3",
+        "ghi": "workspace:*"
+	}
+}`,
+			name: "no options",
+		},
+		{
+			code: "{}",
+			name: "empty package.json",
+			options: [{ rangeType: "caret" }],
+		},
 		{
 			code: `{
     "dependencies": {
@@ -250,6 +459,32 @@ ruleTester.run("restrict-dependency-ranges", rule, {
     }
 }`,
 			name: "ignored version formats",
+			options: [{ rangeType: "caret" }],
+		},
+		{
+			code: `{
+    "bin": {
+        "abc": "bin/abc.js"
+    }
+}`,
+			name: "no dependencies",
+			options: [{ rangeType: "caret" }],
+		},
+		{
+			code: `{
+    "dependencies": {
+        "abc": {
+            "version": "1.2.3",
+            "resolved": "https://registry.npmjs.org/abc/-/abc-1.2.3.tgz",
+            "integrity": "sha512-abc"
+        },
+        "def": 123,
+        "ghi": true,
+        "jkl": null
+    }
+}`,
+			name: "malformed dependencies",
+			options: [{ rangeType: "caret" }],
 		},
 
 		// rangeType: 'caret'
