@@ -1,6 +1,6 @@
 # require-version
 
-💼 This rule is enabled in the following configs: `legacy-recommended`, ✅ `recommended`.
+💼 This rule is enabled in the following configs: ✔️ `legacy-recommended`, ✅ `recommended`.
 
 <!-- end auto-generated rule header -->
 

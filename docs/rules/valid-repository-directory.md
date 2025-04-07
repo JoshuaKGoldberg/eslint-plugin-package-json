@@ -1,6 +1,6 @@
 # valid-repository-directory
 
-💼 This rule is enabled in the following configs: `legacy-recommended`, ✅ `recommended`.
+💼 This rule is enabled in the following configs: ✔️ `legacy-recommended`, ✅ `recommended`.
 
 💡 This rule is manually fixable by [editor suggestions](https://eslint.org/docs/latest/use/core-concepts#rule-suggestions).
 
