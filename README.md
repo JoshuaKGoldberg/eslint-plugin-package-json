@@ -118,27 +118,27 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 💡 Manually fixable by [editor suggestions](https://eslint.org/docs/latest/use/core-concepts#rule-suggestions).\
 ❌ Deprecated.
 
-| Name                                                                   | Description                                                                                       | 💼                              | 🔧 | 💡 | ❌  |
-| :--------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------ | :------------------------------ | :- | :- | :- |
-| [no-empty-fields](docs/rules/no-empty-fields.md)                       | Reports on unnecessary empty arrays and objects.                                                  | ✅ ![badge-legacy-recommended][] |    | 💡 |    |
-| [no-redundant-files](docs/rules/no-redundant-files.md)                 | Prevents adding unnecessary / redundant files.                                                    |                                 |    | 💡 |    |
-| [order-properties](docs/rules/order-properties.md)                     | Package properties must be declared in standard order                                             | ✅ ![badge-legacy-recommended][] | 🔧 |    |    |
-| [repository-shorthand](docs/rules/repository-shorthand.md)             | Enforce either object or shorthand declaration for repository.                                    | ✅ ![badge-legacy-recommended][] | 🔧 |    |    |
-| [require-author](docs/rules/require-author.md)                         | Requires the `author` property to be present.                                                     |                                 |    |    |    |
-| [require-engines](docs/rules/require-engines.md)                       | Requires the `engines` property to be present.                                                    |                                 |    |    |    |
-| [require-files](docs/rules/require-files.md)                           | Requires the `files` property to be present.                                                      |                                 |    |    |    |
-| [require-keywords](docs/rules/require-keywords.md)                     | Requires the `keywords` property to be present.                                                   |                                 |    |    |    |
-| [require-name](docs/rules/require-name.md)                             | Requires the `name` property to be present.                                                       | ✅ ![badge-legacy-recommended][] |    |    |    |
-| [require-types](docs/rules/require-types.md)                           | Requires the `types` property to be present.                                                      |                                 |    |    |    |
-| [require-version](docs/rules/require-version.md)                       | Requires the `version` property to be present.                                                    | ✅ ![badge-legacy-recommended][] |    |    |    |
-| [sort-collections](docs/rules/sort-collections.md)                     | Dependencies, scripts, and configuration values must be declared in alphabetical order.           | ✅ ![badge-legacy-recommended][] | 🔧 |    |    |
-| [unique-dependencies](docs/rules/unique-dependencies.md)               | Checks a dependency isn't specified more than once (i.e. in `dependencies` and `devDependencies`) | ✅ ![badge-legacy-recommended][] |    | 💡 |    |
-| [valid-local-dependency](docs/rules/valid-local-dependency.md)         | Checks existence of local dependencies in the package.json                                        | ✅ ![badge-legacy-recommended][] |    |    |    |
-| [valid-name](docs/rules/valid-name.md)                                 | Enforce that package names are valid npm package names                                            | ✅ ![badge-legacy-recommended][] |    |    |    |
-| [valid-package-def](docs/rules/valid-package-def.md)                   | Enforce that package.json has all properties required by the npm spec                             |                                 |    |    | ❌  |
-| [valid-package-definition](docs/rules/valid-package-definition.md)     | Enforce that package.json has all properties required by the npm spec                             | ✅ ![badge-legacy-recommended][] |    |    |    |
-| [valid-repository-directory](docs/rules/valid-repository-directory.md) | Enforce that if repository directory is specified, it matches the path to the package.json file   | ✅ ![badge-legacy-recommended][] |    | 💡 |    |
-| [valid-version](docs/rules/valid-version.md)                           | Enforce that package versions are valid semver specifiers                                         | ✅ ![badge-legacy-recommended][] |    |    |    |
+| Name                                                                   | Description                                                                                       | 💼  | 🔧 | 💡 | ❌  |
+| :--------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------ | :-- | :- | :- | :- |
+| [no-empty-fields](docs/rules/no-empty-fields.md)                       | Reports on unnecessary empty arrays and objects.                                                  | ✅  |    | 💡 |    |
+| [no-redundant-files](docs/rules/no-redundant-files.md)                 | Prevents adding unnecessary / redundant files.                                                    |     |    | 💡 |    |
+| [order-properties](docs/rules/order-properties.md)                     | Package properties must be declared in standard order                                             | ✅  | 🔧 |    |    |
+| [repository-shorthand](docs/rules/repository-shorthand.md)             | Enforce either object or shorthand declaration for repository.                                    | ✅  | 🔧 |    |    |
+| [require-author](docs/rules/require-author.md)                         | Requires the `author` property to be present.                                                     |     |    |    |    |
+| [require-engines](docs/rules/require-engines.md)                       | Requires the `engines` property to be present.                                                    |     |    |    |    |
+| [require-files](docs/rules/require-files.md)                           | Requires the `files` property to be present.                                                      |     |    |    |    |
+| [require-keywords](docs/rules/require-keywords.md)                     | Requires the `keywords` property to be present.                                                   |     |    |    |    |
+| [require-name](docs/rules/require-name.md)                             | Requires the `name` property to be present.                                                       | ✅  |    |    |    |
+| [require-types](docs/rules/require-types.md)                           | Requires the `types` property to be present.                                                      |     |    |    |    |
+| [require-version](docs/rules/require-version.md)                       | Requires the `version` property to be present.                                                    | ✅  |    |    |    |
+| [sort-collections](docs/rules/sort-collections.md)                     | Dependencies, scripts, and configuration values must be declared in alphabetical order.           | ✅  | 🔧 |    |    |
+| [unique-dependencies](docs/rules/unique-dependencies.md)               | Checks a dependency isn't specified more than once (i.e. in `dependencies` and `devDependencies`) | ✅  |    | 💡 |    |
+| [valid-local-dependency](docs/rules/valid-local-dependency.md)         | Checks existence of local dependencies in the package.json                                        | ✅  |    |    |    |
+| [valid-name](docs/rules/valid-name.md)                                 | Enforce that package names are valid npm package names                                            | ✅  |    |    |    |
+| [valid-package-def](docs/rules/valid-package-def.md)                   | Enforce that package.json has all properties required by the npm spec                             |     |    |    | ❌  |
+| [valid-package-definition](docs/rules/valid-package-definition.md)     | Enforce that package.json has all properties required by the npm spec                             | ✅  |    |    |    |
+| [valid-repository-directory](docs/rules/valid-repository-directory.md) | Enforce that if repository directory is specified, it matches the path to the package.json file   | ✅  |    | 💡 |    |
+| [valid-version](docs/rules/valid-version.md)                           | Enforce that package versions are valid semver specifiers                                         | ✅  |    |    |    |
 
 <!-- end auto-generated rules list -->
 <!-- prettier-ignore-end -->
