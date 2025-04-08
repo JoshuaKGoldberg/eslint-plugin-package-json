@@ -17,7 +17,7 @@
 		"commitlint",
 		"contributorsrc",
 		"conventionalcommits",
-		"eslint-doc-generatorrc.mjs",
+		"eslint-doc-generatorrc",
 		"estree",
 		"knip",
 		"lcov",

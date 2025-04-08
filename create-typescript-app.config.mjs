@@ -8,6 +8,7 @@
 import {
 	blockESLint,
 	blockESLintPackageJson,
+	blockESLintPlugin,
 	blockTSup,
 	blockTypeScript,
 	createConfig,
@@ -55,6 +56,7 @@ export default createConfig({
 			}),
 		],
 		blocks: {
+			add: [blockESLintPlugin],
 			exclude: [blockESLintPackageJson],
 		},
 	},

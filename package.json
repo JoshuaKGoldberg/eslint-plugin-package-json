@@ -35,7 +35,7 @@
 	],
 	"scripts": {
 		"build": "tsup",
-		"build:docs": "eslint-doc-generator",
+		"build:docs": "pnpm build --no-dts && eslint-doc-generator",
 		"format": "prettier .",
 		"lint": "eslint . --max-warnings 0",
 		"lint:docs": "eslint-doc-generator --check",
@@ -74,7 +74,7 @@
 		"@vitest/coverage-v8": "3.0.9",
 		"@vitest/eslint-plugin": "1.1.38",
 		"console-fail-test": "0.5.0",
-		"create-typescript-app": "^2.26.1",
+		"create-typescript-app": "^2.38.0",
 		"cspell": "8.17.5",
 		"eslint": "9.22.0",
 		"eslint-doc-generator": "^2.1.2",
