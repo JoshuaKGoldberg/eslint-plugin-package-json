@@ -50,6 +50,16 @@ export default tseslint.config(
 		rules: {
 			"n/no-missing-import": "off",
 
+			// We prefer seeing :exit after all other AST selectors in rules
+			"perfectionist/sort-objects": [
+				"error",
+				{
+					customGroups: { programExit: "Program:exit" },
+					groups: ["unknown", "programExit"],
+					type: "alphabetical",
+				},
+			],
+
 			// Stylistic concerns that don't interfere with Prettier
 			"logical-assignment-operators": [
 				"error",
@@ -59,14 +69,6 @@ export default tseslint.config(
 			"no-useless-rename": "error",
 			"object-shorthand": "error",
 			"operator-assignment": "error",
-			"perfectionist/sort-objects": [
-				"error",
-				{
-					customGroups: { programExit: "Program:exit" },
-					groups: ["unknown", "programExit"],
-					type: "alphabetical",
-				},
-			],
 		},
 		settings: {
 			perfectionist: { partitionByComment: true, type: "natural" },
