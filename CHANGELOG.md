@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.29.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.29.0...v0.29.1) (2025-04-09)
+
+### Bug Fixes
+
+- bump to create-typescript-app@2 with transitions action ([#993](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/993)) ([5b5c298](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/5b5c2989dda36b43e85a14056120e863ef4fec3f)), closes [#969](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/969)
+
 # [0.29.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.28.0...v0.29.0) (2025-03-17)
 
 ### Features
