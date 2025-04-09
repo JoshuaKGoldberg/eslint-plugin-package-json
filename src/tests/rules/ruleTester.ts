@@ -1,4 +1,6 @@
 import { RuleTester } from "eslint";
+import jsoncESLintParser from "jsonc-eslint-parser";
+import * as vitest from "vitest";
 
 import type { PackageJsonRuleModule } from "../../createRule.js";
 
@@ -15,7 +17,9 @@ export type JsonRuleTesterRun = (
 	},
 ) => void;
 
-import jsoncESLintParser from "jsonc-eslint-parser";
+RuleTester.describe = vitest.describe;
+RuleTester.it = vitest.it;
+RuleTester.itOnly = vitest.it.only;
 
 export const ruleTester = new RuleTester({
 	languageOptions: { parser: jsoncESLintParser },

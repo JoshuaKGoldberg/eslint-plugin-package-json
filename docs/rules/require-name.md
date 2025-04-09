@@ -1,11 +1,10 @@
 # require-name
 
-💼 This rule is enabled in the ✅ `recommended` config.
+💼 This rule is enabled in the following configs: ✔️ `legacy-recommended`, ✅ `recommended`.
 
 <!-- end auto-generated rule header -->
 
-This rule checks for the existence of the `"name"` property in a package.json,
-and reports a violation if it doesn't exist.
+This rule checks for the existence of the `"name"` property in a package.json, and reports a violation if it doesn't exist.
 
 Example of **incorrect** code for this rule:
 
