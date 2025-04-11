@@ -236,11 +236,25 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "sunnytsang1998",
+      "name": "sunnytsang1998",
+      "avatar_url": "https://avatars.githubusercontent.com/u/207208443?v=4",
+      "profile": "https://github.com/sunnytsang1998",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsSortAlphabetically": true,
   "projectName": "eslint-plugin-package-json",
   "projectOwner": "JoshuaKGoldberg",
   "repoType": "github",
-  "commitConvention": "angular"
+  "commitConvention": "angular",
+  "files": [
+    "README.md"
+  ],
+  "commitType": "docs",
+  "contributorsPerLine": 7
 }
