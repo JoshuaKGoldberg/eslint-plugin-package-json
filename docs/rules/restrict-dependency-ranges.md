@@ -9,6 +9,21 @@ of semver range (e.g. `^`). There are several options for specifying which depen
 a range type restriction should be applied to, including dependency type,
 package name (or name regex pattern), and version range (e.g. '<1').
 
+```ts
+export default [
+	{
+		"package-json/restrict-dependency-ranges": [
+			"error",
+			// Require that packages with 0.x.x versions are pinned
+			{
+				forVersions: "<1",
+				rangeType: "pin",
+			},
+		],
+	},
+];
+```
+
 If you provide multiple options and a dependency matches more than one of the
 options, the last option that matches will take precedent for that dependency.
 This allows you to define more general rules that apply to all dependencies (or large
@@ -23,8 +38,8 @@ or focus on some subset of dependencies.
 | Name                 | Type                     | Required |
 | :------------------- | :----------------------- | :------- |
 | `forDependencyTypes` | DependencyType[]         |          |
-| `forPackages`        | String[]                 |          |
-| `forVersions`        | String                   |          |
+| `forPackages`        | string[]                 |          |
+| `forVersions`        | string                   |          |
 | `rangeType`          | RangeType \| RangeType[] | Yes      |
 
 You can provide a single options object consisting of the above, or an array
@@ -42,10 +57,40 @@ Options are
 - optionalDependencies
 - peerDependencies
 
+```ts
+export default [
+	{
+		"package-json/restrict-dependency-ranges": [
+			"error",
+			// Require that all dev dependencies are pinned
+			{
+				forDependencyTypes: ["devDependencies"],
+				rangeType: "pin",
+			},
+		],
+	},
+];
+```
+
 ### `forPackages`
 
 This can be the exact name of a package, or a regex pattern used to match a
 group of packages by name (e.g. `@typescript-eslint/*`).
+
+```ts
+export default [
+	{
+		"package-json/restrict-dependency-ranges": [
+			"error",
+			// Restrict typescript to tilde ranges
+			{
+				forPackages: "typescript",
+				rangeType: "tilde",
+			},
+		],
+	},
+];
+```
 
 ### `forVersions`
 
@@ -53,11 +98,39 @@ You can use this to apply a restriction to a specific semver range. For example,
 a common use case is to pin "unstable" dependencies (packages that have
 a version in the `0.x.x` range). You can do this by setting `forVersions` to `'<1'`.
 
+```ts
+export default [
+	{
+		"package-json/restrict-dependency-ranges": [
+			"error",
+			// Require that all deps should use ^
+			{
+				rangeType: "caret",
+			},
+		],
+	},
+];
+```
+
 ### `rangeType`
 
 This is the only required option, and identifies which range type or types you
 want to apply to packages that match any of the other match options (or all
 dependencies if no other options are provided).
+
+```ts
+export default [
+	{
+		"package-json/restrict-dependency-ranges": [
+			"error",
+			// Require that all deps should use ^
+			{
+				rangeType: "caret",
+			},
+		],
+	},
+];
+```
 
 ## Example
 
@@ -78,7 +151,7 @@ export default [
 					rangeType: "tilde",
 				},
 
-				// Require packages that have 0.x.x versions are pinned
+				// Require that packages with 0.x.x versions are pinned
 				{
 					forVersions: "<1",
 					rangeType: "pin",
