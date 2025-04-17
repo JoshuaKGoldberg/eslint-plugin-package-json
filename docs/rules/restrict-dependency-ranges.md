@@ -84,7 +84,7 @@ export default [
 			"error",
 			// Restrict typescript to tilde ranges
 			{
-				forPackages: "typescript",
+				forPackages: ["typescript"],
 				rangeType: "tilde",
 			},
 		],
@@ -147,7 +147,7 @@ export default [
 
 				// Restrict typescript to tilde ranges
 				{
-					forPackages: "typescript",
+					forPackages: ["typescript"],
 					rangeType: "tilde",
 				},
 
