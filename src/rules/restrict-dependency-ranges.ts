@@ -22,8 +22,8 @@ interface Option {
 
 type Options = [Option | Option[] | undefined];
 
-const RANGE_TYPES = ["caret", "pin", "tilde"];
-type RangeType = "caret" | "pin" | "tilde";
+const RANGE_TYPES = ["caret", "pin", "tilde"] as const;
+type RangeType = (typeof RANGE_TYPES)[number];
 
 const schemaOptions = {
 	additionalProperties: false,
