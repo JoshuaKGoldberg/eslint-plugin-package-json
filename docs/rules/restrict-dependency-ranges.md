@@ -4,10 +4,8 @@
 
 <!-- end auto-generated rule header -->
 
-This rule allows you to require that specific dependencies use a particular kind
-of semver range (e.g. `^`). There are several options for specifying which dependencies
-a range type restriction should be applied to, including dependency type,
-package name (or name regex pattern), and version range (e.g. '<1').
+This rule allows you to require that specific dependencies use a particular kind of semver range (e.g. `^`).
+There are several options for specifying which dependencies a range type restriction should be applied to, including dependency type, package name (or name regex pattern), and version range (e.g. '<1').
 
 ```ts
 export default [
@@ -24,11 +22,8 @@ export default [
 ];
 ```
 
-If you provide multiple options and a dependency matches more than one of the
-options, the last option that matches will take precedent for that dependency.
-This allows you to define more general rules that apply to all dependencies (or large
-groups of dependencies), and then define more granular options to apply exceptions
-or focus on some subset of dependencies.
+If you provide multiple options and a dependency matches more than one of the options, the last option that matches will take precedent for that dependency.
+This allows you to define more general rules that apply to all dependencies (or large groups of dependencies), and then define more granular options to apply exceptions or focus on some subset of dependencies.
 
 ## Options
 
@@ -42,13 +37,11 @@ or focus on some subset of dependencies.
 | `forVersions`        | string                   |          |
 | `rangeType`          | RangeType \| RangeType[] | Yes      |
 
-You can provide a single options object consisting of the above, or an array
-of such objects.
+You can provide a single options object consisting of the above, or an array of such objects.
 
 ### `forDependencyTypes`
 
-You can use this to apply a range type restriction for an entire group of dependencies
-by which type of dependencies they belong to.
+You can use this to apply a range type restriction for an entire group of dependencies by which type of dependencies they belong to.
 
 Options are
 
@@ -74,8 +67,7 @@ export default [
 
 ### `forPackages`
 
-This can be the exact name of a package, or a regex pattern used to match a
-group of packages by name (e.g. `@typescript-eslint/*`).
+This can be the exact name of a package, or a regex pattern used to match a group of packages by name (e.g. `@typescript-eslint/*`).
 
 ```ts
 export default [
@@ -94,9 +86,9 @@ export default [
 
 ### `forVersions`
 
-You can use this to apply a restriction to a specific semver range. For example,
-a common use case is to pin "unstable" dependencies (packages that have
-a version in the `0.x.x` range). You can do this by setting `forVersions` to `'<1'`.
+You can use this to apply a restriction to a specific semver range.
+For example, a common use case is to pin "unstable" dependencies (packages that have a version in the `0.x.x` range).
+You can do this by setting `forVersions` to `'<1'`.
 
 ```ts
 export default [
@@ -114,9 +106,7 @@ export default [
 
 ### `rangeType`
 
-This is the only required option, and identifies which range type or types you
-want to apply to packages that match any of the other match options (or all
-dependencies if no other options are provided).
+This is the only required option, and identifies which range type or types you want to apply to packages that match any of the other match options (or all dependencies if no other options are provided).
 
 ```ts
 export default [
