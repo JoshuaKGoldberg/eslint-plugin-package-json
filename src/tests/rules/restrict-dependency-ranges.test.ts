@@ -480,7 +480,8 @@ ruleTester.run("restrict-dependency-ranges", rule, {
         },
         "def": 123,
         "ghi": true,
-        "jkl": null
+        "jkl": null,
+        123: "~1.2.3",
     }
 }`,
 			name: "malformed dependencies",
