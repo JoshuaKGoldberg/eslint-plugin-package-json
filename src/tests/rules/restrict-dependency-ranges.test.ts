@@ -463,8 +463,8 @@ ruleTester.run("restrict-dependency-ranges", rule, {
 		},
 		{
 			code: `{
-    "bin": {
-        "abc": "bin/abc.js"
+    "notDependencies": {
+        "abc": "*"
     }
 }`,
 			name: "no dependencies",
