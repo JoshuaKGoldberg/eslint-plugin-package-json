@@ -95,12 +95,11 @@ const changeVersionRange = (version: string, rangeType: RangeType): string => {
  * Check if the version is in a form that this rule supports.
  */
 const isVersionSupported = (version: string): boolean => {
-	if (version === "*" || /^workspace:[*^~]$/.test(version)) {
+	if (/^workspace:[*^~]$/.test(version)) {
 		return true;
 	}
-
 	const rawVersion = version.replace(/^workspace:/, "");
-	return !!semver.valid(rawVersion) || !!semver.validRange(rawVersion);
+	return !!semver.validRange(rawVersion);
 };
 
 const capitalize = (str: string): string => {
