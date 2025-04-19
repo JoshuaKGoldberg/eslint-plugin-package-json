@@ -132,6 +132,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [require-name](docs/rules/require-name.md)                             | Requires the `name` property to be present.                                                       | ✔️ ✅ |    |    |    |
 | [require-types](docs/rules/require-types.md)                           | Requires the `types` property to be present.                                                      |      |    |    |    |
 | [require-version](docs/rules/require-version.md)                       | Requires the `version` property to be present.                                                    | ✔️ ✅ |    |    |    |
+| [restrict-dependency-ranges](docs/rules/restrict-dependency-ranges.md) | Restricts the range of dependencies to allow or disallow specific types of ranges.                |      |    | 💡 |    |
 | [sort-collections](docs/rules/sort-collections.md)                     | Dependencies, scripts, and configuration values must be declared in alphabetical order.           | ✔️ ✅ | 🔧 |    |    |
 | [unique-dependencies](docs/rules/unique-dependencies.md)               | Checks a dependency isn't specified more than once (i.e. in `dependencies` and `devDependencies`) | ✔️ ✅ |    | 💡 |    |
 | [valid-local-dependency](docs/rules/valid-local-dependency.md)         | Checks existence of local dependencies in the package.json                                        | ✔️ ✅ |    |    |    |
