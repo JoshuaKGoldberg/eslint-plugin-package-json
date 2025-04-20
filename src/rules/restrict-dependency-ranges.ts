@@ -174,13 +174,10 @@ export const rule = createRule<Options>({
 							continue;
 						}
 						if (options.forPackages) {
-							let isMatch = false;
-							for (const packageNamePattern of options.forPackages) {
-								if (new RegExp(packageNamePattern).test(name)) {
-									isMatch = true;
-									break;
-								}
-							}
+							const isMatch = options.forPackages.some(
+								(packageNamePattern) =>
+									new RegExp(packageNamePattern).test(name),
+							);
 							if (!isMatch) {
 								continue;
 							}
