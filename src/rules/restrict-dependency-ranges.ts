@@ -113,12 +113,20 @@ export const rule = createRule<Options>({
 			return {};
 		}
 
-		const optionsArray = Array.isArray(context.options[0])
-			? [...context.options[0]]
+		// Reverse the array, so that subsequent options override previous ones
+		const optionsProvided = Array.isArray(context.options[0])
+			? [...context.options[0]].reverse()
 			: [context.options[0]];
 
-		// Reverse the array, so that subsequent options override previous ones
-		optionsArray.reverse();
+		const optionsArray = optionsProvided.map((option) => ({
+			...option,
+			forPackages: option.forPackages?.map(
+				(pattern) => new RegExp(pattern),
+			),
+			rangeTypes: Array.isArray(option.rangeType)
+				? option.rangeType
+				: [option.rangeType],
+		}));
 
 		return {
 			"Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.type=JSONLiteral][value.type=JSONObjectExpression]"(
@@ -175,8 +183,8 @@ export const rule = createRule<Options>({
 						}
 						if (options.forPackages) {
 							const isMatch = options.forPackages.some(
-								(packageNamePattern) =>
-									new RegExp(packageNamePattern).test(name),
+								(packageNameRegex) =>
+									packageNameRegex.test(name),
 							);
 							if (!isMatch) {
 								continue;
@@ -202,9 +210,7 @@ export const rule = createRule<Options>({
 
 						// We've matched this set of options, so we should check
 						// the range type.
-						const rangeTypes = Array.isArray(options.rangeType)
-							? options.rangeType
-							: [options.rangeType];
+						const rangeTypes = options.rangeTypes;
 
 						// If the version is just '*', then this is definitely in violation,
 						// and we can report immediately.
