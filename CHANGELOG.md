@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.30.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.29.1...v0.30.0) (2025-04-22)
+
+### Features
+
+- new `restrict-dependency-ranges` rule ([#998](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/998)) ([f2d1070](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/f2d1070433a488a8bd34ad2a40a3337b218bc358)), closes [#959](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/959) [#959](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/959)
+
 ## [0.29.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.29.0...v0.29.1) (2025-04-09)
 
 ### Bug Fixes
