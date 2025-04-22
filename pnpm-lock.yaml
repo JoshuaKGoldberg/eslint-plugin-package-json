@@ -73,8 +73,8 @@ importers:
         specifier: 0.5.0
         version: 0.5.0
       create-typescript-app:
-        specifier: 2.40.0
-        version: 2.40.0(bingo-systems@0.5.4)(typescript@5.8.2)
+        specifier: 2.41.0
+        version: 2.41.0(bingo-systems@0.5.4)(typescript@5.8.2)
       cspell:
         specifier: 8.17.5
         version: 8.17.5
@@ -1353,8 +1353,8 @@ packages:
     resolution: {integrity: sha512-DZJ/OGQtGeiw9neP6pDFXOBiuGO0vr1Nqlm70WJs3NfziozE1OeFLe8E4ol5t1sIfH8AAheM4Z/YnU2ftroWzw==}
     engines: {node: '>=18'}
 
-  bingo@0.5.15:
-    resolution: {integrity: sha512-aqOK7IfB8oEp7tPFgC+CrQ26/DryarkLOBgOiW6+wbMYVC37ddFIHdrNm7v7J2rPaNxqyBgpuaOZtwCZxcxNIw==}
+  bingo@0.5.16:
+    resolution: {integrity: sha512-1gtg5qTJ3Xv7I0yElNjEEtTLbS8XUg8WzF9rWP3vm6V86VCBkZm8CuUYtLzUbZ8iRfMF6cVfXLXKMoRmimBGgA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -1636,8 +1636,8 @@ packages:
       typescript:
         optional: true
 
-  create-typescript-app@2.40.0:
-    resolution: {integrity: sha512-mwjWMIXXxcjKdvzEE+2paolcXF+oyUydx+AAV6XapYiSGSSSVxcV9UiySCxiLy8KCwC7iLzj71Ldl+WqlGW8ww==}
+  create-typescript-app@2.41.0:
+    resolution: {integrity: sha512-+OeYFQLYo8vPD0ZeDxUg0qaxVFZMZJyI50cBGrt+WClr+CnHEhgay/hO5Qix3u7pnepvvMRv0oH8C5U0cfh8WA==}
     engines: {node: '>=18.3.0'}
     hasBin: true
 
@@ -5170,10 +5170,10 @@ snapshots:
     dependencies:
       '@octokit/types': 13.10.0
 
-  bingo-stratum@0.5.11(bingo-fs@0.5.5)(bingo-systems@0.5.4)(bingo@0.5.15)(zod@3.24.2):
+  bingo-stratum@0.5.11(bingo-fs@0.5.5)(bingo-systems@0.5.4)(bingo@0.5.16)(zod@3.24.2):
     dependencies:
       all-properties-lazy: 0.1.0
-      bingo: 0.5.15
+      bingo: 0.5.16
       bingo-fs: 0.5.5
       bingo-systems: 0.5.4
       cached-factory: 0.1.0
@@ -5191,7 +5191,7 @@ snapshots:
       get-github-auth-token: 0.1.2
       octokit: 4.1.2
 
-  bingo@0.5.15:
+  bingo@0.5.16:
     dependencies:
       '@clack/prompts': 0.10.0
       all-properties-lazy: 0.1.0
@@ -5495,12 +5495,12 @@ snapshots:
     optionalDependencies:
       typescript: 5.8.2
 
-  create-typescript-app@2.40.0(bingo-systems@0.5.4)(typescript@5.8.2):
+  create-typescript-app@2.41.0(bingo-systems@0.5.4)(typescript@5.8.2):
     dependencies:
       '@typescript-eslint/typescript-estree': 8.30.1(typescript@5.8.2)
-      bingo: 0.5.15
+      bingo: 0.5.16
       bingo-fs: 0.5.5
-      bingo-stratum: 0.5.11(bingo-fs@0.5.5)(bingo-systems@0.5.4)(bingo@0.5.15)(zod@3.24.2)
+      bingo-stratum: 0.5.11(bingo-fs@0.5.5)(bingo-systems@0.5.4)(bingo@0.5.16)(zod@3.24.2)
       cached-factory: 0.1.0
       cspell-populate-words: 0.3.0
       execa: 9.5.2
@@ -5508,9 +5508,9 @@ snapshots:
       github-default-labels: 0.1.0
       html-to-text: 9.0.5
       image-size: 1.2.1
-      input-from-file: 0.5.4(bingo@0.5.15)
-      input-from-file-json: 0.5.4(bingo@0.5.15)(zod@3.24.2)
-      input-from-script: 0.5.4(bingo@0.5.15)
+      input-from-file: 0.5.4(bingo@0.5.16)
+      input-from-file-json: 0.5.4(bingo@0.5.16)(zod@3.24.2)
+      input-from-script: 0.5.4(bingo@0.5.16)
       js-yaml: 4.1.0
       json5: 2.2.3
       lazy-value: 3.0.0
@@ -6390,20 +6390,20 @@ snapshots:
 
   ini@4.1.1: {}
 
-  input-from-file-json@0.5.4(bingo@0.5.15)(zod@3.24.2):
+  input-from-file-json@0.5.4(bingo@0.5.16)(zod@3.24.2):
     dependencies:
-      bingo: 0.5.15
-      input-from-file: 0.5.4(bingo@0.5.15)
+      bingo: 0.5.16
+      input-from-file: 0.5.4(bingo@0.5.16)
       zod: 3.24.2
 
-  input-from-file@0.5.4(bingo@0.5.15):
+  input-from-file@0.5.4(bingo@0.5.16):
     dependencies:
-      bingo: 0.5.15
+      bingo: 0.5.16
       zod: 3.24.2
 
-  input-from-script@0.5.4(bingo@0.5.15):
+  input-from-script@0.5.4(bingo@0.5.16):
     dependencies:
-      bingo: 0.5.15
+      bingo: 0.5.16
       zod: 3.24.2
 
   inquirer@12.3.0(@types/node@22.14.0):
