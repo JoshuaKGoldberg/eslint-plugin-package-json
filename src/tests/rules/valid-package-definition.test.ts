@@ -73,7 +73,8 @@ ruleTester.run("valid-package-definition", rule, {
   "dependencies": {
     "foo": "npm:bar@^1.0.0",
     "baz": "file:../baz",
-    "bar": "workspace:*"
+    "bar": "workspace:*",
+    "qux": "jsr:quux@^1.0.0"
   }
 }`,
 			filename: "package.json",
