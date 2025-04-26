@@ -126,6 +126,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [order-properties](docs/rules/order-properties.md)                     | Package properties must be declared in standard order                                             | ✔️ ✅ | 🔧 |    |    |
 | [repository-shorthand](docs/rules/repository-shorthand.md)             | Enforce either object or shorthand declaration for repository.                                    | ✔️ ✅ | 🔧 |    |    |
 | [require-author](docs/rules/require-author.md)                         | Requires the `author` property to be present.                                                     |      |    |    |    |
+| [require-description](docs/rules/require-description.md)               | Requires the `description` property to be present.                                                | ✔️ ✅ |    |    |    |
 | [require-engines](docs/rules/require-engines.md)                       | Requires the `engines` property to be present.                                                    |      |    |    |    |
 | [require-files](docs/rules/require-files.md)                           | Requires the `files` property to be present.                                                      |      |    |    |    |
 | [require-keywords](docs/rules/require-keywords.md)                     | Requires the `keywords` property to be present.                                                   |      |    |    |    |

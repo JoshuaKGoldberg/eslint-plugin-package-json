@@ -6,6 +6,7 @@ import { createRequirePropertyRule } from "../utils/createRequirePropertyRule.js
 // in the format [propertyName, isRecommended]
 const properties = [
 	["author", false],
+	["description", true],
 	["engines", false],
 	["files", false],
 	["keywords", false],
