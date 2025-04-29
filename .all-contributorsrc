@@ -245,6 +245,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "csjewell",
+      "name": "Curtis Jewell",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67483?v=4",
+      "profile": "http://www.curtisjewell.dev/",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsSortAlphabetically": true,
