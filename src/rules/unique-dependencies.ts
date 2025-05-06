@@ -19,9 +19,14 @@ const dependencyPropertyNames = new Set([
 	"peerDependencies",
 ]);
 
+const requiredUniqueDependencies = new Set(["dependencies", "devDependencies"]);
+
+// This keep tracks of `dependencies` or `devDependencies` seen
+const uniqueDependenciesSeen = new Set();
 export const rule = createRule({
 	create(context) {
 		function check(
+			property: string,
 			elements: (JsonAST.JSONNode | null)[],
 			getNodeToRemove: (element: JsonAST.JSONNode) => JsonAST.JSONNode,
 		) {
@@ -31,6 +36,14 @@ export const rule = createRule({
 				.filter(isNotNullish)
 				.filter(isJSONStringLiteral)
 				.reverse()) {
+				if (requiredUniqueDependencies.has(property)) {
+					if (uniqueDependenciesSeen.has(element.value)) {
+						report(element, elements);
+					} else {
+						uniqueDependenciesSeen.add(element.value);
+					}
+				}
+
 				if (seen.has(element.value)) {
 					report(element, elements);
 				} else {
@@ -78,10 +91,15 @@ export const rule = createRule({
 
 				switch (node.value.type) {
 					case "JSONArrayExpression":
-						check(node.value.elements, (element) => element);
+						check(
+							node.value.type,
+							node.value.elements,
+							(element) => element,
+						);
 						break;
 					case "JSONObjectExpression":
 						check(
+							node.value.type,
 							node.value.properties.map(
 								(property) => property.key,
 							),
