@@ -185,6 +185,38 @@ ruleTester.run("unique-dependencies", rule, {
 			],
 			filename: "package.json",
 		},
+		{
+			code: `{
+		"dependencies": {
+			"abc": "1.2.3"
+		},
+		"devDependencies": {
+			"abc": "1.2.3"
+		}
+	}`,
+			errors: [
+				{
+					column: 4,
+					endColumn: 9,
+					line: 6,
+					messageId: "overridden",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+		"dependencies": {
+			"abc": "1.2.3"
+		},
+		"devDependencies": {
+			
+		}
+	}`,
+						},
+					],
+				},
+			],
+			filename: "package.json",
+		},
 	],
 
 	valid: [
