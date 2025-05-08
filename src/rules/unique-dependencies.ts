@@ -19,9 +19,18 @@ const dependencyPropertyNames = new Set([
 	"peerDependencies",
 ]);
 
+// This is a list of groups that required uniqueness among all of them globally.
+const groupsRequiringGlobalUniqueness = new Set([
+	"dependencies",
+	"devDependencies",
+]);
+
+// This keep tracks of dependencies seen from above set.
 export const rule = createRule({
 	create(context) {
+		const globalUniqueDependenciesSeen = new Set();
 		function check(
+			dependencyGroup: string,
 			elements: (JsonAST.JSONNode | null)[],
 			getNodeToRemove: (element: JsonAST.JSONNode) => JsonAST.JSONNode,
 		) {
@@ -31,7 +40,13 @@ export const rule = createRule({
 				.filter(isNotNullish)
 				.filter(isJSONStringLiteral)
 				.reverse()) {
-				if (seen.has(element.value)) {
+				if (groupsRequiringGlobalUniqueness.has(dependencyGroup)) {
+					if (globalUniqueDependenciesSeen.has(element.value)) {
+						report(element, elements);
+					} else {
+						globalUniqueDependenciesSeen.add(element.value);
+					}
+				} else if (seen.has(element.value)) {
 					report(element, elements);
 				} else {
 					seen.add(element.value);
@@ -78,10 +93,15 @@ export const rule = createRule({
 
 				switch (node.value.type) {
 					case "JSONArrayExpression":
-						check(node.value.elements, (element) => element);
+						check(
+							node.key.value,
+							node.value.elements,
+							(element) => element,
+						);
 						break;
 					case "JSONObjectExpression":
 						check(
+							node.key.value,
 							node.value.properties.map(
 								(property) => property.key,
 							),
