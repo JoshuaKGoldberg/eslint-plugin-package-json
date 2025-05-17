@@ -79,14 +79,18 @@ Note that in lexical ordering, `lodash` comes before `lodash.debounce`.
 
 ### Options
 
-Pass an array of top-level package properties to lint sorting on those collections.
+Pass an array of package properties to lint sorting on those collections.
+To specify a nested property, use dot notation.
 All of their values must be objects.
 
 Example of only sorting devDependencies:
 
 ```json
 {
-	"package-json/sort-collections": ["error", ["devDependencies"]]
+	"package-json/sort-collections": [
+		"error",
+		["devDependencies", "pnpm.patchedDependencies"]
+	]
 }
 ```
 
