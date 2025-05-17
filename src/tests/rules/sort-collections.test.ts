@@ -151,6 +151,33 @@ ruleTester.run("sort-collections", rule, {
   }
 }`,
 		},
+		{
+			code: `{
+	"pnpm": {
+		"patchedDependencies": {
+			"typescript@4.8.4": "patches/typescript@4.8.4.patch",
+			"eslint-plugin-package-json@0.31.0": "patches/eslint-plugin-package-json@0.31.0.patch"
+		}
+	}
+}`,
+			errors: [
+				{
+					data: { key: "pnpm.patchedDependencies" },
+					messageId: "notAlphabetized",
+					type: "JSONProperty",
+				},
+			],
+			filename: "package.json",
+			options: [["pnpm.patchedDependencies"]],
+			output: `{
+	"pnpm": {
+		"patchedDependencies": {
+    "eslint-plugin-package-json@0.31.0": "patches/eslint-plugin-package-json@0.31.0.patch",
+    "typescript@4.8.4": "patches/typescript@4.8.4.patch"
+  }
+	}
+}`,
+		},
 	],
 
 	valid: [
@@ -211,6 +238,16 @@ ruleTester.run("sort-collections", rule, {
         "prebuild": "echo test",
 		"build": "echo test",
         "postbuild": "echo test"
+	}
+}`,
+		},
+		{
+			code: `{
+	"nested": {
+		"devDependencies": {
+			"typescript": "4.8.4",
+			"eslint-plugin-package-json": "0.31.0"
+		}
 	}
 }`,
 		},
