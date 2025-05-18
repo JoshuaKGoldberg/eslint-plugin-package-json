@@ -98,13 +98,22 @@ Defaults:
 
 ```json
 [
-	"scripts",
-	"devDependencies",
-	"dependencies",
-	"peerDependencies",
-	"overrides",
 	"config",
-	"exports"
+	"dependencies",
+	"dependenciesMeta",
+	"devDependencies",
+	"exports",
+	"optionalDependencies",
+	"overrides",
+	"peerDependencies",
+	"peerDependenciesMeta",
+	"pnpm.allowedDeprecatedVersions",
+	"pnpm.overrides",
+	"pnpm.packageExtensions",
+	"pnpm.patchedDependencies",
+	"pnpm.peerDependencyRules.allowedVersions",
+	"resolutions",
+	"scripts"
 ]
 ```
 
