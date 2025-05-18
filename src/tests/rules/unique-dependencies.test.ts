@@ -217,6 +217,44 @@ ruleTester.run("unique-dependencies", rule, {
 			],
 			filename: "package.json",
 		},
+		{
+			code: `{
+		"dependencies": {
+			"abc": "1.2.3"
+		},
+		"devDependencies": {
+			"abc": "1.2.3"
+		},
+		"peerDependencies": {
+			"abc": "1.2.3"
+		}
+	}`,
+			errors: [
+				{
+					column: 4,
+					endColumn: 9,
+					line: 6,
+					messageId: "overridden",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+		"dependencies": {
+			"abc": "1.2.3"
+		},
+		"devDependencies": {
+			
+		},
+		"peerDependencies": {
+			"abc": "1.2.3"
+		}
+	}`,
+						},
+					],
+				},
+			],
+			filename: "package.json",
+		},
 	],
 
 	valid: [
@@ -261,6 +299,14 @@ ruleTester.run("unique-dependencies", rule, {
 	"peerDependencies": {
 		"abc": "1.2.3",
 		"def": "1.2.3"
+	}
+}`,
+		`{
+	"dependencies": {
+		"abc": "1.2.3"
+	},
+	"peerDependencies": {
+		"abc": "1.2.3"
 	}
 }`,
 		`{
