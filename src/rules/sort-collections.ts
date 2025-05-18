@@ -7,10 +7,19 @@ import { createRule } from "../createRule.js";
 const defaultCollections = new Set([
 	"config",
 	"dependencies",
+	"dependenciesMeta",
 	"devDependencies",
 	"exports",
+	"optionalDependencies",
 	"overrides",
 	"peerDependencies",
+	"peerDependenciesMeta",
+	"pnpm.allowedDeprecatedVersions",
+	"pnpm.overrides",
+	"pnpm.packageExtensions",
+	"pnpm.patchedDependencies",
+	"pnpm.peerDependencyRules.allowedVersions",
+	"resolutions",
 	"scripts",
 ]);
 
@@ -54,7 +63,7 @@ export const rule = createRule<Options>({
 				}
 
 				const currentOrder = collection.properties;
-				const scripts = new Set(
+				const properties = new Set(
 					currentOrder.map(
 						(prop) => (prop.key as JsonAST.JSONStringLiteral).value,
 					),
@@ -71,13 +80,13 @@ export const rule = createRule<Options>({
 
 						if (
 							aKey.startsWith("pre") &&
-							scripts.has(aKey.substring(3))
+							properties.has(aKey.substring(3))
 						) {
 							aKey = aKey.substring(3);
 							modifier -= 1;
 						} else if (
 							aKey.startsWith("post") &&
-							scripts.has(aKey.substring(4))
+							properties.has(aKey.substring(4))
 						) {
 							aKey = aKey.substring(4);
 							modifier += 1;
@@ -85,13 +94,13 @@ export const rule = createRule<Options>({
 
 						if (
 							bKey.startsWith("pre") &&
-							scripts.has(bKey.substring(3))
+							properties.has(bKey.substring(3))
 						) {
 							bKey = bKey.substring(3);
 							modifier += 1;
 						} else if (
 							bKey.startsWith("post") &&
-							scripts.has(bKey.substring(4))
+							properties.has(bKey.substring(4))
 						) {
 							bKey = bKey.substring(4);
 							modifier -= 1;

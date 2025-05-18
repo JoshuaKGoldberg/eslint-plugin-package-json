@@ -168,13 +168,42 @@ ruleTester.run("sort-collections", rule, {
 				},
 			],
 			filename: "package.json",
-			options: [["pnpm.patchedDependencies"]],
 			output: `{
 	"pnpm": {
 		"patchedDependencies": {
     "eslint-plugin-package-json@0.31.0": "patches/eslint-plugin-package-json@0.31.0.patch",
     "typescript@4.8.4": "patches/typescript@4.8.4.patch"
   }
+	}
+}`,
+		},
+		{
+			code: `{
+	"pnpm": {
+		"peerDependencyRules": {
+            "allowedVersions": {
+                "vue": "2",
+                "react": "17"
+            }
+		}
+	}
+}`,
+			errors: [
+				{
+					data: { key: "pnpm.peerDependencyRules.allowedVersions" },
+					messageId: "notAlphabetized",
+					type: "JSONProperty",
+				},
+			],
+			filename: "package.json",
+			output: `{
+	"pnpm": {
+		"peerDependencyRules": {
+            "allowedVersions": {
+    "react": "17",
+    "vue": "2"
+  }
+		}
 	}
 }`,
 		},
@@ -247,6 +276,28 @@ ruleTester.run("sort-collections", rule, {
 		"devDependencies": {
 			"typescript": "4.8.4",
 			"eslint-plugin-package-json": "0.31.0"
+		}
+	}
+}`,
+		},
+		{
+			code: `{
+	"pnpm": {
+		"patchedDependencies": {
+			"eslint-plugin-package-json@0.31.0": "patches/eslint-plugin-package-json@0.31.0.patch",
+			"typescript@4.8.4": "patches/typescript@4.8.4.patch"
+		}
+	}
+}`,
+		},
+		{
+			code: `{
+	"pnpm": {
+		"peerDependencyRules": {
+            "allowedVersions": {
+                "react": "17",
+                "vue": "2"
+            }
 		}
 	}
 }`,
