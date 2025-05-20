@@ -7,19 +7,12 @@ import { createRule } from "../createRule.js";
 const defaultCollections = new Set([
 	"config",
 	"dependencies",
-	"dependenciesMeta",
 	"devDependencies",
 	"exports",
 	"optionalDependencies",
 	"overrides",
 	"peerDependencies",
 	"peerDependenciesMeta",
-	"pnpm.allowedDeprecatedVersions",
-	"pnpm.overrides",
-	"pnpm.packageExtensions",
-	"pnpm.patchedDependencies",
-	"pnpm.peerDependencyRules.allowedVersions",
-	"resolutions",
 	"scripts",
 ]);
 
