@@ -168,6 +168,7 @@ ruleTester.run("sort-collections", rule, {
 				},
 			],
 			filename: "package.json",
+			options: [["pnpm.patchedDependencies"]],
 			output: `{
 	"pnpm": {
 		"patchedDependencies": {
@@ -196,6 +197,7 @@ ruleTester.run("sort-collections", rule, {
 				},
 			],
 			filename: "package.json",
+			options: [["pnpm.peerDependencyRules.allowedVersions"]],
 			output: `{
 	"pnpm": {
 		"peerDependencyRules": {
@@ -295,12 +297,25 @@ ruleTester.run("sort-collections", rule, {
 	"pnpm": {
 		"peerDependencyRules": {
             "allowedVersions": {
+                "vue": "2",
+                "react": "17"
+            }
+		}
+	}
+}`,
+		},
+		{
+			code: `{
+	"pnpm": {
+		"peerDependencyRules": {
+            "allowedVersions": {
                 "react": "17",
                 "vue": "2"
             }
 		}
 	}
 }`,
+			options: [["pnpm.peerDependencyRules.allowedVersions"]],
 		},
 	],
 });
