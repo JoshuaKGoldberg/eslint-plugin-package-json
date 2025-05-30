@@ -132,6 +132,7 @@ ruleTester.run("sort-collections", rule, {
 		}
 	}
 }`,
+			options: [["exports"]],
 			errors: [
 				{
 					data: { key: "exports" },
@@ -213,6 +214,20 @@ ruleTester.run("sort-collections", rule, {
         "postbuild": "echo test"
 	}
 }`,
+		},
+		{
+			code: `{
+	"exports": {
+		".": {
+			"import": "./index.mjs",
+			"require": "./index.js",
+			"types": "./index.d.ts"
+		},
+		"./package.json": "./package.json",
+	}
+}`,
+			options: [["exports"]],
+			filename: "package.json",
 		},
 	],
 });

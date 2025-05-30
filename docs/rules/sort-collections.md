@@ -99,8 +99,7 @@ Defaults:
 	"dependencies",
 	"peerDependencies",
 	"overrides",
-	"config",
-	"exports"
+	"config"
 ]
 ```
 
