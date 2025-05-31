@@ -1,5 +1,9 @@
 # Changelog
 
+# [0.32.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.31.0...v0.32.0) (2025-05-31)
+
+No meaningful change. CI error.
+
 # [0.31.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.30.0...v0.31.0) (2025-04-26)
 
 ### Features
