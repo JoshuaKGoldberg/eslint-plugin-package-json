@@ -54,11 +54,19 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	},
 };
 
-const recommendedRules = Object.fromEntries(
-	Object.entries(rules)
-		.filter(([, rule]) => rule.meta.docs?.recommended)
-		.map(([name]) => ["package-json/" + name, "error" as const]),
-);
+const recommendedRules = {
+	...Object.fromEntries(
+		Object.entries(rules)
+			.filter(([, rule]) => rule.meta.docs?.recommended)
+			.map(([name]) => ["package-json/" + name, "error" as const]),
+	),
+	// As we add more `valid-*` rules, we should prevent this legacy rule from
+	// also reporting the same errors.
+	"package-json/valid-package-definition": [
+		"error",
+		{ ignoreProperties: ["name", "version", "bin"] },
+	],
+};
 
 export const plugin = {
 	configs: {
