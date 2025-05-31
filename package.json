@@ -28,10 +28,8 @@
 	},
 	"main": "lib/index.js",
 	"files": [
-		"LICENSE.md",
-		"README.md",
-		"lib/",
-		"package.json"
+		"CHANGELOG.md",
+		"lib/"
 	],
 	"scripts": {
 		"build": "tsup",
