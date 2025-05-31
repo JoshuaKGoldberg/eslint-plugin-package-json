@@ -11,6 +11,7 @@ const properties = [
 	["files", false],
 	["keywords", false],
 	["name", true],
+	["type", true],
 	["types", false],
 	["version", true],
 	// TODO: More to come!
