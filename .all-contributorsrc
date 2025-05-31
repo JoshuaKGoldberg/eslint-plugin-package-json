@@ -263,6 +263,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "roottool",
+      "name": "roottool",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11808736?v=4",
+      "profile": "https://roottool.vercel.app",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsSortAlphabetically": true,
