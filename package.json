@@ -53,7 +53,7 @@
 	"dependencies": {
 		"@altano/repository-tools": "^0.1.1",
 		"detect-indent": "6.1.0",
-		"detect-newline": "3.1.0",
+		"detect-newline": "4.0.1",
 		"eslint-fix-utils": "^0.2.0",
 		"package-json-validator": "^0.10.0",
 		"semver": "^7.5.4",
