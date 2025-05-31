@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.33.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.32.0...v0.33.0) (2025-05-31)
+
+### Features
+
+- add `require-type` rule ([#1065](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1065)) ([9c092be](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/9c092beb546407c4b8b43426058c56696a88b7c3)), closes [#1032](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1032)
+
 # [0.32.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.31.0...v0.32.0) (2025-05-31)
 
 No meaningful change. CI error.
