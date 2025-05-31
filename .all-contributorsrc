@@ -225,7 +225,9 @@
         "infra",
         "code",
         "maintenance",
-        "ideas"
+        "ideas",
+        "bug",
+        "tool"
       ]
     },
     {
