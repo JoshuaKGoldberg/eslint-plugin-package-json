@@ -131,6 +131,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [require-files](docs/rules/require-files.md)                           | Requires the `files` property to be present.                                                      |      |    |    |    |
 | [require-keywords](docs/rules/require-keywords.md)                     | Requires the `keywords` property to be present.                                                   |      |    |    |    |
 | [require-name](docs/rules/require-name.md)                             | Requires the `name` property to be present.                                                       | ✔️ ✅ |    |    |    |
+| [require-type](docs/rules/require-type.md)                             | Requires the `type` property to be present.                                                       | ✔️ ✅ |    |    |    |
 | [require-types](docs/rules/require-types.md)                           | Requires the `types` property to be present.                                                      |      |    |    |    |
 | [require-version](docs/rules/require-version.md)                       | Requires the `version` property to be present.                                                    | ✔️ ✅ |    |    |    |
 | [restrict-dependency-ranges](docs/rules/restrict-dependency-ranges.md) | Restricts the range of dependencies to allow or disallow specific types of ranges.                |      |    | 💡 |    |
