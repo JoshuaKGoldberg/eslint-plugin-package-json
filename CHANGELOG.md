@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.33.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.33.1...v0.33.2) (2025-06-01)
+
+### Bug Fixes
+
+- prevent `no-redundant-files` crash with wildcard and `main` field ([#1078](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1078)) ([ad4f95f](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/ad4f95f382bce8d5d0ecc79e4242596dc3eec771)), closes [#1066](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1066)
+
 ## [0.33.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.33.0...v0.33.1) (2025-06-01)
 
 ### Bug Fixes
