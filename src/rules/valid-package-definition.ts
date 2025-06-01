@@ -11,8 +11,8 @@ const ignoredErrors = [
 	/^author field should have name/i,
 ];
 
-const isUsableError = (errorText: string) =>
-	ignoredErrors.every((pattern) => !pattern.test(errorText));
+const isUsableError = (errorText: { message: string }) =>
+	ignoredErrors.every((pattern) => !pattern.test(errorText.message));
 
 export const rule = createRule({
 	create(context) {
@@ -20,15 +20,17 @@ export const rule = createRule({
 			"Program:exit"() {
 				const validation = validate(context.sourceCode.text);
 
-				validation.errors?.filter(isUsableError).forEach((message) => {
-					if (message) {
-						context.report({
-							// eslint-disable-next-line eslint-plugin/prefer-message-ids
-							message,
-							node: context.sourceCode.ast,
-						});
-					}
-				});
+				validation.errors
+					?.filter(isUsableError)
+					.forEach(({ message }) => {
+						if (message) {
+							context.report({
+								// eslint-disable-next-line eslint-plugin/prefer-message-ids
+								message,
+								node: context.sourceCode.ast,
+							});
+						}
+					});
 			},
 		};
 	},
