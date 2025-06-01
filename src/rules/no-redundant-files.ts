@@ -13,8 +13,14 @@ const defaultFiles = [
 	/^(\.\/)?package\.json$/i,
 ];
 
+const hasWildcards = (filename: string): boolean => /[*?[\]{}]/.test(filename);
+
 const cachedRegex = new Map<string, RegExp>();
 const getCachedLocalFileRegex = (filename: string) => {
+	if (hasWildcards(filename)) {
+		return null;
+	}
+
 	// Strip the leading `./`, if there is one, since we'll be incorporating
 	// it into the regex.
 	const baseFilename = filename.replace("./", "");
@@ -161,7 +167,7 @@ export const rule = createRule({
 								const regex = getCachedLocalFileRegex(
 									fileEntry.value,
 								);
-								if (regex.test(fileToCheck)) {
+								if (regex?.test(fileToCheck)) {
 									report(files, index, validation.messageId);
 								}
 							}
