@@ -13,11 +13,11 @@ const defaultFiles = [
 	/^(\.\/)?package\.json$/i,
 ];
 
-const hasWildcards = (filename: string): boolean => /[*?[\]{}]/.test(filename);
+const wildcardsRegex = /[*?[\]{}]/;
 
 const cachedRegex = new Map<string, RegExp>();
 const getCachedLocalFileRegex = (filename: string) => {
-	if (hasWildcards(filename)) {
+	if (wildcardsRegex.test(filename)) {
 		return null;
 	}
 
