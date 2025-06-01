@@ -77,8 +77,7 @@ const recommendedRules = {
 				.filter(
 					([name]) =>
 						name.startsWith("package-json/valid-") &&
-						name !== "package-json/valid-package-definition" &&
-						name !== "package-json/valid-package-def",
+						name !== "package-json/valid-package-definition",
 				)
 				.map(([name]) => name.replace("package-json/valid-", "")),
 		},
