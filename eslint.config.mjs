@@ -104,4 +104,10 @@ export default tseslint.config(
 			],
 		},
 	},
+	{
+		files: ["./eslint.config.mjs", "./**/*.test.*"],
+		rules: {
+			"n/no-unsupported-features/node-builtins": "off",
+		},
+	},
 );
