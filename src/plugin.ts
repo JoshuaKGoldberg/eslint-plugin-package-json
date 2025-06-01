@@ -3,7 +3,7 @@ import { createRequire } from "node:module";
 
 import type { PackageJsonRuleModule } from "./createRule.js";
 
-import { rule as noEmptyFields, rule } from "./rules/no-empty-fields.js";
+import { rule as noEmptyFields } from "./rules/no-empty-fields.js";
 import { rule as noRedundantFiles } from "./rules/no-redundant-files.js";
 import { rule as orderProperties } from "./rules/order-properties.js";
 import { rule as preferRepositoryShorthand } from "./rules/repository-shorthand.js";
