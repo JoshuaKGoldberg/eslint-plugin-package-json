@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.33.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.33.0...v0.33.1) (2025-06-01)
+
+### Bug Fixes
+
+- add CHANGELOG to package ([#1075](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1075)) ([eb13030](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/eb130302b6dfcc456dfeaf49fdfd61bd4fa495d1)), closes [#1070](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1070)
+
 # [0.33.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.32.0...v0.33.0) (2025-05-31)
 
 ### Features
