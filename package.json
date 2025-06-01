@@ -45,7 +45,7 @@
 		"lint:spelling": "cspell \"**\" \".github/**/*\"",
 		"prepare": "husky",
 		"test": "vitest",
-		"tsc": "tsc"
+		"typecheck": "tsc"
 	},
 	"lint-staged": {
 		"*": "prettier --ignore-unknown --write"

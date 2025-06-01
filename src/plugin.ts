@@ -1,3 +1,4 @@
+import { ESLint, Linter } from "eslint";
 import * as parserJsonc from "jsonc-eslint-parser";
 import { createRequire } from "node:module";
 
@@ -60,7 +61,7 @@ const baseRecommendedRules = {
 			.filter(([, rule]) => rule.meta.docs?.recommended)
 			.map(([name]) => ["package-json/" + name, "error" as const]),
 	),
-};
+} satisfies Linter.RulesRecord;
 
 const recommendedRules = {
 	...baseRecommendedRules,
@@ -82,7 +83,7 @@ const recommendedRules = {
 				.map(([name]) => name.replace("package-json/valid-", "")),
 		},
 	],
-};
+} satisfies Linter.RulesRecord;
 
 export const plugin = {
 	configs: {
