@@ -12,6 +12,7 @@ import { rules as requireRules } from "./rules/require-properties.js";
 import { rule as restrictDependencyRanges } from "./rules/restrict-dependency-ranges.js";
 import { rule as sortCollections } from "./rules/sort-collections.js";
 import { rule as uniqueDependencies } from "./rules/unique-dependencies.js";
+import { rule as validBin } from "./rules/valid-bin.js";
 import { rule as validLocalDependency } from "./rules/valid-local-dependency.js";
 import { rule as validName } from "./rules/valid-name.js";
 import { rule as validPackageDefinition } from "./rules/valid-package-definition.js";
@@ -34,6 +35,7 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"restrict-dependency-ranges": restrictDependencyRanges,
 	"sort-collections": sortCollections,
 	"unique-dependencies": uniqueDependencies,
+	"valid-bin": validBin,
 	"valid-local-dependency": validLocalDependency,
 	"valid-name": validName,
 	"valid-package-definition": validPackageDefinition,
