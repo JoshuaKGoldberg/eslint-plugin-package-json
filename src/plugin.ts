@@ -3,7 +3,7 @@ import { createRequire } from "node:module";
 
 import type { PackageJsonRuleModule } from "./createRule.js";
 
-import { rule as noEmptyFields } from "./rules/no-empty-fields.js";
+import { rule as noEmptyFields, rule } from "./rules/no-empty-fields.js";
 import { rule as noRedundantFiles } from "./rules/no-redundant-files.js";
 import { rule as orderProperties } from "./rules/order-properties.js";
 import { rule as preferRepositoryShorthand } from "./rules/repository-shorthand.js";
@@ -54,17 +54,33 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	},
 };
 
-const recommendedRules = {
+const baseRecommendedRules = {
 	...Object.fromEntries(
 		Object.entries(rules)
 			.filter(([, rule]) => rule.meta.docs?.recommended)
 			.map(([name]) => ["package-json/" + name, "error" as const]),
 	),
+};
+
+const recommendedRules = {
+	...baseRecommendedRules,
 	// As we add more `valid-*` rules, we should prevent this legacy rule from
 	// also reporting the same errors.
 	"package-json/valid-package-definition": [
 		"error",
-		{ ignoreProperties: ["name", "version", "bin"] },
+		{
+			// Create a list of properties to ignore based on the valid-* rules
+			// we currently have. Once we've fully covered what `valid-package-definition`
+			// checks, we can remove it from the `recommended` config entirely.
+			ignoreProperties: Object.entries(baseRecommendedRules)
+				.filter(
+					([name]) =>
+						name.startsWith("package-json/valid-") &&
+						name !== "package-json/valid-package-definition" &&
+						name !== "package-json/valid-package-def",
+				)
+				.map(([name]) => name.replace("package-json/valid-", "")),
+		},
 	],
 };
 
