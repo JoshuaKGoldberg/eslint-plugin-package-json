@@ -1,4 +1,4 @@
-import { ESLint, Linter } from "eslint";
+import { Linter } from "eslint";
 import * as parserJsonc from "jsonc-eslint-parser";
 import { createRequire } from "node:module";
 
