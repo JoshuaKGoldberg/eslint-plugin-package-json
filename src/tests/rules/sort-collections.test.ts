@@ -317,5 +317,32 @@ ruleTester.run("sort-collections", rule, {
 }`,
 			options: [["pnpm.peerDependencyRules.allowedVersions"]],
 		},
+
+		{
+			code: `{
+  "foo": [
+    {
+      "bar": {
+        "b": 2,
+        "a": 1
+      }
+    }
+  ]
+}`,
+			options: [["foo.bar"]],
+		},
+		{
+			code: `{
+  "foo": [
+    {
+      "bar": {
+        "b": 2,
+        "a": 1
+      }
+    }
+  ]
+}`,
+			options: [["foo.0.bar"]],
+		},
 	],
 });

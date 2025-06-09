@@ -48,6 +48,8 @@ export const rule = createRule<Options>({
 						currNode.key.type === "JSONLiteral"
 					) {
 						keyPartsReversed.push(currNode.key.value);
+					} else if (currNode.type === "JSONArrayExpression") {
+						return;
 					}
 				}
 				const key = keyPartsReversed.reverse().join(".");
