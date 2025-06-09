@@ -83,7 +83,7 @@ Pass an array of package properties to lint sorting on those collections.
 To specify a nested property, use dot notation.
 All of their values must be objects.
 
-Example of only sorting devDependencies:
+Example of only sorting `devDependencies` and `pnpm.patchedDependencies`:
 
 ```json
 {
