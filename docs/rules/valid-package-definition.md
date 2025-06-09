@@ -45,10 +45,12 @@ Examples of **correct** code for this rule:
 }
 ```
 
-### Options
+## Options
+
+### `ignoreProperties`
 
 Pass an array of top-level package properties to ignore.
-When provided, any errors related to the properties, won't cause the rule to report a violation.
+When provided, any errors related to the properties won't cause the rule to report a violation.
 This can be useful if you're using any of the more granular `valid-*` rules alongside this one.
 That way you're not double-reporting violations.
 
@@ -63,6 +65,10 @@ Example of excluding the bin property:
 	]
 }
 ```
+
+For now, the `recommended` config sets `ignoreProperties` to ignore those that are covered by the newer, more granular `valid-*` rules.
+Once all `valid-*` rules are implemented, `valid-package-definition` will be removed from `recommended`.
+See [#850 💬 Discussion: Which require- and valid- rules should be in the recommended config?](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/850) for the list of rules that will be added.
 
 ## When Not To Use It
 

@@ -45,10 +45,12 @@ Examples of **correct** code for this rule:
 }
 ```
 
-### Options
+## Options
+
+### `ignoreProperties`
 
 Pass an array of top-level package properties to ignore.
-When provided, any errors related to the properties, won't cause the rule to report a violation.
+When provided, any errors related to the properties won't cause the rule to report a violation.
 This can be useful if you're using any of the more granular `valid-*` rules alongside this one.
 That way you're not double-reporting violations.
 
