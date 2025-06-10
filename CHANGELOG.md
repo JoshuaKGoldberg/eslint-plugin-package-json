@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.35.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.35.0...v0.35.1) (2025-06-10)
+
+### Bug Fixes
+
+- **deps:** update dependency detect-indent to v7 ([#874](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/874)) ([65300dc](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/65300dc30dfdc79ab789a144f251f0b8ba96ea22))
+
 # [0.35.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.34.0...v0.35.0) (2025-06-10)
 
 ### Features
