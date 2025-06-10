@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.34.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.33.2...v0.34.0) (2025-06-10)
+
+### Features
+
+- **valid-package-definition:** add ignoreProperties option ([#1077](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1077)) ([530e343](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/530e3430f87f21c9fadd4d511097d20e26f7190f)), closes [#1076](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1076)
+
 ## [0.33.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.33.1...v0.33.2) (2025-06-01)
 
 ### Bug Fixes
