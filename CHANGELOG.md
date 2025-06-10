@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.35.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.34.0...v0.35.0) (2025-06-10)
+
+### Features
+
+- remove support for node 18 ([#1097](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1097)) ([257659a](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/257659af4fda63e2143d1ab250546dd3cb0932e7)), closes [#1074](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1074)
+
 # [0.34.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.33.2...v0.34.0) (2025-06-10)
 
 ### Features
