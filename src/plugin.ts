@@ -18,7 +18,7 @@ import { rule as validPackageDefinition } from "./rules/valid-package-definition
 import { rule as validRepositoryDirectory } from "./rules/valid-repository-directory.js";
 import { rule as validVersion } from "./rules/valid-version.js";
 
-const require = createRequire(import.meta.url || __filename);
+const require = createRequire(import.meta.url);
 
 const { name, version } = require("../package.json") as {
 	name: string;

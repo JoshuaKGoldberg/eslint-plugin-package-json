@@ -6,7 +6,7 @@ import {
 } from "eslint-fix-utils";
 import * as ESTree from "estree";
 
-import { createRule, PackageJsonRuleContext } from "../createRule";
+import { createRule, PackageJsonRuleContext } from "../createRule.js";
 
 const getDataAndMessageId = (
 	node:
