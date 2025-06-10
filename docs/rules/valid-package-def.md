@@ -45,6 +45,27 @@ Examples of **correct** code for this rule:
 }
 ```
 
+## Options
+
+### `ignoreProperties`
+
+Pass an array of top-level package properties to ignore.
+When provided, any errors related to the properties won't cause the rule to report a violation.
+This can be useful if you're using any of the more granular `valid-*` rules alongside this one.
+That way you're not double-reporting violations.
+
+Example of excluding the bin property:
+
+```json
+{
+	"package-json/valid-bin": "error",
+	"package-json/validate-package-definition": [
+		"error",
+		{ "ignoreProperties": ["bin"] }
+	]
+}
+```
+
 ## When Not To Use It
 
 npm may complain, but it works perfectly with many package files that do not violate spec.

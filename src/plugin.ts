@@ -1,3 +1,4 @@
+import { Linter } from "eslint";
 import * as parserJsonc from "jsonc-eslint-parser";
 import { createRequire } from "node:module";
 
@@ -54,11 +55,34 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	},
 };
 
-const recommendedRules = Object.fromEntries(
-	Object.entries(rules)
-		.filter(([, rule]) => rule.meta.docs?.recommended)
-		.map(([name]) => ["package-json/" + name, "error" as const]),
-);
+const baseRecommendedRules = {
+	...Object.fromEntries(
+		Object.entries(rules)
+			.filter(([, rule]) => rule.meta.docs?.recommended)
+			.map(([name]) => ["package-json/" + name, "error" as const]),
+	),
+} satisfies Linter.RulesRecord;
+
+const recommendedRules = {
+	...baseRecommendedRules,
+	// As we add more `valid-*` rules, we should prevent this legacy rule from
+	// also reporting the same errors.
+	"package-json/valid-package-definition": [
+		"error",
+		{
+			// Create a list of properties to ignore based on the valid-* rules
+			// we currently have. Once we've fully covered what `valid-package-definition`
+			// checks, we can remove it from the `recommended` config entirely.
+			ignoreProperties: Object.entries(baseRecommendedRules)
+				.filter(
+					([name]) =>
+						name.startsWith("package-json/valid-") &&
+						name !== "package-json/valid-package-definition",
+				)
+				.map(([name]) => name.replace("package-json/valid-", "")),
+		},
+	],
+} satisfies Linter.RulesRecord;
 
 export const plugin = {
 	configs: {
