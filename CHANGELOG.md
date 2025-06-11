@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.36.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.35.1...v0.36.0) (2025-06-11)
+
+### Features
+
+- migrate to ESM-only ([#1100](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1100)) ([623f162](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/623f162daa726a717c3ad48c1a777c3be7c404b0)), closes [#1080](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1080)
+
 ## [0.35.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.35.0...v0.35.1) (2025-06-10)
 
 ### Bug Fixes
