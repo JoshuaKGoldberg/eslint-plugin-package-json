@@ -87,6 +87,22 @@ ruleTester.run("valid-bin", rule, {
 				},
 			],
 		},
+		{
+			code: `{
+	"bin": { "": "invalid-key", "   ": "invalid-key" }
+}
+`,
+			errors: [
+				{
+					data: {
+						errors: `
+ - bin field 0 has an empty key, but should be a valid command name
+ - bin field 1 has an empty key, but should be a valid command name`,
+					},
+					messageId: "validationError",
+				},
+			],
+		},
 	],
 	valid: [
 		"{}",

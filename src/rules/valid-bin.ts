@@ -22,7 +22,10 @@ export const rule = createRule({
 
 				context.report({
 					data: {
-						errors: errors.join("\n             "),
+						errors:
+							errors.length > 1
+								? ["", ...errors].join("\n - ")
+								: errors[0],
 					},
 					messageId: "validationError",
 					node: binValueNode,
