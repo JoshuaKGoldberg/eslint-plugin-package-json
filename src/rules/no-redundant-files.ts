@@ -13,8 +13,14 @@ const defaultFiles = [
 	/^(\.\/)?package\.json$/i,
 ];
 
+const wildcardsRegex = /[*?[\]{}]/;
+
 const cachedRegex = new Map<string, RegExp>();
 const getCachedLocalFileRegex = (filename: string) => {
+	if (wildcardsRegex.test(filename)) {
+		return null;
+	}
+
 	// Strip the leading `./`, if there is one, since we'll be incorporating
 	// it into the regex.
 	const baseFilename = filename.replace("./", "");
@@ -38,9 +44,6 @@ export const rule = createRule({
 			main?: string;
 		} = { bin: [], files: [] };
 
-		/**
-		 * Report rule violations
-		 */
 		const report = (
 			elements: (JsonAST.JSONExpression | null)[],
 			index: number,
@@ -164,7 +167,7 @@ export const rule = createRule({
 								const regex = getCachedLocalFileRegex(
 									fileEntry.value,
 								);
-								if (regex.test(fileToCheck)) {
+								if (regex?.test(fileToCheck)) {
 									report(files, index, validation.messageId);
 								}
 							}

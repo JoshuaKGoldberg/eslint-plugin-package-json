@@ -1,7 +1,5 @@
 {
-  "badgeTemplate": "<img alt=\"All Contributors: <%= contributors.length %> 👪\" src=\"https://img.shields.io/badge/all_contributors-<%= contributors.length %>_👪-21bb42.svg\" />",
-  "commit": false,
-  "commitConvention": "angular",
+  "badgeTemplate": "\t<a href=\"#contributors\" target=\"_blank\"><img alt=\"👪 All Contributors: <%= contributors.length %>\" src=\"https://img.shields.io/badge/%F0%9F%91%AA_all_contributors-<%= contributors.length %>-21bb42.svg\" /></a>",
   "contributors": [
     {
       "login": "b3rnhard",
@@ -24,7 +22,9 @@
         "infra",
         "doc",
         "maintenance",
-        "ideas"
+        "ideas",
+        "content",
+        "projectManagement"
       ]
     },
     {
@@ -203,7 +203,8 @@
         "ideas",
         "tool",
         "doc",
-        "code"
+        "code",
+        "bug"
       ]
     },
     {
@@ -223,7 +224,10 @@
       "contributions": [
         "infra",
         "code",
-        "maintenance"
+        "maintenance",
+        "ideas",
+        "bug",
+        "tool"
       ]
     },
     {
@@ -234,17 +238,61 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "sunnytsang1998",
+      "name": "sunnytsang1998",
+      "avatar_url": "https://avatars.githubusercontent.com/u/207208443?v=4",
+      "profile": "https://github.com/sunnytsang1998",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "csjewell",
+      "name": "Curtis Jewell",
+      "avatar_url": "https://avatars.githubusercontent.com/u/67483?v=4",
+      "profile": "http://www.curtisjewell.dev/",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "lishaduck",
+      "name": "Eli",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88557639?v=4",
+      "profile": "http://lishaduck.github.io",
+      "contributions": [
+        "ideas"
+      ]
+    },
+    {
+      "login": "andreww2012",
+      "name": "Andrew Kazakov",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6554045?v=4",
+      "profile": "https://github.com/andreww2012",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "roottool",
+      "name": "roottool",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11808736?v=4",
+      "profile": "https://roottool.vercel.app",
+      "contributions": [
+        "code"
+      ]
     }
   ],
-  "contributorsPerLine": 7,
   "contributorsSortAlphabetically": true,
+  "projectName": "eslint-plugin-package-json",
+  "projectOwner": "JoshuaKGoldberg",
+  "repoType": "github",
+  "commitConvention": "angular",
   "files": [
     "README.md"
   ],
-  "imageSize": 100,
-  "projectName": "eslint-plugin-package-json",
-  "projectOwner": "JoshuaKGoldberg",
-  "repoHost": "https://github.com",
-  "repoType": "github",
-  "commitType": "docs"
+  "commitType": "docs",
+  "contributorsPerLine": 7
 }

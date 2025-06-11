@@ -1,6 +1,6 @@
 # repository-shorthand
 
-💼 This rule is enabled in the ✅ `recommended` config.
+💼 This rule is enabled in the following configs: ✔️ `legacy-recommended`, ✅ `recommended`.
 
 🔧 This rule is automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/latest/user-guide/command-line-interface#--fix).
 
@@ -49,8 +49,8 @@ Examples of **correct** code for this rule with the default options:
 
 The `form` property specifies whether to use:
 
--   `"object"` _(default)_: an object with `"type"` and `"url"`
--   `"shorthand"`: the shorthand string equivalent.
+- `"object"` _(default)_: an object with `"type"` and `"url"`
+- `"shorthand"`: the shorthand string equivalent.
 
 The `object` form is generally recommended as that's what `npm publish` prefers.
 
@@ -58,5 +58,5 @@ The `object` form is generally recommended as that's what `npm publish` prefers.
 
 ## Further Reading
 
--   [JoshuaKGoldberg/eslint-plugin-package-json#223 🐛 Bug: prefer-repository-shorthand in conflict with npm publish requirements](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/223)
--   [npm/cli#7299 [DOCS] package.json#repository should clarify normalization steps and future plans.](https://github.com/npm/cli/issues/7299)
+- [JoshuaKGoldberg/eslint-plugin-package-json#223 🐛 Bug: prefer-repository-shorthand in conflict with npm publish requirements](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/223)
+- [npm/cli#7299 [DOCS] package.json#repository should clarify normalization steps and future plans.](https://github.com/npm/cli/issues/7299)

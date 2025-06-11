@@ -370,5 +370,49 @@ ruleTester.run("no-redundant-files", rule, {
   "cli": "./bin/cli.js"
 }}`,
 		`{ "main": "./dist/index.js", "files": ["CHANGELOG.md", "dist"] }`,
+		`{
+		"main": "./index.js",
+		"files": [
+			"*.d.ts",
+			"dist"
+		]
+	}`,
+		`{
+		"main": "./lib/index.js",
+		"files": [
+			"lib/**/*.js",
+			"*.d.ts",
+		]
+	}`,
+		`{
+		"bin": "./bin/cli.js",
+		"files": [
+			"bin/*",
+			"*.json"
+		]
+	}`,
+		`{
+		"files": [
+			"src/**/*",
+			"*.ts",
+			"!src/**/*.test.ts"
+		]
+	}`,
+		`{
+		"files": [
+			"**/*.d.ts",
+			"lib/[abc].js",
+			"src/{utils,helpers}/*.js"
+		]
+	}`,
+
+		`{
+		"main": "./index.js", 
+		"files": [
+			"*.d.ts",
+			"dist/specific-file.js",
+			"lib/**/*"
+		]
+	}`,
 	],
 });

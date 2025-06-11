@@ -1,6 +1,7 @@
 {
-	"dictionaries": ["typescript"],
+	"dictionaries": ["npm", "node", "typescript"],
 	"ignorePaths": [
+		".all-contributorsrc",
 		".github",
 		"CHANGELOG.md",
 		"coverage",
@@ -9,13 +10,14 @@
 		"pnpm-lock.yaml"
 	],
 	"words": [
+		"Codecov",
 		"altano",
 		"autofixable",
-		"Codecov",
 		"codespace",
 		"commitlint",
 		"contributorsrc",
 		"conventionalcommits",
+		"eslint-doc-generatorrc",
 		"estree",
 		"knip",
 		"lcov",
