@@ -8,7 +8,7 @@ ruleTester.run("valid-author", rule, {
 			errors: [
 				{
 					message:
-						'Invalid author field: Type for field "author" should be a `string` or an `object` with at least a `name` property.',
+						'Invalid author: Type for field "author" should be a `string` or an `object` with at least a `name` property',
 				},
 			],
 			filename: "package.json",
@@ -18,7 +18,7 @@ ruleTester.run("valid-author", rule, {
 			errors: [
 				{
 					message:
-						'Invalid author field: Type for field "author" should be a `string` or an `object` with at least a `name` property.',
+						'Invalid author: Type for field "author" should be a `string` or an `object` with at least a `name` property',
 				},
 			],
 			filename: "package.json",
@@ -28,7 +28,7 @@ ruleTester.run("valid-author", rule, {
 			errors: [
 				{
 					message:
-						'Invalid author field: Type for field "author" should be a `string` or an `object` with at least a `name` property.',
+						'Invalid author: Type for field "author" should be a `string` or an `object` with at least a `name` property',
 				},
 			],
 			filename: "package.json",
@@ -38,7 +38,7 @@ ruleTester.run("valid-author", rule, {
 			errors: [
 				{
 					message:
-						'Invalid author field: Type for field "author" should be a `string` or an `object` with at least a `name` property.',
+						'Invalid author: Type for field "author" should be a `string` or an `object` with at least a `name` property',
 				},
 			],
 			filename: "package.json",
@@ -47,8 +47,7 @@ ruleTester.run("valid-author", rule, {
 			code: `{ "author": "" }`,
 			errors: [
 				{
-					message:
-						"Invalid author field: author field should have name.",
+					message: "Invalid author: author field should have name",
 				},
 			],
 			filename: "package.json",
@@ -57,8 +56,7 @@ ruleTester.run("valid-author", rule, {
 			code: `{ "author": "   " }`,
 			errors: [
 				{
-					message:
-						"Invalid author field: author field should have name.",
+					message: "Invalid author: author field should have name",
 				},
 			],
 			filename: "package.json",
@@ -68,7 +66,7 @@ ruleTester.run("valid-author", rule, {
 			errors: [
 				{
 					message:
-						"Invalid author field: Email not valid for author: invalid.",
+						"Invalid author: Email not valid for author: invalid",
 				},
 			],
 			filename: "package.json",
@@ -78,7 +76,7 @@ ruleTester.run("valid-author", rule, {
 			errors: [
 				{
 					message:
-						"Invalid author field: URL not valid for author: not-url.",
+						"Invalid author: URL not valid for author: not-url",
 				},
 			],
 			filename: "package.json",
@@ -87,8 +85,7 @@ ruleTester.run("valid-author", rule, {
 			code: `{ "author": "<john@example.com>" }`,
 			errors: [
 				{
-					message:
-						"Invalid author field: author field should have name.",
+					message: "Invalid author: author field should have name",
 				},
 			],
 			filename: "package.json",
@@ -98,7 +95,7 @@ ruleTester.run("valid-author", rule, {
 			errors: [
 				{
 					message:
-						'Invalid author field: Type for field "author" should be a `string` or an `object` with at least a `name` property.',
+						'Invalid author: Type for field "author" should be a `string` or an `object` with at least a `name` property',
 				},
 			],
 			filename: "package.json",
@@ -108,7 +105,7 @@ ruleTester.run("valid-author", rule, {
 			errors: [
 				{
 					message:
-						'Invalid author field: Type for field "author" should be a `string` or an `object` with at least a `name` property.',
+						'Invalid author: Type for field "author" should be a `string` or an `object` with at least a `name` property',
 				},
 			],
 			filename: "package.json",
@@ -117,8 +114,7 @@ ruleTester.run("valid-author", rule, {
 			code: `{ "author": { "name": "" } }`,
 			errors: [
 				{
-					message:
-						"Invalid author field: author field should have name.",
+					message: "Invalid author: author field should have name",
 				},
 			],
 			filename: "package.json",
@@ -128,7 +124,7 @@ ruleTester.run("valid-author", rule, {
 			errors: [
 				{
 					message:
-						"Invalid author field: Email not valid for author: invalid.",
+						"Invalid author: Email not valid for author: invalid",
 				},
 			],
 			filename: "package.json",
@@ -138,7 +134,17 @@ ruleTester.run("valid-author", rule, {
 			errors: [
 				{
 					message:
-						"Invalid author field: URL not valid for author: invalid.",
+						"Invalid author: URL not valid for author: invalid",
+				},
+			],
+			filename: "package.json",
+		},
+		{
+			code: `{ "author": "John <invalid> (invalid)" }`,
+			errors: [
+				{
+					message:
+						"Invalid author: \n- Email not valid for author: invalid\n- URL not valid for author: invalid",
 				},
 			],
 			filename: "package.json",

@@ -20,9 +20,14 @@ export const rule = createRule({
 				const errors = validateAuthor(authorValue);
 
 				if (errors.length > 0) {
+					const complaints =
+						errors.length === 1
+							? errors[0]
+							: `\n- ${errors.join("\n- ")}`;
+
 					context.report({
 						data: {
-							complaints: errors.join("; "),
+							complaints,
 						},
 						messageId: "invalid",
 						node: node.value as unknown as ESTree.Node,
@@ -40,7 +45,7 @@ export const rule = createRule({
 			recommended: true,
 		},
 		messages: {
-			invalid: "Invalid author field: {{ complaints }}.",
+			invalid: "Invalid author: {{ complaints }}",
 		},
 		schema: [],
 		type: "problem",
