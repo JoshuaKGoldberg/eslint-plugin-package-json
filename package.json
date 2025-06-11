@@ -15,15 +15,11 @@
 		"name": "James Zetlen",
 		"email": "zetlen@gmail.com"
 	},
-	"type": "commonjs",
+	"type": "module",
 	"exports": {
 		".": {
-			"types": {
-				"import": "./lib/index.d.mts",
-				"require": "./lib/index.d.ts"
-			},
-			"import": "./lib/index.mjs",
-			"require": "./lib/index.js"
+			"types": "./lib/index.d.ts",
+			"default": "./lib/index.js"
 		}
 	},
 	"main": "lib/index.js",

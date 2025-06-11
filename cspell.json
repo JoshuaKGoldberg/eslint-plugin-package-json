@@ -9,5 +9,12 @@
 		"node_modules",
 		"pnpm-lock.yaml"
 	],
-	"words": ["altano", "generatorrc", "postbuild", "postwatch", "zetlen"]
+	"words": [
+		"altano",
+		"generatorrc",
+		"nodenext",
+		"postbuild",
+		"postwatch",
+		"zetlen"
+	]
 }
