@@ -7,7 +7,7 @@
 This rule applies two validations to the `"license"` property:
 
 - It must be a string rather than any other data type
-- It's value should match one of the values provided in the options
+- If provided, it's value should match one of the values provided in the options
 
 Example of **incorrect** code for this rule:
 
@@ -40,6 +40,32 @@ When the rule is configured with
 ```
 
 Example of **correct** code for this rule:
+
+When the rule is configured with
+
+```json
+{
+	"valid-license": ["error"]
+}
+```
+
+```json
+{
+	"license": "GPL"
+}
+```
+
+```json
+{
+	"license": "Apache"
+}
+```
+
+```json
+{
+	"license": "Custom Licence Value"
+}
+```
 
 When the rule is configured with
 

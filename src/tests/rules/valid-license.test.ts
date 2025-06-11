@@ -3,7 +3,6 @@ import { ruleTester } from "./ruleTester.js";
 
 ruleTester.run("valid-license", rule, {
     invalid: [
-        // Invalid with single valid value
         {
             code: JSON.stringify({
                 license: "CC BY-SA",
@@ -15,9 +14,9 @@ ruleTester.run("valid-license", rule, {
                     messageId: "invalidValue",
                 },
             ],
+            name: "Invalid with single valid value",
             options: ["GPL"],
         },
-        // Invalid with multiple valid values
         {
             code: JSON.stringify({
                 license: "Apache",
@@ -29,9 +28,9 @@ ruleTester.run("valid-license", rule, {
                     messageId: "invalidValue",
                 },
             ],
+            name: "Invalid with multiple valid values",
             options: [["MIT", "GPL"]],
         },
-        // Invalid property type
         {
             code: JSON.stringify({
                 license: 1234,
@@ -43,31 +42,40 @@ ruleTester.run("valid-license", rule, {
                     messageId: "nonString",
                 },
             ],
+            name: "Invalid property type",
             options: ["GPL"],
         },
     ],
     valid: [
-        // Valid value from single valid value
         {
             code: JSON.stringify({
                 license: "Apache",
                 name: "some-test-package",
             }),
+            name: "Valid value with no configuration",
+            options: [],
+        },
+        {
+            code: JSON.stringify({
+                license: "Apache",
+                name: "some-test-package",
+            }),
+            name: "Valid value from single valid value",
             options: ["Apache"],
         },
-        // Valid value from multiple valid values
         {
             code: JSON.stringify({
                 license: "GPL",
                 name: "some-test-package",
             }),
+            name: "Valid value from multiple valid values",
             options: [["MIT", "GPL"]],
         },
-        // Missing property
         {
             code: JSON.stringify({
                 name: "some-test-package",
             }),
+            name: "Missing property",
             options: [["MIT", "GPL"]],
         },
     ],
