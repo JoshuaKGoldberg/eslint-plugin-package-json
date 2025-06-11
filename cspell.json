@@ -9,29 +9,5 @@
 		"node_modules",
 		"pnpm-lock.yaml"
 	],
-	"words": [
-		"Codecov",
-		"altano",
-		"autofixable",
-		"codespace",
-		"commitlint",
-		"contributorsrc",
-		"conventionalcommits",
-		"eslint-doc-generatorrc",
-		"estree",
-		"knip",
-		"lcov",
-		"markdownlintignore",
-		"npmpackagejsonlintrc",
-		"outro",
-		"packagejson",
-		"postbuild",
-		"postwatch",
-		"quickstart",
-		"ruleset",
-		"tsup",
-		"wontfix",
-		"zetlan",
-		"zetlen"
-	]
+	"words": ["altano", "generatorrc", "postbuild", "postwatch", "zetlen"]
 }
