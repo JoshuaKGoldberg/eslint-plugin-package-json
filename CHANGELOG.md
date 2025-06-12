@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.37.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.36.0...v0.37.0) (2025-06-12)
+
+### Features
+
+- **valid-bin:** add new rule for validating bin ([#1082](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1082)) ([e9cc86e](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/e9cc86ec5827a4374f81886865b578f40823c5b8)), closes [#818](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/818) [#1077](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1077)
+
 # [0.36.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.35.1...v0.36.0) (2025-06-11)
 
 ### Features
