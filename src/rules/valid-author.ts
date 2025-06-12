@@ -11,11 +11,11 @@ export const rule = createRule({
 			"Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.value=author]"(
 				node: JsonAST.JSONProperty,
 			) {
-				const authorValue = JSON.parse(
+				const authorValue: unknown = JSON.parse(
 					context.sourceCode.getText(
 						node.value as unknown as ESTree.Node,
 					),
-				) as string;
+				);
 
 				const errors = validateAuthor(authorValue);
 
