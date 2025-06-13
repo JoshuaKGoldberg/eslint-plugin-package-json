@@ -60,11 +60,11 @@ export const rule = createRule({
 	},
 
 	meta: {
+		deprecated: true,
 		docs: {
 			category: "Best Practices",
 			description:
 				"Checks existence of local dependencies in the package.json",
-			recommended: true,
 		},
 		messages: {
 			invalidPath:
