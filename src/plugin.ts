@@ -43,20 +43,6 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"valid-package-definition": validPackageDefinition,
 	"valid-repository-directory": validRepositoryDirectory,
 	"valid-version": validVersion,
-
-	/** @deprecated use 'valid-package-definition' instead */
-	"valid-package-def": {
-		...validPackageDefinition,
-		meta: {
-			...validPackageDefinition.meta,
-			deprecated: true,
-			docs: {
-				...validPackageDefinition.meta.docs,
-				recommended: false,
-			},
-			replacedBy: ["valid-package-definition"],
-		},
-	},
 };
 
 const baseRecommendedRules = {

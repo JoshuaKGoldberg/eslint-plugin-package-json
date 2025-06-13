@@ -141,7 +141,6 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [valid-bin](docs/rules/valid-bin.md)                                   | Enforce that the `bin` property is valid.                                                         | ✔️ ✅ |    |    |    |
 | [valid-local-dependency](docs/rules/valid-local-dependency.md)         | Checks existence of local dependencies in the package.json                                        |      |    |    | ❌  |
 | [valid-name](docs/rules/valid-name.md)                                 | Enforce that package names are valid npm package names                                            | ✔️ ✅ |    |    |    |
-| [valid-package-def](docs/rules/valid-package-def.md)                   | Enforce that package.json has all properties required by the npm spec                             |      |    |    | ❌  |
 | [valid-package-definition](docs/rules/valid-package-definition.md)     | Enforce that package.json has all properties required by the npm spec                             | ✔️ ✅ |    |    |    |
 | [valid-repository-directory](docs/rules/valid-repository-directory.md) | Enforce that if repository directory is specified, it matches the path to the package.json file   | ✔️ ✅ |    | 💡 |    |
 | [valid-version](docs/rules/valid-version.md)                           | Enforce that package versions are valid semver specifiers                                         | ✔️ ✅ |    |    |    |
