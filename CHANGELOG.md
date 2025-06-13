@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.38.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.37.0...v0.38.0) (2025-06-13)
+
+### Features
+
+- add `valid-author` rule ([#1079](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1079)) ([b8e8b40](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/b8e8b40065a0aa0bfa9e38697ab5fe3241b7d6d7)), closes [#840](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/840)
+
 # [0.37.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.36.0...v0.37.0) (2025-06-12)
 
 ### Features
