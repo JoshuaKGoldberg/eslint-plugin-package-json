@@ -63,7 +63,7 @@ When the rule is configured with
 
 ```json
 {
-	"license": "Custom Licence Value"
+	"license": "Custom License Value"
 }
 ```
 
