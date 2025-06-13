@@ -4,6 +4,7 @@ import * as ESTree from "estree";
 import { validateAuthor } from "package-json-validator";
 
 import { createRule } from "../createRule.js";
+import { formatErrors } from "../utils/formatErrors.js";
 
 export const rule = createRule({
 	create(context) {
@@ -20,14 +21,9 @@ export const rule = createRule({
 				const errors = validateAuthor(authorValue);
 
 				if (errors.length > 0) {
-					const complaints =
-						errors.length === 1
-							? errors[0]
-							: `\n - ${errors.join("\n - ")}`;
-
 					context.report({
 						data: {
-							complaints,
+							errors: formatErrors(errors),
 						},
 						messageId: "invalid",
 						node: node.value as unknown as ESTree.Node,
@@ -45,7 +41,7 @@ export const rule = createRule({
 			recommended: true,
 		},
 		messages: {
-			invalid: "Invalid author: {{ complaints }}",
+			invalid: "Invalid author: {{ errors }}",
 		},
 		schema: [],
 		type: "problem",

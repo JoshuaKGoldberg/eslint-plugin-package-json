@@ -3,6 +3,7 @@ import { AST as JsonAST } from "jsonc-eslint-parser";
 import { validateBin } from "package-json-validator";
 
 import { createRule } from "../createRule.js";
+import { formatErrors } from "../utils/formatErrors.js";
 
 export const rule = createRule({
 	create(context) {
@@ -22,10 +23,7 @@ export const rule = createRule({
 
 				context.report({
 					data: {
-						errors:
-							errors.length > 1
-								? ["", ...errors].join("\n - ")
-								: errors[0],
+						errors: formatErrors(errors),
 					},
 					messageId: "validationError",
 					node: binValueNode,

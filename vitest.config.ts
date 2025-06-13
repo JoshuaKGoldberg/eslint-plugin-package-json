@@ -7,7 +7,7 @@ export default defineConfig({
 			all: true,
 			exclude: ["lib", "src/index.ts", "src/rules/index.ts"],
 			include: ["src"],
-			reporter: ["html", "lcov"],
+			reporter: ["html", "lcov", "text"],
 		},
 		exclude: ["lib", "node_modules"],
 		setupFiles: ["console-fail-test/setup"],
