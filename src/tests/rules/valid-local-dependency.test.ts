@@ -270,5 +270,14 @@ ruleTester.run("valid-local-dependency", rule, {
 			}`,
 			filename: fileName("package.json"),
 		},
+		{
+			code: `{
+					"dependencies": {
+						"some-package": "file:./src/tests/__fixtures__/valid-local-dependency/test.tgz",
+						"some-other-package": "some-other-package"
+					}
+			}`,
+			filename: fileName("package.json"),
+		},
 	],
 });
