@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.38.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.38.0...v0.38.1) (2025-06-13)
+
+### Bug Fixes
+
+- **valid-local-dependency:** don't flag archives as invalid ([#1109](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1109)) ([3d89865](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/3d89865bba6e3ecab02576cde131336a7dc8c169)), closes [#1086](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1086)
+
 # [0.38.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.37.0...v0.38.0) (2025-06-13)
 
 ### Features
