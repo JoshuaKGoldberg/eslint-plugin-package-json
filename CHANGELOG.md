@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.39.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.38.1...v0.39.0) (2025-06-13)
+
+### Features
+
+- deprecate `valid-local-dependency` ([#1107](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1107)) ([4efea70](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4efea705124a31a35ba9e10e3bb0ef79bf442fab)), closes [#1096](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1096)
+
 ## [0.38.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.38.0...v0.38.1) (2025-06-13)
 
 ### Bug Fixes
