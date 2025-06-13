@@ -23,7 +23,7 @@ export const rule = createRule({
 					const complaints =
 						errors.length === 1
 							? errors[0]
-							: `\n- ${errors.join("\n- ")}`;
+							: `\n - ${errors.join("\n - ")}`;
 
 					context.report({
 						data: {

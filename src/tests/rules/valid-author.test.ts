@@ -144,7 +144,7 @@ ruleTester.run("valid-author", rule, {
 			errors: [
 				{
 					message:
-						"Invalid author: \n- Email not valid for author: invalid\n- URL not valid for author: invalid",
+						"Invalid author: \n - Email not valid for author: invalid\n - URL not valid for author: invalid",
 				},
 			],
 			filename: "package.json",
