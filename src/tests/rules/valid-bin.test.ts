@@ -103,6 +103,51 @@ ruleTester.run("valid-bin", rule, {
 				},
 			],
 		},
+		{
+			code: `{
+				"bin": {
+					"silverMtZion": "silver-mt-zion.js",
+                    "NIN": "./nin.js"
+                }
+            }`,
+			errors: [
+				{
+					data: {
+						property: "silverMtZion",
+					},
+					messageId: "invalidCase",
+					suggestions: [
+						{
+							messageId: "convertToKebabCase",
+							output: `{
+				"bin": {
+					"silver-mt-zion": "silver-mt-zion.js",
+                    "NIN": "./nin.js"
+                }
+            }`,
+						},
+					],
+				},
+				{
+					data: {
+						property: "NIN",
+					},
+					messageId: "invalidCase",
+					suggestions: [
+						{
+							messageId: "convertToKebabCase",
+							output: `{
+				"bin": {
+					"silverMtZion": "silver-mt-zion.js",
+                    "nin": "./nin.js"
+                }
+            }`,
+						},
+					],
+				},
+			],
+			options: [{ enforceCase: true }],
+		},
 	],
 	valid: [
 		"{}",
@@ -111,5 +156,10 @@ ruleTester.run("valid-bin", rule, {
 		`{ "bin": { "silver-mt-zion": "./silver-mt-zion.js" } }`,
 		`{ "bin": { "silver-mt-zion": "silver-mt-zion.js" } }`,
 		`{ "bin": { "silver-mt-zion": "silver-mt-zion.js", "nin": "./nin.js" } }`,
+		`{ "bin": { "silverMtZion": "silver-mt-zion.js", "NIN": "./nin.js" } }`,
+		{
+			code: `{ "bin": { "silver-mt-zion": "silver-mt-zion.js", "nin": "./nin.js" } }`,
+			options: [{ enforceCase: true }],
+		},
 	],
 });
