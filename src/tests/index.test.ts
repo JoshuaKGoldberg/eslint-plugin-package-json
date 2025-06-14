@@ -10,6 +10,7 @@ describe("configs", () => {
 		const eslint = new ESLint({
 			baseConfig: plugin.configs.recommended as Linter.Config,
 			fix: true,
+			overrideConfigFile: true,
 		});
 		const code = await readFile(
 			resolve(import.meta.filename, "../../../package.json"),

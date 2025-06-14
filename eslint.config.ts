@@ -11,6 +11,8 @@ import * as regexp from "eslint-plugin-regexp";
 import yml from "eslint-plugin-yml";
 import tseslint from "typescript-eslint";
 
+import packageJson from "./src/index.js";
+
 export default tseslint.config(
 	{
 		ignores: [
@@ -26,7 +28,9 @@ export default tseslint.config(
 	},
 	{ linterOptions: { reportUnusedDisableDirectives: "error" } },
 	eslint.configs.recommended,
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
 	comments.recommended,
+	// eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
 	eslintPlugin.configs["flat/recommended"],
 	jsdoc.configs["flat/contents-typescript-error"],
 	jsdoc.configs["flat/logical-typescript-error"],
@@ -110,5 +114,9 @@ export default tseslint.config(
 		rules: {
 			"n/no-unsupported-features/node-builtins": "off",
 		},
+	},
+	{
+		extends: [packageJson.configs.recommended],
+		files: ["package.json"],
 	},
 );

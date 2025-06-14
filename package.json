@@ -81,6 +81,7 @@
 		"eslint-plugin-regexp": "2.8.0",
 		"eslint-plugin-yml": "1.18.0",
 		"husky": "9.1.7",
+		"jiti": "^2.4.2",
 		"jsonc-eslint-parser": "2.4.0",
 		"knip": "5.60.0",
 		"lint-staged": "16.1.0",
