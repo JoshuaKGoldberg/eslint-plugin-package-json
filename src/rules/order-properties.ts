@@ -1,7 +1,7 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import detectIndent from "detect-indent";
-import detectNewline from "detect-newline";
+import { detectNewlineGraceful } from "detect-newline";
 import sortObjectKeys from "sort-object-keys";
 import { sortOrder } from "sort-package-json";
 
@@ -87,7 +87,7 @@ export const rule = createRule<Options>({
 							const endCharacters = text.endsWith("\n")
 								? "\n"
 								: "";
-							const newline = detectNewline.graceful(text);
+							const newline = detectNewlineGraceful(text);
 							let result =
 								JSON.stringify(
 									orderedSource,
