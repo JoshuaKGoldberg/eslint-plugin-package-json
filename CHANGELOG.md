@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.39.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.39.1...v0.39.2) (2025-06-15)
+
+### Bug Fixes
+
+- **deps:** update dependency detect-newline to v4 ([#875](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/875)) ([26c08d9](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/26c08d905a90729c011f3ff77d9e3784ad41cb7b))
+
 ## [0.39.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.39.0...v0.39.1) (2025-06-15)
 
 ### Bug Fixes
