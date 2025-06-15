@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@altano/repository-tools':
-        specifier: ^0.1.1
-        version: 0.1.1
+        specifier: ^1.0.0
+        version: 1.0.1
       detect-indent:
         specifier: 7.0.1
         version: 7.0.1
@@ -159,8 +159,8 @@ importers:
 
 packages:
 
-  '@altano/repository-tools@0.1.1':
-    resolution: {integrity: sha512-5vbUs2A98CC3g1AlOBdkBE0BMukkLjLIsMHAtuxg6Pt9dQXxYWdLKOf66v6c/vIqtNcgTMv0oGtddLdMuH9X6w==}
+  '@altano/repository-tools@1.0.1':
+    resolution: {integrity: sha512-/FFHQOMp5TZWplkDWbbLIjmANDr9H/FtqUm+hfJMK76OBut0Ht0cNfd0ZXd/6LXf4pWUTzvpgVjcin7EEHSznA==}
 
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
@@ -4242,7 +4242,7 @@ packages:
 
 snapshots:
 
-  '@altano/repository-tools@0.1.1': {}
+  '@altano/repository-tools@1.0.1': {}
 
   '@ampproject/remapping@2.3.0':
     dependencies:

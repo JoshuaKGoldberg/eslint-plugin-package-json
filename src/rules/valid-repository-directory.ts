@@ -1,6 +1,6 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
-import { findRootSync } from "@altano/repository-tools/findRootSync.cjs";
+import { findRootSync } from "@altano/repository-tools";
 import * as ESTree from "estree";
 import * as path from "node:path";
 

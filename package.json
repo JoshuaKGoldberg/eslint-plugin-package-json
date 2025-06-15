@@ -45,7 +45,7 @@
 		"*": "prettier --ignore-unknown --write"
 	},
 	"dependencies": {
-		"@altano/repository-tools": "^0.1.1",
+		"@altano/repository-tools": "^1.0.0",
 		"detect-indent": "7.0.1",
 		"detect-newline": "3.1.0",
 		"eslint-fix-utils": "^0.2.0",
