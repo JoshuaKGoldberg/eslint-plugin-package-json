@@ -151,6 +151,64 @@ ruleTester.run("sort-collections", rule, {
   }
 }`,
 		},
+		{
+			code: `{
+	"pnpm": {
+		"patchedDependencies": {
+			"typescript@4.8.4": "patches/typescript@4.8.4.patch",
+			"eslint-plugin-package-json@0.31.0": "patches/eslint-plugin-package-json@0.31.0.patch"
+		}
+	}
+}`,
+			errors: [
+				{
+					data: { key: "pnpm.patchedDependencies" },
+					messageId: "notAlphabetized",
+					type: "JSONProperty",
+				},
+			],
+			filename: "package.json",
+			options: [["pnpm.patchedDependencies"]],
+			output: `{
+	"pnpm": {
+		"patchedDependencies": {
+    "eslint-plugin-package-json@0.31.0": "patches/eslint-plugin-package-json@0.31.0.patch",
+    "typescript@4.8.4": "patches/typescript@4.8.4.patch"
+  }
+	}
+}`,
+		},
+		{
+			code: `{
+	"pnpm": {
+		"peerDependencyRules": {
+            "allowedVersions": {
+                "vue": "2",
+                "react": "17"
+            }
+		}
+	}
+}`,
+			errors: [
+				{
+					data: { key: "pnpm.peerDependencyRules.allowedVersions" },
+					messageId: "notAlphabetized",
+					type: "JSONProperty",
+				},
+			],
+			filename: "package.json",
+			options: [["pnpm.peerDependencyRules.allowedVersions"]],
+			output: `{
+	"pnpm": {
+		"peerDependencyRules": {
+            "allowedVersions": {
+    "react": "17",
+    "vue": "2"
+  }
+		}
+	}
+}`,
+		},
 	],
 
 	valid: [
@@ -213,6 +271,78 @@ ruleTester.run("sort-collections", rule, {
         "postbuild": "echo test"
 	}
 }`,
+		},
+		{
+			code: `{
+	"nested": {
+		"devDependencies": {
+			"typescript": "4.8.4",
+			"eslint-plugin-package-json": "0.31.0"
+		}
+	}
+}`,
+		},
+		{
+			code: `{
+	"pnpm": {
+		"patchedDependencies": {
+			"eslint-plugin-package-json@0.31.0": "patches/eslint-plugin-package-json@0.31.0.patch",
+			"typescript@4.8.4": "patches/typescript@4.8.4.patch"
+		}
+	}
+}`,
+		},
+		{
+			code: `{
+	"pnpm": {
+		"peerDependencyRules": {
+            "allowedVersions": {
+                "vue": "2",
+                "react": "17"
+            }
+		}
+	}
+}`,
+		},
+		{
+			code: `{
+	"pnpm": {
+		"peerDependencyRules": {
+            "allowedVersions": {
+                "react": "17",
+                "vue": "2"
+            }
+		}
+	}
+}`,
+			options: [["pnpm.peerDependencyRules.allowedVersions"]],
+		},
+
+		{
+			code: `{
+  "foo": [
+    {
+      "bar": {
+        "b": 2,
+        "a": 1
+      }
+    }
+  ]
+}`,
+			options: [["foo.bar"]],
+		},
+		{
+			code: `{
+  "foo": [
+    {
+      "bar": {
+        "b": 2,
+        "a": 1
+      }
+    }
+  ]
+}`,
+			options: [["foo.0.bar"]],
 		},
 	],
 });
