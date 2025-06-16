@@ -102,7 +102,7 @@ ruleTester.run("valid-repository-directory (no repository)", rule, {
 	],
 });
 
-const thisRepoDirectory = path.resolve(__dirname, "..", "..", "..");
+const thisRepoDirectory = path.resolve(import.meta.dirname, "..", "..", "..");
 ruleTester.run("valid-repository-directory (this repository)", rule, {
 	invalid: [
 		{

@@ -10,28 +10,11 @@
 		"pnpm-lock.yaml"
 	],
 	"words": [
-		"Codecov",
 		"altano",
-		"autofixable",
-		"codespace",
-		"commitlint",
-		"contributorsrc",
-		"conventionalcommits",
-		"eslint-doc-generatorrc",
-		"estree",
-		"knip",
-		"lcov",
-		"markdownlintignore",
-		"npmpackagejsonlintrc",
-		"outro",
-		"packagejson",
+		"generatorrc",
+		"nodenext",
 		"postbuild",
 		"postwatch",
-		"quickstart",
-		"ruleset",
-		"tsup",
-		"wontfix",
-		"zetlan",
 		"zetlen"
 	]
 }

@@ -78,5 +78,14 @@ ruleTester.run("valid-package-definition", rule, {
 }`,
 			filename: "package.json",
 		},
+		{
+			code: `{ "thee-silver": "mt-zion" }`,
+			filename: "packages/nested/package.json",
+			options: [
+				{
+					ignoreProperties: ["name", "version"],
+				},
+			],
+		},
 	],
 });

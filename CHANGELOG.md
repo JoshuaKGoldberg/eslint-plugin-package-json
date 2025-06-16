@@ -1,5 +1,65 @@
 # Changelog
 
+## [0.39.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.39.1...v0.39.2) (2025-06-15)
+
+### Bug Fixes
+
+- **deps:** update dependency detect-newline to v4 ([#875](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/875)) ([26c08d9](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/26c08d905a90729c011f3ff77d9e3784ad41cb7b))
+
+## [0.39.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.39.0...v0.39.1) (2025-06-15)
+
+### Bug Fixes
+
+- **deps:** update dependency @altano/repository-tools to v1 ([#1006](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1006)) ([da63ce3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/da63ce37654652690aa2bc3ea2a042a3ac7ff465))
+
+# [0.39.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.38.1...v0.39.0) (2025-06-13)
+
+### Features
+
+- deprecate `valid-local-dependency` ([#1107](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1107)) ([4efea70](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4efea705124a31a35ba9e10e3bb0ef79bf442fab)), closes [#1096](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1096)
+
+## [0.38.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.38.0...v0.38.1) (2025-06-13)
+
+### Bug Fixes
+
+- **valid-local-dependency:** don't flag archives as invalid ([#1109](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1109)) ([3d89865](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/3d89865bba6e3ecab02576cde131336a7dc8c169)), closes [#1086](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1086)
+
+# [0.38.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.37.0...v0.38.0) (2025-06-13)
+
+### Features
+
+- add `valid-author` rule ([#1079](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1079)) ([b8e8b40](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/b8e8b40065a0aa0bfa9e38697ab5fe3241b7d6d7)), closes [#840](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/840)
+
+# [0.37.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.36.0...v0.37.0) (2025-06-12)
+
+### Features
+
+- **valid-bin:** add new rule for validating bin ([#1082](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1082)) ([e9cc86e](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/e9cc86ec5827a4374f81886865b578f40823c5b8)), closes [#818](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/818) [#1077](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1077)
+
+# [0.36.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.35.1...v0.36.0) (2025-06-11)
+
+### Features
+
+- migrate to ESM-only ([#1100](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1100)) ([623f162](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/623f162daa726a717c3ad48c1a777c3be7c404b0)), closes [#1080](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1080)
+
+## [0.35.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.35.0...v0.35.1) (2025-06-10)
+
+### Bug Fixes
+
+- **deps:** update dependency detect-indent to v7 ([#874](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/874)) ([65300dc](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/65300dc30dfdc79ab789a144f251f0b8ba96ea22))
+
+# [0.35.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.34.0...v0.35.0) (2025-06-10)
+
+### Features
+
+- remove support for node 18 ([#1097](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1097)) ([257659a](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/257659af4fda63e2143d1ab250546dd3cb0932e7)), closes [#1074](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1074)
+
+# [0.34.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.33.2...v0.34.0) (2025-06-10)
+
+### Features
+
+- **valid-package-definition:** add ignoreProperties option ([#1077](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1077)) ([530e343](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/530e3430f87f21c9fadd4d511097d20e26f7190f)), closes [#1076](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1076)
+
 ## [0.33.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.33.1...v0.33.2) (2025-06-01)
 
 ### Bug Fixes

@@ -15,12 +15,13 @@ export default tseslint.config(
 	{
 		ignores: [
 			"**/*.snap",
-			".eslint-doc-generatorrc.mjs",
+			".eslint-doc-generatorrc.js",
 			"coverage",
 			"docs/rules/*/*.ts",
 			"lib",
 			"node_modules",
 			"pnpm-lock.yaml",
+			"src/tests/__fixtures__",
 		],
 	},
 	{ linterOptions: { reportUnusedDisableDirectives: "error" } },

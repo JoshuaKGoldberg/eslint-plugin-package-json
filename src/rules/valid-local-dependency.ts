@@ -2,6 +2,9 @@ import path from "path";
 
 import { createRule } from "../createRule.js";
 
+const fileRegex = /^file:/;
+const linkRegex = /^link:/;
+
 export const rule = createRule({
 	create(context) {
 		return {
@@ -21,11 +24,10 @@ export const rule = createRule({
 
 				for (const obj of depObjs) {
 					for (const [key, value] of obj) {
-						const response = (localPath: RegExp | string) => {
+						const response = (pathToken: RegExp) => {
 							const filePath = path.join(
-								context.filename.replace(/package\.json/g, "/"),
-								value.replace(new RegExp(localPath, "g"), ""),
-								"/package.json",
+								context.filename.replace("package.json", ""),
+								value.replace(pathToken, ""),
 							);
 
 							// Attempt to resolve the file path, and if it fails
@@ -45,11 +47,11 @@ export const rule = createRule({
 						};
 
 						if (value.startsWith("link:")) {
-							response("link:");
+							response(linkRegex);
 						}
 
 						if (value.startsWith("file:")) {
-							response("file:");
+							response(fileRegex);
 						}
 					}
 				}
@@ -58,11 +60,11 @@ export const rule = createRule({
 	},
 
 	meta: {
+		deprecated: true,
 		docs: {
 			category: "Best Practices",
 			description:
 				"Checks existence of local dependencies in the package.json",
-			recommended: true,
 		},
 		messages: {
 			invalidPath:

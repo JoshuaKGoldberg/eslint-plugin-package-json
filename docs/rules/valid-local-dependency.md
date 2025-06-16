@@ -1,6 +1,6 @@
 # valid-local-dependency
 
-💼 This rule is enabled in the following configs: ✔️ `legacy-recommended`, ✅ `recommended`.
+❌ This rule is deprecated.
 
 <!-- end auto-generated rule header -->
 
