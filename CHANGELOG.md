@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.40.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.39.2...v0.40.0) (2025-06-16)
+
+### Features
+
+- **valid-bin:** add option for enforcing kebab-case ([#1113](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1113)) ([0024a4e](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/0024a4e42c70684b81e942a9aaeace0322c02fef)), closes [#1081](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1081)
+
 ## [0.39.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.39.1...v0.39.2) (2025-06-15)
 
 ### Bug Fixes
