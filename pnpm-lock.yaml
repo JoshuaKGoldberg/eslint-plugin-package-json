@@ -11,6 +11,9 @@ importers:
       '@altano/repository-tools':
         specifier: ^1.0.0
         version: 1.0.1
+      change-case:
+        specifier: ^5.4.4
+        version: 5.4.4
       detect-indent:
         specifier: 7.0.1
         version: 7.0.1
