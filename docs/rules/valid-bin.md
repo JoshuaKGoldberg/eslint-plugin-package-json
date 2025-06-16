@@ -6,7 +6,7 @@
 
 <!-- end auto-generated rule header -->
 
-This rule does the following checks on value of the `bin` property:
+This rule does the following checks on the value of the `bin` property:
 
 - It must be either a non-empty string or an object.
 - If the value is an object, it should only consist of non-empty string values
