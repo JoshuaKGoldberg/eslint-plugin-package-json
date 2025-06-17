@@ -55,7 +55,7 @@ export const rule = createRule({
 				context.report({
 					data: { file: element.value },
 					messageId,
-					node: element as unknown as ESTree.Node,
+					node: element,
 					suggest: [
 						{
 							fix: fixRemoveArrayElement(

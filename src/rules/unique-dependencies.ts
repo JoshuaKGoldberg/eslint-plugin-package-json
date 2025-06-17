@@ -45,7 +45,7 @@ export const rule = createRule({
 				const removal = getNodeToRemove(node);
 				context.report({
 					messageId: "overridden",
-					node: node as unknown as ESTree.Node,
+					node,
 					suggest: [
 						{
 							fix:
