@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.40.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.40.0...v0.40.1) (2025-06-18)
+
+### Bug Fixes
+
+- **deps:** update dependency eslint-fix-utils to ^0.3.0 ([#1124](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1124)) ([1e30861](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/1e3086136f2449e0be6c4397af2de15287899da0))
+
 # [0.40.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.39.2...v0.40.0) (2025-06-16)
 
 ### Features
