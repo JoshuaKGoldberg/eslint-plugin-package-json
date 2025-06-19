@@ -1,3 +1,11 @@
+name: CI
+
+on:
+  pull_request: ~
+  push:
+    branches:
+      - main
+
 jobs:
   build:
     name: Build
@@ -58,11 +66,20 @@ jobs:
       - uses: ./.github/actions/prepare
       - run: pnpm format --list-different
   test:
-    name: Test
+    name: Test (Node.js ${{ matrix.node-version }})
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version:
+          - 24
+          - 22
+          - 20
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - uses: ./.github/actions/prepare
+        with:
+          node-version: ${{ matrix.node-version }}
       - run: pnpm run test --coverage
       - env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
@@ -75,11 +92,3 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - uses: ./.github/actions/prepare
       - run: pnpm typecheck
-
-name: CI
-
-on:
-  pull_request: ~
-  push:
-    branches:
-      - main
