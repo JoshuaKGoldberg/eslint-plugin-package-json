@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.40.4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.40.3...v0.40.4) (2025-06-20)
+
+### Bug Fixes
+
+- **deps:** update dependency package-json-validator to ~0.15.0 ([#1131](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1131)) ([4bf7d9c](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4bf7d9cd091faf9ac0fb286b5968d6417328c79c))
+
 ## [0.40.3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.40.2...v0.40.3) (2025-06-19)
 
 ### Bug Fixes
