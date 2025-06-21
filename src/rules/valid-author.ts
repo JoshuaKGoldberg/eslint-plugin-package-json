@@ -1,6 +1,5 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
-import * as ESTree from "estree";
 import { validateAuthor } from "package-json-validator";
 
 import { createRule } from "../createRule.js";
@@ -13,9 +12,7 @@ export const rule = createRule({
 				node: JsonAST.JSONProperty,
 			) {
 				const authorValue: unknown = JSON.parse(
-					context.sourceCode.getText(
-						node.value as unknown as ESTree.Node,
-					),
+					context.sourceCode.getText(node.value),
 				);
 
 				const errors = validateAuthor(authorValue);
@@ -26,7 +23,7 @@ export const rule = createRule({
 							errors: formatErrors(errors),
 						},
 						messageId: "invalid",
-						node: node.value as unknown as ESTree.Node,
+						node: node.value,
 					});
 				}
 			},

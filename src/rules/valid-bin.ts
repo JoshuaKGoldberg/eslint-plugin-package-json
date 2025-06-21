@@ -1,5 +1,4 @@
 import { kebabCase } from "change-case";
-import * as ESTree from "estree";
 import { AST as JsonAST } from "jsonc-eslint-parser";
 import { validateBin } from "package-json-validator";
 
@@ -16,7 +15,7 @@ export const rule = createRule<Options>({
 			"Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.value=bin]"(
 				node: JsonAST.JSONProperty,
 			) {
-				const binValueNode = node.value as unknown as ESTree.Node;
+				const binValueNode = node.value;
 				const binValue: unknown = JSON.parse(
 					context.sourceCode.getText(binValueNode),
 				);

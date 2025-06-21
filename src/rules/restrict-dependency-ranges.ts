@@ -1,6 +1,5 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
-import * as ESTree from "estree";
 import semver from "semver";
 
 import { createRule } from "../createRule.js";
@@ -220,7 +219,7 @@ export const rule = createRule<Options>({
 									rangeTypes: rangeTypes.join(", "),
 								},
 								messageId: "wrongRangeType",
-								node: property.value as unknown as ESTree.Node,
+								node: property.value,
 							});
 							break;
 						}
@@ -243,7 +242,7 @@ export const rule = createRule<Options>({
 									rangeTypes: rangeTypes.join(", "),
 								},
 								messageId: "wrongRangeType",
-								node: property.value as unknown as ESTree.Node,
+								node: property.value,
 								suggest: rangeTypes.map((rangeType) => ({
 									fix(fixer) {
 										return fixer.replaceText(

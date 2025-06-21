@@ -53,7 +53,7 @@ const report = (
 	context.report({
 		data,
 		messageId,
-		node: node as unknown as ESTree.Node,
+		node,
 		suggest: [
 			{
 				fix:

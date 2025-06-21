@@ -1,7 +1,6 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { findRootSync } from "@altano/repository-tools";
-import * as ESTree from "estree";
 import * as path from "node:path";
 
 import { createRule } from "../createRule.js";
@@ -81,7 +80,7 @@ export const rule = createRule({
 					) {
 						context.report({
 							messageId: "mismatched",
-							node: directoryProperty.value as unknown as ESTree.Node,
+							node: directoryProperty.value,
 						});
 					}
 				} else {
@@ -108,13 +107,13 @@ export const rule = createRule({
 					if (expected !== directoryValue) {
 						context.report({
 							messageId: "mismatched",
-							node: directoryProperty.value as unknown as ESTree.Node,
+							node: directoryProperty.value,
 							suggest: [
 								{
 									data: { expected },
 									fix(fixer) {
 										return fixer.replaceText(
-											directoryProperty.value as unknown as ESTree.Node,
+											directoryProperty.value,
 											`"${expected}"`,
 										);
 									},

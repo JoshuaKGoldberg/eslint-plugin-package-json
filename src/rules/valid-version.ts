@@ -1,6 +1,5 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
-import * as ESTree from "estree";
 import semver from "semver";
 
 import { createRule } from "../createRule.js";
@@ -17,7 +16,7 @@ export const rule = createRule({
 				) {
 					context.report({
 						messageId: "type",
-						node: node.value as unknown as ESTree.Node,
+						node: node.value,
 					});
 					return;
 				}
@@ -25,7 +24,7 @@ export const rule = createRule({
 				if (!semver.valid(node.value.value)) {
 					context.report({
 						messageId: "invalid",
-						node: node.value as unknown as ESTree.Node,
+						node: node.value,
 					});
 				}
 			},
