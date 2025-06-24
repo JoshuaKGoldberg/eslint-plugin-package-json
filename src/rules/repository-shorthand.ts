@@ -1,5 +1,3 @@
-import type ESTree from "estree";
-
 import { JSONProperty } from "jsonc-eslint-parser/lib/parser/ast.js";
 
 import { createRule } from "../createRule.js";
@@ -35,7 +33,7 @@ export const rule = createRule<Options>({
 						}
 
 						return fixer.replaceText(
-							node.value as unknown as ESTree.Node,
+							node.value,
 							JSON.stringify(
 								{
 									type: "git",
@@ -47,7 +45,7 @@ export const rule = createRule<Options>({
 						);
 					},
 					messageId: "preferObject",
-					node: node.value as unknown as ESTree.Node,
+					node: node.value,
 				});
 			}
 		}
@@ -59,12 +57,12 @@ export const rule = createRule<Options>({
 					context.report({
 						fix(fixer) {
 							return fixer.replaceText(
-								node.value as unknown as ESTree.Node,
+								node.value,
 								JSON.stringify(cleanGitHubUrl(value)),
 							);
 						},
 						messageId: "preferShorthand",
-						node: node.value as unknown as ESTree.Node,
+						node: node.value,
 					});
 				}
 
@@ -103,12 +101,12 @@ export const rule = createRule<Options>({
 			context.report({
 				fix(fixer) {
 					return fixer.replaceText(
-						node.value as unknown as ESTree.Node,
+						node.value,
 						JSON.stringify(cleanGitHubUrl(url)),
 					);
 				},
 				messageId: "preferShorthand",
-				node: node.value as unknown as ESTree.Node,
+				node: node.value,
 			});
 		}
 

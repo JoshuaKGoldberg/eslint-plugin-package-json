@@ -1,7 +1,5 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
-import * as ESTree from "estree";
-
 import { createRule } from "../createRule.js";
 
 const defaultCollections = new Set([
@@ -119,7 +117,7 @@ export const rule = createRule<Options>({
 						},
 						fix(fixer) {
 							return fixer.replaceText(
-								collection as unknown as ESTree.Node,
+								collection,
 								JSON.stringify(
 									desiredOrder.reduce<
 										Record<string, unknown>
@@ -130,7 +128,7 @@ export const rule = createRule<Options>({
 											).value
 										] = JSON.parse(
 											context.sourceCode.getText(
-												property.value as unknown as ESTree.Node,
+												property.value,
 											),
 										);
 										return out;
@@ -144,7 +142,7 @@ export const rule = createRule<Options>({
 						},
 						loc: collection.loc,
 						messageId: "notAlphabetized",
-						node: node as unknown as ESTree.Node,
+						node,
 					});
 				}
 			},
