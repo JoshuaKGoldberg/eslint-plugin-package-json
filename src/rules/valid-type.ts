@@ -1,4 +1,3 @@
-import * as ESTree from "estree";
 import { AST as JsonAST } from "jsonc-eslint-parser";
 import { validateType } from "package-json-validator";
 
@@ -11,7 +10,7 @@ export const rule = createRule({
 			"Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.value=type]"(
 				node: JsonAST.JSONProperty,
 			) {
-				const typeValueNode = node.value as unknown as ESTree.Node;
+				const typeValueNode = node.value;
 				const typeValue: unknown = JSON.parse(
 					context.sourceCode.getText(typeValueNode),
 				);
