@@ -143,6 +143,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [valid-name](docs/rules/valid-name.md)                                 | Enforce that package names are valid npm package names                                            | ✔️ ✅ |    |    |    |
 | [valid-package-definition](docs/rules/valid-package-definition.md)     | Enforce that package.json has all properties required by the npm spec                             | ✔️ ✅ |    |    |    |
 | [valid-repository-directory](docs/rules/valid-repository-directory.md) | Enforce that if repository directory is specified, it matches the path to the package.json file   | ✔️ ✅ |    | 💡 |    |
+| [valid-scripts](docs/rules/valid-scripts.md)                           | Enforce that the `scripts` property is valid.                                                     | ✔️ ✅ |    |    |    |
 | [valid-type](docs/rules/valid-type.md)                                 | Enforce that the `type` property is valid.                                                        | ✔️ ✅ |    |    |    |
 | [valid-version](docs/rules/valid-version.md)                           | Enforce that package versions are valid semver specifiers                                         | ✔️ ✅ |    |    |    |
 
