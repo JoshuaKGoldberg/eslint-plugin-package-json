@@ -1,0 +1,26 @@
+name: 💬 RFC
+title: "💬 RFC: <short description of the proposal>"
+description: Request feedback from the community on a significant change to the project.
+
+labels:
+  - "type: rfc"
+
+body:
+  - attributes:
+      description: If any of these required steps are not taken, we may not be able to review your issue. Help us to help you!
+      label: RFC Checklist
+      options:
+        - label: I have [searched for related issues](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=is%3Aissue) and found none that matched my issue.
+          required: true
+    type: checkboxes
+  - attributes:
+      description: What did you expect to be able to do?
+      label: Overview
+    type: textarea
+    validations:
+      required: true
+  - attributes:
+      description: Any additional info you'd like to provide.
+      label: This RFC will remain open until
+      placeholder: YYYY-MM-DD
+    type: input
