@@ -1,4 +1,3 @@
-import { kebabCase } from "change-case";
 import { AST as JsonAST } from "jsonc-eslint-parser";
 import { validateScripts } from "package-json-validator";
 
