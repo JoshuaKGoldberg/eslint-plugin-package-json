@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.42.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.41.0...v0.42.0) (2025-06-25)
+
+### Features
+
+- remove deprecated `valid-package-def` rule ([#1111](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1111)) ([946a585](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/946a585c2c9344ac227463cf234714fc204f1746)), closes [#1110](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1110) [#711](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/711)
+
 # [0.41.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.40.5...v0.41.0) (2025-06-24)
 
 ### Features
