@@ -18,6 +18,7 @@ import { rule as validLocalDependency } from "./rules/valid-local-dependency.js"
 import { rule as validName } from "./rules/valid-name.js";
 import { rule as validPackageDefinition } from "./rules/valid-package-definition.js";
 import { rule as validRepositoryDirectory } from "./rules/valid-repository-directory.js";
+import { rule as validScripts } from "./rules/valid-scripts.js";
 import { rule as validType } from "./rules/valid-type.js";
 import { rule as validVersion } from "./rules/valid-version.js";
 
@@ -43,6 +44,7 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"valid-name": validName,
 	"valid-package-definition": validPackageDefinition,
 	"valid-repository-directory": validRepositoryDirectory,
+	"valid-scripts": validScripts,
 	"valid-type": validType,
 	"valid-version": validVersion,
 };

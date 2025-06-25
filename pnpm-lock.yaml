@@ -15,13 +15,13 @@ importers:
         specifier: ^5.4.4
         version: 5.4.4
       detect-indent:
-        specifier: 7.0.1
+        specifier: ^7.0.1
         version: 7.0.1
       detect-newline:
-        specifier: 4.0.1
+        specifier: ^4.0.1
         version: 4.0.1
       eslint-fix-utils:
-        specifier: ^0.4.0
+        specifier: ~0.4.0
         version: 0.4.0(@types/estree@1.0.7)(eslint@9.29.0(jiti@2.4.2))
       package-json-validator:
         specifier: ~0.17.0
