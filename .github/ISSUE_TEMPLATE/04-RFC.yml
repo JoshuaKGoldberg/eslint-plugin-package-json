@@ -15,13 +15,13 @@ body:
           required: true
     type: checkboxes
   - attributes:
-      description: What did you expect to be able to do?
+      description: Please provide details about your proposal?
       label: Overview
     type: textarea
     validations:
       required: true
   - attributes:
-      description: Any additional info you'd like to provide.
+      description: How long should this RFC remain open for feedback?  This should be no less than 6 weeks from the publishing date.
       label: This RFC will remain open until
       placeholder: YYYY-MM-DD
     type: input
