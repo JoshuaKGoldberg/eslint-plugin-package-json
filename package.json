@@ -74,7 +74,7 @@
 		"eslint": "9.29.0",
 		"eslint-doc-generator": "2.2.0",
 		"eslint-plugin-eslint-plugin": "6.5.0",
-		"eslint-plugin-jsdoc": "51.1.0",
+		"eslint-plugin-jsdoc": "51.2.1",
 		"eslint-plugin-jsonc": "2.20.0",
 		"eslint-plugin-markdown": "5.1.0",
 		"eslint-plugin-n": "17.20.0",
