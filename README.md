@@ -152,6 +152,25 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 These rules only run on `package.json` files; they will ignore all other files being linted.
 They can lint `package.json` files at project root and in any subfolder of the project, making this plugin great for monorepos.
 
+## Deprecation Policy
+
+We never _want_ to remove things, when we're building them!
+But the reality is that libraries evolve and deprecations are a fact of life.
+Following are the different timeframes that we've defined as it relates to deprecating APIs in this project.
+
+### RFC Timeframe (6 weeks)
+
+When some aspect of our API is going to be deprecated (and eventually removed), it must initially go through an RFC phase.
+Whoever's motivating the removal of the api, should create an RFC issue explaining the proposal and inviting feedback from the community.
+That RFC should remain active for at least 6 weeks.
+The RFC text should make clear what the target date is for closing the RFC.
+Once the RFC period is over, if the removal is still moving forward, the API(s) should be officially deprecated.
+
+### Removal Timeframe (6 months)
+
+Once an API has been marked as deprecated, it will remain intact for at least 6 months.
+After 6 months from the date of deprecation, the API is subject for removal.
+
 ## Development
 
 See [`.github/CONTRIBUTING.md`](./.github/CONTRIBUTING.md), then [`.github/DEVELOPMENT.md`](./.github/DEVELOPMENT.md).
