@@ -169,7 +169,7 @@ Once the RFC period is over, if the removal is still moving forward, the API(s) 
 ### Removal Timeframe (6 months)
 
 Once an API has been marked as deprecated, it will remain intact for at least 6 months.
-After 6 months from the date of deprecation, the API is subject for removal.
+After 6 months from the date of deprecation, the API is subject to removal.
 
 ## Development
 
