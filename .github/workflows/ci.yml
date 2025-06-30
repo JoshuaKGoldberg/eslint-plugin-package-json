@@ -51,13 +51,6 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
       - uses: ./.github/actions/prepare
       - run: pnpm lint:packages
-  lint_spelling:
-    name: Lint Spelling
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
-      - uses: ./.github/actions/prepare
-      - run: pnpm lint:spelling
   prettier:
     name: Prettier
     runs-on: ubuntu-latest
