@@ -13,6 +13,7 @@ ruleTester.run("valid-bundleDependencies", rule, {
 					{
 						data: {
 							errors: "the field is `null`, but should be an `Array` or a `boolean`",
+							property,
 						},
 						messageId: "validationError",
 					},
@@ -27,6 +28,7 @@ ruleTester.run("valid-bundleDependencies", rule, {
 					{
 						data: {
 							errors: "the type should be `Array` or `boolean`, not `number`",
+							property,
 						},
 						messageId: "validationError",
 					},
@@ -41,6 +43,7 @@ ruleTester.run("valid-bundleDependencies", rule, {
 					{
 						data: {
 							errors: "the type should be `Array` or `boolean`, not `string`",
+							property,
 						},
 						messageId: "validationError",
 					},
@@ -55,6 +58,7 @@ ruleTester.run("valid-bundleDependencies", rule, {
 					{
 						data: {
 							errors: "the type should be `Array` or `boolean`, not `object`",
+							property,
 						},
 						messageId: "validationError",
 					},
@@ -72,6 +76,7 @@ ruleTester.run("valid-bundleDependencies", rule, {
  - item at index 1 is empty, but should be a dependency name
  - item at index 2 should be a string, not \`number\`
  - item at index 3 should be a string, not \`null\``,
+							property,
 						},
 						messageId: "validationError",
 					},
