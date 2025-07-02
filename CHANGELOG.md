@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.43.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.42.1...v0.43.0) (2025-07-02)
+
+### Features
+
+- **valid-scripts:** add new rule for validating scripts ([#1138](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1138)) ([99cc2a5](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/99cc2a5d069bfff53885f0717b8a635767cb2c19)), closes [#839](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/839)
+
 ## [0.42.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.42.0...v0.42.1) (2025-07-01)
 
 ### Bug Fixes
