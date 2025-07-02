@@ -39,7 +39,7 @@ export const rule = createRule({
 			recommended: true,
 		},
 		messages: {
-			validationError: "Invalid bin: {{ errors }}",
+			validationError: "Invalid bundleDependencies: {{ errors }}",
 		},
 		schema: [],
 		type: "problem",
