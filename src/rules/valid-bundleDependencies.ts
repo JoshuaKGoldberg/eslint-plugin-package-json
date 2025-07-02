@@ -17,7 +17,7 @@ export const rule = createRule({
 				context.report({
 					data: {
 						errors: formatErrors(errors),
-						property: node.key.value,
+						property: (node.key as JsonAST.JSONStringLiteral).value,
 					},
 					messageId: "validationError",
 					node: bundleDependenciesValueNode,
