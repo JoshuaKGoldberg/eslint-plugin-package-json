@@ -17,6 +17,7 @@ export const rule = createRule({
 				context.report({
 					data: {
 						errors: formatErrors(errors),
+						property: node.key.value,
 					},
 					messageId: "validationError",
 					node: bundleDependenciesValueNode,
@@ -39,7 +40,7 @@ export const rule = createRule({
 			recommended: true,
 		},
 		messages: {
-			validationError: "Invalid bundleDependencies: {{ errors }}",
+			validationError: "Invalid {{ property }}: {{ errors }}",
 		},
 		schema: [],
 		type: "problem",
