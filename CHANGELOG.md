@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.43.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.43.0...v0.43.1) (2025-07-03)
+
+### Bug Fixes
+
+- disallow extra properties in rule options ([#1156](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1156)) ([4186e96](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4186e960c17a5397ac916184fc4341f9b26fc3d0))
+
 # [0.43.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.42.1...v0.43.0) (2025-07-02)
 
 ### Features
