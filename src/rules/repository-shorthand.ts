@@ -144,6 +144,7 @@ export const rule = createRule<Options>({
 		},
 		schema: [
 			{
+				additionalProperties: false,
 				properties: {
 					form: {
 						enum: ["object", "shorthand"],
