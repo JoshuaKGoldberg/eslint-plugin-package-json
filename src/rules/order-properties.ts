@@ -124,6 +124,7 @@ export const rule = createRule<Options>({
 		},
 		schema: [
 			{
+				additionalProperties: false,
 				properties: {
 					order: {
 						anyOf: [
