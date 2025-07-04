@@ -42,6 +42,110 @@ ruleTester.run("require-type", rules["require-type"], {
 				},
 			],
 		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "type" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "type" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": false
+          }`,
+			errors: [
+				{
+					data: { property: "type" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": "true"
+          }`,
+			errors: [
+				{
+					data: { property: "type" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{}`,
+			errors: [
+				{
+					data: { property: "type" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
 	],
-	valid: [`{ "type": "module" }`],
+	valid: [
+		`{ "type": "module" }`,
+		{
+			code: `{
+          "private": true,
+          "type": "module"
+          }`,
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": true,
+          "type": "module"
+          }`,
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": false,
+          "type": "module"
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": false,
+          "type": "module"
+          }`,
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": "true",
+          "type": "module"
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
+	],
 });
