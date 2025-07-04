@@ -25,7 +25,7 @@ Example of **correct** code for this rule:
 
 See [TypeScript Handbook > Publishing](https://www.typescriptlang.org/docs/handbook/declaration-files/publishing.html) for more information on publishing package types.
 
-### Options
+## Options
 
 You can set the `ignorePrivate` option to `true` to ignore package.json files with `"private": true` (default: `false`).
 
