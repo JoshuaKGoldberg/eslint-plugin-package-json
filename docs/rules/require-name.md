@@ -25,9 +25,10 @@ Example of **correct** code for this rule:
 }
 ```
 
-### Options
+## Options
 
-You can set the `ignorePrivate` option to `true` to ignore package.json files with `"private": true`. This is the default.
+You can set the `ignorePrivate` option to `true` to ignore package.json files with `"private": true`.
+This is the default.
 
 ```json
 {
