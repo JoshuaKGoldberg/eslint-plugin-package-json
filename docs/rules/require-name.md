@@ -24,3 +24,55 @@ Example of **correct** code for this rule:
 	"author": "Jessica Moss"
 }
 ```
+
+### Options
+
+You can set the `ignorePrivate` option to `true` to ignore package.json files with `"private": true`. This is the default.
+
+```json
+{
+	"package-json/require-name": [
+		"error",
+		{
+			"ignorePrivate": true
+		}
+	]
+}
+```
+
+Example of **incorrect** code for this rule with the `{ "ignorePrivate": false }` option:
+
+```json
+{
+	"private": true
+}
+```
+
+Example of **correct** code for this rule with the `{ "ignorePrivate": false }` option:
+
+```json
+{
+	"private": true,
+	"name": "thee-silver-mt-zion"
+}
+```
+
+Example of **incorrect** code for this rule with the `{ "ignorePrivate": true }` option:
+
+```json
+{
+	"private": false
+}
+```
+
+```json
+{}
+```
+
+Example of **correct** code for this rule with the `{ "ignorePrivate": true }` option:
+
+```json
+{
+	"private": true
+}
+```
