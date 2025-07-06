@@ -42,6 +42,110 @@ ruleTester.run("require-files", rules["require-files"], {
 				},
 			],
 		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "files" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "files" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": false
+          }`,
+			errors: [
+				{
+					data: { property: "files" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": "true"
+          }`,
+			errors: [
+				{
+					data: { property: "files" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{}`,
+			errors: [
+				{
+					data: { property: "files" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
 	],
-	valid: [`{ "files": ["lib"] }`],
+	valid: [
+		`{ "files": ["lib"] }`,
+		{
+			code: `{
+          "private": true,
+          "files": ["lib"]
+          }`,
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": true,
+          "files": ["lib"]
+          }`,
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": false,
+          "files": ["lib"]
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": false,
+          "files": ["lib"]
+          }`,
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": "true",
+          "files": ["lib"]
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
+	],
 });

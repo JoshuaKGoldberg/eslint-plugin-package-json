@@ -44,10 +44,112 @@ ruleTester.run("require-description", rules["require-description"], {
 				},
 			],
 		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "description" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "description" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": false
+          }`,
+			errors: [
+				{
+					data: { property: "description" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": "true"
+          }`,
+			errors: [
+				{
+					data: { property: "description" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{}`,
+			errors: [
+				{
+					data: { property: "description" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
 	],
 	valid: [
 		`{ "main": "./index.js", "description": "Thee Silver Mt. Zion" }`,
 		`{ "description": "Thee Silver Mt. Zion" }`,
 		`{ "description": 123 }`,
+		{
+			code: `{
+          "private": true,
+          "description": "Thee Silver Mt. Zion"
+          }`,
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": true,
+          "description": "Thee Silver Mt. Zion"
+          }`,
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": false,
+          "description": "Thee Silver Mt. Zion"
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": false,
+          "description": "Thee Silver Mt. Zion"
+          }`,
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": "true",
+          "description": "Thee Silver Mt. Zion"
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
 	],
 });

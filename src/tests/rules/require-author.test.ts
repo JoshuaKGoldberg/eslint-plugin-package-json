@@ -44,11 +44,113 @@ ruleTester.run("require-author", rules["require-author"], {
 				},
 			],
 		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "author" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "author" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": false
+          }`,
+			errors: [
+				{
+					data: { property: "author" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": "true"
+          }`,
+			errors: [
+				{
+					data: { property: "author" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{}`,
+			errors: [
+				{
+					data: { property: "author" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
 	],
 	valid: [
 		`{ "main": "./index.js", "author": "Sophie Trudeau" }`,
 		`{ "author": "Jessica Moss" }`,
 		`{ "author": 123 }`,
 		`{ "author": { "name": "Jessica Moss" } }`,
+		{
+			code: `{
+          "private": true,
+          "author": "Jessica Moss"
+          }`,
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": true,
+          "author": "Jessica Moss"
+          }`,
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": false,
+          "author": "Jessica Moss"
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": false,
+          "author": "Jessica Moss"
+          }`,
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": "true",
+          "author": "Jessica Moss"
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
 	],
 });
