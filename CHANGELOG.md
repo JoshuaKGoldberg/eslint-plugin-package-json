@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.43.3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.43.2...v0.43.3) (2025-07-08)
+
+### Bug Fixes
+
+- **deps:** update dependency @altano/repository-tools to v2 ([#1164](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1164)) ([0c54bc9](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/0c54bc913a92c22dcfa43626e4c8ee44b527af51))
+
 ## [0.43.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.43.1...v0.43.2) (2025-07-04)
 
 ### Bug Fixes
