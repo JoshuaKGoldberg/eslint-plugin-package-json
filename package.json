@@ -44,7 +44,7 @@
 		"*": "prettier --ignore-unknown --write"
 	},
 	"dependencies": {
-		"@altano/repository-tools": "^1.0.0",
+		"@altano/repository-tools": "^2.0.0",
 		"change-case": "^5.4.4",
 		"detect-indent": "^7.0.1",
 		"detect-newline": "^4.0.1",
