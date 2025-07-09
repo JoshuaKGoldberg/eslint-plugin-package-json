@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.44.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.43.4...v0.44.0) (2025-07-09)
+
+### Features
+
+- **valid-bundleDependencies:** add new rule for validating `bundleDependencies` ([#1148](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1148)) ([ee44973](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/ee449730ece778037a4d1ea7aa2d2ec83081a1cb)), closes [#819](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/819)
+
 ## [0.43.4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.43.3...v0.43.4) (2025-07-09)
 
 ### Bug Fixes
