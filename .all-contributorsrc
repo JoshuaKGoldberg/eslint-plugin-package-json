@@ -286,6 +286,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "anomiex",
+      "name": "Brad Jorsch",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1030580?v=4",
+      "profile": "https://github.com/anomiex",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsSortAlphabetically": true,
