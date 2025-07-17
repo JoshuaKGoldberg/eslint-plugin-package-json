@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.45.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.44.1...v0.45.0) (2025-07-17)
+
+### Features
+
+- **valid-license:** add new rule for validating `license` ([#1174](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1174)) ([df450a1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/df450a121067793af25890eb15e4120911a8cfa7)), closes [#830](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/830)
+
 ## [0.44.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.44.0...v0.44.1) (2025-07-10)
 
 ### Bug Fixes
