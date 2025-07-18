@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.45.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.45.0...v0.45.1) (2025-07-18)
+
+### Bug Fixes
+
+- **valid-repository-directory:** use correct path separator when on windows ([#1177](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1177)) ([0688419](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/06884197a028a258c31db0104d8db1dc86f53345)), closes [#1175](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1175)
+
 # [0.45.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.44.1...v0.45.0) (2025-07-17)
 
 ### Features
