@@ -59,7 +59,7 @@ jobs:
       - uses: ./.github/actions/prepare
       - run: pnpm format --list-different
   test:
-    name: Test (Node.js ${{ matrix.node-version }})
+    name: Test (Node.js ${{ matrix.node-version }}, ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
