@@ -131,7 +131,7 @@ ruleTester.run("valid-repository-directory (this repository)", rule, {
 					],
 				},
 			],
-			filename: `${thisRepoDirectory}/package.json`,
+			filename: path.resolve(thisRepoDirectory, "./package.json"),
 			name: `root package.json`,
 		},
 		{
@@ -160,7 +160,10 @@ ruleTester.run("valid-repository-directory (this repository)", rule, {
 					],
 				},
 			],
-			filename: `${thisRepoDirectory}/src/tests/__fixtures__/valid-local-dependency/package.json`,
+			filename: path.resolve(
+				thisRepoDirectory,
+				"./src/tests/__fixtures__/valid-local-dependency/package.json",
+			),
 			name: `nested package.json`,
 		},
 	],
@@ -173,7 +176,10 @@ ruleTester.run("valid-repository-directory (this repository)", rule, {
 		},
 		{
 			code: `{ "repository": { "directory": "src/tests/__fixtures__/valid-local-dependency" } }`,
-			filename: `${thisRepoDirectory}/src/tests/__fixtures__/valid-local-dependency/package.json`,
+			filename: path.resolve(
+				thisRepoDirectory,
+				"./src/tests/__fixtures__/valid-local-dependency/package.json",
+			),
 			name: `nested package.json`,
 		},
 	],
