@@ -2,6 +2,7 @@ import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { findRootSync } from "@altano/repository-tools";
 import * as path from "node:path";
+import { sep as posixSep } from "node:path/posix";
 
 import { createRule } from "../createRule.js";
 import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.js";
@@ -99,11 +100,9 @@ export const rule = createRule({
 					//     fileDirectory: '~/src/project/packages/packageA',
 					//     expected: 'packages/packageA'
 					//
-					const expected = path.relative(
-						repositoryRoot,
-						fileDirectory,
-					);
-
+					const expected = path
+						.relative(repositoryRoot, fileDirectory)
+						.replaceAll(path.sep, posixSep);
 					if (expected !== directoryValue) {
 						context.report({
 							messageId: "mismatched",
