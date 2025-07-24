@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.46.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.45.2...v0.46.0) (2025-07-24)
+
+### Features
+
+- **valid-config:** add new rule for validating `config` ([#1179](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1179)) ([b71de96](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/b71de96a2a79a91d177ee0d734dc5f5d1d8e5b3b)), closes [#820](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/820)
+
 ## [0.45.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.45.1...v0.45.2) (2025-07-24)
 
 ### Bug Fixes
