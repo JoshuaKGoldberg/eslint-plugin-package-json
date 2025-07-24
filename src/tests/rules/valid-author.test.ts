@@ -1,7 +1,7 @@
-import { rule } from "../../rules/valid-author.js";
+import { rules } from "../../rules/valid-properties.js";
 import { ruleTester } from "./ruleTester.js";
 
-ruleTester.run("valid-author", rule, {
+ruleTester.run("valid-author", rules["valid-author"], {
 	invalid: [
 		{
 			code: `{ "author": null }`,

@@ -6,8 +6,10 @@ import { isJSONStringLiteral } from "./predicates.js";
 /**
  * Given a top-level property name, create a rule that requires that property to be present.
  * Optionally, include it in the recommended config.
+ * Note: this will only create a basic require rule, with no options.  If you need
+ * to create a more complex rule, create it in its own file.
  */
-export const createRequirePropertyRule = (
+export const createSimpleRequirePropertyRule = (
 	propertyName: string,
 	isRecommended = false,
 ) => {

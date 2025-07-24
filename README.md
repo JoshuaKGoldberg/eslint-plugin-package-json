@@ -137,9 +137,9 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [restrict-dependency-ranges](docs/rules/restrict-dependency-ranges.md) | Restricts the range of dependencies to allow or disallow specific types of ranges.                |      |    | 💡 |    |
 | [sort-collections](docs/rules/sort-collections.md)                     | Dependencies, scripts, and configuration values must be declared in alphabetical order.           | ✔️ ✅ | 🔧 |    |    |
 | [unique-dependencies](docs/rules/unique-dependencies.md)               | Checks a dependency isn't specified more than once (i.e. in `dependencies` and `devDependencies`) | ✔️ ✅ |    | 💡 |    |
-| [valid-author](docs/rules/valid-author.md)                             | Enforce that the author field is a valid npm author specification                                 | ✔️ ✅ |    |    |    |
+| [valid-author](docs/rules/valid-author.md)                             | Enforce that the `author` property is valid.                                                      | ✔️ ✅ |    |    |    |
 | [valid-bin](docs/rules/valid-bin.md)                                   | Enforce that the `bin` property is valid.                                                         | ✔️ ✅ |    | 💡 |    |
-| [valid-bundleDependencies](docs/rules/valid-bundleDependencies.md)     | Enforce that the `bundleDependencies` (or `bundledDependencies`) property is valid.               | ✔️ ✅ |    |    |    |
+| [valid-bundleDependencies](docs/rules/valid-bundleDependencies.md)     | Enforce that the `bundleDependencies` (also: `bundledDependencies`) property is valid.            | ✔️ ✅ |    |    |    |
 | [valid-config](docs/rules/valid-config.md)                             | Enforce that the `config` property is valid.                                                      | ✔️ ✅ |    |    |    |
 | [valid-license](docs/rules/valid-license.md)                           | Enforce that the `license` property is valid.                                                     | ✔️ ✅ |    |    |    |
 | [valid-local-dependency](docs/rules/valid-local-dependency.md)         | Checks existence of local dependencies in the package.json                                        |      |    |    | ❌  |

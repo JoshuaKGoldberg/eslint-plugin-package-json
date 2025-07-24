@@ -1,7 +1,7 @@
-import { rule } from "../../rules/valid-license.js";
+import { rules } from "../../rules/valid-properties.js";
 import { ruleTester } from "./ruleTester.js";
 
-ruleTester.run("valid-license", rule, {
+ruleTester.run("valid-license", rules["valid-license"], {
 	invalid: [
 		{
 			code: `{
