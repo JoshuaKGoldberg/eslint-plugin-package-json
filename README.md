@@ -140,6 +140,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [valid-author](docs/rules/valid-author.md)                             | Enforce that the author field is a valid npm author specification                                 | ✔️ ✅ |    |    |    |
 | [valid-bin](docs/rules/valid-bin.md)                                   | Enforce that the `bin` property is valid.                                                         | ✔️ ✅ |    | 💡 |    |
 | [valid-bundleDependencies](docs/rules/valid-bundleDependencies.md)     | Enforce that the `bundleDependencies` (or `bundledDependencies`) property is valid.               | ✔️ ✅ |    |    |    |
+| [valid-config](docs/rules/valid-config.md)                             | Enforce that the `config` property is valid.                                                      | ✔️ ✅ |    |    |    |
 | [valid-license](docs/rules/valid-license.md)                           | Enforce that the `license` property is valid.                                                     | ✔️ ✅ |    |    |    |
 | [valid-local-dependency](docs/rules/valid-local-dependency.md)         | Checks existence of local dependencies in the package.json                                        |      |    |    | ❌  |
 | [valid-name](docs/rules/valid-name.md)                                 | Enforce that package names are valid npm package names                                            | ✔️ ✅ |    |    |    |

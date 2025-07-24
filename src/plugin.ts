@@ -15,6 +15,7 @@ import { rule as uniqueDependencies } from "./rules/unique-dependencies.js";
 import { rule as validAuthor } from "./rules/valid-author.js";
 import { rule as validBin } from "./rules/valid-bin.js";
 import { rule as validBundleDependencies } from "./rules/valid-bundleDependencies.js";
+import { rule as validConfig } from "./rules/valid-config.js";
 import { rule as validLicense } from "./rules/valid-license.js";
 import { rule as validLocalDependency } from "./rules/valid-local-dependency.js";
 import { rule as validName } from "./rules/valid-name.js";
@@ -43,6 +44,7 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"valid-author": validAuthor,
 	"valid-bin": validBin,
 	"valid-bundleDependencies": validBundleDependencies,
+	"valid-config": validConfig,
 	"valid-license": validLicense,
 	"valid-local-dependency": validLocalDependency,
 	"valid-name": validName,
