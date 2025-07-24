@@ -44,11 +44,113 @@ ruleTester.run("require-engines", rules["require-engines"], {
 				},
 			],
 		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": false
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": "true"
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{}`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+		},
 	],
 	valid: [
 		`{ "main": "./index.js", "engines": { "node": ">=20" } }`,
 		`{ "engines": { "node": ">=20" } }`,
 		`{ "engines": 123 }`,
 		`{ "engines": "node123" }`,
+		{
+			code: `{
+          "private": true,
+          "engines": { "node": ">=20" }
+          }`,
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": true,
+          "engines": { "node": ">=20" }
+          }`,
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": false,
+          "engines": { "node": ">=20" }
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": false,
+          "engines": { "node": ">=20" }
+          }`,
+			options: [{ ignorePrivate: false }],
+		},
+		{
+			code: `{
+          "private": "true",
+          "engines": { "node": ">=20" }
+          }`,
+			options: [{ ignorePrivate: true }],
+		},
 	],
 });
