@@ -94,9 +94,7 @@ const getTopLevelPropertyName = (
 	) {
 		n = n.parent;
 	}
-	return n.type === "JSONProperty"
-		? (n.key as JsonAST.JSONStringLiteral).value
-		: undefined;
+	return ((n as JsonAST.JSONProperty).key as JsonAST.JSONStringLiteral).value;
 };
 
 export const rule = createRule<Options>({
@@ -107,10 +105,7 @@ export const rule = createRule<Options>({
 			JSONArrayExpression(node: JsonAST.JSONArrayExpression) {
 				if (!node.elements.length) {
 					const topLevelProperty = getTopLevelPropertyName(node);
-					if (
-						topLevelProperty === undefined ||
-						!ignoreProperties.includes(topLevelProperty)
-					) {
+					if (!ignoreProperties.includes(topLevelProperty)) {
 						report(context, getNode(node));
 					}
 				}
@@ -118,10 +113,7 @@ export const rule = createRule<Options>({
 			JSONObjectExpression(node: JsonAST.JSONObjectExpression) {
 				if (!node.properties.length) {
 					const topLevelProperty = getTopLevelPropertyName(node);
-					if (
-						topLevelProperty === undefined ||
-						!ignoreProperties.includes(topLevelProperty)
-					) {
+					if (!ignoreProperties.includes(topLevelProperty)) {
 						report(context, getNode(node));
 					}
 				}
