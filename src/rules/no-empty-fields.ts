@@ -8,6 +8,11 @@ import * as ESTree from "estree";
 
 import { createRule, PackageJsonRuleContext } from "../createRule.js";
 
+interface Option {
+	ignoreProperties?: string[];
+}
+type Options = [Option?];
+
 const getDataAndMessageId = (
 	node:
 		| JsonAST.JSONArrayExpression
@@ -79,17 +84,38 @@ const getNode = (
 	return node.parent.type === "JSONProperty" ? node.parent : node;
 };
 
-export const rule = createRule({
+const getTopLevelPropertyName = (
+	node: JsonAST.JSONArrayExpression | JsonAST.JSONObjectExpression,
+) => {
+	let n: JsonAST.JSONNode = node;
+	while (
+		n.parent.parent?.parent?.type !== undefined &&
+		n.parent.parent.parent.type !== "Program"
+	) {
+		n = n.parent;
+	}
+	return ((n as JsonAST.JSONProperty).key as JsonAST.JSONStringLiteral).value;
+};
+
+export const rule = createRule<Options>({
 	create(context) {
+		const ignoreProperties = context.options[0]?.ignoreProperties ?? [];
+
 		return {
 			JSONArrayExpression(node: JsonAST.JSONArrayExpression) {
 				if (!node.elements.length) {
-					report(context, getNode(node));
+					const topLevelProperty = getTopLevelPropertyName(node);
+					if (!ignoreProperties.includes(topLevelProperty)) {
+						report(context, getNode(node));
+					}
 				}
 			},
 			JSONObjectExpression(node: JsonAST.JSONObjectExpression) {
 				if (!node.properties.length) {
-					report(context, getNode(node));
+					const topLevelProperty = getTopLevelPropertyName(node);
+					if (!ignoreProperties.includes(topLevelProperty)) {
+						report(context, getNode(node));
+					}
 				}
 			},
 		};
@@ -108,7 +134,20 @@ export const rule = createRule({
 				"The field '{{field}}' does nothing and can be removed.",
 			remove: "Remove this empty field.",
 		},
-		schema: [],
+		schema: [
+			{
+				additionalProperties: false,
+				properties: {
+					ignoreProperties: {
+						items: {
+							type: "string",
+						},
+						type: "array",
+					},
+				},
+				type: "object",
+			},
+		],
 		type: "suggestion",
 	},
 });

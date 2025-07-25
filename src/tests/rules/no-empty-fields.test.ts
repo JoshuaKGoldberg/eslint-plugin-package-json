@@ -293,6 +293,85 @@ ruleTester.run("no-empty-fields", rule, {
 				},
 			],
 		},
+		{
+			code: `{
+\t\t"name": "test",
+\t\t"files": [],
+\t\t"browserslist": [],
+\t\t"scripts": {}
+}
+`,
+			errors: [
+				{
+					messageId: "emptyFields",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+\t\t"name": "test",
+\t\t
+\t\t"browserslist": [],
+\t\t"scripts": {}
+}
+`,
+						},
+					],
+				},
+				{
+					messageId: "emptyFields",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+\t\t"name": "test",
+\t\t"files": [],
+\t\t"browserslist": []
+\t\t
+}
+`,
+						},
+					],
+				},
+			],
+			options: [
+				{
+					ignoreProperties: ["browserslist"],
+				},
+			],
+		},
+		{
+			code: `{
+\t\t"name": "test",
+\t\t"browserslist": {
+\t\t\t"development": [],
+\t\t\t"production": [ "last 1 version", "> 1%", "not dead" ]
+\t\t}
+}
+`,
+			errors: [
+				{
+					messageId: "emptyFields",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+\t\t"name": "test",
+\t\t"browserslist": {
+\t\t\t
+\t\t\t"production": [ "last 1 version", "> 1%", "not dead" ]
+\t\t}
+}
+`,
+						},
+					],
+				},
+			],
+			options: [
+				{
+					ignoreProperties: ["development"],
+				},
+			],
+		},
 	],
 	valid: [
 		`{ "name": "test", "files": ["index.js"] }`,
@@ -303,5 +382,21 @@ ruleTester.run("no-empty-fields", rule, {
 		`{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true } } }`,
 		`{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true, "test": [{"test": ["1"]}] } } }`,
 		`{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true, "test": ["field1"] } } }`,
+		{
+			code: `{ "name": "test", "browserslist": [] }`,
+			options: [
+				{
+					ignoreProperties: ["browserslist"],
+				},
+			],
+		},
+		{
+			code: `{ "name": "test", "browserslist": { "development": [], "production": [ "last 1 version", "> 1%", "not dead" ] } }`,
+			options: [
+				{
+					ignoreProperties: ["browserslist"],
+				},
+			],
+		},
 	],
 });
