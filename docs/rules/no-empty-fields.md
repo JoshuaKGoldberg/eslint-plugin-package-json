@@ -39,7 +39,7 @@ Example of **correct** code for this rule:
 ### `ignoreProperties`
 
 Pass an array of top-level package properties to ignore.
-When provided, any errors related to the properties won't cause the rule to report a violation.
+When provided, the rule won't report violations for the specified properties.
 This can be useful if you're using tools that take configuration from package.json and accept an empty array or object as valid non-default configuration.
 
 Example of excluding the browserslist property used by [browserslist](https://www.npmjs.com/package/browserslist):
