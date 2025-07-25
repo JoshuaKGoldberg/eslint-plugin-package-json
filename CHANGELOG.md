@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.47.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.46.0...v0.47.0) (2025-07-25)
+
+### Features
+
+- **no-empty-fields:** Add `ignoreProperties` option ([#1186](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1186)) ([91e7156](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/91e7156d9f4569e8fee6f1124c4c1bb18ffdfbe0)), closes [#1182](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1182)
+
 # [0.46.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.45.2...v0.46.0) (2025-07-24)
 
 ### Features
