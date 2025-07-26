@@ -84,9 +84,9 @@ const getNode = (
 	return node.parent.type === "JSONProperty" ? node.parent : node;
 };
 
-const getTopLevelPropertyName = (
+const getTopLevelProperty = (
 	node: JsonAST.JSONArrayExpression | JsonAST.JSONObjectExpression,
-) => {
+): JsonAST.JSONStringLiteral | undefined => {
 	let n: JsonAST.JSONNode = node;
 	while (
 		n.parent.parent?.parent?.type !== undefined &&
@@ -94,7 +94,9 @@ const getTopLevelPropertyName = (
 	) {
 		n = n.parent;
 	}
-	return ((n as JsonAST.JSONProperty).key as JsonAST.JSONStringLiteral).value;
+	return n.type === "JSONProperty"
+		? (n.key as JsonAST.JSONStringLiteral)
+		: undefined;
 };
 
 export const rule = createRule<Options>({
@@ -103,17 +105,27 @@ export const rule = createRule<Options>({
 
 		return {
 			JSONArrayExpression(node: JsonAST.JSONArrayExpression) {
+				const topLevelProperty = getTopLevelProperty(node);
+				// If this is the root object, we shouldn't proceed
+				if (!topLevelProperty) {
+					return;
+				}
 				if (!node.elements.length) {
-					const topLevelProperty = getTopLevelPropertyName(node);
-					if (!ignoreProperties.includes(topLevelProperty)) {
+					const topLevelPropertyName = topLevelProperty.value;
+					if (!ignoreProperties.includes(topLevelPropertyName)) {
 						report(context, getNode(node));
 					}
 				}
 			},
 			JSONObjectExpression(node: JsonAST.JSONObjectExpression) {
+				const topLevelProperty = getTopLevelProperty(node);
+				// If this is the root object, we shouldn't proceed
+				if (!topLevelProperty) {
+					return;
+				}
 				if (!node.properties.length) {
-					const topLevelProperty = getTopLevelPropertyName(node);
-					if (!ignoreProperties.includes(topLevelProperty)) {
+					const topLevelPropertyName = topLevelProperty.value;
+					if (!ignoreProperties.includes(topLevelPropertyName)) {
 						report(context, getNode(node));
 					}
 				}

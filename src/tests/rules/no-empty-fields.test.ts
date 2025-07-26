@@ -189,7 +189,7 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t\t\t"@altano/repository-tools": {
 \t\t\t\t\t\t"optional": true
 \t\t\t\t},
-\t\t\t\t"nin": {} 
+\t\t\t\t"nin": {}
 \t\t}
 }
 `,
@@ -205,7 +205,7 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t\t\t"@altano/repository-tools": {
 \t\t\t\t\t\t"optional": true
 \t\t\t\t}
-\t\t\t\t 
+\t\t\t\t
 \t\t}
 }
 `,
@@ -374,6 +374,8 @@ ruleTester.run("no-empty-fields", rule, {
 		},
 	],
 	valid: [
+		`{}`,
+		`[]`,
 		`{ "name": "test", "files": ["index.js"] }`,
 		`{ "name": "test", "peerDependencies": { "eslint": ">=8.0.0" } }`,
 		`{ "name": "test", "dependencies": { "eslint": ">=8.0.0" } }`,
