@@ -12,17 +12,12 @@ import { rules as requireRules } from "./rules/require-properties.js";
 import { rule as restrictDependencyRanges } from "./rules/restrict-dependency-ranges.js";
 import { rule as sortCollections } from "./rules/sort-collections.js";
 import { rule as uniqueDependencies } from "./rules/unique-dependencies.js";
-import { rule as validAuthor } from "./rules/valid-author.js";
 import { rule as validBin } from "./rules/valid-bin.js";
-import { rule as validBundleDependencies } from "./rules/valid-bundleDependencies.js";
-import { rule as validConfig } from "./rules/valid-config.js";
-import { rule as validLicense } from "./rules/valid-license.js";
 import { rule as validLocalDependency } from "./rules/valid-local-dependency.js";
 import { rule as validName } from "./rules/valid-name.js";
 import { rule as validPackageDefinition } from "./rules/valid-package-definition.js";
+import { rules as basicValidRules } from "./rules/valid-properties.js";
 import { rule as validRepositoryDirectory } from "./rules/valid-repository-directory.js";
-import { rule as validScripts } from "./rules/valid-scripts.js";
-import { rule as validType } from "./rules/valid-type.js";
 import { rule as validVersion } from "./rules/valid-version.js";
 
 const require = createRequire(import.meta.url);
@@ -41,17 +36,12 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"restrict-dependency-ranges": restrictDependencyRanges,
 	"sort-collections": sortCollections,
 	"unique-dependencies": uniqueDependencies,
-	"valid-author": validAuthor,
+	...basicValidRules,
 	"valid-bin": validBin,
-	"valid-bundleDependencies": validBundleDependencies,
-	"valid-config": validConfig,
-	"valid-license": validLicense,
 	"valid-local-dependency": validLocalDependency,
 	"valid-name": validName,
 	"valid-package-definition": validPackageDefinition,
 	"valid-repository-directory": validRepositoryDirectory,
-	"valid-scripts": validScripts,
-	"valid-type": validType,
 	"valid-version": validVersion,
 };
 

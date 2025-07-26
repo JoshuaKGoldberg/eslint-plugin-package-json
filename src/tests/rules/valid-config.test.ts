@@ -1,7 +1,7 @@
-import { rule } from "../../rules/valid-config.js";
+import { rules } from "../../rules/valid-properties.js";
 import { ruleTester } from "./ruleTester.js";
 
-ruleTester.run("valid-config", rule, {
+ruleTester.run("valid-config", rules["valid-config"], {
 	invalid: [
 		{
 			code: `{

@@ -1,7 +1,7 @@
-import { rule } from "../../rules/valid-bundleDependencies.js";
+import { rules } from "../../rules/valid-properties.js";
 import { ruleTester } from "./ruleTester.js";
 
-ruleTester.run("valid-bundleDependencies", rule, {
+ruleTester.run("valid-bundleDependencies", rules["valid-bundleDependencies"], {
 	invalid: ["bundleDependencies", "bundledDependencies"]
 		.map((property) => [
 			{

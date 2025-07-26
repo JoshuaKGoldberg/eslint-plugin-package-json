@@ -1,7 +1,7 @@
-import { rule } from "../../rules/valid-scripts.js";
+import { rules } from "../../rules/valid-properties.js";
 import { ruleTester } from "./ruleTester.js";
 
-ruleTester.run("valid-scripts", rule, {
+ruleTester.run("valid-scripts", rules["valid-scripts"], {
 	invalid: [
 		{
 			code: `{
