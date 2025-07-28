@@ -1,3 +1,4 @@
+import { PackageJsonPluginSettings } from "../../createRule.js";
 import { rules } from "../../rules/require-properties.js";
 import { ruleTester } from "./ruleTester.js";
 
@@ -106,6 +107,213 @@ ruleTester.run("require-engines", rules["require-engines"], {
 			],
 			options: [{ ignorePrivate: true }],
 		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			settings: {
+				packageJson: {
+					enforceForPrivate: "recommended",
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{}`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			settings: {
+				packageJson: {
+					enforceForPrivate: "recommended",
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": false
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			settings: {
+				packageJson: {
+					enforceForPrivate: "recommended",
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: false }],
+			settings: {
+				packageJson: {
+					enforceForPrivate: "recommended",
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			settings: {
+				packageJson: {
+					enforceForPrivate: true,
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: false }],
+			settings: {
+				packageJson: {
+					enforceForPrivate: true,
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": false
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+			settings: {
+				packageJson: {
+					enforceForPrivate: true,
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{}`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+			settings: {
+				packageJson: {
+					enforceForPrivate: true,
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: false }],
+			settings: {
+				packageJson: {
+					enforceForPrivate: false,
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": false
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			settings: {
+				packageJson: {
+					enforceForPrivate: false,
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": false
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: false }],
+			settings: {
+				packageJson: {
+					enforceForPrivate: false,
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": false
+          }`,
+			errors: [
+				{
+					data: { property: "engines" },
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			options: [{ ignorePrivate: true }],
+			settings: {
+				packageJson: {
+					enforceForPrivate: false,
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
 	],
 	valid: [
 		`{ "main": "./index.js", "engines": { "node": ">=20" } }`,
@@ -151,6 +359,107 @@ ruleTester.run("require-engines", rules["require-engines"], {
           "engines": { "node": ">=20" }
           }`,
 			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+          "private": true,
+          "engines": { "node": ">=20" }
+          }`,
+			settings: {
+				packageJson: {
+					enforceForPrivate: "recommended",
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": true,
+          "engines": { "node": ">=20" }
+          }`,
+			options: [{ ignorePrivate: false }],
+			settings: {
+				packageJson: {
+					enforceForPrivate: "recommended",
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			options: [{ ignorePrivate: true }],
+			settings: {
+				packageJson: {
+					enforceForPrivate: "recommended",
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": true,
+          "engines": { "node": ">=20" }
+          }`,
+			settings: {
+				packageJson: {
+					enforceForPrivate: true,
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			options: [{ ignorePrivate: true }],
+			settings: {
+				packageJson: {
+					enforceForPrivate: true,
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": true,
+          "engines": { "node": ">=20" }
+          }`,
+			options: [{ ignorePrivate: false }],
+			settings: {
+				packageJson: {
+					enforceForPrivate: true,
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			settings: {
+				packageJson: {
+					enforceForPrivate: false,
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": true
+          }`,
+			options: [{ ignorePrivate: true }],
+			settings: {
+				packageJson: {
+					enforceForPrivate: false,
+				} satisfies PackageJsonPluginSettings,
+			},
+		},
+		{
+			code: `{
+          "private": true,
+          "engines": { "node": ">=20" }
+          }`,
+			options: [{ ignorePrivate: false }],
+			settings: {
+				packageJson: {
+					enforceForPrivate: false,
+				} satisfies PackageJsonPluginSettings,
+			},
 		},
 	],
 });

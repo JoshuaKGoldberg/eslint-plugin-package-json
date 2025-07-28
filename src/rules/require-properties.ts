@@ -1,6 +1,6 @@
 import {
+	CreateRequirePropertyRuleOptions,
 	createSimpleRequirePropertyRule,
-	CreateSimpleRequirePropertyRuleOptions,
 } from "../utils/createSimpleRequirePropertyRule.js";
 
 const properties: {
@@ -14,13 +14,13 @@ const properties: {
 	{ name: "keywords" },
 	{
 		name: "name",
-		options: { isOptionalForPrivatePackages: true, isRecommended: true },
+		options: { ignorePrivateDefault: true, isRecommended: true },
 	},
 	{ name: "type", options: { isRecommended: true } },
 	{ name: "types" },
 	{
 		name: "version",
-		options: { isOptionalForPrivatePackages: true, isRecommended: true },
+		options: { ignorePrivateDefault: true, isRecommended: true },
 	},
 ];
 

@@ -4,7 +4,14 @@ import { createRule } from "../createRule.js";
 import { isJSONStringLiteral } from "./predicates.js";
 
 export interface CreateRequirePropertyRuleOptions {
-	isOptionalForPrivatePackages?: boolean;
+	/**
+	 * The default value of `ignorePrivate` rule option.
+	 */
+	ignorePrivateDefault?: boolean;
+
+	/**
+	 * Whether the rule should be included in the recommended config.
+	 */
 	isRecommended?: boolean;
 }
 
@@ -19,21 +26,26 @@ type Options = [{ ignorePrivate?: boolean }?];
 export const createSimpleRequirePropertyRule = (
 	propertyName: string,
 	{
-		isOptionalForPrivatePackages,
+		ignorePrivateDefault = false,
 		isRecommended,
 	}: CreateRequirePropertyRuleOptions = {},
 ) => {
-	const ignorePrivateDefault = isOptionalForPrivatePackages ?? false;
-
 	return createRule<Options>({
 		create(context) {
+			const enforceForPrivate =
+				context.settings.packageJson?.enforceForPrivate ??
+				"recommended";
+
+			const ignorePrivate =
+				context.options[0]?.ignorePrivate ??
+				(typeof enforceForPrivate === "boolean"
+					? !enforceForPrivate
+					: ignorePrivateDefault);
+
 			return {
 				"Program > JSONExpressionStatement > JSONObjectExpression"(
 					node: JsonAST.JSONObjectExpression,
 				) {
-					const ignorePrivate =
-						context.options[0]?.ignorePrivate ??
-						ignorePrivateDefault;
 					if (
 						ignorePrivate &&
 						node.properties.some(
@@ -65,7 +77,8 @@ export const createSimpleRequirePropertyRule = (
 		},
 		meta: {
 			docs: {
-				description: `Requires the \`${propertyName}\` property to be present.`,
+				description:
+					"Requires the `${propertyName}` property to be present.",
 				recommended: isRecommended,
 			},
 			messages: {
