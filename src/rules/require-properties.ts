@@ -18,7 +18,7 @@ const properties: {
 	{ name: "keywords" },
 	{
 		name: "name",
-		options: { isOptionalForPrivatePackages: true, isRecommended: true },
+		options: { ignorePrivateDefault: true, isRecommended: true },
 	},
 	{ name: "optionalDependencies" },
 	{ name: "peerDependencies" },
@@ -26,7 +26,7 @@ const properties: {
 	{ name: "types" },
 	{
 		name: "version",
-		options: { isOptionalForPrivatePackages: true, isRecommended: true },
+		options: { ignorePrivateDefault: true, isRecommended: true },
 	},
 ];
 
