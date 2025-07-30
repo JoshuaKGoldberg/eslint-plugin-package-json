@@ -77,8 +77,7 @@ export const createSimpleRequirePropertyRule = (
 		},
 		meta: {
 			docs: {
-				description:
-					"Requires the `${propertyName}` property to be present.",
+				description: `Requires the \`${propertyName}\` property to be present.`,
 				recommended: isRecommended,
 			},
 			messages: {
