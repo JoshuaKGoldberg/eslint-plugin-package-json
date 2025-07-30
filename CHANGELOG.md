@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.47.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.47.0...v0.47.1) (2025-07-30)
+
+### Bug Fixes
+
+- **no-empty-fields:** don't throw error on empty object ([#1190](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1190)) ([8a9ba8a](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/8a9ba8acb1d68fd1040a008dfdb185b6908284a2)), closes [#1188](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1188)
+
 # [0.47.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.46.0...v0.47.0) (2025-07-25)
 
 ### Features
