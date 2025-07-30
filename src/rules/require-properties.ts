@@ -3,35 +3,27 @@ import {
 	createSimpleRequirePropertyRule,
 } from "../utils/createSimpleRequirePropertyRule.js";
 
-const properties: {
-	name: string;
-	options?: CreateRequirePropertyRuleOptions;
-}[] = [
-	{ name: "author" },
-	{ name: "bugs" },
-	{ name: "bundleDependencies" },
-	{ name: "dependencies" },
-	{ name: "description", options: { isRecommended: true } },
-	{ name: "devDependencies" },
-	{ name: "engines" },
-	{ name: "files" },
-	{ name: "keywords" },
-	{
-		name: "name",
-		options: { ignorePrivateDefault: true, isRecommended: true },
-	},
-	{ name: "optionalDependencies" },
-	{ name: "peerDependencies" },
-	{ name: "type", options: { isRecommended: true } },
-	{ name: "types" },
-	{
-		name: "version",
-		options: { ignorePrivateDefault: true, isRecommended: true },
-	},
-];
+const properties: [name: string, options?: CreateRequirePropertyRuleOptions][] =
+	[
+		["author"],
+		["bugs"],
+		["bundleDependencies"],
+		["dependencies"],
+		["description", { isRecommended: true }],
+		["devDependencies"],
+		["engines"],
+		["files"],
+		["keywords"],
+		["name", { ignorePrivateDefault: true, isRecommended: true }],
+		["optionalDependencies"],
+		["peerDependencies"],
+		["type", { isRecommended: true }],
+		["types"],
+		["version", { ignorePrivateDefault: true, isRecommended: true }],
+	];
 
 export const rules = Object.fromEntries(
-	properties.map(({ name: propertyName, options }) => [
+	properties.map(([propertyName, options]) => [
 		`require-${propertyName}`,
 		createSimpleRequirePropertyRule(propertyName, options),
 	]),
