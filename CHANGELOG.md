@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.48.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.47.1...v0.48.0) (2025-07-31)
+
+### Features
+
+- **valid-cpu:** add new rule for validating `cpu` ([#1192](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1192)) ([b52cd7c](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/b52cd7c3d4808d49ad99e0b8a82763e608f03550)), closes [#821](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/821)
+
 ## [0.47.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.47.0...v0.47.1) (2025-07-30)
 
 ### Bug Fixes
