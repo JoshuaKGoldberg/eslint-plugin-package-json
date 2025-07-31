@@ -134,7 +134,7 @@ Whether `require-*` rules, if used, should enforce the presence of the correspon
 Possible values are:
 
 - `boolean`
-- `"recommended"` (default): all `require-*` rules except for [`require-name`](docs/rules/require-name.md) and [`require-version`](docs/rules/require-version.md) will report if the corresponding property is missing in package.json with `"private": true`.
+- Not set (default): all `require-*` rules except for [`require-name`](docs/rules/require-name.md) and [`require-version`](docs/rules/require-version.md) will report if the corresponding property is missing in package.json with `"private": true`.
 
 ### Usage Alongside Prettier
 
