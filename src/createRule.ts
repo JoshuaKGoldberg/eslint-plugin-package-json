@@ -26,10 +26,9 @@ export interface PackageJsonPluginSettings {
 	 * Whether `require-*` rules, if used, should enforce the presence of
 	 * the corresponding property *in package.json files with `"private": true`*.
 	 *
-	 * `'recommended'` will not enforce the presence only of `name` and `version` properties.
-	 * @default 'recommended'
+	 * If not specified, it will not enforce the presence only of `name` and `version` properties.
 	 */
-	enforceForPrivate?: "recommended" | boolean;
+	enforceForPrivate?: boolean;
 }
 
 export interface PackageJsonRuleContext<Options extends unknown[] = unknown[]>

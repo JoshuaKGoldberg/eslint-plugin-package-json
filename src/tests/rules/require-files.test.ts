@@ -107,38 +107,6 @@ ruleTester.run("require-files", rules["require-files"], {
 		},
 		{
 			code: `{
-          "private": true
-          }`,
-			errors: [
-				{
-					data: { property: "files" },
-					line: 1,
-					messageId: "missing",
-				},
-			],
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
-		},
-		{
-			code: `{}`,
-			errors: [
-				{
-					data: { property: "files" },
-					line: 1,
-					messageId: "missing",
-				},
-			],
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
-		},
-		{
-			code: `{
           "private": false
           }`,
 			errors: [
@@ -148,29 +116,6 @@ ruleTester.run("require-files", rules["require-files"], {
 					messageId: "missing",
 				},
 			],
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
-		},
-		{
-			code: `{
-          "private": true
-          }`,
-			errors: [
-				{
-					data: { property: "files" },
-					line: 1,
-					messageId: "missing",
-				},
-			],
-			options: [{ ignorePrivate: false }],
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
 		},
 		{
 			code: `{
@@ -354,40 +299,6 @@ ruleTester.run("require-files", rules["require-files"], {
           "files": ["lib"]
           }`,
 			options: [{ ignorePrivate: true }],
-		},
-		{
-			code: `{
-          "private": true,
-          "files": ["lib"]
-          }`,
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
-		},
-		{
-			code: `{
-          "private": true,
-          "files": ["lib"]
-          }`,
-			options: [{ ignorePrivate: false }],
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
-		},
-		{
-			code: `{
-          "private": true
-          }`,
-			options: [{ ignorePrivate: true }],
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
 		},
 		{
 			code: `{

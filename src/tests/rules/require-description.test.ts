@@ -109,38 +109,6 @@ ruleTester.run("require-description", rules["require-description"], {
 		},
 		{
 			code: `{
-          "private": true
-          }`,
-			errors: [
-				{
-					data: { property: "description" },
-					line: 1,
-					messageId: "missing",
-				},
-			],
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
-		},
-		{
-			code: `{}`,
-			errors: [
-				{
-					data: { property: "description" },
-					line: 1,
-					messageId: "missing",
-				},
-			],
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
-		},
-		{
-			code: `{
           "private": false
           }`,
 			errors: [
@@ -150,29 +118,6 @@ ruleTester.run("require-description", rules["require-description"], {
 					messageId: "missing",
 				},
 			],
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
-		},
-		{
-			code: `{
-          "private": true
-          }`,
-			errors: [
-				{
-					data: { property: "description" },
-					line: 1,
-					messageId: "missing",
-				},
-			],
-			options: [{ ignorePrivate: false }],
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
 		},
 		{
 			code: `{
@@ -358,40 +303,6 @@ ruleTester.run("require-description", rules["require-description"], {
           "description": "Thee Silver Mt. Zion"
           }`,
 			options: [{ ignorePrivate: true }],
-		},
-		{
-			code: `{
-          "private": true,
-          "description": "Thee Silver Mt. Zion"
-          }`,
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
-		},
-		{
-			code: `{
-          "private": true,
-          "description": "Thee Silver Mt. Zion"
-          }`,
-			options: [{ ignorePrivate: false }],
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
-		},
-		{
-			code: `{
-          "private": true
-          }`,
-			options: [{ ignorePrivate: true }],
-			settings: {
-				packageJson: {
-					enforceForPrivate: "recommended",
-				} satisfies PackageJsonPluginSettings,
-			},
 		},
 		{
 			code: `{

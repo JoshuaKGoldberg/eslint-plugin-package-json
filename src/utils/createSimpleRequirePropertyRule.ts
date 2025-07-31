@@ -33,8 +33,7 @@ export const createSimpleRequirePropertyRule = (
 	return createRule<Options>({
 		create(context) {
 			const enforceForPrivate =
-				context.settings.packageJson?.enforceForPrivate ??
-				"recommended";
+				context.settings.packageJson?.enforceForPrivate;
 
 			const ignorePrivate =
 				context.options[0]?.ignorePrivate ??
