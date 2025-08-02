@@ -34,6 +34,7 @@ const properties = [
 	["config", validateConfig],
 	["cpu", validateCpu],
 	["dependencies", validateDependencies],
+	["devDependencies", validateDependencies],
 	["license", validateLicense],
 	["scripts", validateScripts],
 	["type", validateType],

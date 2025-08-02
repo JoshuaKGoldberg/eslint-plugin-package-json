@@ -143,6 +143,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [valid-config](docs/rules/valid-config.md)                             | Enforce that the `config` property is valid.                                                      | ✔️ ✅ |    |    |    |
 | [valid-cpu](docs/rules/valid-cpu.md)                                   | Enforce that the `cpu` property is valid.                                                         | ✔️ ✅ |    |    |    |
 | [valid-dependencies](docs/rules/valid-dependencies.md)                 | Enforce that the `dependencies` property is valid.                                                | ✔️ ✅ |    |    |    |
+| [valid-devDependencies](docs/rules/valid-devDependencies.md)           | Enforce that the `devDependencies` property is valid.                                             | ✔️ ✅ |    |    |    |
 | [valid-license](docs/rules/valid-license.md)                           | Enforce that the `license` property is valid.                                                     | ✔️ ✅ |    |    |    |
 | [valid-local-dependency](docs/rules/valid-local-dependency.md)         | Checks existence of local dependencies in the package.json                                        |      |    |    | ❌  |
 | [valid-name](docs/rules/valid-name.md)                                 | Enforce that package names are valid npm package names                                            | ✔️ ✅ |    |    |    |
