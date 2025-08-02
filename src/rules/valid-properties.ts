@@ -36,6 +36,7 @@ const properties = [
 	["dependencies", validateDependencies],
 	["devDependencies", validateDependencies],
 	["license", validateLicense],
+	["optionalDependencies", validateDependencies],
 	["scripts", validateScripts],
 	["type", validateType],
 	// TODO: More to come!
