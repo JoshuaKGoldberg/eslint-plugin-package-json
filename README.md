@@ -101,6 +101,40 @@ module.exports = {
 };
 ```
 
+### Settings
+
+Some rules can be configured in ESLint shared settings.
+You can set them in `settings.packageJson` in an ESLint flat config.
+
+Example:
+
+```ts
+// eslint.config.ts
+import packageJson from "eslint-plugin-package-json";
+
+export default {
+	plugins: {
+		"package-json": packageJson,
+	},
+	rules: {
+		// `description` won't be required in package.json with `"private": true`
+		"package-json/require-description": "error",
+	},
+	settings: {
+		packageJson: {
+			enforceForPrivate: false,
+		},
+	},
+};
+```
+
+#### `enforceForPrivate`
+
+**Type:** `boolean`
+
+Determines whether `require-*` rules, if used, should enforce the presence of the corresponding property in package.json files with `"private": true`.
+By default, all `require-*` rules except for [`require-name`](docs/rules/require-name.md) and [`require-version`](docs/rules/require-version.md) will report if the corresponding property is missing in package.json with `"private": true`.
+
 ### Usage Alongside Prettier
 
 **[`prettier-plugin-packagejson`](https://github.com/matzkoh/prettier-plugin-packagejson)** is a [Prettier plugin](https://prettier.io/docs/en/plugins) that enforces the same `package.json` keys ordering as the [`order-properties`](docs/rules/order-properties.md) and [sort-collections](docs/rules/sort-collections.md) rules with default options.
