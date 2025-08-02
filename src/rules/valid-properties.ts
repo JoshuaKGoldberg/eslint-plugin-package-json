@@ -33,6 +33,7 @@ const properties = [
 	],
 	["config", validateConfig],
 	["cpu", validateCpu],
+	["dependencies", validateDependencies],
 	["license", validateLicense],
 	["scripts", validateScripts],
 	["type", validateType],
