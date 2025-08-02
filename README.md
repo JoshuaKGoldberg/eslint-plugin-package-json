@@ -130,11 +130,10 @@ export default {
 
 #### `enforceForPrivate`
 
-Whether `require-*` rules, if used, should enforce the presence of the corresponding property in package.json files with `"private": true`.
-Possible values are:
+**Type:** `boolean`
 
-- `boolean`
-- Not set (default): all `require-*` rules except for [`require-name`](docs/rules/require-name.md) and [`require-version`](docs/rules/require-version.md) will report if the corresponding property is missing in package.json with `"private": true`.
+Determines whether `require-*` rules, if used, should enforce the presence of the corresponding property in package.json files with `"private": true`.
+By default, all `require-*` rules except for [`require-name`](docs/rules/require-name.md) and [`require-version`](docs/rules/require-version.md) will report if the corresponding property is missing in package.json with `"private": true`.
 
 ### Usage Alongside Prettier
 
