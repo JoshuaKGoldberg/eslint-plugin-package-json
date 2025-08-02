@@ -3,6 +3,7 @@ import {
 	validateBundleDependencies,
 	validateConfig,
 	validateCpu,
+	validateDependencies,
 	validateLicense,
 	validateScripts,
 	validateType,
@@ -37,6 +38,7 @@ const properties = [
 	["devDependencies", validateDependencies],
 	["license", validateLicense],
 	["optionalDependencies", validateDependencies],
+	["peerDependencies", validateDependencies],
 	["scripts", validateScripts],
 	["type", validateType],
 	// TODO: More to come!
