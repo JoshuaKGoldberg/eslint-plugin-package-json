@@ -1,54 +1,60 @@
 import { rules } from "../../rules/require-properties.js";
 import { ruleTester } from "./ruleTester.js";
 
-ruleTester.run("require-author", rules["require-author"], {
-	invalid: [
-		{
-			code: "{}",
-			errors: [
-				{
-					data: { property: "author" },
-					line: 1,
-					messageId: "missing",
-				},
-			],
-		},
-		{
-			code: `{
-            "name": "foo",
-            "version": "1.0.0"
+const ruleNames = Object.keys(rules);
+
+ruleNames.forEach((ruleName) => {
+	const propertyName = ruleName.replace("require-", "");
+
+	ruleTester.run(ruleName, rules[ruleName], {
+		invalid: [
+			{
+				code: "{}",
+				errors: [
+					{
+						data: { property: propertyName },
+						line: 1,
+						messageId: "missing",
+					},
+				],
+			},
+			{
+				code: `{
+            "foo": "bar",
+            "baz": "1.0.0"
             }
             `,
-			errors: [
-				{
-					data: { property: "author" },
-					line: 1,
-					messageId: "missing",
-				},
-			],
-		},
-		{
-			code: `{
-            "name": "foo",
-            "version": "1.0.0",
+				errors: [
+					{
+						data: { property: propertyName },
+						line: 1,
+						messageId: "missing",
+					},
+				],
+			},
+			{
+				code: `{
+            "foo": "bar",
+            "baz": "1.0.0",
             "bin": {
-                "author": "./cli.js"
+                "${propertyName}": "./cli.js"
             }
             }
             `,
-			errors: [
-				{
-					data: { property: "author" },
-					line: 1,
-					messageId: "missing",
-				},
-			],
-		},
-	],
-	valid: [
-		`{ "main": "./index.js", "author": "Sophie Trudeau" }`,
-		`{ "author": "Jessica Moss" }`,
-		`{ "author": 123 }`,
-		`{ "author": { "name": "Jessica Moss" } }`,
-	],
+				errors: [
+					{
+						data: { property: propertyName },
+						line: 1,
+						messageId: "missing",
+					},
+				],
+			},
+		],
+		valid: [
+			`{ "foo": "./index.js", "${propertyName}": "Sophie Trudeau" }`,
+			`{ "${propertyName}": "Jessica Moss" }`,
+			`{ "${propertyName}": 123 }`,
+			`{ "${propertyName}": { "name": "Jessica Moss" } }`,
+		],
+	});
 });
