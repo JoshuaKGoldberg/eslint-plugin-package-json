@@ -119,41 +119,47 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 💡 Manually fixable by [editor suggestions](https://eslint.org/docs/latest/use/core-concepts#rule-suggestions).\
 ❌ Deprecated.
 
-| Name                                                                   | Description                                                                                       | 💼   | 🔧 | 💡 | ❌  |
-| :--------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------ | :--- | :- | :- | :- |
-| [no-empty-fields](docs/rules/no-empty-fields.md)                       | Reports on unnecessary empty arrays and objects.                                                  | ✔️ ✅ |    | 💡 |    |
-| [no-redundant-files](docs/rules/no-redundant-files.md)                 | Prevents adding unnecessary / redundant files.                                                    |      |    | 💡 |    |
-| [order-properties](docs/rules/order-properties.md)                     | Package properties must be declared in standard order                                             | ✔️ ✅ | 🔧 |    |    |
-| [repository-shorthand](docs/rules/repository-shorthand.md)             | Enforce either object or shorthand declaration for repository.                                    | ✔️ ✅ | 🔧 |    |    |
-| [require-author](docs/rules/require-author.md)                         | Requires the `author` property to be present.                                                     |      |    |    |    |
-| [require-description](docs/rules/require-description.md)               | Requires the `description` property to be present.                                                | ✔️ ✅ |    |    |    |
-| [require-engines](docs/rules/require-engines.md)                       | Requires the `engines` property to be present.                                                    |      |    |    |    |
-| [require-files](docs/rules/require-files.md)                           | Requires the `files` property to be present.                                                      |      |    |    |    |
-| [require-keywords](docs/rules/require-keywords.md)                     | Requires the `keywords` property to be present.                                                   |      |    |    |    |
-| [require-name](docs/rules/require-name.md)                             | Requires the `name` property to be present.                                                       | ✔️ ✅ |    |    |    |
-| [require-type](docs/rules/require-type.md)                             | Requires the `type` property to be present.                                                       | ✔️ ✅ |    |    |    |
-| [require-types](docs/rules/require-types.md)                           | Requires the `types` property to be present.                                                      |      |    |    |    |
-| [require-version](docs/rules/require-version.md)                       | Requires the `version` property to be present.                                                    | ✔️ ✅ |    |    |    |
-| [restrict-dependency-ranges](docs/rules/restrict-dependency-ranges.md) | Restricts the range of dependencies to allow or disallow specific types of ranges.                |      |    | 💡 |    |
-| [sort-collections](docs/rules/sort-collections.md)                     | Dependencies, scripts, and configuration values must be declared in alphabetical order.           | ✔️ ✅ | 🔧 |    |    |
-| [unique-dependencies](docs/rules/unique-dependencies.md)               | Checks a dependency isn't specified more than once (i.e. in `dependencies` and `devDependencies`) | ✔️ ✅ |    | 💡 |    |
-| [valid-author](docs/rules/valid-author.md)                             | Enforce that the `author` property is valid.                                                      | ✔️ ✅ |    |    |    |
-| [valid-bin](docs/rules/valid-bin.md)                                   | Enforce that the `bin` property is valid.                                                         | ✔️ ✅ |    | 💡 |    |
-| [valid-bundleDependencies](docs/rules/valid-bundleDependencies.md)     | Enforce that the `bundleDependencies` (also: `bundledDependencies`) property is valid.            | ✔️ ✅ |    |    |    |
-| [valid-config](docs/rules/valid-config.md)                             | Enforce that the `config` property is valid.                                                      | ✔️ ✅ |    |    |    |
-| [valid-cpu](docs/rules/valid-cpu.md)                                   | Enforce that the `cpu` property is valid.                                                         | ✔️ ✅ |    |    |    |
-| [valid-dependencies](docs/rules/valid-dependencies.md)                 | Enforce that the `dependencies` property is valid.                                                | ✔️ ✅ |    |    |    |
-| [valid-devDependencies](docs/rules/valid-devDependencies.md)           | Enforce that the `devDependencies` property is valid.                                             | ✔️ ✅ |    |    |    |
-| [valid-license](docs/rules/valid-license.md)                           | Enforce that the `license` property is valid.                                                     | ✔️ ✅ |    |    |    |
-| [valid-local-dependency](docs/rules/valid-local-dependency.md)         | Checks existence of local dependencies in the package.json                                        |      |    |    | ❌  |
-| [valid-name](docs/rules/valid-name.md)                                 | Enforce that package names are valid npm package names                                            | ✔️ ✅ |    |    |    |
-| [valid-optionalDependencies](docs/rules/valid-optionalDependencies.md) | Enforce that the `optionalDependencies` property is valid.                                        | ✔️ ✅ |    |    |    |
-| [valid-package-definition](docs/rules/valid-package-definition.md)     | Enforce that package.json has all properties required by the npm spec                             | ✔️ ✅ |    |    |    |
-| [valid-peerDependencies](docs/rules/valid-peerDependencies.md)         | Enforce that the `peerDependencies` property is valid.                                            | ✔️ ✅ |    |    |    |
-| [valid-repository-directory](docs/rules/valid-repository-directory.md) | Enforce that if repository directory is specified, it matches the path to the package.json file   | ✔️ ✅ |    | 💡 |    |
-| [valid-scripts](docs/rules/valid-scripts.md)                           | Enforce that the `scripts` property is valid.                                                     | ✔️ ✅ |    |    |    |
-| [valid-type](docs/rules/valid-type.md)                                 | Enforce that the `type` property is valid.                                                        | ✔️ ✅ |    |    |    |
-| [valid-version](docs/rules/valid-version.md)                           | Enforce that package versions are valid semver specifiers                                         | ✔️ ✅ |    |    |    |
+| Name                                                                       | Description                                                                                       | 💼   | 🔧 | 💡 | ❌  |
+| :------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------ | :--- | :- | :- | :- |
+| [no-empty-fields](docs/rules/no-empty-fields.md)                           | Reports on unnecessary empty arrays and objects.                                                  | ✔️ ✅ |    | 💡 |    |
+| [no-redundant-files](docs/rules/no-redundant-files.md)                     | Prevents adding unnecessary / redundant files.                                                    |      |    | 💡 |    |
+| [order-properties](docs/rules/order-properties.md)                         | Package properties must be declared in standard order                                             | ✔️ ✅ | 🔧 |    |    |
+| [repository-shorthand](docs/rules/repository-shorthand.md)                 | Enforce either object or shorthand declaration for repository.                                    | ✔️ ✅ | 🔧 |    |    |
+| [require-author](docs/rules/require-author.md)                             | Requires the `author` property to be present.                                                     |      |    |    |    |
+| [require-bugs](docs/rules/require-bugs.md)                                 | Requires the `bugs` property to be present.                                                       |      |    |    |    |
+| [require-bundleDependencies](docs/rules/require-bundleDependencies.md)     | Requires the `bundleDependencies` property to be present.                                         |      |    |    |    |
+| [require-dependencies](docs/rules/require-dependencies.md)                 | Requires the `dependencies` property to be present.                                               |      |    |    |    |
+| [require-description](docs/rules/require-description.md)                   | Requires the `description` property to be present.                                                | ✔️ ✅ |    |    |    |
+| [require-devDependencies](docs/rules/require-devDependencies.md)           | Requires the `devDependencies` property to be present.                                            |      |    |    |    |
+| [require-engines](docs/rules/require-engines.md)                           | Requires the `engines` property to be present.                                                    |      |    |    |    |
+| [require-files](docs/rules/require-files.md)                               | Requires the `files` property to be present.                                                      |      |    |    |    |
+| [require-keywords](docs/rules/require-keywords.md)                         | Requires the `keywords` property to be present.                                                   |      |    |    |    |
+| [require-name](docs/rules/require-name.md)                                 | Requires the `name` property to be present.                                                       | ✔️ ✅ |    |    |    |
+| [require-optionalDependencies](docs/rules/require-optionalDependencies.md) | Requires the `optionalDependencies` property to be present.                                       |      |    |    |    |
+| [require-peerDependencies](docs/rules/require-peerDependencies.md)         | Requires the `peerDependencies` property to be present.                                           |      |    |    |    |
+| [require-type](docs/rules/require-type.md)                                 | Requires the `type` property to be present.                                                       | ✔️ ✅ |    |    |    |
+| [require-types](docs/rules/require-types.md)                               | Requires the `types` property to be present.                                                      |      |    |    |    |
+| [require-version](docs/rules/require-version.md)                           | Requires the `version` property to be present.                                                    | ✔️ ✅ |    |    |    |
+| [restrict-dependency-ranges](docs/rules/restrict-dependency-ranges.md)     | Restricts the range of dependencies to allow or disallow specific types of ranges.                |      |    | 💡 |    |
+| [sort-collections](docs/rules/sort-collections.md)                         | Dependencies, scripts, and configuration values must be declared in alphabetical order.           | ✔️ ✅ | 🔧 |    |    |
+| [unique-dependencies](docs/rules/unique-dependencies.md)                   | Checks a dependency isn't specified more than once (i.e. in `dependencies` and `devDependencies`) | ✔️ ✅ |    | 💡 |    |
+| [valid-author](docs/rules/valid-author.md)                                 | Enforce that the `author` property is valid.                                                      | ✔️ ✅ |    |    |    |
+| [valid-bin](docs/rules/valid-bin.md)                                       | Enforce that the `bin` property is valid.                                                         | ✔️ ✅ |    | 💡 |    |
+| [valid-bundleDependencies](docs/rules/valid-bundleDependencies.md)         | Enforce that the `bundleDependencies` (also: `bundledDependencies`) property is valid.            | ✔️ ✅ |    |    |    |
+| [valid-config](docs/rules/valid-config.md)                                 | Enforce that the `config` property is valid.                                                      | ✔️ ✅ |    |    |    |
+| [valid-cpu](docs/rules/valid-cpu.md)                                       | Enforce that the `cpu` property is valid.                                                         | ✔️ ✅ |    |    |    |
+| [valid-dependencies](docs/rules/valid-dependencies.md)                     | Enforce that the `dependencies` property is valid.                                                | ✔️ ✅ |    |    |    |
+| [valid-devDependencies](docs/rules/valid-devDependencies.md)               | Enforce that the `devDependencies` property is valid.                                             | ✔️ ✅ |    |    |    |
+| [valid-license](docs/rules/valid-license.md)                               | Enforce that the `license` property is valid.                                                     | ✔️ ✅ |    |    |    |
+| [valid-local-dependency](docs/rules/valid-local-dependency.md)             | Checks existence of local dependencies in the package.json                                        |      |    |    | ❌  |
+| [valid-name](docs/rules/valid-name.md)                                     | Enforce that package names are valid npm package names                                            | ✔️ ✅ |    |    |    |
+| [valid-optionalDependencies](docs/rules/valid-optionalDependencies.md)     | Enforce that the `optionalDependencies` property is valid.                                        | ✔️ ✅ |    |    |    |
+| [valid-package-definition](docs/rules/valid-package-definition.md)         | Enforce that package.json has all properties required by the npm spec                             | ✔️ ✅ |    |    |    |
+| [valid-peerDependencies](docs/rules/valid-peerDependencies.md)             | Enforce that the `peerDependencies` property is valid.                                            | ✔️ ✅ |    |    |    |
+| [valid-repository-directory](docs/rules/valid-repository-directory.md)     | Enforce that if repository directory is specified, it matches the path to the package.json file   | ✔️ ✅ |    | 💡 |    |
+| [valid-scripts](docs/rules/valid-scripts.md)                               | Enforce that the `scripts` property is valid.                                                     | ✔️ ✅ |    |    |    |
+| [valid-type](docs/rules/valid-type.md)                                     | Enforce that the `type` property is valid.                                                        | ✔️ ✅ |    |    |    |
+| [valid-version](docs/rules/valid-version.md)                               | Enforce that package versions are valid semver specifiers                                         | ✔️ ✅ |    |    |    |
 
 <!-- end auto-generated rules list -->
 <!-- prettier-ignore-end -->
