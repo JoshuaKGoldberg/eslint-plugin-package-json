@@ -19,6 +19,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "empty object",
 			},
 			{
 				code: `{
@@ -33,6 +34,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "missing property",
 			},
 			{
 				code: `{
@@ -50,6 +52,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "nested property only",
 			},
 			{
 				code: `{
@@ -62,6 +65,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "missing property with private: true > ignorePrivate: false",
 				options: [{ ignorePrivate: false }],
 			},
 			{
@@ -75,6 +79,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "missing property with private: false > ignorePrivate: true",
 				options: [{ ignorePrivate: true }],
 			},
 			{
@@ -88,6 +93,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "missing property with private: true > ignorePrivate: true",
 				options: [{ ignorePrivate: true }],
 			},
 			{
@@ -99,19 +105,8 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "empty object > ignorePrivate: true",
 				options: [{ ignorePrivate: true }],
-			},
-			{
-				code: `{
-          "private": false
-          }`,
-				errors: [
-					{
-						data: { property: propertyName },
-						line: 1,
-						messageId: "missing",
-					},
-				],
 			},
 			{
 				code: `{
@@ -124,6 +119,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "missing property with private: true > enforceForPrivate: true",
 				settings: {
 					packageJson: {
 						enforceForPrivate: true,
@@ -141,6 +137,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "missing property with private: true > ignorePrivate: false, enforceForPrivate: true",
 				options: [{ ignorePrivate: false }],
 				settings: {
 					packageJson: {
@@ -159,6 +156,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "missing property with private: false > ignorePrivate: true, enforceForPrivate: true",
 				options: [{ ignorePrivate: true }],
 				settings: {
 					packageJson: {
@@ -175,6 +173,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "empty object > ignorePrivate: true, enforceForPrivate: true",
 				options: [{ ignorePrivate: true }],
 				settings: {
 					packageJson: {
@@ -193,6 +192,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "missing property with private: true > ignorePrivate: false, enforceForPrivate: false",
 				options: [{ ignorePrivate: false }],
 				settings: {
 					packageJson: {
@@ -211,6 +211,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "missing property with private: false > enforceForPrivate: false",
 				settings: {
 					packageJson: {
 						enforceForPrivate: false,
@@ -228,6 +229,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "missing property with private: false > ignorePrivate: false, enforceForPrivate: false",
 				options: [{ ignorePrivate: false }],
 				settings: {
 					packageJson: {
@@ -246,6 +248,7 @@ ruleNames.forEach((ruleName) => {
 						messageId: "missing",
 					},
 				],
+				name: "missing property with private: false > ignorePrivate: true, enforceForPrivate: false",
 				options: [{ ignorePrivate: true }],
 				settings: {
 					packageJson: {
@@ -264,11 +267,13 @@ ruleNames.forEach((ruleName) => {
           "private": true,
           "${propertyName}": "Jessica Moss"
           }`,
+				name: "with private: false",
 			},
 			{
 				code: `{
           "private": true
           }`,
+				name: "missing property with private: true > ignorePrivate: true",
 				options: [{ ignorePrivate: true }],
 			},
 			{
@@ -276,6 +281,7 @@ ruleNames.forEach((ruleName) => {
           "private": true,
           "${propertyName}": "Jessica Moss"
           }`,
+				name: "with private: true > ignorePrivate: false",
 				options: [{ ignorePrivate: false }],
 			},
 			{
@@ -283,6 +289,7 @@ ruleNames.forEach((ruleName) => {
           "private": false,
           "${propertyName}": "Jessica Moss"
           }`,
+				name: "with private: false > ignorePrivate: true",
 				options: [{ ignorePrivate: true }],
 			},
 			{
@@ -290,6 +297,7 @@ ruleNames.forEach((ruleName) => {
           "private": false,
           "${propertyName}": "Jessica Moss"
           }`,
+				name: "with private: false > ignorePrivate: false",
 				options: [{ ignorePrivate: false }],
 			},
 			{
@@ -297,6 +305,7 @@ ruleNames.forEach((ruleName) => {
           "private": "true",
           "${propertyName}": "Jessica Moss"
           }`,
+				name: "with private: true > ignorePrivate: true",
 				options: [{ ignorePrivate: true }],
 			},
 			{
@@ -304,6 +313,7 @@ ruleNames.forEach((ruleName) => {
           "private": true,
           "${propertyName}": "Jessica Moss"
           }`,
+				name: "with private: true > enforceForPrivate: true",
 				settings: {
 					packageJson: {
 						enforceForPrivate: true,
@@ -314,6 +324,7 @@ ruleNames.forEach((ruleName) => {
 				code: `{
           "private": true
           }`,
+				name: "missing property with private: true > ignorePrivate: true, enforceForPrivate: true",
 				options: [{ ignorePrivate: true }],
 				settings: {
 					packageJson: {
@@ -326,6 +337,7 @@ ruleNames.forEach((ruleName) => {
           "private": true,
           "${propertyName}": "Jessica Moss"
           }`,
+				name: "with private: true > ignorePrivate: false, enforceForPrivate: true",
 				options: [{ ignorePrivate: false }],
 				settings: {
 					packageJson: {
@@ -337,6 +349,7 @@ ruleNames.forEach((ruleName) => {
 				code: `{
           "private": true
           }`,
+				name: "missing property with private: true > enforceForPrivate: true",
 				settings: {
 					packageJson: {
 						enforceForPrivate: false,
@@ -347,6 +360,7 @@ ruleNames.forEach((ruleName) => {
 				code: `{
           "private": true
           }`,
+				name: "missing property with private: true > ignorePrivate: true, enforceForPrivate: false",
 				options: [{ ignorePrivate: true }],
 				settings: {
 					packageJson: {
@@ -359,6 +373,7 @@ ruleNames.forEach((ruleName) => {
           "private": true,
           "${propertyName}": "Jessica Moss"
           }`,
+				name: "with private: true > ignorePrivate: false, enforceForPrivate: false",
 				options: [{ ignorePrivate: false }],
 				settings: {
 					packageJson: {
