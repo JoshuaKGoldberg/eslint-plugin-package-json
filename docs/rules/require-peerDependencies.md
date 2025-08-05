@@ -31,7 +31,7 @@ You can set the `ignorePrivate` option to `true` to ignore package.json files wi
 
 ```json
 {
-	"package-json/require-author": [
+	"package-json/require-peerDependencies": [
 		"error",
 		{
 			"ignorePrivate": false
