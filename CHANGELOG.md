@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.51.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.50.0...v0.51.0) (2025-08-05)
+
+### Features
+
+- add `ignorePrivate` option to all `require-*` rules ([#1158](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1158)) ([055009b](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/055009bf864c9f8db153bf0c5bb9568d023abe12)), closes [#1092](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1092)
+
 # [0.50.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.49.0...v0.50.0) (2025-08-05)
 
 ### Features
