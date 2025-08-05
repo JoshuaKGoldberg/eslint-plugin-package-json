@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.49.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.48.0...v0.49.0) (2025-08-05)
+
+### Features
+
+- **valid-dependencies:** add new rule for validating dependencies ([#1196](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1196)) ([73af8e2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/73af8e214d99df618d5d8c4eb9bfdfefc062ef84)), closes [#822](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/822) [#824](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/824) [#833](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/833) [#835](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/835)
+
 # [0.48.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.47.1...v0.48.0) (2025-07-31)
 
 ### Features
