@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.50.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.49.0...v0.50.0) (2025-08-05)
+
+### Features
+
+- add new `require-` rules for `bugs`, `bundleDependencies`, `dependencies`, and more ([#1197](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1197)) ([0a06664](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/0a0666404d5659ea8eb8717516aa3c3b6374af26)), closes [#862](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/862) [#863](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/863) [#811](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/811) [#809](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/809) [#801](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/801) [#797](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/797)
+
 # [0.49.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.48.0...v0.49.0) (2025-08-05)
 
 ### Features
