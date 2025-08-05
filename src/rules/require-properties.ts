@@ -6,11 +6,17 @@ import { createSimpleRequirePropertyRule } from "../utils/createSimpleRequirePro
 // in the format [propertyName, isRecommended]
 const properties = [
 	["author", false],
+	["bugs", false],
+	["bundleDependencies", false],
+	["dependencies", false],
+	["devDependencies", false],
 	["description", true],
 	["engines", false],
 	["files", false],
 	["keywords", false],
 	["name", true],
+	["optionalDependencies", false],
+	["peerDependencies", false],
 	["type", true],
 	["types", false],
 	["version", true],
