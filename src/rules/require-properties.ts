@@ -1,36 +1,30 @@
-import type { PackageJsonRuleModule } from "../createRule.js";
+import {
+	type CreateRequirePropertyRuleOptions,
+	createSimpleRequirePropertyRule,
+} from "../utils/createSimpleRequirePropertyRule.js";
 
-import { createSimpleRequirePropertyRule } from "../utils/createSimpleRequirePropertyRule.js";
+const properties: [name: string, options?: CreateRequirePropertyRuleOptions][] =
+	[
+		["author"],
+		["bugs"],
+		["bundleDependencies"],
+		["dependencies"],
+		["description", { isRecommended: true }],
+		["devDependencies"],
+		["engines"],
+		["files"],
+		["keywords"],
+		["name", { ignorePrivateDefault: true, isRecommended: true }],
+		["optionalDependencies"],
+		["peerDependencies"],
+		["type", { isRecommended: true }],
+		["types"],
+		["version", { ignorePrivateDefault: true, isRecommended: true }],
+	];
 
-// List of all properties we want to create require- rules for,
-// in the format [propertyName, isRecommended]
-const properties = [
-	["author", false],
-	["bugs", false],
-	["bundleDependencies", false],
-	["dependencies", false],
-	["devDependencies", false],
-	["description", true],
-	["engines", false],
-	["files", false],
-	["keywords", false],
-	["name", true],
-	["optionalDependencies", false],
-	["peerDependencies", false],
-	["type", true],
-	["types", false],
-	["version", true],
-	// TODO: More to come!
-] satisfies [string, boolean][];
-
-/** All require- flavor rules */
-export const rules = properties.reduce<Record<string, PackageJsonRuleModule>>(
-	(acc, [propertyName, isRecommended]) => {
-		acc[`require-${propertyName}`] = createSimpleRequirePropertyRule(
-			propertyName,
-			isRecommended,
-		);
-		return acc;
-	},
-	{},
+export const rules = Object.fromEntries(
+	properties.map(([propertyName, options]) => [
+		`require-${propertyName}`,
+		createSimpleRequirePropertyRule(propertyName, options),
+	]),
 );

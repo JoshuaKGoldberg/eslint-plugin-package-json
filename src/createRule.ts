@@ -21,9 +21,22 @@ export interface PackageJsonAst extends AST.Program {
 	body: [JsonAstBodyStatement];
 }
 
+export interface PackageJsonPluginSettings {
+	/**
+	 * Whether `require-*` rules, if used, should enforce the presence of
+	 * the corresponding property *in package.json files with `"private": true`*.
+	 *
+	 * If not specified, it will not enforce the presence only of `name` and `version` properties.
+	 */
+	enforceForPrivate?: boolean;
+}
+
 export interface PackageJsonRuleContext<Options extends unknown[] = unknown[]>
 	extends Rule.RuleContext {
 	options: Options;
+	settings: {
+		packageJson?: PackageJsonPluginSettings;
+	};
 	sourceCode: PackageJsonSourceCode;
 }
 

@@ -24,3 +24,57 @@ Example of **correct** code for this rule:
 	}
 }
 ```
+
+## Options
+
+You can set the `ignorePrivate` option to `true` to ignore package.json files with `"private": true` (default: `false`).
+
+```json
+{
+	"package-json/require-engines": [
+		"error",
+		{
+			"ignorePrivate": false
+		}
+	]
+}
+```
+
+Example of **incorrect** code for this rule with the `{ "ignorePrivate": false }` option:
+
+```json
+{
+	"private": true
+}
+```
+
+Example of **correct** code for this rule with the `{ "ignorePrivate": false }` option:
+
+```json
+{
+	"private": true,
+	"engines": {
+		"node": ">=18"
+	}
+}
+```
+
+Example of **incorrect** code for this rule with the `{ "ignorePrivate": true }` option:
+
+```json
+{
+	"private": false
+}
+```
+
+```json
+{}
+```
+
+Example of **correct** code for this rule with the `{ "ignorePrivate": true }` option:
+
+```json
+{
+	"private": true
+}
+```
