@@ -123,6 +123,28 @@ ruleTester.run("sort-collections", rule, {
 		},
 		{
 			code: `{
+	"scripts": {
+		"postinstall": "echo test",
+		"preinstall": "echo test"
+	}
+}`,
+			errors: [
+				{
+					data: { key: "scripts" },
+					messageId: "notAlphabetized",
+					type: "JSONProperty",
+				},
+			],
+			filename: "package.json",
+			output: `{
+	"scripts": {
+    "preinstall": "echo test",
+    "postinstall": "echo test"
+  }
+}`,
+		},
+		{
+			code: `{
 	"exports": {
 		"./package.json": "./package.json",
 		".": {
@@ -269,6 +291,14 @@ ruleTester.run("sort-collections", rule, {
         "prebuild": "echo test",
 		"build": "echo test",
         "postbuild": "echo test"
+	}
+}`,
+		},
+		{
+			code: `{
+	"scripts": {
+        "preinstall": "echo test",
+        "postinstall": "echo test"
 	}
 }`,
 		},
