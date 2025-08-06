@@ -111,6 +111,7 @@ export const rule = createRule<Options>({
 		};
 	},
 	meta: {
+		defaultOptions: [{ order: "sort-package-json" }],
 		docs: {
 			category: "Best Practices",
 			description:
@@ -139,6 +140,8 @@ export const rule = createRule<Options>({
 								type: ["array"],
 							},
 						],
+						description:
+							"Specifies the sorting order of top-level properties.",
 					},
 				},
 				type: "object",

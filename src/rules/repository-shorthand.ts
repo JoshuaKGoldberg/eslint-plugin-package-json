@@ -130,6 +130,7 @@ export const rule = createRule<Options>({
 	},
 
 	meta: {
+		defaultOptions: [{ form: "object" }],
 		docs: {
 			category: "Best Practices",
 			description:
@@ -147,6 +148,8 @@ export const rule = createRule<Options>({
 				additionalProperties: false,
 				properties: {
 					form: {
+						description:
+							"Specifies which repository form to enforce.",
 						enum: ["object", "shorthand"],
 						type: ["string"],
 					},
