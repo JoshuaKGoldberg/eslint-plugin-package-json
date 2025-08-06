@@ -36,7 +36,7 @@ ruleTester.run("valid-package-definition", rule, {
 			code: `{
   "name": "pandas",
   "version": "1.0.0",
-  "description": "",
+  "description": "lorem ipsum",
   "main": "index.js",
   "keywords": [],
   "author": "me!",
@@ -48,7 +48,7 @@ ruleTester.run("valid-package-definition", rule, {
 			code: `{
   "name": "pandas-sub-panda",
   "version": "1.0.0",
-  "description": "",
+  "description": "lorem ipsum",
   "main": "index.js",
   "keywords": [],
   "author": "me!",
@@ -65,7 +65,7 @@ ruleTester.run("valid-package-definition", rule, {
 			code: `{
   "name": "pandas",
   "version": "1.0.0",
-  "description": "",
+  "description": "lorem ipsum",
   "main": "index.js",
   "keywords": [],
   "author": "me!",
