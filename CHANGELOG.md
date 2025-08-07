@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.52.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.51.0...v0.52.0) (2025-08-07)
+
+### Features
+
+- **valid-description:** add new rule for validating `description` ([#1204](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1204)) ([4acb265](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4acb26563c0cacb5834c8b53dae68fb291c0ffd1)), closes [#823](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/823)
+
 # [0.51.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.50.0...v0.51.0) (2025-08-05)
 
 ### Features
