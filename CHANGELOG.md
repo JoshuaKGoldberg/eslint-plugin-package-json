@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.52.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.52.0...v0.52.1) (2025-08-07)
+
+### Bug Fixes
+
+- **sort-collections:** align sorting of scripts with `prettier-plugin-packagejson` ([#1203](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1203)) ([1f5c590](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/1f5c590adc846194766127ab962f8efa72942d06)), closes [#753](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/753)
+
 # [0.52.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.51.0...v0.52.0) (2025-08-07)
 
 ### Features
