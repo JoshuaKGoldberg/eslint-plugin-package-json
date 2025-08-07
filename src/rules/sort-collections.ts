@@ -150,6 +150,7 @@ export const rule = createRule<Options>({
 	},
 
 	meta: {
+		defaultOptions: [Array.from(defaultCollections)],
 		docs: {
 			category: "Best Practices",
 			description:
@@ -162,6 +163,7 @@ export const rule = createRule<Options>({
 		},
 		schema: [
 			{
+				description: "Array of package properties to require sorting.",
 				items: {
 					type: "string",
 				},

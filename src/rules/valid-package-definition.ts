@@ -50,6 +50,7 @@ export const rule = createRule<Options>({
 
 	// eslint-disable-next-line eslint-plugin/prefer-message-ids
 	meta: {
+		defaultOptions: [{ ignoreProperties: [] }],
 		docs: {
 			category: "Best Practices",
 			description:
@@ -61,6 +62,8 @@ export const rule = createRule<Options>({
 				additionalProperties: false,
 				properties: {
 					ignoreProperties: {
+						description:
+							"Array of top-level package properties to ignore.",
 						items: {
 							type: "string",
 						},

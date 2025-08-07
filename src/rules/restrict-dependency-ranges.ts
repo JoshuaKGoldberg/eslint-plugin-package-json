@@ -28,21 +28,28 @@ const schemaOptions = {
 	additionalProperties: false,
 	properties: {
 		forDependencyTypes: {
+			description:
+				"Apply a range type restriction for an entire group of dependencies by which type of dependencies they belong to.",
 			items: {
 				enum: DEPENDENCY_TYPES,
 			},
 			type: "array",
 		},
 		forPackages: {
+			description:
+				"The exact name of a package, or a regex pattern used to match a group of packages by name.",
 			items: {
 				type: "string",
 			},
 			type: "array",
 		},
 		forVersions: {
+			description: "Apply a restriction to a specific semver range.",
 			type: "string",
 		},
 		rangeType: {
+			description:
+				"Identifies which range type or types you want to apply to packages that match any of the other match options (or all dependencies if no other options are provided).",
 			oneOf: [
 				{
 					enum: RANGE_TYPES,
@@ -266,6 +273,7 @@ export const rule = createRule<Options>({
 	},
 
 	meta: {
+		defaultOptions: [[]],
 		docs: {
 			description:
 				"Restricts the range of dependencies to allow or disallow specific types of ranges.",
@@ -283,6 +291,8 @@ export const rule = createRule<Options>({
 				oneOf: [
 					schemaOptions,
 					{
+						description:
+							"Array of configuration options, specifying range requirements.",
 						items: schemaOptions,
 						type: "array",
 					},

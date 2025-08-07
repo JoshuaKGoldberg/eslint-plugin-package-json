@@ -133,6 +133,7 @@ export const rule = createRule<Options>({
 		};
 	},
 	meta: {
+		defaultOptions: [{ ignoreProperties: [] }],
 		docs: {
 			category: "Best Practices",
 			description: "Reports on unnecessary empty arrays and objects.",
@@ -151,6 +152,7 @@ export const rule = createRule<Options>({
 				additionalProperties: false,
 				properties: {
 					ignoreProperties: {
+						description: "Array of top-level properties to ignore.",
 						items: {
 							type: "string",
 						},

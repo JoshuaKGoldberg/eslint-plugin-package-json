@@ -65,6 +65,7 @@ export const rule = createRule<Options>({
 	},
 
 	meta: {
+		defaultOptions: [{ enforceCase: false }],
 		docs: {
 			category: "Best Practices",
 			description: "Enforce that the `bin` property is valid.",
@@ -81,7 +82,8 @@ export const rule = createRule<Options>({
 				additionalProperties: false,
 				properties: {
 					enforceCase: {
-						default: false,
+						description:
+							"Enforce that the bin's keys should be in kebab case.",
 						type: "boolean",
 					},
 				},
