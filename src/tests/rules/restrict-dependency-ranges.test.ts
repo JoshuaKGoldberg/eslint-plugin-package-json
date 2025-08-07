@@ -1,5 +1,5 @@
-import { rule } from "../../rules/restrict-dependency-ranges.js";
-import { ruleTester } from "./ruleTester.js";
+import { rule } from "../../rules/restrict-dependency-ranges.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("restrict-dependency-ranges", rule, {
 	invalid: [

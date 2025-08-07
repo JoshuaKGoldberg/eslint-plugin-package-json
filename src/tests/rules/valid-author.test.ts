@@ -1,5 +1,5 @@
-import { rules } from "../../rules/valid-properties.js";
-import { ruleTester } from "./ruleTester.js";
+import { rules } from "../../rules/valid-properties.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("valid-author", rules["valid-author"], {
 	invalid: [

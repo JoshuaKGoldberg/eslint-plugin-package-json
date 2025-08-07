@@ -1,5 +1,5 @@
-import { rule } from "../../rules/valid-version.js";
-import { ruleTester } from "./ruleTester.js";
+import { rule } from "../../rules/valid-version.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("valid-version", rule, {
 	invalid: [

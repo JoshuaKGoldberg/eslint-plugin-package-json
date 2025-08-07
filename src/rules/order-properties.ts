@@ -5,7 +5,7 @@ import { detectNewlineGraceful } from "detect-newline";
 import sortObjectKeys from "sort-object-keys";
 import { sortOrder } from "sort-package-json";
 
-import { createRule } from "../createRule.js";
+import { createRule } from "../createRule.ts";
 
 const standardOrderLegacy = [
 	"name",

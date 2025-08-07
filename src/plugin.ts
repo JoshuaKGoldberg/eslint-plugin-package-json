@@ -2,23 +2,23 @@ import { Linter } from "eslint";
 import * as parserJsonc from "jsonc-eslint-parser";
 import { createRequire } from "node:module";
 
-import type { PackageJsonRuleModule } from "./createRule.js";
+import type { PackageJsonRuleModule } from "./createRule.ts";
 
-import { rule as noEmptyFields } from "./rules/no-empty-fields.js";
-import { rule as noRedundantFiles } from "./rules/no-redundant-files.js";
-import { rule as orderProperties } from "./rules/order-properties.js";
-import { rule as preferRepositoryShorthand } from "./rules/repository-shorthand.js";
-import { rules as requireRules } from "./rules/require-properties.js";
-import { rule as restrictDependencyRanges } from "./rules/restrict-dependency-ranges.js";
-import { rule as sortCollections } from "./rules/sort-collections.js";
-import { rule as uniqueDependencies } from "./rules/unique-dependencies.js";
-import { rule as validBin } from "./rules/valid-bin.js";
-import { rule as validLocalDependency } from "./rules/valid-local-dependency.js";
-import { rule as validName } from "./rules/valid-name.js";
-import { rule as validPackageDefinition } from "./rules/valid-package-definition.js";
-import { rules as basicValidRules } from "./rules/valid-properties.js";
-import { rule as validRepositoryDirectory } from "./rules/valid-repository-directory.js";
-import { rule as validVersion } from "./rules/valid-version.js";
+import { rule as noEmptyFields } from "./rules/no-empty-fields.ts";
+import { rule as noRedundantFiles } from "./rules/no-redundant-files.ts";
+import { rule as orderProperties } from "./rules/order-properties.ts";
+import { rule as preferRepositoryShorthand } from "./rules/repository-shorthand.ts";
+import { rules as requireRules } from "./rules/require-properties.ts";
+import { rule as restrictDependencyRanges } from "./rules/restrict-dependency-ranges.ts";
+import { rule as sortCollections } from "./rules/sort-collections.ts";
+import { rule as uniqueDependencies } from "./rules/unique-dependencies.ts";
+import { rule as validBin } from "./rules/valid-bin.ts";
+import { rule as validLocalDependency } from "./rules/valid-local-dependency.ts";
+import { rule as validName } from "./rules/valid-name.ts";
+import { rule as validPackageDefinition } from "./rules/valid-package-definition.ts";
+import { rules as basicValidRules } from "./rules/valid-properties.ts";
+import { rule as validRepositoryDirectory } from "./rules/valid-repository-directory.ts";
+import { rule as validVersion } from "./rules/valid-version.ts";
 
 const require = createRequire(import.meta.url);
 

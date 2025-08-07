@@ -2,8 +2,8 @@ import { kebabCase } from "change-case";
 import { AST as JsonAST } from "jsonc-eslint-parser";
 import { validateBin } from "package-json-validator";
 
-import { createRule } from "../createRule.js";
-import { formatErrors } from "../utils/formatErrors.js";
+import { createRule } from "../createRule.ts";
+import { formatErrors } from "../utils/formatErrors.ts";
 
 type Options = [{ enforceCase: boolean }?];
 

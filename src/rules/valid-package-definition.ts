@@ -1,6 +1,6 @@
 import { validate } from "package-json-validator";
 
-import { createRule } from "../createRule.js";
+import { createRule } from "../createRule.ts";
 
 interface Option {
 	ignoreProperties?: string[];

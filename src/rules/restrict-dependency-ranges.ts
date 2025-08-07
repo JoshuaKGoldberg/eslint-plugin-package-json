@@ -2,8 +2,8 @@ import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import semver from "semver";
 
-import { createRule } from "../createRule.js";
-import { isJSONStringLiteral } from "../utils/predicates.js";
+import { createRule } from "../createRule.ts";
+import { isJSONStringLiteral } from "../utils/predicates.ts";
 
 const DEPENDENCY_TYPES = [
 	"dependencies",

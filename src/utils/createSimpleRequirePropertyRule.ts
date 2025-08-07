@@ -1,7 +1,7 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
-import { createRule } from "../createRule.js";
-import { isJSONStringLiteral } from "./predicates.js";
+import { createRule } from "../createRule.ts";
+import { isJSONStringLiteral } from "./predicates.ts";
 
 export interface CreateRequirePropertyRuleOptions {
 	/**

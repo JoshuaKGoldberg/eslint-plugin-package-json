@@ -1,5 +1,5 @@
-import { rule } from "../../rules/no-redundant-files.js";
-import { ruleTester } from "./ruleTester.js";
+import { rule } from "../../rules/no-redundant-files.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("no-redundant-files", rule, {
 	invalid: [
@@ -407,7 +407,7 @@ ruleTester.run("no-redundant-files", rule, {
 	}`,
 
 		`{
-		"main": "./index.js", 
+		"main": "./index.js",
 		"files": [
 			"*.d.ts",
 			"dist/specific-file.js",

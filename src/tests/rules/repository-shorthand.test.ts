@@ -1,5 +1,5 @@
-import { rule } from "../../rules/repository-shorthand.js";
-import { ruleTester } from "./ruleTester.js";
+import { rule } from "../../rules/repository-shorthand.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("repository-shorthand", rule, {
 	invalid: [

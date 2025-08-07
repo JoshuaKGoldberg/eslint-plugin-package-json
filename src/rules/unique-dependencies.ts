@@ -6,8 +6,8 @@ import {
 } from "eslint-fix-utils";
 import * as ESTree from "estree";
 
-import { createRule } from "../createRule.js";
-import { isJSONStringLiteral, isNotNullish } from "../utils/predicates.js";
+import { createRule } from "../createRule.ts";
+import { isJSONStringLiteral, isNotNullish } from "../utils/predicates.ts";
 
 const dependencyPropertyNames = new Set([
 	"bundledDependencies",

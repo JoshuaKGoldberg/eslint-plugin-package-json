@@ -1,6 +1,6 @@
 import { describe, expect, test } from "vitest";
 
-import { isPackageJson } from "./isPackageJson.js";
+import { isPackageJson } from "./isPackageJson.ts";
 
 describe("isPackageJson", () => {
 	test.each([

@@ -11,7 +11,7 @@ import * as regexp from "eslint-plugin-regexp";
 import yml from "eslint-plugin-yml";
 import tseslint from "typescript-eslint";
 
-import packageJson from "./src/index.js";
+import packageJson from "./src/index.ts";
 
 export default tseslint.config(
 	{

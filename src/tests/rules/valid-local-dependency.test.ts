@@ -1,7 +1,7 @@
 import path from "path";
 
-import { rule } from "../../rules/valid-local-dependency.js";
-import { ruleTester } from "./ruleTester.js";
+import { rule } from "../../rules/valid-local-dependency.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 const fileName = (partialPath: string) => {
 	return path.join(process.cwd(), partialPath);

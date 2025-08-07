@@ -1,7 +1,7 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
-import { createRule } from "../createRule.js";
-import { formatErrors } from "./formatErrors.js";
+import { createRule } from "../createRule.ts";
+import { formatErrors } from "./formatErrors.ts";
 
 export type ValidationFunction = (value: unknown) => string[];
 

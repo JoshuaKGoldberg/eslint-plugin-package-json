@@ -10,7 +10,7 @@ import {
 	validateType,
 } from "package-json-validator";
 
-import type { PackageJsonRuleModule } from "../createRule.js";
+import type { PackageJsonRuleModule } from "../createRule.ts";
 
 import {
 	createSimpleValidPropertyRule,

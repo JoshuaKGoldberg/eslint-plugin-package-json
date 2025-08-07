@@ -28,7 +28,7 @@
 		"lib/"
 	],
 	"scripts": {
-		"build": "tsup",
+		"build": "tsdown",
 		"build:docs": "pnpm build --no-dts && eslint-doc-generator",
 		"format": "prettier .",
 		"lint": "eslint . --max-warnings 0",
@@ -92,7 +92,7 @@
 		"prettier-plugin-sh": "0.18.0",
 		"release-it": "19.0.1",
 		"sentences-per-line": "0.3.0",
-		"tsup": "8.5.0",
+		"tsdown": "^0.13.3",
 		"typescript": "5.9.2",
 		"typescript-eslint": "8.38.0",
 		"vitest": "3.2.0"

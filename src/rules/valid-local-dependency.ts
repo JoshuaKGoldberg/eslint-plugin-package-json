@@ -1,6 +1,6 @@
 import path from "path";
 
-import { createRule } from "../createRule.js";
+import { createRule } from "../createRule.ts";
 
 const fileRegex = /^file:/;
 const linkRegex = /^link:/;

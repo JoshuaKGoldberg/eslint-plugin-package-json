@@ -1,8 +1,8 @@
-import { JSONProperty } from "jsonc-eslint-parser/lib/parser/ast.js";
+import { JSONProperty } from "jsonc-eslint-parser/lib/parser/ast.ts";
 
-import { createRule } from "../createRule.js";
-import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.js";
-import { isJSONStringLiteral } from "../utils/predicates.js";
+import { createRule } from "../createRule.ts";
+import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.ts";
+import { isJSONStringLiteral } from "../utils/predicates.ts";
 
 const githubUrlRegex =
 	/^(?:git\+)?(?:ssh:\/\/git@|http?s:\/\/)?(?:www\.)?github\.com\//;
