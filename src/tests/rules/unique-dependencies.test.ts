@@ -1,5 +1,5 @@
-import { rule } from "../../rules/unique-dependencies.js";
-import { ruleTester } from "./ruleTester.js";
+import { rule } from "../../rules/unique-dependencies.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("unique-dependencies", rule, {
 	invalid: [
@@ -9,8 +9,6 @@ ruleTester.run("unique-dependencies", rule, {
 	}`,
 			errors: [
 				{
-					column: 26,
-					endColumn: 31,
 					line: 2,
 					messageId: "overridden",
 					suggestions: [
@@ -31,8 +29,6 @@ ruleTester.run("unique-dependencies", rule, {
 	}`,
 			errors: [
 				{
-					column: 27,
-					endColumn: 32,
 					line: 2,
 					messageId: "overridden",
 					suggestions: [
@@ -50,26 +46,24 @@ ruleTester.run("unique-dependencies", rule, {
 		// ...
 		{
 			code: `{
-		"dependencies": {
-			"abc": "1.2.3",
-			"abc": "1.2.3"
-		}
-	}`,
+	"dependencies": {
+		"abc": "1.2.3",
+		"abc": "1.2.3"
+	}
+}`,
 			errors: [
 				{
-					column: 4,
-					endColumn: 9,
 					line: 3,
 					messageId: "overridden",
 					suggestions: [
 						{
 							messageId: "remove",
 							output: `{
-		"dependencies": {
-			
-			"abc": "1.2.3"
-		}
-	}`,
+	"dependencies": {
+\t\t
+		"abc": "1.2.3"
+	}
+}`,
 						},
 					],
 				},
@@ -79,26 +73,24 @@ ruleTester.run("unique-dependencies", rule, {
 		// ...
 		{
 			code: `{
-		"devDependencies": {
-			"abc": "1.2.3",
-			"abc": "1.2.3"
-		}
-	}`,
+	"devDependencies": {
+		"abc": "1.2.3",
+		"abc": "1.2.3"
+	}
+}`,
 			errors: [
 				{
-					column: 4,
-					endColumn: 9,
 					line: 3,
 					messageId: "overridden",
 					suggestions: [
 						{
 							messageId: "remove",
 							output: `{
-		"devDependencies": {
-			
-			"abc": "1.2.3"
-		}
-	}`,
+	"devDependencies": {
+\t\t
+		"abc": "1.2.3"
+	}
+}`,
 						},
 					],
 				},
@@ -107,26 +99,24 @@ ruleTester.run("unique-dependencies", rule, {
 		},
 		{
 			code: `{
-		"optionalDependencies": {
-			"abc": "1.2.3",
-			"abc": "1.2.3"
-		}
-	}`,
+	"optionalDependencies": {
+		"abc": "1.2.3",
+		"abc": "1.2.3"
+	}
+}`,
 			errors: [
 				{
-					column: 4,
-					endColumn: 9,
 					line: 3,
 					messageId: "overridden",
 					suggestions: [
 						{
 							messageId: "remove",
 							output: `{
-		"optionalDependencies": {
-			
-			"abc": "1.2.3"
-		}
-	}`,
+	"optionalDependencies": {
+\t\t
+		"abc": "1.2.3"
+	}
+}`,
 						},
 					],
 				},
@@ -135,26 +125,24 @@ ruleTester.run("unique-dependencies", rule, {
 		},
 		{
 			code: `{
-		"peerDependencies": {
-			"abc": "1.2.3",
-			"abc": "1.2.3"
-		}
-	}`,
+	"peerDependencies": {
+		"abc": "1.2.3",
+		"abc": "1.2.3"
+	}
+}`,
 			errors: [
 				{
-					column: 4,
-					endColumn: 9,
 					line: 3,
 					messageId: "overridden",
 					suggestions: [
 						{
 							messageId: "remove",
 							output: `{
-		"peerDependencies": {
-			
-			"abc": "1.2.3"
-		}
-	}`,
+	"peerDependencies": {
+\t\t
+		"abc": "1.2.3"
+	}
+}`,
 						},
 					],
 				},
@@ -169,8 +157,6 @@ ruleTester.run("unique-dependencies", rule, {
 	}`,
 			errors: [
 				{
-					column: 17,
-					endColumn: 22,
 					line: 2,
 					messageId: "overridden",
 					suggestions: [

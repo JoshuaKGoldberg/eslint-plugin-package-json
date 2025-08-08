@@ -1,7 +1,7 @@
 import path from "node:path";
 
-import { rule } from "../../rules/valid-repository-directory.js";
-import { ruleTester } from "./ruleTester.js";
+import { rule } from "../../rules/valid-repository-directory.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("valid-repository-directory (no repository)", rule, {
 	invalid: [

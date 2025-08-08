@@ -6,7 +6,7 @@ import {
 } from "eslint-fix-utils";
 import * as ESTree from "estree";
 
-import { createRule, PackageJsonRuleContext } from "../createRule.js";
+import { createRule, PackageJsonRuleContext } from "../createRule.ts";
 
 interface Option {
 	ignoreProperties?: string[];

@@ -2,7 +2,7 @@ import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import semver from "semver";
 
-import { createRule } from "../createRule.js";
+import { createRule } from "../createRule.ts";
 
 export const rule = createRule({
 	create(context) {

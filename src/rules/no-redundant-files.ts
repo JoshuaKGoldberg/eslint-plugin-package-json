@@ -3,8 +3,8 @@ import type { AST as JsonAST } from "jsonc-eslint-parser";
 import { fixRemoveArrayElement } from "eslint-fix-utils";
 import * as ESTree from "estree";
 
-import { createRule } from "../createRule.js";
-import { isJSONStringLiteral, isNotNullish } from "../utils/predicates.js";
+import { createRule } from "../createRule.ts";
+import { isJSONStringLiteral, isNotNullish } from "../utils/predicates.ts";
 
 const defaultFiles = [
 	/* cspell:disable-next-line */

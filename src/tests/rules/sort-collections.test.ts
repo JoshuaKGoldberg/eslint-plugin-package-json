@@ -1,5 +1,5 @@
-import { rule } from "../../rules/sort-collections.js";
-import { ruleTester } from "./ruleTester.js";
+import { rule } from "../../rules/sort-collections.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 //------------------------------------------------------------------------------
 // Tests

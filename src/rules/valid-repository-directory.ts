@@ -4,8 +4,8 @@ import { findRootSync } from "@altano/repository-tools";
 import * as path from "node:path";
 import { sep as posixSep } from "node:path/posix";
 
-import { createRule } from "../createRule.js";
-import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.js";
+import { createRule } from "../createRule.ts";
+import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.ts";
 
 /**
  * Checks if the child path appears at the end of the parent path.

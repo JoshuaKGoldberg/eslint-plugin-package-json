@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import { formatErrors } from "./formatErrors.js";
+import { formatErrors } from "./formatErrors.ts";
 
 describe("formatErrors", () => {
 	it("should return the single error string as-is when only one error is present", () => {

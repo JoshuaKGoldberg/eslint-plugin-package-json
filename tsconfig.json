@@ -1,7 +1,6 @@
 {
 	"compilerOptions": {
 		"declaration": true,
-		"declarationMap": true,
 		"esModuleInterop": true,
 		"module": "nodenext",
 		"moduleResolution": "nodenext",
@@ -9,7 +8,8 @@
 		"resolveJsonModule": true,
 		"skipLibCheck": true,
 		"strict": true,
-		"target": "ES2021"
+		"target": "ES2024",
+		"rewriteRelativeImportExtensions": true
 	},
 	"include": ["src"]
 }

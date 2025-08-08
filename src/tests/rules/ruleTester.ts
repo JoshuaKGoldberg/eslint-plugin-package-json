@@ -2,7 +2,7 @@ import { RuleTester } from "eslint";
 import jsoncESLintParser from "jsonc-eslint-parser";
 import * as vitest from "vitest";
 
-import type { PackageJsonRuleModule } from "../../createRule.js";
+import type { PackageJsonRuleModule } from "../../createRule.ts";
 
 export type JsonRuleTester = RuleTester & {
 	run: JsonRuleTesterRun;

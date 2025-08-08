@@ -1,5 +1,5 @@
-import { rule } from "../../rules/valid-package-definition.js";
-import { ruleTester } from "./ruleTester.js";
+import { rule } from "../../rules/valid-package-definition.ts";
+import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("valid-package-definition", rule, {
 	invalid: [

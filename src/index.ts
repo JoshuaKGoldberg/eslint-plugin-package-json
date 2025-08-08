@@ -1,4 +1,4 @@
-import { plugin } from "./plugin.js";
+import { plugin } from "./plugin.ts";
 
 export const rules = plugin.rules;
 export const configs = plugin.configs;

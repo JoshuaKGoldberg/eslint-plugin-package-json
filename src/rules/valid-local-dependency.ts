@@ -1,6 +1,9 @@
-import path from "path";
+import { createRequire } from "node:module";
+import path from "node:path";
 
-import { createRule } from "../createRule.js";
+import { createRule } from "../createRule.ts";
+
+const require = createRequire(import.meta.url);
 
 const fileRegex = /^file:/;
 const linkRegex = /^link:/;
