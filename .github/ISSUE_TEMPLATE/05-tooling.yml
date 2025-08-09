@@ -19,7 +19,7 @@ body:
           required: true
     type: checkboxes
   - attributes:
-      description: What did you expect to be able to do?
+      description: What tooling changes would you like to make?
       label: Overview
     type: textarea
     validations:
