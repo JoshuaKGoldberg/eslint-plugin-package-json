@@ -16,8 +16,10 @@ export const createSimpleValidPropertyRule = (
 	validationFunction: ValidationFunction,
 	aliases: string[] = [],
 ) => {
+	const ruleName = `valid-${propertyName}`;
+
 	const propertyNames = [propertyName, ...aliases];
-	return createRule({
+	const rule = createRule({
 		create(context) {
 			return propertyNames.reduce<
 				Record<string, (node: JsonAST.JSONProperty) => void>
@@ -44,7 +46,6 @@ export const createSimpleValidPropertyRule = (
 				return acc;
 			}, {});
 		},
-
 		meta: {
 			docs: {
 				category: "Best Practices",
@@ -57,5 +58,11 @@ export const createSimpleValidPropertyRule = (
 			schema: [],
 			type: "problem",
 		},
+		name: ruleName,
 	});
+
+	return {
+		rule,
+		ruleName,
+	};
 };

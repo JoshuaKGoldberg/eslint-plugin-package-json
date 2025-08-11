@@ -30,7 +30,6 @@ export const rule = createRule({
 			},
 		};
 	},
-
 	meta: {
 		docs: {
 			category: "Best Practices",
@@ -45,4 +44,5 @@ export const rule = createRule({
 		schema: [],
 		type: "problem",
 	},
+	name: "valid-version",
 });

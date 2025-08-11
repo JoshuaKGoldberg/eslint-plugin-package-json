@@ -61,7 +61,6 @@ export const rule = createRule({
 			},
 		};
 	},
-
 	meta: {
 		deprecated: true,
 		docs: {
@@ -76,4 +75,5 @@ export const rule = createRule({
 		schema: [],
 		type: "problem",
 	},
+	name: "valid-local-dependency",
 });

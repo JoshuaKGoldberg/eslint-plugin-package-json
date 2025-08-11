@@ -128,7 +128,6 @@ export const rule = createRule<Options>({
 			},
 		};
 	},
-
 	meta: {
 		defaultOptions: [{ form: "object" }],
 		docs: {
@@ -159,4 +158,5 @@ export const rule = createRule<Options>({
 		],
 		type: "suggestion",
 	},
+	name: "repository-shorthand",
 });

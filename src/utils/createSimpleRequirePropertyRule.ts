@@ -30,7 +30,8 @@ export const createSimpleRequirePropertyRule = (
 		isRecommended,
 	}: CreateRequirePropertyRuleOptions = {},
 ) => {
-	return createRule<Options>({
+	const ruleName = `require-${propertyName}`;
+	const rule = createRule<Options>({
 		create(context) {
 			const enforceForPrivate =
 				context.settings.packageJson?.enforceForPrivate;
@@ -96,5 +97,11 @@ export const createSimpleRequirePropertyRule = (
 			],
 			type: "suggestion",
 		},
+		name: ruleName,
 	});
+
+	return {
+		rule,
+		ruleName,
+	};
 };

@@ -132,7 +132,6 @@ export const rule = createRule<Options>({
 			},
 		};
 	},
-
 	meta: {
 		defaultOptions: [Array.from(defaultCollections)],
 		docs: {
@@ -156,4 +155,5 @@ export const rule = createRule<Options>({
 		],
 		type: "layout",
 	},
+	name: "sort-collections",
 });

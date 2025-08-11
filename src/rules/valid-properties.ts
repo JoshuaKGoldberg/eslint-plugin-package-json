@@ -10,8 +10,6 @@ import {
 	validateType,
 } from "package-json-validator";
 
-import type { PackageJsonRuleModule } from "../createRule.ts";
-
 import {
 	createSimpleValidPropertyRule,
 	ValidationFunction,
@@ -47,8 +45,8 @@ const properties = [
 ] satisfies [string, ValidationFunction | ValidPropertyOptions][];
 
 /** All basic valid- flavor rules */
-export const rules = properties.reduce<Record<string, PackageJsonRuleModule>>(
-	(acc, [propertyName, validationFunctionOrOptions]) => {
+export const rules = Object.fromEntries(
+	properties.map(([propertyName, validationFunctionOrOptions]) => {
 		let validationFunction: ValidationFunction;
 		let aliases: string[] = [];
 		if (typeof validationFunctionOrOptions === "object") {
@@ -57,12 +55,11 @@ export const rules = properties.reduce<Record<string, PackageJsonRuleModule>>(
 		} else {
 			validationFunction = validationFunctionOrOptions;
 		}
-		acc[`valid-${propertyName}`] = createSimpleValidPropertyRule(
+		const { rule, ruleName } = createSimpleValidPropertyRule(
 			propertyName,
 			validationFunction,
 			aliases,
 		);
-		return acc;
-	},
-	{},
+		return [ruleName, rule];
+	}),
 );

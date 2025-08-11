@@ -47,7 +47,6 @@ export const rule = createRule<Options>({
 			},
 		};
 	},
-
 	// eslint-disable-next-line eslint-plugin/prefer-message-ids
 	meta: {
 		defaultOptions: [{ ignoreProperties: [] }],
@@ -75,4 +74,5 @@ export const rule = createRule<Options>({
 		],
 		type: "problem",
 	},
+	name: "valid-package-definition",
 });

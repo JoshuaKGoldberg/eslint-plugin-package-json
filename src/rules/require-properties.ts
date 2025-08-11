@@ -23,8 +23,11 @@ const properties: [name: string, options?: CreateRequirePropertyRuleOptions][] =
 	];
 
 export const rules = Object.fromEntries(
-	properties.map(([propertyName, options]) => [
-		`require-${propertyName}`,
-		createSimpleRequirePropertyRule(propertyName, options),
-	]),
+	properties.map(([propertyName, options]) => {
+		const { rule, ruleName } = createSimpleRequirePropertyRule(
+			propertyName,
+			options,
+		);
+		return [ruleName, rule];
+	}),
 );
