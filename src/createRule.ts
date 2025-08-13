@@ -50,16 +50,22 @@ export interface PackageJsonSourceCode extends SourceCode {
 }
 
 export function createRule<Options extends unknown[]>(
-	rule: PackageJsonRuleModule<Options>,
-) {
+	rule: PackageJsonRuleModule<Options> & { name: string },
+): PackageJsonRuleModule<Options> {
 	return {
-		...rule,
 		create(context: PackageJsonRuleContext<Options>) {
 			if (!isPackageJson(context.filename)) {
 				return {};
 			}
 
 			return rule.create(context);
+		},
+		meta: {
+			...rule.meta,
+			docs: {
+				...rule.meta.docs,
+				url: `https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/blob/HEAD/docs/rules/${rule.name}.md`,
+			},
 		},
 	};
 }

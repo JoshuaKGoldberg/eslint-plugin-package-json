@@ -164,4 +164,5 @@ export const rule = createRule<Options>({
 		],
 		type: "suggestion",
 	},
+	name: "no-empty-fields",
 });

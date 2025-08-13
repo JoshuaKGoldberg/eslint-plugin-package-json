@@ -63,7 +63,6 @@ export const rule = createRule<Options>({
 			},
 		};
 	},
-
 	meta: {
 		defaultOptions: [{ enforceCase: false }],
 		docs: {
@@ -92,4 +91,5 @@ export const rule = createRule<Options>({
 		],
 		type: "problem",
 	},
+	name: "valid-bin",
 });

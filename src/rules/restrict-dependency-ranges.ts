@@ -271,7 +271,6 @@ export const rule = createRule<Options>({
 			},
 		};
 	},
-
 	meta: {
 		defaultOptions: [[]],
 		docs: {
@@ -301,4 +300,5 @@ export const rule = createRule<Options>({
 		],
 		type: "suggestion",
 	},
+	name: "restrict-dependency-ranges",
 });

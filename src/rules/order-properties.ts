@@ -149,4 +149,5 @@ export const rule = createRule<Options>({
 		],
 		type: "layout",
 	},
+	name: "order-properties",
 });
