@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.53.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.52.1...v0.53.0) (2025-08-13)
+
+### Features
+
+- add docs url to all rules ([#1218](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1218)) ([d456b13](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/d456b13d2c30e71d11294a315282859c66a4b1b7)), closes [#1217](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1217)
+
 ## [0.52.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.52.0...v0.52.1) (2025-08-07)
 
 ### Bug Fixes
