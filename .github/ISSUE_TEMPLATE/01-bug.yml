@@ -7,7 +7,8 @@ labels:
   - "type: bug"
 
 body:
-  - attributes:
+  - type: checkboxes
+    attributes:
       description: If any of these required steps are not taken, we may not be able to review your issue. Help us to help you!
       label: Bug Report Checklist
       options:
@@ -15,31 +16,31 @@ body:
           required: true
         - label: I have [searched for related issues](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=is%3Aissue) and found none that matched my issue.
           required: true
-    type: checkboxes
-  - attributes:
+  - type: textarea
+    attributes:
       description: What did you expect to happen?
       label: Expected
-    type: textarea
     validations:
       required: true
-  - attributes:
+  - type: textarea
+    attributes:
       description: What happened instead?
       label: Actual
-    type: textarea
     validations:
       required: true
-  - attributes:
+  - type: input
+    attributes:
       description: Version of this package you tried
       label: Version
       placeholder: 1.2.3
+    validations:
       required: true
-    type: input
-  - attributes:
+  - type: input
+    attributes:
       description: Version of ESLint
-      label: Version
+      label: ESLint Version
       placeholder: 1.2.3
-    type: input
-  - attributes:
+  - type: textarea
+    attributes:
       description: Any additional info you'd like to provide.
       label: Additional Info
-    type: textarea
