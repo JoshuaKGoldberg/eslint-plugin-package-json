@@ -100,8 +100,8 @@ importers:
         specifier: 4.15.0
         version: 4.15.0(eslint@9.32.0(jiti@2.5.0))(typescript@5.9.2)
       eslint-plugin-regexp:
-        specifier: 2.9.0
-        version: 2.9.0(eslint@9.32.0(jiti@2.5.0))
+        specifier: 2.10.0
+        version: 2.10.0(eslint@9.32.0(jiti@2.5.0))
       eslint-plugin-yml:
         specifier: 1.18.0
         version: 1.18.0(eslint@9.32.0(jiti@2.5.0))
@@ -1684,8 +1684,8 @@ packages:
     peerDependencies:
       eslint: '>=8.45.0'
 
-  eslint-plugin-regexp@2.9.0:
-    resolution: {integrity: sha512-9WqJMnOq8VlE/cK+YAo9C9YHhkOtcEtEk9d12a+H7OSZFwlpI6stiHmYPGa2VE0QhTzodJyhlyprUaXDZLgHBw==}
+  eslint-plugin-regexp@2.10.0:
+    resolution: {integrity: sha512-ovzQT8ESVn5oOe5a7gIDPD5v9bCSjIFJu57sVPDqgPRXicQzOnYfFN21WoQBQF18vrhT5o7UMKFwJQVVjyJ0ng==}
     engines: {node: ^18 || >=20}
     peerDependencies:
       eslint: '>=8.44.0'
@@ -2241,6 +2241,7 @@ packages:
 
   lodash.get@4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
 
   lodash.isplainobject@4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
@@ -4731,7 +4732,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-regexp@2.9.0(eslint@9.32.0(jiti@2.5.0)):
+  eslint-plugin-regexp@2.10.0(eslint@9.32.0(jiti@2.5.0)):
     dependencies:
       '@eslint-community/eslint-utils': 4.7.0(eslint@9.32.0(jiti@2.5.0))
       '@eslint-community/regexpp': 4.12.1
