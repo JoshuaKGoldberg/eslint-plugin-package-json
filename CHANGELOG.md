@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.54.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.53.0...v0.54.0) (2025-08-15)
+
+### Features
+
+- **valid-exports:** add new rule for validating `exports` ([#1220](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1220)) ([2af10da](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/2af10dae3398832819c6dd37730ffef5ee3329b7)), closes [#1033](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1033)
+
 # [0.53.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.52.1...v0.53.0) (2025-08-13)
 
 ### Features
