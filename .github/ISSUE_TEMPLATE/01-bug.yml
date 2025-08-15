@@ -32,11 +32,12 @@ body:
       description: Version of this package you tried
       label: Version
       placeholder: 1.2.3
-      required: true
     type: input
+    validations:
+      required: true
   - attributes:
       description: Version of ESLint
-      label: Version
+      label: ESLint Version
       placeholder: 1.2.3
     type: input
   - attributes:
