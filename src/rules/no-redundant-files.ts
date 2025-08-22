@@ -181,7 +181,7 @@ export const rule = createRule({
 		docs: {
 			category: "Best Practices",
 			description: "Prevents adding unnecessary / redundant files.",
-			recommended: false,
+			recommended: true,
 		},
 		hasSuggestions: true,
 		messages: {
