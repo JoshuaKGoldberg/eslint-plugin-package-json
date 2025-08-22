@@ -156,7 +156,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | Name                                                                       | Description                                                                                       | 💼   | 🔧 | 💡 | ❌  |
 | :------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------ | :--- | :- | :- | :- |
 | [no-empty-fields](docs/rules/no-empty-fields.md)                           | Reports on unnecessary empty arrays and objects.                                                  | ✔️ ✅ |    | 💡 |    |
-| [no-redundant-files](docs/rules/no-redundant-files.md)                     | Prevents adding unnecessary / redundant files.                                                    |      |    | 💡 |    |
+| [no-redundant-files](docs/rules/no-redundant-files.md)                     | Prevents adding unnecessary / redundant files.                                                    | ✔️ ✅ |    | 💡 |    |
 | [order-properties](docs/rules/order-properties.md)                         | Package properties must be declared in standard order                                             | ✔️ ✅ | 🔧 |    |    |
 | [repository-shorthand](docs/rules/repository-shorthand.md)                 | Enforce either object or shorthand declaration for repository.                                    | ✔️ ✅ | 🔧 |    |    |
 | [require-author](docs/rules/require-author.md)                             | Requires the `author` property to be present.                                                     |      |    |    |    |
