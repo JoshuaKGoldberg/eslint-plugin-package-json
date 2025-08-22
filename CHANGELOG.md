@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.55.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.54.0...v0.55.0) (2025-08-22)
+
+### Features
+
+- add no-redundant-files to recommended ([#1232](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1232)) ([2a52f87](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/2a52f8797bff236f88232d139e2a9526c24e4b4c)), closes [#1231](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1231)
+
 # [0.54.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.53.0...v0.54.0) (2025-08-15)
 
 ### Features
