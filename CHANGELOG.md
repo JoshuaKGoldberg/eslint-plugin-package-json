@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.56.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.55.0...v0.56.0) (2025-08-25)
+
+### Features
+
+- **valid-directories:** add new rule for validating `directories` ([#1224](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1224)) ([b1cc676](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/b1cc6762f7e46162e4a6bf067dd29af2983462c8)), closes [#825](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/825)
+
 # [0.55.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.54.0...v0.55.0) (2025-08-22)
 
 ### Features
