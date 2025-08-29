@@ -1,4 +1,8 @@
 import type * as ESTree from "estree";
+import type {
+	FromSchema as InferJsonSchemaType,
+	JSONSchema,
+} from "json-schema-to-ts";
 
 import { AST, Rule, SourceCode } from "eslint";
 import { AST as JsonAST } from "jsonc-eslint-parser";
@@ -40,20 +44,36 @@ export interface PackageJsonRuleContext<Options extends unknown[] = unknown[]>
 	sourceCode: PackageJsonSourceCode;
 }
 
-export interface PackageJsonRuleModule<Options extends unknown[] = unknown[]> {
+export interface PackageJsonRuleModule<
+	Options extends unknown[] = unknown[],
+	Schema extends JSONSchema[] = JSONSchema[],
+> {
 	create(context: PackageJsonRuleContext<Options>): Rule.NodeListener;
-	meta: Rule.RuleMetaData;
+	meta: Omit<Rule.RuleMetaData, "defaultOptions" | "schema"> & {
+		defaultOptions?: NoInfer<Options>;
+		schema?: Schema;
+	};
 }
 
 export interface PackageJsonSourceCode extends SourceCode {
 	ast: PackageJsonAst;
 }
 
-export function createRule<Options extends unknown[]>(
-	rule: PackageJsonRuleModule<Options> & { name: string },
-): PackageJsonRuleModule<Options> {
+type InferJsonSchemasTupleType<T extends JSONSchema[]> = {
+	[K in keyof T]?: InferJsonSchemaType<T[K]>;
+};
+
+export function createRule<
+	OptionsOverride extends unknown[] = never,
+	const Schema extends JSONSchema[] = JSONSchema[],
+	_OptionsResolved extends unknown[] = [OptionsOverride] extends [never]
+		? InferJsonSchemasTupleType<Schema>
+		: OptionsOverride,
+>(
+	rule: PackageJsonRuleModule<_OptionsResolved, Schema> & { name: string },
+): PackageJsonRuleModule<_OptionsResolved, Schema> {
 	return {
-		create(context: PackageJsonRuleContext<Options>) {
+		create(context) {
 			if (!isPackageJson(context.filename)) {
 				return {};
 			}

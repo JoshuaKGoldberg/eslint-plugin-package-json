@@ -2,11 +2,6 @@ import { validate } from "package-json-validator";
 
 import { createRule } from "../createRule.ts";
 
-interface Option {
-	ignoreProperties?: string[];
-}
-type Options = [Option?];
-
 // package-json-validator does not correctly recognize shorthand for repositories and alternate dependency statements, so we discard those values.
 // it also enforces a stricter code for npm than is really appropriate,
 // so we disable some other errors here.
@@ -19,7 +14,7 @@ const ignoredErrors = [
 const isUsableError = (errorText: string) =>
 	ignoredErrors.every((pattern) => !pattern.test(errorText));
 
-export const rule = createRule<Options>({
+export const rule = createRule({
 	create(context) {
 		const ignoreProperties = context.options[0]?.ignoreProperties ?? [];
 

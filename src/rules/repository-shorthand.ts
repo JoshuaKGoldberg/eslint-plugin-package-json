@@ -12,11 +12,7 @@ const isGitHubUrl = (url: string) => githubUrlRegex.test(url);
 const cleanGitHubUrl = (url: string) =>
 	url.replace(githubUrlRegex, "").replace(/\.git$/, "");
 
-type Form = "object" | "shorthand";
-
-type Options = [{ form: Form }?];
-
-export const rule = createRule<Options>({
+export const rule = createRule({
 	create(context) {
 		const [{ form = "object" } = {}] = context.options;
 

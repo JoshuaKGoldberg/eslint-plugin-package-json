@@ -8,11 +8,6 @@ import * as ESTree from "estree";
 
 import { createRule, PackageJsonRuleContext } from "../createRule.ts";
 
-interface Option {
-	ignoreProperties?: string[];
-}
-type Options = [Option?];
-
 const getDataAndMessageId = (
 	node:
 		| JsonAST.JSONArrayExpression
@@ -99,7 +94,7 @@ const getTopLevelProperty = (
 		: undefined;
 };
 
-export const rule = createRule<Options>({
+export const rule = createRule({
 	create(context) {
 		const ignoreProperties = context.options[0]?.ignoreProperties ?? [];
 
