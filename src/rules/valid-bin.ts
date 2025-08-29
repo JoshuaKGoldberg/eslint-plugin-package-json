@@ -5,9 +5,7 @@ import { validateBin } from "package-json-validator";
 import { createRule } from "../createRule.ts";
 import { formatErrors } from "../utils/formatErrors.ts";
 
-type Options = [{ enforceCase: boolean }?];
-
-export const rule = createRule<Options>({
+export const rule = createRule({
 	create(context) {
 		const shouldEnforceCase = !!context.options[0]?.enforceCase;
 

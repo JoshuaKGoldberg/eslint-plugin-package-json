@@ -105,6 +105,12 @@ export default tseslint.config(
 		},
 	},
 	{
+		files: ["pnpm-workspace.yaml"],
+		rules: {
+			"yml/file-extension": "off",
+		},
+	},
+	{
 		files: ["./eslint.config.mjs", "./**/*.test.*"],
 		rules: {
 			"n/no-unsupported-features/node-builtins": "off",

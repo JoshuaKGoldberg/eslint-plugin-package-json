@@ -12,15 +12,6 @@ const DEPENDENCY_TYPES = [
 	"peerDependencies",
 ];
 
-interface Option {
-	forDependencyTypes?: string[];
-	forPackages?: string[];
-	forVersions?: string;
-	rangeType: RangeType | RangeType[];
-}
-
-type Options = [Option | Option[] | undefined];
-
 const RANGE_TYPES = ["caret", "pin", "tilde"] as const;
 type RangeType = (typeof RANGE_TYPES)[number];
 
@@ -65,7 +56,7 @@ const schemaOptions = {
 	},
 	required: ["rangeType"],
 	type: "object",
-};
+} as const;
 
 const SYMBOLS = {
 	caret: "^",
@@ -112,7 +103,7 @@ const capitalize = (str: string): string => {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
-export const rule = createRule<Options>({
+export const rule = createRule({
 	create(context) {
 		// Bail early if no options were provided
 		if (!context.options[0]) {
