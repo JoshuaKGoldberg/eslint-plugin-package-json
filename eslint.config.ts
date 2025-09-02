@@ -9,11 +9,12 @@ import n from "eslint-plugin-n";
 import perfectionist from "eslint-plugin-perfectionist";
 import * as regexp from "eslint-plugin-regexp";
 import yml from "eslint-plugin-yml";
+import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 
 import packageJson from "./src/index.ts";
 
-export default tseslint.config(
+export default defineConfig(
 	{
 		ignores: [
 			"**/*.snap",
