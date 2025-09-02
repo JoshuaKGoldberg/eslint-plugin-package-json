@@ -1,4 +1,4 @@
-import { JSONProperty } from "jsonc-eslint-parser/lib/parser/ast.ts";
+import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { createRule } from "../createRule.ts";
 import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.ts";
@@ -20,7 +20,7 @@ export const rule = createRule<Options>({
 	create(context) {
 		const [{ form = "object" } = {}] = context.options;
 
-		function validateRepositoryForObject(node: JSONProperty) {
+		function validateRepositoryForObject(node: JsonAST.JSONProperty) {
 			if (isJSONStringLiteral(node.value)) {
 				context.report({
 					fix(fixer) {
@@ -50,7 +50,7 @@ export const rule = createRule<Options>({
 			}
 		}
 
-		function validateRepositoryForShorthand(node: JSONProperty) {
+		function validateRepositoryForShorthand(node: JsonAST.JSONProperty) {
 			if (isJSONStringLiteral(node.value)) {
 				const { value } = node.value;
 				if (typeof value === "string" && isGitHubUrl(value)) {
@@ -111,7 +111,7 @@ export const rule = createRule<Options>({
 		}
 
 		return {
-			JSONProperty(node) {
+			JSONProperty(node: JsonAST.JSONProperty) {
 				if (
 					node.key.type !== "JSONLiteral" ||
 					node.key.value !== "repository" ||
