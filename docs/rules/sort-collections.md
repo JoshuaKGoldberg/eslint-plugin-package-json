@@ -10,10 +10,11 @@ Whenever npm changes package dependencies through `npm install`, it lexically so
 However, developers will manually update `package.json` and accidentally leave dependencies out of order.
 Doing so leads to "noise" in commits when a later change re-sorts the packages.
 
-Furthermore, the `"scripts"` collections in `package.json` files are generally easiest to work with when in alphabetical order.
-To keep related scripts close together in the file, consider using the common npm script convention of colon-separated namespaces, such as `watch:all` or `watch:dist`.
+For most collections (`dependencies`, `peerDependencies`, `exports` entries, etc.) this rule enforces a simple ascending lexical ordering (based on raw string keys).
 
-This rule aims to keep the dependency collections sorted in every commit.
+`scripts` are an exception: they use a lifecycle‑aware ordering, which groups `pre<name>` / `<name>` / `post<name>` together (even if the middle one is missing). Details & examples: see [Scripts Lifecycle Ordering](#scripts-lifecycle-ordering).
+
+This rule therefore aims to keep the configured collections sorted deterministically and to colocate lifecycle hook scripts for readability.
 
 ## Rule Details
 
@@ -76,6 +77,55 @@ The following patterns are **not** considered errors:
 ```
 
 Note that in lexical ordering, `lodash` comes before `lodash.debounce`.
+
+### Scripts Lifecycle Ordering
+
+Summary:
+
+- Lifecycle scripts form a group: `pre<name>` → `<name>` → `post<name>`.
+- The group is positioned where `<name>` would appear lexically, even if `<name>` itself is missing.
+- Groups with different base names (`build`, `install`, `test`, ...) are ordered relative to each other by their base name.
+- All other script names (including namespaced ones like `lint:fix`, `watch:dist`) then follow the `sort-package-json` ordering after lifecycle grouping.
+
+This matches the behavior of `prettier-plugin-packagejson`.
+
+Example (missing main script (`install`); group still kept together):
+
+```json
+{
+	"scripts": {
+		"preinstall": "echo pre",
+		"postinstall": "echo post",
+		"prepare": "echo prepare"
+	}
+}
+```
+
+Incorrect vs. correct ordering of a complete lifecycle group:
+
+Incorrect:
+
+```json
+{
+	"scripts": {
+		"build": "echo build",
+		"postbuild": "echo post",
+		"prebuild": "echo pre"
+	}
+}
+```
+
+Correct:
+
+```json
+{
+	"scripts": {
+		"prebuild": "echo pre",
+		"build": "echo build",
+		"postbuild": "echo post"
+	}
+}
+```
 
 ### Options
 
