@@ -13,7 +13,7 @@ Doing so leads to "noise" in commits when a later change re-sorts the packages.
 For most collections (`dependencies`, `peerDependencies`, `exports` entries, etc.) this rule enforces a simple ascending lexical ordering (based on raw string keys).
 
 `scripts` are an exception: they use a lifecycle‑aware ordering, which groups `pre<name>` / `<name>` / `post<name>` together (even if the middle one is missing).
-Details & examples: see [Scripts Lifecycle Ordering](#scripts-lifecycle-ordering).
+See [Scripts Lifecycle Ordering](#scripts-lifecycle-ordering) for more details and examples.
 
 This rule therefore aims to keep the configured collections sorted deterministically and to colocate lifecycle hook scripts for readability.
 
