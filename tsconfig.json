@@ -9,15 +9,7 @@
 		"skipLibCheck": true,
 		"strict": true,
 		"target": "ES2024",
-		"rewriteRelativeImportExtensions": true,
-		"types": [
-			"eslint-plugin-markdown",
-			"estree",
-			"node",
-			"semver",
-			"sort-object-keys",
-			"validate-npm-package-name"
-		]
+		"rewriteRelativeImportExtensions": true
 	},
 	"include": ["src"]
 }
