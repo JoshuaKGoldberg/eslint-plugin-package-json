@@ -60,7 +60,7 @@ export const rule = createRule<Options>({
 				const currentOrder = collection.properties;
 				let desiredOrder: JsonAST.JSONProperty[];
 
-				// If it's any property other than `scripts`, simply sort lexicographically
+				// If it's any property other than `scripts`, simply sort lexically
 				if (keyPartsReversed.at(-1) !== "scripts") {
 					desiredOrder = currentOrder.slice().sort((a, b) => {
 						const aKey = (a.key as JsonAST.JSONStringLiteral).value;
@@ -125,7 +125,7 @@ export const rule = createRule<Options>({
 							);
 						},
 						loc: collection.loc,
-						messageId: "notAlphabetized",
+						messageId: "incorrectOrder",
 						node,
 					});
 				}
@@ -137,12 +137,13 @@ export const rule = createRule<Options>({
 		docs: {
 			category: "Best Practices",
 			description:
-				"Dependencies, scripts, and configuration values must be declared in alphabetical order.",
+				"Selected package.json collections must be in a consistent order (lexical for most; lifecycle-aware for scripts).",
 			recommended: true,
 		},
 		fixable: "code",
 		messages: {
-			notAlphabetized: "Package {{ key }} are not alphabetized",
+			incorrectOrder:
+				"Entries in '{{ key }}' are not in the expected order",
 		},
 		schema: [
 			{
