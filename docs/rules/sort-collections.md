@@ -21,8 +21,6 @@ This rule therefore aims to keep the configured collections sorted deterministic
 
 The following patterns are considered errors:
 
-<!-- eslint-disable jsonc/sort-keys -->
-
 ```json
 {
 	"scripts": {
@@ -32,8 +30,6 @@ The following patterns are considered errors:
 	}
 }
 ```
-
-<!-- eslint-enable jsonc/sort-keys -->
 
 In the above `scripts` collection, `test` should be moved to the last line, after `lint` and `start`.
 

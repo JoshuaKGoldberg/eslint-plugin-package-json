@@ -1,6 +1,5 @@
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 import eslint from "@eslint/js";
-import markdown from "@eslint/markdown";
 import vitest from "@vitest/eslint-plugin";
 import eslintPlugin from "eslint-plugin-eslint-plugin";
 import jsdoc from "eslint-plugin-jsdoc";
@@ -36,7 +35,6 @@ export default defineConfig(
 	jsdoc.configs["flat/logical-typescript-error"],
 	jsdoc.configs["flat/stylistic-typescript-error"],
 	jsonc.configs["flat/recommended-with-json"],
-	markdown.configs.recommended,
 	n.configs["flat/recommended"],
 	perfectionist.configs["recommended-natural"],
 	regexp.configs["flat/recommended"],
