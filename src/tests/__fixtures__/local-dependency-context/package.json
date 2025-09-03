@@ -1,7 +1,7 @@
 {
-	"name": "unalphabetized-collections",
+	"name": "local-dependency-context",
 	"version": "1.0.0",
-	"description": "deps all unalphabetized and stuff",
+	"description": "Fixture used only to provide a nested package.json path context for valid-local-dependency tests.",
 	"license": "ISC",
 	"author": "",
 	"main": "index.js",
