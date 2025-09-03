@@ -88,7 +88,7 @@ Summary:
 - Groups with different base names (`build`, `install`, `test`, ...) are ordered relative to each other by their base name.
 - All other script names (including namespaced ones like `lint:fix`, `watch:dist`) then follow the `sort-package-json` ordering after lifecycle grouping.
 
-This matches the behavior of `prettier-plugin-packagejson`.
+This matches the behavior of [`prettier-plugin-packagejson`](https://github.com/matzkoh/prettier-plugin-packagejson).
 
 Example (missing main script (`install`); group still kept together):
 
