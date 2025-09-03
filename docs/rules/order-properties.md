@@ -17,16 +17,12 @@ This rule detects when properties in `package.json` are out of order.
 
 Examples of **incorrect** code for this rule:
 
-<!-- eslint-disable jsonc/sort-keys -->
-
 ```json
 {
 	"version": "1.0.0",
 	"name": "my-package"
 }
 ```
-
-<!-- eslint-enable jsonc/sort-keys -->
 
 This is an error because "version" should come after "name".
 
