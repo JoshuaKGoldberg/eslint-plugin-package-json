@@ -162,3 +162,12 @@ Defaults:
 ```
 
 This rule is **autofixable**; run `eslint` with the `--fix` option to sort any incorrect collections in place.
+
+### Error Messages
+
+This rule provides different error messages depending on the type of collection being sorted:
+
+- **For `scripts`**: _"Entries in 'scripts' are not lexically sorted and grouped by lifecycles"_
+- **For other collections**: _"Entries in '{{ key }}' are not lexically sorted"_
+
+This distinction helps clarify the different sorting behaviors between lifecycle-aware scripts and simple lexical ordering for other collections.

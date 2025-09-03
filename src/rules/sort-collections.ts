@@ -125,7 +125,10 @@ export const rule = createRule<Options>({
 							);
 						},
 						loc: collection.loc,
-						messageId: "incorrectOrder",
+						messageId:
+							keyPartsReversed.at(-1) === "scripts"
+								? "incorrectOrderScripts"
+								: "incorrectOrderLexical",
 						node,
 					});
 				}
@@ -142,8 +145,10 @@ export const rule = createRule<Options>({
 		},
 		fixable: "code",
 		messages: {
-			incorrectOrder:
-				"Entries in '{{ key }}' are not in the expected order",
+			incorrectOrderLexical:
+				"Entries in '{{ key }}' are not lexically sorted",
+			incorrectOrderScripts:
+				"Entries in 'scripts' are not lexically sorted and grouped by lifecycles",
 		},
 		schema: [
 			{

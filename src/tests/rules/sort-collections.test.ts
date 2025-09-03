@@ -17,7 +17,7 @@ ruleTester.run("sort-collections", rule, {
 			errors: [
 				{
 					data: { key: "scripts" },
-					messageId: "incorrectOrder",
+					messageId: "incorrectOrderScripts",
 					type: "JSONProperty",
 				},
 			],
@@ -41,7 +41,7 @@ ruleTester.run("sort-collections", rule, {
 			errors: [
 				{
 					data: { key: "scripts" },
-					messageId: "incorrectOrder",
+					messageId: "incorrectOrderScripts",
 					type: "JSONProperty",
 				},
 			],
@@ -65,7 +65,7 @@ ruleTester.run("sort-collections", rule, {
 			errors: [
 				{
 					data: { key: "scripts" },
-					messageId: "incorrectOrder",
+					messageId: "incorrectOrderScripts",
 					type: "JSONProperty",
 				},
 			],
@@ -87,7 +87,7 @@ ruleTester.run("sort-collections", rule, {
 			errors: [
 				{
 					data: { key: "scripts" },
-					messageId: "incorrectOrder",
+					messageId: "incorrectOrderScripts",
 					type: "JSONProperty",
 				},
 			],
@@ -109,7 +109,7 @@ ruleTester.run("sort-collections", rule, {
 			errors: [
 				{
 					data: { key: "scripts" },
-					messageId: "incorrectOrder",
+					messageId: "incorrectOrderScripts",
 					type: "JSONProperty",
 				},
 			],
@@ -131,7 +131,7 @@ ruleTester.run("sort-collections", rule, {
 			errors: [
 				{
 					data: { key: "scripts" },
-					messageId: "incorrectOrder",
+					messageId: "incorrectOrderScripts",
 					type: "JSONProperty",
 				},
 			],
@@ -157,7 +157,7 @@ ruleTester.run("sort-collections", rule, {
 			errors: [
 				{
 					data: { key: "exports" },
-					messageId: "incorrectOrder",
+					messageId: "incorrectOrderLexical",
 					type: "JSONProperty",
 				},
 			],
@@ -185,7 +185,7 @@ ruleTester.run("sort-collections", rule, {
 			errors: [
 				{
 					data: { key: "pnpm.patchedDependencies" },
-					messageId: "incorrectOrder",
+					messageId: "incorrectOrderLexical",
 					type: "JSONProperty",
 				},
 			],
@@ -214,7 +214,7 @@ ruleTester.run("sort-collections", rule, {
 			errors: [
 				{
 					data: { key: "pnpm.peerDependencyRules.allowedVersions" },
-					messageId: "incorrectOrder",
+					messageId: "incorrectOrderLexical",
 					type: "JSONProperty",
 				},
 			],
