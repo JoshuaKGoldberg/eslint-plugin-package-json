@@ -125,7 +125,10 @@ export const rule = createRule<Options>({
 							);
 						},
 						loc: collection.loc,
-						messageId: "notAlphabetized",
+						messageId:
+							keyPartsReversed.at(-1) === "scripts"
+								? "unsortedScripts"
+								: "unsortedKeys",
 						node,
 					});
 				}
@@ -137,12 +140,15 @@ export const rule = createRule<Options>({
 		docs: {
 			category: "Best Practices",
 			description:
-				"Dependencies, scripts, and configuration values must be declared in alphabetical order.",
+				"Selected collections must be in a consistent order (lexicographical for most; lifecycle-aware for scripts).",
 			recommended: true,
 		},
 		fixable: "code",
 		messages: {
-			notAlphabetized: "Package {{ key }} are not alphabetized",
+			unsortedKeys:
+				"Entries in '{{ key }}' are not in lexicographical order",
+			unsortedScripts:
+				"Entries in 'scripts' are not in lexicographical order and grouped by lifecycles",
 		},
 		schema: [
 			{

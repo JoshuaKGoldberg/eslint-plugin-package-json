@@ -146,7 +146,7 @@ ruleTester.run("valid-local-dependency", rule, {
 				},
 			],
 			filename: fileName(
-				"src/tests/__fixtures__/unalphabetized-collections/package.json",
+				"src/tests/__fixtures__/local-dependency-context/package.json",
 			),
 		},
 		{
@@ -249,7 +249,7 @@ ruleTester.run("valid-local-dependency", rule, {
 					}
 			}`,
 			filename: fileName(
-				"/src/tests/__fixtures__/unalphabetized-collections/package.json",
+				"/src/tests/__fixtures__/local-dependency-context/package.json",
 			),
 		},
 		{

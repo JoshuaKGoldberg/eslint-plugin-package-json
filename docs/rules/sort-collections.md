@@ -6,14 +6,16 @@
 
 <!-- end auto-generated rule header -->
 
-Whenever npm changes package dependencies through `npm install`, it lexically sorts (that is, alphabetizes by package name) all dependencies in `package.json`.
+Whenever npm changes package dependencies through `npm install`, it sorts (lexicographically) all dependencies in `package.json`.
 However, developers will manually update `package.json` and accidentally leave dependencies out of order.
 Doing so leads to "noise" in commits when a later change re-sorts the packages.
 
-Furthermore, the `"scripts"` collections in `package.json` files are generally easiest to work with when in alphabetical order.
-To keep related scripts close together in the file, consider using the common npm script convention of colon-separated namespaces, such as `watch:all` or `watch:dist`.
+For most collections (`dependencies`, `peerDependencies`, `exports` entries, etc.) this rule enforces a simple ascending lexicographical ordering (based on raw string keys).
 
-This rule aims to keep the dependency collections sorted in every commit.
+`scripts` are an exception: they use a lifecycle‑aware ordering, which groups `pre<name>` / `<name>` / `post<name>` together (even if the middle one is missing).
+See [Scripts Lifecycle Ordering](#scripts-lifecycle-ordering) for more details and examples.
+
+This rule therefore aims to keep the configured collections sorted deterministically and to colocate lifecycle hook scripts for readability.
 
 ## Rule Details
 
@@ -48,7 +50,7 @@ In the above `scripts` collection, `test` should be moved to the last line, afte
 }
 ```
 
-In the above `devDependencies` collection, manual editing has put the dependencies out of lexical order.
+In the above `devDependencies` collection, manual editing has put the dependencies out of lexicographical order.
 
 The following patterns are **not** considered errors:
 
@@ -75,7 +77,56 @@ The following patterns are **not** considered errors:
 }
 ```
 
-Note that in lexical ordering, `lodash` comes before `lodash.debounce`.
+Note that in lexicographical ordering, `lodash` comes before `lodash.debounce`.
+
+### Scripts Lifecycle Ordering
+
+Summary:
+
+- Lifecycle scripts form a group: `pre<name>` → `<name>` → `post<name>`.
+- The group is positioned where `<name>` would appear in lexicographical order, even if `<name>` itself is missing.
+- Groups with different base names (`build`, `install`, `test`, ...) are ordered relative to each other by their base name.
+- All other script names (including namespaced ones like `lint:fix`, `watch:dist`) then follow the `sort-package-json` ordering after lifecycle grouping.
+
+This matches the behavior of [`prettier-plugin-packagejson`](https://github.com/matzkoh/prettier-plugin-packagejson).
+
+Example (missing main script (`install`); group still kept together):
+
+```json
+{
+	"scripts": {
+		"preinstall": "echo pre",
+		"postinstall": "echo post",
+		"prepare": "echo prepare"
+	}
+}
+```
+
+Incorrect vs. correct ordering of a complete lifecycle group:
+
+Incorrect:
+
+```json
+{
+	"scripts": {
+		"build": "echo build",
+		"postbuild": "echo post",
+		"prebuild": "echo pre"
+	}
+}
+```
+
+Correct:
+
+```json
+{
+	"scripts": {
+		"prebuild": "echo pre",
+		"build": "echo build",
+		"postbuild": "echo post"
+	}
+}
+```
 
 ### Options
 
@@ -111,3 +162,12 @@ Defaults:
 ```
 
 This rule is **autofixable**; run `eslint` with the `--fix` option to sort any incorrect collections in place.
+
+### Error Messages
+
+This rule provides different error messages depending on the type of collection being sorted:
+
+- **For `scripts`**: _"Entries in 'scripts' are not in lexicographical order and grouped by lifecycles"_
+- **For other collections**: _"Entries in '{{ key }}' are not in lexicographical order"_
+
+This distinction helps clarify the different sorting behaviors between lifecycle-aware scripts and simple lexicographical ordering for other collections.
