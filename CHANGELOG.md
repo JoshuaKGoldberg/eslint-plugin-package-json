@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.56.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.56.1...v0.56.2) (2025-09-04)
+
+### Bug Fixes
+
+- improve sort-collections docs and error messages ([#1250](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1250)) ([1864376](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/1864376039db3db690423051b0dd8a2104395aa4)), closes [#1243](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1243) [#1243](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1243)
+
 ## [0.56.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.56.0...v0.56.1) (2025-08-31)
 
 ### Bug Fixes
