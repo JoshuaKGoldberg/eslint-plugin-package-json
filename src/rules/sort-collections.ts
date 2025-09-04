@@ -140,7 +140,7 @@ export const rule = createRule<Options>({
 		docs: {
 			category: "Best Practices",
 			description:
-				"Selected package.json collections must be in a consistent order (lexicographical for most; lifecycle-aware for scripts).",
+				"Selected collections must be in a consistent order (lexicographical for most; lifecycle-aware for scripts).",
 			recommended: true,
 		},
 		fixable: "code",
