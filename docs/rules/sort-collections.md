@@ -6,11 +6,11 @@
 
 <!-- end auto-generated rule header -->
 
-Whenever npm changes package dependencies through `npm install`, it lexically sorts (that is, alphabetizes by package name) all dependencies in `package.json`.
+Whenever npm changes package dependencies through `npm install`, it sorts (lexicographically) all dependencies in `package.json`.
 However, developers will manually update `package.json` and accidentally leave dependencies out of order.
 Doing so leads to "noise" in commits when a later change re-sorts the packages.
 
-For most collections (`dependencies`, `peerDependencies`, `exports` entries, etc.) this rule enforces a simple ascending lexical ordering (based on raw string keys).
+For most collections (`dependencies`, `peerDependencies`, `exports` entries, etc.) this rule enforces a simple ascending lexicographical ordering (based on raw string keys).
 
 `scripts` are an exception: they use a lifecycle‑aware ordering, which groups `pre<name>` / `<name>` / `post<name>` together (even if the middle one is missing).
 See [Scripts Lifecycle Ordering](#scripts-lifecycle-ordering) for more details and examples.
@@ -50,7 +50,7 @@ In the above `scripts` collection, `test` should be moved to the last line, afte
 }
 ```
 
-In the above `devDependencies` collection, manual editing has put the dependencies out of lexical order.
+In the above `devDependencies` collection, manual editing has put the dependencies out of lexicographical order.
 
 The following patterns are **not** considered errors:
 
@@ -77,14 +77,14 @@ The following patterns are **not** considered errors:
 }
 ```
 
-Note that in lexical ordering, `lodash` comes before `lodash.debounce`.
+Note that in lexicographical ordering, `lodash` comes before `lodash.debounce`.
 
 ### Scripts Lifecycle Ordering
 
 Summary:
 
 - Lifecycle scripts form a group: `pre<name>` → `<name>` → `post<name>`.
-- The group is positioned where `<name>` would appear lexically, even if `<name>` itself is missing.
+- The group is positioned where `<name>` would appear in lexicographical order, even if `<name>` itself is missing.
 - Groups with different base names (`build`, `install`, `test`, ...) are ordered relative to each other by their base name.
 - All other script names (including namespaced ones like `lint:fix`, `watch:dist`) then follow the `sort-package-json` ordering after lifecycle grouping.
 
@@ -167,7 +167,7 @@ This rule is **autofixable**; run `eslint` with the `--fix` option to sort any i
 
 This rule provides different error messages depending on the type of collection being sorted:
 
-- **For `scripts`**: _"Entries in 'scripts' are not lexically sorted and grouped by lifecycles"_
-- **For other collections**: _"Entries in '{{ key }}' are not lexically sorted"_
+- **For `scripts`**: _"Entries in 'scripts' are not in lexicographical order and grouped by lifecycles"_
+- **For other collections**: _"Entries in '{{ key }}' are not in lexicographical order"_
 
-This distinction helps clarify the different sorting behaviors between lifecycle-aware scripts and simple lexical ordering for other collections.
+This distinction helps clarify the different sorting behaviors between lifecycle-aware scripts and simple lexicographical ordering for other collections.

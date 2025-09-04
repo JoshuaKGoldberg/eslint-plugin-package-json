@@ -60,7 +60,7 @@ export const rule = createRule<Options>({
 				const currentOrder = collection.properties;
 				let desiredOrder: JsonAST.JSONProperty[];
 
-				// If it's any property other than `scripts`, simply sort lexically
+				// If it's any property other than `scripts`, simply sort lexicographically
 				if (keyPartsReversed.at(-1) !== "scripts") {
 					desiredOrder = currentOrder.slice().sort((a, b) => {
 						const aKey = (a.key as JsonAST.JSONStringLiteral).value;
@@ -127,8 +127,8 @@ export const rule = createRule<Options>({
 						loc: collection.loc,
 						messageId:
 							keyPartsReversed.at(-1) === "scripts"
-								? "incorrectOrderScripts"
-								: "incorrectOrderLexical",
+								? "unsortedScripts"
+								: "unsortedKeys",
 						node,
 					});
 				}
@@ -140,15 +140,15 @@ export const rule = createRule<Options>({
 		docs: {
 			category: "Best Practices",
 			description:
-				"Selected package.json collections must be in a consistent order (lexical for most; lifecycle-aware for scripts).",
+				"Selected package.json collections must be in a consistent order (lexicographical for most; lifecycle-aware for scripts).",
 			recommended: true,
 		},
 		fixable: "code",
 		messages: {
-			incorrectOrderLexical:
-				"Entries in '{{ key }}' are not lexically sorted",
-			incorrectOrderScripts:
-				"Entries in 'scripts' are not lexically sorted and grouped by lifecycles",
+			unsortedKeys:
+				"Entries in '{{ key }}' are not in lexicographical order",
+			unsortedScripts:
+				"Entries in 'scripts' are not in lexicographical order and grouped by lifecycles",
 		},
 		schema: [
 			{
