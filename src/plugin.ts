@@ -1,4 +1,4 @@
-import { Linter } from "eslint";
+import { type ESLint, type Linter } from "eslint";
 import * as parserJsonc from "jsonc-eslint-parser";
 import { createRequire } from "node:module";
 
@@ -87,7 +87,7 @@ export const plugin = {
 			},
 			name: "package-json/recommended",
 			plugins: {
-				get "package-json"() {
+				get "package-json"(): ESLint.Plugin {
 					return plugin;
 				},
 			},
@@ -99,4 +99,4 @@ export const plugin = {
 		version,
 	},
 	rules,
-};
+} satisfies ESLint.Plugin;
