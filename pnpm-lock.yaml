@@ -85,8 +85,8 @@ importers:
         specifier: 7.0.0
         version: 7.0.0(eslint@9.34.0(jiti@2.5.0))
       eslint-plugin-jsdoc:
-        specifier: 54.3.0
-        version: 54.3.0(eslint@9.34.0(jiti@2.5.0))
+        specifier: 54.4.0
+        version: 54.4.0(eslint@9.34.0(jiti@2.5.0))
       eslint-plugin-jsonc:
         specifier: 2.20.0
         version: 2.20.0(eslint@9.34.0(jiti@2.5.0))
@@ -1691,8 +1691,8 @@ packages:
     peerDependencies:
       eslint: '>=9.0.0'
 
-  eslint-plugin-jsdoc@54.3.0:
-    resolution: {integrity: sha512-G1f3iztVfkmsazoodrvtC71ihdnoZuUhgSXNH1smIGuCWpCFYuFQcv7jAslqQUyVPyGO4lymHsBdRc56bQa79A==}
+  eslint-plugin-jsdoc@54.4.0:
+    resolution: {integrity: sha512-jH4W/E89kEQPY3WxgkJ4ZAC8DJ7boUCeh3MO6hSX+JRzOkIiJ4rCA3lUE73ufWNrafpJqueZ5Lztqf5eK+ry7Q==}
     engines: {node: '>=20.11.0'}
     peerDependencies:
       eslint: ^7.0.0 || ^8.0.0 || ^9.0.0
@@ -1706,6 +1706,7 @@ packages:
   eslint-plugin-markdown@5.1.0:
     resolution: {integrity: sha512-SJeyKko1K6GwI0AN6xeCDToXDkfKZfXcexA6B+O2Wr2btUS9GrC+YgwSyVli5DJnctUHjFXcQ2cqTaAmVoLi2A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+    deprecated: Please use @eslint/markdown instead
     peerDependencies:
       eslint: '>=8'
 
@@ -2282,6 +2283,7 @@ packages:
 
   lodash.get@4.4.2:
     resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
+    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
 
   lodash.isplainobject@4.0.6:
     resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
@@ -4726,7 +4728,7 @@ snapshots:
       eslint: 9.34.0(jiti@2.5.0)
       estraverse: 5.3.0
 
-  eslint-plugin-jsdoc@54.3.0(eslint@9.34.0(jiti@2.5.0)):
+  eslint-plugin-jsdoc@54.4.0(eslint@9.34.0(jiti@2.5.0)):
     dependencies:
       '@es-joy/jsdoccomment': 0.53.0
       are-docs-informative: 0.0.2
