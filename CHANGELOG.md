@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.56.3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.56.2...v0.56.3) (2025-09-15)
+
+### Bug Fixes
+
+- **plugin:** update types to be compatible with `defineConfig` ([#1245](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1245)) ([861e5e1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/861e5e129b3a5e3455b6b2a2a26d453086f20c14)), closes [#1242](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1242)
+
 ## [0.56.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.56.1...v0.56.2) (2025-09-04)
 
 ### Bug Fixes
