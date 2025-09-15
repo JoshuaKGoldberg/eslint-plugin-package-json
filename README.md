@@ -130,7 +130,8 @@ export default {
 
 #### `enforceForPrivate`
 
-**Type:** `boolean`
+- **Type:** `boolean`
+- **Default:** `true`
 
 Determines whether `require-*` rules, if used, should enforce the presence of the corresponding property in package.json files with `"private": true`.
 By default, all `require-*` rules except for [`require-name`](docs/rules/require-name.md) and [`require-version`](docs/rules/require-version.md) will report if the corresponding property is missing in package.json with `"private": true`.
