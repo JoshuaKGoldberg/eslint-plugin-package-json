@@ -1,6 +1,6 @@
 {
 	"name": "eslint-plugin-package-json",
-	"version": "0.56.2",
+	"version": "0.56.3",
 	"description": "Rules for consistent, readable, and valid package.json files. 🗂️",
 	"homepage": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json#readme",
 	"bugs": {
@@ -71,7 +71,7 @@
 		"eslint": "9.35.0",
 		"eslint-doc-generator": "2.2.0",
 		"eslint-plugin-eslint-plugin": "7.0.0",
-		"eslint-plugin-jsdoc": "54.5.0",
+		"eslint-plugin-jsdoc": "54.7.0",
 		"eslint-plugin-jsonc": "2.20.0",
 		"eslint-plugin-markdown": "5.1.0",
 		"eslint-plugin-n": "17.21.0",
