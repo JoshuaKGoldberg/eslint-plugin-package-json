@@ -1,7 +1,7 @@
 import type * as ESTree from "estree";
 
 import { AST, Rule, SourceCode } from "eslint";
-import { AST as JsonAST, RuleListener } from "jsonc-eslint-parser";
+import { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { isPackageJson } from "./utils/isPackageJson.ts";
 
@@ -41,7 +41,7 @@ export interface PackageJsonRuleContext<Options extends unknown[] = unknown[]>
 }
 
 export interface PackageJsonRuleModule<Options extends unknown[] = unknown[]> {
-	create(context: PackageJsonRuleContext<Options>): RuleListener;
+	create(context: PackageJsonRuleContext<Options>): Rule.NodeListener;
 	meta: Rule.RuleMetaData;
 }
 
