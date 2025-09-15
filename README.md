@@ -134,7 +134,7 @@ export default {
 - **Default:** [dynamic]
 
 When a package.json file has a `"private": true` field, it indicates that the package will not be published to npm (or another online registry).
-Some fields that are nice to have in public packages become pointless when a package is private.
+Some fields that are nice to have in public packages become less relevant when a package is private.
 This option determines whether `require-*` rules, if used, should enforce the presence of the corresponding property in package.json files that have `"private": true`.
 
 By default, this is:
