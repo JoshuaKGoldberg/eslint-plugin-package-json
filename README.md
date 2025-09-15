@@ -131,7 +131,7 @@ export default {
 #### `enforceForPrivate`
 
 - **Type:** `boolean`
-- **Default:** [dynamic]
+- **Default:** [see below]
 
 When a package.json file has a `"private": true` field, it indicates that the package will not be published to npm (or another online registry).
 Some fields that are nice to have in public packages become less relevant when a package is private.
