@@ -130,10 +130,21 @@ export default {
 
 #### `enforceForPrivate`
 
-**Type:** `boolean`
+- **Type:** `boolean`
+- **Default:** [see below]
 
-Determines whether `require-*` rules, if used, should enforce the presence of the corresponding property in package.json files with `"private": true`.
-By default, all `require-*` rules except for [`require-name`](docs/rules/require-name.md) and [`require-version`](docs/rules/require-version.md) will report if the corresponding property is missing in package.json with `"private": true`.
+When a package.json file has a `"private": true` field, it indicates that the package will not be published to npm (or another online registry).
+Some fields that are nice to have in public packages become less relevant when a package is private.
+This option determines whether `require-*` rules, if used, should enforce the presence of the corresponding property in package.json files that have `"private": true`.
+
+By default, this is:
+
+- `false` for [`require-name`](docs/rules/require-name.md) and [`require-version`](docs/rules/require-version.md).
+- `true` for every other `require-*` rule.
+
+By specifying this setting as `true` or `false`, it will override the defaults and apply the setting for ALL rules.  
+In that case, either all `require-*` rules will be applied to private packages or no `require-*` rules will be applied to private packages.  
+Even then, you can override the setting again at the rule level, by using the rule's `ignorePrivate` option, which will take precedence over this global setting.
 
 ### Usage Alongside Prettier
 
