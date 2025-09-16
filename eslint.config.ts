@@ -1,3 +1,4 @@
+// @ts-expect-error - no types
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 import eslint from "@eslint/js";
 import vitest from "@vitest/eslint-plugin";
