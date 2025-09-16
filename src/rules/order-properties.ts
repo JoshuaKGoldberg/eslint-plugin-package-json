@@ -38,27 +38,22 @@ const standardOrderLegacy = [
 	"cpu",
 ];
 
-type Options = [{ order: Order }?];
-
-type Order = "legacy" | "sort-package-json" | string[];
-
-export const rule = createRule<Options>({
+export const rule = createRule({
 	create(context) {
 		return {
 			"Program:exit"() {
 				const { ast, text } = context.sourceCode;
 
-				const options = {
-					order: "sort-package-json",
-					...context.options[0],
-				} satisfies Options[0];
+				const options = { ...context.options[0] };
+				options.order ??= "sort-package-json";
 
+				const { order } = options;
 				const requiredOrder =
-					options.order === "legacy"
+					order === "legacy"
 						? standardOrderLegacy
-						: options.order === "sort-package-json"
+						: order === "sort-package-json"
 							? sortOrder
-							: options.order;
+							: order;
 
 				const json = JSON.parse(text) as Record<string, unknown>;
 				const orderedSource = sortObjectKeys(json, [

@@ -15,8 +15,6 @@ export interface CreateRequirePropertyRuleOptions {
 	isRecommended?: boolean;
 }
 
-type Options = [{ ignorePrivate?: boolean }?];
-
 /**
  * Given a top-level property name, create a rule that requires that property to be present.
  * Optionally, include it in the recommended config.
@@ -31,7 +29,7 @@ export const createSimpleRequirePropertyRule = (
 	}: CreateRequirePropertyRuleOptions = {},
 ) => {
 	const ruleName = `require-${propertyName}`;
-	const rule = createRule<Options>({
+	const rule = createRule({
 		create(context) {
 			const enforceForPrivate =
 				context.settings.packageJson?.enforceForPrivate;

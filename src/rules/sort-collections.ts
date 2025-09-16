@@ -16,9 +16,7 @@ const defaultCollections = new Set([
 	"scripts",
 ]);
 
-type Options = string[];
-
-export const rule = createRule<Options>({
+export const rule = createRule({
 	create(context) {
 		const toSort = context.options[0]
 			? new Set(context.options[0])
