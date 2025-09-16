@@ -1,19 +1,20 @@
+// @ts-expect-error - no types
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 import eslint from "@eslint/js";
 import vitest from "@vitest/eslint-plugin";
 import eslintPlugin from "eslint-plugin-eslint-plugin";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
-import markdown from "eslint-plugin-markdown";
 import n from "eslint-plugin-n";
 import perfectionist from "eslint-plugin-perfectionist";
 import * as regexp from "eslint-plugin-regexp";
 import yml from "eslint-plugin-yml";
+import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 
 import packageJson from "./src/index.ts";
 
-export default tseslint.config(
+export default defineConfig(
 	{
 		ignores: [
 			"**/*.snap",
@@ -35,7 +36,6 @@ export default tseslint.config(
 	jsdoc.configs["flat/logical-typescript-error"],
 	jsdoc.configs["flat/stylistic-typescript-error"],
 	jsonc.configs["flat/recommended-with-json"],
-	markdown.configs.recommended,
 	n.configs["flat/recommended"],
 	perfectionist.configs["recommended-natural"],
 	regexp.configs["flat/recommended"],
