@@ -63,9 +63,14 @@ type InferJsonSchemasTupleType<T extends JSONSchema[]> = {
 	[K in keyof T]?: InferJsonSchemaType<T[K]>;
 };
 
+/**
+ * Rule options type is inferred from the JSON schema by [json-schema-to-ts](https://www.npmjs.com/package/json-schema-to-ts).
+ * If you're not satisfied with the inferred type, you may specify it manually in the first type parameter.
+ */
 export function createRule<
 	OptionsOverride extends unknown[] = never,
 	const Schema extends JSONSchema[] = JSONSchema[],
+	// `[T] extends [never]` correctly checks if `T` is `never`, see https://www.typescriptlang.org/docs/handbook/2/conditional-types.html#distributive-conditional-types
 	_OptionsResolved extends unknown[] = [OptionsOverride] extends [never]
 		? InferJsonSchemasTupleType<Schema>
 		: OptionsOverride,
