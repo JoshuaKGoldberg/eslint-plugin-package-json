@@ -14,6 +14,7 @@ const properties: [name: string, options?: CreateRequirePropertyRuleOptions][] =
 		["engines"],
 		["files"],
 		["keywords"],
+		["license", { ignorePrivateDefault: true, isRecommended: true }],
 		["name", { ignorePrivateDefault: true, isRecommended: true }],
 		["optionalDependencies"],
 		["peerDependencies"],
