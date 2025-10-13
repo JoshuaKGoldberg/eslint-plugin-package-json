@@ -76,8 +76,8 @@ importers:
         specifier: 9.37.0
         version: 9.37.0(jiti@2.6.0)
       eslint-doc-generator:
-        specifier: 2.2.0
-        version: 2.2.0(eslint@9.37.0(jiti@2.6.0))(typescript@5.9.2)
+        specifier: 2.3.0
+        version: 2.3.0(eslint@9.37.0(jiti@2.6.0))(prettier@3.6.0)(typescript@5.9.2)
       eslint-plugin-eslint-plugin:
         specifier: 7.0.0
         version: 7.0.0(eslint@9.37.0(jiti@2.6.0))
@@ -1563,9 +1563,9 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  editorconfig@2.0.1:
-    resolution: {integrity: sha512-jMVc7LbF/M13cSpBiVWGut+qhIyOddIhSXPAntMSboEigGFGaQmBow9ZrVog0VT2K89qm0cyGHa7FRhcOqP8hA==}
-    engines: {node: '>=18'}
+  editorconfig@3.0.1:
+    resolution: {integrity: sha512-k5NZM2XNIJfH/omUv0SRYaiLae4VRwg1ILW6xLOjuP4AQGAGcvzNij5imJ+m1rbzDIH0ov6EbH53BW96amFXpQ==}
+    engines: {node: '>=20'}
     hasBin: true
 
   emoji-regex@10.4.0:
@@ -1633,12 +1633,13 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  eslint-doc-generator@2.2.0:
-    resolution: {integrity: sha512-vKI1fuPeIIMo3AQpo+rx7ZQNIlGyw+6XRHu9baObBcwilhDvBA1r6sY9uUcuua2UU7NpkD3cEDut5ZBZvcHAkw==}
+  eslint-doc-generator@2.3.0:
+    resolution: {integrity: sha512-R0wSCG4ImHRwVgxekm9y38mE27QYXiB3X7jD09MxbLMhV2BlxfPsO4igvCe+i6274DuiinbFyNGo+lKWMw/rqw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=22.0.0}
     hasBin: true
     peerDependencies:
       eslint: '>= 8.57.1'
+      prettier: '>= 3.0.0'
 
   eslint-fix-utils@0.4.0:
     resolution: {integrity: sha512-nCEciwqByGxsKiWqZjqK7xfL+7dUX9Pi0UL3J0tOwfxVN9e6Y59UxEt1ZYsc3XH0ce6T1WQM/QU2DbKK/6IG7g==}
@@ -4546,10 +4547,10 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  editorconfig@2.0.1:
+  editorconfig@3.0.1:
     dependencies:
       '@one-ini/wasm': 0.2.0
-      commander: 13.1.0
+      commander: 14.0.1
       minimatch: 10.0.1
       semver: 7.7.2
 
@@ -4628,7 +4629,7 @@ snapshots:
       eslint: 9.37.0(jiti@2.6.0)
       semver: 7.7.2
 
-  eslint-doc-generator@2.2.0(eslint@9.37.0(jiti@2.6.0))(typescript@5.9.2):
+  eslint-doc-generator@2.3.0(eslint@9.37.0(jiti@2.6.0))(prettier@3.6.0)(typescript@5.9.2):
     dependencies:
       '@typescript-eslint/utils': 8.46.0(eslint@9.37.0(jiti@2.6.0))(typescript@5.9.2)
       ajv: 8.17.1
@@ -4637,12 +4638,13 @@ snapshots:
       cosmiconfig: 9.0.0(typescript@5.9.2)
       deepmerge: 4.3.1
       dot-prop: 9.0.0
-      editorconfig: 2.0.1
+      editorconfig: 3.0.1
       eslint: 9.37.0(jiti@2.6.0)
       jest-diff: 29.7.0
       json-schema: 0.4.0
       json-schema-traverse: 1.0.0
       markdown-table: 3.0.4
+      prettier: 3.6.0
       type-fest: 4.37.0
     transitivePeerDependencies:
       - supports-color
