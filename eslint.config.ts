@@ -111,7 +111,7 @@ export default defineConfig(
 		},
 	},
 	{
-		files: ["./eslint.config.mjs", "./**/*.test.*"],
+		files: ["./eslint.config.ts", "./**/*.test.*"],
 		rules: {
 			"n/no-unsupported-features/node-builtins": "off",
 		},

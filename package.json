@@ -78,7 +78,7 @@
 		"husky": "9.1.7",
 		"jiti": "2.6.0",
 		"json-schema-to-ts": "3.1.1",
-		"jsonc-eslint-parser": "2.4.0",
+		"jsonc-eslint-parser": "2.4.1",
 		"knip": "5.64.0",
 		"lint-staged": "16.2.0",
 		"markdownlint": "0.38.0",
@@ -100,7 +100,7 @@
 	},
 	"packageManager": "pnpm@10.18.0",
 	"engines": {
-		"node": "^=20.19.0 || >=22.12.0"
+		"node": "^20.19.0 || >=22.12.0"
 	},
 	"publishConfig": {
 		"provenance": true

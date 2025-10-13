@@ -99,7 +99,7 @@ export const rule = createRule({
 		const ignoreProperties = context.options[0]?.ignoreProperties ?? [];
 
 		return {
-			JSONArrayExpression(node: JsonAST.JSONArrayExpression) {
+			JSONArrayExpression(node) {
 				const topLevelProperty = getTopLevelProperty(node);
 				// If this is the root object, we shouldn't proceed
 				if (!topLevelProperty) {
@@ -112,7 +112,7 @@ export const rule = createRule({
 					}
 				}
 			},
-			JSONObjectExpression(node: JsonAST.JSONObjectExpression) {
+			JSONObjectExpression(node) {
 				const topLevelProperty = getTopLevelProperty(node);
 				// If this is the root object, we shouldn't proceed
 				if (!topLevelProperty) {
