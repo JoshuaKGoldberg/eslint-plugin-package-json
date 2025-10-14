@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.56.4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.56.3...v0.56.4) (2025-10-14)
+
+### Bug Fixes
+
+- re-adopt jsonc-eslint-parser's RuleListener type ([#1319](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1319)) ([2c4c7c2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/2c4c7c2591732f1b298e5e6eb279afe5f7d52cab)), closes [#000](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/000)
+
 ## [0.56.3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.56.2...v0.56.3) (2025-09-15)
 
 ### Bug Fixes
