@@ -109,8 +109,8 @@ importers:
         specifier: 3.1.1
         version: 3.1.1
       jsonc-eslint-parser:
-        specifier: 2.4.0
-        version: 2.4.0
+        specifier: 2.4.1
+        version: 2.4.1
       knip:
         specifier: 5.64.0
         version: 5.64.0(@types/node@22.18.0)(typescript@5.9.2)
@@ -2190,8 +2190,8 @@ packages:
   json-stable-stringify-without-jsonify@1.0.1:
     resolution: {integrity: sha512-Bdboy+l7tA3OGW6FjyFHWkP5LuByj1Tk33Ljyq0axyzdk9//JSi2u3fP1QSmd1KNwq6VOKYGlAu87CisVir6Pw==}
 
-  jsonc-eslint-parser@2.4.0:
-    resolution: {integrity: sha512-WYDyuc/uFcGp6YtM2H0uKmUwieOuzeE/5YocFJLnLfclZ4inf3mRn8ZVy1s7Hxji7Jxm6Ss8gqpexD/GlKoGgg==}
+  jsonc-eslint-parser@2.4.1:
+    resolution: {integrity: sha512-uuPNLJkKN8NXAlZlQ6kmUF9qO+T6Kyd7oV4+/7yy8Jz6+MZNyhPq8EdLpdfnPVzUC8qSf1b4j1azKaGnFsjmsw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
   jsonc-parser@3.3.1:
@@ -4656,11 +4656,11 @@ snapshots:
     optionalDependencies:
       '@types/estree': 1.0.7
 
-  eslint-json-compat-utils@0.2.1(eslint@9.37.0(jiti@2.6.0))(jsonc-eslint-parser@2.4.0):
+  eslint-json-compat-utils@0.2.1(eslint@9.37.0(jiti@2.6.0))(jsonc-eslint-parser@2.4.1):
     dependencies:
       eslint: 9.37.0(jiti@2.6.0)
       esquery: 1.6.0
-      jsonc-eslint-parser: 2.4.0
+      jsonc-eslint-parser: 2.4.1
 
   eslint-plugin-es-x@7.8.0(eslint@9.37.0(jiti@2.6.0)):
     dependencies:
@@ -4699,10 +4699,10 @@ snapshots:
       diff-sequences: 27.5.1
       eslint: 9.37.0(jiti@2.6.0)
       eslint-compat-utils: 0.6.4(eslint@9.37.0(jiti@2.6.0))
-      eslint-json-compat-utils: 0.2.1(eslint@9.37.0(jiti@2.6.0))(jsonc-eslint-parser@2.4.0)
+      eslint-json-compat-utils: 0.2.1(eslint@9.37.0(jiti@2.6.0))(jsonc-eslint-parser@2.4.1)
       espree: 10.4.0
       graphemer: 1.4.0
-      jsonc-eslint-parser: 2.4.0
+      jsonc-eslint-parser: 2.4.1
       natural-compare: 1.4.0
       synckit: 0.6.2
     transitivePeerDependencies:
@@ -5236,7 +5236,7 @@ snapshots:
 
   json-stable-stringify-without-jsonify@1.0.1: {}
 
-  jsonc-eslint-parser@2.4.0:
+  jsonc-eslint-parser@2.4.1:
     dependencies:
       acorn: 8.15.0
       eslint-visitor-keys: 3.4.3

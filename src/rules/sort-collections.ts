@@ -23,7 +23,7 @@ export const rule = createRule({
 			: defaultCollections;
 
 		return {
-			"JSONProperty:exit"(node: JsonAST.JSONProperty) {
+			"JSONProperty:exit"(node) {
 				const { key: nodeKey, value: collection } = node;
 
 				if (

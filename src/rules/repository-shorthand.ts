@@ -107,7 +107,7 @@ export const rule = createRule({
 		}
 
 		return {
-			JSONProperty(node: JsonAST.JSONProperty) {
+			JSONProperty(node) {
 				if (
 					node.key.type !== "JSONLiteral" ||
 					node.key.value !== "repository" ||
