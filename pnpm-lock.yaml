@@ -15,8 +15,8 @@ importers:
         specifier: ^5.4.4
         version: 5.4.4
       detect-indent:
-        specifier: ^7.0.1
-        version: 7.0.1
+        specifier: ^7.0.2
+        version: 7.0.2
       detect-newline:
         specifier: ^4.0.1
         version: 4.0.1
@@ -24,16 +24,16 @@ importers:
         specifier: ~0.4.0
         version: 0.4.0(@types/estree@1.0.7)(eslint@9.37.0(jiti@2.6.0))
       package-json-validator:
-        specifier: ~0.30.0
-        version: 0.30.0
+        specifier: ~0.31.0
+        version: 0.31.0
       semver:
-        specifier: ^7.5.4
-        version: 7.7.2
+        specifier: ^7.7.3
+        version: 7.7.3
       sort-object-keys:
-        specifier: ^1.1.3
-        version: 1.1.3
+        specifier: ^2.0.0
+        version: 2.0.0
       sort-package-json:
-        specifier: ^3.3.0
+        specifier: ^3.4.0
         version: 3.4.0
       validate-npm-package-name:
         specifier: ^6.0.2
@@ -57,9 +57,6 @@ importers:
       '@types/semver':
         specifier: 7.7.0
         version: 7.7.0
-      '@types/sort-object-keys':
-        specifier: 1.1.3
-        version: 1.1.3
       '@types/validate-npm-package-name':
         specifier: 4.0.2
         version: 4.0.2
@@ -1020,9 +1017,6 @@ packages:
   '@types/semver@7.7.0':
     resolution: {integrity: sha512-k107IF4+Xr7UHjwDc7Cfd6PRQfbdkiRabXGRjo07b4WyPahFBZCZ1sE+BNxYIJPPg73UkfOsVOLwqVc/6ETrIA==}
 
-  '@types/sort-object-keys@1.1.3':
-    resolution: {integrity: sha512-DBHXe+SvV5yZASv/RnIoIID5cwl4N0dY5aC19jOINFzydZkpJXt8DwRzWUjVnscPQsRkkmQRrcOqMMozSvP5tg==}
-
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
 
@@ -1516,8 +1510,8 @@ packages:
   destr@2.0.5:
     resolution: {integrity: sha512-ugFTXCtDZunbzasqBxrK93Ik/DRYsO6S/fedkWEMKqt04xZ4csmnmwGDBAb07QWNaGMAmnTIemsYZCksjATwsA==}
 
-  detect-indent@7.0.1:
-    resolution: {integrity: sha512-Mc7QhQ8s+cLrnUfU/Ji94vG/r8M26m8f++vyres4ZoojaRDpZ1eSIh/EpzLNwlWuvzSZ3UbDFspjFvTDXe6e/g==}
+  detect-indent@7.0.2:
+    resolution: {integrity: sha512-y+8xyqdGLL+6sh0tVeHcfP/QDd8gUgbasolJJpY7NgeQGSZ739bDtSiaiDgtoicy+mtYB81dKLxO9xRhCyIB3A==}
     engines: {node: '>=12.20'}
 
   detect-newline@4.0.1:
@@ -2561,8 +2555,8 @@ packages:
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
-  package-json-validator@0.30.0:
-    resolution: {integrity: sha512-gOLW+BBye32t+IB2trIALIcL3DZBy3s4G4ZV6dAgDM+qLs/7jUNOV7iO7PwXqyf+3izI12qHBwtS4kOSJp5Tdg==}
+  package-json-validator@0.31.0:
+    resolution: {integrity: sha512-kAVO0fNFWI2xpmthogYHnHjCtg0nJvwm9yjd9nnrR5OKIts5fmNMK2OhhjnLD1/ohJNodhCa5tZm8AolOgkfMg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
@@ -2827,8 +2821,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  semver@7.7.2:
-    resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
+  semver@7.7.3:
+    resolution: {integrity: sha512-SdsKMrI9TdgjdweUSR9MweHA4EJ8YxHn8DFaDisvhVlUOe4BF1tLD7GAj0lIqWVl+dPb/rExr0Btby5loQm20Q==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -2881,6 +2875,9 @@ packages:
 
   sort-object-keys@1.1.3:
     resolution: {integrity: sha512-855pvK+VkU7PaKYPc+Jjnmt4EzejQHyhhF33q31qG8x7maDzkeFhAAThdCYay11CISO+qAMwjOBP+fPZe0IPyg==}
+
+  sort-object-keys@2.0.0:
+    resolution: {integrity: sha512-FTUWjmUumK0IGXn1INzkS3lS2Fqw81JuomcExd7LsFvQnNl+9+IZ575fC21F/AwrR/6lMrH7lTX0e7qLBk1wMg==}
 
   sort-package-json@2.15.1:
     resolution: {integrity: sha512-9x9+o8krTT2saA9liI4BljNjwAbvUnWf11Wq+i/iZt8nl2UGYnf3TH5uBydE7VALmP7AGwlfszuEeL8BDyb0YA==}
@@ -3367,7 +3364,7 @@ snapshots:
   '@conventional-changelog/git-client@1.0.1(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.1.0)':
     dependencies:
       '@types/semver': 7.7.0
-      semver: 7.7.2
+      semver: 7.7.3
     optionalDependencies:
       conventional-commits-filter: 5.0.0
       conventional-commits-parser: 6.1.0
@@ -3849,7 +3846,7 @@ snapshots:
       conventional-recommended-bump: 10.0.0
       git-semver-tags: 8.0.0(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.1.0)
       release-it: 19.0.1(@types/node@22.18.0)(magicast@0.3.5)
-      semver: 7.7.2
+      semver: 7.7.3
     transitivePeerDependencies:
       - conventional-commits-filter
       - conventional-commits-parser
@@ -4001,8 +3998,6 @@ snapshots:
 
   '@types/semver@7.7.0': {}
 
-  '@types/sort-object-keys@1.1.3': {}
-
   '@types/unist@2.0.11': {}
 
   '@types/validate-npm-package-name@4.0.2': {}
@@ -4078,7 +4073,7 @@ snapshots:
       fast-glob: 3.3.3
       is-glob: 4.0.3
       minimatch: 9.0.5
-      semver: 7.7.2
+      semver: 7.7.3
       ts-api-utils: 2.1.0(typescript@5.9.2)
       typescript: 5.9.2
     transitivePeerDependencies:
@@ -4434,7 +4429,7 @@ snapshots:
       conventional-commits-filter: 5.0.0
       handlebars: 4.7.8
       meow: 13.2.0
-      semver: 7.7.2
+      semver: 7.7.3
 
   conventional-changelog@6.0.0(conventional-commits-filter@5.0.0):
     dependencies:
@@ -4520,7 +4515,7 @@ snapshots:
 
   destr@2.0.5: {}
 
-  detect-indent@7.0.1: {}
+  detect-indent@7.0.2: {}
 
   detect-newline@4.0.1: {}
 
@@ -4555,7 +4550,7 @@ snapshots:
       '@one-ini/wasm': 0.2.0
       commander: 14.0.1
       minimatch: 10.0.1
-      semver: 7.7.2
+      semver: 7.7.3
 
   emoji-regex@10.4.0: {}
 
@@ -4625,12 +4620,12 @@ snapshots:
   eslint-compat-utils@0.5.1(eslint@9.37.0(jiti@2.6.0)):
     dependencies:
       eslint: 9.37.0(jiti@2.6.0)
-      semver: 7.7.2
+      semver: 7.7.3
 
   eslint-compat-utils@0.6.4(eslint@9.37.0(jiti@2.6.0)):
     dependencies:
       eslint: 9.37.0(jiti@2.6.0)
-      semver: 7.7.2
+      semver: 7.7.3
 
   eslint-doc-generator@2.3.0(eslint@9.37.0(jiti@2.6.0))(prettier@3.6.0)(typescript@5.9.2):
     dependencies:
@@ -4691,7 +4686,7 @@ snapshots:
       html-entities: 2.6.0
       object-deep-merge: 1.0.5
       parse-imports-exports: 0.2.4
-      semver: 7.7.2
+      semver: 7.7.3
       spdx-expression-parse: 4.0.0
     transitivePeerDependencies:
       - supports-color
@@ -4721,7 +4716,7 @@ snapshots:
       globals: 15.15.0
       globrex: 0.1.2
       ignore: 5.3.2
-      semver: 7.7.2
+      semver: 7.7.3
       ts-declaration-location: 1.0.7(typescript@5.9.2)
     transitivePeerDependencies:
       - typescript
@@ -5246,7 +5241,7 @@ snapshots:
       acorn: 8.15.0
       eslint-visitor-keys: 3.4.3
       espree: 9.6.1
-      semver: 7.7.2
+      semver: 7.7.3
 
   jsonc-parser@3.3.1: {}
 
@@ -5363,7 +5358,7 @@ snapshots:
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.7.2
+      semver: 7.7.3
 
   markdown-it@14.1.0:
     dependencies:
@@ -5645,7 +5640,7 @@ snapshots:
   normalize-package-data@6.0.2:
     dependencies:
       hosted-git-info: 7.0.2
-      semver: 7.7.2
+      semver: 7.7.3
       validate-npm-package-license: 3.0.4
 
   npm-run-path@5.3.0:
@@ -5761,9 +5756,9 @@ snapshots:
 
   package-json-from-dist@1.0.1: {}
 
-  package-json-validator@0.30.0:
+  package-json-validator@0.31.0:
     dependencies:
-      semver: 7.7.2
+      semver: 7.7.3
       validate-npm-package-license: 3.0.4
       yargs: 18.0.0
 
@@ -6091,7 +6086,7 @@ snapshots:
 
   semver@7.7.1: {}
 
-  semver@7.7.2: {}
+  semver@7.7.3: {}
 
   sentences-per-line@0.3.0:
     dependencies:
@@ -6137,24 +6132,26 @@ snapshots:
 
   sort-object-keys@1.1.3: {}
 
+  sort-object-keys@2.0.0: {}
+
   sort-package-json@2.15.1:
     dependencies:
-      detect-indent: 7.0.1
+      detect-indent: 7.0.2
       detect-newline: 4.0.1
       get-stdin: 9.0.0
       git-hooks-list: 3.2.0
       is-plain-obj: 4.1.0
-      semver: 7.7.2
+      semver: 7.7.3
       sort-object-keys: 1.1.3
       tinyglobby: 0.2.15
 
   sort-package-json@3.4.0:
     dependencies:
-      detect-indent: 7.0.1
+      detect-indent: 7.0.2
       detect-newline: 4.0.1
       git-hooks-list: 4.1.1
       is-plain-obj: 4.1.0
-      semver: 7.7.2
+      semver: 7.7.3
       sort-object-keys: 1.1.3
       tinyglobby: 0.2.15
 
@@ -6307,7 +6304,7 @@ snapshots:
       hookable: 5.5.3
       rolldown: 1.0.0-beta.43
       rolldown-plugin-dts: 0.16.5(oxc-resolver@11.8.4)(rolldown@1.0.0-beta.43)(typescript@5.9.2)
-      semver: 7.7.2
+      semver: 7.7.3
       tinyexec: 1.0.1
       tinyglobby: 0.2.15
       tree-kill: 1.2.2
