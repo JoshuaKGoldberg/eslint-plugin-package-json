@@ -5,7 +5,7 @@ import type {
 } from "json-schema-to-ts";
 
 import { AST, Rule, SourceCode } from "eslint";
-import { AST as JsonAST } from "jsonc-eslint-parser";
+import { AST as JsonAST, type RuleListener } from "jsonc-eslint-parser";
 
 import { isPackageJson } from "./utils/isPackageJson.ts";
 
@@ -48,7 +48,7 @@ export interface PackageJsonRuleModule<
 	Options extends unknown[] = unknown[],
 	Schema extends JSONSchema[] = JSONSchema[],
 > {
-	create(context: PackageJsonRuleContext<Options>): Rule.NodeListener;
+	create(context: PackageJsonRuleContext<Options>): RuleListener;
 	meta: Omit<Rule.RuleMetaData, "defaultOptions" | "schema"> & {
 		defaultOptions?: NoInfer<Options>;
 		schema?: Schema;
