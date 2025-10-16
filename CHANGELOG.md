@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.57.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.56.4...v0.57.0) (2025-10-16)
+
+### Features
+
+- add require-license rule ([#1302](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1302)) ([6d41e06](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/6d41e06dfd2eb89b026229d4045dcdae2cc29e70)), closes [#846](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/846)
+
 ## [0.56.4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.56.3...v0.56.4) (2025-10-14)
 
 ### Bug Fixes
