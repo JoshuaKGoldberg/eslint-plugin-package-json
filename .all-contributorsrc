@@ -310,6 +310,15 @@
       "contributions": [
         "bug"
       ]
+    },
+    {
+      "login": "privatenumber",
+      "name": "Hiroki Osame",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1075694?v=4",
+      "profile": "https://hirok.io",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsSortAlphabetically": true,
