@@ -4,6 +4,7 @@ import { createRequire } from "node:module";
 
 import type { PackageJsonRuleModule } from "./createRule.ts";
 
+import { rule as exportsSubpathsStyle } from "./rules/exports-subpaths-style.ts";
 import { rule as noEmptyFields } from "./rules/no-empty-fields.ts";
 import { rule as noRedundantFiles } from "./rules/no-redundant-files.ts";
 import { rule as orderProperties } from "./rules/order-properties.ts";
@@ -28,6 +29,7 @@ const { name, version } = require("../package.json") as {
 };
 
 const rules: Record<string, PackageJsonRuleModule> = {
+	"exports-subpaths-style": exportsSubpathsStyle,
 	"no-empty-fields": noEmptyFields,
 	"no-redundant-files": noRedundantFiles,
 	"order-properties": orderProperties,
