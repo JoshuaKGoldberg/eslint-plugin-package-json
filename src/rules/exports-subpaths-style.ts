@@ -50,17 +50,16 @@ export const rule = createRule({
 				return;
 			}
 
-			// Collect all subpaths (keys starting with ".")
-			const subpaths = value.properties.filter(
-				(property) => isJSONStringLiteral(property.key) && property.key.value.startsWith("."),
-			);
-
-			// Only transform if there's exactly one subpath and it's "."
-			if (subpaths.length !== 1 || (subpaths[0].key as JsonAST.JSONStringLiteral).value !== ".") {
+			// Only transform if there's exactly one property and it's "."
+			if (
+				value.properties.length !== 1 ||
+				!isJSONStringLiteral(value.properties[0].key) ||
+				value.properties[0].key.value !== "."
+			) {
 				return;
 			}
 
-			const dotProperty = subpaths[0];
+			const dotProperty = value.properties[0];
 			context.report({
 				fix(fixer) {
 					const valueText = context.sourceCode.getText(dotProperty.value);
