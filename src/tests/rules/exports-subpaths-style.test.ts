@@ -179,6 +179,20 @@ ruleTester.run("exports-subpaths-style", rule, {
 			}`,
 			options: [{ prefer: "implicit" }],
 		},
+		// Single non-root subpath (can't be simplified)
+		{
+			code: `{
+				"exports": {
+					"./foo": "./foo.js"
+				}
+			}`,
+			options: [{ prefer: "implicit" }],
+		},
+		// Root-level arrays are implicit format
+		{
+			code: `{ "exports": ["./index.js"] }`,
+			options: [{ prefer: "implicit" }],
+		},
 
 		// ============================================================
 		// Edge cases
