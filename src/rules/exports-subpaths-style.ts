@@ -1,32 +1,22 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { createRule } from "../createRule.ts";
+import { isJSONStringLiteral } from "../utils/predicates.ts";
 
-type ExportsValue = JsonAST.JSONObjectExpression | JsonAST.JSONStringLiteral;
-
-function hasMultipleSubpaths(node: JsonAST.JSONObjectExpression): boolean {
-	const subpaths = node.properties.filter(
-		(property) =>
-			property.key.type === "JSONLiteral" &&
-			typeof property.key.value === "string" &&
-			property.key.value.startsWith("."),
-	);
-
-	return subpaths.length > 1;
-}
-
-function isImplicitFormat(node: ExportsValue): boolean {
+function isImplicitFormat(
+	node: JsonAST.JSONLiteral | JsonAST.JSONObjectExpression,
+): boolean {
 	if (node.type === "JSONLiteral") {
 		return true;
 	}
 
-	const keys = node.properties
-		.filter((property) => property.key.type === "JSONLiteral" && typeof property.key.value === "string")
-		.map((property) => (property.key as JsonAST.JSONStringLiteral).value);
-
-	// If all keys are conditions (no subpaths starting with "."), it's implicit
-	// Subpaths start with "." while conditions don't (import, require, node, default, types, browser)
-	return keys.every((key) => !key.startsWith("."));
+	// Implicit format = no subpath keys (keys starting with ".")
+	// All keys are conditions: import, require, node, default, types, browser
+	return node.properties.every(
+		(property) =>
+			!isJSONStringLiteral(property.key) ||
+			!property.key.value.startsWith("."),
+	);
 }
 
 export const rule = createRule({
@@ -34,65 +24,52 @@ export const rule = createRule({
 		const [{ prefer = "explicit" } = {}] = context.options;
 
 		function validateForExplicit(node: JsonAST.JSONProperty) {
-			if (node.value.type !== "JSONLiteral" && node.value.type !== "JSONObjectExpression") {
+			const { value } = node;
+			if (value.type !== "JSONLiteral" && value.type !== "JSONObjectExpression") {
 				return;
 			}
 
-			// Skip null or non-string literals
-			if (node.value.type === "JSONLiteral" &&
-			    (node.value.value === null || typeof node.value.value !== "string")) {
-				return;
-			}
-
-			const exportsValue = node.value as ExportsValue;
-			if (!isImplicitFormat(exportsValue)) {
+			if (!isImplicitFormat(value)) {
 				return;
 			}
 
 			context.report({
 				fix(fixer) {
-					const nodeText = context.sourceCode.getText(exportsValue);
-					const fixedValue = exportsValue.type === "JSONLiteral"
-						? JSON.stringify({ ".": exportsValue.value }, null, 2)
-						// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- JSON.parse/stringify required for formatting
-						: JSON.stringify({ ".": JSON.parse(nodeText) }, null, 2);
-					return fixer.replaceText(node.value, fixedValue);
+					const valueText = context.sourceCode.getText(value);
+					// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- JSON.parse required for wrapping
+					const fixedValue = JSON.stringify({ ".": JSON.parse(valueText) }, null, 2);
+					return fixer.replaceText(value, fixedValue);
 				},
 				messageId: "preferExplicit",
-				node: node.value,
+				node: value,
 			});
 		}
 
 		function validateForImplicit(node: JsonAST.JSONProperty) {
-			if (node.value.type !== "JSONObjectExpression" || hasMultipleSubpaths(node.value)) {
+			const { value } = node;
+			if (value.type !== "JSONObjectExpression") {
 				return;
 			}
 
-			const dotProperty = node.value.properties.find(
-				(property) =>
-					property.key.type === "JSONLiteral" &&
-					property.key.value === ".",
+			// Collect all subpaths (keys starting with ".")
+			const subpaths = value.properties.filter(
+				(property) => isJSONStringLiteral(property.key) && property.key.value.startsWith("."),
 			);
 
-			if (!dotProperty) {
+			// Only transform if there's exactly one subpath and it's "."
+			if (subpaths.length !== 1 || (subpaths[0].key as JsonAST.JSONStringLiteral).value !== ".") {
 				return;
 			}
 
-			// Skip unsupported value types
-			if (dotProperty.value.type !== "JSONLiteral" &&
-			    dotProperty.value.type !== "JSONObjectExpression") {
-				return;
-			}
-
+			const dotProperty = subpaths[0];
 			context.report({
 				fix(fixer) {
-					const fixedValue = dotProperty.value.type === "JSONLiteral"
-						? JSON.stringify(dotProperty.value.value)
-						: context.sourceCode.getText(dotProperty.value);
-					return fixer.replaceText(node.value, fixedValue);
+					const valueText = context.sourceCode.getText(dotProperty.value);
+					const fixedValue = JSON.stringify(JSON.parse(valueText), null, 2);
+					return fixer.replaceText(value, fixedValue);
 				},
 				messageId: "preferImplicit",
-				node: node.value,
+				node: value,
 			});
 		}
 
@@ -137,7 +114,7 @@ export const rule = createRule({
 						description:
 							"Specifies which exports format to enforce.",
 						enum: ["implicit", "explicit"],
-						type: ["string"],
+						type: "string",
 					},
 				},
 				type: "object",
