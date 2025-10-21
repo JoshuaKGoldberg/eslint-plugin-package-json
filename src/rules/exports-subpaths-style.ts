@@ -25,11 +25,10 @@ export const rule = createRule({
 
 		function validateForExplicit(node: JsonAST.JSONProperty) {
 			const { value } = node;
-			if (value.type !== "JSONLiteral" && value.type !== "JSONObjectExpression") {
-				return;
-			}
-
-			if (!isImplicitFormat(value)) {
+			if (
+				(value.type !== "JSONLiteral" && value.type !== "JSONObjectExpression") ||
+				!isImplicitFormat(value)
+			) {
 				return;
 			}
 
