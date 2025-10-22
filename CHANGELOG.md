@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.58.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.57.0...v0.58.0) (2025-10-22)
+
+### Features
+
+- mark `legacy-recommended` config deprecated ([#1331](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1331)) ([5e20411](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/5e204118f4b6ae4a50f9a50a1c2a64a5bf84a5a7)), closes [#1329](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1329) [#1253](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1253)
+
 # [0.57.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.56.4...v0.57.0) (2025-10-16)
 
 ### Features
