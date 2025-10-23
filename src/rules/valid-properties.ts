@@ -1,5 +1,4 @@
 import {
-	validateAuthor,
 	validateBundleDependencies,
 	validateConfig,
 	validateCpu,
@@ -25,7 +24,6 @@ interface ValidPropertyOptions {
 // List of all properties we want to create valid- rules for,
 // in the format [propertyName, validationFunction | validPropertyOptions]
 const properties = [
-	["author", validateAuthor],
 	[
 		"bundleDependencies",
 		{
