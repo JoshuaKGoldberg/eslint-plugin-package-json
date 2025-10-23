@@ -13,6 +13,7 @@ import { rules as requireRules } from "./rules/require-properties.ts";
 import { rule as restrictDependencyRanges } from "./rules/restrict-dependency-ranges.ts";
 import { rule as sortCollections } from "./rules/sort-collections.ts";
 import { rule as uniqueDependencies } from "./rules/unique-dependencies.ts";
+import { rule as validAuthor } from "./rules/valid-author.ts";
 import { rule as validBin } from "./rules/valid-bin.ts";
 import { rule as validLocalDependency } from "./rules/valid-local-dependency.ts";
 import { rule as validName } from "./rules/valid-name.ts";
@@ -39,6 +40,7 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"sort-collections": sortCollections,
 	"unique-dependencies": uniqueDependencies,
 	...basicValidRules,
+	"valid-author": validAuthor,
 	"valid-bin": validBin,
 	"valid-local-dependency": validLocalDependency,
 	"valid-name": validName,
