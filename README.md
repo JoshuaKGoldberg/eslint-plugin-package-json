@@ -28,7 +28,7 @@ npm install eslint eslint-plugin-package-json --save-dev
 
 ## Usage
 
-### Flat Config
+### Config
 
 This plugin's recommended configuration enables its rules on `**/package.json` files, parsing them with [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser).
 
@@ -61,7 +61,7 @@ export default [
 
 See [ESLint's _Configuration Files_ guide](https://eslint.org/docs/latest/use/configure/configuration-files-new) for details on how to customize your rules and other config settings.
 
-### Legacy Config
+### Legacy Config (deprecated)
 
 Usage with ESLint's legacy ("eslintrc") format requires also installing [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser):
 
@@ -142,8 +142,8 @@ By default, this is:
 - `false` for [`require-name`](docs/rules/require-name.md) and [`require-version`](docs/rules/require-version.md).
 - `true` for every other `require-*` rule.
 
-By specifying this setting as `true` or `false`, it will override the defaults and apply the setting for ALL rules.  
-In that case, either all `require-*` rules will be applied to private packages or no `require-*` rules will be applied to private packages.  
+By specifying this setting as `true` or `false`, it will override the defaults and apply the setting for ALL rules.
+In that case, either all `require-*` rules will be applied to private packages or no `require-*` rules will be applied to private packages.
 Even then, you can override the setting again at the rule level, by using the rule's `ignorePrivate` option, which will take precedence over this global setting.
 
 ### Usage Alongside Prettier

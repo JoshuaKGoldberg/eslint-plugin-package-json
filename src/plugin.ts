@@ -78,6 +78,7 @@ const recommendedRules = {
 
 export const plugin = {
 	configs: {
+		/** @deprecated please use the recommended (flat) config. This will be removed in early 2026 */
 		"legacy-recommended": {
 			plugins: ["package-json"],
 			rules: recommendedRules,
