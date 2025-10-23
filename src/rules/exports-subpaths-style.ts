@@ -26,7 +26,8 @@ export const rule = createRule({
 		function validateForExplicit(node: JsonAST.JSONProperty) {
 			const { value } = node;
 			if (
-				(value.type !== "JSONLiteral" && value.type !== "JSONObjectExpression") ||
+				(value.type !== "JSONLiteral" &&
+					value.type !== "JSONObjectExpression") ||
 				!isImplicitFormat(value)
 			) {
 				return;
@@ -36,7 +37,11 @@ export const rule = createRule({
 				fix(fixer) {
 					const valueText = context.sourceCode.getText(value);
 					// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- JSON.parse required for wrapping
-					const fixedValue = JSON.stringify({ ".": JSON.parse(valueText) }, null, 2);
+					const fixedValue = JSON.stringify(
+						{ ".": JSON.parse(valueText) },
+						null,
+						2,
+					);
 					return fixer.replaceText(value, fixedValue);
 				},
 				messageId: "preferExplicit",
@@ -62,8 +67,14 @@ export const rule = createRule({
 			const dotProperty = value.properties[0];
 			context.report({
 				fix(fixer) {
-					const valueText = context.sourceCode.getText(dotProperty.value);
-					const fixedValue = JSON.stringify(JSON.parse(valueText), null, 2);
+					const valueText = context.sourceCode.getText(
+						dotProperty.value,
+					);
+					const fixedValue = JSON.stringify(
+						JSON.parse(valueText),
+						null,
+						2,
+					);
 					return fixer.replaceText(value, fixedValue);
 				},
 				messageId: "preferImplicit",

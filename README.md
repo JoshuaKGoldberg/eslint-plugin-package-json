@@ -166,6 +166,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 
 | Name                                                                       | Description                                                                                                 | 💼   | 🔧 | 💡 | ❌  |
 | :------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- | :--- | :- | :- | :- |
+| [exports-subpaths-style](docs/rules/exports-subpaths-style.md)             | Enforce consistent format for the exports field (implicit or explicit subpaths).                            |      | 🔧 |    |    |
 | [no-empty-fields](docs/rules/no-empty-fields.md)                           | Reports on unnecessary empty arrays and objects.                                                            | ✔️ ✅ |    | 💡 |    |
 | [no-redundant-files](docs/rules/no-redundant-files.md)                     | Prevents adding unnecessary / redundant files.                                                              | ✔️ ✅ |    | 💡 |    |
 | [order-properties](docs/rules/order-properties.md)                         | Package properties must be declared in standard order                                                       | ✔️ ✅ | 🔧 |    |    |

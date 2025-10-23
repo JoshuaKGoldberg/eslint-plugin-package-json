@@ -20,7 +20,9 @@ ruleTester.run("exports-subpaths-style", rule, {
 					"require": "./index.cjs"
 				}
 			}`,
-			errors: [{ messageId: "preferExplicit", type: "JSONObjectExpression" }],
+			errors: [
+				{ messageId: "preferExplicit", type: "JSONObjectExpression" },
+			],
 			output: `{
 				"exports": {
   ".": {
@@ -70,7 +72,9 @@ ruleTester.run("exports-subpaths-style", rule, {
 					".": "./index.js"
 				}
 			}`,
-			errors: [{ messageId: "preferImplicit", type: "JSONObjectExpression" }],
+			errors: [
+				{ messageId: "preferImplicit", type: "JSONObjectExpression" },
+			],
 			options: [{ prefer: "implicit" }],
 			output: `{
 				"exports": "./index.js"
@@ -85,7 +89,9 @@ ruleTester.run("exports-subpaths-style", rule, {
 					}
 				}
 			}`,
-			errors: [{ messageId: "preferImplicit", type: "JSONObjectExpression" }],
+			errors: [
+				{ messageId: "preferImplicit", type: "JSONObjectExpression" },
+			],
 			options: [{ prefer: "implicit" }],
 			output: `{
 				"exports": {
@@ -100,7 +106,9 @@ ruleTester.run("exports-subpaths-style", rule, {
 					".": ["./index.js"]
 				}
 			}`,
-			errors: [{ messageId: "preferImplicit", type: "JSONObjectExpression" }],
+			errors: [
+				{ messageId: "preferImplicit", type: "JSONObjectExpression" },
+			],
 			options: [{ prefer: "implicit" }],
 			output: `{
 				"exports": [
