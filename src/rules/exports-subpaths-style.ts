@@ -36,8 +36,8 @@ export const rule = createRule({
 			context.report({
 				fix(fixer) {
 					const valueText = context.sourceCode.getText(value);
-					// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- JSON.parse required for wrapping
 					const fixedValue = JSON.stringify(
+						// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment -- JSON.parse required for wrapping
 						{ ".": JSON.parse(valueText) },
 						null,
 						2,
