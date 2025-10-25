@@ -5,6 +5,7 @@ const config = {
 	configEmoji: [
 		["recommended", "✅"],
 		["legacy-recommended", "✔️"],
+		["stylistic", "🎨"],
 	],
 	postprocess: async (content, path) =>
 		prettier.format(content, {

@@ -76,6 +76,14 @@ const recommendedRules = {
 	],
 } satisfies Linter.RulesRecord;
 
+const stylisticRules = {
+	...Object.fromEntries(
+		Object.entries(rules)
+			.filter(([, rule]) => rule.meta.docs?.category === "Stylistic")
+			.map(([name]) => ["package-json/" + name, "error" as const]),
+	),
+} satisfies Linter.RulesRecord;
+
 export const plugin = {
 	configs: {
 		/** @deprecated please use the recommended (flat) config. This will be removed in early 2026 */
@@ -95,6 +103,19 @@ export const plugin = {
 				},
 			},
 			rules: recommendedRules,
+		},
+		stylistic: {
+			files: ["**/package.json"],
+			languageOptions: {
+				parser: parserJsonc,
+			},
+			name: "package-json/stylistic",
+			plugins: {
+				get "package-json"(): ESLint.Plugin {
+					return plugin;
+				},
+			},
+			rules: stylisticRules,
 		},
 	},
 	meta: {
