@@ -46,14 +46,29 @@ export const rule = createRule({
 							data: {
 								property: property.key.value,
 							},
-							fix: isEmpty
-								? fixRemoveObjectProperty(
-										context,
-										property as unknown as ESTree.Property,
-									)
-								: undefined,
 							messageId: "unnecessaryProperty",
 							node: property,
+							...(
+								isEmpty
+									? {
+										fix: fixRemoveObjectProperty(
+											context,
+											property as unknown as ESTree.Property,
+										)
+									}
+									: {
+										suggest: [{
+											data: {
+												property: property.key.value,
+											},
+											fix: fixRemoveObjectProperty(
+												context,
+												property as unknown as ESTree.Property,
+											),
+											messageId: "unnecessaryProperty",
+										}]
+								}
+							),
 						});
 					}
 				}
@@ -69,6 +84,7 @@ export const rule = createRule({
 			recommended: false,
 		},
 		fixable: "code",
+		hasSuggestions: true,
 		messages: {
 			unnecessaryProperty:
 				"The '{{property}}' field is unnecessary in private packages and can be removed.",

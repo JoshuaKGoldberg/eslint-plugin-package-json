@@ -16,7 +16,8 @@ By default, this rule flags `files` and `publishConfig` in private packages:
 - `files`: Controls which files are included when publishing to npm
 - `publishConfig`: Configures how the package is published to npm
 
-The rule will flag all blocked properties, but **only provides auto-fix for empty values** (empty arrays `[]` or empty objects `{}`). Non-empty values will be flagged but not auto-fixed, allowing you to review them manually.
+The rule will flag all blocked properties and **provides auto-fix for empty values** (empty arrays `[]` or empty objects `{}`).
+For non-empty values, the rule provides a suggestion that can be applied in your IDE, allowing you to review and remove them manually if desired.
 
 Examples of **incorrect** code for this rule with default options:
 
@@ -89,7 +90,7 @@ For example, to also flag `dependencies` in private packages:
 }
 ```
 
-This can be useful because private packages cannot be installed by others via `npm install`. Since the distinction between `dependencies` and `devDependencies` only matters for published packages, restricting to only practical dependency types (like `devDependencies` and `peerDependencies`) can help simplify organization in private packages.
+This can be useful for private packages that won't be published.
 
 Or to check for different properties entirely:
 

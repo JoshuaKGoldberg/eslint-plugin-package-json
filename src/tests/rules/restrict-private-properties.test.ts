@@ -3,16 +3,30 @@ import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("restrict-private-properties", rule, {
 	invalid: [
-		// Default blocked properties: files (non-empty, no fix)
+		// Default blocked properties: files (non-empty, with suggestion)
 		{
 			code: `{
 				"name": "test",
 				"private": true,
 				"files": ["dist"]
 			}`,
-			errors: [{ messageId: "unnecessaryProperty" }],
+			errors: [
+				{
+					messageId: "unnecessaryProperty",
+					suggestions: [
+						{
+							messageId: "unnecessaryProperty",
+							output: `{
+				"name": "test",
+				"private": true
+				
+			}`,
+						},
+					],
+				},
+			],
 		},
-		// Default blocked properties: publishConfig (non-empty, no fix)
+		// Default blocked properties: publishConfig (non-empty, with suggestion)
 		{
 			code: `{
 				"name": "test",
@@ -21,7 +35,21 @@ ruleTester.run("restrict-private-properties", rule, {
 					"access": "public"
 				}
 			}`,
-			errors: [{ messageId: "unnecessaryProperty" }],
+			errors: [
+				{
+					messageId: "unnecessaryProperty",
+					suggestions: [
+						{
+							messageId: "unnecessaryProperty",
+							output: `{
+				"name": "test",
+				"private": true
+				
+			}`,
+						},
+					],
+				},
+			],
 		},
 		// Empty files array (auto-fixable)
 		{
@@ -52,7 +80,20 @@ ruleTester.run("restrict-private-properties", rule, {
 				"publishConfig": {}
 			}`,
 			errors: [
-				{ messageId: "unnecessaryProperty" },
+				{
+					messageId: "unnecessaryProperty",
+					suggestions: [
+						{
+							messageId: "unnecessaryProperty",
+							output: `{
+				"name": "test",
+				"private": true,
+				
+				"publishConfig": {}
+			}`,
+						},
+					],
+				},
 				{ messageId: "unnecessaryProperty" },
 			],
 			output: `{
@@ -62,7 +103,7 @@ ruleTester.run("restrict-private-properties", rule, {
 				
 			}`,
 		},
-		// Custom blocked properties (non-empty)
+		// Custom blocked properties (non-empty, with suggestion)
 		{
 			code: `{
 				"name": "test",
@@ -71,7 +112,21 @@ ruleTester.run("restrict-private-properties", rule, {
 					"foo": "^1.0.0"
 				}
 			}`,
-			errors: [{ messageId: "unnecessaryProperty" }],
+			errors: [
+				{
+					messageId: "unnecessaryProperty",
+					suggestions: [
+						{
+							messageId: "unnecessaryProperty",
+							output: `{
+				"name": "test",
+				"private": true
+				
+			}`,
+						},
+					],
+				},
+			],
 			options: [{ blockedProperties: ["dependencies"] }],
 		},
 		// Custom blocked properties (empty, auto-fixable)
