@@ -79,6 +79,7 @@ const recommendedRules = {
 const stylisticRules = {
 	...Object.fromEntries(
 		Object.entries(rules)
+			// eslint-disable-next-line @typescript-eslint/no-deprecated
 			.filter(([, rule]) => rule.meta.docs?.category === "Stylistic")
 			.map(([name]) => ["package-json/" + name, "error" as const]),
 	),
