@@ -188,6 +188,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [require-types](docs/rules/require-types.md)                               | Requires the `types` property to be present.                                                                |      |    |    |    |
 | [require-version](docs/rules/require-version.md)                           | Requires the `version` property to be present.                                                              | ✔️ ✅ |    |    |    |
 | [restrict-dependency-ranges](docs/rules/restrict-dependency-ranges.md)     | Restricts the range of dependencies to allow or disallow specific types of ranges.                          |      |    | 💡 |    |
+| [restrict-private-properties](docs/rules/restrict-private-properties.md)   | Disallows unnecessary properties in private packages.                                                       |      | 🔧 |    |    |
 | [sort-collections](docs/rules/sort-collections.md)                         | Selected collections must be in a consistent order (lexicographical for most; lifecycle-aware for scripts). | ✔️ ✅ | 🔧 |    |    |
 | [unique-dependencies](docs/rules/unique-dependencies.md)                   | Checks a dependency isn't specified more than once (i.e. in `dependencies` and `devDependencies`)           | ✔️ ✅ |    | 💡 |    |
 | [valid-author](docs/rules/valid-author.md)                                 | Enforce that the `author` property is valid.                                                                | ✔️ ✅ |    |    |    |
