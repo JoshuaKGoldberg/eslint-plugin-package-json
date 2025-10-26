@@ -4,6 +4,7 @@ import { createRequire } from "node:module";
 
 import type { PackageJsonRuleModule } from "./createRule.ts";
 
+import { rule as binNameCasing } from "./rules/bin-name-casing.ts";
 import { rule as exportsSubpathsStyle } from "./rules/exports-subpaths-style.ts";
 import { rule as noEmptyFields } from "./rules/no-empty-fields.ts";
 import { rule as noRedundantFiles } from "./rules/no-redundant-files.ts";
@@ -13,8 +14,6 @@ import { rules as requireRules } from "./rules/require-properties.ts";
 import { rule as restrictDependencyRanges } from "./rules/restrict-dependency-ranges.ts";
 import { rule as sortCollections } from "./rules/sort-collections.ts";
 import { rule as uniqueDependencies } from "./rules/unique-dependencies.ts";
-import { rule as validAuthor } from "./rules/valid-author.ts";
-import { rule as validBin } from "./rules/valid-bin.ts";
 import { rule as validLocalDependency } from "./rules/valid-local-dependency.ts";
 import { rule as validName } from "./rules/valid-name.ts";
 import { rule as validPackageDefinition } from "./rules/valid-package-definition.ts";
@@ -30,6 +29,7 @@ const { name, version } = require("../package.json") as {
 };
 
 const rules: Record<string, PackageJsonRuleModule> = {
+	"bin-name-casing": binNameCasing,
 	"exports-subpaths-style": exportsSubpathsStyle,
 	"no-empty-fields": noEmptyFields,
 	"no-redundant-files": noRedundantFiles,
@@ -40,8 +40,6 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"sort-collections": sortCollections,
 	"unique-dependencies": uniqueDependencies,
 	...basicValidRules,
-	"valid-author": validAuthor,
-	"valid-bin": validBin,
 	"valid-local-dependency": validLocalDependency,
 	"valid-name": validName,
 	"valid-package-definition": validPackageDefinition,
