@@ -166,6 +166,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 
 | Name                                                                       | Description                                                                                                 | 💼   | 🔧 | 💡 | ❌  |
 | :------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- | :--- | :- | :- | :- |
+| [bin-name-casing](docs/rules/bin-name-casing.md)                           | Enforce that names for bin properties are in kebab case.                                                    |      |    | 💡 |    |
 | [exports-subpaths-style](docs/rules/exports-subpaths-style.md)             | Enforce consistent format for the exports field (implicit or explicit subpaths).                            |      | 🔧 |    |    |
 | [no-empty-fields](docs/rules/no-empty-fields.md)                           | Reports on unnecessary empty arrays and objects.                                                            | ✔️ ✅ |    | 💡 |    |
 | [no-redundant-files](docs/rules/no-redundant-files.md)                     | Prevents adding unnecessary / redundant files.                                                              | ✔️ ✅ |    | 💡 |    |
@@ -191,7 +192,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [sort-collections](docs/rules/sort-collections.md)                         | Selected collections must be in a consistent order (lexicographical for most; lifecycle-aware for scripts). | ✔️ ✅ | 🔧 |    |    |
 | [unique-dependencies](docs/rules/unique-dependencies.md)                   | Checks a dependency isn't specified more than once (i.e. in `dependencies` and `devDependencies`)           | ✔️ ✅ |    | 💡 |    |
 | [valid-author](docs/rules/valid-author.md)                                 | Enforce that the `author` property is valid.                                                                | ✔️ ✅ |    |    |    |
-| [valid-bin](docs/rules/valid-bin.md)                                       | Enforce that the `bin` property is valid.                                                                   | ✔️ ✅ |    | 💡 |    |
+| [valid-bin](docs/rules/valid-bin.md)                                       | Enforce that the `bin` property is valid.                                                                   | ✔️ ✅ |    |    |    |
 | [valid-bundleDependencies](docs/rules/valid-bundleDependencies.md)         | Enforce that the `bundleDependencies` (also: `bundledDependencies`) property is valid.                      | ✔️ ✅ |    |    |    |
 | [valid-config](docs/rules/valid-config.md)                                 | Enforce that the `config` property is valid.                                                                | ✔️ ✅ |    |    |    |
 | [valid-cpu](docs/rules/valid-cpu.md)                                       | Enforce that the `cpu` property is valid.                                                                   | ✔️ ✅ |    |    |    |
