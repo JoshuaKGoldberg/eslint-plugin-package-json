@@ -1,7 +1,9 @@
-import { rule } from "../../rules/valid-author.ts";
+import { rules } from "../../rules/valid-properties.ts";
 import { ruleTester } from "./ruleTester.ts";
 
-ruleTester.run("valid-author", rule, {
+const ruleName = "valid-author";
+
+ruleTester.run(ruleName, rules[ruleName], {
 	invalid: [
 		{
 			code: `{
