@@ -1,4 +1,5 @@
 import {
+	validateAuthor,
 	validateBundleDependencies,
 	validateConfig,
 	validateCpu,
@@ -12,18 +13,20 @@ import {
 } from "package-json-validator";
 
 import {
+	createLegacySimpleValidPropertyRule,
 	createSimpleValidPropertyRule,
-	ValidationFunction,
+	type LegacyValidationFunction,
+	type ValidationFunction,
 } from "../utils/createSimpleValidPropertyRule.js";
 
-interface ValidPropertyOptions {
+interface LegacyValidPropertyOptions {
 	aliases: string[];
-	validator: ValidationFunction;
+	validator: LegacyValidationFunction;
 }
 
 // List of all properties we want to create valid- rules for,
-// in the format [propertyName, validationFunction | validPropertyOptions]
-const properties = [
+// in the format [propertyName, legacyValidationFunction | validPropertyOptions]
+const legacyProperties = [
 	[
 		"bundleDependencies",
 		{
@@ -43,13 +46,11 @@ const properties = [
 	["peerDependencies", validateDependencies],
 	["scripts", validateScripts],
 	["type", validateType],
-	// TODO: More to come!
-] satisfies [string, ValidationFunction | ValidPropertyOptions][];
+] satisfies [string, LegacyValidationFunction | LegacyValidPropertyOptions][];
 
-/** All basic valid- flavor rules */
-export const rules = Object.fromEntries(
-	properties.map(([propertyName, validationFunctionOrOptions]) => {
-		let validationFunction: ValidationFunction;
+const legacyRules = Object.fromEntries(
+	legacyProperties.map(([propertyName, validationFunctionOrOptions]) => {
+		let validationFunction: LegacyValidationFunction;
 		let aliases: string[] = [];
 		if (typeof validationFunctionOrOptions === "object") {
 			validationFunction = validationFunctionOrOptions.validator;
@@ -57,7 +58,7 @@ export const rules = Object.fromEntries(
 		} else {
 			validationFunction = validationFunctionOrOptions;
 		}
-		const { rule, ruleName } = createSimpleValidPropertyRule(
+		const { rule, ruleName } = createLegacySimpleValidPropertyRule(
 			propertyName,
 			validationFunction,
 			aliases,
@@ -65,3 +66,32 @@ export const rules = Object.fromEntries(
 		return [ruleName, rule];
 	}),
 );
+
+interface ValidPropertyOptions {
+	aliases: string[];
+	validator: ValidationFunction;
+}
+
+// List of all properties we want to create valid- rules for,
+// in the format [propertyName, validationFunction | validPropertyOptions]
+const properties = [
+	["author", validateAuthor],
+	// TODO: More to come!
+] satisfies [string, ValidationFunction | ValidPropertyOptions][];
+
+/** All basic valid- flavor rules */
+export const rules = {
+	...legacyRules,
+	...Object.fromEntries(
+		properties.map(([propertyName, validationFunctionOrOptions]) => {
+			const validationFunction = validationFunctionOrOptions;
+			const aliases: string[] = [];
+			const { rule, ruleName } = createSimpleValidPropertyRule(
+				propertyName,
+				validationFunction,
+				aliases,
+			);
+			return [ruleName, rule];
+		}),
+	),
+};
