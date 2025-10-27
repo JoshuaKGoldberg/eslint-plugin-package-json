@@ -14,8 +14,10 @@ export const rule = createRule({
 			if (result.issues.length) {
 				for (const issue of result.issues) {
 					context.report({
-						// eslint-disable-next-line eslint-plugin/prefer-message-ids
-						message: issue.message,
+						data: {
+							error: issue.message,
+						},
+						messageId: "validationError",
 						node,
 					});
 				}
@@ -51,12 +53,14 @@ export const rule = createRule({
 			},
 		};
 	},
-	// eslint-disable-next-line eslint-plugin/prefer-message-ids
 	meta: {
 		docs: {
 			category: "Best Practices",
 			description: "Enforce that the `author` property is valid.",
 			recommended: true,
+		},
+		messages: {
+			validationError: `Invalid author: {{ error }}`,
 		},
 		schema: [],
 		type: "problem",

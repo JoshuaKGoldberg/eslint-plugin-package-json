@@ -9,9 +9,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "the type should be a `string` or an `object` with at least a `name` property",
+					},
 					line: 2,
-					message:
-						"the type should be a `string` or an `object` with at least a `name` property",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -22,9 +24,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "the type should be a `string` or an `object` with at least a `name` property",
+					},
 					line: 2,
-					message:
-						"the type should be a `string` or an `object` with at least a `name` property",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -35,9 +39,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "the type should be a `string` or an `object` with at least a `name` property",
+					},
 					line: 2,
-					message:
-						"the type should be a `string` or an `object` with at least a `name` property",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -48,9 +54,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "the type should be a `string` or an `object` with at least a `name` property",
+					},
 					line: 2,
-					message:
-						"the type should be a `string` or an `object` with at least a `name` property",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -61,8 +69,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "person should have a name",
+					},
 					line: 2,
-					message: "person should have a name",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -73,8 +84,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "person should have a name",
+					},
 					line: 2,
-					message: "person should have a name",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -85,8 +99,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "email is not valid: invalid",
+					},
 					line: 2,
-					message: "email is not valid: invalid",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -97,8 +114,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "url is not valid: not-url",
+					},
 					line: 2,
-					message: "url is not valid: not-url",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -109,8 +129,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "person should have a name",
+					},
 					line: 2,
-					message: "person should have a name",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -121,9 +144,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "the type should be a `string` or an `object` with at least a `name` property",
+					},
 					line: 2,
-					message:
-						"the type should be a `string` or an `object` with at least a `name` property",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -136,9 +161,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "the type should be a `string` or an `object` with at least a `name` property",
+					},
 					line: 2,
-					message:
-						"the type should be a `string` or an `object` with at least a `name` property",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -151,8 +178,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "name should not be empty",
+					},
 					line: 3,
-					message: "name should not be empty",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -165,8 +195,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "name should not be empty",
+					},
 					line: 3,
-					message: "name should not be empty",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -180,8 +213,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "email is not valid: invalid",
+					},
 					line: 4,
-					message: "email is not valid: invalid",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -195,8 +231,11 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "url is not valid: invalid",
+					},
 					line: 4,
-					message: "url is not valid: invalid",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
@@ -207,12 +246,18 @@ ruleTester.run("valid-author", rule, {
 }`,
 			errors: [
 				{
+					data: {
+						error: "email is not valid: invalid-email",
+					},
 					line: 2,
-					message: "email is not valid: invalid-email",
+					messageId: "validationError",
 				},
 				{
+					data: {
+						error: "url is not valid: invalid-url",
+					},
 					line: 2,
-					message: "url is not valid: invalid-url",
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
