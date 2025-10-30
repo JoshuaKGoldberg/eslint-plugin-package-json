@@ -52,7 +52,7 @@
 		"semver": "^7.7.3",
 		"sort-object-keys": "^2.0.0",
 		"sort-package-json": "^3.4.0",
-		"validate-npm-package-name": "^6.0.2"
+		"validate-npm-package-name": "^7.0.0"
 	},
 	"devDependencies": {
 		"@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
