@@ -28,13 +28,12 @@ npm install eslint eslint-plugin-package-json --save-dev
 
 ## Usage
 
-### Config
+### Recommended Config
 
 This plugin's recommended configuration enables its rules on `**/package.json` files, parsing them with [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser).
 
-In your ESLint configuration file:
-
 ```ts
+// eslint.config.ts
 import packageJson from "eslint-plugin-package-json";
 
 export default [
@@ -46,6 +45,7 @@ export default [
 If you want to override the recommended rules:
 
 ```ts
+// eslint.config.ts
 import packageJson from "eslint-plugin-package-json";
 
 export default [
@@ -61,7 +61,22 @@ export default [
 
 See [ESLint's _Configuration Files_ guide](https://eslint.org/docs/latest/use/configure/configuration-files-new) for details on how to customize your rules and other config settings.
 
-### Legacy Config (deprecated)
+### Stylistic Config
+
+The stylistic configuration enables sets up the parser and files similar to the recommended config, but includes rules that are more opinionated about the style of a package.json.
+This can be used in addition to the recommended config, or on its own.
+
+```ts
+// eslint.config.ts
+import packageJson from "eslint-plugin-package-json";
+
+export default [
+	// your other ESLint configurations
+	packageJson.configs.stylistic,
+];
+```
+
+### Legacy Recommended Config (deprecated)
 
 Usage with ESLint's legacy ("eslintrc") format requires also installing [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser):
 
@@ -160,13 +175,14 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 💼 Configurations enabled in.\
 ✔️ Set in the `legacy-recommended` configuration.\
 ✅ Set in the `recommended` configuration.\
+🎨 Set in the `stylistic` configuration.\
 🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).\
 💡 Manually fixable by [editor suggestions](https://eslint.org/docs/latest/use/core-concepts#rule-suggestions).\
 ❌ Deprecated.
 
 | Name                                                                       | Description                                                                                                 | 💼   | 🔧 | 💡 | ❌  |
 | :------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- | :--- | :- | :- | :- |
-| [exports-subpaths-style](docs/rules/exports-subpaths-style.md)             | Enforce consistent format for the exports field (implicit or explicit subpaths).                            |      | 🔧 |    |    |
+| [exports-subpaths-style](docs/rules/exports-subpaths-style.md)             | Enforce consistent format for the exports field (implicit or explicit subpaths).                            | 🎨   | 🔧 |    |    |
 | [no-empty-fields](docs/rules/no-empty-fields.md)                           | Reports on unnecessary empty arrays and objects.                                                            | ✔️ ✅ |    | 💡 |    |
 | [no-redundant-files](docs/rules/no-redundant-files.md)                     | Prevents adding unnecessary / redundant files.                                                              | ✔️ ✅ |    | 💡 |    |
 | [order-properties](docs/rules/order-properties.md)                         | Package properties must be declared in standard order                                                       | ✔️ ✅ | 🔧 |    |    |
