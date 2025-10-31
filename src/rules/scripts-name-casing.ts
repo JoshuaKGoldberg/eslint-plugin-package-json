@@ -12,7 +12,10 @@ export const rule = createRule({
 				if (node.value.type === "JSONObjectExpression") {
 					for (const property of node.value.properties) {
 						const key = property.key as JsonAST.JSONStringLiteral;
-						const kebabCaseKey = kebabCase(key.value);
+						const kebabCaseKey = key.value
+							.split(":")
+							.map((segment) => kebabCase(segment))
+							.join(":");
 						if (kebabCaseKey !== key.value) {
 							context.report({
 								data: {
@@ -44,7 +47,8 @@ export const rule = createRule({
 	meta: {
 		docs: {
 			category: "Stylistic",
-			description: "Enforce that names for `scripts` are in kebab case.",
+			description:
+				"Enforce that names for `scripts` are in kebab case (optionally separated by colons).",
 		},
 		hasSuggestions: true,
 		messages: {
