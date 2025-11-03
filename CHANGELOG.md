@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.60.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.59.1...v0.60.0) (2025-11-03)
+
+### Features
+
+- **valid-author:** create more precise reports ([#1337](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1337)) ([e79ff9a](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/e79ff9ac602d85bf999686b018de6ace3a7bee36)), closes [#000](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/000)
+
 ## [0.59.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.59.0...v0.59.1) (2025-10-30)
 
 ### Bug Fixes
