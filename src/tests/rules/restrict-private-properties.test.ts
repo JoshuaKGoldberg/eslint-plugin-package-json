@@ -144,6 +144,30 @@ ruleTester.run("restrict-private-properties", rule, {
 				
 			}`,
 		},
+		// Options object without blockedProperties (uses default)
+		{
+			code: `{
+				"name": "test",
+				"private": true,
+				"files": ["dist"]
+			}`,
+			errors: [
+				{
+					messageId: "unnecessaryProperty",
+					suggestions: [
+						{
+							messageId: "unnecessaryProperty",
+							output: `{
+				"name": "test",
+				"private": true
+				
+			}`,
+						},
+					],
+				},
+			],
+			options: [{}],
+		},
 	],
 	valid: [
 		// Not a private package
@@ -182,6 +206,17 @@ ruleTester.run("restrict-private-properties", rule, {
 				"publishConfig": {}
 			}`,
 			options: [{ blockedProperties: [] }],
+		},
+		// Options object without blockedProperties (uses default)
+		{
+			code: `{
+				"name": "test",
+				"private": true,
+				"dependencies": {
+					"foo": "^1.0.0"
+				}
+			}`,
+			options: [{}],
 		},
 	],
 });
