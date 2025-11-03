@@ -15,7 +15,7 @@ ruleTester.run("restrict-private-properties", rule, {
 					messageId: "unnecessaryProperty",
 					suggestions: [
 						{
-							messageId: "unnecessaryProperty",
+							messageId: "removePropertySuggestion",
 							output: `{
 				"name": "test",
 				"private": true
@@ -40,7 +40,7 @@ ruleTester.run("restrict-private-properties", rule, {
 					messageId: "unnecessaryProperty",
 					suggestions: [
 						{
-							messageId: "unnecessaryProperty",
+							messageId: "removePropertySuggestion",
 							output: `{
 				"name": "test",
 				"private": true
@@ -84,7 +84,7 @@ ruleTester.run("restrict-private-properties", rule, {
 					messageId: "unnecessaryProperty",
 					suggestions: [
 						{
-							messageId: "unnecessaryProperty",
+							messageId: "removePropertySuggestion",
 							output: `{
 				"name": "test",
 				"private": true,
@@ -117,7 +117,7 @@ ruleTester.run("restrict-private-properties", rule, {
 					messageId: "unnecessaryProperty",
 					suggestions: [
 						{
-							messageId: "unnecessaryProperty",
+							messageId: "removePropertySuggestion",
 							output: `{
 				"name": "test",
 				"private": true
@@ -156,7 +156,7 @@ ruleTester.run("restrict-private-properties", rule, {
 					messageId: "unnecessaryProperty",
 					suggestions: [
 						{
-							messageId: "unnecessaryProperty",
+							messageId: "removePropertySuggestion",
 							output: `{
 				"name": "test",
 				"private": true

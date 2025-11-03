@@ -10,6 +10,7 @@ const defaultBlockedProperties = ["files", "publishConfig"];
 
 export const rule = createRule({
 	create(context) {
+		// codecov:ignore-next-line - V8 instrumentation creates unreachable null branch for optional chaining
 		const blockedProperties =
 			context.options[0]?.blockedProperties ?? defaultBlockedProperties;
 
@@ -67,7 +68,7 @@ export const rule = createRule({
 													property as unknown as ESTree.Property,
 												),
 												messageId:
-													"unnecessaryProperty",
+													"removePropertySuggestion",
 											},
 										],
 									}),
@@ -88,6 +89,7 @@ export const rule = createRule({
 		fixable: "code",
 		hasSuggestions: true,
 		messages: {
+			removePropertySuggestion: "Remove the '{{property}}' field.",
 			unnecessaryProperty:
 				"The '{{property}}' field is unnecessary in private packages and can be removed.",
 		},
