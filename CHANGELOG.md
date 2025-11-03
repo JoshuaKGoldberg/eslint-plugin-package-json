@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.59.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.59.0...v0.59.1) (2025-10-30)
+
+### Bug Fixes
+
+- **deps:** update dependency validate-npm-package-name to v7 ([#1353](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1353)) ([be9970a](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/be9970a18c73521906d1564ca461d94159e88807))
+
+# [0.59.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.58.0...v0.59.0) (2025-10-25)
+
+### Features
+
+- **exports-subpaths-style:** add new rule ([#1328](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1328)) ([d1a82ed](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/d1a82edf78b7b4bd446018f1ea3bb77e1bc9c772)), closes [#1322](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1322)
+
 # [0.58.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.57.0...v0.58.0) (2025-10-22)
 
 ### Features
