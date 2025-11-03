@@ -103,7 +103,7 @@ export const rule = createRule({
 	meta: {
 		defaultOptions: [{ prefer: "explicit" }],
 		docs: {
-			category: "Best Practices",
+			category: "Stylistic",
 			description:
 				"Enforce consistent format for the exports field (implicit or explicit subpaths).",
 			recommended: false,
