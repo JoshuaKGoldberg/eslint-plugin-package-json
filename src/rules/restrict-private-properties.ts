@@ -48,27 +48,29 @@ export const rule = createRule({
 							},
 							messageId: "unnecessaryProperty",
 							node: property,
-							...(
-								isEmpty
-									? {
+							...(isEmpty
+								? {
 										fix: fixRemoveObjectProperty(
 											context,
 											property as unknown as ESTree.Property,
-										)
+										),
 									}
-									: {
-										suggest: [{
-											data: {
-												property: property.key.value,
+								: {
+										suggest: [
+											{
+												data: {
+													property:
+														property.key.value,
+												},
+												fix: fixRemoveObjectProperty(
+													context,
+													property as unknown as ESTree.Property,
+												),
+												messageId:
+													"unnecessaryProperty",
 											},
-											fix: fixRemoveObjectProperty(
-												context,
-												property as unknown as ESTree.Property,
-											),
-											messageId: "unnecessaryProperty",
-										}]
-								}
-							),
+										],
+									}),
 						});
 					}
 				}
