@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.62.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.61.0...v0.62.0) (2025-11-03)
+
+### Features
+
+- **scripts-name-casing:** add new rule ([#1344](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1344)) ([e735595](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/e735595537e6857c771eac12a1efcd55cb2d3564)), closes [#61](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/61)
+
 # [0.61.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.60.0...v0.61.0) (2025-11-03)
 
 ### Features
