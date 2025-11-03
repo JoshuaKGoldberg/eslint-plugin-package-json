@@ -183,7 +183,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 
 | Name                                                                       | Description                                                                                                 | 💼   | 🔧 | 💡 | ❌  |
 | :------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- | :--- | :- | :- | :- |
-| [bin-name-casing](docs/rules/bin-name-casing.md)                           | Enforce that names for bin properties are in kebab case.                                                    |      |    | 💡 |    |
+| [bin-name-casing](docs/rules/bin-name-casing.md)                           | Enforce that names for bin properties are in kebab case.                                                    | 🎨   |    | 💡 |    |
 | [exports-subpaths-style](docs/rules/exports-subpaths-style.md)             | Enforce consistent format for the exports field (implicit or explicit subpaths).                            | 🎨   | 🔧 |    |    |
 | [no-empty-fields](docs/rules/no-empty-fields.md)                           | Reports on unnecessary empty arrays and objects.                                                            | ✔️ ✅ |    | 💡 |    |
 | [no-redundant-files](docs/rules/no-redundant-files.md)                     | Prevents adding unnecessary / redundant files.                                                              | ✔️ ✅ |    | 💡 |    |
