@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.61.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.60.0...v0.61.0) (2025-11-03)
+
+### Features
+
+- add new stylistic config ([#1342](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1342)) ([3d01cce](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/3d01cce99a1718a7485669c7b8cf6143a255b094)), closes [#1341](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1341)
+
 # [0.60.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.59.1...v0.60.0) (2025-11-03)
 
 ### Features
