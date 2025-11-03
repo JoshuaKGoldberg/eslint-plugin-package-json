@@ -72,6 +72,7 @@ import packageJson from "eslint-plugin-package-json";
 
 export default [
 	// your other ESLint configurations
+	packageJson.configs.recommended,
 	packageJson.configs.stylistic,
 ];
 ```
