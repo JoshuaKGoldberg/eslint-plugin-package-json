@@ -11,6 +11,7 @@ import { rule as orderProperties } from "./rules/order-properties.ts";
 import { rule as preferRepositoryShorthand } from "./rules/repository-shorthand.ts";
 import { rules as requireRules } from "./rules/require-properties.ts";
 import { rule as restrictDependencyRanges } from "./rules/restrict-dependency-ranges.ts";
+import { rule as restrictPrivateProperties } from "./rules/restrict-private-properties.ts";
 import { rule as scriptsNameCasing } from "./rules/scripts-name-casing.ts";
 import { rule as sortCollections } from "./rules/sort-collections.ts";
 import { rule as uniqueDependencies } from "./rules/unique-dependencies.ts";
@@ -38,6 +39,7 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	...requireRules,
 	"repository-shorthand": preferRepositoryShorthand,
 	"restrict-dependency-ranges": restrictDependencyRanges,
+	"restrict-private-properties": restrictPrivateProperties,
 	"scripts-name-casing": scriptsNameCasing,
 	"sort-collections": sortCollections,
 	"unique-dependencies": uniqueDependencies,
