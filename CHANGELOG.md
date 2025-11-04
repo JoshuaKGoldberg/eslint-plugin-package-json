@@ -1,5 +1,23 @@
 # Changelog
 
+# [0.62.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.61.0...v0.62.0) (2025-11-03)
+
+### Features
+
+- **scripts-name-casing:** add new rule ([#1344](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1344)) ([e735595](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/e735595537e6857c771eac12a1efcd55cb2d3564)), closes [#61](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/61)
+
+# [0.61.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.60.0...v0.61.0) (2025-11-03)
+
+### Features
+
+- add new stylistic config ([#1342](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1342)) ([3d01cce](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/3d01cce99a1718a7485669c7b8cf6143a255b094)), closes [#1341](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1341)
+
+# [0.60.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.59.1...v0.60.0) (2025-11-03)
+
+### Features
+
+- **valid-author:** create more precise reports ([#1337](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1337)) ([e79ff9a](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/e79ff9ac602d85bf999686b018de6ace3a7bee36)), closes [#000](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/000)
+
 ## [0.59.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.59.0...v0.59.1) (2025-10-30)
 
 ### Bug Fixes

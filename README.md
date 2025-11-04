@@ -28,13 +28,12 @@ npm install eslint eslint-plugin-package-json --save-dev
 
 ## Usage
 
-### Config
+### Recommended Config
 
 This plugin's recommended configuration enables its rules on `**/package.json` files, parsing them with [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser).
 
-In your ESLint configuration file:
-
 ```ts
+// eslint.config.ts
 import packageJson from "eslint-plugin-package-json";
 
 export default [
@@ -46,6 +45,7 @@ export default [
 If you want to override the recommended rules:
 
 ```ts
+// eslint.config.ts
 import packageJson from "eslint-plugin-package-json";
 
 export default [
@@ -61,7 +61,23 @@ export default [
 
 See [ESLint's _Configuration Files_ guide](https://eslint.org/docs/latest/use/configure/configuration-files-new) for details on how to customize your rules and other config settings.
 
-### Legacy Config (deprecated)
+### Stylistic Config
+
+The stylistic configuration enables sets up the parser and files similar to the recommended config, but includes rules that are more opinionated about the style of a package.json.
+This can be used in addition to the recommended config, or on its own.
+
+```ts
+// eslint.config.ts
+import packageJson from "eslint-plugin-package-json";
+
+export default [
+	// your other ESLint configurations
+	packageJson.configs.recommended,
+	packageJson.configs.stylistic,
+];
+```
+
+### Legacy Recommended Config (deprecated)
 
 Usage with ESLint's legacy ("eslintrc") format requires also installing [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser):
 
@@ -160,13 +176,14 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 💼 Configurations enabled in.\
 ✔️ Set in the `legacy-recommended` configuration.\
 ✅ Set in the `recommended` configuration.\
+🎨 Set in the `stylistic` configuration.\
 🔧 Automatically fixable by the [`--fix` CLI option](https://eslint.org/docs/user-guide/command-line-interface#--fix).\
 💡 Manually fixable by [editor suggestions](https://eslint.org/docs/latest/use/core-concepts#rule-suggestions).\
 ❌ Deprecated.
 
 | Name                                                                       | Description                                                                                                 | 💼   | 🔧 | 💡 | ❌  |
 | :------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- | :--- | :- | :- | :- |
-| [exports-subpaths-style](docs/rules/exports-subpaths-style.md)             | Enforce consistent format for the exports field (implicit or explicit subpaths).                            |      | 🔧 |    |    |
+| [exports-subpaths-style](docs/rules/exports-subpaths-style.md)             | Enforce consistent format for the exports field (implicit or explicit subpaths).                            | 🎨   | 🔧 |    |    |
 | [no-empty-fields](docs/rules/no-empty-fields.md)                           | Reports on unnecessary empty arrays and objects.                                                            | ✔️ ✅ |    | 💡 |    |
 | [no-redundant-files](docs/rules/no-redundant-files.md)                     | Prevents adding unnecessary / redundant files.                                                              | ✔️ ✅ |    | 💡 |    |
 | [order-properties](docs/rules/order-properties.md)                         | Package properties must be declared in standard order                                                       | ✔️ ✅ | 🔧 |    |    |
@@ -189,6 +206,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [require-version](docs/rules/require-version.md)                           | Requires the `version` property to be present.                                                              | ✔️ ✅ |    |    |    |
 | [restrict-dependency-ranges](docs/rules/restrict-dependency-ranges.md)     | Restricts the range of dependencies to allow or disallow specific types of ranges.                          |      |    | 💡 |    |
 | [restrict-private-properties](docs/rules/restrict-private-properties.md)   | Disallows unnecessary properties in private packages.                                                       |      | 🔧 | 💡 |    |
+| [scripts-name-casing](docs/rules/scripts-name-casing.md)                   | Enforce that names for `scripts` are in kebab case (optionally separated by colons).                        | 🎨   |    | 💡 |    |
 | [sort-collections](docs/rules/sort-collections.md)                         | Selected collections must be in a consistent order (lexicographical for most; lifecycle-aware for scripts). | ✔️ ✅ | 🔧 |    |    |
 | [unique-dependencies](docs/rules/unique-dependencies.md)                   | Checks a dependency isn't specified more than once (i.e. in `dependencies` and `devDependencies`)           | ✔️ ✅ |    | 💡 |    |
 | [valid-author](docs/rules/valid-author.md)                                 | Enforce that the `author` property is valid.                                                                | ✔️ ✅ |    |    |    |

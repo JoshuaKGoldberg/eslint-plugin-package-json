@@ -12,8 +12,10 @@ import { rule as preferRepositoryShorthand } from "./rules/repository-shorthand.
 import { rules as requireRules } from "./rules/require-properties.ts";
 import { rule as restrictDependencyRanges } from "./rules/restrict-dependency-ranges.ts";
 import { rule as restrictPrivateProperties } from "./rules/restrict-private-properties.ts";
+import { rule as scriptsNameCasing } from "./rules/scripts-name-casing.ts";
 import { rule as sortCollections } from "./rules/sort-collections.ts";
 import { rule as uniqueDependencies } from "./rules/unique-dependencies.ts";
+import { rule as validAuthor } from "./rules/valid-author.ts";
 import { rule as validBin } from "./rules/valid-bin.ts";
 import { rule as validLocalDependency } from "./rules/valid-local-dependency.ts";
 import { rule as validName } from "./rules/valid-name.ts";
@@ -38,9 +40,11 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"repository-shorthand": preferRepositoryShorthand,
 	"restrict-dependency-ranges": restrictDependencyRanges,
 	"restrict-private-properties": restrictPrivateProperties,
+	"scripts-name-casing": scriptsNameCasing,
 	"sort-collections": sortCollections,
 	"unique-dependencies": uniqueDependencies,
 	...basicValidRules,
+	"valid-author": validAuthor,
 	"valid-bin": validBin,
 	"valid-local-dependency": validLocalDependency,
 	"valid-name": validName,
@@ -78,6 +82,15 @@ const recommendedRules = {
 	],
 } satisfies Linter.RulesRecord;
 
+const stylisticRules = {
+	...Object.fromEntries(
+		Object.entries(rules)
+			// eslint-disable-next-line @typescript-eslint/no-deprecated
+			.filter(([, rule]) => rule.meta.docs?.category === "Stylistic")
+			.map(([name]) => ["package-json/" + name, "error" as const]),
+	),
+} satisfies Linter.RulesRecord;
+
 export const plugin = {
 	configs: {
 		/** @deprecated please use the recommended (flat) config. This will be removed in early 2026 */
@@ -97,6 +110,19 @@ export const plugin = {
 				},
 			},
 			rules: recommendedRules,
+		},
+		stylistic: {
+			files: ["**/package.json"],
+			languageOptions: {
+				parser: parserJsonc,
+			},
+			name: "package-json/stylistic",
+			plugins: {
+				get "package-json"(): ESLint.Plugin {
+					return plugin;
+				},
+			},
+			rules: stylisticRules,
 		},
 	},
 	meta: {

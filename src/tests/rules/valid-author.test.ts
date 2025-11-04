@@ -1,150 +1,263 @@
-import { rules } from "../../rules/valid-properties.ts";
+import { rule } from "../../rules/valid-author.ts";
 import { ruleTester } from "./ruleTester.ts";
 
-ruleTester.run("valid-author", rules["valid-author"], {
+ruleTester.run("valid-author", rule, {
 	invalid: [
 		{
-			code: `{ "author": null }`,
+			code: `{
+  "author": null
+}`,
 			errors: [
 				{
-					message:
-						'Invalid author: Type for field "author" should be a `string` or an `object` with at least a `name` property',
+					data: {
+						error: "the type should be a `string` or an `object` with at least a `name` property",
+					},
+					line: 2,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": 123 }`,
+			code: `{
+  "author": 123
+}`,
 			errors: [
 				{
-					message:
-						'Invalid author: Type for field "author" should be a `string` or an `object` with at least a `name` property',
+					data: {
+						error: "the type should be a `string` or an `object` with at least a `name` property",
+					},
+					line: 2,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": true }`,
+			code: `{
+  "author": true
+}`,
 			errors: [
 				{
-					message:
-						'Invalid author: Type for field "author" should be a `string` or an `object` with at least a `name` property',
+					data: {
+						error: "the type should be a `string` or an `object` with at least a `name` property",
+					},
+					line: 2,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": [] }`,
+			code: `{
+  "author": []
+}`,
 			errors: [
 				{
-					message:
-						'Invalid author: Type for field "author" should be a `string` or an `object` with at least a `name` property',
+					data: {
+						error: "the type should be a `string` or an `object` with at least a `name` property",
+					},
+					line: 2,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": "" }`,
+			code: `{
+  "author": ""
+}`,
 			errors: [
 				{
-					message: "Invalid author: author field should have name",
+					data: {
+						error: "person should have a name",
+					},
+					line: 2,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": "   " }`,
+			code: `{
+  "author": "   "
+}`,
 			errors: [
 				{
-					message: "Invalid author: author field should have name",
+					data: {
+						error: "person should have a name",
+					},
+					line: 2,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": "John <invalid>" }`,
+			code: `{
+  "author": "John <invalid>"
+}`,
 			errors: [
 				{
-					message:
-						"Invalid author: Email not valid for author: invalid",
+					data: {
+						error: "email is not valid: invalid",
+					},
+					line: 2,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": "John (not-url)" }`,
+			code: `{
+  "author": "John (not-url)"
+}`,
 			errors: [
 				{
-					message:
-						"Invalid author: URL not valid for author: not-url",
+					data: {
+						error: "url is not valid: not-url",
+					},
+					line: 2,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": "<john@example.com>" }`,
+			code: `{
+  "author": "<john@example.com>"
+}`,
 			errors: [
 				{
-					message: "Invalid author: author field should have name",
+					data: {
+						error: "person should have a name",
+					},
+					line: 2,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": {} }`,
+			code: `{
+  "author": {}
+}`,
 			errors: [
 				{
-					message:
-						'Invalid author: Type for field "author" should be a `string` or an `object` with at least a `name` property',
+					data: {
+						error: "the type should be a `string` or an `object` with at least a `name` property",
+					},
+					line: 2,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": { "email": "john@example.com" } }`,
+			code: `{
+  "author": {
+    "email": "john@example.com"
+  }
+}`,
 			errors: [
 				{
-					message:
-						'Invalid author: Type for field "author" should be a `string` or an `object` with at least a `name` property',
+					data: {
+						error: "the type should be a `string` or an `object` with at least a `name` property",
+					},
+					line: 2,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": { "name": "" } }`,
+			code: `{
+  "author": {
+    "name": ""
+  }
+}`,
 			errors: [
 				{
-					message: "Invalid author: author field should have name",
+					data: {
+						error: "name should not be empty",
+					},
+					line: 3,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": { "name": "John", "email": "invalid" } }`,
+			code: `{
+  "author": {
+    "name": "    "
+  }
+}`,
 			errors: [
 				{
-					message:
-						"Invalid author: Email not valid for author: invalid",
+					data: {
+						error: "name should not be empty",
+					},
+					line: 3,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": { "name": "John", "url": "invalid" } }`,
+			code: `{
+  "author": {
+    "name": "John",
+    "email": "invalid"
+  }
+}`,
 			errors: [
 				{
-					message:
-						"Invalid author: URL not valid for author: invalid",
+					data: {
+						error: "email is not valid: invalid",
+					},
+					line: 4,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": "John <invalid> (invalid)" }`,
+			code: `{
+  "author": {
+    "name": "John",
+    "url": "invalid"
+  }
+}`,
 			errors: [
 				{
-					message:
-						"Invalid author: \n - Email not valid for author: invalid\n - URL not valid for author: invalid",
+					data: {
+						error: "url is not valid: invalid",
+					},
+					line: 4,
+					messageId: "validationError",
+				},
+			],
+			filename: "package.json",
+		},
+		{
+			code: `{
+  "author": "John <invalid-email> (invalid-url)"
+}`,
+			errors: [
+				{
+					data: {
+						error: "email is not valid: invalid-email",
+					},
+					line: 2,
+					messageId: "validationError",
+				},
+				{
+					data: {
+						error: "url is not valid: invalid-url",
+					},
+					line: 2,
+					messageId: "validationError",
 				},
 			],
 			filename: "package.json",
