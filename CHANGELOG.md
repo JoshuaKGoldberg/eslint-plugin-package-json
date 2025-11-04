@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.63.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.62.0...v0.63.0) (2025-11-04)
+
+### Features
+
+- **restrict-private-properties:** add new rule ([#1336](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1336)) ([e1225cf](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/e1225cf991be2f3829cdddcae8b06cef8196f070)), closes [#1323](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1323)
+
 # [0.62.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.61.0...v0.62.0) (2025-11-03)
 
 ### Features
