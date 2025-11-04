@@ -11,7 +11,7 @@ ruleTester.run("valid-bin", rules["valid-bin"], {
 			errors: [
 				{
 					data: {
-						error: "field is `null`, but should be a `string` or an `object`",
+						error: "the value is `null`, but should be a `string` or an `object`",
 					},
 					line: 2,
 					messageId: "validationError",
@@ -26,7 +26,7 @@ ruleTester.run("valid-bin", rules["valid-bin"], {
 			errors: [
 				{
 					data: {
-						error: "type should be `string` or `object`, not `number`",
+						error: "the type should be `string` or `object`, not `number`",
 					},
 					line: 2,
 					messageId: "validationError",
@@ -41,7 +41,7 @@ ruleTester.run("valid-bin", rules["valid-bin"], {
 			errors: [
 				{
 					data: {
-						error: "field is empty, but should be a relative path",
+						error: "the value is empty, but should be a relative path",
 					},
 					line: 2,
 					messageId: "validationError",
@@ -58,7 +58,7 @@ ruleTester.run("valid-bin", rules["valid-bin"], {
 			errors: [
 				{
 					data: {
-						error: 'bin field "invalid-bin" should be a string',
+						error: 'the value of property "invalid-bin" should be a string',
 					},
 					line: 3,
 					messageId: "validationError",
@@ -75,7 +75,7 @@ ruleTester.run("valid-bin", rules["valid-bin"], {
 			errors: [
 				{
 					data: {
-						error: 'bin field "invalid-bin" is empty, but should be a relative path',
+						error: 'the value of property "invalid-bin" is empty, but should be a relative path',
 					},
 					line: 3,
 					messageId: "validationError",
@@ -92,7 +92,7 @@ ruleTester.run("valid-bin", rules["valid-bin"], {
 			errors: [
 				{
 					data: {
-						error: "bin field 0 has an empty key, but should be a valid command name",
+						error: "property 0 has an empty key, but should be a valid command name",
 					},
 					line: 3,
 					messageId: "validationError",
@@ -110,14 +110,14 @@ ruleTester.run("valid-bin", rules["valid-bin"], {
 			errors: [
 				{
 					data: {
-						error: "bin field 0 has an empty key, but should be a valid command name",
+						error: "property 0 has an empty key, but should be a valid command name",
 					},
 					line: 3,
 					messageId: "validationError",
 				},
 				{
 					data: {
-						error: "bin field 1 has an empty key, but should be a valid command name",
+						error: "property 1 has an empty key, but should be a valid command name",
 					},
 					line: 4,
 					messageId: "validationError",

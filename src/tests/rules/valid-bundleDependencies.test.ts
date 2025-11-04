@@ -12,9 +12,9 @@ ruleTester.run("valid-bundleDependencies", rules["valid-bundleDependencies"], {
 				errors: [
 					{
 						data: {
-							errors: "the field is `null`, but should be an `Array` or a `boolean`",
-							property,
+							error: "the value is `null`, but should be an `Array` or a `boolean`",
 						},
+						line: 2,
 						messageId: "validationError",
 					},
 				],
@@ -27,9 +27,9 @@ ruleTester.run("valid-bundleDependencies", rules["valid-bundleDependencies"], {
 				errors: [
 					{
 						data: {
-							errors: "the type should be `Array` or `boolean`, not `number`",
-							property,
+							error: "the type should be `Array` or `boolean`, not `number`",
 						},
+						line: 2,
 						messageId: "validationError",
 					},
 				],
@@ -42,42 +42,60 @@ ruleTester.run("valid-bundleDependencies", rules["valid-bundleDependencies"], {
 				errors: [
 					{
 						data: {
-							errors: "the type should be `Array` or `boolean`, not `string`",
-							property,
+							error: "the type should be `Array` or `boolean`, not `string`",
 						},
+						line: 2,
 						messageId: "validationError",
 					},
 				],
 			},
 			{
 				code: `{
-	"${property}": { "invalid-bin": 123 }
+	"${property}": {
+      "invalid-bin": 123
+    }
 }
 `,
 				errors: [
 					{
 						data: {
-							errors: "the type should be `Array` or `boolean`, not `object`",
-							property,
+							error: "the type should be `Array` or `boolean`, not `object`",
 						},
+						line: 2,
 						messageId: "validationError",
 					},
 				],
 			},
 			{
 				code: `{
-	"${property}": ["valid", "", 123, null]
+	"${property}": [
+      "valid",
+      "",
+      123,
+      null
+    ]
 }
 `,
 				errors: [
 					{
 						data: {
-							errors: `
- - item at index 1 is empty, but should be a dependency name
- - item at index 2 should be a string, not \`number\`
- - item at index 3 should be a string, not \`null\``,
-							property,
+							error: "item at index 1 is empty, but should be a dependency name",
 						},
+						line: 4,
+						messageId: "validationError",
+					},
+					{
+						data: {
+							error: "item at index 2 should be a string, not `number`",
+						},
+						line: 5,
+						messageId: "validationError",
+					},
+					{
+						data: {
+							error: "item at index 3 should be a string, not `null`",
+						},
+						line: 6,
 						messageId: "validationError",
 					},
 				],
