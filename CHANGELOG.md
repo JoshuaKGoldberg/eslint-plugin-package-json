@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.64.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.63.0...v0.64.0) (2025-11-04)
+
+### Features
+
+- **bin-name-casing:** add new rule ([#1343](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1343)) ([0e10e87](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/0e10e875eb4cc5f680e154e6ea2333e5902d4c4c)), closes [#1346](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1346)
+
 # [0.63.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.62.0...v0.63.0) (2025-11-04)
 
 ### Features
