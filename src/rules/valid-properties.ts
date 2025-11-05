@@ -28,7 +28,6 @@ interface LegacyValidPropertyOptions {
 // List of all properties we want to create valid- rules for,
 // in the format [propertyName, legacyValidationFunction | validPropertyOptions]
 const legacyProperties = [
-	["bin", validateBin],
 	[
 		"bundleDependencies",
 		{
@@ -78,6 +77,7 @@ interface ValidPropertyOptions {
 // in the format [propertyName, validationFunction | validPropertyOptions]
 const properties = [
 	["author", validateAuthor],
+	["bin", validateBin],
 	// TODO: More to come!
 ] satisfies [string, ValidationFunction | ValidPropertyOptions][];
 

@@ -11,8 +11,9 @@ ruleTester.run("valid-bin", rules["valid-bin"], {
 			errors: [
 				{
 					data: {
-						errors: "bin field is `null`, but should be a `string` or an `object`",
+						error: "field is `null`, but should be a `string` or an `object`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -25,8 +26,9 @@ ruleTester.run("valid-bin", rules["valid-bin"], {
 			errors: [
 				{
 					data: {
-						errors: 'Type for field "bin" should be `string` or `object`, not `number`',
+						error: "type should be `string` or `object`, not `number`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -39,66 +41,85 @@ ruleTester.run("valid-bin", rules["valid-bin"], {
 			errors: [
 				{
 					data: {
-						errors: "bin field is empty, but should be a relative path",
+						error: "field is empty, but should be a relative path",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
 		},
 		{
 			code: `{
-	"bin": { "invalid-bin": 123 }
+	"bin": {
+      "invalid-bin": 123
+    }
 }
 `,
 			errors: [
 				{
 					data: {
-						errors: 'bin field "invalid-bin" should be a string',
+						error: 'bin field "invalid-bin" should be a string',
 					},
+					line: 3,
 					messageId: "validationError",
 				},
 			],
 		},
 		{
 			code: `{
-	"bin": { "invalid-bin": "" }
+	"bin": {
+      "invalid-bin": ""
+    }
 }
 `,
 			errors: [
 				{
 					data: {
-						errors: 'bin field "invalid-bin" is empty, but should be a relative path',
+						error: 'bin field "invalid-bin" is empty, but should be a relative path',
 					},
+					line: 3,
 					messageId: "validationError",
 				},
 			],
 		},
 		{
 			code: `{
-	"bin": { "": "invalid-key" }
+	"bin": {
+      "": "invalid-key"
+    }
 }
 `,
 			errors: [
 				{
 					data: {
-						errors: "bin field 0 has an empty key, but should be a valid command name",
+						error: "bin field 0 has an empty key, but should be a valid command name",
 					},
+					line: 3,
 					messageId: "validationError",
 				},
 			],
 		},
 		{
 			code: `{
-	"bin": { "": "invalid-key", "   ": "invalid-key" }
+	"bin": {
+      "": "invalid-key",
+      "   ": "invalid-key"
+    }
 }
 `,
 			errors: [
 				{
 					data: {
-						errors: `
- - bin field 0 has an empty key, but should be a valid command name
- - bin field 1 has an empty key, but should be a valid command name`,
+						error: "bin field 0 has an empty key, but should be a valid command name",
 					},
+					line: 3,
+					messageId: "validationError",
+				},
+				{
+					data: {
+						error: "bin field 1 has an empty key, but should be a valid command name",
+					},
+					line: 4,
 					messageId: "validationError",
 				},
 			],
