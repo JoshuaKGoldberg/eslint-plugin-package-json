@@ -8,7 +8,7 @@ ruleTester.run("valid-description", rules["valid-description"], {
 			errors: [
 				{
 					message:
-						"Invalid description: the field is `null`, but should be a `string`",
+						"Invalid description: the value is `null`, but should be a `string`",
 				},
 			],
 			filename: "package.json",
