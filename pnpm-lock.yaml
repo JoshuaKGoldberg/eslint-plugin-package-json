@@ -24,8 +24,8 @@ importers:
         specifier: ~0.4.0
         version: 0.4.0(@types/estree@1.0.7)(eslint@9.38.0(jiti@2.6.0))
       package-json-validator:
-        specifier: ~0.39.0
-        version: 0.39.0
+        specifier: ~0.40.0
+        version: 0.40.0
       semver:
         specifier: ^7.7.3
         version: 7.7.3
@@ -2551,8 +2551,8 @@ packages:
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
 
-  package-json-validator@0.39.0:
-    resolution: {integrity: sha512-Ql/HMj8O3xcm8K2jJj+VEpFNp9U4w9VMyS3ek0gTLwplOHl/GUfGxowZwnXZ4x75Kf7FVkw0hhb3JndUO1RC1A==}
+  package-json-validator@0.40.0:
+    resolution: {integrity: sha512-C2tBeMxKfQPVUAP12A8G+UdZGRtyXLsmmch1LyBOUi5WbgHHISkagSTcoiTZOIR5xztpw4PQCZyX86iNxDpmwA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
 
@@ -5726,7 +5726,7 @@ snapshots:
 
   package-json-from-dist@1.0.1: {}
 
-  package-json-validator@0.39.0:
+  package-json-validator@0.40.0:
     dependencies:
       semver: 7.7.3
       validate-npm-package-license: 3.0.4

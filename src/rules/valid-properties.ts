@@ -25,7 +25,6 @@ import {
 const legacyProperties = [
 	["dependencies", validateDependencies],
 	["devDependencies", validateDependencies],
-	["directories", validateDirectories],
 	["exports", validateExports],
 	["license", validateLicense],
 	["optionalDependencies", validateDependencies],
@@ -63,6 +62,7 @@ const properties = [
 	["config", validateConfig],
 	["cpu", validateCpu],
 	["description", validateDescription],
+	["directories", validateDirectories],
 	["type", validateType],
 	// TODO: More to come!
 ] satisfies [string, ValidationFunction | ValidPropertyOptions][];
