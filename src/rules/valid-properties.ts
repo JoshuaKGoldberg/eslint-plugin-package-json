@@ -32,7 +32,6 @@ const legacyProperties = [
 	["optionalDependencies", validateDependencies],
 	["peerDependencies", validateDependencies],
 	["scripts", validateScripts],
-	["type", validateType],
 ] satisfies [string, LegacyValidationFunction][];
 
 const legacyRules = Object.fromEntries(
@@ -64,6 +63,7 @@ const properties = [
 	],
 	["config", validateConfig],
 	["cpu", validateCpu],
+	["type", validateType],
 	// TODO: More to come!
 ] satisfies [string, ValidationFunction | ValidPropertyOptions][];
 
