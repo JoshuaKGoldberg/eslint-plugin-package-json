@@ -11,8 +11,9 @@ ruleTester.run("valid-license", rules["valid-license"], {
 			errors: [
 				{
 					data: {
-						errors: "the field is `null`, but should be a `string`",
+						error: "the value is `null`, but should be a `string`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -25,8 +26,9 @@ ruleTester.run("valid-license", rules["valid-license"], {
 			errors: [
 				{
 					data: {
-						errors: "the type should be a `string`, not `number`",
+						error: "the type should be a `string`, not `number`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -39,8 +41,9 @@ ruleTester.run("valid-license", rules["valid-license"], {
 			errors: [
 				{
 					data: {
-						errors: "the value is empty, but should be a valid license",
+						error: "the value is empty, but should be a valid license",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -53,8 +56,9 @@ ruleTester.run("valid-license", rules["valid-license"], {
 			errors: [
 				{
 					data: {
-						errors: 'license should be a valid SPDX license expression (without "LicenseRef"), "UNLICENSED", or "SEE LICENSE IN <filename>"',
+						error: 'license should be a valid SPDX license expression (without "LicenseRef"), "UNLICENSED", or "SEE LICENSE IN <filename>"',
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
