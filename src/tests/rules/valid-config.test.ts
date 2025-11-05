@@ -11,8 +11,9 @@ ruleTester.run("valid-config", rules["valid-config"], {
 			errors: [
 				{
 					data: {
-						errors: "the field is `null`, but should be an `object`",
+						error: "the value is `null`, but should be an `object`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -25,8 +26,9 @@ ruleTester.run("valid-config", rules["valid-config"], {
 			errors: [
 				{
 					data: {
-						errors: "the type should be `object`, not `number`",
+						error: "the type should be `object`, not `number`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -39,8 +41,9 @@ ruleTester.run("valid-config", rules["valid-config"], {
 			errors: [
 				{
 					data: {
-						errors: "the type should be `object`, not `string`",
+						error: "the type should be `object`, not `string`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -53,7 +56,7 @@ ruleTester.run("valid-config", rules["valid-config"], {
 			errors: [
 				{
 					data: {
-						errors: "the type should be `object`, not `array`",
+						error: "the type should be `object`, not `array`",
 					},
 					messageId: "validationError",
 				},

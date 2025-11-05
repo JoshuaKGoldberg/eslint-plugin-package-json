@@ -23,7 +23,6 @@ import {
 // List of all properties we want to create valid- rules for,
 // in the format [propertyName, legacyValidationFunction | validPropertyOptions]
 const legacyProperties = [
-	["config", validateConfig],
 	["cpu", validateCpu],
 	["dependencies", validateDependencies],
 	["description", validateDescription],
@@ -64,6 +63,7 @@ const properties = [
 			validator: validateBundleDependencies,
 		},
 	],
+	["config", validateConfig],
 	// TODO: More to come!
 ] satisfies [string, ValidationFunction | ValidPropertyOptions][];
 
