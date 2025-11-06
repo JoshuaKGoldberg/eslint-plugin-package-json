@@ -20,22 +20,9 @@ import {
 	type ValidationFunction,
 } from "../utils/createSimpleValidPropertyRule.js";
 
-interface LegacyValidPropertyOptions {
-	aliases: string[];
-	validator: LegacyValidationFunction;
-}
-
 // List of all properties we want to create valid- rules for,
 // in the format [propertyName, legacyValidationFunction | validPropertyOptions]
 const legacyProperties = [
-	["bin", validateBin],
-	[
-		"bundleDependencies",
-		{
-			aliases: ["bundledDependencies"],
-			validator: validateBundleDependencies,
-		},
-	],
 	["config", validateConfig],
 	["cpu", validateCpu],
 	["dependencies", validateDependencies],
@@ -48,22 +35,13 @@ const legacyProperties = [
 	["peerDependencies", validateDependencies],
 	["scripts", validateScripts],
 	["type", validateType],
-] satisfies [string, LegacyValidationFunction | LegacyValidPropertyOptions][];
+] satisfies [string, LegacyValidationFunction][];
 
 const legacyRules = Object.fromEntries(
-	legacyProperties.map(([propertyName, validationFunctionOrOptions]) => {
-		let validationFunction: LegacyValidationFunction;
-		let aliases: string[] = [];
-		if (typeof validationFunctionOrOptions === "object") {
-			validationFunction = validationFunctionOrOptions.validator;
-			aliases = validationFunctionOrOptions.aliases;
-		} else {
-			validationFunction = validationFunctionOrOptions;
-		}
+	legacyProperties.map(([propertyName, validationFunction]) => {
 		const { rule, ruleName } = createLegacySimpleValidPropertyRule(
 			propertyName,
 			validationFunction,
-			aliases,
 		);
 		return [ruleName, rule];
 	}),
@@ -78,6 +56,14 @@ interface ValidPropertyOptions {
 // in the format [propertyName, validationFunction | validPropertyOptions]
 const properties = [
 	["author", validateAuthor],
+	["bin", validateBin],
+	[
+		"bundleDependencies",
+		{
+			aliases: ["bundledDependencies"],
+			validator: validateBundleDependencies,
+		},
+	],
 	// TODO: More to come!
 ] satisfies [string, ValidationFunction | ValidPropertyOptions][];
 
@@ -86,8 +72,14 @@ export const rules = {
 	...legacyRules,
 	...Object.fromEntries(
 		properties.map(([propertyName, validationFunctionOrOptions]) => {
-			const validationFunction = validationFunctionOrOptions;
-			const aliases: string[] = [];
+			let validationFunction: ValidationFunction;
+			let aliases: string[] = [];
+			if (typeof validationFunctionOrOptions === "object") {
+				validationFunction = validationFunctionOrOptions.validator;
+				aliases = validationFunctionOrOptions.aliases;
+			} else {
+				validationFunction = validationFunctionOrOptions;
+			}
 			const { rule, ruleName } = createSimpleValidPropertyRule(
 				propertyName,
 				validationFunction,

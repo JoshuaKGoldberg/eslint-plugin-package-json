@@ -41,10 +41,10 @@ export const createSimpleValidPropertyRule = (
 					}
 				}
 
-				// If the value is an object, and has child results with issues, then report those too
 				const childrenWithIssues = result.childResults.filter(
 					(childResult) => childResult.errorMessages.length,
 				);
+				// If the value is an object, and has child results with issues, then report those too
 				if (
 					node.type === "JSONObjectExpression" &&
 					childrenWithIssues.length
@@ -52,6 +52,18 @@ export const createSimpleValidPropertyRule = (
 					for (const childResult of childrenWithIssues) {
 						const childNode = node.properties[childResult.index];
 						reportIssues(childResult, childNode);
+					}
+				}
+				// If the value is an array, and has child results with issues, then report those too
+				else if (
+					node.type === "JSONArrayExpression" &&
+					childrenWithIssues.length
+				) {
+					for (const childResult of childrenWithIssues) {
+						const childNode = node.elements[childResult.index];
+						if (childNode) {
+							reportIssues(childResult, childNode);
+						}
 					}
 				}
 			};
