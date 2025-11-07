@@ -8,6 +8,7 @@ import { rule as binNameCasing } from "./rules/bin-name-casing.ts";
 import { rule as exportsSubpathsStyle } from "./rules/exports-subpaths-style.ts";
 import { rule as noEmptyFields } from "./rules/no-empty-fields.ts";
 import { rule as noRedundantFiles } from "./rules/no-redundant-files.ts";
+import { rule as noRedundantPublishConfig } from "./rules/no-redundant-publishConfig.ts";
 import { rule as orderProperties } from "./rules/order-properties.ts";
 import { rule as preferRepositoryShorthand } from "./rules/repository-shorthand.ts";
 import { rules as requireRules } from "./rules/require-properties.ts";
@@ -35,6 +36,7 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"exports-subpaths-style": exportsSubpathsStyle,
 	"no-empty-fields": noEmptyFields,
 	"no-redundant-files": noRedundantFiles,
+	"no-redundant-publishConfig": noRedundantPublishConfig,
 	"order-properties": orderProperties,
 	...requireRules,
 	"repository-shorthand": preferRepositoryShorthand,
