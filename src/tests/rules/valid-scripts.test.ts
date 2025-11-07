@@ -11,8 +11,9 @@ ruleTester.run("valid-scripts", rules["valid-scripts"], {
 			errors: [
 				{
 					data: {
-						errors: "the field is `null`, but should be an `object`",
+						error: "the value is `null`, but should be an `object`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -25,8 +26,9 @@ ruleTester.run("valid-scripts", rules["valid-scripts"], {
 			errors: [
 				{
 					data: {
-						errors: "the type should be `object`, not `number`",
+						error: "the type should be `object`, not `number`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -39,66 +41,85 @@ ruleTester.run("valid-scripts", rules["valid-scripts"], {
 			errors: [
 				{
 					data: {
-						errors: "the type should be `object`, not `string`",
+						error: "the type should be `object`, not `string`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
 		},
 		{
 			code: `{
-	"scripts": { "invalid": 123 }
+	"scripts": {
+      "invalid": 123
+    }
 }
 `,
 			errors: [
 				{
 					data: {
-						errors: 'the value of field "invalid" should be a string',
+						error: 'the value of property "invalid" should be a string',
 					},
+					line: 3,
 					messageId: "validationError",
 				},
 			],
 		},
 		{
 			code: `{
-	"scripts": { "invalid": "" }
+	"scripts": {
+      "invalid": ""
+    }
 }
 `,
 			errors: [
 				{
 					data: {
-						errors: 'the value of field "invalid" is empty, but should be a script command',
+						error: 'the value of property "invalid" is empty, but should be a script command',
 					},
+					line: 3,
 					messageId: "validationError",
 				},
 			],
 		},
 		{
 			code: `{
-	"scripts": { "": "invalid" }
+	"scripts": {
+      "": "invalid"
+    }
 }
 `,
 			errors: [
 				{
 					data: {
-						errors: "field 0 has an empty key, but should be a script name",
+						error: "property 0 has an empty key, but should be a script name",
 					},
+					line: 3,
 					messageId: "validationError",
 				},
 			],
 		},
 		{
 			code: `{
-	"scripts": { "": "invalid", "   ": "invalid" }
+	"scripts": {
+      "": "invalid",
+      "   ": "invalid"
+    }
 }
 `,
 			errors: [
 				{
 					data: {
-						errors: `
- - field 0 has an empty key, but should be a script name
- - field 1 has an empty key, but should be a script name`,
+						error: "property 0 has an empty key, but should be a script name",
 					},
+					line: 3,
+					messageId: "validationError",
+				},
+				{
+					data: {
+						error: "property 1 has an empty key, but should be a script name",
+					},
+					line: 4,
 					messageId: "validationError",
 				},
 			],
