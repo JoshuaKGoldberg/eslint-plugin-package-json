@@ -10,6 +10,7 @@ ruleTester.run("no-redundant-publishConfig", rule, {
 }`,
 			errors: [
 				{
+					line: 3,
 					messageId: "redundantAccess",
 					suggestions: [
 						{
@@ -30,6 +31,7 @@ ruleTester.run("no-redundant-publishConfig", rule, {
 }`,
 			errors: [
 				{
+					line: 3,
 					messageId: "redundantAccess",
 					suggestions: [
 						{
@@ -53,6 +55,7 @@ ruleTester.run("no-redundant-publishConfig", rule, {
 }`,
 			errors: [
 				{
+					line: 4,
 					messageId: "redundantAccess",
 					suggestions: [
 						{
@@ -79,6 +82,7 @@ ruleTester.run("no-redundant-publishConfig", rule, {
 }`,
 			errors: [
 				{
+					line: 5,
 					messageId: "redundantAccess",
 					suggestions: [
 						{
@@ -131,6 +135,10 @@ ruleTester.run("no-redundant-publishConfig", rule, {
 		`{
 	"name": "@org/scope/package",
 	"publishConfig": { "access": "restricted" }
+}`,
+		`{
+	"name": 123,
+	"publishConfig": { "access": "public" }
 }`,
 	],
 });
