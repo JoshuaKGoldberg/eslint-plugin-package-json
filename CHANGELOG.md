@@ -1,5 +1,15 @@
 # Changelog
 
+# [0.65.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.64.0...v0.65.0) (2025-11-08)
+
+### Bug Fixes
+
+- **valid-bin, valid-bundleDependencies:** improve report precision ([#1360](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1360)) ([3d0bd1e](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/3d0bd1e04b935d30e85823dcf8c8d682ea4ab8d2)), closes [#000](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/000)
+
+### Features
+
+- **no-redundant-publishConfig:** add new rule ([#1366](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1366)) ([8d3680c](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/8d3680c5fb0df0af37744cf86201163aee372bab)), closes [#1365](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1365)
+
 # [0.64.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.63.0...v0.64.0) (2025-11-04)
 
 ### Features
