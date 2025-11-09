@@ -78,7 +78,7 @@
 		"jiti": "2.6.0",
 		"json-schema-to-ts": "3.1.1",
 		"jsonc-eslint-parser": "2.4.1",
-		"knip": "5.66.0",
+		"knip": "5.67.0",
 		"lint-staged": "16.2.0",
 		"markdownlint": "0.39.0",
 		"markdownlint-cli": "0.45.0",
