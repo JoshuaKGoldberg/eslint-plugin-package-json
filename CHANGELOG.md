@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.65.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.65.0...v0.65.1) (2025-11-09)
+
+### Bug Fixes
+
+- **scripts-name-casing:** ignore `prepublishOnly` built-in script ([#1369](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1369)) ([b672551](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/b67255122ac753d1c3f9d7ef310a72dca029f2a3)), closes [#1368](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1368)
+
 # [0.65.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.64.0...v0.65.0) (2025-11-08)
 
 ### Bug Fixes
