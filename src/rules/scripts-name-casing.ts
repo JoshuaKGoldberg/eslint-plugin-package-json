@@ -3,6 +3,9 @@ import { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { createRule } from "../createRule.ts";
 
+// See https://docs.npmjs.com/cli/v11/using-npm/scripts
+const BUILT_IN_SCRIPTS_IN_CAMEL_CASE = new Set(["prepublishOnly"]);
+
 export const rule = createRule({
 	create(context) {
 		return {
@@ -11,26 +14,32 @@ export const rule = createRule({
 			) {
 				if (node.value.type === "JSONObjectExpression") {
 					for (const property of node.value.properties) {
-						const key = property.key as JsonAST.JSONStringLiteral;
-						const kebabCaseKey = key.value
+						const keyNode =
+							property.key as JsonAST.JSONStringLiteral;
+						const key = keyNode.value;
+						if (BUILT_IN_SCRIPTS_IN_CAMEL_CASE.has(key)) {
+							continue;
+						}
+
+						const kebabCaseKey = key
 							.split(":")
 							.map((segment) => kebabCase(segment))
 							.join(":");
-						if (kebabCaseKey !== key.value) {
+						if (kebabCaseKey !== key) {
 							context.report({
 								data: {
-									property: key.value,
+									property: key,
 								},
 								messageId: "invalidCase",
-								node: key,
+								node: keyNode,
 								suggest: [
 									{
 										data: {
-											property: key.value,
+											property: key,
 										},
 										fix: (fixer) => {
 											return fixer.replaceText(
-												key,
+												keyNode,
 												JSON.stringify(kebabCaseKey),
 											);
 										},
