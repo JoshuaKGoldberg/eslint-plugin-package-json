@@ -23,18 +23,11 @@ import {
 // List of all properties we want to create valid- rules for,
 // in the format [propertyName, legacyValidationFunction | validPropertyOptions]
 const legacyProperties = [
-	["config", validateConfig],
-	["cpu", validateCpu],
 	["dependencies", validateDependencies],
-	["description", validateDescription],
 	["devDependencies", validateDependencies],
-	["directories", validateDirectories],
-	["exports", validateExports],
-	["license", validateLicense],
 	["optionalDependencies", validateDependencies],
 	["peerDependencies", validateDependencies],
 	["scripts", validateScripts],
-	["type", validateType],
 ] satisfies [string, LegacyValidationFunction][];
 
 const legacyRules = Object.fromEntries(
@@ -64,6 +57,13 @@ const properties = [
 			validator: validateBundleDependencies,
 		},
 	],
+	["config", validateConfig],
+	["cpu", validateCpu],
+	["description", validateDescription],
+	["directories", validateDirectories],
+	["exports", validateExports],
+	["license", validateLicense],
+	["type", validateType],
 	// TODO: More to come!
 ] satisfies [string, ValidationFunction | ValidPropertyOptions][];
 

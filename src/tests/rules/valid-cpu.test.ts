@@ -11,8 +11,9 @@ ruleTester.run("valid-cpu", rules["valid-cpu"], {
 			errors: [
 				{
 					data: {
-						errors: "the field is `null`, but should be an `Array` of strings",
+						error: "the value is `null`, but should be an `Array` of strings",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -25,8 +26,9 @@ ruleTester.run("valid-cpu", rules["valid-cpu"], {
 			errors: [
 				{
 					data: {
-						errors: "the type should be `Array`, not `number`",
+						error: "the type should be `Array`, not `number`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -39,8 +41,9 @@ ruleTester.run("valid-cpu", rules["valid-cpu"], {
 			errors: [
 				{
 					data: {
-						errors: "the type should be `Array`, not `string`",
+						error: "the type should be `Array`, not `string`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -53,27 +56,58 @@ ruleTester.run("valid-cpu", rules["valid-cpu"], {
 			errors: [
 				{
 					data: {
-						errors: "the type should be `Array`, not `object`",
+						error: "the type should be `Array`, not `object`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
 		},
 		{
 			code: `{
-	"cpu": ["", true, 123, {}, []]
+	"cpu": [
+      "",
+      true,
+      123,
+      {},
+      []
+    ]
 }
 `,
 			errors: [
 				{
 					data: {
-						errors: `
- - item at index 0 is empty, but should be the name of a cpu architecture
- - item at index 1 should be a string, not \`boolean\`
- - item at index 2 should be a string, not \`number\`
- - item at index 3 should be a string, not \`object\`
- - item at index 4 should be a string, not \`object\``,
+						error: "item at index 0 is empty, but should be the name of a CPU architecture",
 					},
+					line: 3,
+					messageId: "validationError",
+				},
+				{
+					data: {
+						error: "item at index 1 should be a string, not `boolean`",
+					},
+					line: 4,
+					messageId: "validationError",
+				},
+				{
+					data: {
+						error: "item at index 2 should be a string, not `number`",
+					},
+					line: 5,
+					messageId: "validationError",
+				},
+				{
+					data: {
+						error: "item at index 3 should be a string, not `object`",
+					},
+					line: 6,
+					messageId: "validationError",
+				},
+				{
+					data: {
+						error: "item at index 4 should be a string, not `object`",
+					},
+					line: 7,
 					messageId: "validationError",
 				},
 			],

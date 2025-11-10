@@ -11,8 +11,9 @@ ruleTester.run("valid-type", rules["valid-type"], {
 			errors: [
 				{
 					data: {
-						errors: "type is `null`, but should be a `string`",
+						error: "the value is `null`, but should be a `string`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -25,8 +26,9 @@ ruleTester.run("valid-type", rules["valid-type"], {
 			errors: [
 				{
 					data: {
-						errors: "type should be a `string`, not `number`",
+						error: "the type should be a `string`, not `number`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -39,8 +41,9 @@ ruleTester.run("valid-type", rules["valid-type"], {
 			errors: [
 				{
 					data: {
-						errors: "type is empty, but should be one of: commonjs, module",
+						error: "the value is empty, but should be one of: commonjs, module",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],

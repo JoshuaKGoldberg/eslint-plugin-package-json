@@ -11,8 +11,9 @@ ruleTester.run("valid-exports", rules["valid-exports"], {
 			errors: [
 				{
 					data: {
-						errors: "the field is `null`, but should be an `object` or `string`",
+						error: "the value is `null`, but should be an `object` or `string`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -25,8 +26,9 @@ ruleTester.run("valid-exports", rules["valid-exports"], {
 			errors: [
 				{
 					data: {
-						errors: "the type should be `object` or `string`, not `number`",
+						error: "the type should be `object` or `string`, not `number`",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
@@ -39,66 +41,85 @@ ruleTester.run("valid-exports", rules["valid-exports"], {
 			errors: [
 				{
 					data: {
-						errors: "the value is empty, but should be an entry point path",
+						error: "the value is empty, but should be an entry point path",
 					},
+					line: 2,
 					messageId: "validationError",
 				},
 			],
 		},
 		{
 			code: `{
-	"exports": { "./invalid": 123 }
+	"exports": {
+      "./invalid": 123
+    }
 }
 `,
 			errors: [
 				{
 					data: {
-						errors: 'the value of "./invalid" should be either an entry point path or an object of export conditions',
+						error: 'the value of "./invalid" should be either an entry point path or an object of export conditions',
 					},
+					line: 3,
 					messageId: "validationError",
 				},
 			],
 		},
 		{
 			code: `{
-	"exports": { "./invalid": "" }
+	"exports": {
+      "./invalid": ""
+    }
 }
 `,
 			errors: [
 				{
 					data: {
-						errors: 'the value of "./invalid" is empty, but should be an entry point path',
+						error: 'the value of "./invalid" is empty, but should be an entry point path',
 					},
+					line: 3,
 					messageId: "validationError",
 				},
 			],
 		},
 		{
 			code: `{
-	"exports": { "": "invalid" }
+	"exports": {
+      "": "invalid"
+    }
 }
 `,
 			errors: [
 				{
 					data: {
-						errors: "property 0 has an empty key, but should be an export condition",
+						error: "property 0 has an empty key, but should be an export condition",
 					},
+					line: 3,
 					messageId: "validationError",
 				},
 			],
 		},
 		{
 			code: `{
-	"exports": { "": "invalid", "   ": "invalid" }
+	"exports": {
+      "": "invalid",
+      "   ": "invalid"
+    }
 }
 `,
 			errors: [
 				{
 					data: {
-						errors: `
- - property 0 has an empty key, but should be an export condition
- - property 1 has an empty key, but should be an export condition`,
+						error: "property 0 has an empty key, but should be an export condition",
 					},
+					line: 3,
+					messageId: "validationError",
+				},
+				{
+					data: {
+						error: "property 1 has an empty key, but should be an export condition",
+					},
+					line: 4,
 					messageId: "validationError",
 				},
 			],
