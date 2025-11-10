@@ -14,8 +14,9 @@ ruleTester.run(
 				errors: [
 					{
 						data: {
-							errors: "the field is `null`, but should be a record of dependencies",
+							error: "the value is `null`, but should be a record of dependencies",
 						},
+						line: 2,
 						messageId: "validationError",
 					},
 				],
@@ -28,8 +29,9 @@ ruleTester.run(
 				errors: [
 					{
 						data: {
-							errors: "the type should be `object`, not `number`",
+							error: "the type should be `object`, not `number`",
 						},
+						line: 2,
 						messageId: "validationError",
 					},
 				],
@@ -42,8 +44,9 @@ ruleTester.run(
 				errors: [
 					{
 						data: {
-							errors: "the type should be `object`, not `string`",
+							error: "the type should be `object`, not `string`",
 						},
+						line: 2,
 						messageId: "validationError",
 					},
 				],
@@ -56,8 +59,9 @@ ruleTester.run(
 				errors: [
 					{
 						data: {
-							errors: "the type should be `object`, not `array`",
+							error: "the type should be `object`, not `array`",
 						},
+						line: 2,
 						messageId: "validationError",
 					},
 				],
@@ -76,13 +80,37 @@ ruleTester.run(
 				errors: [
 					{
 						data: {
-							errors: `
- - invalid version range for dependency david: bowie
- - dependency version for trent should be a string: 123
- - dependency version for the-fragile should be a string: null
- - dependency version for pink-floyd should be a string: [object Object]
- - invalid version range for dependency childish-gambino: workspace`,
+							error: "invalid version range for dependency david: bowie",
 						},
+						line: 3,
+						messageId: "validationError",
+					},
+					{
+						data: {
+							error: "dependency version for trent should be a string: 123",
+						},
+						line: 4,
+						messageId: "validationError",
+					},
+					{
+						data: {
+							error: "dependency version for the-fragile should be a string: null",
+						},
+						line: 5,
+						messageId: "validationError",
+					},
+					{
+						data: {
+							error: "dependency version for pink-floyd should be a string: [object Object]",
+						},
+						line: 6,
+						messageId: "validationError",
+					},
+					{
+						data: {
+							error: "invalid version range for dependency childish-gambino: workspace",
+						},
+						line: 7,
 						messageId: "validationError",
 					},
 				],
