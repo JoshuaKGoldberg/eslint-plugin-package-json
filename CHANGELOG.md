@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.65.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.65.1...v0.65.2) (2025-11-10)
+
+### Bug Fixes
+
+- **valid-exports:** improve report precision ([#1361](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1361)) ([5d7bd4a](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/5d7bd4affb93c3eb22576062c963599b6e56bdd1)), closes [#000](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/000)
+
 ## [0.65.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.65.0...v0.65.1) (2025-11-09)
 
 ### Bug Fixes
