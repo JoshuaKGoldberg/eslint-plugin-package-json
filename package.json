@@ -11,10 +11,22 @@
 		"url": "git+https://github.com/JoshuaKGoldberg/eslint-plugin-package-json.git"
 	},
 	"license": "MIT",
-	"author": {
-		"name": "James Zetlen",
-		"email": "zetlen@gmail.com"
-	},
+	"contributors": [
+		{
+			"name": "James Zetlen",
+			"email": "zetlen@gmail.com"
+		},
+		{
+			"name": "JoshuaKGoldberg",
+			"email": "npm@joshuakgoldberg.com",
+			"url": "https://joshuakgoldberg.com"
+		},
+		{
+			"name": "michael faith",
+			"email": "michaelfaith@users.noreply.github.com",
+			"url": "https://michael.faith"
+		}
+	],
 	"type": "module",
 	"exports": {
 		".": {
