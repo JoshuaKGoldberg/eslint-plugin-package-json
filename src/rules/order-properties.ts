@@ -46,8 +46,9 @@ export const rule = createRule({
 
 				const options = { ...context.options[0] };
 				options.order ??= "sort-package-json";
+				options.sortNonStandard ??= false;
 
-				const { order } = options;
+				const { order, sortNonStandard } = options;
 				const requiredOrder =
 					order === "legacy"
 						? standardOrderLegacy
@@ -56,9 +57,18 @@ export const rule = createRule({
 							: order;
 
 				const json = JSON.parse(text) as Record<string, unknown>;
+
+				const allKeys = Object.keys(json);
+				const nonStandardKeys = allKeys.filter(
+					(key) => !requiredOrder.includes(key),
+				);
+				const orderedNonStandardKeys = sortNonStandard
+					? nonStandardKeys.sort()
+					: nonStandardKeys;
+
 				const orderedSource = sortObjectKeys(json, [
 					...requiredOrder,
-					...Object.keys(json),
+					...orderedNonStandardKeys,
 				]);
 				const orderedKeys = Object.keys(orderedSource);
 
@@ -106,7 +116,12 @@ export const rule = createRule({
 		};
 	},
 	meta: {
-		defaultOptions: [{ order: "sort-package-json" }],
+		defaultOptions: [
+			{
+				order: "sort-package-json",
+				sortNonStandard: false,
+			},
+		],
 		docs: {
 			category: "Best Practices",
 			description:
@@ -137,6 +152,11 @@ export const rule = createRule({
 						],
 						description:
 							"Specifies the sorting order of top-level properties.",
+					},
+					sortNonStandard: {
+						description:
+							"Sort non-standard properties lexicographically after standard properties.",
+						type: "boolean",
 					},
 				},
 				type: "object",

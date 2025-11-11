@@ -327,6 +327,120 @@ ruleTester.run("order-properties", rule, {
 }
 `,
 		},
+		{
+			code: `{
+	"b": "workspace-config",
+	"cpu": ["x64"],
+	"a": "custom",
+	"name": "sort-non-standard",
+	"version": "1.0.0"
+}
+`,
+			errors: [
+				{
+					data: { property: "b" },
+					messageId: "incorrectOrder",
+				},
+				{
+					data: { property: "cpu" },
+					messageId: "incorrectOrder",
+				},
+				{
+					data: { property: "a" },
+					messageId: "incorrectOrder",
+				},
+				{
+					data: { property: "name" },
+					messageId: "incorrectOrder",
+				},
+				{
+					data: { property: "version" },
+					messageId: "incorrectOrder",
+				},
+			],
+			filename: "package.json",
+			options: [{ sortNonStandard: true }],
+			output: `{
+	"name": "sort-non-standard",
+	"version": "1.0.0",
+	"cpu": [
+		"x64"
+	],
+	"a": "custom",
+	"b": "workspace-config"
+}
+`,
+		},
+		{
+			code: `{
+	"z": "last",
+	"name": "sort-non-standard-legacy",
+	"a": "first",
+	"version": "1.0.0",
+	"m": "middle"
+}
+`,
+			errors: [
+				{
+					data: { property: "z" },
+					messageId: "incorrectOrder",
+				},
+				{
+					data: { property: "name" },
+					messageId: "incorrectOrder",
+				},
+				{
+					data: { property: "version" },
+					messageId: "incorrectOrder",
+				},
+				{
+					data: { property: "m" },
+					messageId: "incorrectOrder",
+				},
+			],
+			filename: "package.json",
+			options: [{ order: "legacy", sortNonStandard: true }],
+			output: `{
+	"name": "sort-non-standard-legacy",
+	"version": "1.0.0",
+	"a": "first",
+	"m": "middle",
+	"z": "last"
+}
+`,
+		},
+		{
+			code: `{
+	"custom-z": "value",
+	"name": "custom-order-with-sort",
+	"custom-a": "value",
+	"version": "1.0.0"
+}
+`,
+			errors: [
+				{
+					data: { property: "custom-z" },
+					messageId: "incorrectOrder",
+				},
+				{
+					data: { property: "name" },
+					messageId: "incorrectOrder",
+				},
+				{
+					data: { property: "version" },
+					messageId: "incorrectOrder",
+				},
+			],
+			filename: "package.json",
+			options: [{ order: ["name", "version"], sortNonStandard: true }],
+			output: `{
+	"name": "custom-order-with-sort",
+	"version": "1.0.0",
+	"custom-a": "value",
+	"custom-z": "value"
+}
+`,
+		},
 	],
 	valid: [
 		`{
@@ -404,6 +518,25 @@ ruleTester.run("order-properties", rule, {
     },
     "main": "index.js"
 }`,
+		},
+		{
+			code: `{
+	"name": "sorted-non-standard",
+	"version": "1.0.0",
+	"cpu": ["x64"],
+	"a-custom": "value",
+	"z-custom": "value"
+}`,
+			options: [{ sortNonStandard: true }],
+		},
+		{
+			code: `{
+	"name": "non-standard-not-sorted",
+	"version": "1.0.0",
+	"z-custom": "value",
+	"a-custom": "value"
+}`,
+			options: [{ sortNonStandard: false }],
 		},
 	],
 });
