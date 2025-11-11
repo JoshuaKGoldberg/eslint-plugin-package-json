@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.66.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.65.3...v0.66.0) (2025-11-11)
+
+### Features
+
+- **valid-homepage:** add new rule for validating `homepage` ([#1376](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1376)) ([34ad9b8](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/34ad9b8dda81601e9f710dc66c61a02fe7ecfa0e)), closes [#828](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/828)
+
 ## [0.65.3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.65.2...v0.65.3) (2025-11-10)
 
 ### Bug Fixes
