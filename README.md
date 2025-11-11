@@ -221,6 +221,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [valid-devDependencies](docs/rules/valid-devDependencies.md)               | Enforce that the `devDependencies` property is valid.                                                       | ✔️ ✅ |    |    |    |
 | [valid-directories](docs/rules/valid-directories.md)                       | Enforce that the `directories` property is valid.                                                           | ✔️ ✅ |    |    |    |
 | [valid-exports](docs/rules/valid-exports.md)                               | Enforce that the `exports` property is valid.                                                               | ✔️ ✅ |    |    |    |
+| [valid-homepage](docs/rules/valid-homepage.md)                             | Enforce that the `homepage` property is valid.                                                              | ✔️ ✅ |    |    |    |
 | [valid-license](docs/rules/valid-license.md)                               | Enforce that the `license` property is valid.                                                               | ✔️ ✅ |    |    |    |
 | [valid-local-dependency](docs/rules/valid-local-dependency.md)             | Checks existence of local dependencies in the package.json                                                  |      |    |    | ❌  |
 | [valid-name](docs/rules/valid-name.md)                                     | Enforce that package names are valid npm package names                                                      | ✔️ ✅ |    |    |    |
