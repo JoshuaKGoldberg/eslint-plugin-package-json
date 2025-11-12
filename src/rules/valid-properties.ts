@@ -10,6 +10,7 @@ import {
 	validateExports,
 	validateHomepage,
 	validateLicense,
+	validateMain,
 	validateScripts,
 	validateType,
 } from "package-json-validator";
@@ -45,6 +46,7 @@ const properties = [
 	["exports", validateExports],
 	["homepage", validateHomepage],
 	["license", validateLicense],
+	["main", validateMain],
 	["optionalDependencies", validateDependencies],
 	["peerDependencies", validateDependencies],
 	["scripts", validateScripts],
