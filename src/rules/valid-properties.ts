@@ -13,6 +13,7 @@ import {
 	validateKeywords,
 	validateLicense,
 	validateMain,
+	validateOs,
 	validatePrivate,
 	validateScripts,
 	validateType,
@@ -53,11 +54,11 @@ const properties = [
 	["license", validateLicense],
 	["main", validateMain],
 	["optionalDependencies", validateDependencies],
+	["os", validateOs],
 	["peerDependencies", validateDependencies],
 	["private", validatePrivate],
 	["scripts", validateScripts],
 	["type", validateType],
-	// TODO: More to come!
 ] satisfies [string, ValidationFunction | ValidPropertyOptions][];
 
 /** All basic valid- flavor rules */
