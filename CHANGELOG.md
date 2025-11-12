@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.69.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.68.0...v0.69.0) (2025-11-12)
+
+### Features
+
+- **valid-main:** add new rule for validating `main` ([#1382](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1382)) ([bc54025](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/bc54025bda030013b9129dfb31332327369ad6e7)), closes [#831](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/831)
+
 # [0.68.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.67.0...v0.68.0) (2025-11-12)
 
 ### Features
