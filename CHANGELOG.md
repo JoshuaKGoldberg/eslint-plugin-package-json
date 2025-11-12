@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.67.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.66.0...v0.67.0) (2025-11-12)
+
+### Features
+
+- **valid-files:** add new rule for validating `files` ([#1380](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1380)) ([d2a81d3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/d2a81d3c1c86a24c675fb2ff8483a7e01400b294)), closes [#827](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/827)
+
 # [0.66.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.65.3...v0.66.0) (2025-11-11)
 
 ### Features
