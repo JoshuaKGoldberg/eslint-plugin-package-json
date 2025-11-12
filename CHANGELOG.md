@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.68.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.67.0...v0.68.0) (2025-11-12)
+
+### Features
+
+- **valid-keywords:** add new rule for validating `keywords` ([#1381](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1381)) ([a227184](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/a2271843a104288376da9b1fbc89e1de33444a38)), closes [#829](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/829)
+
 # [0.67.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.66.0...v0.67.0) (2025-11-12)
 
 ### Features
