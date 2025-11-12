@@ -226,6 +226,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [valid-keywords](docs/rules/valid-keywords.md)                             | Enforce that the `keywords` property is valid.                                                              | ✔️ ✅ |    |    |    |
 | [valid-license](docs/rules/valid-license.md)                               | Enforce that the `license` property is valid.                                                               | ✔️ ✅ |    |    |    |
 | [valid-local-dependency](docs/rules/valid-local-dependency.md)             | Checks existence of local dependencies in the package.json                                                  |      |    |    | ❌  |
+| [valid-main](docs/rules/valid-main.md)                                     | Enforce that the `main` property is valid.                                                                  | ✔️ ✅ |    |    |    |
 | [valid-name](docs/rules/valid-name.md)                                     | Enforce that package names are valid npm package names                                                      | ✔️ ✅ |    |    |    |
 | [valid-optionalDependencies](docs/rules/valid-optionalDependencies.md)     | Enforce that the `optionalDependencies` property is valid.                                                  | ✔️ ✅ |    |    |    |
 | [valid-package-definition](docs/rules/valid-package-definition.md)         | Enforce that package.json has all properties required by the npm spec                                       | ✔️ ✅ |    |    |    |

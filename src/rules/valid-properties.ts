@@ -12,6 +12,7 @@ import {
 	validateHomepage,
 	validateKeywords,
 	validateLicense,
+	validateMain,
 	validateScripts,
 	validateType,
 } from "package-json-validator";
@@ -49,6 +50,7 @@ const properties = [
 	["homepage", validateHomepage],
 	["keywords", validateKeywords],
 	["license", validateLicense],
+	["main", validateMain],
 	["optionalDependencies", validateDependencies],
 	["peerDependencies", validateDependencies],
 	["scripts", validateScripts],
