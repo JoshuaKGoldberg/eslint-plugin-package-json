@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.72.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.71.0...v0.72.0) (2025-11-13)
+
+### Features
+
+- **valid-contributors:** add new rule for validating `contributors` ([#1387](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1387)) ([82a844c](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/82a844cf472a06f2da036a39137f79f3ca1e6c5d)), closes [#1372](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1372)
+
 # [0.71.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.70.0...v0.71.0) (2025-11-13)
 
 ### Features
