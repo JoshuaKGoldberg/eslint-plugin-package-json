@@ -13,6 +13,7 @@ import {
 	validateKeywords,
 	validateLicense,
 	validateMain,
+	validatePrivate,
 	validateScripts,
 	validateType,
 } from "package-json-validator";
@@ -53,6 +54,7 @@ const properties = [
 	["main", validateMain],
 	["optionalDependencies", validateDependencies],
 	["peerDependencies", validateDependencies],
+	["private", validatePrivate],
 	["scripts", validateScripts],
 	["type", validateType],
 	// TODO: More to come!
