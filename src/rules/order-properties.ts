@@ -56,9 +56,16 @@ export const rule = createRule({
 							: order;
 
 				const json = JSON.parse(text) as Record<string, unknown>;
+
+				const allKeys = Object.keys(json);
+				const nonStandardKeys = allKeys.filter(
+					(key) => !requiredOrder.includes(key),
+				);
+				const orderedNonStandardKeys = nonStandardKeys.sort();
+
 				const orderedSource = sortObjectKeys(json, [
 					...requiredOrder,
-					...Object.keys(json),
+					...orderedNonStandardKeys,
 				]);
 				const orderedKeys = Object.keys(orderedSource);
 
@@ -106,7 +113,11 @@ export const rule = createRule({
 		};
 	},
 	meta: {
-		defaultOptions: [{ order: "sort-package-json" }],
+		defaultOptions: [
+			{
+				order: "sort-package-json",
+			},
+		],
 		docs: {
 			category: "Best Practices",
 			description:
