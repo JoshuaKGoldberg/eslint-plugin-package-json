@@ -30,11 +30,11 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"types": "./lib/index.d.ts",
-			"default": "./lib/index.js"
+			"types": "./lib/index.d.mts",
+			"default": "./lib/index.mjs"
 		}
 	},
-	"main": "lib/index.js",
+	"main": "lib/index.mjs",
 	"files": [
 		"CHANGELOG.md",
 		"lib/"
