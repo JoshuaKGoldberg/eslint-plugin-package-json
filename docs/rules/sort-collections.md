@@ -124,7 +124,7 @@ Correct:
 }
 ```
 
-### Options
+## Options
 
 Pass an array of package properties to lint sorting on those collections.
 To specify a nested property, use dot notation.
@@ -159,7 +159,7 @@ Defaults:
 
 This rule is **autofixable**; run `eslint` with the `--fix` option to sort any incorrect collections in place.
 
-### Error Messages
+## Error Messages
 
 This rule provides different error messages depending on the type of collection being sorted:
 

@@ -32,7 +32,7 @@ Examples of **correct** code for this rule with the default options:
 }
 ```
 
-### Options
+## Options
 
 ```json
 {
@@ -45,7 +45,7 @@ Examples of **correct** code for this rule with the default options:
 }
 ```
 
-#### Form
+### Form
 
 The `form` property specifies whether to use:
 
