@@ -215,6 +215,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [valid-bin](docs/rules/valid-bin.md)                                       | Enforce that the `bin` property is valid.                                                                   | ✔️ ✅ |    |    |    |
 | [valid-bundleDependencies](docs/rules/valid-bundleDependencies.md)         | Enforce that the `bundleDependencies` (also: `bundledDependencies`) property is valid.                      | ✔️ ✅ |    |    |    |
 | [valid-config](docs/rules/valid-config.md)                                 | Enforce that the `config` property is valid.                                                                | ✔️ ✅ |    |    |    |
+| [valid-contributors](docs/rules/valid-contributors.md)                     | Enforce that the `contributors` property is valid.                                                          | ✔️ ✅ |    |    |    |
 | [valid-cpu](docs/rules/valid-cpu.md)                                       | Enforce that the `cpu` property is valid.                                                                   | ✔️ ✅ |    |    |    |
 | [valid-dependencies](docs/rules/valid-dependencies.md)                     | Enforce that the `dependencies` property is valid.                                                          | ✔️ ✅ |    |    |    |
 | [valid-description](docs/rules/valid-description.md)                       | Enforce that the `description` property is valid.                                                           | ✔️ ✅ |    |    |    |
