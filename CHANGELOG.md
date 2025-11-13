@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.70.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.69.0...v0.70.0) (2025-11-13)
+
+### Features
+
+- **valid-private:** add new rule for validating `private` ([#1384](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1384)) ([9a9b3d2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/9a9b3d27c5553088cdb224861f122a341acd01bf)), closes [#837](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/837)
+
 # [0.69.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.68.0...v0.69.0) (2025-11-12)
 
 ### Features
