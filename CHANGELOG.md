@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.73.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.72.0...v0.73.0) (2025-11-13)
+
+### Features
+
+- **order-properties:** lexicographically sort non-standard properties ([#1375](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1375)) ([f7c0d01](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/f7c0d019b91aab831f7506e213cc1176bd5dac75)), closes [#1374](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1374)
+
 # [0.72.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.71.0...v0.72.0) (2025-11-13)
 
 ### Features
