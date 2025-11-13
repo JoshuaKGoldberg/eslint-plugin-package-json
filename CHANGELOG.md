@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.71.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.70.0...v0.71.0) (2025-11-13)
+
+### Features
+
+- **valid-os:** add new rule for validating `os` ([#1383](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1383)) ([896cd53](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/896cd53fee7b1c881102de62f9f7e032a3673ea8)), closes [#834](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/834)
+
 # [0.70.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.69.0...v0.70.0) (2025-11-13)
 
 ### Features
