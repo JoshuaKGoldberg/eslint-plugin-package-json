@@ -8,6 +8,7 @@
 
 A conventional order exists for `package.json` top-level properties.
 npm does not enforce this order, but for consistency and readability, this rule can enforce it.
+Any properties not defined in the official package.json schema are placed after the standard fields and sorted lexicographically.
 
 > 💡 This rule is especially useful in monorepos with many `package.json` files that would ideally be consistently ordered.
 
@@ -39,10 +40,9 @@ Examples of **correct** code for this rule:
 
 <!-- begin auto-generated rule options list -->
 
-| Name              | Description                                                               | Type    |
-| :---------------- | :------------------------------------------------------------------------ | :------ |
-| `order`           | Specifies the sorting order of top-level properties.                      |         |
-| `sortNonStandard` | Sort non-standard properties lexicographically after standard properties. | Boolean |
+| Name    | Description                                          |
+| :------ | :--------------------------------------------------- |
+| `order` | Specifies the sorting order of top-level properties. |
 
 <!-- end auto-generated rule options list -->
 
@@ -70,63 +70,3 @@ Pass in:
 Default: `"sort-package-json"`
 
 > ⚠️ The default value for `order` changed from `"legacy"` to `"sort-package-json"` in v0.6.0.
-
-### `sortNonStandard`
-
-The `sortNonStandard` property controls whether properties that are not in the standard order should be sorted lexicographically.
-
-When `true`, any properties not present in the chosen `order` will be sorted alphabetically and placed after all standard properties.
-When `false` (default), non-standard properties will maintain their original
-order and be placed after all standard properties.
-
-```json
-{
-	"package-json/order-properties": [
-		"error",
-		{
-			"sortNonStandard": true
-		}
-	]
-}
-```
-
-Default: `false`
-
-**Example with `sortNonStandard: true`:**
-
-Example of **incorrect** code:
-
-```json
-{
-	"b": "workspace-config",
-	"cpu": ["x64"],
-	"a": "custom",
-	"name": "my-package",
-	"version": "1.0.0"
-}
-```
-
-Example of **correct** code (non-standard properties sorted alphabetically):
-
-```json
-{
-	"name": "my-package",
-	"version": "1.0.0",
-	"cpu": ["x64"],
-	"a": "custom",
-	"b": "workspace-config"
-}
-```
-
-**Example with `sortNonStandard: false` (default):**
-
-Example of **correct** code (non-standard properties keep original order):
-
-```json
-{
-	"name": "my-package",
-	"version": "1.0.0",
-	"b": "workspace-config",
-	"a": "custom"
-}
-```

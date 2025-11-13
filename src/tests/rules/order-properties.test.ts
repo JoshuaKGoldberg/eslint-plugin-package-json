@@ -322,8 +322,8 @@ ruleTester.run("order-properties", rule, {
 		"type": "git",
 		"url": "git+https://github.com/fake/github.git"
 	},
-	"main": "index.js",
-	"homepage": "https://example.com"
+	"homepage": "https://example.com",
+	"main": "index.js"
 }
 `,
 		},
@@ -359,7 +359,6 @@ ruleTester.run("order-properties", rule, {
 				},
 			],
 			filename: "package.json",
-			options: [{ sortNonStandard: true }],
 			output: `{
 	"name": "sort-non-standard",
 	"version": "1.0.0",
@@ -399,7 +398,7 @@ ruleTester.run("order-properties", rule, {
 				},
 			],
 			filename: "package.json",
-			options: [{ order: "legacy", sortNonStandard: true }],
+			options: [{ order: "legacy" }],
 			output: `{
 	"name": "sort-non-standard-legacy",
 	"version": "1.0.0",
@@ -432,7 +431,7 @@ ruleTester.run("order-properties", rule, {
 				},
 			],
 			filename: "package.json",
-			options: [{ order: ["name", "version"], sortNonStandard: true }],
+			options: [{ order: ["name", "version"] }],
 			output: `{
 	"name": "custom-order-with-sort",
 	"version": "1.0.0",
@@ -527,16 +526,6 @@ ruleTester.run("order-properties", rule, {
 	"a-custom": "value",
 	"z-custom": "value"
 }`,
-			options: [{ sortNonStandard: true }],
-		},
-		{
-			code: `{
-	"name": "non-standard-not-sorted",
-	"version": "1.0.0",
-	"z-custom": "value",
-	"a-custom": "value"
-}`,
-			options: [{ sortNonStandard: false }],
 		},
 	],
 });

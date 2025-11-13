@@ -46,9 +46,8 @@ export const rule = createRule({
 
 				const options = { ...context.options[0] };
 				options.order ??= "sort-package-json";
-				options.sortNonStandard ??= false;
 
-				const { order, sortNonStandard } = options;
+				const { order } = options;
 				const requiredOrder =
 					order === "legacy"
 						? standardOrderLegacy
@@ -62,9 +61,7 @@ export const rule = createRule({
 				const nonStandardKeys = allKeys.filter(
 					(key) => !requiredOrder.includes(key),
 				);
-				const orderedNonStandardKeys = sortNonStandard
-					? nonStandardKeys.sort()
-					: nonStandardKeys;
+				const orderedNonStandardKeys = nonStandardKeys.sort();
 
 				const orderedSource = sortObjectKeys(json, [
 					...requiredOrder,
@@ -119,7 +116,6 @@ export const rule = createRule({
 		defaultOptions: [
 			{
 				order: "sort-package-json",
-				sortNonStandard: false,
 			},
 		],
 		docs: {
@@ -152,11 +148,6 @@ export const rule = createRule({
 						],
 						description:
 							"Specifies the sorting order of top-level properties.",
-					},
-					sortNonStandard: {
-						description:
-							"Sort non-standard properties lexicographically after standard properties.",
-						type: "boolean",
 					},
 				},
 				type: "object",
