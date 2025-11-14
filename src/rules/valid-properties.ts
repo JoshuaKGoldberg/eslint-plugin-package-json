@@ -18,6 +18,7 @@ import {
 	validateOs,
 	validatePrivate,
 	validatePublishConfig,
+	validateRepository,
 	validateScripts,
 	validateType,
 } from "package-json-validator";
@@ -63,6 +64,7 @@ const properties = [
 	["peerDependencies", validateDependencies],
 	["private", validatePrivate],
 	["publishConfig", validatePublishConfig],
+	["repository", validateRepository],
 	["scripts", validateScripts],
 	["type", validateType],
 ] satisfies [string, ValidationFunction | ValidPropertyOptions][];
