@@ -6,7 +6,7 @@
 
 <!-- end auto-generated rule header -->
 
-Whenever npm changes package dependencies through `npm install`, it sorts (lexicographically) all dependencies in `package.json`.
+Whenever npm changes package dependencies through `npm install`, it sorts (lexicographically) all dependencies in the `package.json`.
 However, developers will manually update `package.json` and accidentally leave dependencies out of order.
 Doing so leads to "noise" in commits when a later change re-sorts the packages.
 
