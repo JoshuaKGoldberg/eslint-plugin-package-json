@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.74.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.73.0...v0.74.0) (2025-11-14)
+
+### Features
+
+- **valid-publishConfig:** add new rule for validating `publishConfig` ([#1388](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1388)) ([6d1fab4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/6d1fab4e4b6c59e7bcfc582ef75a0e07a5c8ea08)), closes [#841](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/841)
+
 # [0.73.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.72.0...v0.73.0) (2025-11-13)
 
 ### Features
