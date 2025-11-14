@@ -21,6 +21,13 @@ const dependencyPropertyNames = new Set([
 
 export const rule = createRule({
 	create(context) {
+		const dependenciesCache: Record<string, JsonAST.JSONProperty[]> = {
+			dependencies: [],
+			devDependencies: [],
+			peerDependencies: [],
+		};
+		const trackForCrossGroupUniqueness = Object.keys(dependenciesCache);
+
 		function check(
 			elements: (JsonAST.JSONNode | null)[],
 			getNodeToRemove: (element: JsonAST.JSONNode) => JsonAST.JSONNode,
@@ -88,7 +95,57 @@ export const rule = createRule({
 							// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 							(property) => property.parent!,
 						);
+						if (
+							trackForCrossGroupUniqueness.includes(
+								node.key.value,
+							)
+						) {
+							dependenciesCache[node.key.value] =
+								node.value.properties;
+						}
 						break;
+				}
+			},
+			"Program:exit"() {
+				// Check our cached elements from `dependencies`, `devDependencies` and `peerDependencies`
+				// If any dependencies listed as dev or peer deps, are also in `dependencies`, then those should be flagged as redundant
+				const dependencyNames = new Set(
+					dependenciesCache.dependencies
+						.map((node) => node.key)
+						.filter(isJSONStringLiteral)
+						.map((dependencyNameNode) => dependencyNameNode.value),
+				);
+				if (!dependencyNames.size) {
+					return;
+				}
+
+				for (const dependencyType of [
+					"devDependencies",
+					"peerDependencies",
+				]) {
+					const otherDependencies = dependenciesCache[dependencyType];
+					for (const otherDependencyNode of otherDependencies) {
+						const otherDependencyKey = otherDependencyNode.key;
+						if (
+							isJSONStringLiteral(otherDependencyKey) &&
+							dependencyNames.has(otherDependencyKey.value)
+						) {
+							// We have a duplicate, report it
+							context.report({
+								messageId: "crossGroupDuplicate",
+								node: otherDependencyNode,
+								suggest: [
+									{
+										fix: fixRemoveObjectProperty(
+											context,
+											otherDependencyNode as unknown as ESTree.Property,
+										),
+										messageId: "remove",
+									},
+								],
+							});
+						}
+					}
 				}
 			},
 		};
@@ -102,9 +159,11 @@ export const rule = createRule({
 		},
 		hasSuggestions: true,
 		messages: {
+			crossGroupDuplicate:
+				'Dependency is also declared in "dependencies" and is redundant',
 			overridden:
-				"Package name is overridden by a duplicate listing later on.",
-			remove: "Remove this redundant dependency listing.",
+				"Dependency is overridden by a duplicate entry later on",
+			remove: "Remove this redundant dependency",
 		},
 		schema: [],
 		type: "suggestion",

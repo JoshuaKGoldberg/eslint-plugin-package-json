@@ -171,6 +171,92 @@ ruleTester.run("unique-dependencies", rule, {
 			],
 			filename: "package.json",
 		},
+		{
+			code: `{
+    "dependencies": {
+		"abc": "1.2.3"
+    },
+	"peerDependencies": {
+		"abc": "1.2.3"
+	},
+	"devDependencies": {
+		"abc": "1.2.3"
+	}
+}`,
+			errors: [
+				{
+					line: 6,
+					messageId: "crossGroupDuplicate",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+    "dependencies": {
+		"abc": "1.2.3"
+    },
+	"peerDependencies": {
+\t\t
+	},
+	"devDependencies": {
+		"abc": "1.2.3"
+	}
+}`,
+						},
+					],
+				},
+				{
+					line: 9,
+					messageId: "crossGroupDuplicate",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+    "dependencies": {
+		"abc": "1.2.3"
+    },
+	"peerDependencies": {
+		"abc": "1.2.3"
+	},
+	"devDependencies": {
+\t\t
+	}
+}`,
+						},
+					],
+				},
+			],
+			filename: "package.json",
+		},
+		...["devDependencies", "peerDependencies"].map((dependencyType) => ({
+			code: `{
+    "dependencies": {
+		"abc": "1.2.3"
+    },
+	"${dependencyType}": {
+		"abc": "1.2.3"
+	}
+}`,
+			errors: [
+				{
+					line: 6,
+					messageId: "crossGroupDuplicate",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+    "dependencies": {
+		"abc": "1.2.3"
+    },
+	"${dependencyType}": {
+\t\t
+	}
+}`,
+						},
+					],
+				},
+			],
+			filename: "package.json",
+		})),
 	],
 
 	valid: [
@@ -194,6 +280,14 @@ ruleTester.run("unique-dependencies", rule, {
 }`,
 		`{
 	"devDependencies": {
+		"abc": "1.2.3"
+	}
+}`,
+		`{
+	"devDependencies": {
+		"abc": "1.2.3"
+	},
+    "peerDependencies": {
 		"abc": "1.2.3"
 	}
 }`,
