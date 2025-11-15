@@ -130,7 +130,6 @@ export const rule = createRule({
 							isJSONStringLiteral(otherDependencyKey) &&
 							dependencyNames.has(otherDependencyKey.value)
 						) {
-							// We have a duplicate, report it
 							context.report({
 								messageId: "crossGroupDuplicate",
 								node: otherDependencyNode,
