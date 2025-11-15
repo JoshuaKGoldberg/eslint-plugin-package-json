@@ -7,7 +7,7 @@
 This rule does the following checks on the value of the `bin` property:
 
 - It must be either a non-empty string or an object.
-- If the value is an object, it should only consist of non-empty string values
+- If the value is an object, it should only consist of non-empty string values.
 
 Example of **incorrect** code for this rule:
 
