@@ -1,5 +1,13 @@
 # Changelog
 
+# [0.75.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.73.0...v0.75.0) (2025-11-15)
+
+### Features
+
+- **valid-man:** add new rule for validating `man` ([#1392](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1392)) ([3f1ffc5](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/3f1ffc57a924c080892dd66bc5ce7a011ca70451)), closes [#832](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/832)
+- **valid-publishConfig:** add new rule for validating `publishConfig` ([#1388](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1388)) ([6d1fab4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/6d1fab4e4b6c59e7bcfc582ef75a0e07a5c8ea08)), closes [#841](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/841)
+- **valid-workspaces:** add new rule for validating `workspaces` ([#1396](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1396)) ([2eeca42](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/2eeca42701a8636704e3d6b896cf3eec21531779)), closes [#843](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/843)
+
 # [0.74.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.73.0...v0.74.0) (2025-11-14)
 
 ### Features
