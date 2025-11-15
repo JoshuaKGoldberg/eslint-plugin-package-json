@@ -20,6 +20,7 @@ import {
 	validatePublishConfig,
 	validateScripts,
 	validateType,
+	validateWorkspaces,
 } from "package-json-validator";
 
 import {
@@ -65,6 +66,7 @@ const properties = [
 	["publishConfig", validatePublishConfig],
 	["scripts", validateScripts],
 	["type", validateType],
+	["workspaces", validateWorkspaces],
 ] satisfies [string, ValidationFunction | ValidPropertyOptions][];
 
 /** All basic valid- flavor rules */

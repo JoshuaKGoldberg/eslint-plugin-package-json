@@ -240,6 +240,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [valid-scripts](docs/rules/valid-scripts.md)                               | Enforce that the `scripts` property is valid.                                                               | ✔️ ✅ |    |    |    |
 | [valid-type](docs/rules/valid-type.md)                                     | Enforce that the `type` property is valid.                                                                  | ✔️ ✅ |    |    |    |
 | [valid-version](docs/rules/valid-version.md)                               | Enforce that package versions are valid semver specifiers                                                   | ✔️ ✅ |    |    |    |
+| [valid-workspaces](docs/rules/valid-workspaces.md)                         | Enforce that the `workspaces` property is valid.                                                            | ✔️ ✅ |    |    |    |
 
 <!-- end auto-generated rules list -->
 <!-- prettier-ignore-end -->
