@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.76.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.75.0...v0.76.0) (2025-11-15)
+
+### Features
+
+- **valid-engines:** add new rule for validating `engines` ([#1397](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1397)) ([ba834f0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/ba834f00651b64f2bc0cf58cf41d768bd6cee5eb)), closes [#826](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/826)
+
 # [0.75.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.73.0...v0.75.0) (2025-11-15)
 
 ### Features
