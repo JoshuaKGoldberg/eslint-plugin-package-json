@@ -19,6 +19,7 @@ const properties: [name: string, options?: CreateRequirePropertyRuleOptions][] =
 		["name", { ignorePrivateDefault: true, isRecommended: true }],
 		["optionalDependencies"],
 		["peerDependencies"],
+		["sideEffects"],
 		["type", { isRecommended: true }],
 		["types"],
 		["version", { ignorePrivateDefault: true, isRecommended: true }],
