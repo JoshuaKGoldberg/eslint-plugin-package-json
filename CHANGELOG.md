@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.77.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.76.0...v0.77.0) (2025-11-15)
+
+### Features
+
+- **unique-dependencies:** report cross-group duplicates ([#1398](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1398)) ([94b690e](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/94b690e1996ec271ba743225ccecf66691f97e01)), closes [#1007](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1007)
+
 # [0.76.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.75.0...v0.76.0) (2025-11-15)
 
 ### Features
