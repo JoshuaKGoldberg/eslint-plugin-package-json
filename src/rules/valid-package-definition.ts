@@ -45,11 +45,11 @@ export const rule = createRule({
 	// eslint-disable-next-line eslint-plugin/prefer-message-ids
 	meta: {
 		defaultOptions: [{ ignoreProperties: [] }],
+		deprecated: true,
 		docs: {
 			category: "Best Practices",
 			description:
 				"Enforce that package.json has all properties required by the npm spec",
-			recommended: true,
 		},
 		schema: [
 			{
