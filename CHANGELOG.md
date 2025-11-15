@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.78.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.77.0...v0.78.0) (2025-11-15)
+
+### Features
+
+- **valid-repository:** add new rule for validating `repository` ([#1393](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1393)) ([2b38e88](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/2b38e881f60d357f9f73ad7a1aff159682542c42)), closes [#838](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/838)
+
 # [0.77.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.76.0...v0.77.0) (2025-11-15)
 
 ### Features
