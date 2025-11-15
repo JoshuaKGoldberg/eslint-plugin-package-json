@@ -233,7 +233,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [valid-name](docs/rules/valid-name.md)                                     | Enforce that package names are valid npm package names                                                      | ✔️ ✅ |    |    |    |
 | [valid-optionalDependencies](docs/rules/valid-optionalDependencies.md)     | Enforce that the `optionalDependencies` property is valid.                                                  | ✔️ ✅ |    |    |    |
 | [valid-os](docs/rules/valid-os.md)                                         | Enforce that the `os` property is valid.                                                                    | ✔️ ✅ |    |    |    |
-| [valid-package-definition](docs/rules/valid-package-definition.md)         | Enforce that package.json has all properties required by the npm spec                                       | ✔️ ✅ |    |    |    |
+| [valid-package-definition](docs/rules/valid-package-definition.md)         | Enforce that package.json has all properties required by the npm spec                                       |      |    |    | ❌  |
 | [valid-peerDependencies](docs/rules/valid-peerDependencies.md)             | Enforce that the `peerDependencies` property is valid.                                                      | ✔️ ✅ |    |    |    |
 | [valid-private](docs/rules/valid-private.md)                               | Enforce that the `private` property is valid.                                                               | ✔️ ✅ |    |    |    |
 | [valid-publishConfig](docs/rules/valid-publishConfig.md)                   | Enforce that the `publishConfig` property is valid.                                                         | ✔️ ✅ |    |    |    |
