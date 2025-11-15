@@ -221,6 +221,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [valid-description](docs/rules/valid-description.md)                       | Enforce that the `description` property is valid.                                                           | ✔️ ✅ |    |    |    |
 | [valid-devDependencies](docs/rules/valid-devDependencies.md)               | Enforce that the `devDependencies` property is valid.                                                       | ✔️ ✅ |    |    |    |
 | [valid-directories](docs/rules/valid-directories.md)                       | Enforce that the `directories` property is valid.                                                           | ✔️ ✅ |    |    |    |
+| [valid-engines](docs/rules/valid-engines.md)                               | Enforce that the `engines` property is valid.                                                               | ✔️ ✅ |    |    |    |
 | [valid-exports](docs/rules/valid-exports.md)                               | Enforce that the `exports` property is valid.                                                               | ✔️ ✅ |    |    |    |
 | [valid-files](docs/rules/valid-files.md)                                   | Enforce that the `files` property is valid.                                                                 | ✔️ ✅ |    |    |    |
 | [valid-homepage](docs/rules/valid-homepage.md)                             | Enforce that the `homepage` property is valid.                                                              | ✔️ ✅ |    |    |    |
