@@ -8,7 +8,19 @@
 
 This rule checks that every dependency is just added once to a [`package.json` key specifying dependencies](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/blob/main/src/rules/unique-dependencies.ts#L8-L16).
 
+It also checks that any dependencies declared in the `dependencies` group, are not also present in `peerDependencies` or `devDependencies`.
+
 Example of **incorrect** code for this rule:
+
+```json
+{
+	"dependencies": {
+		"foo": "1.0.0",
+		"bar": "2.0.0",
+		"foo": "1.0.0"
+	}
+}
+```
 
 ```json
 {
