@@ -65,6 +65,16 @@ const recommendedRules = {
 	),
 } satisfies Linter.RulesRecord;
 
+const recommendedPublishableRules = {
+	...recommendedRules,
+	...Object.fromEntries(
+		Object.entries(rules)
+			// eslint-disable-next-line @typescript-eslint/no-deprecated
+			.filter(([, rule]) => rule.meta.docs?.category === "Publishable")
+			.map(([name]) => ["package-json/" + name, "error" as const]),
+	),
+} satisfies Linter.RulesRecord;
+
 const stylisticRules = {
 	...Object.fromEntries(
 		Object.entries(rules)
@@ -93,6 +103,19 @@ export const plugin = {
 				},
 			},
 			rules: recommendedRules,
+		},
+		"recommended-publishable": {
+			files: ["**/package.json"],
+			languageOptions: {
+				parser: parserJsonc,
+			},
+			name: "package-json/recommended-publishable",
+			plugins: {
+				get "package-json"(): ESLint.Plugin {
+					return plugin;
+				},
+			},
+			rules: recommendedPublishableRules,
 		},
 		stylistic: {
 			files: ["**/package.json"],
