@@ -1,0 +1,118 @@
+import type { AST as JsonAST } from "jsonc-eslint-parser";
+
+import { createRule } from "../createRule.ts";
+import { isJSONStringLiteral } from "../utils/predicates.ts";
+
+export const rule = createRule({
+	create(context) {
+		const devDependencyNames = new Set<string>();
+		let devDependenciesObjectNode: JsonAST.JSONObjectExpression | undefined;
+		const peerDependencyMap: Record<string, JsonAST.JSONProperty> = {};
+
+		return {
+			"Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.type=JSONLiteral][value.type=JSONObjectExpression][key.value=devDependencies]"(
+				node: JsonAST.JSONProperty & {
+					value: JsonAST.JSONObjectExpression;
+				},
+			) {
+				devDependenciesObjectNode = node.value;
+				for (const devDependencyPropertyNode of node.value.properties) {
+					const dependencyKey = devDependencyPropertyNode.key;
+					if (isJSONStringLiteral(dependencyKey)) {
+						devDependencyNames.add(dependencyKey.value);
+					}
+				}
+			},
+			"Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.type=JSONLiteral][value.type=JSONObjectExpression][key.value=peerDependencies]"(
+				node: JsonAST.JSONProperty & {
+					value: JsonAST.JSONObjectExpression;
+				},
+			) {
+				for (const peerDependencyPropertyNode of node.value
+					.properties) {
+					const dependencyKey = peerDependencyPropertyNode.key;
+					if (isJSONStringLiteral(dependencyKey)) {
+						peerDependencyMap[dependencyKey.value] =
+							peerDependencyPropertyNode;
+					}
+				}
+			},
+			"Program:exit"() {
+				// Check that every peer dependency name is accounted for in the devDependencies
+				for (const [
+					peerDependencyName,
+					peerDependencyNode,
+				] of Object.entries(peerDependencyMap)) {
+					if (!devDependencyNames.has(peerDependencyName)) {
+						// If not, report on the peer dependency node, and suggest that it be added to devDependencies
+						const peerDependencyValue = peerDependencyNode.value;
+						context.report({
+							data: {
+								name: peerDependencyName,
+							},
+							messageId: "devDependencyNotDefined",
+							node: peerDependencyNode,
+							suggest:
+								devDependenciesObjectNode &&
+								isJSONStringLiteral(peerDependencyValue)
+									? [
+											{
+												data: {
+													name: peerDependencyName,
+												},
+												fix: (fixer) => {
+													let dependencyText = `"${peerDependencyName}": "${peerDependencyValue.value}"`;
+													const lastDevDependency =
+														devDependenciesObjectNode?.properties.at(
+															-1,
+														);
+													if (lastDevDependency) {
+														const lastDevDependencyToken =
+															context.sourceCode.getTokenAfter(
+																lastDevDependency,
+															);
+														if (
+															lastDevDependencyToken?.value !==
+															","
+														) {
+															dependencyText = `,\n    ${dependencyText}`;
+														}
+														return fixer.insertTextAfter(
+															lastDevDependency,
+															dependencyText,
+														);
+													} else {
+														return fixer.replaceText(
+															devDependenciesObjectNode,
+															`{\n    ${dependencyText}\n  }`,
+														);
+													}
+												},
+												messageId:
+													"addToDevDependencies",
+											},
+										]
+									: [],
+						});
+					}
+				}
+			},
+		};
+	},
+	meta: {
+		docs: {
+			description:
+				"Requires that all peer dependencies are also declared as dev dependencies",
+			recommended: true,
+		},
+		hasSuggestions: true,
+		messages: {
+			addToDevDependencies: 'Add "{{ name }}" to `devDependencies`',
+			devDependencyNotDefined:
+				'Peer dependency "{{ name }}" is not also declared in `devDependencies`.',
+		},
+		schema: [],
+		type: "problem",
+	},
+	name: "specify-peers-locally",
+});

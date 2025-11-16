@@ -17,6 +17,7 @@ import { rule as restrictDependencyRanges } from "./rules/restrict-dependency-ra
 import { rule as restrictPrivateProperties } from "./rules/restrict-private-properties.ts";
 import { rule as scriptsNameCasing } from "./rules/scripts-name-casing.ts";
 import { rule as sortCollections } from "./rules/sort-collections.ts";
+import { rule as specifyPeersLocally } from "./rules/specify-peers-locally.ts";
 import { rule as uniqueDependencies } from "./rules/unique-dependencies.ts";
 import { rule as validLocalDependency } from "./rules/valid-local-dependency.ts";
 import { rule as validName } from "./rules/valid-name.ts";
@@ -46,6 +47,7 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"restrict-private-properties": restrictPrivateProperties,
 	"scripts-name-casing": scriptsNameCasing,
 	"sort-collections": sortCollections,
+	"specify-peers-locally": specifyPeersLocally,
 	"unique-dependencies": uniqueDependencies,
 	...basicValidRules,
 	"valid-local-dependency": validLocalDependency,
