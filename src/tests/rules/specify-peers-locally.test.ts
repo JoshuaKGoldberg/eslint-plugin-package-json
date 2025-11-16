@@ -87,8 +87,12 @@ ruleTester.run("specify-peers-locally", rule, {
 	"peerDependencies": {}
 }`,
 		`{
+	"peerDependencies": { 123: "invalid" }
+}`,
+		`{
 	"devDependencies": {
-		"abc": "1.2.3"
+		"abc": "1.2.3",
+        123: "1.2.3"
 	}
 }`,
 		`{
