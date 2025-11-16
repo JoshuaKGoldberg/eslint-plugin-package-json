@@ -24,8 +24,8 @@ ruleTester.run("specify-peers-locally", rule, {
     "abc": "1.2.3"
   },
   "devDependencies": {
-    "def": "1.2.3",
-    "abc": "1.2.3"
+    "abc": "1.2.3",
+    "def": "1.2.3"
   }
 }`,
 						},

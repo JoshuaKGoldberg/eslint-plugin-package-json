@@ -61,32 +61,41 @@ export const rule = createRule({
 													name: peerDependencyName,
 												},
 												fix: (fixer) => {
-													let dependencyText = `"${peerDependencyName}": "${peerDependencyValue.value}"`;
-													const lastDevDependency =
-														devDependenciesObjectNode?.properties.at(
-															-1,
+													const currentDevDependencies =
+														JSON.parse(
+															context.sourceCode.getText(
+																devDependenciesObjectNode,
+															),
+														) as Record<
+															string,
+															string
+														>;
+													const updatedDevDependencies =
+														{
+															...currentDevDependencies,
+															[peerDependencyName]:
+																peerDependencyValue.value,
+														};
+													const sortedDevDependencies =
+														Object.fromEntries(
+															Object.entries(
+																updatedDevDependencies,
+															).sort((a, b) =>
+																a[0] > b[0]
+																	? 1
+																	: -1,
+															),
 														);
-													if (lastDevDependency) {
-														const lastDevDependencyToken =
-															context.sourceCode.getTokenAfter(
-																lastDevDependency,
-															);
-														if (
-															lastDevDependencyToken?.value !==
-															","
-														) {
-															dependencyText = `,\n    ${dependencyText}`;
-														}
-														return fixer.insertTextAfter(
-															lastDevDependency,
-															dependencyText,
-														);
-													} else {
-														return fixer.replaceText(
-															devDependenciesObjectNode,
-															`{\n    ${dependencyText}\n  }`,
-														);
-													}
+													return fixer.replaceText(
+														devDependenciesObjectNode,
+														JSON.stringify(
+															sortedDevDependencies,
+															null,
+															2,
+														)
+															.split("\n")
+															.join("\n  "), // nest indents,
+													);
 												},
 												messageId:
 													"addToDevDependencies",
