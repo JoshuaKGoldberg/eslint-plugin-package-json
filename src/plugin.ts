@@ -11,6 +11,7 @@ import { rule as noRedundantFiles } from "./rules/no-redundant-files.ts";
 import { rule as noRedundantPublishConfig } from "./rules/no-redundant-publishConfig.ts";
 import { rule as orderProperties } from "./rules/order-properties.ts";
 import { rule as preferRepositoryShorthand } from "./rules/repository-shorthand.ts";
+import { rule as requireAttribution } from "./rules/require-attribution.ts";
 import { rules as requireRules } from "./rules/require-properties.ts";
 import { rule as restrictDependencyRanges } from "./rules/restrict-dependency-ranges.ts";
 import { rule as restrictPrivateProperties } from "./rules/restrict-private-properties.ts";
@@ -38,6 +39,7 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"no-redundant-files": noRedundantFiles,
 	"no-redundant-publishConfig": noRedundantPublishConfig,
 	"order-properties": orderProperties,
+	"require-attribution": requireAttribution,
 	...requireRules,
 	"repository-shorthand": preferRepositoryShorthand,
 	"restrict-dependency-ranges": restrictDependencyRanges,
