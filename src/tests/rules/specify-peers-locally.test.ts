@@ -6,10 +6,11 @@ ruleTester.run("specify-peers-locally", rule, {
 		{
 			code: `{
   "peerDependencies": {
-    "abc": "1.2.3"
+    "abc": "4.5.6"
   },
   "devDependencies": {
-    "def": "1.2.3"
+    "def": "1.2.3",
+    "ghi": "1.2.3"
   }
 }`,
 			errors: [
@@ -21,11 +22,12 @@ ruleTester.run("specify-peers-locally", rule, {
 							messageId: "addToDevDependencies",
 							output: `{
   "peerDependencies": {
-    "abc": "1.2.3"
+    "abc": "4.5.6"
   },
   "devDependencies": {
-    "abc": "1.2.3",
-    "def": "1.2.3"
+    "abc": "4.5.6",
+    "def": "1.2.3",
+    "ghi": "1.2.3"
   }
 }`,
 						},
