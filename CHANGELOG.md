@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.82.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.81.0...v0.82.0) (2025-11-17)
+
+### Features
+
+- **require-sideEffects:** add new rule for requiring `sideEffects` ([#1406](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1406)) ([0a8388d](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/0a8388d6be21e6d4d7c0203fd65be96751ca5f29)), closes [#1405](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1405)
+
 # [0.81.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.80.0...v0.81.0) (2025-11-17)
 
 ### Features
