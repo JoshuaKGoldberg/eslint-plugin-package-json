@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.80.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.79.0...v0.80.0) (2025-11-17)
+
+### Features
+
+- **require-exports:** add new rule to require `exports` ([#1410](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1410)) ([c8fd152](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/c8fd1525b4d25c4d1fbdb488a7a604037e352361)), closes [#1409](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1409)
+
 # [0.79.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.78.0...v0.79.0) (2025-11-15)
 
 ### Features
