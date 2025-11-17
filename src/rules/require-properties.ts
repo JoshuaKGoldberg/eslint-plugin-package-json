@@ -12,6 +12,7 @@ const properties: [name: string, options?: CreateRequirePropertyRuleOptions][] =
 		["description", { isRecommended: true }],
 		["devDependencies"],
 		["engines"],
+		["exports"],
 		["files"],
 		["keywords"],
 		["license", { ignorePrivateDefault: true, isRecommended: true }],
