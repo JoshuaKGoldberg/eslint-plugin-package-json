@@ -197,6 +197,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [require-description](docs/rules/require-description.md)                   | Requires the `description` property to be present.                                                          | ✔️ ✅ |    |    |    |
 | [require-devDependencies](docs/rules/require-devDependencies.md)           | Requires the `devDependencies` property to be present.                                                      |      |    |    |    |
 | [require-engines](docs/rules/require-engines.md)                           | Requires the `engines` property to be present.                                                              |      |    |    |    |
+| [require-exports](docs/rules/require-exports.md)                           | Requires the `exports` property to be present.                                                              |      |    |    |    |
 | [require-files](docs/rules/require-files.md)                               | Requires the `files` property to be present.                                                                |      |    |    |    |
 | [require-keywords](docs/rules/require-keywords.md)                         | Requires the `keywords` property to be present.                                                             |      |    |    |    |
 | [require-license](docs/rules/require-license.md)                           | Requires the `license` property to be present.                                                              | ✔️ ✅ |    |    |    |
