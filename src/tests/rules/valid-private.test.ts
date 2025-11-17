@@ -71,7 +71,7 @@ ruleTester.run("valid-private", rules["valid-private"], {
 			errors: [
 				{
 					data: {
-						error: "the type should be a `boolean`, not `array`",
+						error: "the type should be a `boolean`, not `Array`",
 					},
 					line: 2,
 					messageId: "validationError",
