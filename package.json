@@ -27,6 +27,7 @@
 			"url": "https://michael.faith"
 		}
 	],
+	"sideEffects": false,
 	"type": "module",
 	"exports": {
 		".": {

@@ -27,6 +27,29 @@ describe("configs", () => {
 		).toEqual([]);
 	});
 
+	it("recommended publishable config works properly", async () => {
+		const eslint = new ESLint({
+			baseConfig: plugin.configs[
+				"recommended-publishable"
+			] as Linter.Config,
+			fix: true,
+			overrideConfigFile: true,
+		});
+		const code = await readFile(
+			resolve(import.meta.filename, "../../../package.json"),
+			"utf8",
+		);
+		const result = await eslint.lintText(code, {
+			filePath: "package.json",
+		});
+		expect(
+			result[0].messages.map((message) => ({
+				message: message.message,
+				ruleId: message.ruleId,
+			})),
+		).toEqual([]);
+	});
+
 	it("stylistic config works properly", async () => {
 		const eslint = new ESLint({
 			baseConfig: plugin.configs.stylistic as Linter.Config,

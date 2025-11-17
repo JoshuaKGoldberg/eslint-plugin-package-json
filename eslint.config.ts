@@ -117,7 +117,7 @@ export default defineConfig(
 		},
 	},
 	{
-		extends: [packageJson.configs.recommended],
+		extends: [packageJson.configs["recommended-publishable"]],
 		files: ["package.json"],
 	},
 );
