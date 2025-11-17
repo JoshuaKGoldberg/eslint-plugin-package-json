@@ -87,6 +87,8 @@ export const createSimpleRequirePropertyRule = (
 					properties: {
 						ignorePrivate: {
 							default: ignorePrivateDefault,
+							description:
+								"Determines if this rule should be enforced when the package's `private` property is `true`.",
 							type: "boolean",
 						},
 					},
