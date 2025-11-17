@@ -6,9 +6,9 @@
 
 <!-- end auto-generated rule header -->
 
-When you have a dependency declared in a package's `peerDependencies`, it's meant to be simply an expression of compatibility with that dependency.
+When you have a dependency declared in a package's `peerDependencies`, it's meant to be an expression of compatibility with that dependency.
 It also establishes a contract with consumers of your package that they should install a version of that dependency within the range that you've declared.
-Since you also need to use that package locally as part of development, it's generally a best practice to declare it in the package's `devDependencies` also, so that it's installed and available for use.
+Since you also need to use that package locally as part of development, it's generally a best practice to declare it in the package's `devDependencies` as well, so that it's installed and available for use.
 
 ## Rule Details
 
