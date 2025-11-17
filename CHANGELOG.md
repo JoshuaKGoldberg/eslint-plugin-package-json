@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.81.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.80.0...v0.81.0) (2025-11-17)
+
+### Features
+
+- **require-attribution:** add new rule to require proper attribution ([#1408](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1408)) ([e646f94](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/e646f941bfc8ac2e4cb7c28509a8bd800b912442)), closes [#1404](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1404)
+
 # [0.80.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.79.0...v0.80.0) (2025-11-17)
 
 ### Features
