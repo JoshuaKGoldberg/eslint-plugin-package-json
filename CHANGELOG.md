@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.83.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.82.0...v0.83.0) (2025-11-17)
+
+### Features
+
+- **specify-peers-locally:** add rule to require all peers are declared as dev dependencies ([#1407](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1407)) ([5a102ec](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/5a102ecd0f6fb025f42e838492844e2fa32ba786)), closes [#1053](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1053)
+
 # [0.82.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.81.0...v0.82.0) (2025-11-17)
 
 ### Features
