@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.85.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.84.0...v0.85.0) (2025-11-18)
+
+### Features
+
+- **valid-sideEffects:** add new rule for validating `sideEffects` ([#1414](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1414)) ([04b86b1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/04b86b1a5e86cae4187ca1629ba916066d49b086)), closes [#000](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/000)
+
 # [0.84.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.83.0...v0.84.0) (2025-11-18)
 
 ### Features
