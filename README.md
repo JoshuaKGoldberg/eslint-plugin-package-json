@@ -63,7 +63,7 @@ See [ESLint's _Configuration Files_ guide](https://eslint.org/docs/latest/use/co
 
 ### Recommended Config for Publishable Packages
 
-The `recommended-publishable` configuration has everything in it that the standard `recommended` config, with some additional rules added that are geared towards packages that are intended to be published.
+The `recommended-publishable` configuration has everything in it from the standard `recommended` config, with some additional rules added that are geared towards packages that are intended to be published.
 
 ```ts
 // eslint.config.ts
