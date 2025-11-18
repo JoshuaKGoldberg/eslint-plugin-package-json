@@ -1,4 +1,3 @@
-// @ts-expect-error - no types
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 import eslint from "@eslint/js";
 import vitest from "@vitest/eslint-plugin";
@@ -14,6 +13,10 @@ import tseslint from "typescript-eslint";
 
 import packageJson from "./src/index.ts";
 
+const JS_FILES = ["**/*.js", "**/*.mjs"];
+const TS_FILES = ["**/*.ts", "**/*.mts"];
+const JS_TS_FILES = [...JS_FILES, ...TS_FILES];
+
 export default defineConfig(
 	{
 		ignores: [
@@ -28,23 +31,41 @@ export default defineConfig(
 		],
 	},
 	{ linterOptions: { reportUnusedDisableDirectives: "error" } },
-	eslint.configs.recommended,
-	// eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access -- https://github.com/eslint-community/eslint-plugin-eslint-comments/issues/214
-	comments.recommended,
-	eslintPlugin.configs.recommended,
-	jsdoc.configs["flat/contents-typescript-error"],
-	jsdoc.configs["flat/logical-typescript-error"],
-	jsdoc.configs["flat/stylistic-typescript-error"],
-	jsonc.configs["flat/recommended-with-json"],
-	n.configs["flat/recommended"],
-	perfectionist.configs["recommended-natural"],
-	regexp.configs["flat/recommended"],
+	{
+		extends: [
+			eslint.configs.recommended,
+			// @ts-expect-error - no types
+			// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access -- https://github.com/eslint-community/eslint-plugin-eslint-comments/issues/214
+			comments.recommended,
+			eslintPlugin.configs.recommended,
+			n.configs["flat/recommended"],
+			perfectionist.configs["recommended-natural"],
+			regexp.configs["flat/recommended"],
+		],
+		files: JS_TS_FILES,
+	},
+	{
+		extends: [
+			jsdoc.configs["flat/contents-typescript-error"],
+			jsdoc.configs["flat/logical-typescript-error"],
+			jsdoc.configs["flat/stylistic-typescript-error"],
+		],
+		files: TS_FILES,
+	},
+	{
+		extends: [jsonc.configs["flat/recommended-with-json"]],
+		files: ["**/*.json", "**/*.jsonc"],
+	},
+	{
+		extends: [packageJson.configs["recommended-publishable"]],
+		files: ["package.json"],
+	},
 	{
 		extends: [
 			tseslint.configs.strictTypeChecked,
 			tseslint.configs.stylisticTypeChecked,
 		],
-		files: ["**/*.{js,mjs,ts}"],
+		files: JS_TS_FILES,
 		languageOptions: {
 			parserOptions: {
 				projectService: { allowDefaultProject: ["*.config.*s"] },
@@ -80,12 +101,6 @@ export default defineConfig(
 		},
 	},
 	{
-		extends: [tseslint.configs.disableTypeChecked],
-		files: ["**/*.md/*.ts"],
-		rules: { "n/no-missing-import": "off" },
-	},
-	{ files: ["*.mjs"], languageOptions: { sourceType: "module" } },
-	{
 		extends: [vitest.configs.recommended],
 		files: ["**/*.test.*"],
 		rules: { "@typescript-eslint/no-unsafe-assignment": "off" },
@@ -115,9 +130,5 @@ export default defineConfig(
 		rules: {
 			"n/no-unsupported-features/node-builtins": "off",
 		},
-	},
-	{
-		extends: [packageJson.configs["recommended-publishable"]],
-		files: ["package.json"],
 	},
 );
