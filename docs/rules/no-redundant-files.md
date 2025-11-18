@@ -1,6 +1,6 @@
 # no-redundant-files
 
-💼 This rule is enabled in the following configs: ✔️ `legacy-recommended`, ✅ `recommended`.
+💼 This rule is enabled in the following configs: ✔️ `legacy-recommended`, ✅ `recommended`, 📦 `recommended-publishable`.
 
 💡 This rule is manually fixable by [editor suggestions](https://eslint.org/docs/latest/use/core-concepts#rule-suggestions).
 

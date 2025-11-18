@@ -5,6 +5,11 @@ import { isJSONStringLiteral } from "./predicates.ts";
 
 export interface CreateRequirePropertyRuleOptions {
 	/**
+	 * The category for this rule.
+	 */
+	category?: string;
+
+	/**
 	 * The default value of `ignorePrivate` rule option.
 	 */
 	ignorePrivateDefault?: boolean;
@@ -24,6 +29,7 @@ export interface CreateRequirePropertyRuleOptions {
 export const createSimpleRequirePropertyRule = (
 	propertyName: string,
 	{
+		category,
 		ignorePrivateDefault = false,
 		isRecommended,
 	}: CreateRequirePropertyRuleOptions = {},
@@ -75,6 +81,7 @@ export const createSimpleRequirePropertyRule = (
 		},
 		meta: {
 			docs: {
+				category,
 				description: `Requires the \`${propertyName}\` property to be present.`,
 				recommended: isRecommended,
 			},

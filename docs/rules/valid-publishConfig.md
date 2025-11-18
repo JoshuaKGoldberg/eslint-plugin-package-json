@@ -1,6 +1,6 @@
 # valid-publishConfig
 
-💼 This rule is enabled in the following configs: ✔️ `legacy-recommended`, ✅ `recommended`.
+💼 This rule is enabled in the following configs: ✔️ `legacy-recommended`, ✅ `recommended`, 📦 `recommended-publishable`.
 
 <!-- end auto-generated rule header -->
 

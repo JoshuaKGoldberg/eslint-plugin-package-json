@@ -5,6 +5,7 @@ const config = {
 	configEmoji: [
 		["recommended", "✅"],
 		["legacy-recommended", "✔️"],
+		["recommended-publishable", "📦"],
 		["stylistic", "🎨"],
 	],
 	postprocess: async (content, path) =>
