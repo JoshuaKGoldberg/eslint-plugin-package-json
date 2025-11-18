@@ -1,5 +1,11 @@
 # Changelog
 
+# [0.84.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.83.0...v0.84.0) (2025-11-18)
+
+### Features
+
+- add new `recommended-publishable` config ([#1413](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1413)) ([ba313a6](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/ba313a6ca0b701c152986a83a377b9541c2b20c8)), closes [#1403](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1403)
+
 # [0.83.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.82.0...v0.83.0) (2025-11-17)
 
 ### Features
