@@ -94,7 +94,7 @@
 		"knip": "5.69.0",
 		"lint-staged": "16.2.0",
 		"markdownlint": "0.39.0",
-		"markdownlint-cli": "0.45.0",
+		"markdownlint-cli": "0.46.0",
 		"prettier": "3.6.0",
 		"prettier-plugin-curly": "0.4.0",
 		"prettier-plugin-packagejson": "2.5.10",
