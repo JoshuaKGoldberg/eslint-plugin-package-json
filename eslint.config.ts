@@ -43,6 +43,29 @@ export default defineConfig(
 			regexp.configs["flat/recommended"],
 		],
 		files: JS_TS_FILES,
+		rules: {
+			// We prefer seeing :exit after all other AST selectors in rules
+			"perfectionist/sort-objects": [
+				"error",
+				{
+					customGroups: { programExit: "Program:exit" },
+					groups: ["unknown", "programExit"],
+					type: "alphabetical",
+				},
+			],
+			// Stylistic concerns that don't interfere with Prettier
+			"logical-assignment-operators": [
+				"error",
+				"always",
+				{ enforceForIfStatements: true },
+			],
+			"no-useless-rename": "error",
+			"object-shorthand": "error",
+			"operator-assignment": "error",
+		},
+		settings: {
+			perfectionist: { partitionByComment: true, type: "natural" },
+		},
 	},
 	{
 		extends: [
@@ -74,29 +97,8 @@ export default defineConfig(
 		},
 		rules: {
 			"n/no-missing-import": "off",
-
-			// We prefer seeing :exit after all other AST selectors in rules
-			"perfectionist/sort-objects": [
-				"error",
-				{
-					customGroups: { programExit: "Program:exit" },
-					groups: ["unknown", "programExit"],
-					type: "alphabetical",
-				},
-			],
-
-			// Stylistic concerns that don't interfere with Prettier
-			"logical-assignment-operators": [
-				"error",
-				"always",
-				{ enforceForIfStatements: true },
-			],
-			"no-useless-rename": "error",
-			"object-shorthand": "error",
-			"operator-assignment": "error",
 		},
 		settings: {
-			perfectionist: { partitionByComment: true, type: "natural" },
 			vitest: { typecheck: true },
 		},
 	},
