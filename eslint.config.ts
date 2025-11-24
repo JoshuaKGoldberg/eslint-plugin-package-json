@@ -1,3 +1,4 @@
+// @ts-expect-error - no types
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 import eslint from "@eslint/js";
 import vitest from "@vitest/eslint-plugin";
@@ -13,8 +14,8 @@ import tseslint from "typescript-eslint";
 
 import packageJson from "./src/index.ts";
 
-const JS_FILES = ["**/*.js", "**/*.mjs"];
-const TS_FILES = ["**/*.ts", "**/*.mts"];
+const JS_FILES = ["**/*.js"];
+const TS_FILES = ["**/*.ts"];
 const JS_TS_FILES = [...JS_FILES, ...TS_FILES];
 
 export default defineConfig(
@@ -34,7 +35,6 @@ export default defineConfig(
 	{
 		extends: [
 			eslint.configs.recommended,
-			// @ts-expect-error - no types
 			// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access -- https://github.com/eslint-community/eslint-plugin-eslint-comments/issues/214
 			comments.recommended,
 			eslintPlugin.configs.recommended,
