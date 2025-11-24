@@ -27,8 +27,7 @@ export const rule = createRule({
 						p.key.value === "private",
 				);
 				if (
-					privateField &&
-					privateField.value.type === "JSONLiteral" &&
+					privateField?.value.type === "JSONLiteral" &&
 					(privateField.value.value === true ||
 						privateField.value.value === "true")
 				) {
