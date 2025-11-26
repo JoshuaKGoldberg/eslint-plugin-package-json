@@ -12,8 +12,8 @@ export type JsonRuleTesterRun = (
 	name: string,
 	rule: PackageJsonRuleModule,
 	tests: {
-		invalid?: RuleTester.InvalidTestCase[] | undefined;
-		valid?: (RuleTester.ValidTestCase | string)[] | undefined;
+		invalid?: RuleTester.InvalidTestCase[];
+		valid?: (RuleTester.ValidTestCase | string)[];
 	},
 ) => void;
 

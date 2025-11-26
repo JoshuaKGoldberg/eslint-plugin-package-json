@@ -36,7 +36,7 @@ export const rule = createRule({
 
 				const { errors, warnings } = validate(node.value.value);
 				const complaints = [...(errors ?? []), ...(warnings ?? [])];
-				if (!complaints.length) {
+				if (complaints.length === 0) {
 					return;
 				}
 

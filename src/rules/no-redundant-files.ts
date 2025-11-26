@@ -92,7 +92,7 @@ export const rule = createRule({
 				node: JsonAST.JSONProperty,
 			) {
 				// "files" should only ever be an array of strings.
-				if (!(node.value.type === "JSONArrayExpression")) {
+				if (node.value.type !== "JSONArrayExpression") {
 					return;
 				}
 				// We want to add it to the files cache, but also check for

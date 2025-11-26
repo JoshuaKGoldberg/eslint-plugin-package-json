@@ -80,7 +80,7 @@ export const rule = createRule({
 						(prop) => propertyNodeMap[prop],
 					);
 				} else {
-					desiredOrder = currentOrder.slice().sort((a, b) => {
+					desiredOrder = [...currentOrder].sort((a, b) => {
 						const aKey = (a.key as JsonAST.JSONStringLiteral).value;
 						const bKey = (b.key as JsonAST.JSONStringLiteral).value;
 
@@ -134,7 +134,7 @@ export const rule = createRule({
 		};
 	},
 	meta: {
-		defaultOptions: [Array.from(defaultCollections)],
+		defaultOptions: [[...defaultCollections]],
 		docs: {
 			category: "Best Practices",
 			description:

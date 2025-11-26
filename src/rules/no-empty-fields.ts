@@ -108,7 +108,7 @@ export const rule = createRule({
 				if (!topLevelProperty) {
 					return;
 				}
-				if (Boolean(node.elements.length)) {
+				if (node.elements.length > 0) {
 					return;
 				}
 				const topLevelPropertyName = topLevelProperty.value;
@@ -122,7 +122,7 @@ export const rule = createRule({
 				if (!topLevelProperty) {
 					return;
 				}
-				if (Boolean(node.properties.length)) {
+				if (node.properties.length > 0) {
 					return;
 				}
 				const topLevelPropertyName = topLevelProperty.value;

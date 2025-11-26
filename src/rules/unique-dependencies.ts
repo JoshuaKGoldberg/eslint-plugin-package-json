@@ -117,7 +117,7 @@ export const rule = createRule({
 						.filter(isJSONStringLiteral)
 						.map((dependencyNameNode) => dependencyNameNode.value),
 				);
-				if (!dependencyNames.size) {
+				if (dependencyNames.size === 0) {
 					return;
 				}
 
