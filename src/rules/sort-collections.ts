@@ -37,7 +37,7 @@ export const rule = createRule({
 				for (
 					let currNode: JsonAST.JSONNode | null | undefined =
 						node.parent;
-					// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+					// eslint-disable-next-line ts/no-unnecessary-condition
 					currNode;
 					currNode = currNode.parent
 				) {

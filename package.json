@@ -44,7 +44,7 @@
 		"build": "tsdown",
 		"build:docs": "pnpm build --no-dts && eslint-doc-generator",
 		"format": "prettier .",
-		"lint": "eslint . --max-warnings 0",
+		"lint": "eslint --max-warnings 0 --cache",
 		"lint:docs": "eslint-doc-generator --check",
 		"lint:knip": "knip",
 		"lint:md": "markdownlint \"**/*.md\" \".github/**/*.md\" --rules sentences-per-line",
@@ -68,8 +68,6 @@
 		"validate-npm-package-name": "^7.0.0"
 	},
 	"devDependencies": {
-		"@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
-		"@eslint/js": "9.39.1",
 		"@release-it/conventional-changelog": "10.0.2",
 		"@types/estree": "1.0.8",
 		"@types/node": "24.10.1",
@@ -79,14 +77,10 @@
 		"@vitest/eslint-plugin": "1.5.0",
 		"console-fail-test": "0.5.0",
 		"eslint": "9.39.1",
+		"eslint-config-un": "1.0.0-beta.0",
 		"eslint-doc-generator": "2.3.0",
 		"eslint-plugin-eslint-plugin": "7.2.0",
-		"eslint-plugin-jsdoc": "61.4.1",
-		"eslint-plugin-jsonc": "2.21.0",
-		"eslint-plugin-n": "17.23.1",
 		"eslint-plugin-perfectionist": "4.15.1",
-		"eslint-plugin-regexp": "2.10.0",
-		"eslint-plugin-yml": "1.19.0",
 		"husky": "9.1.7",
 		"jiti": "2.6.1",
 		"json-schema-to-ts": "3.1.1",
@@ -103,11 +97,9 @@
 		"sentences-per-line": "0.3.0",
 		"tsdown": "0.16.6",
 		"typescript": "5.9.3",
-		"typescript-eslint": "8.48.0",
 		"vitest": "4.0.13"
 	},
 	"peerDependencies": {
-		"eslint": ">=8.0.0",
 		"jsonc-eslint-parser": "^2.0.0"
 	},
 	"packageManager": "pnpm@10.23.0",
