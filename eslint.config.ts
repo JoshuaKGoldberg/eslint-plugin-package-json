@@ -14,6 +14,10 @@ import tseslint from "typescript-eslint";
 
 import packageJson from "./src/index.ts";
 
+const JS_FILES = ["**/*.js"];
+const TS_FILES = ["**/*.ts"];
+const JS_TS_FILES = [...JS_FILES, ...TS_FILES];
+
 export default defineConfig(
 	{
 		ignores: [
@@ -28,32 +32,18 @@ export default defineConfig(
 		],
 	},
 	{ linterOptions: { reportUnusedDisableDirectives: "error" } },
-	eslint.configs.recommended,
-	// eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access -- https://github.com/eslint-community/eslint-plugin-eslint-comments/issues/214
-	comments.recommended,
-	eslintPlugin.configs.recommended,
-	jsdoc.configs["flat/contents-typescript-error"],
-	jsdoc.configs["flat/logical-typescript-error"],
-	jsdoc.configs["flat/stylistic-typescript-error"],
-	jsonc.configs["flat/recommended-with-json"],
-	n.configs["flat/recommended"],
-	perfectionist.configs["recommended-natural"],
-	regexp.configs["flat/recommended"],
 	{
 		extends: [
-			tseslint.configs.strictTypeChecked,
-			tseslint.configs.stylisticTypeChecked,
+			eslint.configs.recommended,
+			// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access -- https://github.com/eslint-community/eslint-plugin-eslint-comments/issues/214
+			comments.recommended,
+			eslintPlugin.configs.recommended,
+			n.configs["flat/recommended"],
+			perfectionist.configs["recommended-natural"],
+			regexp.configs["flat/recommended"],
 		],
-		files: ["**/*.{js,mjs,ts}"],
-		languageOptions: {
-			parserOptions: {
-				projectService: { allowDefaultProject: ["*.config.*s"] },
-				tsconfigRootDir: import.meta.dirname,
-			},
-		},
+		files: JS_TS_FILES,
 		rules: {
-			"n/no-missing-import": "off",
-
 			// We prefer seeing :exit after all other AST selectors in rules
 			"perfectionist/sort-objects": [
 				"error",
@@ -63,7 +53,6 @@ export default defineConfig(
 					type: "alphabetical",
 				},
 			],
-
 			// Stylistic concerns that don't interfere with Prettier
 			"logical-assignment-operators": [
 				"error",
@@ -76,15 +65,43 @@ export default defineConfig(
 		},
 		settings: {
 			perfectionist: { partitionByComment: true, type: "natural" },
-			vitest: { typecheck: true },
 		},
 	},
 	{
-		extends: [tseslint.configs.disableTypeChecked],
-		files: ["**/*.md/*.ts"],
-		rules: { "n/no-missing-import": "off" },
+		extends: [
+			jsdoc.configs["flat/contents-typescript-error"],
+			jsdoc.configs["flat/logical-typescript-error"],
+			jsdoc.configs["flat/stylistic-typescript-error"],
+		],
+		files: TS_FILES,
 	},
-	{ files: ["*.mjs"], languageOptions: { sourceType: "module" } },
+	{
+		extends: [jsonc.configs["flat/recommended-with-json"]],
+		files: ["**/*.json", "**/*.jsonc"],
+	},
+	{
+		extends: [packageJson.configs["recommended-publishable"]],
+		files: ["package.json"],
+	},
+	{
+		extends: [
+			tseslint.configs.strictTypeChecked,
+			tseslint.configs.stylisticTypeChecked,
+		],
+		files: JS_TS_FILES,
+		languageOptions: {
+			parserOptions: {
+				projectService: { allowDefaultProject: ["*.config.*s"] },
+				tsconfigRootDir: import.meta.dirname,
+			},
+		},
+		rules: {
+			"n/no-missing-import": "off",
+		},
+		settings: {
+			vitest: { typecheck: true },
+		},
+	},
 	{
 		extends: [vitest.configs.recommended],
 		files: ["**/*.test.*"],
@@ -115,9 +132,5 @@ export default defineConfig(
 		rules: {
 			"n/no-unsupported-features/node-builtins": "off",
 		},
-	},
-	{
-		extends: [packageJson.configs["recommended-publishable"]],
-		files: ["package.json"],
 	},
 );
