@@ -97,7 +97,7 @@ ruleNames.forEach((ruleName) => {
 				options: [{ ignorePrivate: true }],
 			},
 			{
-				code: `{}`,
+				code: "{}",
 				errors: [
 					{
 						data: { property: propertyName },
@@ -165,7 +165,7 @@ ruleNames.forEach((ruleName) => {
 				},
 			},
 			{
-				code: `{}`,
+				code: "{}",
 				errors: [
 					{
 						data: { property: propertyName },

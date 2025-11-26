@@ -52,9 +52,9 @@ ruleTester.run("bin-name-casing", rule, {
 	],
 	valid: [
 		"{}",
-		`{ "bin": "./silver-mt-zion.js" }`,
-		`{ "bin": "silver-mt-zion.js" }`,
-		`{ "bin": { "silver-mt-zion": "./silver-mt-zion.js" } }`,
-		`{ "bin": { "silver-mt-zion": "silver-mt-zion.js", "nin": "./nin.js" } }`,
+		'{ "bin": "./silver-mt-zion.js" }',
+		'{ "bin": "silver-mt-zion.js" }',
+		'{ "bin": { "silver-mt-zion": "./silver-mt-zion.js" } }',
+		'{ "bin": { "silver-mt-zion": "silver-mt-zion.js", "nin": "./nin.js" } }',
 	],
 });

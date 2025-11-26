@@ -6,8 +6,8 @@ import { createRule } from "../createRule.ts";
 // it also enforces a stricter code for npm than is really appropriate,
 // so we disable some other errors here.
 const ignoredErrors = [
-	/^Url not valid/i,
-	/^Invalid version range for .+?: file:/i,
+	/^url not valid/i,
+	/^invalid version range for .+?: file:/i,
 	/^author field should have name/i,
 ];
 

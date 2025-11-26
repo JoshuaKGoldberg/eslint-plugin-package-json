@@ -1,10 +1,10 @@
+import type * as ESTree from "estree";
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import {
 	fixRemoveArrayElement,
 	fixRemoveObjectProperty,
 } from "eslint-fix-utils";
-import * as ESTree from "estree";
 
 import { createRule } from "../createRule.ts";
 import { isJSONStringLiteral, isNotNullish } from "../utils/predicates.ts";
@@ -84,10 +84,11 @@ export const rule = createRule({
 				}
 
 				switch (node.value.type) {
-					case "JSONArrayExpression":
+					case "JSONArrayExpression": {
 						check(node.value.elements, (element) => element);
 						break;
-					case "JSONObjectExpression":
+					}
+					case "JSONObjectExpression": {
 						check(
 							node.value.properties.map(
 								(property) => property.key,
@@ -104,6 +105,7 @@ export const rule = createRule({
 								node.value.properties;
 						}
 						break;
+					}
 				}
 			},
 			"Program:exit"() {

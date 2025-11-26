@@ -1,15 +1,15 @@
+import type * as ESTree from "estree";
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { fixRemoveArrayElement } from "eslint-fix-utils";
-import * as ESTree from "estree";
 
 import { createRule } from "../createRule.ts";
 import { isJSONStringLiteral, isNotNullish } from "../utils/predicates.ts";
 
 const defaultFiles = [
 	/* cspell:disable-next-line */
-	/^(\.\/)?LICEN(C|S)E(\.|$)/i,
-	/^(\.\/)?README(\.|$)/i,
+	/^(\.\/)?licen(c|s)e(\.|$)/i,
+	/^(\.\/)?readme(\.|$)/i,
 	/^(\.\/)?package\.json$/i,
 ];
 
@@ -27,11 +27,10 @@ const getCachedLocalFileRegex = (filename: string) => {
 	let regex = cachedRegex.get(baseFilename);
 	if (regex) {
 		return regex;
-	} else {
-		regex = new RegExp(`^(./)?${baseFilename}$`, "i");
-		cachedRegex.set(baseFilename, regex);
-		return regex;
 	}
+	regex = new RegExp(`^(./)?${baseFilename}$`, "i");
+	cachedRegex.set(baseFilename, regex);
+	return regex;
 };
 
 export const rule = createRule({
@@ -93,36 +92,30 @@ export const rule = createRule({
 				node: JsonAST.JSONProperty,
 			) {
 				// "files" should only ever be an array of strings.
-				if (node.value.type === "JSONArrayExpression") {
-					// We want to add it to the files cache, but also check for
-					// duplicates as we go.
-					const seen = new Set<string>();
-					const elements = node.value.elements;
-					entryCache.files = elements;
-					for (const [index, element] of elements.entries()) {
-						// We only care about JSONStringLiteral values
-						// That _should_ be all that's here, be in order to process
-						// the fix correctly we'll act on the full array of elements
-						if (
-							isNotNullish(element) &&
-							isJSONStringLiteral(element)
-						) {
-							if (seen.has(element.value)) {
-								report(elements, index, "duplicate");
-							} else {
-								seen.add(element.value);
-							}
+				if (!(node.value.type === "JSONArrayExpression")) {
+					return;
+				}
+				// We want to add it to the files cache, but also check for
+				// duplicates as we go.
+				const seen = new Set<string>();
+				const { elements } = node.value;
+				entryCache.files = elements;
+				for (const [index, element] of elements.entries()) {
+					// We only care about JSONStringLiteral values
+					// That _should_ be all that's here, be in order to process
+					// the fix correctly we'll act on the full array of elements
+					if (isNotNullish(element) && isJSONStringLiteral(element)) {
+						if (seen.has(element.value)) {
+							report(elements, index, "duplicate");
+						} else {
+							seen.add(element.value);
+						}
 
-							// We can also go ahead and check if this matches one
-							// of the static default files
-							for (const defaultFile of defaultFiles) {
-								if (defaultFile.test(element.value)) {
-									report(
-										elements,
-										index,
-										"unnecessaryDefault",
-									);
-								}
+						// We can also go ahead and check if this matches one
+						// of the static default files
+						for (const defaultFile of defaultFiles) {
+							if (defaultFile.test(element.value)) {
+								report(elements, index, "unnecessaryDefault");
 							}
 						}
 					}
@@ -138,7 +131,7 @@ export const rule = createRule({
 			},
 			"Program:exit"() {
 				// Now that we have all of the entries, we can check for unnecessary files.
-				const files = entryCache.files;
+				const { files } = entryCache;
 
 				// Bail out early if there are no files.
 				if (files.length === 0) {

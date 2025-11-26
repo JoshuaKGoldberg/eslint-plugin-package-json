@@ -22,7 +22,7 @@ ruleTester.run("valid-repository-directory (no repository)", rule, {
 				},
 			],
 			filename: "/Users/face/src/package.json",
-			name: `invalid directory`,
+			name: "invalid directory",
 		},
 		{
 			code: `{
@@ -60,16 +60,16 @@ ruleTester.run("valid-repository-directory (no repository)", rule, {
 				},
 			],
 			filename: "/Users/face/src/project/package.json",
-			name: `path is valid, but not end of path`,
+			name: "path is valid, but not end of path",
 		},
 	],
 	valid: [
-		`{}`,
-		`{ "repository": "" }`,
-		`{ "repository": "JoshuaKGoldberg/eslint-plugin-package-json" }`,
-		`{ "repository": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json" }`,
-		`{ "repository": { "directory": null } }`,
-		`{ "repository": { "directory": {} } }`,
+		"{}",
+		'{ "repository": "" }',
+		'{ "repository": "JoshuaKGoldberg/eslint-plugin-package-json" }',
+		'{ "repository": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json" }',
+		'{ "repository": { "directory": null } }',
+		'{ "repository": { "directory": {} } }',
 		`{
 	"repository": {
 		"directory": 123
@@ -95,9 +95,9 @@ ruleTester.run("valid-repository-directory (no repository)", rule, {
 			filename: "/Users/face/src/deeply/nested/package.json",
 		},
 		{
-			code: `{ "repository": { "directory": "/Users/face/src/project" } }`,
-			filename: `/Users/face/src/project/package.json`,
-			name: `full, absolute path to package.json`,
+			code: '{ "repository": { "directory": "/Users/face/src/project" } }',
+			filename: "/Users/face/src/project/package.json",
+			name: "full, absolute path to package.json",
 		},
 	],
 });
@@ -132,7 +132,7 @@ ruleTester.run("valid-repository-directory (this repository)", rule, {
 				},
 			],
 			filename: path.resolve(thisRepoDirectory, "./package.json"),
-			name: `root package.json`,
+			name: "root package.json",
 		},
 		{
 			code: `{
@@ -164,23 +164,23 @@ ruleTester.run("valid-repository-directory (this repository)", rule, {
 				thisRepoDirectory,
 				"./src/tests/__fixtures__/valid-local-dependency/package.json",
 			),
-			name: `nested package.json`,
+			name: "nested package.json",
 		},
 	],
 	valid: [
 		{
-			code: `{ "repository": { "directory": "" } }`,
+			code: '{ "repository": { "directory": "" } }',
 			filename: `${thisRepoDirectory}/package.json`,
 
-			name: `root package.json`,
+			name: "root package.json",
 		},
 		{
-			code: `{ "repository": { "directory": "src/tests/__fixtures__/valid-local-dependency" } }`,
+			code: '{ "repository": { "directory": "src/tests/__fixtures__/valid-local-dependency" } }',
 			filename: path.resolve(
 				thisRepoDirectory,
 				"./src/tests/__fixtures__/valid-local-dependency/package.json",
 			),
-			name: `nested package.json`,
+			name: "nested package.json",
 		},
 	],
 });

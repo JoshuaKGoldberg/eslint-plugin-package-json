@@ -141,7 +141,7 @@ ruleTester.run("valid-man", rules["valid-man"], {
 	],
 	valid: [
 		"{}",
-		`{ "man": [] }`,
-		`{ "man": ["./man/doc.1", "./man/doc.2.gz"] }`,
+		'{ "man": [] }',
+		'{ "man": ["./man/doc.1", "./man/doc.2.gz"] }',
 	],
 });

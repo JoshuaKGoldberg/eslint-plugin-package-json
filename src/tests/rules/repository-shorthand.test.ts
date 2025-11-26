@@ -4,7 +4,7 @@ import { ruleTester } from "./ruleTester.ts";
 ruleTester.run("repository-shorthand", rule, {
 	invalid: [
 		{
-			code: `{ "repository": "" }`,
+			code: '{ "repository": "" }',
 			errors: [
 				{
 					column: 17,
@@ -14,7 +14,7 @@ ruleTester.run("repository-shorthand", rule, {
 			],
 		},
 		{
-			code: `{ "repository": "invalid" }`,
+			code: '{ "repository": "invalid" }',
 			errors: [
 				{
 					column: 17,
@@ -24,7 +24,7 @@ ruleTester.run("repository-shorthand", rule, {
 			],
 		},
 		{
-			code: `{ "repository": "invalid/" }`,
+			code: '{ "repository": "invalid/" }',
 			errors: [
 				{
 					column: 17,
@@ -130,7 +130,7 @@ ruleTester.run("repository-shorthand", rule, {
 		},
 	],
 	valid: [
-		`{ "repository": null }`,
+		'{ "repository": null }',
 		`{
 			"repository": {
 				"type": "git"

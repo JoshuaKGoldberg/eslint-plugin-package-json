@@ -49,5 +49,5 @@ ruleTester.run("valid-type", rules["valid-type"], {
 			],
 		},
 	],
-	valid: ["{}", `{ "type": "commonjs" }`, `{ "type": "module" }`],
+	valid: ["{}", '{ "type": "commonjs" }', '{ "type": "module" }'],
 });

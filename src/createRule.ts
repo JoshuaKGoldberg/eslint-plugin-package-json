@@ -4,8 +4,8 @@ import type {
 	JSONSchema,
 } from "json-schema-to-ts";
 
-import { AST, Rule, SourceCode } from "eslint";
-import { AST as JsonAST, type RuleListener } from "jsonc-eslint-parser";
+import { type AST, type Rule, type SourceCode } from "eslint";
+import { type AST as JsonAST, type RuleListener } from "jsonc-eslint-parser";
 
 import { isPackageJson } from "./utils/isPackageJson.ts";
 

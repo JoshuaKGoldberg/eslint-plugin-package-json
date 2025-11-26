@@ -53,9 +53,9 @@ ruleTester.run("restrict-private-properties", rule, {
 		},
 		// Empty files array (auto-fixable)
 		{
-			code: `{ "private": true, "files": [] }`,
+			code: '{ "private": true, "files": [] }',
 			errors: [{ messageId: "unnecessaryProperty" }],
-			output: `{ "private": true  }`,
+			output: '{ "private": true  }',
 		},
 		// Empty publishConfig object (auto-fixable)
 		{

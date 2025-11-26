@@ -66,7 +66,7 @@ ruleTester.run("valid-homepage", rules["valid-homepage"], {
 	],
 	valid: [
 		"{}",
-		`{ "homepage": "https://nin.com" }`,
-		`{ "homepage": "http://gybe.com" }`,
+		'{ "homepage": "https://nin.com" }',
+		'{ "homepage": "http://gybe.com" }',
 	],
 });

@@ -268,43 +268,43 @@ ruleTester.run(ruleName, rules[ruleName], {
 
 	valid: [
 		{
-			code: `{}`,
+			code: "{}",
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": "John Doe" }`,
+			code: '{ "author": "John Doe" }',
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": "John <john@example.com>" }`,
+			code: '{ "author": "John <john@example.com>" }',
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": "John (https://example.com)" }`,
+			code: '{ "author": "John (https://example.com)" }',
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": "John <john@example.com> (https://example.com)" }`,
+			code: '{ "author": "John <john@example.com> (https://example.com)" }',
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": { "name": "John" } }`,
+			code: '{ "author": { "name": "John" } }',
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": { "name": "John", "email": "john@example.com" } }`,
+			code: '{ "author": { "name": "John", "email": "john@example.com" } }',
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": { "name": "John", "url": "https://example.com" } }`,
+			code: '{ "author": { "name": "John", "url": "https://example.com" } }',
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": { "name": "John", "email": "john@example.com", "url": "https://example.com" } }`,
+			code: '{ "author": { "name": "John", "email": "john@example.com", "url": "https://example.com" } }',
 			filename: "package.json",
 		},
 		{
-			code: `{ "author": null }`,
+			code: '{ "author": null }',
 			filename: "not-a-package.json",
 		},
 	],

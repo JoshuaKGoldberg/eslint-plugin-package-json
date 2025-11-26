@@ -1,7 +1,7 @@
+import type * as ESTree from "estree";
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { fixRemoveObjectProperty } from "eslint-fix-utils";
-import * as ESTree from "estree";
 
 import { createRule } from "../createRule.ts";
 
@@ -27,7 +27,7 @@ export const rule = createRule({
 				const contributorsValue = node.value;
 				if (
 					contributorsValue.type !== "JSONArrayExpression" ||
-					!contributorsValue.elements.some((element) => !!element)
+					!contributorsValue.elements.some(Boolean)
 				) {
 					context.report({
 						messageId: "noContributors",
@@ -58,13 +58,11 @@ export const rule = createRule({
 							node,
 						});
 					}
-				} else {
-					if (!authorPropertyNode && !contributorsPropertyNode) {
-						context.report({
-							messageId: "missing",
-							node,
-						});
-					}
+				} else if (!authorPropertyNode && !contributorsPropertyNode) {
+					context.report({
+						messageId: "missing",
+						node,
+					});
 				}
 			},
 		};

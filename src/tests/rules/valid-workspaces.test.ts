@@ -108,7 +108,7 @@ ruleTester.run("valid-workspaces", rules["valid-workspaces"], {
 	],
 	valid: [
 		"{}",
-		`{ "workspaces": [] }`,
-		`{ "workspaces": ["./app", "./packages/*"] }`,
+		'{ "workspaces": [] }',
+		'{ "workspaces": ["./app", "./packages/*"] }',
 	],
 });

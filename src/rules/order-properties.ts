@@ -97,7 +97,7 @@ export const rule = createRule({
 									type === "tab" ? "\t" : indent,
 								) + endCharacters;
 							if (newline === "\r\n") {
-								result = result.replace(/\n/g, newline);
+								result = result.replaceAll("\n", newline);
 							}
 
 							return fixer.replaceText(

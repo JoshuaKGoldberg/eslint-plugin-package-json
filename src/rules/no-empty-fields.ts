@@ -1,12 +1,12 @@
+import type * as ESTree from "estree";
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import {
 	fixRemoveArrayElement,
 	fixRemoveObjectProperty,
 } from "eslint-fix-utils";
-import * as ESTree from "estree";
 
-import { createRule, PackageJsonRuleContext } from "../createRule.ts";
+import { createRule, type PackageJsonRuleContext } from "../createRule.ts";
 
 const getDataAndMessageId = (
 	node:
@@ -18,27 +18,30 @@ const getDataAndMessageId = (
 	messageId: "emptyExpression" | "emptyFields";
 } => {
 	switch (node.type) {
-		case "JSONArrayExpression":
+		case "JSONArrayExpression": {
 			return {
 				data: {
 					expressionType: "array",
 				},
 				messageId: "emptyExpression",
 			};
-		case "JSONObjectExpression":
+		}
+		case "JSONObjectExpression": {
 			return {
 				data: {
 					expressionType: "object",
 				},
 				messageId: "emptyExpression",
 			};
-		case "JSONProperty":
+		}
+		case "JSONProperty": {
 			return {
 				data: {
 					field: (node.key as JsonAST.JSONStringLiteral).value,
 				},
 				messageId: "emptyFields",
 			};
+		}
 	}
 };
 
@@ -105,11 +108,12 @@ export const rule = createRule({
 				if (!topLevelProperty) {
 					return;
 				}
-				if (!node.elements.length) {
-					const topLevelPropertyName = topLevelProperty.value;
-					if (!ignoreProperties.includes(topLevelPropertyName)) {
-						report(context, getNode(node));
-					}
+				if (Boolean(node.elements.length)) {
+					return;
+				}
+				const topLevelPropertyName = topLevelProperty.value;
+				if (!ignoreProperties.includes(topLevelPropertyName)) {
+					report(context, getNode(node));
 				}
 			},
 			JSONObjectExpression(node) {
@@ -118,11 +122,12 @@ export const rule = createRule({
 				if (!topLevelProperty) {
 					return;
 				}
-				if (!node.properties.length) {
-					const topLevelPropertyName = topLevelProperty.value;
-					if (!ignoreProperties.includes(topLevelPropertyName)) {
-						report(context, getNode(node));
-					}
+				if (Boolean(node.properties.length)) {
+					return;
+				}
+				const topLevelPropertyName = topLevelProperty.value;
+				if (!ignoreProperties.includes(topLevelPropertyName)) {
+					report(context, getNode(node));
 				}
 			},
 		};

@@ -4,7 +4,7 @@ name: Prepare
 
 inputs:
   node-version:
-    description: "Node.js version to use"
+    description: Node.js version to use
     default: "lts/*"
     required: false
 

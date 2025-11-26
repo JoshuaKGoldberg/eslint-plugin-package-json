@@ -102,9 +102,9 @@ ruleTester.run("valid-sideEffects", rules["valid-sideEffects"], {
 	],
 	valid: [
 		"{}",
-		`{ "sideEffects": true }`,
-		`{ "sideEffects": false }`,
-		`{ "sideEffects": [] }`,
-		`{ "sideEffects": ["nin", "silver-mt-zion"] }`,
+		'{ "sideEffects": true }',
+		'{ "sideEffects": false }',
+		'{ "sideEffects": [] }',
+		'{ "sideEffects": ["nin", "silver-mt-zion"] }',
 	],
 });

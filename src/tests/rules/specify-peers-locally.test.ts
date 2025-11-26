@@ -82,7 +82,7 @@ ruleTester.run("specify-peers-locally", rule, {
 	],
 
 	valid: [
-		`{}`,
+		"{}",
 		`{
 	"peerDependencies": {}
 }`,

@@ -364,12 +364,12 @@ ruleTester.run("no-redundant-files", rule, {
 	],
 	valid: [
 		"{}",
-		`{ "main": "./index.js" }`,
-		`{ "bin": "./bin/cli.js" }`,
+		'{ "main": "./index.js" }',
+		'{ "bin": "./bin/cli.js" }',
 		`{ "bin": {
   "cli": "./bin/cli.js"
 }}`,
-		`{ "main": "./dist/index.js", "files": ["CHANGELOG.md", "dist"] }`,
+		'{ "main": "./dist/index.js", "files": ["CHANGELOG.md", "dist"] }',
 		`{
 		"main": "./index.js",
 		"files": [

@@ -1,4 +1,4 @@
-import path from "path";
+import path from "node:path";
 
 import { rule } from "../../rules/valid-local-dependency.ts";
 import { ruleTester } from "./ruleTester.ts";

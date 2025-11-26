@@ -66,8 +66,8 @@ ruleTester.run("valid-license", rules["valid-license"], {
 	],
 	valid: [
 		"{}",
-		`{ "license": "MIT" }`,
-		`{ "license": "UNLICENSED" }`,
-		`{ "license": "SEE LICENSE IN LICENSE.md" }`,
+		'{ "license": "MIT" }',
+		'{ "license": "UNLICENSED" }',
+		'{ "license": "SEE LICENSE IN LICENSE.md" }',
 	],
 });

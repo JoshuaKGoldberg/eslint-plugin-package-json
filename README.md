@@ -22,7 +22,7 @@
 
 This package requires [ESLint](http://eslint.org) >=8:
 
-```shell
+```sh
 npm install eslint eslint-plugin-package-json --save-dev
 ```
 
@@ -95,7 +95,7 @@ export default [
 
 Usage with ESLint's legacy ("eslintrc") format requires also installing [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser):
 
-```shell
+```sh
 npm install jsonc-eslint-parser --save-dev
 ```
 
@@ -185,6 +185,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 ## Supported Rules
 
 <!-- prettier-ignore-start -->
+
 <!-- begin auto-generated rules list -->
 
 💼 Configurations enabled in.\
@@ -196,7 +197,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 💡 Manually fixable by [editor suggestions](https://eslint.org/docs/latest/use/core-concepts#rule-suggestions).\
 ❌ Deprecated.
 
-| Name                                                                       | Description                                                                                                                                                                                  | 💼      | 🔧 | 💡 | ❌  |
+| Name                                                                       | Description                                                                                                                                                                                  | 💼      | 🔧 | 💡 | ❌  |
 | :------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------ | :- | :- | :- |
 | [bin-name-casing](docs/rules/bin-name-casing.md)                           | Enforce that names for bin properties are in kebab case.                                                                                                                                     | 🎨      |    | 💡 |    |
 | [exports-subpaths-style](docs/rules/exports-subpaths-style.md)             | Enforce consistent format for the exports field (implicit or explicit subpaths).                                                                                                             | 🎨      | 🔧 |    |    |
@@ -265,6 +266,7 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [valid-workspaces](docs/rules/valid-workspaces.md)                         | Enforce that the `workspaces` property is valid.                                                                                                                                             | ✔️ ✅ 📦 |    |    |    |
 
 <!-- end auto-generated rules list -->
+
 <!-- prettier-ignore-end -->
 
 These rules only run on `package.json` files; they will ignore all other files being linted.
@@ -297,9 +299,13 @@ Thanks! 🗂
 ## Contributors
 
 <!-- spellchecker: disable -->
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
 <!-- prettier-ignore-start -->
+
 <!-- markdownlint-disable -->
+
 <table>
   <tbody>
     <tr>
@@ -349,9 +355,11 @@ Thanks! 🗂
 </table>
 
 <!-- markdownlint-restore -->
+
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
 <!-- spellchecker: enable -->
 
 ## Appreciation

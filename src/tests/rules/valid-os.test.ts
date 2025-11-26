@@ -79,7 +79,7 @@ ruleTester.run("valid-os", rules["valid-os"], {
 			errors: [
 				{
 					data: {
-						error: `the value "invalid" is not valid. Valid OS values are: aix, android, darwin, freebsd, linux, openbsd, sunos, win32`,
+						error: 'the value "invalid" is not valid. Valid OS values are: aix, android, darwin, freebsd, linux, openbsd, sunos, win32',
 					},
 					line: 3,
 					messageId: "validationError",
@@ -115,5 +115,5 @@ ruleTester.run("valid-os", rules["valid-os"], {
 			],
 		},
 	],
-	valid: ["{}", `{ "os": [] }`, `{ "os": ["win32", "linux"] }`],
+	valid: ["{}", '{ "os": [] }', '{ "os": ["win32", "linux"] }'],
 });

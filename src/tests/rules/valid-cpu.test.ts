@@ -123,14 +123,14 @@ ruleTester.run("valid-cpu", rules["valid-cpu"], {
 			errors: [
 				{
 					data: {
-						error: `the value "silver-mt-zion" is not valid. Valid CPU values are: arm, arm64, ia32, loong64, mips, mipsel, ppc64, riscv64, s390, s390x, x64`,
+						error: 'the value "silver-mt-zion" is not valid. Valid CPU values are: arm, arm64, ia32, loong64, mips, mipsel, ppc64, riscv64, s390, s390x, x64',
 					},
 					line: 3,
 					messageId: "validationError",
 				},
 				{
 					data: {
-						error: `the value "nin" is not valid. Valid CPU values are: arm, arm64, ia32, loong64, mips, mipsel, ppc64, riscv64, s390, s390x, x64`,
+						error: 'the value "nin" is not valid. Valid CPU values are: arm, arm64, ia32, loong64, mips, mipsel, ppc64, riscv64, s390, s390x, x64',
 					},
 					line: 4,
 					messageId: "validationError",
@@ -138,5 +138,5 @@ ruleTester.run("valid-cpu", rules["valid-cpu"], {
 			],
 		},
 	],
-	valid: ["{}", `{ "cpu": [] }`, `{ "cpu": ["arm64", "x64"] }`],
+	valid: ["{}", '{ "cpu": [] }', '{ "cpu": ["arm64", "x64"] }'],
 });

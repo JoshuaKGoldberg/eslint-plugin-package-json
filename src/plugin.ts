@@ -61,7 +61,7 @@ const recommendedRules = {
 	...Object.fromEntries(
 		Object.entries(rules)
 			.filter(([, rule]) => rule.meta.docs?.recommended)
-			.map(([name]) => ["package-json/" + name, "error" as const]),
+			.map(([name]) => [`package-json/${name}`, "error" as const]),
 	),
 } satisfies Linter.RulesRecord;
 
@@ -71,7 +71,7 @@ const recommendedPublishableRules = {
 		Object.entries(rules)
 			// eslint-disable-next-line ts/no-deprecated
 			.filter(([, rule]) => rule.meta.docs?.category === "Publishable")
-			.map(([name]) => ["package-json/" + name, "error" as const]),
+			.map(([name]) => [`package-json/${name}`, "error" as const]),
 	),
 } satisfies Linter.RulesRecord;
 
@@ -80,7 +80,7 @@ const stylisticRules = {
 		Object.entries(rules)
 			// eslint-disable-next-line ts/no-deprecated
 			.filter(([, rule]) => rule.meta.docs?.category === "Stylistic")
-			.map(([name]) => ["package-json/" + name, "error" as const]),
+			.map(([name]) => [`package-json/${name}`, "error" as const]),
 	),
 } satisfies Linter.RulesRecord;
 

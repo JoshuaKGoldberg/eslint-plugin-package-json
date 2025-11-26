@@ -27,6 +27,28 @@ export default eslintConfig({
 				],
 			},
 		},
+		markdownPreferences: {
+			delimitersStyle: {
+				// Conflicts with prettier
+				emphasis: {
+					emphasis: "_",
+					strong: "**",
+				},
+			},
+			overrides: {
+				"markdown-preferences/link-title-style": [
+					2,
+					{ style: "double" },
+				], // Conflicts with prettier
+				"markdown-preferences/table-pipe-alignment": 0, // Conflicts with markdownlint
+			},
+		},
+		noStylisticRules: {
+			enableRules: {
+				disableAllOtherRules: true,
+				rules: true,
+			},
+		},
 		perfectionist: {
 			configSortObjects: {
 				// We prefer seeing :exit after all other AST selectors in rules
@@ -84,6 +106,7 @@ export default eslintConfig({
 		{
 			files: ["CHANGELOG.md"],
 			rules: {
+				"markdown-preferences/prefer-link-reference-definitions": 0,
 				"markdown/heading-increment": 0,
 				"markdown/no-multiple-h1": 0,
 			},
@@ -92,6 +115,12 @@ export default eslintConfig({
 			files: [".github/PULL_REQUEST_TEMPLATE.md"],
 			rules: {
 				"markdown/no-missing-label-refs": 0,
+			},
+		},
+		{
+			files: [".github/ISSUE_TEMPLATE.md"],
+			rules: {
+				"markdown-preferences/padding-line-between-blocks": 0,
 			},
 		},
 	],

@@ -169,7 +169,7 @@ ruleTester.run("valid-contributors", rules["valid-contributors"], {
 	],
 	valid: [
 		"{}",
-		`{ "contributors": [] }`,
+		'{ "contributors": [] }',
 		`{ "contributors": [
            {
              "name": "Fred Flintston",

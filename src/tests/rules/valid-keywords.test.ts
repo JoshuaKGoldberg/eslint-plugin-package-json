@@ -110,7 +110,7 @@ ruleTester.run("valid-keywords", rules["valid-keywords"], {
 	],
 	valid: [
 		"{}",
-		`{ "keywords": [] }`,
-		`{ "keywords": ["nin", "A Silver Mt. Zion"] }`,
+		'{ "keywords": [] }',
+		'{ "keywords": ["nin", "A Silver Mt. Zion"] }',
 	],
 });

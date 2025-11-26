@@ -18,34 +18,34 @@ ruleTester.run("valid-version", rule, {
 			],
 		},
 		{
-			code: `{ "version": 123 }`,
+			code: '{ "version": 123 }',
 			errors: [{ messageId: "type" }],
 		},
 		{
-			code: `{ "version": "" }`,
+			code: '{ "version": "" }',
 			errors: [{ messageId: "invalid" }],
 		},
 		{
-			code: `{ "version": "latest" }`,
+			code: '{ "version": "latest" }',
 			errors: [{ messageId: "invalid" }],
 		},
 		{
-			code: `{ "version": "?!" }`,
+			code: '{ "version": "?!" }',
 			errors: [{ messageId: "invalid" }],
 		},
 		{
-			code: `{ "version": "1" }`,
+			code: '{ "version": "1" }',
 			errors: [{ messageId: "invalid" }],
 		},
 		{
-			code: `{ "version": "1.2" }`,
+			code: '{ "version": "1.2" }',
 			errors: [{ messageId: "invalid" }],
 		},
 	],
 	valid: [
 		"{}",
-		`{ "version": "1.2.3" }`,
-		`{ "version": "1.2.3-beta" }`,
-		`{ "version": "1.2.3-beta.0" }`,
+		'{ "version": "1.2.3" }',
+		'{ "version": "1.2.3-beta" }',
+		'{ "version": "1.2.3-beta.0" }',
 	],
 });

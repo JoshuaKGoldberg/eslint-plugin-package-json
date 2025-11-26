@@ -127,8 +127,8 @@ ruleTester.run("valid-exports", rules["valid-exports"], {
 	],
 	valid: [
 		"{}",
-		`{ "exports": "./index.js" }`,
-		`{ "exports": { ".": "./index.js", "./secondary": "./secondary.js" } }`,
-		`{ "exports": { ".": { "types": "./index.d.ts", "default": "./index.js" } } }`,
+		'{ "exports": "./index.js" }',
+		'{ "exports": { ".": "./index.js", "./secondary": "./secondary.js" } }',
+		'{ "exports": { ".": { "types": "./index.d.ts", "default": "./index.js" } } }',
 	],
 });
