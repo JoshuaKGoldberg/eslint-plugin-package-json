@@ -1,11 +1,10 @@
+import type { AST, Rule, SourceCode } from "eslint";
 import type * as ESTree from "estree";
 import type {
 	FromSchema as InferJsonSchemaType,
 	JSONSchema,
 } from "json-schema-to-ts";
-
-import { type AST, type Rule, type SourceCode } from "eslint";
-import { type AST as JsonAST, type RuleListener } from "jsonc-eslint-parser";
+import type { AST as JsonAST, RuleListener } from "jsonc-eslint-parser";
 
 import { isPackageJson } from "./utils/isPackageJson.ts";
 
@@ -48,6 +47,7 @@ export interface PackageJsonRuleModule<
 	Options extends unknown[] = unknown[],
 	Schema extends JSONSchema[] = JSONSchema[],
 > {
+	// eslint-disable-next-line ts/method-signature-style
 	create(context: PackageJsonRuleContext<Options>): RuleListener;
 	meta: Omit<Rule.RuleMetaData, "defaultOptions" | "schema"> & {
 		defaultOptions?: NoInfer<Options>;

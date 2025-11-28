@@ -60,6 +60,7 @@ export const rule = createRule({
 												data: {
 													name: peerDependencyName,
 												},
+												// eslint-disable-next-line ts/no-loop-func
 												fix: (fixer) => {
 													const currentDevDependencies =
 														JSON.parse(
@@ -80,6 +81,7 @@ export const rule = createRule({
 														Object.fromEntries(
 															Object.entries(
 																updatedDevDependencies,
+																// eslint-disable-next-line unicorn/no-array-sort
 															).sort((a, b) =>
 																a[0] > b[0]
 																	? 1
@@ -94,6 +96,7 @@ export const rule = createRule({
 															2,
 														)
 															.split("\n")
+															// eslint-disable-next-line un/no-multiple-consecutive-spaces
 															.join("\n  "), // nest indents,
 													);
 												},

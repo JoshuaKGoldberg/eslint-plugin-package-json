@@ -5,6 +5,7 @@ import { ruleTester } from "./ruleTester.ts";
 
 const ruleNames = Object.keys(rules);
 
+// eslint-disable-next-line vitest/require-hook
 ruleNames.forEach((ruleName) => {
 	const propertyName = ruleName.replace("require-", "");
 

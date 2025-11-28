@@ -18,7 +18,7 @@ The npm supports two ways of defining attribution in a `package.json`:
 - `contributors`: a list of all collaborators contributing to the project.
   Each item in the array has the same `name`, `email`, and `url` properties as `author` has.
 
-### Examples with Default Options (preferContributorsOnly: false)
+### Examples With Default Options (`preferContributorsOnly: false`)
 
 Examples of **incorrect** code for this rule with default options:
 
@@ -92,7 +92,7 @@ Examples of **correct** code for this rule with default options:
 }
 ```
 
-### Examples with preferContributorsOnly: true
+### Examples With `preferContributorsOnly: true`
 
 Examples of **incorrect** code for this rule with default options:
 
@@ -176,7 +176,7 @@ Examples of **correct** code for this rule with default options:
 
 <!-- end auto-generated rule options list -->
 
-### preferContributorsOnly
+### `preferContributorsOnly`
 
 When enabled, `preferContributorsOnly` requires that only `contributors` may be defined for attribution, and will report if `author` is also present.
 

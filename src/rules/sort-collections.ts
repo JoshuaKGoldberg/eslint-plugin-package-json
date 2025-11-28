@@ -50,7 +50,8 @@ export const rule = createRule({
 						return;
 					}
 				}
-				const key = keyPartsReversed.reverse().join(".");
+				keyPartsReversed.reverse();
+				const key = keyPartsReversed.join(".");
 				if (!toSort.has(key)) {
 					return;
 				}
@@ -80,7 +81,7 @@ export const rule = createRule({
 						(prop) => propertyNodeMap[prop],
 					);
 				} else {
-					desiredOrder = [...currentOrder].sort((a, b) => {
+					desiredOrder = currentOrder.toSorted((a, b) => {
 						const aKey = (a.key as JsonAST.JSONStringLiteral).value;
 						const bKey = (b.key as JsonAST.JSONStringLiteral).value;
 
@@ -119,6 +120,7 @@ export const rule = createRule({
 									2,
 								)
 									.split("\n")
+									// eslint-disable-next-line un/no-multiple-consecutive-spaces
 									.join("\n  "), // nest indents
 							);
 						},

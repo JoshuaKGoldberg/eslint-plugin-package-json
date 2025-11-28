@@ -37,18 +37,16 @@ export const rule = createRule({
 			for (const element of elements
 				.filter(isNotNullish)
 				.filter(isJSONStringLiteral)
+				// eslint-disable-next-line unicorn/no-array-reverse
 				.reverse()) {
 				if (seen.has(element.value)) {
-					report(element, elements);
+					report(element);
 				} else {
 					seen.add(element.value);
 				}
 			}
 
-			function report(
-				node: JsonAST.JSONNode,
-				elements: (JsonAST.JSONNode | null)[],
-			) {
+			function report(node: JsonAST.JSONNode) {
 				const removal = getNodeToRemove(node);
 				context.report({
 					messageId: "overridden",
@@ -83,6 +81,7 @@ export const rule = createRule({
 					return;
 				}
 
+				// eslint-disable-next-line ts/switch-exhaustiveness-check
 				switch (node.value.type) {
 					case "JSONArrayExpression": {
 						check(node.value.elements, (element) => element);
@@ -106,6 +105,7 @@ export const rule = createRule({
 						}
 						break;
 					}
+					default:
 				}
 			},
 			"Program:exit"() {

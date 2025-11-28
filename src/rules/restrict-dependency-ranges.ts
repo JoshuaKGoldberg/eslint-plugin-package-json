@@ -70,7 +70,7 @@ const SYMBOLS = {
 const changeVersionRange = (version: string, rangeType: RangeType): string => {
 	// We need to handle workspace versions with only the range indicator,
 	// slightly differently
-	if (/^workspace:[*\^~]$/.test(version)) {
+	if (/^workspace:[*^~]$/.test(version)) {
 		switch (rangeType) {
 			case "caret": {
 				return "workspace:^";
@@ -78,6 +78,7 @@ const changeVersionRange = (version: string, rangeType: RangeType): string => {
 			case "pin": {
 				return "workspace:*";
 			}
+			// eslint-disable-next-line unicorn/no-useless-switch-case
 			case "tilde":
 			default: {
 				return "workspace:~";
@@ -86,6 +87,7 @@ const changeVersionRange = (version: string, rangeType: RangeType): string => {
 	}
 
 	return version.replace(
+		// eslint-disable-next-line security/detect-unsafe-regex
 		/^(workspace:)?(\^|~|<=?|>=?)?/,
 		`$1${SYMBOLS[rangeType]}`,
 	);
@@ -115,7 +117,7 @@ export const rule = createRule({
 
 		// Reverse the array, so that subsequent options override previous ones
 		const optionsProvided = Array.isArray(context.options[0])
-			? [...context.options[0]].reverse()
+			? context.options[0].toReversed()
 			: [context.options[0]];
 
 		const optionsArray = optionsProvided.map((option) => ({
@@ -237,6 +239,9 @@ export const rule = createRule({
 								case "tilde": {
 									return isTildeRange;
 								}
+								default: {
+									return false;
+								}
 							}
 						});
 
@@ -281,7 +286,7 @@ export const rule = createRule({
 			changeToPin: "Pin the version.",
 			changeToTilde: "Change to use a tilde range.",
 			wrongRangeType:
-				"This dependency is using the wrong range type.  Acceptable range type(s): {{rangeTypes}}",
+				"This dependency is using the wrong range type. Acceptable range type(s): {{rangeTypes}}",
 		},
 		schema: [
 			{

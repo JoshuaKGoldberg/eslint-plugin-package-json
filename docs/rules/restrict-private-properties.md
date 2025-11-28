@@ -73,7 +73,7 @@ Examples of **correct** code for this rule with default options:
 
 <!-- end auto-generated rule options list -->
 
-### blockedProperties
+### `blockedProperties`
 
 You can customize which properties are flagged in private packages.
 
@@ -105,7 +105,7 @@ Or to check for different properties entirely:
 }
 ```
 
-## When Not To Use It
+## When Not to Use It
 
 Disable this rule if you:
 

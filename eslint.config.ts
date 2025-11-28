@@ -11,12 +11,7 @@ export default eslintConfig({
 		},
 		eslintPlugin: true,
 		import: {
-			overrides: {
-				"import/no-extraneous-dependencies": (severity, options) => [
-					severity,
-					{ ...options?.[0], whitelist: ["vitest"] },
-				],
-			},
+			allowDevDependencies: ["src/tests/**", "**/*.test.ts"],
 		},
 		js: {
 			overrides: {
@@ -27,7 +22,23 @@ export default eslintConfig({
 				],
 			},
 		},
+		markdownLinks: {
+			check: {
+				deadUrls: {
+					options: {
+						ignoreUrls: [
+							// npm gets rate-limited quickly: https://github.com/ota-meshi/eslint-plugin-markdown-links/issues/42
+							String.raw`/^https:\/\/(?:www\.)?npmjs.com\/.*/`,
+						],
+					},
+				},
+			},
+			ignores: ["CHANGELOG.md"],
+		},
 		markdownPreferences: {
+			casingEnforcementIgnorePatterns: [
+				"/[a-z](?:-[a-z]+)+/" /* Rule names */,
+			],
 			delimitersStyle: {
 				// Conflicts with prettier
 				emphasis: {
@@ -35,6 +46,7 @@ export default eslintConfig({
 					strong: "**",
 				},
 			},
+			enforceCasing: "Title Case",
 			overrides: {
 				"markdown-preferences/link-title-style": [
 					2,
@@ -42,12 +54,7 @@ export default eslintConfig({
 				], // Conflicts with prettier
 				"markdown-preferences/table-pipe-alignment": 0, // Conflicts with markdownlint
 			},
-		},
-		noStylisticRules: {
-			enableRules: {
-				disableAllOtherRules: true,
-				rules: true,
-			},
+			wordsToPreserveCasingOf: ["PR", "PRs", "RFC"],
 		},
 		perfectionist: {
 			configSortObjects: {

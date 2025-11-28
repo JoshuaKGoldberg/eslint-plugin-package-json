@@ -55,6 +55,7 @@ ruleTester.run("restrict-private-properties", rule, {
 		{
 			code: '{ "private": true, "files": [] }',
 			errors: [{ messageId: "unnecessaryProperty" }],
+			// eslint-disable-next-line un/no-multiple-consecutive-spaces
 			output: '{ "private": true  }',
 		},
 		// Empty publishConfig object (auto-fixable)

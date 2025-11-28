@@ -54,6 +54,7 @@ ruleTester.run("valid-description", rules["valid-description"], {
 			filename: "package.json",
 		},
 		{
+			// eslint-disable-next-line un/no-multiple-consecutive-spaces
 			code: '{ "description": "   " }',
 			errors: [
 				{

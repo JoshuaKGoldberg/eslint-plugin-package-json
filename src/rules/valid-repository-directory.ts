@@ -15,7 +15,8 @@ import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.ts";
  * @example '/a/b/c', 'd' => false
  */
 function pathEndsWith(parent: string, child: string): boolean {
-	const segments = parent.split(path.sep);
+	// eslint-disable-next-line unicorn/no-array-reverse
+	const segments = parent.split(path.sep).reverse();
 
 	if (parent === child) {
 		// the directory specified was the full, absolute path to the
@@ -25,11 +26,9 @@ function pathEndsWith(parent: string, child: string): boolean {
 
 	// work backwards from the end, adding another path segment to each check
 	let pathToCheck = "";
-	return segments.reverse().some((segment) => {
+	return segments.some((segment) => {
 		pathToCheck = path.join(segment, pathToCheck);
-		if (pathToCheck === child) {
-			return true;
-		}
+		return pathToCheck === child;
 	});
 }
 

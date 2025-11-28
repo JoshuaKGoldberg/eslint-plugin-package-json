@@ -19,12 +19,13 @@ describe("configs", () => {
 		const result = await eslint.lintText(code, {
 			filePath: "package.json",
 		});
+
 		expect(
 			result[0].messages.map((message) => ({
 				message: message.message,
 				ruleId: message.ruleId,
 			})),
-		).toEqual([]);
+		).toStrictEqual([]);
 	});
 
 	it("recommended publishable config works properly", async () => {
@@ -42,12 +43,13 @@ describe("configs", () => {
 		const result = await eslint.lintText(code, {
 			filePath: "package.json",
 		});
+
 		expect(
 			result[0].messages.map((message) => ({
 				message: message.message,
 				ruleId: message.ruleId,
 			})),
-		).toEqual([]);
+		).toStrictEqual([]);
 	});
 
 	it("stylistic config works properly", async () => {
@@ -63,11 +65,12 @@ describe("configs", () => {
 		const result = await eslint.lintText(code, {
 			filePath: "package.json",
 		});
+
 		expect(
 			result[0].messages.map((message) => ({
 				message: message.message,
 				ruleId: message.ruleId,
 			})),
-		).toEqual([]);
+		).toStrictEqual([]);
 	});
 });

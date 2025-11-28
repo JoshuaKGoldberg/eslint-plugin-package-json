@@ -13,7 +13,7 @@ const getDataAndMessageId = (
 		| JsonAST.JSONArrayExpression
 		| JsonAST.JSONObjectExpression
 		| JsonAST.JSONProperty,
-): {
+): null | {
 	data: Record<string, string>;
 	messageId: "emptyExpression" | "emptyFields";
 } => {
@@ -42,6 +42,9 @@ const getDataAndMessageId = (
 				messageId: "emptyFields",
 			};
 		}
+		default: {
+			return null;
+		}
 	}
 };
 
@@ -52,7 +55,12 @@ const report = (
 		| JsonAST.JSONObjectExpression
 		| JsonAST.JSONProperty,
 ) => {
-	const { data, messageId } = getDataAndMessageId(node);
+	const dataAndMessageId = getDataAndMessageId(node);
+	if (!dataAndMessageId) {
+		return;
+	}
+
+	const { data, messageId } = dataAndMessageId;
 	context.report({
 		data,
 		messageId,

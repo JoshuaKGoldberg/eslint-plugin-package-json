@@ -58,10 +58,10 @@ export const rule = createRule({
 				const json = JSON.parse(text) as Record<string, unknown>;
 
 				const allKeys = Object.keys(json);
-				const nonStandardKeys = allKeys.filter(
-					(key) => !requiredOrder.includes(key),
-				);
-				const orderedNonStandardKeys = nonStandardKeys.sort();
+				const orderedNonStandardKeys = allKeys
+					.filter((key) => !requiredOrder.includes(key))
+					// eslint-disable-next-line unicorn/no-array-sort
+					.sort();
 
 				const orderedSource = sortObjectKeys(json, [
 					...requiredOrder,

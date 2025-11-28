@@ -1,5 +1,6 @@
+import type { AST as JsonAST } from "jsonc-eslint-parser";
+
 import { kebabCase } from "change-case";
-import { type AST as JsonAST } from "jsonc-eslint-parser";
 
 import { createRule } from "../createRule.ts";
 
