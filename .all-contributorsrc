@@ -331,6 +331,15 @@
         "ideas",
         "code"
       ]
+    },
+    {
+      "login": "AlexMan123456",
+      "name": "AlexTheMan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/172595284?v=4",
+      "profile": "https://github.com/AlexMan123456",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsSortAlphabetically": true,
