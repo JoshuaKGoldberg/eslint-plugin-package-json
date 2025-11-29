@@ -1,6 +1,6 @@
-import { ESLint, Linter } from "eslint";
+import { ESLint, type Linter } from "eslint";
 import { readFile } from "node:fs/promises";
-import { resolve } from "node:path";
+import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import plugin from "../index.ts";
@@ -13,18 +13,19 @@ describe("configs", () => {
 			overrideConfigFile: true,
 		});
 		const code = await readFile(
-			resolve(import.meta.filename, "../../../package.json"),
+			path.resolve(import.meta.filename, "../../../package.json"),
 			"utf8",
 		);
 		const result = await eslint.lintText(code, {
 			filePath: "package.json",
 		});
+
 		expect(
 			result[0].messages.map((message) => ({
 				message: message.message,
 				ruleId: message.ruleId,
 			})),
-		).toEqual([]);
+		).toStrictEqual([]);
 	});
 
 	it("recommended publishable config works properly", async () => {
@@ -36,18 +37,19 @@ describe("configs", () => {
 			overrideConfigFile: true,
 		});
 		const code = await readFile(
-			resolve(import.meta.filename, "../../../package.json"),
+			path.resolve(import.meta.filename, "../../../package.json"),
 			"utf8",
 		);
 		const result = await eslint.lintText(code, {
 			filePath: "package.json",
 		});
+
 		expect(
 			result[0].messages.map((message) => ({
 				message: message.message,
 				ruleId: message.ruleId,
 			})),
-		).toEqual([]);
+		).toStrictEqual([]);
 	});
 
 	it("stylistic config works properly", async () => {
@@ -57,17 +59,18 @@ describe("configs", () => {
 			overrideConfigFile: true,
 		});
 		const code = await readFile(
-			resolve(import.meta.filename, "../../../package.json"),
+			path.resolve(import.meta.filename, "../../../package.json"),
 			"utf8",
 		);
 		const result = await eslint.lintText(code, {
 			filePath: "package.json",
 		});
+
 		expect(
 			result[0].messages.map((message) => ({
 				message: message.message,
 				ruleId: message.ruleId,
 			})),
-		).toEqual([]);
+		).toStrictEqual([]);
 	});
 });

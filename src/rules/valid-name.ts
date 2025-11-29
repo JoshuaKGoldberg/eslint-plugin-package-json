@@ -36,14 +36,16 @@ export const rule = createRule({
 
 				const { errors, warnings } = validate(node.value.value);
 				const complaints = [...(errors ?? []), ...(warnings ?? [])];
-				if (!complaints.length) {
+				if (complaints.length === 0) {
 					return;
 				}
 
 				context.report({
 					data: {
 						complaints: complaints
-							.map((error) => error.substring(0, error.length))
+							.map((error) =>
+								error.slice(0, Math.max(0, error.length)),
+							)
 							.join("; "),
 					},
 					messageId: "invalid",

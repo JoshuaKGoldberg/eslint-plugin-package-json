@@ -27,7 +27,7 @@ export const createSimpleValidPropertyRule = (
 					return;
 				}
 
-				if (result.issues.length) {
+				if (result.issues.length > 0) {
 					for (const issue of result.issues) {
 						context.report({
 							data: {
@@ -45,7 +45,7 @@ export const createSimpleValidPropertyRule = (
 				// If the value is an object, and has child results with issues, then report those too
 				if (
 					node.type === "JSONObjectExpression" &&
-					childrenWithIssues.length
+					childrenWithIssues.length > 0
 				) {
 					for (const childResult of childrenWithIssues) {
 						const childNode = node.properties[childResult.index];
@@ -55,7 +55,7 @@ export const createSimpleValidPropertyRule = (
 				// If the value is an array, and has child results with issues, then report those too
 				else if (
 					node.type === "JSONArrayExpression" &&
-					childrenWithIssues.length
+					childrenWithIssues.length > 0
 				) {
 					for (const childResult of childrenWithIssues) {
 						const childNode = node.elements[childResult.index];
@@ -86,7 +86,7 @@ export const createSimpleValidPropertyRule = (
 		meta: {
 			docs: {
 				category: "Best Practices",
-				description: `Enforce that the \`${propertyName}\`${aliases.length ? ` (also: ${aliases.map((alias) => `\`${alias}\``).join(", ")})` : ""} property is valid.`,
+				description: `Enforce that the \`${propertyName}\`${aliases.length > 0 ? ` (also: ${aliases.map((alias) => `\`${alias}\``).join(", ")})` : ""} property is valid.`,
 				recommended: true,
 			},
 			messages: {

@@ -260,7 +260,7 @@ ruleTester.run("unique-dependencies", rule, {
 	],
 
 	valid: [
-		`{}`,
+		"{}",
 		`{
 	"dependencies": {}
 }`,

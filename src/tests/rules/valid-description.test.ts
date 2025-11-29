@@ -4,7 +4,7 @@ import { ruleTester } from "./ruleTester.ts";
 ruleTester.run("valid-description", rules["valid-description"], {
 	invalid: [
 		{
-			code: `{ "description": null }`,
+			code: '{ "description": null }',
 			errors: [
 				{
 					message:
@@ -14,7 +14,7 @@ ruleTester.run("valid-description", rules["valid-description"], {
 			filename: "package.json",
 		},
 		{
-			code: `{ "description": 123 }`,
+			code: '{ "description": 123 }',
 			errors: [
 				{
 					message:
@@ -24,7 +24,7 @@ ruleTester.run("valid-description", rules["valid-description"], {
 			filename: "package.json",
 		},
 		{
-			code: `{ "description": true }`,
+			code: '{ "description": true }',
 			errors: [
 				{
 					message:
@@ -34,7 +34,7 @@ ruleTester.run("valid-description", rules["valid-description"], {
 			filename: "package.json",
 		},
 		{
-			code: `{ "description": [] }`,
+			code: '{ "description": [] }',
 			errors: [
 				{
 					message:
@@ -44,7 +44,7 @@ ruleTester.run("valid-description", rules["valid-description"], {
 			filename: "package.json",
 		},
 		{
-			code: `{ "description": "" }`,
+			code: '{ "description": "" }',
 			errors: [
 				{
 					message:
@@ -54,7 +54,8 @@ ruleTester.run("valid-description", rules["valid-description"], {
 			filename: "package.json",
 		},
 		{
-			code: `{ "description": "   " }`,
+			// eslint-disable-next-line un/no-multiple-consecutive-spaces
+			code: '{ "description": "   " }',
 			errors: [
 				{
 					message:
@@ -64,7 +65,7 @@ ruleTester.run("valid-description", rules["valid-description"], {
 			filename: "package.json",
 		},
 		{
-			code: `{ "description": {} }`,
+			code: '{ "description": {} }',
 			errors: [
 				{
 					message:
@@ -77,11 +78,11 @@ ruleTester.run("valid-description", rules["valid-description"], {
 
 	valid: [
 		{
-			code: `{}`,
+			code: "{}",
 			filename: "package.json",
 		},
 		{
-			code: `{ "description": "The Fragile" }`,
+			code: '{ "description": "The Fragile" }',
 			filename: "package.json",
 		},
 	],

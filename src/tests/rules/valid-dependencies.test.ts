@@ -129,6 +129,6 @@ ruleTester.run("valid-dependencies", rules["valid-dependencies"], {
     "efrim-manuel-menuck": "npm:bar@^1.0.0"
   }
 }`,
-		`{ "dependencies": {} }`,
+		'{ "dependencies": {} }',
 	],
 });

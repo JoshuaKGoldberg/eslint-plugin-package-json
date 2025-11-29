@@ -22,7 +22,7 @@
 
 This package requires [ESLint](http://eslint.org) >=8:
 
-```shell
+```sh
 npm install eslint eslint-plugin-package-json --save-dev
 ```
 
@@ -91,11 +91,11 @@ export default [
 ];
 ```
 
-### Legacy Recommended Config (deprecated)
+### Legacy Recommended Config (deprecated) <!-- eslint-disable-line markdown-preferences/heading-casing -->
 
 Usage with ESLint's legacy ("eslintrc") format requires also installing [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser):
 
-```shell
+```sh
 npm install jsonc-eslint-parser --save-dev
 ```
 
@@ -161,7 +161,7 @@ export default {
 #### `enforceForPrivate`
 
 - **Type:** `boolean`
-- **Default:** [see below]
+- **Default:** [see below] <!-- eslint-disable-line markdown/no-missing-label-refs -->
 
 When a package.json file has a `"private": true` field, it indicates that the package will not be published to npm (or another online registry).
 Some fields that are nice to have in public packages become less relevant when a package is private.
@@ -185,6 +185,9 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 ## Supported Rules
 
 <!-- prettier-ignore-start -->
+
+<!-- eslint-disable markdown-preferences/no-multi-spaces -->
+
 <!-- begin auto-generated rules list -->
 
 💼 Configurations enabled in.\
@@ -265,6 +268,9 @@ The default settings don't conflict, and Prettier plugins can quickly fix up ord
 | [valid-workspaces](docs/rules/valid-workspaces.md)                         | Enforce that the `workspaces` property is valid.                                                                                                                                             | ✔️ ✅ 📦 |    |    |    |
 
 <!-- end auto-generated rules list -->
+
+<!-- eslint-enable markdown-preferences/no-multi-spaces -->
+
 <!-- prettier-ignore-end -->
 
 These rules only run on `package.json` files; they will ignore all other files being linted.
@@ -276,7 +282,7 @@ We never _want_ to remove things, when we're building them!
 But the reality is that libraries evolve and deprecations are a fact of life.
 Following are the different timeframes that we've defined as it relates to deprecating APIs in this project.
 
-### RFC Timeframe (6 weeks)
+### RFC Timeframe (6 weeks) <!-- eslint-disable-line markdown-preferences/heading-casing -->
 
 When some aspect of our API is going to be deprecated (and eventually removed), it must initially go through an RFC phase.
 Whoever's motivating the removal of the api, should create an RFC issue explaining the proposal and inviting feedback from the community.
@@ -284,7 +290,7 @@ That RFC should remain active for at least 6 weeks.
 The RFC text should make clear what the target date is for closing the RFC.
 Once the RFC period is over, if the removal is still moving forward, the API(s) should be officially deprecated.
 
-### Removal Timeframe (6 months)
+### Removal Timeframe (6 months) <!-- eslint-disable-line markdown-preferences/heading-casing -->
 
 Once an API has been marked as deprecated, it will remain intact for at least 6 months.
 After 6 months from the date of deprecation, the API is subject to removal.
@@ -297,9 +303,13 @@ Thanks! 🗂
 ## Contributors
 
 <!-- spellchecker: disable -->
+
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
 <!-- prettier-ignore-start -->
+
 <!-- markdownlint-disable -->
+
 <table>
   <tbody>
     <tr>
@@ -349,9 +359,11 @@ Thanks! 🗂
 </table>
 
 <!-- markdownlint-restore -->
+
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
 <!-- spellchecker: enable -->
 
 ## Appreciation

@@ -1,44 +1,50 @@
+import type * as ESTree from "estree";
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import {
 	fixRemoveArrayElement,
 	fixRemoveObjectProperty,
 } from "eslint-fix-utils";
-import * as ESTree from "estree";
 
-import { createRule, PackageJsonRuleContext } from "../createRule.ts";
+import { createRule, type PackageJsonRuleContext } from "../createRule.ts";
 
 const getDataAndMessageId = (
 	node:
 		| JsonAST.JSONArrayExpression
 		| JsonAST.JSONObjectExpression
 		| JsonAST.JSONProperty,
-): {
+): null | {
 	data: Record<string, string>;
 	messageId: "emptyExpression" | "emptyFields";
 } => {
 	switch (node.type) {
-		case "JSONArrayExpression":
+		case "JSONArrayExpression": {
 			return {
 				data: {
 					expressionType: "array",
 				},
 				messageId: "emptyExpression",
 			};
-		case "JSONObjectExpression":
+		}
+		case "JSONObjectExpression": {
 			return {
 				data: {
 					expressionType: "object",
 				},
 				messageId: "emptyExpression",
 			};
-		case "JSONProperty":
+		}
+		case "JSONProperty": {
 			return {
 				data: {
 					field: (node.key as JsonAST.JSONStringLiteral).value,
 				},
 				messageId: "emptyFields",
 			};
+		}
+		default: {
+			return null;
+		}
 	}
 };
 
@@ -49,7 +55,12 @@ const report = (
 		| JsonAST.JSONObjectExpression
 		| JsonAST.JSONProperty,
 ) => {
-	const { data, messageId } = getDataAndMessageId(node);
+	const dataAndMessageId = getDataAndMessageId(node);
+	if (!dataAndMessageId) {
+		return;
+	}
+
+	const { data, messageId } = dataAndMessageId;
 	context.report({
 		data,
 		messageId,
@@ -105,11 +116,12 @@ export const rule = createRule({
 				if (!topLevelProperty) {
 					return;
 				}
-				if (!node.elements.length) {
-					const topLevelPropertyName = topLevelProperty.value;
-					if (!ignoreProperties.includes(topLevelPropertyName)) {
-						report(context, getNode(node));
-					}
+				if (node.elements.length > 0) {
+					return;
+				}
+				const topLevelPropertyName = topLevelProperty.value;
+				if (!ignoreProperties.includes(topLevelPropertyName)) {
+					report(context, getNode(node));
 				}
 			},
 			JSONObjectExpression(node) {
@@ -118,11 +130,12 @@ export const rule = createRule({
 				if (!topLevelProperty) {
 					return;
 				}
-				if (!node.properties.length) {
-					const topLevelPropertyName = topLevelProperty.value;
-					if (!ignoreProperties.includes(topLevelPropertyName)) {
-						report(context, getNode(node));
-					}
+				if (node.properties.length > 0) {
+					return;
+				}
+				const topLevelPropertyName = topLevelProperty.value;
+				if (!ignoreProperties.includes(topLevelPropertyName)) {
+					report(context, getNode(node));
 				}
 			},
 		};

@@ -1,10 +1,10 @@
+import type * as ESTree from "estree";
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import {
 	fixRemoveArrayElement,
 	fixRemoveObjectProperty,
 } from "eslint-fix-utils";
-import * as ESTree from "estree";
 
 import { createRule } from "../createRule.ts";
 import { isJSONStringLiteral, isNotNullish } from "../utils/predicates.ts";
@@ -37,18 +37,16 @@ export const rule = createRule({
 			for (const element of elements
 				.filter(isNotNullish)
 				.filter(isJSONStringLiteral)
+				// eslint-disable-next-line unicorn/no-array-reverse
 				.reverse()) {
 				if (seen.has(element.value)) {
-					report(element, elements);
+					report(element);
 				} else {
 					seen.add(element.value);
 				}
 			}
 
-			function report(
-				node: JsonAST.JSONNode,
-				elements: (JsonAST.JSONNode | null)[],
-			) {
+			function report(node: JsonAST.JSONNode) {
 				const removal = getNodeToRemove(node);
 				context.report({
 					messageId: "overridden",
@@ -83,16 +81,18 @@ export const rule = createRule({
 					return;
 				}
 
+				// eslint-disable-next-line ts/switch-exhaustiveness-check
 				switch (node.value.type) {
-					case "JSONArrayExpression":
+					case "JSONArrayExpression": {
 						check(node.value.elements, (element) => element);
 						break;
-					case "JSONObjectExpression":
+					}
+					case "JSONObjectExpression": {
 						check(
 							node.value.properties.map(
 								(property) => property.key,
 							),
-							// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+							// eslint-disable-next-line ts/no-non-null-assertion
 							(property) => property.parent!,
 						);
 						if (
@@ -104,6 +104,8 @@ export const rule = createRule({
 								node.value.properties;
 						}
 						break;
+					}
+					default:
 				}
 			},
 			"Program:exit"() {
@@ -115,7 +117,7 @@ export const rule = createRule({
 						.filter(isJSONStringLiteral)
 						.map((dependencyNameNode) => dependencyNameNode.value),
 				);
-				if (!dependencyNames.size) {
+				if (dependencyNames.size === 0) {
 					return;
 				}
 

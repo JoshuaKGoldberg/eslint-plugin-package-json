@@ -106,9 +106,9 @@ ruleTester.run("valid-name", rule, {
 	],
 	valid: [
 		"{}",
-		`{ "name": "valid-package-name" }`,
-		`{ "name": "@scoped/valid-package-name" }`,
-		`{ "name": "InvalidPackageNameWithPrivateTrue", "private": true }`,
-		`{ "name": "InvalidPackageNameWithPrivateTrue", "private": "true" }`,
+		'{ "name": "valid-package-name" }',
+		'{ "name": "@scoped/valid-package-name" }',
+		'{ "name": "InvalidPackageNameWithPrivateTrue", "private": true }',
+		'{ "name": "InvalidPackageNameWithPrivateTrue", "private": "true" }',
 	],
 });

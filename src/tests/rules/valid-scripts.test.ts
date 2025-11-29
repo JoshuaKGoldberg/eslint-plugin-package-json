@@ -127,7 +127,7 @@ ruleTester.run("valid-scripts", rules["valid-scripts"], {
 	],
 	valid: [
 		"{}",
-		`{ "scripts": { "silver-mt-zion": "node ./silver-mt-zion.js" } }`,
-		`{ "scripts": { "silver-mt-zion": "node ./silver-mt-zion.js", "nin": "node ./nin.js" } }`,
+		'{ "scripts": { "silver-mt-zion": "node ./silver-mt-zion.js" } }',
+		'{ "scripts": { "silver-mt-zion": "node ./silver-mt-zion.js", "nin": "node ./nin.js" } }',
 	],
 });

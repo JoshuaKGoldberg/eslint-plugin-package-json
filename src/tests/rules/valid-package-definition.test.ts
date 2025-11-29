@@ -4,7 +4,7 @@ import { ruleTester } from "./ruleTester.ts";
 ruleTester.run("valid-package-definition", rule, {
 	invalid: [
 		{
-			code: `{ "mane": "invalid-package" }`,
+			code: '{ "mane": "invalid-package" }',
 
 			errors: [
 				{
@@ -17,7 +17,7 @@ ruleTester.run("valid-package-definition", rule, {
 			filename: "package.json",
 		},
 		{
-			code: `{ "horizon": "wireless" }`,
+			code: '{ "horizon": "wireless" }',
 
 			errors: [
 				{
@@ -57,7 +57,7 @@ ruleTester.run("valid-package-definition", rule, {
 			filename: "packages/nested/package.json",
 		},
 		{
-			code: `({ "whatever": "cuz its not a package file" })`,
+			code: '({ "whatever": "cuz its not a package file" })',
 
 			filename: "not-a-package.json",
 		},
@@ -79,7 +79,7 @@ ruleTester.run("valid-package-definition", rule, {
 			filename: "package.json",
 		},
 		{
-			code: `{ "thee-silver": "mt-zion" }`,
+			code: '{ "thee-silver": "mt-zion" }',
 			filename: "packages/nested/package.json",
 			options: [
 				{

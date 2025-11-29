@@ -76,7 +76,7 @@ Examples of **correct** code for this rule:
 }
 ```
 
-## When Not To Use It
+## When Not to Use It
 
 Disable this rule if you:
 

@@ -37,7 +37,7 @@ export const rule = createRule({
 				for (
 					let currNode: JsonAST.JSONNode | null | undefined =
 						node.parent;
-					// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+					// eslint-disable-next-line ts/no-unnecessary-condition
 					currNode;
 					currNode = currNode.parent
 				) {
@@ -50,7 +50,8 @@ export const rule = createRule({
 						return;
 					}
 				}
-				const key = keyPartsReversed.reverse().join(".");
+				keyPartsReversed.reverse();
+				const key = keyPartsReversed.join(".");
 				if (!toSort.has(key)) {
 					return;
 				}
@@ -59,14 +60,7 @@ export const rule = createRule({
 				let desiredOrder: JsonAST.JSONProperty[];
 
 				// If it's any property other than `scripts`, simply sort lexicographically
-				if (keyPartsReversed.at(-1) !== "scripts") {
-					desiredOrder = currentOrder.slice().sort((a, b) => {
-						const aKey = (a.key as JsonAST.JSONStringLiteral).value;
-						const bKey = (b.key as JsonAST.JSONStringLiteral).value;
-
-						return aKey > bKey ? 1 : -1;
-					});
-				} else {
+				if (keyPartsReversed.at(-1) === "scripts") {
 					// For scripts we'll use `sort-package-json`
 					const scriptsSource = context.sourceCode.getText(node);
 					const minimalJson = JSON.parse(`{${scriptsSource}}`) as {
@@ -86,6 +80,13 @@ export const rule = createRule({
 					desiredOrder = Object.keys(sortedScripts).map(
 						(prop) => propertyNodeMap[prop],
 					);
+				} else {
+					desiredOrder = currentOrder.toSorted((a, b) => {
+						const aKey = (a.key as JsonAST.JSONStringLiteral).value;
+						const bKey = (b.key as JsonAST.JSONStringLiteral).value;
+
+						return aKey > bKey ? 1 : -1;
+					});
 				}
 
 				if (
@@ -119,6 +120,7 @@ export const rule = createRule({
 									2,
 								)
 									.split("\n")
+									// eslint-disable-next-line un/no-multiple-consecutive-spaces
 									.join("\n  "), // nest indents
 							);
 						},
@@ -134,7 +136,7 @@ export const rule = createRule({
 		};
 	},
 	meta: {
-		defaultOptions: [Array.from(defaultCollections)],
+		defaultOptions: [[...defaultCollections]],
 		docs: {
 			category: "Best Practices",
 			description:

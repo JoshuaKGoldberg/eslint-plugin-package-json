@@ -127,11 +127,11 @@ ruleTester.run("valid-bin", rules["valid-bin"], {
 	],
 	valid: [
 		"{}",
-		`{ "bin": "./silver-mt-zion.js" }`,
-		`{ "bin": "silver-mt-zion.js" }`,
-		`{ "bin": { "silver-mt-zion": "./silver-mt-zion.js" } }`,
-		`{ "bin": { "silver-mt-zion": "silver-mt-zion.js" } }`,
-		`{ "bin": { "silver-mt-zion": "silver-mt-zion.js", "nin": "./nin.js" } }`,
-		`{ "bin": { "silverMtZion": "silver-mt-zion.js", "NIN": "./nin.js" } }`,
+		'{ "bin": "./silver-mt-zion.js" }',
+		'{ "bin": "silver-mt-zion.js" }',
+		'{ "bin": { "silver-mt-zion": "./silver-mt-zion.js" } }',
+		'{ "bin": { "silver-mt-zion": "silver-mt-zion.js" } }',
+		'{ "bin": { "silver-mt-zion": "silver-mt-zion.js", "nin": "./nin.js" } }',
+		'{ "bin": { "silverMtZion": "silver-mt-zion.js", "NIN": "./nin.js" } }',
 	],
 });

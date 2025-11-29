@@ -65,8 +65,8 @@ ruleTester.run("valid-config", rules["valid-config"], {
 	],
 	valid: [
 		"{}",
-		`{ "config": { "silver-mt-zion": "node ./silver-mt-zion.js" } }`,
-		`{ "config": { "silver-mt-zion": "node ./silver-mt-zion.js", "nin": "node ./nin.js" } }`,
-		`{ "config": { "silver-mt-zion": {"leadSinger": "Efrim Manuel Menuck"}, "nin": "node ./nin.js" } }`,
+		'{ "config": { "silver-mt-zion": "node ./silver-mt-zion.js" } }',
+		'{ "config": { "silver-mt-zion": "node ./silver-mt-zion.js", "nin": "node ./nin.js" } }',
+		'{ "config": { "silver-mt-zion": {"leadSinger": "Efrim Manuel Menuck"}, "nin": "node ./nin.js" } }',
 	],
 });

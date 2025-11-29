@@ -68,7 +68,7 @@ ruleTester.run("valid-publishConfig", rules["valid-publishConfig"], {
 			errors: [
 				{
 					data: {
-						error: `the value "not right" is not valid. Valid types are: public, restricted`,
+						error: 'the value "not right" is not valid. Valid types are: public, restricted',
 					},
 					line: 3,
 					messageId: "validationError",

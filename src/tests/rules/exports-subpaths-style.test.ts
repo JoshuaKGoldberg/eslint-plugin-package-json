@@ -7,7 +7,7 @@ ruleTester.run("exports-subpaths-style", rule, {
 		// Explicit mode (default) - implicit formats → explicit
 		// ============================================================
 		{
-			code: `{ "exports": "./index.js" }`,
+			code: '{ "exports": "./index.js" }',
 			errors: [{ messageId: "preferExplicit", type: "JSONLiteral" }],
 			output: `{ "exports": {
   ".": "./index.js"
@@ -33,21 +33,21 @@ ruleTester.run("exports-subpaths-style", rule, {
 			}`,
 		},
 		{
-			code: `{ "exports": 123 }`,
+			code: '{ "exports": 123 }',
 			errors: [{ messageId: "preferExplicit", type: "JSONLiteral" }],
 			output: `{ "exports": {
   ".": 123
 } }`,
 		},
 		{
-			code: `{ "exports": true }`,
+			code: '{ "exports": true }',
 			errors: [{ messageId: "preferExplicit", type: "JSONLiteral" }],
 			output: `{ "exports": {
   ".": true
 } }`,
 		},
 		{
-			code: `{ "exports": null }`,
+			code: '{ "exports": null }',
 			errors: [{ messageId: "preferExplicit", type: "JSONLiteral" }],
 			output: `{ "exports": {
   ".": null
@@ -55,7 +55,7 @@ ruleTester.run("exports-subpaths-style", rule, {
 		},
 		// With explicit option
 		{
-			code: `{ "exports": "./index.js" }`,
+			code: '{ "exports": "./index.js" }',
 			errors: [{ messageId: "preferExplicit", type: "JSONLiteral" }],
 			options: [{ prefer: "explicit" }],
 			output: `{ "exports": {
@@ -159,13 +159,13 @@ ruleTester.run("exports-subpaths-style", rule, {
 			}
 		}`,
 		// Root-level arrays are implicit format (not transformable)
-		`{ "exports": ["./index.js"] }`,
+		'{ "exports": ["./index.js"] }',
 
 		// ============================================================
 		// Implicit mode - already in implicit format
 		// ============================================================
 		{
-			code: `{ "exports": "./index.js" }`,
+			code: '{ "exports": "./index.js" }',
 			options: [{ prefer: "implicit" }],
 		},
 		{
@@ -198,7 +198,7 @@ ruleTester.run("exports-subpaths-style", rule, {
 		},
 		// Root-level arrays are implicit format
 		{
-			code: `{ "exports": ["./index.js"] }`,
+			code: '{ "exports": ["./index.js"] }',
 			options: [{ prefer: "implicit" }],
 		},
 

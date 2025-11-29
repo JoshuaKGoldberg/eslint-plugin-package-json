@@ -108,5 +108,5 @@ ruleTester.run("valid-files", rules["valid-files"], {
 			],
 		},
 	],
-	valid: ["{}", `{ "files": [] }`, `{ "files": ["CHANGELOG.md", "dist/"] }`],
+	valid: ["{}", '{ "files": [] }', '{ "files": ["CHANGELOG.md", "dist/"] }'],
 });

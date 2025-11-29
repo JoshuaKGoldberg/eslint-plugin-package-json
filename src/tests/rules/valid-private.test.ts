@@ -79,5 +79,5 @@ ruleTester.run("valid-private", rules["valid-private"], {
 			],
 		},
 	],
-	valid: ["{}", `{ "private": true }`, `{ "private": false }`],
+	valid: ["{}", '{ "private": true }', '{ "private": false }'],
 });

@@ -64,5 +64,5 @@ ruleTester.run("valid-main", rules["valid-main"], {
 			],
 		},
 	],
-	valid: ["{}", `{ "main": "./index.js" }`, `{ "main": "index.js" }`],
+	valid: ["{}", '{ "main": "./index.js" }', '{ "main": "index.js" }'],
 });

@@ -52,11 +52,11 @@ ruleTester.run("scripts-name-casing", rule, {
 	],
 	valid: [
 		"{}",
-		`{ "scripts": "./silver-mt-zion.js" }`,
-		`{ "scripts": "silver-mt-zion.js" }`,
-		`{ "scripts": { "silver-mt-zion": "./silver-mt-zion.js" } }`,
-		`{ "scripts": { "silver-mt-zion": "silver-mt-zion.js", "nin": "./nin.js" } }`,
-		`{ "scripts": { "silver-mt-zion": "silver-mt-zion.js", "godspeed-you:black-emperor": "./gybe.js", "n:i:n": "./nin.js" } }`,
-		`{ "scripts": { "prepublishOnly": "npm run build" } }`,
+		'{ "scripts": "./silver-mt-zion.js" }',
+		'{ "scripts": "silver-mt-zion.js" }',
+		'{ "scripts": { "silver-mt-zion": "./silver-mt-zion.js" } }',
+		'{ "scripts": { "silver-mt-zion": "silver-mt-zion.js", "nin": "./nin.js" } }',
+		'{ "scripts": { "silver-mt-zion": "silver-mt-zion.js", "godspeed-you:black-emperor": "./gybe.js", "n:i:n": "./nin.js" } }',
+		'{ "scripts": { "prepublishOnly": "npm run build" } }',
 	],
 });

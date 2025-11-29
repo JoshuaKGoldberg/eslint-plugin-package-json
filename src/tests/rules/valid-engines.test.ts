@@ -124,7 +124,7 @@ ruleTester.run("valid-engines", rules["valid-engines"], {
 		},
 	],
 	valid: [
-		`{ "engines": { "node": "^24.11.0" } }`,
-		`{ "engines": { "node": "^24.11.0", "npm": "Please use pnpm", "pnpm": "^10" } }`,
+		'{ "engines": { "node": "^24.11.0" } }',
+		'{ "engines": { "node": "^24.11.0", "npm": "Please use pnpm", "pnpm": "^10" } }',
 	],
 });

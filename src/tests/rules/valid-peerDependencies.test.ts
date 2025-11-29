@@ -129,6 +129,6 @@ ruleTester.run("valid-peerDependencies", rules["valid-peerDependencies"], {
     "efrim-manuel-menuck": "npm:bar@^1.0.0"
   }
 }`,
-		`{ "peerDependencies": {} }`,
+		'{ "peerDependencies": {} }',
 	],
 });

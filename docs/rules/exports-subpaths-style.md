@@ -34,7 +34,7 @@ Both formats are functionally equivalent for a single root export, but using one
 
 > 💡 This rule is especially useful in monorepos where consistency across multiple `package.json` files is important.
 
-### Examples with Default Options (prefer: "explicit")
+### Examples With Default Options (`prefer: "explicit"`)
 
 Examples of **incorrect** code with default options:
 
@@ -83,7 +83,7 @@ Examples of **correct** code with default options:
 }
 ```
 
-### Examples with prefer: "implicit"
+### Examples With `prefer: "implicit"`
 
 Examples of **incorrect** code with `{ "prefer": "implicit" }`:
 
@@ -144,7 +144,7 @@ Note: Multiple subpaths always require the explicit object format and are not tr
 
 <!-- end auto-generated rule options list -->
 
-### prefer
+### `prefer`
 
 The `prefer` option specifies which format to enforce:
 
@@ -168,7 +168,7 @@ Default: `"explicit"`
 
 This rule is **autofixable**; run `eslint` with the `--fix` option to automatically convert between formats.
 
-## When Not To Use It
+## When Not to Use It
 
 If your project doesn't use the `exports` field or you don't have a preference for consistency in exports formatting, you can disable this rule.
 

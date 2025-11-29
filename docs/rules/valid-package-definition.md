@@ -70,7 +70,7 @@ For now, the `recommended` config sets `ignoreProperties` to ignore those that a
 Once all `valid-*` rules are implemented, `valid-package-definition` will be removed from `recommended`.
 See [#850 💬 Discussion: Which require- and valid- rules should be in the recommended config?](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/850) for the list of rules that will be added.
 
-## When Not To Use It
+## When Not to Use It
 
 npm may complain, but it works perfectly with many package files that do not violate spec.
 If you don't mind those complaints then you can disable this rule.

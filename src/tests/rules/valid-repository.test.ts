@@ -76,14 +76,14 @@ ruleTester.run("valid-repository", rules["valid-repository"], {
 			errors: [
 				{
 					data: {
-						error: `repository is missing property "type", which should be the type of repository this is (e.g. "git")`,
+						error: 'repository is missing property "type", which should be the type of repository this is (e.g. "git")',
 					},
 					line: 2,
 					messageId: "validationError",
 				},
 				{
 					data: {
-						error: `repository is missing property "url", which should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")`,
+						error: 'repository is missing property "url", which should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")',
 					},
 					line: 2,
 					messageId: "validationError",
@@ -102,14 +102,14 @@ ruleTester.run("valid-repository", rules["valid-repository"], {
 			errors: [
 				{
 					data: {
-						error: `repository is missing property "type", which should be the type of repository this is (e.g. "git")`,
+						error: 'repository is missing property "type", which should be the type of repository this is (e.g. "git")',
 					},
 					line: 2,
 					messageId: "validationError",
 				},
 				{
 					data: {
-						error: `repository is missing property "url", which should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")`,
+						error: 'repository is missing property "url", which should be the url to a repository (e.g. "git+https://github.com/npm/cli.git")',
 					},
 					line: 2,
 					messageId: "validationError",
@@ -169,10 +169,9 @@ ruleTester.run("valid-repository", rules["valid-repository"], {
 			"git://github.com/JoshuaKGoldberg/package-json-validator.git",
 			"git://github.com/JoshuaKGoldberg/package-json-validator",
 			"git@github.com:JoshuaKGoldberg/package-json-validator.git",
-		]
-			.map((value) => [
-				{
-					code: `{
+		].flatMap((value) => [
+			{
+				code: `{
 	"repository": {
       "type": "git",
       "url": "${value}",
@@ -180,20 +179,19 @@ ruleTester.run("valid-repository", rules["valid-repository"], {
     }
 }
 `,
-					name: `${value} (with directory)`,
-				},
-				{
-					code: `{
+				name: `${value} (with directory)`,
+			},
+			{
+				code: `{
 	"repository": {
       "type": "git",
       "url": "${value}"
     }
 }
 `,
-					name: `${value} (without directory)`,
-				},
-			])
-			.flat(),
+				name: `${value} (without directory)`,
+			},
+		]),
 		...[
 			"npm/example",
 			"github:npm/example",

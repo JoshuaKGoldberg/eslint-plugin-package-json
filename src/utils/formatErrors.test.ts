@@ -26,7 +26,9 @@ describe("formatErrors", () => {
 	});
 
 	it("should preserve leading and trailing whitespace in error messages", () => {
+		// eslint-disable-next-line un/no-multiple-consecutive-spaces
 		expect(formatErrors(["  error 1  ", "error 2\n", "\terror 3"])).toBe(
+			// eslint-disable-next-line un/no-multiple-consecutive-spaces
 			"\n -   error 1  \n - error 2\n\n - \terror 3",
 		);
 	});

@@ -374,18 +374,18 @@ ruleTester.run("no-empty-fields", rule, {
 		},
 	],
 	valid: [
-		`{}`,
-		`[]`,
-		`{ "name": "test", "files": ["index.js"] }`,
-		`{ "name": "test", "peerDependencies": { "eslint": ">=8.0.0" } }`,
-		`{ "name": "test", "dependencies": { "eslint": ">=8.0.0" } }`,
-		`{ "name": "test", "devDependencies": { "eslint": ">=8.0.0" } }`,
-		`{ "name": "test", "scripts": { "lint": "eslint --fix ." } }`,
-		`{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true } } }`,
-		`{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true, "test": [{"test": ["1"]}] } } }`,
-		`{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true, "test": ["field1"] } } }`,
+		"{}",
+		"[]",
+		'{ "name": "test", "files": ["index.js"] }',
+		'{ "name": "test", "peerDependencies": { "eslint": ">=8.0.0" } }',
+		'{ "name": "test", "dependencies": { "eslint": ">=8.0.0" } }',
+		'{ "name": "test", "devDependencies": { "eslint": ">=8.0.0" } }',
+		'{ "name": "test", "scripts": { "lint": "eslint --fix ." } }',
+		'{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true } } }',
+		'{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true, "test": [{"test": ["1"]}] } } }',
+		'{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true, "test": ["field1"] } } }',
 		{
-			code: `{ "name": "test", "browserslist": [] }`,
+			code: '{ "name": "test", "browserslist": [] }',
 			options: [
 				{
 					ignoreProperties: ["browserslist"],
@@ -393,7 +393,7 @@ ruleTester.run("no-empty-fields", rule, {
 			],
 		},
 		{
-			code: `{ "name": "test", "browserslist": { "development": [], "production": [ "last 1 version", "> 1%", "not dead" ] } }`,
+			code: '{ "name": "test", "browserslist": { "development": [], "production": [ "last 1 version", "> 1%", "not dead" ] } }',
 			options: [
 				{
 					ignoreProperties: ["browserslist"],

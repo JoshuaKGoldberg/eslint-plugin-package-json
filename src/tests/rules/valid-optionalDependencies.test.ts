@@ -132,7 +132,7 @@ ruleTester.run(
     "efrim-manuel-menuck": "npm:bar@^1.0.0"
   }
 }`,
-			`{ "optionalDependencies": {} }`,
+			'{ "optionalDependencies": {} }',
 		],
 	},
 );

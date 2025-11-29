@@ -1,4 +1,5 @@
-import { type ESLint, type Linter } from "eslint";
+import type { ESLint, Linter } from "eslint";
+
 import * as parserJsonc from "jsonc-eslint-parser";
 import { createRequire } from "node:module";
 
@@ -25,13 +26,6 @@ import { rule as validPackageDefinition } from "./rules/valid-package-definition
 import { rules as basicValidRules } from "./rules/valid-properties.ts";
 import { rule as validRepositoryDirectory } from "./rules/valid-repository-directory.ts";
 import { rule as validVersion } from "./rules/valid-version.ts";
-
-const require = createRequire(import.meta.url);
-
-const { name, version } = require("../package.json") as {
-	name: string;
-	version: string;
-};
 
 const rules: Record<string, PackageJsonRuleModule> = {
 	"bin-name-casing": binNameCasing,
@@ -61,7 +55,7 @@ const recommendedRules = {
 	...Object.fromEntries(
 		Object.entries(rules)
 			.filter(([, rule]) => rule.meta.docs?.recommended)
-			.map(([name]) => ["package-json/" + name, "error" as const]),
+			.map(([name]) => [`package-json/${name}`, "error" as const]),
 	),
 } satisfies Linter.RulesRecord;
 
@@ -69,20 +63,27 @@ const recommendedPublishableRules = {
 	...recommendedRules,
 	...Object.fromEntries(
 		Object.entries(rules)
-			// eslint-disable-next-line @typescript-eslint/no-deprecated
+			// eslint-disable-next-line ts/no-deprecated
 			.filter(([, rule]) => rule.meta.docs?.category === "Publishable")
-			.map(([name]) => ["package-json/" + name, "error" as const]),
+			.map(([name]) => [`package-json/${name}`, "error" as const]),
 	),
 } satisfies Linter.RulesRecord;
 
 const stylisticRules = {
 	...Object.fromEntries(
 		Object.entries(rules)
-			// eslint-disable-next-line @typescript-eslint/no-deprecated
+			// eslint-disable-next-line ts/no-deprecated
 			.filter(([, rule]) => rule.meta.docs?.category === "Stylistic")
-			.map(([name]) => ["package-json/" + name, "error" as const]),
+			.map(([name]) => [`package-json/${name}`, "error" as const]),
 	),
 } satisfies Linter.RulesRecord;
+
+const require = createRequire(import.meta.url);
+
+const { name, version } = require("../package.json") as {
+	name: string;
+	version: string;
+};
 
 export const plugin = {
 	configs: {

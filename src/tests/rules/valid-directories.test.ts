@@ -64,5 +64,5 @@ ruleTester.run("valid-directories", rules["valid-directories"], {
 			],
 		},
 	],
-	valid: ["{}", `{ "directories": { "bin": "dist/bin", "man": "docs" } }`],
+	valid: ["{}", '{ "directories": { "bin": "dist/bin", "man": "docs" } }'],
 });

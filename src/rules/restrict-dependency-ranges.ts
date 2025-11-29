@@ -70,19 +70,24 @@ const SYMBOLS = {
 const changeVersionRange = (version: string, rangeType: RangeType): string => {
 	// We need to handle workspace versions with only the range indicator,
 	// slightly differently
-	if (/^workspace:[~^*]$/.test(version)) {
+	if (/^workspace:[*^~]$/.test(version)) {
 		switch (rangeType) {
-			case "caret":
+			case "caret": {
 				return "workspace:^";
-			case "pin":
+			}
+			case "pin": {
 				return "workspace:*";
+			}
+			// eslint-disable-next-line unicorn/no-useless-switch-case
 			case "tilde":
-			default:
+			default: {
 				return "workspace:~";
+			}
 		}
 	}
 
 	return version.replace(
+		// eslint-disable-next-line security/detect-unsafe-regex
 		/^(workspace:)?(\^|~|<=?|>=?)?/,
 		`$1${SYMBOLS[rangeType]}`,
 	);
@@ -96,7 +101,7 @@ const isVersionSupported = (version: string): boolean => {
 		return true;
 	}
 	const rawVersion = version.replace(/^workspace:/, "");
-	return !!semver.validRange(rawVersion);
+	return Boolean(semver.validRange(rawVersion));
 };
 
 const capitalize = (str: string): string => {
@@ -112,7 +117,7 @@ export const rule = createRule({
 
 		// Reverse the array, so that subsequent options override previous ones
 		const optionsProvided = Array.isArray(context.options[0])
-			? [...context.options[0]].reverse()
+			? context.options[0].toReversed()
 			: [context.options[0]];
 
 		const optionsArray = optionsProvided.map((option) => ({
@@ -158,13 +163,14 @@ export const rule = createRule({
 					}
 
 					const isPinned =
-						!!semver.parse(version) || version === "workspace:*";
+						Boolean(semver.parse(version)) ||
+						version === "workspace:*";
 					const isTildeRange =
-						(!!semver.validRange(version) &&
+						(Boolean(semver.validRange(version)) &&
 							version.startsWith("~")) ||
 						version.startsWith("workspace:~");
 					const isCaretRange =
-						(!!semver.validRange(version) &&
+						(Boolean(semver.validRange(version)) &&
 							version.startsWith("^")) ||
 						version.startsWith("workspace:^");
 
@@ -191,7 +197,7 @@ export const rule = createRule({
 							options.forVersions &&
 							// We can't determine whether any workspace version without a numeric version to accompany it, matches this range
 							// so we'll just skip it.
-							(/^workspace:[^~*]?$/.test(version) ||
+							(/^workspace:[^*~]?$/.test(version) ||
 								// * matches all
 								(version !== "*" &&
 									!semver.satisfies(
@@ -207,7 +213,7 @@ export const rule = createRule({
 
 						// We've matched this set of options, so we should check
 						// the range type.
-						const rangeTypes = options.rangeTypes;
+						const { rangeTypes } = options;
 
 						// If the version is just '*', then this is definitely in violation,
 						// and we can report immediately.
@@ -224,12 +230,18 @@ export const rule = createRule({
 
 						const rangeTypeMatch = rangeTypes.find((rangeType) => {
 							switch (rangeType) {
-								case "caret":
+								case "caret": {
 									return isCaretRange;
-								case "pin":
+								}
+								case "pin": {
 									return isPinned;
-								case "tilde":
+								}
+								case "tilde": {
 									return isTildeRange;
+								}
+								default: {
+									return false;
+								}
 							}
 						});
 
@@ -274,7 +286,7 @@ export const rule = createRule({
 			changeToPin: "Pin the version.",
 			changeToTilde: "Change to use a tilde range.",
 			wrongRangeType:
-				"This dependency is using the wrong range type.  Acceptable range type(s): {{rangeTypes}}",
+				"This dependency is using the wrong range type. Acceptable range type(s): {{rangeTypes}}",
 		},
 		schema: [
 			{
