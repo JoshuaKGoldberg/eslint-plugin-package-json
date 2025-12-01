@@ -12,6 +12,7 @@ import nodeDependencies from "eslint-plugin-node-dependencies";
 import perfectionist from "eslint-plugin-perfectionist";
 import * as regexp from "eslint-plugin-regexp";
 import security from "eslint-plugin-security";
+import unicorn from "eslint-plugin-unicorn";
 import yml from "eslint-plugin-yml";
 import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
@@ -46,6 +47,7 @@ export default defineConfig(
 			perfectionist.configs["recommended-natural"],
 			regexp.configs["flat/recommended"],
 			security.configs.recommended,
+			unicorn.configs.unopinionated,
 		],
 		files: JS_TS_FILES,
 		rules: {
