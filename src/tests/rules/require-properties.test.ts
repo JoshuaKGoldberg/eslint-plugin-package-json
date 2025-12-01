@@ -5,7 +5,7 @@ import { ruleTester } from "./ruleTester.ts";
 
 const ruleNames = Object.keys(rules);
 
-ruleNames.forEach((ruleName) => {
+for (const ruleName of ruleNames) {
 	const propertyName = ruleName.replace("require-", "");
 
 	ruleTester.run(ruleName, rules[ruleName], {
@@ -383,4 +383,4 @@ ruleNames.forEach((ruleName) => {
 			},
 		],
 	});
-});
+}

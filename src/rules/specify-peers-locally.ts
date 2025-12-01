@@ -80,6 +80,7 @@ export const rule = createRule({
 														Object.fromEntries(
 															Object.entries(
 																updatedDevDependencies,
+																// eslint-disable-next-line unicorn/no-array-sort
 															).sort((a, b) =>
 																a[0] > b[0]
 																	? 1

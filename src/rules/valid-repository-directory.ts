@@ -1,7 +1,7 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { findRootSync } from "@altano/repository-tools";
-import * as path from "node:path";
+import path from "node:path";
 import { sep as posixSep } from "node:path/posix";
 
 import { createRule } from "../createRule.ts";
@@ -25,6 +25,7 @@ function pathEndsWith(parent: string, child: string): boolean {
 
 	// work backwards from the end, adding another path segment to each check
 	let pathToCheck = "";
+	// eslint-disable-next-line unicorn/no-array-reverse
 	return segments.reverse().some((segment) => {
 		pathToCheck = path.join(segment, pathToCheck);
 		if (pathToCheck === child) {
