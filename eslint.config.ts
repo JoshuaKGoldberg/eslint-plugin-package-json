@@ -45,6 +45,7 @@ export default defineConfig(
 		],
 		files: JS_TS_FILES,
 		rules: {
+			"@typescript-eslint/no-shadow": "error",
 			// We prefer seeing :exit after all other AST selectors in rules
 			"perfectionist/sort-objects": [
 				"error",

@@ -39,16 +39,13 @@ export const rule = createRule({
 				.filter(isJSONStringLiteral)
 				.reverse()) {
 				if (seen.has(element.value)) {
-					report(element, elements);
+					report(element);
 				} else {
 					seen.add(element.value);
 				}
 			}
 
-			function report(
-				node: JsonAST.JSONNode,
-				elements: (JsonAST.JSONNode | null)[],
-			) {
+			function report(node: JsonAST.JSONNode) {
 				const removal = getNodeToRemove(node);
 				context.report({
 					messageId: "overridden",
