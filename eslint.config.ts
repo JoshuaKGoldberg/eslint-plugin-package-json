@@ -5,6 +5,7 @@ import vitest from "@vitest/eslint-plugin";
 import eslintPlugin from "eslint-plugin-eslint-plugin";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
+import markdownLinks from "eslint-plugin-markdown-links";
 import n from "eslint-plugin-n";
 import perfectionist from "eslint-plugin-perfectionist";
 import * as regexp from "eslint-plugin-regexp";
@@ -131,6 +132,25 @@ export default defineConfig(
 		files: ["./eslint.config.ts", "./**/*.test.*"],
 		rules: {
 			"n/no-unsupported-features/node-builtins": "off",
+		},
+	},
+	{
+		extends: [markdownLinks.configs.recommended],
+		files: ["**/*.md"],
+		ignores: ["CHANGELOG.md"],
+		rules: {
+			"markdown-links/no-dead-urls": [
+				"error",
+				{
+					checkAnchor: false,
+					ignoreUrls: [
+						// npm gets rate-limited quickly: https://github.com/ota-meshi/eslint-plugin-markdown-links/issues/42
+						String.raw`/^https:\/\/(?:www\.)?npmjs.com\/.*/`,
+					],
+					maxRetries: 3,
+					timeout: 5000,
+				},
+			],
 		},
 	},
 );
