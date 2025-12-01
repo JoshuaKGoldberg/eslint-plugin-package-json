@@ -2,8 +2,8 @@ import { rules } from "../../rules/valid-properties.ts";
 import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("valid-bundleDependencies", rules["valid-bundleDependencies"], {
-	invalid: ["bundleDependencies", "bundledDependencies"]
-		.map((property) => [
+	invalid: ["bundleDependencies", "bundledDependencies"].flatMap(
+		(property) => [
 			{
 				code: `{
 	"${property}": null
@@ -100,17 +100,15 @@ ruleTester.run("valid-bundleDependencies", rules["valid-bundleDependencies"], {
 					},
 				],
 			},
-		])
-		.flat(),
+		],
+	),
 	valid: [
 		"{}",
-		...["bundleDependencies", "bundledDependencies"]
-			.map((property) => [
-				`{ "${property}": true }`,
-				`{ "${property}": false }`,
-				`{ "${property}": [] }`,
-				`{ "${property}": ["nin", "silver-mt-zion"] }`,
-			])
-			.flat(),
+		...["bundleDependencies", "bundledDependencies"].flatMap((property) => [
+			`{ "${property}": true }`,
+			`{ "${property}": false }`,
+			`{ "${property}": [] }`,
+			`{ "${property}": ["nin", "silver-mt-zion"] }`,
+		]),
 	],
 });

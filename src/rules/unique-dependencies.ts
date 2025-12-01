@@ -37,6 +37,7 @@ export const rule = createRule({
 			for (const element of elements
 				.filter(isNotNullish)
 				.filter(isJSONStringLiteral)
+				// eslint-disable-next-line unicorn/no-array-reverse
 				.reverse()) {
 				if (seen.has(element.value)) {
 					report(element);

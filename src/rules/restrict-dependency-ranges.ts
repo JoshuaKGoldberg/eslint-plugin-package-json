@@ -76,6 +76,7 @@ const changeVersionRange = (version: string, rangeType: RangeType): string => {
 				return "workspace:^";
 			case "pin":
 				return "workspace:*";
+			// eslint-disable-next-line unicorn/no-useless-switch-case
 			case "tilde":
 			default:
 				return "workspace:~";
@@ -113,7 +114,7 @@ export const rule = createRule({
 
 		// Reverse the array, so that subsequent options override previous ones
 		const optionsProvided = Array.isArray(context.options[0])
-			? [...context.options[0]].reverse()
+			? context.options[0].toReversed()
 			: [context.options[0]];
 
 		const optionsArray = optionsProvided.map((option) => ({

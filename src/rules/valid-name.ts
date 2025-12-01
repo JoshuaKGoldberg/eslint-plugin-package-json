@@ -43,7 +43,9 @@ export const rule = createRule({
 				context.report({
 					data: {
 						complaints: complaints
-							.map((error) => error.substring(0, error.length))
+							.map((error) =>
+								error.slice(0, Math.max(0, error.length)),
+							)
 							.join("; "),
 					},
 					messageId: "invalid",
