@@ -11,6 +11,7 @@ import jsoncEslintParser from 'jsonc-eslint-parser';
 import nodeDependencies from "eslint-plugin-node-dependencies";
 import perfectionist from "eslint-plugin-perfectionist";
 import * as regexp from "eslint-plugin-regexp";
+import security from "eslint-plugin-security";
 import yml from "eslint-plugin-yml";
 import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
@@ -44,6 +45,7 @@ export default defineConfig(
 			n.configs["flat/recommended"],
 			perfectionist.configs["recommended-natural"],
 			regexp.configs["flat/recommended"],
+			security.configs.recommended,
 		],
 		files: JS_TS_FILES,
 		rules: {
@@ -66,6 +68,9 @@ export default defineConfig(
 			"no-useless-rename": "error",
 			"object-shorthand": "error",
 			"operator-assignment": "error",
+			"security/detect-non-literal-fs-filename": "off",
+			"security/detect-non-literal-regexp": "off",
+			"security/detect-object-injection": "off",
 		},
 		settings: {
 			perfectionist: { partitionByComment: true, type: "natural" },
