@@ -27,11 +27,6 @@ import { rule as validVersion } from "./rules/valid-version.ts";
 
 const require = createRequire(import.meta.url);
 
-const { name, version } = require("../package.json") as {
-	name: string;
-	version: string;
-};
-
 const rules: Record<string, PackageJsonRuleModule> = {
 	"bin-name-casing": binNameCasing,
 	"exports-subpaths-style": exportsSubpathsStyle,
@@ -81,6 +76,11 @@ const stylisticRules = {
 			.map(([name]) => ["package-json/" + name, "error" as const]),
 	),
 } satisfies Linter.RulesRecord;
+
+const { name, version } = require("../package.json") as {
+	name: string;
+	version: string;
+};
 
 export const plugin = {
 	configs: {
