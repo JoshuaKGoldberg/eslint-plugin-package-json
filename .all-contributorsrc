@@ -340,6 +340,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "patrik-csak",
+      "name": "Patrik Csak",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4766244?v=4",
+      "profile": "http://patrikcsak.com",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsSortAlphabetically": true,
