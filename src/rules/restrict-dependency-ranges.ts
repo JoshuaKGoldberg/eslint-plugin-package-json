@@ -76,7 +76,6 @@ const changeVersionRange = (version: string, rangeType: RangeType): string => {
 				return "workspace:^";
 			case "pin":
 				return "workspace:*";
-			// eslint-disable-next-line unicorn/no-useless-switch-case
 			case "tilde":
 			default:
 				return "workspace:~";
