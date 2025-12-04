@@ -440,6 +440,26 @@ ruleTester.run("order-properties", rule, {
 }
 `,
 		},
+		{
+			code: ["{", '	"version": "1.0.0",', '	"name": "foo"', "}"].join(
+				"\r\n",
+			),
+			errors: [
+				{
+					data: { property: "version" },
+					messageId: "incorrectOrder",
+				},
+				{
+					data: { property: "name" },
+					messageId: "incorrectOrder",
+				},
+			],
+			filename: "package.json",
+			options: [{ order: ["name", "version"] }],
+			output: ["{", '	"name": "foo",', '	"version": "1.0.0"', "}"].join(
+				"\r\n",
+			),
+		},
 	],
 	valid: [
 		`{
