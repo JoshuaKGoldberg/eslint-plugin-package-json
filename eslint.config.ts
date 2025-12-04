@@ -156,6 +156,8 @@ export default defineConfig(
 					ignoreUrls: [
 						// npm gets rate-limited quickly: https://github.com/ota-meshi/eslint-plugin-markdown-links/issues/42
 						String.raw`/^https:\/\/(?:www\.)?npmjs.com\/.*/`,
+						// In case a not yet merged rule doc page is linked
+						String.raw`/^https://(?:www\.)?github.com/JoshuaKGoldberg/eslint-plugin-package-json/blob/[^/]+/docs/rules/[\w-]+.md([?#].*)?$/i`,
 					],
 					maxRetries: 3,
 					timeout: 5000,
