@@ -7,7 +7,6 @@ import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
 import markdownLinks from "eslint-plugin-markdown-links";
 import n from "eslint-plugin-n";
-import jsoncEslintParser from 'jsonc-eslint-parser';
 import nodeDependencies from "eslint-plugin-node-dependencies";
 import perfectionist from "eslint-plugin-perfectionist";
 import * as regexp from "eslint-plugin-regexp";
@@ -15,6 +14,7 @@ import security from "eslint-plugin-security";
 import unicorn from "eslint-plugin-unicorn";
 import yml from "eslint-plugin-yml";
 import { defineConfig } from "eslint/config";
+import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
 
 import packageJson from "./src/index.ts";
@@ -168,12 +168,12 @@ export default defineConfig(
 	},
 	{
 		files: ["package.json"],
-		plugins: {
-			// @ts-expect-error types mismatch
-			'node-dependencies': nodeDependencies,
-		},
 		languageOptions: {
 			parser: jsoncEslintParser,
+		},
+		plugins: {
+			// @ts-expect-error types mismatch
+			"node-dependencies": nodeDependencies,
 		},
 		rules: {
 			"node-dependencies/no-deprecated": [
