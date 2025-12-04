@@ -84,7 +84,6 @@ const changeVersionRange = (version: string, rangeType: RangeType): string => {
 	}
 
 	return version.replace(
-		// eslint-disable-next-line security/detect-unsafe-regex -- false positive
 		/^(workspace:)?(\^|~|<=?|>=?)?/,
 		`$1${SYMBOLS[rangeType]}`,
 	);

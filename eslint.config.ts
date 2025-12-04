@@ -73,6 +73,7 @@ export default defineConfig(
 			"security/detect-non-literal-fs-filename": "off",
 			"security/detect-non-literal-regexp": "off",
 			"security/detect-object-injection": "off",
+			"security/detect-unsafe-regex": "off", // `eslint-plugin-regexp` is better
 		},
 		settings: {
 			perfectionist: { partitionByComment: true, type: "natural" },
