@@ -25,7 +25,6 @@ function pathEndsWith(parent: string, child: string): boolean {
 
 	// work backwards from the end, adding another path segment to each check
 	let pathToCheck = "";
-	// eslint-disable-next-line unicorn/no-array-reverse
 	return segments.reverse().some((segment) => {
 		pathToCheck = path.join(segment, pathToCheck);
 		if (pathToCheck === child) {
