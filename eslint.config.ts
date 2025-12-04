@@ -75,6 +75,7 @@ export default defineConfig(
 			"security/detect-non-literal-regexp": "off",
 			"security/detect-object-injection": "off",
 			"security/detect-unsafe-regex": "off", // `eslint-plugin-regexp` is better
+			"unicorn/no-array-reverse": "off", // Overly strict
 			"unicorn/no-useless-switch-case": "off", // Doesn't play well with `@typescript-eslint/switch-exhaustiveness-check`
 		},
 		settings: {

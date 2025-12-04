@@ -50,7 +50,6 @@ export const rule = createRule({
 						return;
 					}
 				}
-				// eslint-disable-next-line unicorn/no-array-reverse
 				const key = keyPartsReversed.reverse().join(".");
 				if (!toSort.has(key)) {
 					return;
