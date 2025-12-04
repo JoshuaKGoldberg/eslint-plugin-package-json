@@ -83,7 +83,8 @@ export const rule = createRule({
 				const nodeValueType = node.value.type;
 				if (nodeValueType === "JSONArrayExpression") {
 					check(node.value.elements, (element) => element);
-				} else if (nodeValueType === "JSONObjectExpression") {
+				}
+				if (nodeValueType === "JSONObjectExpression") {
 					check(
 						node.value.properties.map((property) => property.key),
 						// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
