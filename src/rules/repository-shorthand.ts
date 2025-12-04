@@ -5,7 +5,6 @@ import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.ts";
 import { isJSONStringLiteral } from "../utils/predicates.ts";
 
 const githubUrlRegex =
-	// eslint-disable-next-line security/detect-unsafe-regex -- false positive
 	/^(?:git\+)?(?:ssh:\/\/git@|http?s:\/\/)?(?:www\.)?github\.com\//;
 
 const isGitHubUrl = (url: string) => githubUrlRegex.test(url);
