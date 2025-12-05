@@ -76,7 +76,6 @@ const changeVersionRange = (version: string, rangeType: RangeType): string => {
 				return "workspace:^";
 			case "pin":
 				return "workspace:*";
-			case "tilde":
 			default:
 				return "workspace:~";
 		}

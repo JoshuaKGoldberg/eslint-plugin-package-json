@@ -51,7 +51,6 @@ export default defineConfig(
 		files: JS_TS_FILES,
 		rules: {
 			"@typescript-eslint/no-shadow": "error",
-			"@typescript-eslint/switch-exhaustiveness-check": "error",
 			// We prefer seeing :exit after all other AST selectors in rules
 			"perfectionist/sort-objects": [
 				"error",
@@ -75,7 +74,6 @@ export default defineConfig(
 			"security/detect-object-injection": "off",
 			"security/detect-unsafe-regex": "off", // `eslint-plugin-regexp` is better
 			"unicorn/no-array-reverse": "off", // Overly strict
-			"unicorn/no-useless-switch-case": "off", // Doesn't play well with `@typescript-eslint/switch-exhaustiveness-check`
 		},
 		settings: {
 			perfectionist: { partitionByComment: true, type: "natural" },
