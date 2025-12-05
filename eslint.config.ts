@@ -14,7 +14,6 @@ import security from "eslint-plugin-security";
 import unicorn from "eslint-plugin-unicorn";
 import yml from "eslint-plugin-yml";
 import { defineConfig } from "eslint/config";
-import jsoncEslintParser from "jsonc-eslint-parser";
 import tseslint from "typescript-eslint";
 
 import packageJson from "./src/index.ts";
@@ -97,6 +96,16 @@ export default defineConfig(
 	{
 		extends: [packageJson.configs["recommended-publishable"]],
 		files: ["package.json"],
+		plugins: {
+			// @ts-expect-error types mismatch
+			"node-dependencies": nodeDependencies,
+		},
+		rules: {
+			"node-dependencies/no-deprecated": [
+				"error",
+				{ devDependencies: true },
+			],
+		},
 	},
 	{
 		extends: [
@@ -166,22 +175,6 @@ export default defineConfig(
 					maxRetries: 3,
 					timeout: 5000,
 				},
-			],
-		},
-	},
-	{
-		files: ["package.json"],
-		languageOptions: {
-			parser: jsoncEslintParser,
-		},
-		plugins: {
-			// @ts-expect-error types mismatch
-			"node-dependencies": nodeDependencies,
-		},
-		rules: {
-			"node-dependencies/no-deprecated": [
-				"error",
-				{ devDependencies: true },
 			],
 		},
 	},
