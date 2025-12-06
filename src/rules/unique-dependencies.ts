@@ -39,16 +39,13 @@ export const rule = createRule({
 				.filter(isJSONStringLiteral)
 				.reverse()) {
 				if (seen.has(element.value)) {
-					report(element, elements);
+					report(element);
 				} else {
 					seen.add(element.value);
 				}
 			}
 
-			function report(
-				node: JsonAST.JSONNode,
-				elements: (JsonAST.JSONNode | null)[],
-			) {
+			function report(node: JsonAST.JSONNode) {
 				const removal = getNodeToRemove(node);
 				context.report({
 					messageId: "overridden",
@@ -83,27 +80,20 @@ export const rule = createRule({
 					return;
 				}
 
-				switch (node.value.type) {
-					case "JSONArrayExpression":
-						check(node.value.elements, (element) => element);
-						break;
-					case "JSONObjectExpression":
-						check(
-							node.value.properties.map(
-								(property) => property.key,
-							),
-							// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-							(property) => property.parent!,
-						);
-						if (
-							trackForCrossGroupUniqueness.includes(
-								node.key.value,
-							)
-						) {
-							dependenciesCache[node.key.value] =
-								node.value.properties;
-						}
-						break;
+				const nodeValueType = node.value.type;
+				if (nodeValueType === "JSONArrayExpression") {
+					check(node.value.elements, (element) => element);
+				}
+				if (nodeValueType === "JSONObjectExpression") {
+					check(
+						node.value.properties.map((property) => property.key),
+						// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+						(property) => property.parent!,
+					);
+					if (trackForCrossGroupUniqueness.includes(node.key.value)) {
+						dependenciesCache[node.key.value] =
+							node.value.properties;
+					}
 				}
 			},
 			"Program:exit"() {

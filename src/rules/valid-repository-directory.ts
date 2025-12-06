@@ -1,7 +1,7 @@
 import type { AST as JsonAST } from "jsonc-eslint-parser";
 
 import { findRootSync } from "@altano/repository-tools";
-import * as path from "node:path";
+import path from "node:path";
 import { sep as posixSep } from "node:path/posix";
 
 import { createRule } from "../createRule.ts";

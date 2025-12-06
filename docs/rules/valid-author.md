@@ -128,5 +128,5 @@ Examples of **correct** code for this rule:
 
 If you don't care about strict compliance with npm's author field specification, or if you don't use this field in your projects, you can disable this rule.
 
-[pjv]: https://github.com/gorillamania/package-json-validator
+[pjv]: https://github.com/JoshuaKGoldberg/package-json-validator
 [npm-spec]: https://docs.npmjs.com/files/package.json
