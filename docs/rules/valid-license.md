@@ -7,7 +7,8 @@
 This rule does the following checks on the value of the `license` property:
 
 - It must be a `string`
-- The value should be a valid SPDX license, "UNLICENSED", or a note referencing a license file (e.g. "SEE LICENSE IN LICENSE.md")
+- The value should be a valid SPDX license, "UNLICENSED", or a note referencing a license file (e.g.
+"SEE LICENSE IN LICENSE.md")
 
 Example of **incorrect** code for this rule:
 
