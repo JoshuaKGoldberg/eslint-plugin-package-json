@@ -98,7 +98,8 @@ Example (missing main script (`install`); group still kept together):
 }
 ```
 
-Incorrect vs. correct ordering of a complete lifecycle group:
+Incorrect vs.
+correct ordering of a complete lifecycle group:
 
 Incorrect:
 

@@ -54,7 +54,7 @@ Pass in:
 - `"legacy"` - to order properties specified by [npm documentation](https://docs.npmjs.com/cli/v10/configuring-npm/package-json).
 - `"sort-package-json"` - to order properties by the default order specified in [sort-package-json](https://github.com/keithamus/sort-package-json).
 - `Array<string>` - to specify an array of top-level package properties to lint sorting on only those properties.
-  All properties not in this collection will be sorted by "sort-package-json" specifications.
+All properties not in this collection will be sorted by "sort-package-json" specifications.
 
 ```json
 {
