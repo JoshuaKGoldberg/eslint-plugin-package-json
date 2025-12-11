@@ -103,7 +103,7 @@
 		"sentences-per-line": "0.3.0",
 		"tsdown": "0.17.0",
 		"typescript": "5.9.3",
-		"typescript-eslint": "8.48.0",
+		"typescript-eslint": "8.49.0",
 		"vitest": "4.0.13"
 	},
 	"peerDependencies": {
