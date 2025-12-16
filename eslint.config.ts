@@ -10,7 +10,6 @@ import n from "eslint-plugin-n";
 import nodeDependencies from "eslint-plugin-node-dependencies";
 import perfectionist from "eslint-plugin-perfectionist";
 import * as regexp from "eslint-plugin-regexp";
-import security from "eslint-plugin-security";
 import unicorn from "eslint-plugin-unicorn";
 import yml from "eslint-plugin-yml";
 import { defineConfig } from "eslint/config";
@@ -45,7 +44,6 @@ export default defineConfig(
 			n.configs["flat/recommended"],
 			perfectionist.configs["recommended-natural"],
 			regexp.configs["flat/recommended"],
-			security.configs.recommended,
 			unicorn.configs.unopinionated,
 		],
 		files: JS_TS_FILES,
@@ -69,10 +67,6 @@ export default defineConfig(
 			"no-useless-rename": "error",
 			"object-shorthand": "error",
 			"operator-assignment": "error",
-			"security/detect-non-literal-fs-filename": "off",
-			"security/detect-non-literal-regexp": "off",
-			"security/detect-object-injection": "off",
-			"security/detect-unsafe-regex": "off", // `eslint-plugin-regexp` is better
 			"unicorn/no-array-reverse": "off", // Overly strict
 			"unicorn/no-array-sort": "off", // Overly strict
 			"unicorn/prefer-string-replace-all": "off",
