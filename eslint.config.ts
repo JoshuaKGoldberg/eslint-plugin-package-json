@@ -75,6 +75,7 @@ export default defineConfig(
 			"security/detect-unsafe-regex": "off", // `eslint-plugin-regexp` is better
 			"unicorn/no-array-reverse": "off", // Overly strict
 			"unicorn/no-array-sort": "off", // Overly strict
+			"unicorn/prefer-string-replace-all": "off",
 		},
 		settings: {
 			perfectionist: { partitionByComment: true, type: "natural" },
