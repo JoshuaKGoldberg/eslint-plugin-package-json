@@ -85,8 +85,8 @@ importers:
         specifier: 2.21.0
         version: 2.21.0(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-markdown-links:
-        specifier: 0.7.0
-        version: 0.7.0(@eslint/markdown@7.5.1)(eslint@9.39.1(jiti@2.6.1))
+        specifier: 0.7.1
+        version: 0.7.1(@eslint/markdown@7.5.1)(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-n:
         specifier: 17.23.1
         version: 17.23.1(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
@@ -1818,8 +1818,8 @@ packages:
     peerDependencies:
       eslint: '>=6.0.0'
 
-  eslint-plugin-markdown-links@0.7.0:
-    resolution: {integrity: sha512-JTgJgE22NU4Rs15mdDz4U52mJxYQqT7jwDiqEwejH8i4Qh7P4ihDggs3dFBzVP7sbzCxzTkZr0eFOyLgNsWAug==}
+  eslint-plugin-markdown-links@0.7.1:
+    resolution: {integrity: sha512-c6HAhdS3GmNLOzEuauGZ1+kkr20ruAHuF5rzwT48PdfZLTvPLeXa1Mb6HLdG8koLvwiLaIsXd8CntO/dt6UZug==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
     peerDependencies:
       '@eslint/markdown': ^7.1.0
@@ -5007,7 +5007,7 @@ snapshots:
     transitivePeerDependencies:
       - '@eslint/json'
 
-  eslint-plugin-markdown-links@0.7.0(@eslint/markdown@7.5.1)(eslint@9.39.1(jiti@2.6.1)):
+  eslint-plugin-markdown-links@0.7.1(@eslint/markdown@7.5.1)(eslint@9.39.1(jiti@2.6.1)):
     dependencies:
       '@eslint/markdown': 7.5.1
       '@mdit-vue/shared': 3.0.2

@@ -69,8 +69,8 @@ export default defineConfig(
 			"operator-assignment": "error",
 			"unicorn/no-array-reverse": "off", // Overly strict
 			"unicorn/no-array-sort": "off", // Overly strict
-			"unicorn/prefer-string-replace-all": "off",
 			"unicorn/prefer-string-raw": "off",
+			"unicorn/prefer-string-replace-all": "off",
 		},
 		settings: {
 			perfectionist: { partitionByComment: true, type: "natural" },
@@ -162,10 +162,8 @@ export default defineConfig(
 				{
 					checkAnchor: false,
 					ignoreUrls: [
-						// npm gets rate-limited quickly: https://github.com/ota-meshi/eslint-plugin-markdown-links/issues/42
-						String.raw`/^https:\/\/(?:www\.)?npmjs.com\/.*/`,
 						// In case a not yet merged rule doc page is linked
-						String.raw`/^https://(?:www\.)?github.com/JoshuaKGoldberg/eslint-plugin-package-json/blob/[^/]+/docs/rules/[\w-]+.md([?#].*)?$/i`,
+						"/^https://(?:www\\.)?github.com/JoshuaKGoldberg/eslint-plugin-package-json/blob/[^/]+/docs/rules/[\\w-]+.md([?#].*)?$/i",
 					],
 					maxRetries: 3,
 					timeout: 5000,
