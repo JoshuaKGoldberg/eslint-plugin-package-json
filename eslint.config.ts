@@ -76,6 +76,7 @@ export default defineConfig(
 			"unicorn/no-array-reverse": "off", // Overly strict
 			"unicorn/no-array-sort": "off", // Overly strict
 			"unicorn/prefer-string-replace-all": "off",
+			"unicorn/prefer-string-raw": "off",
 		},
 		settings: {
 			perfectionist: { partitionByComment: true, type: "natural" },

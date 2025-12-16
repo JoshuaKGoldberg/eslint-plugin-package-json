@@ -19,11 +19,11 @@ describe("isPackageJson", () => {
 		["package.json-package.json", false],
 		["package.json", true],
 		["/package.json", true],
-		[String.raw`\package.json`, true],
+		["\\package.json", true],
 		["prefix/package.json", true],
-		[String.raw`prefix\package.json`, true],
-		[String.raw`mixed\prefix/package.json`, true],
-		[String.raw`mixed/prefix\package.json`, true],
+		["prefix\\package.json", true],
+		["mixed\\prefix/package.json", true],
+		["mixed/prefix\\package.json", true],
 	])(`%s`, (input, expected) => {
 		expect(isPackageJson(input)).toBe(expected);
 	});
