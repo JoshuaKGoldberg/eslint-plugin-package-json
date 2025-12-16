@@ -80,8 +80,7 @@ export const rule = createRule({
 						(prop) => propertyNodeMap[prop],
 					);
 				} else {
-					// eslint-disable-next-line unicorn/no-array-sort
-					desiredOrder = currentOrder.slice().sort((a, b) => {
+					desiredOrder = currentOrder.toSorted((a, b) => {
 						const aKey = (a.key as JsonAST.JSONStringLiteral).value;
 						const bKey = (b.key as JsonAST.JSONStringLiteral).value;
 

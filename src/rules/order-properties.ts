@@ -60,7 +60,6 @@ export const rule = createRule({
 				const allKeys = Object.keys(json);
 				const orderedNonStandardKeys = allKeys
 					.filter((key) => !requiredOrder.includes(key))
-					// eslint-disable-next-line unicorn/no-array-sort
 					.sort();
 
 				const orderedSource = sortObjectKeys(json, [
