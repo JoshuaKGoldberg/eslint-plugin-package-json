@@ -92,7 +92,7 @@ export default defineConfig(
 		extends: [packageJson.configs["recommended-publishable"]],
 		files: ["package.json"],
 		plugins: {
-			// @ts-expect-error types mismatch
+			// @ts-expect-error types mismatch: https://github.com/ota-meshi/eslint-plugin-node-dependencies/issues/236
 			"node-dependencies": nodeDependencies,
 		},
 		rules: {
