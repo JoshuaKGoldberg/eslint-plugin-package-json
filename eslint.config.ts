@@ -5,9 +5,12 @@ import vitest from "@vitest/eslint-plugin";
 import eslintPlugin from "eslint-plugin-eslint-plugin";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
+import markdownLinks from "eslint-plugin-markdown-links";
 import n from "eslint-plugin-n";
+import nodeDependencies from "eslint-plugin-node-dependencies";
 import perfectionist from "eslint-plugin-perfectionist";
 import * as regexp from "eslint-plugin-regexp";
+import unicorn from "eslint-plugin-unicorn";
 import yml from "eslint-plugin-yml";
 import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
@@ -41,9 +44,11 @@ export default defineConfig(
 			n.configs["flat/recommended"],
 			perfectionist.configs["recommended-natural"],
 			regexp.configs["flat/recommended"],
+			unicorn.configs.unopinionated,
 		],
 		files: JS_TS_FILES,
 		rules: {
+			"@typescript-eslint/no-shadow": "error",
 			// We prefer seeing :exit after all other AST selectors in rules
 			"perfectionist/sort-objects": [
 				"error",
@@ -62,6 +67,10 @@ export default defineConfig(
 			"no-useless-rename": "error",
 			"object-shorthand": "error",
 			"operator-assignment": "error",
+			"unicorn/no-array-reverse": "off", // Overly strict
+			"unicorn/no-array-sort": "off", // Overly strict
+			"unicorn/prefer-string-raw": "off",
+			"unicorn/prefer-string-replace-all": "off",
 		},
 		settings: {
 			perfectionist: { partitionByComment: true, type: "natural" },
@@ -82,6 +91,16 @@ export default defineConfig(
 	{
 		extends: [packageJson.configs["recommended-publishable"]],
 		files: ["package.json"],
+		plugins: {
+			// @ts-expect-error types mismatch: https://github.com/ota-meshi/eslint-plugin-node-dependencies/issues/236
+			"node-dependencies": nodeDependencies,
+		},
+		rules: {
+			"node-dependencies/no-deprecated": [
+				"error",
+				{ devDependencies: true },
+			],
+		},
 	},
 	{
 		extends: [
@@ -131,6 +150,25 @@ export default defineConfig(
 		files: ["./eslint.config.ts", "./**/*.test.*"],
 		rules: {
 			"n/no-unsupported-features/node-builtins": "off",
+		},
+	},
+	{
+		extends: [markdownLinks.configs.recommended],
+		files: ["**/*.md"],
+		ignores: ["CHANGELOG.md"],
+		rules: {
+			"markdown-links/no-dead-urls": [
+				"error",
+				{
+					checkAnchor: false,
+					ignoreUrls: [
+						// In case a not yet merged rule doc page is linked
+						"/^https://(?:www\\.)?github.com/JoshuaKGoldberg/eslint-plugin-package-json/blob/[^/]+/docs/rules/[\\w-]+.md([?#].*)?$/i",
+					],
+					maxRetries: 3,
+					timeout: 5000,
+				},
+			],
 		},
 	},
 );
