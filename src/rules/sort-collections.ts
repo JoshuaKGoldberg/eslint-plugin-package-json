@@ -58,7 +58,6 @@ export const rule = createRule({
 				const currentOrder = collection.properties;
 				let desiredOrder: JsonAST.JSONProperty[];
 
-				// If it's any property other than `scripts`, simply sort lexicographically
 				if (keyPartsReversed.at(-1) === "scripts") {
 					// For scripts we'll use `sort-package-json`
 					const scriptsSource = context.sourceCode.getText(node);
@@ -79,6 +78,8 @@ export const rule = createRule({
 					desiredOrder = Object.keys(sortedScripts).map(
 						(prop) => propertyNodeMap[prop],
 					);
+
+					// If it's any property other than `scripts`, simply sort lexicographically
 				} else {
 					desiredOrder = currentOrder.toSorted((a, b) => {
 						const aKey = (a.key as JsonAST.JSONStringLiteral).value;
