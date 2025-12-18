@@ -101,7 +101,7 @@
 		"prettier-plugin-sh": "0.18.0",
 		"release-it": "19.1.0",
 		"sentences-per-line": "0.3.0",
-		"tsdown": "0.17.0",
+		"tsdown": "0.18.0",
 		"typescript": "5.9.3",
 		"typescript-eslint": "8.49.0",
 		"vitest": "4.0.13"
