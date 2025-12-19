@@ -4,8 +4,7 @@
 
 <!-- end auto-generated rule header -->
 
-This rule allows you to require that specific dependencies use a particular kind of semver range (e.g.
-`^`).
+This rule allows you to require that specific dependencies use a particular kind of semver range (e.g. `^`).
 There are several options for specifying which dependencies a range type restriction should be applied to, including dependency type, package name (or name regex pattern), and version range (e.g. '<1').
 
 ```ts
