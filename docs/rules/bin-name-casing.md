@@ -6,8 +6,7 @@
 
 <!-- end auto-generated rule header -->
 
-This rule enforces that when your `bin` value is an object, its keys (representing the commands for each script) should be in [kebab case](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case) (e.g.
-`my-command`).
+This rule enforces that when your `bin` value is an object, its keys (representing the commands for each script) should be in [kebab case](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case) (e.g. `my-command`).
 
 Example of **incorrect** code:
 

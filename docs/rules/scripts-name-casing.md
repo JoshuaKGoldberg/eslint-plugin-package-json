@@ -6,10 +6,8 @@
 
 <!-- end auto-generated rule header -->
 
-This rule enforces that the keys of the `scripts` object (representing the commands for each script) should be in [kebab case](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case) (e.g.
-`"my-script"`).
-It also permits kebab case segments separated by colons (e.g.
-`"test:my-script"`).
+This rule enforces that the keys of the `scripts` object (representing the commands for each script) should be in [kebab case](https://developer.mozilla.org/en-US/docs/Glossary/Kebab_case) (e.g. `"my-script"`).
+It also permits kebab case segments separated by colons (e.g. `"test:my-script"`).
 
 Example of **incorrect** code:
 

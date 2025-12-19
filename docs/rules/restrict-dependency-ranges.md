@@ -6,8 +6,7 @@
 
 This rule allows you to require that specific dependencies use a particular kind of semver range (e.g.
 `^`).
-There are several options for specifying which dependencies a range type restriction should be applied to, including dependency type, package name (or name regex pattern), and version range (e.g.
-'<1').
+There are several options for specifying which dependencies a range type restriction should be applied to, including dependency type, package name (or name regex pattern), and version range (e.g. '<1').
 
 ```ts
 export default [
@@ -69,8 +68,7 @@ export default [
 
 ### `forPackages`
 
-This can be the exact name of a package, or a regex pattern used to match a group of packages by name (e.g.
-`@typescript-eslint/*`).
+This can be the exact name of a package, or a regex pattern used to match a group of packages by name (e.g. `@typescript-eslint/*`).
 
 ```ts
 export default [
