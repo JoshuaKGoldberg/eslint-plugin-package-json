@@ -1,66 +1,66 @@
 # Changelog
 
-# [0.85.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.84.0...v0.85.0) (2025-11-18)
+## [0.85.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.84.0...v0.85.0) (2025-11-18)
 
 ### Features
 
 - **valid-sideEffects:** add new rule for validating `sideEffects` ([#1414](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1414)) ([04b86b1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/04b86b1a5e86cae4187ca1629ba916066d49b086)), closes [#000](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/000)
 
-# [0.84.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.83.0...v0.84.0) (2025-11-18)
+## [0.84.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.83.0...v0.84.0) (2025-11-18)
 
 ### Features
 
 - add new `recommended-publishable` config ([#1413](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1413)) ([ba313a6](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/ba313a6ca0b701c152986a83a377b9541c2b20c8)), closes [#1403](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1403)
 
-# [0.83.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.82.0...v0.83.0) (2025-11-17)
+## [0.83.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.82.0...v0.83.0) (2025-11-17)
 
 ### Features
 
 - **specify-peers-locally:** add rule to require all peers are declared as dev dependencies ([#1407](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1407)) ([5a102ec](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/5a102ecd0f6fb025f42e838492844e2fa32ba786)), closes [#1053](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1053)
 
-# [0.82.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.81.0...v0.82.0) (2025-11-17)
+## [0.82.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.81.0...v0.82.0) (2025-11-17)
 
 ### Features
 
 - **require-sideEffects:** add new rule for requiring `sideEffects` ([#1406](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1406)) ([0a8388d](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/0a8388d6be21e6d4d7c0203fd65be96751ca5f29)), closes [#1405](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1405)
 
-# [0.81.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.80.0...v0.81.0) (2025-11-17)
+## [0.81.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.80.0...v0.81.0) (2025-11-17)
 
 ### Features
 
 - **require-attribution:** add new rule to require proper attribution ([#1408](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1408)) ([e646f94](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/e646f941bfc8ac2e4cb7c28509a8bd800b912442)), closes [#1404](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1404)
 
-# [0.80.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.79.0...v0.80.0) (2025-11-17)
+## [0.80.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.79.0...v0.80.0) (2025-11-17)
 
 ### Features
 
 - **require-exports:** add new rule to require `exports` ([#1410](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1410)) ([c8fd152](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/c8fd1525b4d25c4d1fbdb488a7a604037e352361)), closes [#1409](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1409)
 
-# [0.79.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.78.0...v0.79.0) (2025-11-15)
+## [0.79.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.78.0...v0.79.0) (2025-11-15)
 
 ### Features
 
 - deprecate `valid-package-definition` ([#1400](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1400)) ([dca815a](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/dca815ae441d7d0667fcd54933eee868197b31d7)), closes [#1399](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1399)
 
-# [0.78.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.77.0...v0.78.0) (2025-11-15)
+## [0.78.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.77.0...v0.78.0) (2025-11-15)
 
 ### Features
 
 - **valid-repository:** add new rule for validating `repository` ([#1393](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1393)) ([2b38e88](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/2b38e881f60d357f9f73ad7a1aff159682542c42)), closes [#838](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/838)
 
-# [0.77.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.76.0...v0.77.0) (2025-11-15)
+## [0.77.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.76.0...v0.77.0) (2025-11-15)
 
 ### Features
 
 - **unique-dependencies:** report cross-group duplicates ([#1398](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1398)) ([94b690e](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/94b690e1996ec271ba743225ccecf66691f97e01)), closes [#1007](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1007)
 
-# [0.76.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.75.0...v0.76.0) (2025-11-15)
+## [0.76.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.75.0...v0.76.0) (2025-11-15)
 
 ### Features
 
 - **valid-engines:** add new rule for validating `engines` ([#1397](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1397)) ([ba834f0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/ba834f00651b64f2bc0cf58cf41d768bd6cee5eb)), closes [#826](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/826)
 
-# [0.75.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.73.0...v0.75.0) (2025-11-15)
+## [0.75.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.73.0...v0.75.0) (2025-11-15)
 
 ### Features
 
@@ -68,55 +68,55 @@
 - **valid-publishConfig:** add new rule for validating `publishConfig` ([#1388](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1388)) ([6d1fab4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/6d1fab4e4b6c59e7bcfc582ef75a0e07a5c8ea08)), closes [#841](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/841)
 - **valid-workspaces:** add new rule for validating `workspaces` ([#1396](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1396)) ([2eeca42](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/2eeca42701a8636704e3d6b896cf3eec21531779)), closes [#843](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/843)
 
-# [0.74.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.73.0...v0.74.0) (2025-11-14)
+## [0.74.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.73.0...v0.74.0) (2025-11-14)
 
 ### Features
 
 - **valid-publishConfig:** add new rule for validating `publishConfig` ([#1388](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1388)) ([6d1fab4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/6d1fab4e4b6c59e7bcfc582ef75a0e07a5c8ea08)), closes [#841](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/841)
 
-# [0.73.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.72.0...v0.73.0) (2025-11-13)
+## [0.73.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.72.0...v0.73.0) (2025-11-13)
 
 ### Features
 
 - **order-properties:** lexicographically sort non-standard properties ([#1375](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1375)) ([f7c0d01](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/f7c0d019b91aab831f7506e213cc1176bd5dac75)), closes [#1374](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1374)
 
-# [0.72.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.71.0...v0.72.0) (2025-11-13)
+## [0.72.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.71.0...v0.72.0) (2025-11-13)
 
 ### Features
 
 - **valid-contributors:** add new rule for validating `contributors` ([#1387](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1387)) ([82a844c](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/82a844cf472a06f2da036a39137f79f3ca1e6c5d)), closes [#1372](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1372)
 
-# [0.71.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.70.0...v0.71.0) (2025-11-13)
+## [0.71.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.70.0...v0.71.0) (2025-11-13)
 
 ### Features
 
 - **valid-os:** add new rule for validating `os` ([#1383](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1383)) ([896cd53](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/896cd53fee7b1c881102de62f9f7e032a3673ea8)), closes [#834](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/834)
 
-# [0.70.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.69.0...v0.70.0) (2025-11-13)
+## [0.70.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.69.0...v0.70.0) (2025-11-13)
 
 ### Features
 
 - **valid-private:** add new rule for validating `private` ([#1384](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1384)) ([9a9b3d2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/9a9b3d27c5553088cdb224861f122a341acd01bf)), closes [#837](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/837)
 
-# [0.69.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.68.0...v0.69.0) (2025-11-12)
+## [0.69.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.68.0...v0.69.0) (2025-11-12)
 
 ### Features
 
 - **valid-main:** add new rule for validating `main` ([#1382](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1382)) ([bc54025](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/bc54025bda030013b9129dfb31332327369ad6e7)), closes [#831](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/831)
 
-# [0.68.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.67.0...v0.68.0) (2025-11-12)
+## [0.68.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.67.0...v0.68.0) (2025-11-12)
 
 ### Features
 
 - **valid-keywords:** add new rule for validating `keywords` ([#1381](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1381)) ([a227184](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/a2271843a104288376da9b1fbc89e1de33444a38)), closes [#829](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/829)
 
-# [0.67.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.66.0...v0.67.0) (2025-11-12)
+## [0.67.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.66.0...v0.67.0) (2025-11-12)
 
 ### Features
 
 - **valid-files:** add new rule for validating `files` ([#1380](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1380)) ([d2a81d3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/d2a81d3c1c86a24c675fb2ff8483a7e01400b294)), closes [#827](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/827)
 
-# [0.66.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.65.3...v0.66.0) (2025-11-11)
+## [0.66.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.65.3...v0.66.0) (2025-11-11)
 
 ### Features
 
@@ -140,7 +140,7 @@
 
 - **scripts-name-casing:** ignore `prepublishOnly` built-in script ([#1369](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1369)) ([b672551](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/b67255122ac753d1c3f9d7ef310a72dca029f2a3)), closes [#1368](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1368)
 
-# [0.65.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.64.0...v0.65.0) (2025-11-08)
+## [0.65.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.64.0...v0.65.0) (2025-11-08)
 
 ### Bug Fixes
 
@@ -150,31 +150,31 @@
 
 - **no-redundant-publishConfig:** add new rule ([#1366](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1366)) ([8d3680c](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/8d3680c5fb0df0af37744cf86201163aee372bab)), closes [#1365](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1365)
 
-# [0.64.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.63.0...v0.64.0) (2025-11-04)
+## [0.64.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.63.0...v0.64.0) (2025-11-04)
 
 ### Features
 
 - **bin-name-casing:** add new rule ([#1343](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1343)) ([0e10e87](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/0e10e875eb4cc5f680e154e6ea2333e5902d4c4c)), closes [#1346](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1346)
 
-# [0.63.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.62.0...v0.63.0) (2025-11-04)
+## [0.63.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.62.0...v0.63.0) (2025-11-04)
 
 ### Features
 
 - **restrict-private-properties:** add new rule ([#1336](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1336)) ([e1225cf](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/e1225cf991be2f3829cdddcae8b06cef8196f070)), closes [#1323](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1323)
 
-# [0.62.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.61.0...v0.62.0) (2025-11-03)
+## [0.62.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.61.0...v0.62.0) (2025-11-03)
 
 ### Features
 
 - **scripts-name-casing:** add new rule ([#1344](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1344)) ([e735595](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/e735595537e6857c771eac12a1efcd55cb2d3564)), closes [#61](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/61)
 
-# [0.61.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.60.0...v0.61.0) (2025-11-03)
+## [0.61.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.60.0...v0.61.0) (2025-11-03)
 
 ### Features
 
 - add new stylistic config ([#1342](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1342)) ([3d01cce](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/3d01cce99a1718a7485669c7b8cf6143a255b094)), closes [#1341](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1341)
 
-# [0.60.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.59.1...v0.60.0) (2025-11-03)
+## [0.60.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.59.1...v0.60.0) (2025-11-03)
 
 ### Features
 
@@ -186,19 +186,19 @@
 
 - **deps:** update dependency validate-npm-package-name to v7 ([#1353](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1353)) ([be9970a](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/be9970a18c73521906d1564ca461d94159e88807))
 
-# [0.59.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.58.0...v0.59.0) (2025-10-25)
+## [0.59.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.58.0...v0.59.0) (2025-10-25)
 
 ### Features
 
 - **exports-subpaths-style:** add new rule ([#1328](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1328)) ([d1a82ed](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/d1a82edf78b7b4bd446018f1ea3bb77e1bc9c772)), closes [#1322](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1322)
 
-# [0.58.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.57.0...v0.58.0) (2025-10-22)
+## [0.58.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.57.0...v0.58.0) (2025-10-22)
 
 ### Features
 
 - mark `legacy-recommended` config deprecated ([#1331](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1331)) ([5e20411](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/5e204118f4b6ae4a50f9a50a1c2a64a5bf84a5a7)), closes [#1329](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1329) [#1253](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1253)
 
-# [0.57.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.56.4...v0.57.0) (2025-10-16)
+## [0.57.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.56.4...v0.57.0) (2025-10-16)
 
 ### Features
 
@@ -228,25 +228,25 @@
 
 - **deps:** update dependency package-json-validator to ~0.30.0 ([#1241](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1241)) ([c3d247c](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/c3d247cc416d4bb0eee629fde3440224fe39eb59))
 
-# [0.56.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.55.0...v0.56.0) (2025-08-25)
+## [0.56.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.55.0...v0.56.0) (2025-08-25)
 
 ### Features
 
 - **valid-directories:** add new rule for validating `directories` ([#1224](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1224)) ([b1cc676](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/b1cc6762f7e46162e4a6bf067dd29af2983462c8)), closes [#825](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/825)
 
-# [0.55.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.54.0...v0.55.0) (2025-08-22)
+## [0.55.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.54.0...v0.55.0) (2025-08-22)
 
 ### Features
 
 - add no-redundant-files to recommended ([#1232](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1232)) ([2a52f87](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/2a52f8797bff236f88232d139e2a9526c24e4b4c)), closes [#1231](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1231)
 
-# [0.54.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.53.0...v0.54.0) (2025-08-15)
+## [0.54.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.53.0...v0.54.0) (2025-08-15)
 
 ### Features
 
 - **valid-exports:** add new rule for validating `exports` ([#1220](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1220)) ([2af10da](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/2af10dae3398832819c6dd37730ffef5ee3329b7)), closes [#1033](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1033)
 
-# [0.53.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.52.1...v0.53.0) (2025-08-13)
+## [0.53.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.52.1...v0.53.0) (2025-08-13)
 
 ### Features
 
@@ -258,31 +258,31 @@
 
 - **sort-collections:** align sorting of scripts with `prettier-plugin-packagejson` ([#1203](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1203)) ([1f5c590](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/1f5c590adc846194766127ab962f8efa72942d06)), closes [#753](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/753)
 
-# [0.52.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.51.0...v0.52.0) (2025-08-07)
+## [0.52.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.51.0...v0.52.0) (2025-08-07)
 
 ### Features
 
 - **valid-description:** add new rule for validating `description` ([#1204](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1204)) ([4acb265](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4acb26563c0cacb5834c8b53dae68fb291c0ffd1)), closes [#823](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/823)
 
-# [0.51.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.50.0...v0.51.0) (2025-08-05)
+## [0.51.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.50.0...v0.51.0) (2025-08-05)
 
 ### Features
 
 - add `ignorePrivate` option to all `require-*` rules ([#1158](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1158)) ([055009b](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/055009bf864c9f8db153bf0c5bb9568d023abe12)), closes [#1092](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1092)
 
-# [0.50.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.49.0...v0.50.0) (2025-08-05)
+## [0.50.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.49.0...v0.50.0) (2025-08-05)
 
 ### Features
 
 - add new `require-` rules for `bugs`, `bundleDependencies`, `dependencies`, and more ([#1197](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1197)) ([0a06664](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/0a0666404d5659ea8eb8717516aa3c3b6374af26)), closes [#862](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/862) [#863](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/863) [#811](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/811) [#809](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/809) [#801](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/801) [#797](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/797)
 
-# [0.49.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.48.0...v0.49.0) (2025-08-05)
+## [0.49.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.48.0...v0.49.0) (2025-08-05)
 
 ### Features
 
 - **valid-dependencies:** add new rule for validating dependencies ([#1196](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1196)) ([73af8e2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/73af8e214d99df618d5d8c4eb9bfdfefc062ef84)), closes [#822](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/822) [#824](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/824) [#833](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/833) [#835](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/835)
 
-# [0.48.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.47.1...v0.48.0) (2025-07-31)
+## [0.48.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.47.1...v0.48.0) (2025-07-31)
 
 ### Features
 
@@ -294,13 +294,13 @@
 
 - **no-empty-fields:** don't throw error on empty object ([#1190](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1190)) ([8a9ba8a](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/8a9ba8acb1d68fd1040a008dfdb185b6908284a2)), closes [#1188](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1188)
 
-# [0.47.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.46.0...v0.47.0) (2025-07-25)
+## [0.47.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.46.0...v0.47.0) (2025-07-25)
 
 ### Features
 
 - **no-empty-fields:** Add `ignoreProperties` option ([#1186](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1186)) ([91e7156](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/91e7156d9f4569e8fee6f1124c4c1bb18ffdfbe0)), closes [#1182](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1182)
 
-# [0.46.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.45.2...v0.46.0) (2025-07-24)
+## [0.46.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.45.2...v0.46.0) (2025-07-24)
 
 ### Features
 
@@ -318,7 +318,7 @@
 
 - **valid-repository-directory:** use correct path separator when on windows ([#1177](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1177)) ([0688419](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/06884197a028a258c31db0104d8db1dc86f53345)), closes [#1175](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1175)
 
-# [0.45.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.44.1...v0.45.0) (2025-07-17)
+## [0.45.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.44.1...v0.45.0) (2025-07-17)
 
 ### Features
 
@@ -330,7 +330,7 @@
 
 - **deps:** update dependency package-json-validator to ~0.20.0 ([#1170](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1170)) ([941cf73](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/941cf734557db103da915d36de5adc18083a22a1))
 
-# [0.44.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.43.4...v0.44.0) (2025-07-09)
+## [0.44.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.43.4...v0.44.0) (2025-07-09)
 
 ### Features
 
@@ -360,7 +360,7 @@
 
 - disallow extra properties in rule options ([#1156](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1156)) ([4186e96](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4186e960c17a5397ac916184fc4341f9b26fc3d0))
 
-# [0.43.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.42.1...v0.43.0) (2025-07-02)
+## [0.43.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.42.1...v0.43.0) (2025-07-02)
 
 ### Features
 
@@ -372,13 +372,13 @@
 
 - **deps:** update dependency package-json-validator to ~0.17.0 ([#1152](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1152)) ([16239d0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/16239d084c245836549071a4e8ac2879b4f53f3e))
 
-# [0.42.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.41.0...v0.42.0) (2025-06-25)
+## [0.42.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.41.0...v0.42.0) (2025-06-25)
 
 ### Features
 
 - remove deprecated `valid-package-def` rule ([#1111](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1111)) ([946a585](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/946a585c2c9344ac227463cf234714fc204f1746)), closes [#1110](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1110) [#711](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/711)
 
-# [0.41.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.40.5...v0.41.0) (2025-06-24)
+## [0.41.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.40.5...v0.41.0) (2025-06-24)
 
 ### Features
 
@@ -414,7 +414,7 @@
 
 - **deps:** update dependency eslint-fix-utils to ^0.3.0 ([#1124](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1124)) ([1e30861](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/1e3086136f2449e0be6c4397af2de15287899da0))
 
-# [0.40.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.39.2...v0.40.0) (2025-06-16)
+## [0.40.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.39.2...v0.40.0) (2025-06-16)
 
 ### Features
 
@@ -432,7 +432,7 @@
 
 - **deps:** update dependency @altano/repository-tools to v1 ([#1006](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1006)) ([da63ce3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/da63ce37654652690aa2bc3ea2a042a3ac7ff465))
 
-# [0.39.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.38.1...v0.39.0) (2025-06-13)
+## [0.39.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.38.1...v0.39.0) (2025-06-13)
 
 ### Features
 
@@ -444,19 +444,19 @@
 
 - **valid-local-dependency:** don't flag archives as invalid ([#1109](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1109)) ([3d89865](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/3d89865bba6e3ecab02576cde131336a7dc8c169)), closes [#1086](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1086)
 
-# [0.38.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.37.0...v0.38.0) (2025-06-13)
+## [0.38.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.37.0...v0.38.0) (2025-06-13)
 
 ### Features
 
 - add `valid-author` rule ([#1079](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1079)) ([b8e8b40](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/b8e8b40065a0aa0bfa9e38697ab5fe3241b7d6d7)), closes [#840](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/840)
 
-# [0.37.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.36.0...v0.37.0) (2025-06-12)
+## [0.37.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.36.0...v0.37.0) (2025-06-12)
 
 ### Features
 
 - **valid-bin:** add new rule for validating bin ([#1082](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1082)) ([e9cc86e](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/e9cc86ec5827a4374f81886865b578f40823c5b8)), closes [#818](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/818) [#1077](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1077)
 
-# [0.36.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.35.1...v0.36.0) (2025-06-11)
+## [0.36.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.35.1...v0.36.0) (2025-06-11)
 
 ### Features
 
@@ -468,13 +468,13 @@
 
 - **deps:** update dependency detect-indent to v7 ([#874](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/874)) ([65300dc](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/65300dc30dfdc79ab789a144f251f0b8ba96ea22))
 
-# [0.35.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.34.0...v0.35.0) (2025-06-10)
+## [0.35.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.34.0...v0.35.0) (2025-06-10)
 
 ### Features
 
 - remove support for node 18 ([#1097](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1097)) ([257659a](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/257659af4fda63e2143d1ab250546dd3cb0932e7)), closes [#1074](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1074)
 
-# [0.34.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.33.2...v0.34.0) (2025-06-10)
+## [0.34.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.33.2...v0.34.0) (2025-06-10)
 
 ### Features
 
@@ -492,23 +492,24 @@
 
 - add CHANGELOG to package ([#1075](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1075)) ([eb13030](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/eb130302b6dfcc456dfeaf49fdfd61bd4fa495d1)), closes [#1070](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1070)
 
-# [0.33.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.32.0...v0.33.0) (2025-05-31)
+## [0.33.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.32.0...v0.33.0) (2025-05-31)
 
 ### Features
 
 - add `require-type` rule ([#1065](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1065)) ([9c092be](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/9c092beb546407c4b8b43426058c56696a88b7c3)), closes [#1032](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1032)
 
-# [0.32.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.31.0...v0.32.0) (2025-05-31)
+## [0.32.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.31.0...v0.32.0) (2025-05-31)
 
-No meaningful change. CI error.
+No meaningful change.
+CI error.
 
-# [0.31.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.30.0...v0.31.0) (2025-04-26)
+## [0.31.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.30.0...v0.31.0) (2025-04-26)
 
 ### Features
 
 - add require-description rule ([#1024](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1024)) ([0c00c62](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/0c00c62cc3b68ff9eae8d3f3bf20d8b4fbbb3926)), closes [#864](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/864)
 
-# [0.30.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.29.1...v0.30.0) (2025-04-22)
+## [0.30.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.29.1...v0.30.0) (2025-04-22)
 
 ### Features
 
@@ -520,19 +521,19 @@ No meaningful change. CI error.
 
 - bump to create-typescript-app@2 with transitions action ([#993](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/993)) ([5b5c298](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/5b5c2989dda36b43e85a14056120e863ef4fec3f)), closes [#969](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/969)
 
-# [0.29.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.28.0...v0.29.0) (2025-03-17)
+## [0.29.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.28.0...v0.29.0) (2025-03-17)
 
 ### Features
 
 - **require-types:** add new rule ([#958](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/958)) ([63305af](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/63305afcac6fa57030b13de2ae9f26c108c979c0)), closes [#816](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/816) [#816](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/816)
 
-# [0.28.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.27.0...v0.28.0) (2025-03-17)
+## [0.28.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.27.0...v0.28.0) (2025-03-17)
 
 ### Features
 
 - **require-engines:** add new rule ([#954](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/954)) ([9093b28](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/9093b280c77770512ac88631e4903e17d5275bec)), closes [#868](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/868)
 
-# [0.27.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.26.4...v0.27.0) (2025-03-17)
+## [0.27.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.26.4...v0.27.0) (2025-03-17)
 
 ### Features
 
@@ -558,19 +559,19 @@ No meaningful change. CI error.
 
 - **deps:** update dependency sort-package-json to v2.15.0 ([#925](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/925)) ([3ce4286](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/3ce4286442f45c74d09dcc60e040bafb879a75f2))
 
-# [0.26.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.25.0...v0.26.0) (2025-02-10)
+## [0.26.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.25.0...v0.26.0) (2025-02-10)
 
 ### Features
 
 - **require-files:** add require-files rule ([#887](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/887)) ([4de33de](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4de33de2715579c0d217609cd576d1b3b843d457)), closes [#803](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/803)
 
-# [0.25.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.24.0...v0.25.0) (2025-02-09)
+## [0.25.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.24.0...v0.25.0) (2025-02-09)
 
 ### Features
 
 - **require-keywords:** add require-keywords rule ([#884](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/884)) ([99237f0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/99237f0dc5902bda417345cba681f23a328c5bbe)), closes [#866](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/866)
 
-# [0.24.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.23.1...v0.24.0) (2025-02-08)
+## [0.24.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.23.1...v0.24.0) (2025-02-08)
 
 ### Features
 
@@ -582,13 +583,13 @@ No meaningful change. CI error.
 
 - **deps:** update dependency semver to v7.7.1 ([#880](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/880)) ([152cfc1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/152cfc10e9cc9e34803e609ec3b12855395093c6))
 
-# [0.23.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.22.0...v0.23.0) (2025-02-04)
+## [0.23.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.22.0...v0.23.0) (2025-02-04)
 
 ### Features
 
 - **require-version:** add require-version rule ([#861](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/861)) ([848377d](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/848377dea379ed23d22d8fc5acd2e84c472ebb1b))
 
-# [0.22.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.21.1...v0.22.0) (2025-02-03)
+## [0.22.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.21.1...v0.22.0) (2025-02-03)
 
 ### Features
 
@@ -600,7 +601,7 @@ No meaningful change. CI error.
 
 - **no-redundant-files:** detect variations of README.md as redundant ([#765](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/765)) ([7453095](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/745309536c3d2c175591582147028754f9287b1d)), closes [#763](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/763) [#763](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/763)
 
-# [0.21.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.20.1...v0.21.0) (2025-01-23)
+## [0.21.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.20.1...v0.21.0) (2025-01-23)
 
 ### Features
 
@@ -612,31 +613,31 @@ No meaningful change. CI error.
 
 - bump package-json-validator dep to 0.8 ([#735](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/735)) ([29a9722](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/29a9722c15d39984ea99c2be346e20c2f4f9c76e)), closes [#734](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/734)
 
-# [0.20.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.19.0...v0.20.0) (2025-01-17)
+## [0.20.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.19.0...v0.20.0) (2025-01-17)
 
 ### Features
 
 - **no-redundant-files:** add new rule ([#721](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/721)) ([1167f5e](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/1167f5ea698bf09e2dfe77147464cc3a3d5ee6e7)), closes [#686](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/686) [#686](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/686)
 
-# [0.19.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.18.0...v0.19.0) (2024-12-31)
+## [0.19.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.18.0...v0.19.0) (2024-12-31)
 
 ### Features
 
 - **valid-package-definition:** rename rule from valid-package-def ([#711](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/711)) ([4f3907b](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4f3907b83ce1ddadcfbb572e70559e22b9c4a917)), closes [#132](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/132) [#132](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/132)
 
-# [0.18.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.17.0...v0.18.0) (2024-12-05)
+## [0.18.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.17.0...v0.18.0) (2024-12-05)
 
 ### Features
 
 - update sort-package-json to 12 ([#680](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/680)) ([566e85b](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/566e85b27ecff4997cd08e1fa00611b1b0e61db0)), closes [#679](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/679)
 
-# [0.17.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.16.0...v0.17.0) (2024-11-30)
+## [0.17.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.16.0...v0.17.0) (2024-11-30)
 
 ### Features
 
 - sort alphabetically with co-located hooks for `scripts` ([#632](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/632)) ([4ccae4f](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4ccae4f58e1695b792dd3d0daf46cedc134d9541)), closes [#499](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/499) [#499](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/499)
 
-# [0.16.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.6...v0.16.0) (2024-11-30)
+## [0.16.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.15.6...v0.16.0) (2024-11-30)
 
 ### Features
 
@@ -678,13 +679,13 @@ No meaningful change. CI error.
 
 - update package-json-validator ([#456](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/456)) ([1a8bda4](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/1a8bda47891c14c7434ad6242f33f9ad7c2e940f)), closes [#250](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/250)
 
-# [0.15.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.14.0...v0.15.0) (2024-06-17)
+## [0.15.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.14.0...v0.15.0) (2024-06-17)
 
 ### Features
 
 - **order-properties:** more precise error reporting ([#328](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/328)) ([4a3fbc8](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4a3fbc8046d4286ca950b1de9000f12bdadfa961)), closes [#320](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/320)
 
-# [0.14.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.13.1...v0.14.0) (2024-05-31)
+## [0.14.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.13.1...v0.14.0) (2024-05-31)
 
 ### Features
 
@@ -696,7 +697,7 @@ No meaningful change. CI error.
 
 - rule order-properties not work ([#315](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/315)) ([3a477f5](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/3a477f5f9e6223bff49d0a3b3cb33633bed7b76e)), closes [#000](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/000)
 
-# [0.13.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.12.1...v0.13.0) (2024-04-29)
+## [0.13.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.12.1...v0.13.0) (2024-04-29)
 
 ### Bug Fixes
 
@@ -712,13 +713,13 @@ No meaningful change. CI error.
 
 - **valid-package-def:** ignore pnpm workspace protocol ([#258](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/258)) ([4b061e6](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4b061e6540fb914d004337bb89a90fedfb94b0f7)), closes [#251](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/251)
 
-# [0.12.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.11.0...v0.12.0) (2024-03-25)
+## [0.12.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.11.0...v0.12.0) (2024-03-25)
 
 ### Features
 
 - switch prefer-repository-shorthand to repository-shorthand ([#248](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/248)) ([580edb3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/580edb3957cd4d8229bf73c10b1f7f65f79dc53f)), closes [#223](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/223)
 
-# [0.11.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.10.4...v0.11.0) (2024-03-24)
+## [0.11.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.10.4...v0.11.0) (2024-03-24)
 
 ### Features
 
@@ -748,13 +749,13 @@ No meaningful change. CI error.
 
 - incorrect example in 'sort-collections' ([#137](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/137)) ([88a94a0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/88a94a06e0db5624f83fab22144d7096a0cd1a3a)), closes [#136](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/136)
 
-# [0.10.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.9.0...v0.10.0) (2024-01-20)
+## [0.10.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.9.0...v0.10.0) (2024-01-20)
 
 ### Features
 
 - added valid-version rule ([#135](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/135)) ([6e8b6fb](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/6e8b6fbe777d03731f5552c980eaad4e5f8d4dad)), closes [#130](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/130)
 
-# [0.9.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.8.1...v0.9.0) (2024-01-20)
+## [0.9.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.8.1...v0.9.0) (2024-01-20)
 
 ### Features
 
@@ -766,31 +767,31 @@ No meaningful change. CI error.
 
 - correct order-properties key checks ([#129](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/129)) ([a635c27](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/a635c279552beea4b0e5a611321d9f92083416e4)), closes [#127](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/127) [#128](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/128) [#127](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/127) [#128](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/128)
 
-# [0.8.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.7.0...v0.8.0) (2024-01-20)
+## [0.8.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.7.0...v0.8.0) (2024-01-20)
 
 ### Features
 
 - added unique-dependencies rule ([#126](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/126)) ([a9417d1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/a9417d1685808dd8e4c27eff9e3b9c7399be6e1b)), closes [#50](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/50)
 
-# [0.7.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.6.0...v0.7.0) (2024-01-20)
+## [0.7.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.6.0...v0.7.0) (2024-01-20)
 
 ### Features
 
 - added valid-repository-directory rule ([#123](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/123)) ([84035c3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/84035c3f2bac376567eef767ba21f354a0d93f54)), closes [#53](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/53)
 
-# [0.6.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.5.0...v0.6.0) (2024-01-20)
+## [0.6.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.5.0...v0.6.0) (2024-01-20)
 
 ### Features
 
 - change order-properties order default to sort-package-json ([#122](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/122)) ([246261d](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/246261dff5838c42add53fd45c03a5eadc495d83)), closes [#58](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/58)
 
-# [0.5.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.4.0...v0.5.0) (2024-01-20)
+## [0.5.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.4.0...v0.5.0) (2024-01-20)
 
 ### Features
 
 - add prefer-repository-shorthand rule ([#70](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/70)) ([0c7fb19](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/0c7fb199cdf0ba001bd996f6da2c4ba8cbbc7d0f)), closes [#71](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/71)
 
-# [0.4.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.1.3...v0.4.0) (2024-01-20)
+## [0.4.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.1.3...v0.4.0) (2024-01-20)
 
 ### Bug Fixes
 
