@@ -69,7 +69,7 @@
 	"devDependencies": {
 		"@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
 		"@eslint/js": "9.39.1",
-		"@eslint/markdown": "^7.5.1",
+		"@eslint/markdown": "7.5.1",
 		"@release-it/conventional-changelog": "10.0.2",
 		"@types/estree": "1.0.8",
 		"@types/node": "24.10.1",
@@ -99,7 +99,7 @@
 		"prettier": "3.7.0",
 		"prettier-plugin-curly": "0.4.0",
 		"prettier-plugin-packagejson": "2.5.19",
-		"prettier-plugin-sentences-per-line": "~0.2.0",
+		"prettier-plugin-sentences-per-line": "0.2.0",
 		"prettier-plugin-sh": "0.18.0",
 		"release-it": "19.1.0",
 		"tsdown": "0.18.0",

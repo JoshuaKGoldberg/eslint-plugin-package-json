@@ -46,7 +46,7 @@ importers:
         specifier: 9.39.1
         version: 9.39.1
       '@eslint/markdown':
-        specifier: ^7.5.1
+        specifier: 7.5.1
         version: 7.5.1
       '@release-it/conventional-changelog':
         specifier: 10.0.2
@@ -136,7 +136,7 @@ importers:
         specifier: 2.5.19
         version: 2.5.19(prettier@3.7.0)
       prettier-plugin-sentences-per-line:
-        specifier: ~0.2.0
+        specifier: 0.2.0
         version: 0.2.0(prettier@3.7.0)
       prettier-plugin-sh:
         specifier: 0.18.0
