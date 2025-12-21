@@ -54,9 +54,14 @@ export default defineConfig(
 			"perfectionist/sort-objects": [
 				"error",
 				{
-					customGroups: { programExit: "Program:exit" },
+					customGroups: [
+						{
+							elementNamePattern: "Program:exit",
+							groupName: "programExit",
+						},
+					],
 					groups: ["unknown", "programExit"],
-					type: "alphabetical",
+					type: "natural",
 				},
 			],
 			// Stylistic concerns that don't interfere with Prettier
