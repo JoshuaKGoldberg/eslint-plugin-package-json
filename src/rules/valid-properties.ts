@@ -63,6 +63,7 @@ const properties = [
 	["license", validateLicense],
 	["main", validateMain],
 	["man", validateMan],
+	["module", validateMain], // Reuse `validateMain` for `module`
 	["optionalDependencies", validateDependencies],
 	["os", validateOs],
 	["peerDependencies", validateDependencies],
