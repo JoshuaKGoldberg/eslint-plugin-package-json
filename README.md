@@ -149,18 +149,18 @@ import packageJson from "eslint-plugin-package-json";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig({
-    plugins: {
-        "package-json": packageJson,
-    },
-    rules: {
-        // `description` won't be required in package.json with `"private": true`
-        "package-json/require-description": "error",
-    },
-    settings: {
-        packageJson: {
-            enforceForPrivate: false,
-        },
-    },
+	plugins: {
+		"package-json": packageJson,
+	},
+	rules: {
+		// `description` won't be required in package.json with `"private": true`
+		"package-json/require-description": "error",
+	},
+	settings: {
+		packageJson: {
+			enforceForPrivate: false,
+		},
+	},
 });
 ```
 
