@@ -76,7 +76,7 @@ import { defineConfig } from "eslint/config";
 export default defineConfig([
 	// your other ESLint configurations
 	packageJson.configs["recommended-publishable"],
-)];
+]);
 ```
 
 ### Stylistic Config
