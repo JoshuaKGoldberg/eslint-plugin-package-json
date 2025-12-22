@@ -35,11 +35,12 @@ This plugin's recommended configuration enables its rules on `**/package.json` f
 ```ts
 // eslint.config.ts
 import packageJson from "eslint-plugin-package-json";
+import { defineConfig } from "eslint/config";
 
-export default [
+export default defineConfig([
 	// your other ESLint configurations
 	packageJson.configs.recommended,
-];
+]);
 ```
 
 If you want to override the recommended rules:
@@ -47,16 +48,18 @@ If you want to override the recommended rules:
 ```ts
 // eslint.config.ts
 import packageJson from "eslint-plugin-package-json";
+import { defineConfig } from "eslint/config";
 
-export default [
+export default defineConfig([
 	// your other ESLint configurations
-	packageJson.configs.recommended,
 	{
+		extends: [packageJson.configs.recommended],
+		files: ["package.json"],
 		rules: {
-			"package-json/valid-package-definition": "off",
+			"package-json/require-author": "error",
 		},
 	},
-];
+]);
 ```
 
 See [ESLint's _Configuration Files_ guide](https://eslint.org/docs/latest/use/configure/configuration-files-new) for details on how to customize your rules and other config settings.
@@ -68,11 +71,12 @@ The `recommended-publishable` configuration has everything in it from the standa
 ```ts
 // eslint.config.ts
 import packageJson from "eslint-plugin-package-json";
+import { defineConfig } from "eslint/config";
 
-export default [
+export default defineConfig([
 	// your other ESLint configurations
 	packageJson.configs["recommended-publishable"],
-];
+]);
 ```
 
 ### Stylistic Config
@@ -83,12 +87,13 @@ This can be used in addition to the recommended config, or on its own.
 ```ts
 // eslint.config.ts
 import packageJson from "eslint-plugin-package-json";
+import { defineConfig } from "eslint/config";
 
-export default [
+export default defineConfig([
 	// your other ESLint configurations
 	packageJson.configs.recommended, // or packageJson.configs["recommended-publishable"]
 	packageJson.configs.stylistic,
-];
+]);
 ```
 
 ### Legacy Recommended Config (deprecated)
@@ -141,8 +146,9 @@ Example:
 ```ts
 // eslint.config.ts
 import packageJson from "eslint-plugin-package-json";
+import { defineConfig } from "eslint/config";
 
-export default {
+export default defineConfig({
 	plugins: {
 		"package-json": packageJson,
 	},
@@ -155,7 +161,7 @@ export default {
 			enforceForPrivate: false,
 		},
 	},
-};
+});
 ```
 
 #### `enforceForPrivate`
