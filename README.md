@@ -298,6 +298,7 @@ Thanks! 🗂
 <!-- spellchecker: disable -->
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 <table>
   <tbody>
     <tr>
@@ -330,7 +331,7 @@ Thanks! 🗂
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://morrisoncole.co.uk"><img src="https://avatars.githubusercontent.com/u/963368?v=4?s=100" width="100px;" alt="Morrison Cole"/><br /><sub><b>Morrison Cole</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3AMorrisonCole" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/nschonni"><img src="https://avatars.githubusercontent.com/u/1297909?v=4?s=100" width="100px;" alt="Nick Schonning"/><br /><sub><b>Nick Schonning</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=nschonni" title="Code">💻</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/OlivierZal"><img src="https://avatars.githubusercontent.com/u/88216225?v=4?s=100" width="100px;" alt="Olivier Zalmanski"/><br /><sub><b>Olivier Zalmanski</b></sub></a><br /><a href="#maintenance-olivierzal" title="Maintenance">🚧</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/OlivierZal"><img src="https://avatars.githubusercontent.com/u/88216225?v=4?s=100" width="100px;" alt="Olivier Zalmanski"/><br /><sub><b>Olivier Zalmanski</b></sub></a><br /><a href="#maintenance-olivierzal" title="Maintenance">🚧</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=olivierzal" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://patrikcsak.com"><img src="https://avatars.githubusercontent.com/u/4766244?v=4?s=100" width="100px;" alt="Patrik Csak"/><br /><sub><b>Patrik Csak</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3Apatrik-csak" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/rakleed"><img src="https://avatars.githubusercontent.com/u/19418601?v=4?s=100" width="100px;" alt="Pavel"/><br /><sub><b>Pavel</b></sub></a><br /><a href="#ideas-rakleed" title="Ideas, Planning, & Feedback">🤔</a> <a href="#tool-rakleed" title="Tools">🔧</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=rakleed" title="Documentation">📖</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=rakleed" title="Code">💻</a> <a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=author%3Arakleed" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://sasial.dev"><img src="https://avatars.githubusercontent.com/u/44125644?v=4?s=100" width="100px;" alt="Sasial"/><br /><sub><b>Sasial</b></sub></a><br /><a href="https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commits?author=sasial-dev" title="Code">💻</a></td>
@@ -348,6 +349,7 @@ Thanks! 🗂
   </tbody>
 </table>
 
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
