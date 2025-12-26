@@ -198,6 +198,13 @@ ruleTester.run("valid-repository", rules["valid-repository"], {
 			"gist:11081aaa281",
 			"bitbucket:user/repo",
 			"gitlab:user/repo",
+			// Repos with hyphens and dots in names
+			"github:some-user/some-repo",
+			"github:user-name/repo-name",
+			"some-user/some-repo",
+			"user-name/repo.js",
+			"bitbucket:my-org/my-repo",
+			"gitlab:some.user/some.repo",
 		].map((value) => ({
 			code: `{
 	"repository": "${value}"
