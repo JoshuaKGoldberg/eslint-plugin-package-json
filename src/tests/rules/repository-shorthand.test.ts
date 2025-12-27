@@ -35,6 +35,24 @@ ruleTester.run("repository-shorthand", rule, {
 		},
 		{
 			code: `{
+				"repository": "JoshuaKGoldberg/create-typescript-app"
+			}`,
+			errors: [
+				{
+					column: 19,
+					endColumn: 58,
+					messageId: "preferObject",
+				},
+			],
+			output: `{
+				"repository": {
+  "type": "git",
+  "url": "https://github.com/JoshuaKGoldberg/create-typescript-app"
+}
+			}`,
+		},
+		{
+			code: `{
 				"repository": "github:JoshuaKGoldberg/create-typescript-app"
 			}`,
 			errors: [
@@ -48,6 +66,22 @@ ruleTester.run("repository-shorthand", rule, {
 				"repository": {
   "type": "git",
   "url": "https://github.com/JoshuaKGoldberg/create-typescript-app"
+}
+			}`,
+		},
+		{
+			code: `{
+				"repository": "gibberish:JoshuaKGoldberg/create-typescript-app"
+			}`,
+			errors: [
+				{
+					messageId: "preferObject",
+				},
+			],
+			output: `{
+				"repository": {
+  "type": "git",
+  "url": "https://github.com/gibberish:JoshuaKGoldberg/create-typescript-app"
 }
 			}`,
 		},
