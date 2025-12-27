@@ -4,13 +4,57 @@ import { createRule } from "../createRule.ts";
 import { findPropertyWithKeyValue } from "../utils/findPropertyWithKeyValue.ts";
 import { isJSONStringLiteral } from "../utils/predicates.ts";
 
-const githubUrlRegex =
-	/^(?:git\+)?(?:ssh:\/\/git@|http?s:\/\/)?(?:www\.)?github\.com\//;
+const providerRegexes = {
+	bitbucket:
+		/^(?:git\+)?(?:ssh:\/\/git@|http?s:\/\/)?(?:www\.)?bitbucket\.org\//,
+	gist: /^(?:git\+)?(?:ssh:\/\/git@|http?s:\/\/)?(?:www\.)?gist\.github\.com\//,
+	github: /^(?:git\+)?(?:ssh:\/\/git@|http?s:\/\/)?(?:www\.)?github\.com\//,
+	gitlab: /^(?:git\+)?(?:ssh:\/\/git@|http?s:\/\/)?(?:www\.)?gitlab\.com\//,
+} satisfies Record<string, RegExp>;
+type Provider = keyof typeof providerRegexes;
 
-const isGitHubUrl = (url: string) => githubUrlRegex.test(url);
+const providerUrls = {
+	bitbucket: "https://bitbucket.org/",
+	gist: "https://gist.github.com/",
+	github: "https://github.com/",
+	gitlab: "https://gitlab.com/",
+} satisfies Record<Provider, string>;
 
-const cleanGitHubUrl = (url: string) =>
-	url.replace(githubUrlRegex, "").replace(/\.git$/, "");
+const providers = Object.keys(providerRegexes) as Provider[];
+
+const isProvider = (value: string): value is Provider =>
+	value in providerRegexes;
+
+const cleanUrl = (url: string, provider: Provider): string =>
+	url.replace(providerRegexes[provider], "").replace(/\.git$/, "");
+
+const getProviderFromUrl = (url: string): null | Provider => {
+	for (const provider of providers) {
+		if (providerRegexes[provider].test(url)) {
+			return provider;
+		}
+	}
+
+	return null;
+};
+
+const createShorthand = (url: string, provider: Provider): string => {
+	const repo = cleanUrl(url, provider);
+	return `${provider}:${repo}`;
+};
+
+const createUrl = (shorthand: string): string => {
+	// Use the appropriate provider url if one is specified
+	if (shorthand.includes(":")) {
+		const [provider, repo] = shorthand.split(":");
+		if (isProvider(provider)) {
+			return `${providerUrls[provider]}${repo}`;
+		}
+	}
+
+	// If the provider is missing or unrecognized, default to GitHub
+	return `${providerUrls.github}${shorthand}`;
+};
 
 export const rule = createRule({
 	create(context) {
@@ -33,7 +77,7 @@ export const rule = createRule({
 							JSON.stringify(
 								{
 									type: "git",
-									url: `https://github.com/${node.value.value}`,
+									url: createUrl(node.value.value),
 								},
 								null,
 								2,
@@ -49,17 +93,22 @@ export const rule = createRule({
 		function validateRepositoryForShorthand(node: JsonAST.JSONProperty) {
 			if (isJSONStringLiteral(node.value)) {
 				const { value } = node.value;
-				if (typeof value === "string" && isGitHubUrl(value)) {
-					context.report({
-						fix(fixer) {
-							return fixer.replaceText(
-								node.value,
-								JSON.stringify(cleanGitHubUrl(value)),
-							);
-						},
-						messageId: "preferShorthand",
-						node: node.value,
-					});
+				if (typeof value === "string") {
+					const provider = getProviderFromUrl(value);
+					if (provider) {
+						context.report({
+							fix(fixer) {
+								return fixer.replaceText(
+									node.value,
+									JSON.stringify(
+										createShorthand(value, provider),
+									),
+								);
+							},
+							messageId: "preferShorthand",
+							node: node.value,
+						});
+					}
 				}
 
 				return;
@@ -84,26 +133,28 @@ export const rule = createRule({
 			}
 
 			const urlProperty = findPropertyWithKeyValue(properties, "url");
+
 			if (
 				urlProperty?.value.type !== "JSONLiteral" ||
-				typeof urlProperty.value.value !== "string" ||
-				!isGitHubUrl(urlProperty.value.value)
+				typeof urlProperty.value.value !== "string"
 			) {
 				return;
 			}
 
 			const url = urlProperty.value.value;
-
-			context.report({
-				fix(fixer) {
-					return fixer.replaceText(
-						node.value,
-						JSON.stringify(cleanGitHubUrl(url)),
-					);
-				},
-				messageId: "preferShorthand",
-				node: node.value,
-			});
+			const provider = getProviderFromUrl(url);
+			if (provider) {
+				context.report({
+					fix(fixer) {
+						return fixer.replaceText(
+							node.value,
+							JSON.stringify(createShorthand(url, provider)),
+						);
+					},
+					messageId: "preferShorthand",
+					node: node.value,
+				});
+			}
 		}
 
 		return {
@@ -136,7 +187,7 @@ export const rule = createRule({
 		messages: {
 			preferObject: "Prefer an object locator for a repository.",
 			preferShorthand:
-				"Prefer a shorthand locator for a GitHub repository.",
+				"Prefer a shorthand locator for a supported repository provider.",
 		},
 		schema: [
 			{
