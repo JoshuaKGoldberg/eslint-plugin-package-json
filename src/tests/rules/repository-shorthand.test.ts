@@ -218,6 +218,7 @@ ruleTester.run("repository-shorthand", rule, {
 	],
 	valid: [
 		`{ "repository": null }`,
+		`{ "repository": 123 }`,
 		`{
 			"repository": {
 				"type": "git"
@@ -264,6 +265,12 @@ ruleTester.run("repository-shorthand", rule, {
 		{
 			code: `{
 				"repository": null,
+			}`,
+			options: [{ form: "shorthand" }],
+		},
+		{
+			code: `{
+				"repository": 123,
 			}`,
 			options: [{ form: "shorthand" }],
 		},
@@ -328,6 +335,16 @@ ruleTester.run("repository-shorthand", rule, {
 					"repository": "https://github.com/a/b"
 				}
 			}`,
+			filename: "package.json",
+			options: [{ form: "shorthand" }],
+		},
+		{
+			code: `{
+				"repository": {
+					"type": "git",
+					"url": "https://gibberish.org/eslint/rewrite"
+				}
+		}`,
 			filename: "package.json",
 			options: [{ form: "shorthand" }],
 		},
