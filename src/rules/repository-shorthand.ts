@@ -93,22 +93,20 @@ export const rule = createRule({
 		function validateRepositoryForShorthand(node: JsonAST.JSONProperty) {
 			if (isJSONStringLiteral(node.value)) {
 				const { value } = node.value;
-				if (typeof value === "string") {
-					const provider = getProviderFromUrl(value);
-					if (provider) {
-						context.report({
-							fix(fixer) {
-								return fixer.replaceText(
-									node.value,
-									JSON.stringify(
-										createShorthand(value, provider),
-									),
-								);
-							},
-							messageId: "preferShorthand",
-							node: node.value,
-						});
-					}
+				const provider = getProviderFromUrl(value);
+				if (provider) {
+					context.report({
+						fix(fixer) {
+							return fixer.replaceText(
+								node.value,
+								JSON.stringify(
+									createShorthand(value, provider),
+								),
+							);
+						},
+						messageId: "preferShorthand",
+						node: node.value,
+					});
 				}
 
 				return;
