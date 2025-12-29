@@ -118,15 +118,14 @@ export const rule = createRule({
 			},
 		],
 		docs: {
-			category: "Best Practices",
+			category: "Stylistic",
 			description:
-				"Package properties must be declared in standard order",
-			recommended: true,
+				"Package properties should be declared in standard order",
 		},
 		fixable: "code",
 		messages: {
 			incorrectOrder:
-				'Package top-level property "{{property}}" is not ordered in the npm standard way. Run the ESLint auto-fixer to correct.',
+				'Top-level property "{{property}}" is not ordered in the standard way.',
 		},
 		schema: [
 			{
