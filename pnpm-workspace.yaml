@@ -1,3 +1,5 @@
+minimumReleaseAge: 1440
 onlyBuiltDependencies:
   - esbuild
   - oxc-resolver
+trustPolicy: no-downgrade
