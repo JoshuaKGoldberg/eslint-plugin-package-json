@@ -5,24 +5,24 @@ on:
     branches:
       - main
 
-permissions:
-  contents: write
-  id-token: write # Required for ODIC
-
 concurrency:
   group: ${{ github.workflow }}
 
 jobs:
-  release:
+  release-please:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write # Required for OIDC
     steps:
-      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
-        with:
-          fetch-depth: 0
-          ref: main
-          token: ${{ secrets.ACCESS_TOKEN }}
+      - uses: googleapis/release-please-action@16a9c90856f42705d54a6fda1823352bdc62cf38 # v4.4.0
+        id: release
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        if: ${{ steps.release.outputs.release_created }}
       - uses: ./.github/actions/prepare
-      - run: pnpm build
-      - env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        uses: JoshuaKGoldberg/release-it-action@8ee87d0d30f97b452ef5d8aa9f4d0490eed439aa # v0.4.0
+        if: ${{ steps.release.outputs.release_created }}
+      - run: |
+          pnpm build
+          pnpm publish
+        if: ${{ steps.release.outputs.release_created }}
