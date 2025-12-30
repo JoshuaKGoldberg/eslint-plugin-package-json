@@ -1,3 +1,14 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  id-token: write # Required for ODIC
+
 concurrency:
   group: ${{ github.workflow }}
 
@@ -14,16 +25,4 @@ jobs:
       - run: pnpm build
       - env:
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        uses: JoshuaKGoldberg/release-it-action@2baa12c128a42c2e8d2babb1c4984c84c8e868f7 # v0.3.5
-
-name: Release
-
-on:
-  push:
-    branches:
-      - main
-
-permissions:
-  contents: write
-  id-token: write
+        uses: JoshuaKGoldberg/release-it-action@8ee87d0d30f97b452ef5d8aa9f4d0490eed439aa # v0.4.0
