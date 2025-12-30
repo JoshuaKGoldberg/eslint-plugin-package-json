@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.87.0](///compare/v0.86.0...v0.87.0) (2025-12-30)
+
+### Features
+
+- move `order-properties` from `recommended` to `stylistic` config ([#1475](undefined/undefined/undefined/issues/1475)) b9a9978, closes #1471
+
 ## [0.86.0](///compare/v0.85.0...v0.86.0) (2025-12-30)
 
 ### Features
