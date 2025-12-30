@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.86.0](///compare/v0.85.0...v0.86.0) (2025-12-30)
+
+### Features
+
+- remove deprecated valid-local-dependency rule ([#1450](undefined/undefined/undefined/issues/1450)) 3e36e30, closes #1168
+- **valid-module:** add rule to validate `module` ([#1462](undefined/undefined/undefined/issues/1462)) ee376e0, closes #1034
+
 ## [0.85.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.84.0...v0.85.0) (2025-11-18)
 
 ### Features
