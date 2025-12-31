@@ -14,6 +14,7 @@ const properties: [name: string, options?: CreateRequirePropertyRuleOptions][] =
 		["engines"],
 		["exports", { category: "Publishable" }],
 		["files", { category: "Publishable" }],
+		["homepage"],
 		["keywords"],
 		["license", { ignorePrivateDefault: true, isRecommended: true }],
 		["name", { ignorePrivateDefault: true, isRecommended: true }],
