@@ -7,7 +7,7 @@ export interface CreateRequirePropertyRuleOptions {
 	/**
 	 * The category for this rule.
 	 */
-	category?: "Publishable";
+	category?: "Publishable" | (string & {});
 
 	/**
 	 * The default value of `ignorePrivate` rule option.
