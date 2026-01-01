@@ -1,3 +1,14 @@
+name: Post Release
+
+on:
+  release:
+    types:
+      - published
+
+permissions:
+  issues: write
+  pull-requests: write
+
 jobs:
   post_release:
     runs-on: ubuntu-latest
@@ -18,14 +29,3 @@ jobs:
             * [npm package (@latest dist-tag)](https://www.npmjs.com/package/eslint-plugin-package-json/v/${{ env.npm_version }})
 
             Cheers! 📦🚀
-
-name: Post Release
-
-on:
-  release:
-    types:
-      - published
-
-permissions:
-  issues: write
-  pull-requests: write
