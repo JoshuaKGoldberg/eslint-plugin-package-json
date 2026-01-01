@@ -1,4 +1,4 @@
-// @ts-expect-error - no types
+// @ts-expect-error - no types - https://github.com/eslint-community/eslint-plugin-eslint-comments/issues/214
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 import eslint from "@eslint/js";
 import markdown from "@eslint/markdown";
@@ -13,7 +13,7 @@ import perfectionist from "eslint-plugin-perfectionist";
 import * as regexp from "eslint-plugin-regexp";
 import unicorn from "eslint-plugin-unicorn";
 import yml from "eslint-plugin-yml";
-import { defineConfig } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
 import tseslint from "typescript-eslint";
 
 import packageJson from "./src/index.ts";
@@ -23,27 +23,25 @@ const TS_FILES = ["**/*.ts"];
 const JS_TS_FILES = [...JS_FILES, ...TS_FILES];
 
 export default defineConfig(
-	{
-		ignores: [
-			"**/*.snap",
-			".eslint-doc-generatorrc.js",
-			"coverage",
-			"docs/rules/*/*.ts",
-			"lib",
-			"node_modules",
-			"pnpm-lock.yaml",
-			"src/tests/__fixtures__",
-		],
-	},
+	globalIgnores([
+		"**/*.snap",
+		".eslint-doc-generatorrc.js",
+		"coverage",
+		"docs/rules/*/*.ts",
+		"lib",
+		"node_modules",
+		"pnpm-lock.yaml",
+		"src/tests/__fixtures__",
+	]),
 	{ linterOptions: { reportUnusedDisableDirectives: "error" } },
 	{
 		extends: [
 			eslint.configs.recommended,
-			// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access -- https://github.com/eslint-community/eslint-plugin-eslint-comments/issues/214
+			// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 			comments.recommended,
 			eslintPlugin.configs.recommended,
 			n.configs["flat/recommended"],
-			perfectionist.configs["recommended-natural"],
+			perfectionist.configs?.["recommended-natural"],
 			regexp.configs["flat/recommended"],
 			unicorn.configs.unopinionated,
 		],
@@ -124,7 +122,7 @@ export default defineConfig(
 		files: JS_TS_FILES,
 		languageOptions: {
 			parserOptions: {
-				projectService: { allowDefaultProject: ["*.config.*s"] },
+				projectService: { allowDefaultProject: ["*.config.js"] },
 				tsconfigRootDir: import.meta.dirname,
 			},
 		},

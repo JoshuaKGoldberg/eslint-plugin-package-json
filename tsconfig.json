@@ -11,5 +11,5 @@
 		"target": "ES2024",
 		"rewriteRelativeImportExtensions": true
 	},
-	"include": ["src"]
+	"include": ["src", "*.config.ts"]
 }
