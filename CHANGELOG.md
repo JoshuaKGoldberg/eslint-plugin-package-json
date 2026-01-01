@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.87.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.87.0...v0.87.1) (2025-12-31)
+
+
+### Features
+
+* add require-homepage rule ([#1480](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1480)) ([0d895ff](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/0d895ff8b5c800df07bdf2ed2bc99e1ad16649ad))
+
 ## [0.87.0](///compare/v0.86.0...v0.87.0) (2025-12-30)
 
 ### Features
