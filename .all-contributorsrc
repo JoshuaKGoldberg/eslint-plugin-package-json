@@ -370,6 +370,15 @@
         "code",
         "tool"
       ]
+    },
+    {
+      "login": "FloEdelmann",
+      "name": "Flo Edelmann",
+      "avatar_url": "https://avatars.githubusercontent.com/u/202916?v=4",
+      "profile": "https://open-fixture-library.org",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsSortAlphabetically": true,
