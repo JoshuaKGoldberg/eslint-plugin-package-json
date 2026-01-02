@@ -11,20 +11,20 @@
 
 ### Features
 
-- move `order-properties` from `recommended` to `stylistic` config ([#1475](undefined/undefined/undefined/issues/1475)) b9a9978, closes #1471
+- move `order-properties` from `recommended` to `stylistic` config ([#1475](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1475)) ([b9a9978](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/b9a9978ed22b2c8184d10dc63da4435fb0864f29)), closes [#1471](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1471)
 
 ## [0.86.0](///compare/v0.85.0...v0.86.0) (2025-12-30)
 
 ### Features
 
-- remove deprecated valid-local-dependency rule ([#1450](undefined/undefined/undefined/issues/1450)) 3e36e30, closes #1168
-- **valid-module:** add rule to validate `module` ([#1462](undefined/undefined/undefined/issues/1462)) ee376e0, closes #1034
+- remove deprecated valid-local-dependency rule ([#1450](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1450)) ([3e36e30](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/3e36e30efef51ed010480e43373e9ac20c9b2014)), closes [#1168](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1168)
+- **valid-module:** add rule to validate `module` ([#1462](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1462)) ([ee376e0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/ee376e05fad0ba3f137047124a1975893ecc4ca6)), closes [#1034](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1034)
 
 ## [0.85.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.84.0...v0.85.0) (2025-11-18)
 
 ### Features
 
-- **valid-sideEffects:** add new rule for validating `sideEffects` ([#1414](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1414)) ([04b86b1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/04b86b1a5e86cae4187ca1629ba916066d49b086)), closes [#000](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/000)
+- **valid-sideEffects:** add new rule for validating `sideEffects` ([#1414](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1414)) ([04b86b1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/04b86b1a5e86cae4187ca1629ba916066d49b086))
 
 ## [0.84.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.83.0...v0.84.0) (2025-11-18)
 
