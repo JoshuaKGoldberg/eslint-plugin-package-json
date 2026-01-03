@@ -1,5 +1,7 @@
 # require-repository
 
+💼 This rule is enabled in the 📦 `recommended-publishable` config.
+
 <!-- end auto-generated rule header -->
 
 This rule checks for the existence of the `"repository"` property in a package.json, and reports a violation if it doesn't exist.
