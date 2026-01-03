@@ -42,7 +42,7 @@ Examples of **correct** code for this rule:
 
 | Name            | Description                                                                                 | Type    | Default |
 | :-------------- | :------------------------------------------------------------------------------------------ | :------ | :------ |
-| `ignorePrivate` | Determines if this rule should be enforced when the package's `private` property is `true`. | Boolean | `false` |
+| `ignorePrivate` | Determines if this rule should be enforced when the package's `private` property is `true`. | Boolean | `true`  |
 
 <!-- end auto-generated rule options list -->
 
