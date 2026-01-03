@@ -41,7 +41,7 @@ export default defineConfig(
 			comments.recommended,
 			eslintPlugin.configs.recommended,
 			n.configs["flat/recommended"],
-			perfectionist.configs?.["recommended-natural"],
+			perfectionist.configs["recommended-natural"],
 			regexp.configs["flat/recommended"],
 			unicorn.configs.unopinionated,
 		],
