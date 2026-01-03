@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.88.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.87.1...v0.88.0) (2026-01-03)
+
+
+### ⚠ BREAKING CHANGES
+
+* add require-repository rule ([#1491](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1491))
+
+### Features
+
+* add require-repository rule ([#1491](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1491)) ([4d802c5](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/4d802c577713a8056c02543faa902b49b3a4950a))
+
 ## [0.87.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.87.0...v0.87.1) (2025-12-31)
 
 
