@@ -28,14 +28,8 @@ const isProvider = (value: string): value is Provider =>
 const cleanUrl = (url: string, provider: Provider): string =>
 	url.replace(providerRegexes[provider], "").replace(/\.git$/, "");
 
-const getProviderFromUrl = (url: string): null | Provider => {
-	for (const provider of providers) {
-		if (providerRegexes[provider].test(url)) {
-			return provider;
-		}
-	}
-
-	return null;
+const getProviderFromUrl = (url: string) => {
+	return providers.find((provider) => providerRegexes[provider].test(url));
 };
 
 const createShorthand = (url: string, provider: Provider): string => {
