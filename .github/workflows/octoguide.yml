@@ -36,7 +36,7 @@ permissions:
 
 jobs:
   octoguide:
-    if: ${{ !endsWith(github.actor, '[bot]') }}
+    if: ${{ !endsWith(github.actor, '[bot]') && !contains(github.event.pull_request.labels.*.name, 'autorelease') }}
     runs-on: ubuntu-latest
     steps:
       - uses: JoshuaKGoldberg/octoguide@879a317d50109c6446513149b381feb568364a89 # 0.18.0
