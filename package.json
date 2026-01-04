@@ -60,7 +60,7 @@
 		"detect-indent": "^7.0.2",
 		"detect-newline": "^4.0.1",
 		"eslint-fix-utils": "~0.4.0",
-		"package-json-validator": "~0.59.0",
+		"package-json-validator": "~0.59.1",
 		"semver": "^7.7.3",
 		"sort-object-keys": "^2.0.0",
 		"sort-package-json": "^3.4.0",
