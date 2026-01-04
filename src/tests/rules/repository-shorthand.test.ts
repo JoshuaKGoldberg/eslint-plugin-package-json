@@ -53,6 +53,40 @@ ruleTester.run("repository-shorthand", rule, {
 		},
 		{
 			code: `{
+				"repository": "github:JoshuaKGoldberg/create-typescript-app"
+			}`,
+			errors: [
+				{
+					column: 19,
+					endColumn: 65,
+					messageId: "preferObject",
+				},
+			],
+			output: `{
+				"repository": {
+  "type": "git",
+  "url": "https://github.com/JoshuaKGoldberg/create-typescript-app"
+}
+			}`,
+		},
+		{
+			code: `{
+				"repository": "gibberish:JoshuaKGoldberg/create-typescript-app"
+			}`,
+			errors: [
+				{
+					messageId: "preferObject",
+				},
+			],
+			output: `{
+				"repository": {
+  "type": "git",
+  "url": "https://github.com/gibberish:JoshuaKGoldberg/create-typescript-app"
+}
+			}`,
+		},
+		{
+			code: `{
 				"repository": {
 					"type": "git",
 					"url": "https://github.com/JoshuaKGoldberg/create-typescript-app"
@@ -60,15 +94,14 @@ ruleTester.run("repository-shorthand", rule, {
 			}`,
 			errors: [
 				{
-					message:
-						"Prefer a shorthand locator for a GitHub repository.",
+					messageId: "preferShorthand",
 					type: "JSONObjectExpression",
 				},
 			],
 			filename: "package.json",
 			options: [{ form: "shorthand" }],
 			output: `{
-				"repository": "JoshuaKGoldberg/create-typescript-app"
+				"repository": "github:JoshuaKGoldberg/create-typescript-app"
 			}`,
 		},
 		{
@@ -80,15 +113,14 @@ ruleTester.run("repository-shorthand", rule, {
 			}`,
 			errors: [
 				{
-					message:
-						"Prefer a shorthand locator for a GitHub repository.",
+					messageId: "preferShorthand",
 					type: "JSONObjectExpression",
 				},
 			],
 			filename: "package.json",
 			options: [{ form: "shorthand" }],
 			output: `{
-				"repository": "JoshuaKGoldberg/create-typescript-app"
+				"repository": "github:JoshuaKGoldberg/create-typescript-app"
 			}`,
 		},
 		{
@@ -100,15 +132,14 @@ ruleTester.run("repository-shorthand", rule, {
 			}`,
 			errors: [
 				{
-					message:
-						"Prefer a shorthand locator for a GitHub repository.",
+					messageId: "preferShorthand",
 					type: "JSONObjectExpression",
 				},
 			],
 			filename: "package.json",
 			options: [{ form: "shorthand" }],
 			output: `{
-				"repository": "JoshuaKGoldberg/create-typescript-app"
+				"repository": "github:JoshuaKGoldberg/create-typescript-app"
 			}`,
 		},
 		{
@@ -117,20 +148,77 @@ ruleTester.run("repository-shorthand", rule, {
 			}`,
 			errors: [
 				{
-					message:
-						"Prefer a shorthand locator for a GitHub repository.",
+					messageId: "preferShorthand",
 					type: "JSONLiteral",
 				},
 			],
 			filename: "package.json",
 			options: [{ form: "shorthand" }],
 			output: `{
-				"repository": "eslint/eslint"
+				"repository": "github:eslint/eslint"
 			}`,
+		},
+		{
+			code: `{
+				"repository": {
+					"type": "git",
+					"url": "https://gitlab.com/JoshuaKGoldberg/create-typescript-app"
+				}
+		}`,
+			errors: [
+				{
+					messageId: "preferShorthand",
+					type: "JSONObjectExpression",
+				},
+			],
+			filename: "package.json",
+			options: [{ form: "shorthand" }],
+			output: `{
+				"repository": "gitlab:JoshuaKGoldberg/create-typescript-app"
+		}`,
+		},
+		{
+			code: `{
+				"repository": {
+					"type": "git",
+					"url": "https://bitbucket.org/eslint/rewrite"
+				}
+		}`,
+			errors: [
+				{
+					messageId: "preferShorthand",
+					type: "JSONObjectExpression",
+				},
+			],
+			filename: "package.json",
+			options: [{ form: "shorthand" }],
+			output: `{
+				"repository": "bitbucket:eslint/rewrite"
+		}`,
+		},
+		{
+			code: `{
+				"repository": {
+					"type": "git",
+					"url": "https://gist.github.com/1234567890abcdef"
+				}
+		}`,
+			errors: [
+				{
+					messageId: "preferShorthand",
+					type: "JSONObjectExpression",
+				},
+			],
+			filename: "package.json",
+			options: [{ form: "shorthand" }],
+			output: `{
+				"repository": "gist:1234567890abcdef"
+		}`,
 		},
 	],
 	valid: [
 		`{ "repository": null }`,
+		`{ "repository": 123 }`,
 		`{
 			"repository": {
 				"type": "git"
@@ -147,6 +235,24 @@ ruleTester.run("repository-shorthand", rule, {
 				"url": "https://github.com/JoshuaKGoldberg/create-typescript-app"
 			}
 		}`,
+		`{
+			"repository": {
+				"type": "git",
+				"url": "https://gist.github.com/JoshuaKGoldberg/1234567890abcdef"
+			}
+		}`,
+		`{
+			"repository": {
+				"type": "git",
+				"url": "https://bitbucket.org/JoshuaKGoldberg/create-typescript-app"
+			}
+		}`,
+		`{
+			"repository": {
+				"type": "git",
+				"url": "https://gitlab.com/JoshuaKGoldberg/create-typescript-app"
+			}
+		}`,
 		{
 			code: `{
 				"repository": {
@@ -159,6 +265,12 @@ ruleTester.run("repository-shorthand", rule, {
 		{
 			code: `{
 				"repository": null,
+			}`,
+			options: [{ form: "shorthand" }],
+		},
+		{
+			code: `{
+				"repository": 123,
 			}`,
 			options: [{ form: "shorthand" }],
 		},
@@ -191,21 +303,29 @@ ruleTester.run("repository-shorthand", rule, {
 		},
 		{
 			code: `{
-				"repository": {
-					"type": "git",
-					"url": "https://gitlab.com/gitlab/gitlab"
-				}
-		}`,
+				"repository": "github:browserslist/browserslist"
+			}`,
 			filename: "package.json",
 			options: [{ form: "shorthand" }],
 		},
 		{
 			code: `{
-				"repository": {
-					"type": "git",
-					"url": "https://gitlab.com/a/b/c"
-				}
-		}`,
+				"repository": "gist:1234567890abcdef"
+			}`,
+			filename: "package.json",
+			options: [{ form: "shorthand" }],
+		},
+		{
+			code: `{
+				"repository": "bitbucket:browserslist/browserslist"
+			}`,
+			filename: "package.json",
+			options: [{ form: "shorthand" }],
+		},
+		{
+			code: `{
+				"repository": "gitlab:browserslist/browserslist"
+			}`,
 			filename: "package.json",
 			options: [{ form: "shorthand" }],
 		},
@@ -215,6 +335,16 @@ ruleTester.run("repository-shorthand", rule, {
 					"repository": "https://github.com/a/b"
 				}
 			}`,
+			filename: "package.json",
+			options: [{ form: "shorthand" }],
+		},
+		{
+			code: `{
+				"repository": {
+					"type": "git",
+					"url": "https://gibberish.org/eslint/rewrite"
+				}
+		}`,
 			filename: "package.json",
 			options: [{ form: "shorthand" }],
 		},
