@@ -21,6 +21,7 @@ const properties: [name: string, options?: CreateRequirePropertyRuleOptions][] =
 		["optionalDependencies"],
 		["peerDependencies"],
 		["repository", { category: "Publishable", ignorePrivateDefault: true }],
+		["scripts"],
 		["sideEffects", { category: "Publishable" }],
 		["type", { isRecommended: true }],
 		["types"],
