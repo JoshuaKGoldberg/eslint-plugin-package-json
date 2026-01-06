@@ -15,6 +15,8 @@ jobs:
       contents: write
       pull-requests: write
       id-token: write # Required for OIDC
+    outputs:
+      releases_created: ${{ steps.release.outputs.releases_created }}
     steps:
       - uses: googleapis/release-please-action@16a9c90856f42705d54a6fda1823352bdc62cf38 # v4.4.0
         id: release
@@ -26,3 +28,26 @@ jobs:
           pnpm build
           pnpm publish
         if: ${{ steps.release.outputs.release_created }}
+  post_release:
+    if: needs.release-please.outputs.releases_created == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        with:
+          fetch-depth: 0
+      - run: echo "npm_version=$(npm pkg get version | tr -d '"')" >> "$GITHUB_ENV"
+      - uses: apexskier/github-release-commenter@3bd413ad5e1d603bfe2282f9f06f2bdcec079327 # v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          comment-template: |
+            :tada: This is included in version {release_link} :tada:
+
+            The release is available on:
+
+            * [GitHub releases](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/releases/tag/{release_tag})
+            * [npm package (@latest dist-tag)](https://www.npmjs.com/package/eslint-plugin-package-json/v/${{ env.npm_version }})
+
+            Cheers! 📦🚀
