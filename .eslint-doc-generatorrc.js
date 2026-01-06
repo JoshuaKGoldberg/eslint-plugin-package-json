@@ -13,6 +13,12 @@ const config = {
 			...(await prettier.resolveConfig(path)),
 			parser: "markdown",
 		}),
+	ruleDocNotices: [
+		"configs",
+		"deprecated",
+		"fixableAndHasSuggestions",
+		"requiresTypeChecking",
+	],
 	ruleDocTitleFormat: "name",
 };
 
