@@ -78,7 +78,7 @@
 		"@vitest/eslint-plugin": "1.6.1",
 		"console-fail-test": "0.6.0",
 		"eslint": "9.39.1",
-		"eslint-doc-generator": "2.4.0",
+		"eslint-doc-generator": "3.0.2",
 		"eslint-plugin-eslint-plugin": "7.2.0",
 		"eslint-plugin-jsdoc": "61.5.0",
 		"eslint-plugin-jsonc": "2.21.0",
