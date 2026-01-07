@@ -9,7 +9,7 @@ concurrency:
   group: ${{ github.workflow }}
 
 jobs:
-  release-please:
+  release_please:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -28,8 +28,10 @@ jobs:
           pnpm build
           pnpm publish
         if: ${{ steps.release.outputs.release_created }}
+
   post_release:
-    if: needs.release-please.outputs.releases_created == 'true'
+    needs: release_please
+    if: ${{ needs.release_please.outputs.releases_created == 'true' }}
     runs-on: ubuntu-latest
     permissions:
       issues: write
