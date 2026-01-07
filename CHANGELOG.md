@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.88.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.88.0...v0.88.1) (2026-01-07)
+
+
+### Features
+
+* add require-scripts rule ([#1505](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1505)) ([f326161](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/f326161f63a812c5a3c92a914d17d9ef6fc5dbd2))
+
 ## [0.88.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.87.1...v0.88.0) (2026-01-04)
 
 
