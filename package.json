@@ -80,7 +80,7 @@
 		"eslint": "9.39.1",
 		"eslint-doc-generator": "3.0.2",
 		"eslint-plugin-eslint-plugin": "7.3.0",
-		"eslint-plugin-jsdoc": "61.7.1",
+		"eslint-plugin-jsdoc": "62.0.0",
 		"eslint-plugin-jsonc": "2.21.0",
 		"eslint-plugin-markdown-links": "0.7.1",
 		"eslint-plugin-n": "17.23.1",
