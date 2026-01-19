@@ -74,7 +74,7 @@ importers:
         version: 9.39.1(jiti@2.6.1)
       eslint-doc-generator:
         specifier: 3.0.2
-        version: 3.0.2(eslint@9.39.1(jiti@2.6.1))(prettier@3.7.0)(typescript@5.9.3)
+        version: 3.0.2(eslint@9.39.1(jiti@2.6.1))(prettier@3.8.0)(typescript@5.9.3)
       eslint-plugin-eslint-plugin:
         specifier: 7.3.0
         version: 7.3.0(eslint@9.39.1(jiti@2.6.1))
@@ -124,17 +124,17 @@ importers:
         specifier: 16.2.7
         version: 16.2.7
       prettier:
-        specifier: 3.7.0
-        version: 3.7.0
+        specifier: 3.8.0
+        version: 3.8.0
       prettier-plugin-curly:
         specifier: 0.4.0
-        version: 0.4.0(prettier@3.7.0)
+        version: 0.4.0(prettier@3.8.0)
       prettier-plugin-packagejson:
         specifier: 2.5.19
-        version: 2.5.19(prettier@3.7.0)
+        version: 2.5.19(prettier@3.8.0)
       prettier-plugin-sh:
         specifier: 0.18.0
-        version: 0.18.0(prettier@3.7.0)
+        version: 0.18.0(prettier@3.8.0)
       tsdown:
         specifier: 0.19.0
         version: 0.19.0(oxc-resolver@11.15.0)(synckit@0.11.11)(typescript@5.9.3)
@@ -2070,8 +2070,8 @@ packages:
     peerDependencies:
       prettier: ^3.6.0
 
-  prettier@3.7.0:
-    resolution: {integrity: sha512-pBiBj/gjRY9Qpk1b7cDda6Rbwvkaggos779AHQ0Ek/odwDx6xG6DRBxtnp1QmxbuD7pAO8/SQ8vuhtGv9LoLWA==}
+  prettier@3.8.0:
+    resolution: {integrity: sha512-yEPsovQfpxYfgWNhCfECjG5AQaO+K3dp6XERmOepyPDVqcJm+bjyCVO3pmU+nAPe0N5dDvekfGezt/EIiRe1TA==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -3527,7 +3527,7 @@ snapshots:
       eslint: 9.39.1(jiti@2.6.1)
       semver: 7.7.3
 
-  eslint-doc-generator@3.0.2(eslint@9.39.1(jiti@2.6.1))(prettier@3.7.0)(typescript@5.9.3):
+  eslint-doc-generator@3.0.2(eslint@9.39.1(jiti@2.6.1))(prettier@3.8.0)(typescript@5.9.3):
     dependencies:
       '@typescript-eslint/utils': 8.53.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.9.3)
       ajv: 8.17.1
@@ -3544,7 +3544,7 @@ snapshots:
       markdown-table: 3.0.4
       type-fest: 5.3.1
     optionalDependencies:
-      prettier: 3.7.0
+      prettier: 3.8.0
     transitivePeerDependencies:
       - supports-color
       - typescript
@@ -4567,24 +4567,24 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-curly@0.4.0(prettier@3.7.0):
+  prettier-plugin-curly@0.4.0(prettier@3.8.0):
     dependencies:
-      prettier: 3.7.0
+      prettier: 3.8.0
 
-  prettier-plugin-packagejson@2.5.19(prettier@3.7.0):
+  prettier-plugin-packagejson@2.5.19(prettier@3.8.0):
     dependencies:
       sort-package-json: 3.4.0
       synckit: 0.11.11
     optionalDependencies:
-      prettier: 3.7.0
+      prettier: 3.8.0
 
-  prettier-plugin-sh@0.18.0(prettier@3.7.0):
+  prettier-plugin-sh@0.18.0(prettier@3.8.0):
     dependencies:
       '@reteps/dockerfmt': 0.3.6
-      prettier: 3.7.0
+      prettier: 3.8.0
       sh-syntax: 0.5.8
 
-  prettier@3.7.0: {}
+  prettier@3.8.0: {}
 
   pretty-format@30.2.0:
     dependencies:
