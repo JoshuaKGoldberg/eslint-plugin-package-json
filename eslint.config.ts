@@ -1,4 +1,3 @@
-// @ts-expect-error - no types - https://github.com/eslint-community/eslint-plugin-eslint-comments/issues/214
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 import eslint from "@eslint/js";
 import markdown from "@eslint/markdown";
@@ -37,7 +36,6 @@ export default defineConfig(
 	{
 		extends: [
 			eslint.configs.recommended,
-			// eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
 			comments.recommended,
 			eslintPlugin.configs.recommended,
 			n.configs["flat/recommended"],
