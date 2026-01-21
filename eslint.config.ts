@@ -137,10 +137,7 @@ export default defineConfig(
 		rules: { "@typescript-eslint/no-unsafe-assignment": "off" },
 	},
 	{
-		extends: [
-			yml.configs["flat/recommended"],
-			yml.configs["flat/prettier"],
-		],
+		extends: [yml.configs.recommended, yml.configs.prettier],
 		files: ["**/*.{yml,yaml}"],
 		rules: {
 			"yml/file-extension": ["error", { extension: "yml" }],
