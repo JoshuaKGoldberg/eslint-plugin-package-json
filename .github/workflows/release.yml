@@ -16,18 +16,48 @@ jobs:
       pull-requests: write
       id-token: write # Required for OIDC
     outputs:
+      dist_tag: ${{ steps.determine_dist_tag.outputs.dist_tag }}
       releases_created: ${{ steps.release.outputs.releases_created }}
     steps:
       - uses: googleapis/release-please-action@16a9c90856f42705d54a6fda1823352bdc62cf38 # v4.4.0
         id: release
+        with:
+          config-file: .github/release-please/release-please-config.${{ github.ref_name }}.json
+          manifest-file: .github/release-please/release-please-manifest.json
+          target-branch: ${{ github.ref_name }}
+
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         if: ${{ steps.release.outputs.release_created }}
+
       - uses: ./.github/actions/prepare
         if: ${{ steps.release.outputs.release_created }}
-      - run: |
+
+      - name: Determine dist-tag
+        id: determine_dist_tag
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
+          TAG_NAME="${{ steps.release.outputs.tag_name }}"
+          echo "Release tag: $TAG_NAME"
+
+          if [[ "$TAG_NAME" == *"-alpha."* ]]; then
+            DIST_TAG=alpha
+          elif [[ "$TAG_NAME" == *"-beta."* ]]; then
+            DIST_TAG=beta
+          elif [[ "$TAG_NAME" == *"-rc."* ]]; then
+            DIST_TAG=rc
+          elif [[ "$TAG_NAME" == *"-"* ]]; then
+            DIST_TAG=next
+          else
+            DIST_TAG=latest
+          fi
+
+          echo "dist_tag=$DIST_TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Build and Publish
+        if: ${{ steps.release.outputs.release_created }}
+        run: |
           pnpm build
           pnpm publish
-        if: ${{ steps.release.outputs.release_created }}
 
   post_release:
     needs: release_please
@@ -50,6 +80,6 @@ jobs:
             The release is available on:
 
             * [GitHub releases](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/releases/tag/{release_tag})
-            * [npm package (@latest dist-tag)](https://www.npmjs.com/package/eslint-plugin-package-json/v/${{ env.npm_version }})
+            * [npm package (@${{ needs.release_please.outputs.dist_tag }} dist-tag)](https://www.npmjs.com/package/eslint-plugin-package-json/v/${{ env.npm_version }})
 
             Cheers! 📦🚀
