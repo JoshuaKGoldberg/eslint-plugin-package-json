@@ -9,6 +9,9 @@ export interface CreateRequirePropertyRuleOptions {
 	 */
 	category?: "Publishable" | (string & {});
 
+	/** The value to use when fixing a violation when this property is missing */
+	fixValue?: unknown;
+
 	/**
 	 * The default value of `ignorePrivate` rule option.
 	 */
@@ -30,6 +33,7 @@ export const createSimpleRequirePropertyRule = (
 	propertyName: string,
 	{
 		category,
+		fixValue,
 		ignorePrivateDefault = false,
 		isRecommended,
 	}: CreateRequirePropertyRuleOptions = {},
@@ -72,6 +76,26 @@ export const createSimpleRequirePropertyRule = (
 					) {
 						context.report({
 							data: { property: propertyName },
+							fix:
+								fixValue === undefined
+									? undefined
+									: function* (fixer) {
+											yield fixer.insertTextAfterRange(
+												[0, 1],
+												`\n  "${propertyName}": ${JSON.stringify(
+													fixValue,
+												)}`,
+											);
+											yield node.properties.length > 0
+												? fixer.insertTextAfterRange(
+														[0, 1],
+														",",
+													)
+												: fixer.insertTextAfterRange(
+														[0, 1],
+														"\n",
+													);
+										},
 							messageId: "missing",
 							node: context.sourceCode.ast,
 						});
@@ -85,6 +109,7 @@ export const createSimpleRequirePropertyRule = (
 				description: `Requires the \`${propertyName}\` property to be present.`,
 				recommended: isRecommended,
 			},
+			fixable: fixValue === undefined ? undefined : "code",
 			messages: {
 				missing: "Property '{{property}}' is required.",
 			},
