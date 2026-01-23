@@ -1,12 +1,20 @@
 import type { PackageJsonPluginSettings } from "../../createRule.ts";
 
-import { rules } from "../../rules/require-properties.ts";
+import { propertyConfig, rules } from "../../rules/require-properties.ts";
 import { ruleTester } from "./ruleTester.ts";
 
 const ruleNames = Object.keys(rules);
 
 for (const ruleName of ruleNames) {
 	const propertyName = ruleName.replace("require-", "");
+
+	const propertyOptions = propertyConfig.find(
+		([name]) => name === propertyName,
+	)?.[1];
+	const fixValue = propertyOptions?.fixValue;
+
+	const emitOutputIfFixable = (expectedOutput: string) =>
+		fixValue === undefined ? {} : { output: expectedOutput };
 
 	ruleTester.run(ruleName, rules[ruleName], {
 		invalid: [
@@ -20,13 +28,15 @@ for (const ruleName of ruleNames) {
 					},
 				],
 				name: "empty object",
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)}
+}`),
 			},
 			{
 				code: `{
-            "foo": "bar",
-            "baz": "1.0.0"
-            }
-            `,
+  "foo": "bar",
+  "baz": "1.0.0"
+}`,
 				errors: [
 					{
 						data: { property: propertyName },
@@ -35,16 +45,20 @@ for (const ruleName of ruleNames) {
 					},
 				],
 				name: "missing property",
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "foo": "bar",
+  "baz": "1.0.0"
+}`),
 			},
 			{
 				code: `{
-            "foo": "bar",
-            "baz": "1.0.0",
-            "bin": {
-                "${propertyName}": "./cli.js"
-            }
-            }
-            `,
+  "foo": "bar",
+  "baz": "1.0.0",
+  "bin": {
+    "${propertyName}": "./cli.js"
+  }
+}`,
 				errors: [
 					{
 						data: { property: propertyName },
@@ -53,11 +67,19 @@ for (const ruleName of ruleNames) {
 					},
 				],
 				name: "nested property only",
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "foo": "bar",
+  "baz": "1.0.0",
+  "bin": {
+    "${propertyName}": "./cli.js"
+  }
+}`),
 			},
 			{
 				code: `{
-          "private": true
-          }`,
+  "private": true
+}`,
 				errors: [
 					{
 						data: { property: propertyName },
@@ -67,11 +89,15 @@ for (const ruleName of ruleNames) {
 				],
 				name: "missing property with private: true > ignorePrivate: false",
 				options: [{ ignorePrivate: false }],
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "private": true
+}`),
 			},
 			{
 				code: `{
-          "private": false
-          }`,
+  "private": false
+}`,
 				errors: [
 					{
 						data: { property: propertyName },
@@ -81,11 +107,15 @@ for (const ruleName of ruleNames) {
 				],
 				name: "missing property with private: false > ignorePrivate: true",
 				options: [{ ignorePrivate: true }],
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "private": false
+}`),
 			},
 			{
 				code: `{
-          "private": "true"
-          }`,
+  "private": "true"
+}`,
 				errors: [
 					{
 						data: { property: propertyName },
@@ -95,6 +125,10 @@ for (const ruleName of ruleNames) {
 				],
 				name: "missing property with private: true > ignorePrivate: true",
 				options: [{ ignorePrivate: true }],
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "private": "true"
+}`),
 			},
 			{
 				code: `{}`,
@@ -107,11 +141,14 @@ for (const ruleName of ruleNames) {
 				],
 				name: "empty object > ignorePrivate: true",
 				options: [{ ignorePrivate: true }],
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)}
+}`),
 			},
 			{
 				code: `{
-          "private": true
-          }`,
+  "private": true
+}`,
 				errors: [
 					{
 						data: { property: propertyName },
@@ -120,6 +157,10 @@ for (const ruleName of ruleNames) {
 					},
 				],
 				name: "missing property with private: true > enforceForPrivate: true",
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "private": true
+}`),
 				settings: {
 					packageJson: {
 						enforceForPrivate: true,
@@ -128,8 +169,8 @@ for (const ruleName of ruleNames) {
 			},
 			{
 				code: `{
-          "private": true
-          }`,
+  "private": true
+}`,
 				errors: [
 					{
 						data: { property: propertyName },
@@ -139,6 +180,10 @@ for (const ruleName of ruleNames) {
 				],
 				name: "missing property with private: true > ignorePrivate: false, enforceForPrivate: true",
 				options: [{ ignorePrivate: false }],
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "private": true
+}`),
 				settings: {
 					packageJson: {
 						enforceForPrivate: true,
@@ -147,8 +192,8 @@ for (const ruleName of ruleNames) {
 			},
 			{
 				code: `{
-          "private": false
-          }`,
+  "private": false
+}`,
 				errors: [
 					{
 						data: { property: propertyName },
@@ -158,6 +203,10 @@ for (const ruleName of ruleNames) {
 				],
 				name: "missing property with private: false > ignorePrivate: true, enforceForPrivate: true",
 				options: [{ ignorePrivate: true }],
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "private": false
+}`),
 				settings: {
 					packageJson: {
 						enforceForPrivate: true,
@@ -175,6 +224,9 @@ for (const ruleName of ruleNames) {
 				],
 				name: "empty object > ignorePrivate: true, enforceForPrivate: true",
 				options: [{ ignorePrivate: true }],
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)}
+}`),
 				settings: {
 					packageJson: {
 						enforceForPrivate: true,
@@ -183,8 +235,8 @@ for (const ruleName of ruleNames) {
 			},
 			{
 				code: `{
-          "private": true
-          }`,
+  "private": true
+}`,
 				errors: [
 					{
 						data: { property: propertyName },
@@ -194,6 +246,10 @@ for (const ruleName of ruleNames) {
 				],
 				name: "missing property with private: true > ignorePrivate: false, enforceForPrivate: false",
 				options: [{ ignorePrivate: false }],
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "private": true
+}`),
 				settings: {
 					packageJson: {
 						enforceForPrivate: false,
@@ -202,8 +258,8 @@ for (const ruleName of ruleNames) {
 			},
 			{
 				code: `{
-          "private": false
-          }`,
+  "private": false
+}`,
 				errors: [
 					{
 						data: { property: propertyName },
@@ -212,6 +268,10 @@ for (const ruleName of ruleNames) {
 					},
 				],
 				name: "missing property with private: false > enforceForPrivate: false",
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "private": false
+}`),
 				settings: {
 					packageJson: {
 						enforceForPrivate: false,
@@ -220,8 +280,8 @@ for (const ruleName of ruleNames) {
 			},
 			{
 				code: `{
-          "private": false
-          }`,
+  "private": false
+}`,
 				errors: [
 					{
 						data: { property: propertyName },
@@ -231,6 +291,10 @@ for (const ruleName of ruleNames) {
 				],
 				name: "missing property with private: false > ignorePrivate: false, enforceForPrivate: false",
 				options: [{ ignorePrivate: false }],
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "private": false
+}`),
 				settings: {
 					packageJson: {
 						enforceForPrivate: false,
@@ -239,8 +303,8 @@ for (const ruleName of ruleNames) {
 			},
 			{
 				code: `{
-          "private": false
-          }`,
+  "private": false
+}`,
 				errors: [
 					{
 						data: { property: propertyName },
@@ -250,6 +314,10 @@ for (const ruleName of ruleNames) {
 				],
 				name: "missing property with private: false > ignorePrivate: true, enforceForPrivate: false",
 				options: [{ ignorePrivate: true }],
+				...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "private": false
+}`),
 				settings: {
 					packageJson: {
 						enforceForPrivate: false,
@@ -264,55 +332,55 @@ for (const ruleName of ruleNames) {
 			`{ "${propertyName}": { "name": "Jessica Moss" } }`,
 			{
 				code: `{
-          "private": true,
-          "${propertyName}": "Jessica Moss"
-          }`,
+  "private": true,
+  "${propertyName}": "Jessica Moss"
+}`,
 				name: "with private: false",
 			},
 			{
 				code: `{
-          "private": true
-          }`,
+  "private": true
+}`,
 				name: "missing property with private: true > ignorePrivate: true",
 				options: [{ ignorePrivate: true }],
 			},
 			{
 				code: `{
-          "private": true,
-          "${propertyName}": "Jessica Moss"
-          }`,
+  "private": true,
+  "${propertyName}": "Jessica Moss"
+}`,
 				name: "with private: true > ignorePrivate: false",
 				options: [{ ignorePrivate: false }],
 			},
 			{
 				code: `{
-          "private": false,
-          "${propertyName}": "Jessica Moss"
-          }`,
+  "private": false,
+  "${propertyName}": "Jessica Moss"
+}`,
 				name: "with private: false > ignorePrivate: true",
 				options: [{ ignorePrivate: true }],
 			},
 			{
 				code: `{
-          "private": false,
-          "${propertyName}": "Jessica Moss"
-          }`,
+  "private": false,
+  "${propertyName}": "Jessica Moss"
+}`,
 				name: "with private: false > ignorePrivate: false",
 				options: [{ ignorePrivate: false }],
 			},
 			{
 				code: `{
-          "private": "true",
-          "${propertyName}": "Jessica Moss"
-          }`,
+  "private": "true",
+  "${propertyName}": "Jessica Moss"
+}`,
 				name: "with private: true > ignorePrivate: true",
 				options: [{ ignorePrivate: true }],
 			},
 			{
 				code: `{
-          "private": true,
-          "${propertyName}": "Jessica Moss"
-          }`,
+  "private": true,
+  "${propertyName}": "Jessica Moss"
+}`,
 				name: "with private: true > enforceForPrivate: true",
 				settings: {
 					packageJson: {
@@ -322,8 +390,8 @@ for (const ruleName of ruleNames) {
 			},
 			{
 				code: `{
-          "private": true
-          }`,
+  "private": true
+}`,
 				name: "missing property with private: true > ignorePrivate: true, enforceForPrivate: true",
 				options: [{ ignorePrivate: true }],
 				settings: {
@@ -334,9 +402,9 @@ for (const ruleName of ruleNames) {
 			},
 			{
 				code: `{
-          "private": true,
-          "${propertyName}": "Jessica Moss"
-          }`,
+  "private": true,
+  "${propertyName}": "Jessica Moss"
+}`,
 				name: "with private: true > ignorePrivate: false, enforceForPrivate: true",
 				options: [{ ignorePrivate: false }],
 				settings: {
@@ -347,8 +415,8 @@ for (const ruleName of ruleNames) {
 			},
 			{
 				code: `{
-          "private": true
-          }`,
+  "private": true
+}`,
 				name: "missing property with private: true > enforceForPrivate: true",
 				settings: {
 					packageJson: {
@@ -358,8 +426,8 @@ for (const ruleName of ruleNames) {
 			},
 			{
 				code: `{
-          "private": true
-          }`,
+  "private": true
+}`,
 				name: "missing property with private: true > ignorePrivate: true, enforceForPrivate: false",
 				options: [{ ignorePrivate: true }],
 				settings: {
@@ -370,9 +438,9 @@ for (const ruleName of ruleNames) {
 			},
 			{
 				code: `{
-          "private": true,
-          "${propertyName}": "Jessica Moss"
-          }`,
+  "private": true,
+  "${propertyName}": "Jessica Moss"
+}`,
 				name: "with private: true > ignorePrivate: false, enforceForPrivate: false",
 				options: [{ ignorePrivate: false }],
 				settings: {
