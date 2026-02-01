@@ -11,14 +11,14 @@ concurrency:
 
 jobs:
   release_please:
+    name: Manage Release PR
     runs-on: ubuntu-latest
     permissions:
       contents: write
       pull-requests: write
-      id-token: write # Required for OIDC
     outputs:
-      dist_tag: ${{ steps.determine_dist_tag.outputs.dist_tag }}
       releases_created: ${{ steps.release.outputs.releases_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
     steps:
       - uses: googleapis/release-please-action@16a9c90856f42705d54a6fda1823352bdc62cf38 # v4.4.0
         id: release
@@ -27,17 +27,25 @@ jobs:
           manifest-file: .github/release-please/release-please-manifest.json
           target-branch: ${{ github.ref_name }}
 
+  publish:
+    name: Publish Package
+    if: ${{ needs.release_please.outputs.releases_created == 'true' }}
+    needs: release_please
+    permissions:
+      contents: read
+      id-token: write # Required for OIDC
+    runs-on: ubuntu-latest
+    outputs:
+      dist_tag: ${{ steps.determine_dist_tag.outputs.dist_tag }}
+    steps:
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
-        if: ${{ steps.release.outputs.release_created }}
 
       - uses: ./.github/actions/prepare
-        if: ${{ steps.release.outputs.release_created }}
 
       - name: Determine dist-tag
         id: determine_dist_tag
-        if: ${{ steps.release.outputs.release_created }}
         run: |
-          TAG_NAME="${{ steps.release.outputs.tag_name }}"
+          TAG_NAME="${{ needs.release_please.outputs.tag_name }}"
           echo "Release tag: $TAG_NAME"
 
           if [[ "$TAG_NAME" == *"-alpha."* ]]; then
@@ -55,14 +63,15 @@ jobs:
           echo "dist_tag=$DIST_TAG" >> "$GITHUB_OUTPUT"
 
       - name: Build and Publish
-        if: ${{ steps.release.outputs.release_created }}
         run: |
           pnpm build
-          pnpm publish
+
+          echo "Publishing to npm with dist-tag '${{ steps.determine_dist_tag.outputs.dist_tag }}'"
+          pnpm publish --tag ${{ steps.determine_dist_tag.outputs.dist_tag }}
 
   post_release:
-    needs: release_please
-    if: ${{ needs.release_please.outputs.releases_created == 'true' }}
+    name: Post Release Comments
+    needs: publish
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -81,6 +90,6 @@ jobs:
             The release is available on:
 
             * [GitHub releases](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/releases/tag/{release_tag})
-            * [npm package (@${{ needs.release_please.outputs.dist_tag }} dist-tag)](https://www.npmjs.com/package/eslint-plugin-package-json/v/${{ env.npm_version }})
+            * [npm package (@${{ needs.publish.outputs.dist_tag }} dist-tag)](https://www.npmjs.com/package/eslint-plugin-package-json/v/${{ env.npm_version }})
 
             Cheers! 📦🚀
