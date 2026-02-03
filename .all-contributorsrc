@@ -380,6 +380,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "vanyauhalin",
+      "name": "Ivan Uhalin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/56481109?v=4",
+      "profile": "https://vanyauhalin.me/",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsSortAlphabetically": true,
