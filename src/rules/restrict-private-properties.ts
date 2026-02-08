@@ -89,9 +89,9 @@ export const rule = createRule({
 		fixable: "code",
 		hasSuggestions: true,
 		messages: {
-			removePropertySuggestion: "Remove the '{{property}}' field.",
+			removePropertySuggestion: "Remove the '{{ property }}' field.",
 			unnecessaryProperty:
-				"The '{{property}}' field is unnecessary in private packages and can be removed.",
+				"The '{{ property }}' field is unnecessary in private packages and can be removed.",
 		},
 		schema: [
 			{

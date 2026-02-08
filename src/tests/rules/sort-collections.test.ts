@@ -18,7 +18,6 @@ ruleTester.run("sort-collections", rule, {
 				{
 					data: { key: "scripts" },
 					messageId: "unsortedScripts",
-					type: "JSONProperty",
 				},
 			],
 			filename: "package.json",
@@ -42,7 +41,6 @@ ruleTester.run("sort-collections", rule, {
 				{
 					data: { key: "scripts" },
 					messageId: "unsortedScripts",
-					type: "JSONProperty",
 				},
 			],
 			filename: "package.json",
@@ -66,7 +64,6 @@ ruleTester.run("sort-collections", rule, {
 				{
 					data: { key: "scripts" },
 					messageId: "unsortedScripts",
-					type: "JSONProperty",
 				},
 			],
 			filename: "package.json",
@@ -88,7 +85,6 @@ ruleTester.run("sort-collections", rule, {
 				{
 					data: { key: "scripts" },
 					messageId: "unsortedScripts",
-					type: "JSONProperty",
 				},
 			],
 			filename: "package.json",
@@ -110,7 +106,6 @@ ruleTester.run("sort-collections", rule, {
 				{
 					data: { key: "scripts" },
 					messageId: "unsortedScripts",
-					type: "JSONProperty",
 				},
 			],
 			filename: "package.json",
@@ -132,7 +127,6 @@ ruleTester.run("sort-collections", rule, {
 				{
 					data: { key: "scripts" },
 					messageId: "unsortedScripts",
-					type: "JSONProperty",
 				},
 			],
 			filename: "package.json",
@@ -158,7 +152,6 @@ ruleTester.run("sort-collections", rule, {
 				{
 					data: { key: "exports" },
 					messageId: "unsortedKeys",
-					type: "JSONProperty",
 				},
 			],
 			filename: "package.json",
@@ -186,7 +179,6 @@ ruleTester.run("sort-collections", rule, {
 				{
 					data: { key: "pnpm.patchedDependencies" },
 					messageId: "unsortedKeys",
-					type: "JSONProperty",
 				},
 			],
 			filename: "package.json",
@@ -215,7 +207,6 @@ ruleTester.run("sort-collections", rule, {
 				{
 					data: { key: "pnpm.peerDependencyRules.allowedVersions" },
 					messageId: "unsortedKeys",
-					type: "JSONProperty",
 				},
 			],
 			filename: "package.json",

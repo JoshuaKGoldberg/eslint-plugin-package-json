@@ -12,14 +12,16 @@ ruleTester.run("restrict-private-properties", rule, {
 			}`,
 			errors: [
 				{
+					data: { property: "files" },
 					messageId: "unnecessaryProperty",
 					suggestions: [
 						{
+							data: { property: "files" },
 							messageId: "removePropertySuggestion",
 							output: `{
 				"name": "test",
 				"private": true
-				
+\t\t\t\t
 			}`,
 						},
 					],
@@ -37,14 +39,16 @@ ruleTester.run("restrict-private-properties", rule, {
 			}`,
 			errors: [
 				{
+					data: { property: "publishConfig" },
 					messageId: "unnecessaryProperty",
 					suggestions: [
 						{
+							data: { property: "publishConfig" },
 							messageId: "removePropertySuggestion",
 							output: `{
 				"name": "test",
 				"private": true
-				
+\t\t\t\t
 			}`,
 						},
 					],
@@ -54,7 +58,12 @@ ruleTester.run("restrict-private-properties", rule, {
 		// Empty files array (auto-fixable)
 		{
 			code: `{ "private": true, "files": [] }`,
-			errors: [{ messageId: "unnecessaryProperty" }],
+			errors: [
+				{
+					data: { property: "files" },
+					messageId: "unnecessaryProperty",
+				},
+			],
 			output: `{ "private": true  }`,
 		},
 		// Empty publishConfig object (auto-fixable)
@@ -64,11 +73,16 @@ ruleTester.run("restrict-private-properties", rule, {
 				"private": true,
 				"publishConfig": {}
 			}`,
-			errors: [{ messageId: "unnecessaryProperty" }],
+			errors: [
+				{
+					data: { property: "publishConfig" },
+					messageId: "unnecessaryProperty",
+				},
+			],
 			output: `{
 				"name": "test",
 				"private": true
-				
+\t\t\t\t
 			}`,
 		},
 		// Multiple blocked properties (mixed empty/non-empty)
@@ -81,26 +95,31 @@ ruleTester.run("restrict-private-properties", rule, {
 			}`,
 			errors: [
 				{
+					data: { property: "files" },
 					messageId: "unnecessaryProperty",
 					suggestions: [
 						{
+							data: { property: "files" },
 							messageId: "removePropertySuggestion",
 							output: `{
 				"name": "test",
 				"private": true,
-				
+\t\t\t\t
 				"publishConfig": {}
 			}`,
 						},
 					],
 				},
-				{ messageId: "unnecessaryProperty" },
+				{
+					data: { property: "publishConfig" },
+					messageId: "unnecessaryProperty",
+				},
 			],
 			output: `{
 				"name": "test",
 				"private": true,
 				"files": ["dist"]
-				
+\t\t\t\t
 			}`,
 		},
 		// Custom blocked properties (non-empty, with suggestion)
@@ -114,14 +133,16 @@ ruleTester.run("restrict-private-properties", rule, {
 			}`,
 			errors: [
 				{
+					data: { property: "dependencies" },
 					messageId: "unnecessaryProperty",
 					suggestions: [
 						{
+							data: { property: "dependencies" },
 							messageId: "removePropertySuggestion",
 							output: `{
 				"name": "test",
 				"private": true
-				
+\t\t\t\t
 			}`,
 						},
 					],
@@ -136,12 +157,17 @@ ruleTester.run("restrict-private-properties", rule, {
 				"private": true,
 				"dependencies": {}
 			}`,
-			errors: [{ messageId: "unnecessaryProperty" }],
+			errors: [
+				{
+					data: { property: "dependencies" },
+					messageId: "unnecessaryProperty",
+				},
+			],
 			options: [{ blockedProperties: ["dependencies"] }],
 			output: `{
 				"name": "test",
 				"private": true
-				
+\t\t\t\t
 			}`,
 		},
 		// Options object without blockedProperties (uses default)
@@ -153,14 +179,16 @@ ruleTester.run("restrict-private-properties", rule, {
 			}`,
 			errors: [
 				{
+					data: { property: "files" },
 					messageId: "unnecessaryProperty",
 					suggestions: [
 						{
+							data: { property: "files" },
 							messageId: "removePropertySuggestion",
 							output: `{
 				"name": "test",
 				"private": true
-				
+\t\t\t\t
 			}`,
 						},
 					],

@@ -14,6 +14,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
+					data: { field: "files" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -39,6 +40,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
+					data: { expressionType: "array" },
 					messageId: "emptyExpression",
 					suggestions: [
 						{
@@ -61,6 +63,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
+					data: { expressionType: "object" },
 					messageId: "emptyExpression",
 					suggestions: [
 						{
@@ -74,6 +77,7 @@ ruleTester.run("no-empty-fields", rule, {
 					],
 				},
 				{
+					data: { expressionType: "array" },
 					messageId: "emptyExpression",
 					suggestions: [
 						{
@@ -96,6 +100,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
+					data: { field: "dependencies" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -121,6 +126,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
+					data: { field: "peerDependencies" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -146,6 +152,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
+					data: { field: "scripts" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -168,6 +175,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
+					data: { field: "devDependencies" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -195,6 +203,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
+					data: { field: "nin" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -227,6 +236,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
+					data: { field: "nin" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -258,6 +268,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
+					data: { field: "files" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -275,6 +286,7 @@ ruleTester.run("no-empty-fields", rule, {
 					],
 				},
 				{
+					data: { field: "test" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -303,6 +315,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
+					data: { field: "files" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -318,6 +331,7 @@ ruleTester.run("no-empty-fields", rule, {
 					],
 				},
 				{
+					data: { field: "scripts" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -350,6 +364,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
+					data: { field: "development" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
