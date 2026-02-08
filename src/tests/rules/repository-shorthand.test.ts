@@ -95,7 +95,6 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					messageId: "preferShorthand",
-					type: "JSONObjectExpression",
 				},
 			],
 			filename: "package.json",
@@ -114,7 +113,6 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					messageId: "preferShorthand",
-					type: "JSONObjectExpression",
 				},
 			],
 			filename: "package.json",
@@ -133,7 +131,6 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					messageId: "preferShorthand",
-					type: "JSONObjectExpression",
 				},
 			],
 			filename: "package.json",
@@ -149,7 +146,6 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					messageId: "preferShorthand",
-					type: "JSONLiteral",
 				},
 			],
 			filename: "package.json",
@@ -168,7 +164,6 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					messageId: "preferShorthand",
-					type: "JSONObjectExpression",
 				},
 			],
 			filename: "package.json",
@@ -187,7 +182,6 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					messageId: "preferShorthand",
-					type: "JSONObjectExpression",
 				},
 			],
 			filename: "package.json",
@@ -206,7 +200,6 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					messageId: "preferShorthand",
-					type: "JSONObjectExpression",
 				},
 			],
 			filename: "package.json",

@@ -8,7 +8,7 @@ ruleTester.run("exports-subpaths-style", rule, {
 		// ============================================================
 		{
 			code: `{ "exports": "./index.js" }`,
-			errors: [{ messageId: "preferExplicit", type: "JSONLiteral" }],
+			errors: [{ messageId: "preferExplicit" }],
 			output: `{ "exports": {
   ".": "./index.js"
 } }`,
@@ -20,9 +20,7 @@ ruleTester.run("exports-subpaths-style", rule, {
 					"require": "./index.cjs"
 				}
 			}`,
-			errors: [
-				{ messageId: "preferExplicit", type: "JSONObjectExpression" },
-			],
+			errors: [{ messageId: "preferExplicit" }],
 			output: `{
 				"exports": {
   ".": {
@@ -34,21 +32,21 @@ ruleTester.run("exports-subpaths-style", rule, {
 		},
 		{
 			code: `{ "exports": 123 }`,
-			errors: [{ messageId: "preferExplicit", type: "JSONLiteral" }],
+			errors: [{ messageId: "preferExplicit" }],
 			output: `{ "exports": {
   ".": 123
 } }`,
 		},
 		{
 			code: `{ "exports": true }`,
-			errors: [{ messageId: "preferExplicit", type: "JSONLiteral" }],
+			errors: [{ messageId: "preferExplicit" }],
 			output: `{ "exports": {
   ".": true
 } }`,
 		},
 		{
 			code: `{ "exports": null }`,
-			errors: [{ messageId: "preferExplicit", type: "JSONLiteral" }],
+			errors: [{ messageId: "preferExplicit" }],
 			output: `{ "exports": {
   ".": null
 } }`,
@@ -56,7 +54,7 @@ ruleTester.run("exports-subpaths-style", rule, {
 		// With explicit option
 		{
 			code: `{ "exports": "./index.js" }`,
-			errors: [{ messageId: "preferExplicit", type: "JSONLiteral" }],
+			errors: [{ messageId: "preferExplicit" }],
 			options: [{ prefer: "explicit" }],
 			output: `{ "exports": {
   ".": "./index.js"
@@ -72,9 +70,7 @@ ruleTester.run("exports-subpaths-style", rule, {
 					".": "./index.js"
 				}
 			}`,
-			errors: [
-				{ messageId: "preferImplicit", type: "JSONObjectExpression" },
-			],
+			errors: [{ messageId: "preferImplicit" }],
 			options: [{ prefer: "implicit" }],
 			output: `{
 				"exports": "./index.js"
@@ -89,9 +85,7 @@ ruleTester.run("exports-subpaths-style", rule, {
 					}
 				}
 			}`,
-			errors: [
-				{ messageId: "preferImplicit", type: "JSONObjectExpression" },
-			],
+			errors: [{ messageId: "preferImplicit" }],
 			options: [{ prefer: "implicit" }],
 			output: `{
 				"exports": {
@@ -106,9 +100,7 @@ ruleTester.run("exports-subpaths-style", rule, {
 					".": ["./index.js"]
 				}
 			}`,
-			errors: [
-				{ messageId: "preferImplicit", type: "JSONObjectExpression" },
-			],
+			errors: [{ messageId: "preferImplicit" }],
 			options: [{ prefer: "implicit" }],
 			output: `{
 				"exports": [

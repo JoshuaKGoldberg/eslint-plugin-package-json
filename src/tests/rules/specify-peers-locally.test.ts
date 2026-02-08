@@ -15,10 +15,12 @@ ruleTester.run("specify-peers-locally", rule, {
 }`,
 			errors: [
 				{
+					data: { name: "abc" },
 					line: 3,
 					messageId: "devDependencyNotDefined",
 					suggestions: [
 						{
+							data: { name: "abc" },
 							messageId: "addToDevDependencies",
 							output: `{
   "peerDependencies": {
@@ -45,10 +47,12 @@ ruleTester.run("specify-peers-locally", rule, {
 }`,
 			errors: [
 				{
+					data: { name: "abc" },
 					line: 3,
 					messageId: "devDependencyNotDefined",
 					suggestions: [
 						{
+							data: { name: "abc" },
 							messageId: "addToDevDependencies",
 							output: `{
   "peerDependencies": {
@@ -72,6 +76,7 @@ ruleTester.run("specify-peers-locally", rule, {
 }`,
 			errors: [
 				{
+					data: { name: "abc" },
 					line: 3,
 					messageId: "devDependencyNotDefined",
 					suggestions: [],
