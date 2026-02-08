@@ -49,8 +49,11 @@ export interface PackageJsonRuleModule<
 	Schema extends JSONSchema[] = JSONSchema[],
 > {
 	create(context: PackageJsonRuleContext<Options>): RuleListener;
-	meta: Omit<Rule.RuleMetaData, "defaultOptions" | "schema"> & {
+	meta: Omit<Rule.RuleMetaData, "defaultOptions" | "docs" | "schema"> & {
 		defaultOptions?: NoInfer<Options>;
+		docs?: Rule.RuleMetaData["docs"] & {
+			category?: string;
+		};
 		schema?: Schema;
 	};
 }
