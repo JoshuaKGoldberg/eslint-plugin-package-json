@@ -137,9 +137,9 @@ export const rule = createRule({
 		hasSuggestions: true,
 		messages: {
 			emptyExpression:
-				"This {{expressionType}} does nothing and can be removed.",
+				"This {{ expressionType }} does nothing and can be removed.",
 			emptyFields:
-				"The field '{{field}}' does nothing and can be removed.",
+				"The field '{{ field }}' does nothing and can be removed.",
 			remove: "Remove this empty field.",
 		},
 		schema: [
