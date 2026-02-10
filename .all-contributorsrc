@@ -389,6 +389,15 @@
       "contributions": [
         "ideas"
       ]
+    },
+    {
+      "login": "nick2bad4u",
+      "name": "Typpi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/20943337?v=4",
+      "profile": "https://github.com/Nick2bad4u",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsSortAlphabetically": true,
