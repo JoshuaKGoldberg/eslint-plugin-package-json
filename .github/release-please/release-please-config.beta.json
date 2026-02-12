@@ -1,10 +1,10 @@
 {
 	"changelog-sections": [
-		{ "type": "feat", "section": "Features", "hidden": false },
-		{ "type": "fix", "section": "Bug Fixes", "hidden": false },
+		{ "type": "feat", "section": "🚀 Features", "hidden": false },
+		{ "type": "fix", "section": "🩹 Bug Fixes", "hidden": false },
 		{
 			"type": "perf",
-			"section": "Performance Improvements",
+			"section": "🏁 Performance Improvements",
 			"hidden": false
 		},
 		{ "type": "build", "hidden": true },
