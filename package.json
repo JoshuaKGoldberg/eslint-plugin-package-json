@@ -101,7 +101,7 @@
 		"prettier-plugin-sh": "0.18.0",
 		"tsdown": "0.20.0",
 		"typescript": "5.9.3",
-		"typescript-eslint": "8.54.0",
+		"typescript-eslint": "8.55.0",
 		"vitest": "4.0.13"
 	},
 	"peerDependencies": {
