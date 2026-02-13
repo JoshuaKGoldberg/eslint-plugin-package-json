@@ -90,9 +90,10 @@ export const rule = createRule({
 			{ ignorePrivate: false, preferContributorsOnly: false },
 		],
 		docs: {
-			category: "Publishable",
+			category: "Best Practices",
 			description:
 				"Ensures that proper attribution is included, requiring that either `author` or `contributors` is defined, and that if `contributors` is present, it should include at least one contributor.",
+			recommended: true,
 		},
 		hasSuggestions: true,
 		messages: {
