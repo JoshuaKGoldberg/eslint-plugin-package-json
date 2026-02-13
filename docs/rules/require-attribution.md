@@ -172,9 +172,27 @@ Examples of **correct** code for this rule with default options:
 
 | Name                     | Description                                                               | Type    |
 | :----------------------- | :------------------------------------------------------------------------ | :------ |
+| `ignorePrivate`          | Skip attribution requirements for packages with `"private": true`.        | Boolean |
 | `preferContributorsOnly` | Require that only `contributors` is present, and `author` is not defined. | Boolean |
 
 <!-- end auto-generated rule options list -->
+
+### ignorePrivate
+
+When enabled, `ignorePrivate` skips all attribution checks for packages that have `"private": true` set. This is useful for internal packages that won't be published to npm.
+
+```json
+{
+	"package-json/require-attribution": [
+		"error",
+		{
+			"ignorePrivate": true
+		}
+	]
+}
+```
+
+Default: `false`
 
 ### preferContributorsOnly
 
