@@ -130,6 +130,14 @@ ruleTester.run("require-attribution", rule, {
         }
     ]
 }`,
+
+		{
+			code: `{
+    "name": "package-with-no-attribution",
+    "private": true,
+}`,
+			name: "private package without attribution",
+		},
 		{
 			code: `{
     "contributors": [
@@ -165,6 +173,14 @@ ruleTester.run("require-attribution", rule, {
 }`,
 			name: "private package with author (ignorePrivate: true)",
 			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+    "private": false,
+    "author": "Trent Reznor"
+}`,
+			name: "private package with author (ignorePrivate: false)",
+			options: [{ ignorePrivate: false }],
 		},
 	],
 });
