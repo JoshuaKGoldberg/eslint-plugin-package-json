@@ -86,6 +86,19 @@ ruleTester.run("require-attribution", rule, {
 			name: "author and contributors (preferContributorsOnly: true)",
 			options: [{ preferContributorsOnly: true }],
 		},
+		{
+			code: `{
+    "private": false
+}`,
+			errors: [
+				{
+					line: 1,
+					messageId: "missing",
+				},
+			],
+			name: "missing attribution with private: false (ignorePrivate: true)",
+			options: [{ ignorePrivate: true }],
+		},
 	],
 	valid: [
 		`{
@@ -138,5 +151,20 @@ ruleTester.run("require-attribution", rule, {
 		`{
     "author": "Trent Reznor"
 }`,
+		{
+			code: `{
+    "private": true
+}`,
+			name: "private package without attribution (ignorePrivate: true)",
+			options: [{ ignorePrivate: true }],
+		},
+		{
+			code: `{
+    "private": true,
+    "author": "Trent Reznor"
+}`,
+			name: "private package with author (ignorePrivate: true)",
+			options: [{ ignorePrivate: true }],
+		},
 	],
 });

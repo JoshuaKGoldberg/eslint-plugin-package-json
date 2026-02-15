@@ -9,8 +9,10 @@ export const rule = createRule({
 	create(context) {
 		const preferContributorsOnly =
 			context.options[0]?.preferContributorsOnly ?? false;
+		const ignorePrivate = context.options[0]?.ignorePrivate ?? false;
 		let authorPropertyNode: JsonAST.JSONProperty | undefined;
 		let contributorsPropertyNode: JsonAST.JSONProperty | undefined;
+		let isPrivatePackage = false;
 
 		return {
 			"Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.value=author]"(
@@ -35,7 +37,21 @@ export const rule = createRule({
 					});
 				}
 			},
+			"Program > JSONExpressionStatement > JSONObjectExpression > JSONProperty[key.value=private]"(
+				node: JsonAST.JSONProperty,
+			) {
+				if (
+					node.value.type === "JSONLiteral" &&
+					node.value.value === true
+				) {
+					isPrivatePackage = true;
+				}
+			},
 			"Program:exit"(node) {
+				if (ignorePrivate && isPrivatePackage) {
+					return;
+				}
+
 				if (preferContributorsOnly) {
 					if (authorPropertyNode) {
 						context.report({
@@ -70,7 +86,9 @@ export const rule = createRule({
 		};
 	},
 	meta: {
-		defaultOptions: [{ preferContributorsOnly: false }],
+		defaultOptions: [
+			{ ignorePrivate: false, preferContributorsOnly: false },
+		],
 		docs: {
 			category: "Publishable",
 			description:
@@ -91,6 +109,11 @@ export const rule = createRule({
 			{
 				additionalProperties: false,
 				properties: {
+					ignorePrivate: {
+						description:
+							'Skip attribution requirements for packages with `"private": true`.',
+						type: "boolean",
+					},
 					preferContributorsOnly: {
 						description:
 							"Require that only `contributors` is present, and `author` is not defined.",
