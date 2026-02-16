@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.88.3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.88.2...v0.88.3) (2026-02-16)
+
+
+### 🚀 Features
+
+* **require-attribution:** add `ignorePrivate` option ([#1566](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1566)) ([629a8ab](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/629a8abf2a51eb9d2dc4e6204c9159a8c8c23675))
+
 ## [0.88.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.88.1...v0.88.2) (2026-01-23)
 
 
