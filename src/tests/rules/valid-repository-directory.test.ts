@@ -120,6 +120,7 @@ ruleTester.run("valid-repository-directory (this repository)", rule, {
 					messageId: "mismatched",
 					suggestions: [
 						{
+							data: { expected: "" },
 							messageId: "replace",
 							output: `{
 	"repository": {
@@ -149,6 +150,10 @@ ruleTester.run("valid-repository-directory (this repository)", rule, {
 					messageId: "mismatched",
 					suggestions: [
 						{
+							data: {
+								expected:
+									"src/tests/__fixtures__/valid-local-dependency",
+							},
 							messageId: "replace",
 							output: `{
 	"repository": {

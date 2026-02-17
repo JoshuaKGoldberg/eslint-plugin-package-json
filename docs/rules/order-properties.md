@@ -40,9 +40,9 @@ Examples of **correct** code for this rule:
 
 <!-- begin auto-generated rule options list -->
 
-| Name    | Description                                          |
-| :------ | :--------------------------------------------------- |
-| `order` | Specifies the sorting order of top-level properties. |
+| Name    | Description                                          | Default             |
+| :------ | :--------------------------------------------------- | :------------------ |
+| `order` | Specifies the sorting order of top-level properties. | `sort-package-json` |
 
 <!-- end auto-generated rule options list -->
 

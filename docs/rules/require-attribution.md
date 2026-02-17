@@ -170,10 +170,10 @@ Examples of **correct** code for this rule with default options:
 
 <!-- begin auto-generated rule options list -->
 
-| Name                     | Description                                                               | Type    |
-| :----------------------- | :------------------------------------------------------------------------ | :------ |
-| `ignorePrivate`          | Skip attribution requirements for packages with `"private": true`.        | Boolean |
-| `preferContributorsOnly` | Require that only `contributors` is present, and `author` is not defined. | Boolean |
+| Name                     | Description                                                               | Type    | Default |
+| :----------------------- | :------------------------------------------------------------------------ | :------ | :------ |
+| `ignorePrivate`          | Skip attribution requirements for packages with `"private": true`.        | Boolean | `false` |
+| `preferContributorsOnly` | Require that only `contributors` is present, and `author` is not defined. | Boolean | `false` |
 
 <!-- end auto-generated rule options list -->
 

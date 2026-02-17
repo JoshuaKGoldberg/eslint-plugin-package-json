@@ -19,6 +19,9 @@ ruleTester.run("scripts-name-casing", rule, {
 					messageId: "invalidCase",
 					suggestions: [
 						{
+							data: {
+								property: "silverMtZion",
+							},
 							messageId: "convertToKebabCase",
 							output: `{
                 "scripts": {
@@ -37,6 +40,9 @@ ruleTester.run("scripts-name-casing", rule, {
 					messageId: "invalidCase",
 					suggestions: [
 						{
+							data: {
+								property: "NIN",
+							},
 							messageId: "convertToKebabCase",
 							output: `{
                 "scripts": {

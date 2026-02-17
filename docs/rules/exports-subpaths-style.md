@@ -138,9 +138,9 @@ Note: Multiple subpaths always require the explicit object format and are not tr
 
 <!-- begin auto-generated rule options list -->
 
-| Name     | Description                                | Type   | Choices                |
-| :------- | :----------------------------------------- | :----- | :--------------------- |
-| `prefer` | Specifies which exports format to enforce. | String | `implicit`, `explicit` |
+| Name     | Description                                | Type   | Choices                | Default    |
+| :------- | :----------------------------------------- | :----- | :--------------------- | :--------- |
+| `prefer` | Specifies which exports format to enforce. | String | `implicit`, `explicit` | `explicit` |
 
 <!-- end auto-generated rule options list -->
 
