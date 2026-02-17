@@ -67,9 +67,9 @@ Examples of **correct** code for this rule with default options:
 
 <!-- begin auto-generated rule options list -->
 
-| Name                | Description                                              | Type     |
-| :------------------ | :------------------------------------------------------- | :------- |
-| `blockedProperties` | Array of property names to disallow in private packages. | String[] |
+| Name                | Description                                              | Type     | Default                    |
+| :------------------ | :------------------------------------------------------- | :------- | :------------------------- |
+| `blockedProperties` | Array of property names to disallow in private packages. | String[] | [`files`, `publishConfig`] |
 
 <!-- end auto-generated rule options list -->
 
