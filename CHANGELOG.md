@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.89.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.88.3...v0.89.0) (2026-02-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* move the `publishable` require rules to `recommended` ([#1565](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1565))
+
+### 🚀 Features
+
+* add support for eslint v10  ([#1554](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1554)) ([27ca725](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/27ca725ac5418f5b4076a5890876bd51e3e90d34))
+* move the `publishable` require rules to `recommended` ([#1565](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1565)) ([37231d3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/37231d321aff449912b6013b8d6ead78caff3695))
+
 ## [0.88.3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.88.2...v0.88.3) (2026-02-16)
 
 
