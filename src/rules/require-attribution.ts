@@ -9,7 +9,7 @@ export const rule = createRule({
 	create(context) {
 		const preferContributorsOnly =
 			context.options[0]?.preferContributorsOnly ?? false;
-		const ignorePrivate = context.options[0]?.ignorePrivate ?? false;
+		const ignorePrivate = context.options[0]?.ignorePrivate ?? true;
 		let authorPropertyNode: JsonAST.JSONProperty | undefined;
 		let contributorsPropertyNode: JsonAST.JSONProperty | undefined;
 		let isPrivatePackage = false;
@@ -87,12 +87,13 @@ export const rule = createRule({
 	},
 	meta: {
 		defaultOptions: [
-			{ ignorePrivate: false, preferContributorsOnly: false },
+			{ ignorePrivate: true, preferContributorsOnly: false },
 		],
 		docs: {
-			category: "Publishable",
+			category: "Best Practices",
 			description:
 				"Ensures that proper attribution is included, requiring that either `author` or `contributors` is defined, and that if `contributors` is present, it should include at least one contributor.",
+			recommended: true,
 		},
 		hasSuggestions: true,
 		messages: {
