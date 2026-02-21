@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0-beta.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.89.0...v1.0.0-beta.0) (2026-02-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop `legacy-recommended` rc-based config ([#1579](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1579))
+* drop support for end-of-life Node versions ([#1580](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1580))
+
+### 🚀 Features
+
+* drop `legacy-recommended` rc-based config ([#1579](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1579)) ([ab52d5c](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/ab52d5c877c7209b2e58e2179eba87cb7c0a5ec3))
+* drop support for end-of-life Node versions ([#1580](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1580)) ([6028383](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/60283836560e2d99df6c79e5ae0f89539e52066d))
+
 ## [0.89.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.88.3...v0.89.0) (2026-02-20)
 
 
