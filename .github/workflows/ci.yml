@@ -55,7 +55,6 @@ jobs:
           - 9
           - 10
         node-version:
-          - 20
           - 22
           - 24
         os:
