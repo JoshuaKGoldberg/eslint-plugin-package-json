@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.0.0-beta](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.89.0...v1.0.0-beta) (2026-02-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for end-of-life Node versions ([#1580](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1580))
+
+### 🚀 Features
+
+* drop support for end-of-life Node versions ([#1580](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1580)) ([122f0c3](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/122f0c392dca9424c206675c166bd51753f8c994))
+
 ## [0.89.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.88.3...v0.89.0) (2026-02-20)
 
 
