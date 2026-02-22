@@ -23,6 +23,9 @@ importers:
       eslint-fix-utils:
         specifier: ~0.4.1
         version: 0.4.1(@types/estree@1.0.8)(eslint@10.0.0(jiti@2.6.1))
+      jsonc-eslint-parser:
+        specifier: ^3.1.0
+        version: 3.1.0
       package-json-validator:
         specifier: ^1.0.1
         version: 1.0.1
@@ -30,13 +33,13 @@ importers:
         specifier: ^7.7.3
         version: 7.7.4
       sort-object-keys:
-        specifier: ^2.0.0
+        specifier: ^2.1.0
         version: 2.1.0
       sort-package-json:
-        specifier: ^3.4.0
+        specifier: ^3.6.1
         version: 3.6.1
       validate-npm-package-name:
-        specifier: ^7.0.0
+        specifier: ^7.0.2
         version: 7.0.2
     devDependencies:
       '@eslint-community/eslint-plugin-eslint-comments':
@@ -114,9 +117,6 @@ importers:
       json-schema-to-ts:
         specifier: 3.1.1
         version: 3.1.1
-      jsonc-eslint-parser:
-        specifier: 3.1.0
-        version: 3.1.0
       knip:
         specifier: 5.84.0
         version: 5.84.0(@types/node@24.10.1)(typescript@5.9.3)
