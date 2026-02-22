@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.89.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.89.0...v0.89.1) (2026-02-22)
+
+
+### 🚀 Features
+
+* add support for jsonc-eslint-parser v3 ([#1590](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1590)) ([dd1b959](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/dd1b9598d2c94f79a8d5404afda6e565869fe8f0))
+
 ## [0.89.0](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.88.3...v0.89.0) (2026-02-20)
 
 
