@@ -1,5 +1,5 @@
 import { ESLint, RuleTester } from "eslint";
-import jsoncESLintParser from "jsonc-eslint-parser";
+import * as jsoncESLintParser from "jsonc-eslint-parser";
 import semver from "semver";
 import * as vitest from "vitest";
 
