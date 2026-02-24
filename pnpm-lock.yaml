@@ -33,13 +33,13 @@ importers:
         specifier: ^7.7.3
         version: 7.7.4
       sort-object-keys:
-        specifier: ^2.1.0
+        specifier: ^2.0.0
         version: 2.1.0
       sort-package-json:
-        specifier: ^3.6.1
+        specifier: ^3.4.0
         version: 3.6.1
       validate-npm-package-name:
-        specifier: ^7.0.2
+        specifier: ^7.0.0
         version: 7.0.2
     devDependencies:
       '@eslint-community/eslint-plugin-eslint-comments':
