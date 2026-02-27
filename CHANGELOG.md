@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.89.2](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.89.1...v0.89.2) (2026-02-27)
+
+
+### 🚀 Features
+
+* enable `ignorePrivate` on more `require-` rules ([#1607](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1607)) ([4004220](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/40042206b40315bdc5b893755d28834a3247db16))
+
+
+### 🩹 Bug Fixes
+
+* **deps:** update `package-json-validator` to 1.0.1 ([#1599](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/1599)) ([8550731](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/commit/85507312bd6fe0d8a62f1e978bb27cac9abf8489))
+
 ## [0.89.1](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/compare/v0.89.0...v0.89.1) (2026-02-22)
 
 
