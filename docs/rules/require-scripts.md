@@ -35,8 +35,6 @@ Examples of **correct** code for this rule:
 
 <!-- end auto-generated rule options list -->
 
-You can set the `ignorePrivate` option to `true` to ignore package.json files with `"private": true` (default: `false`).
-
 ```json
 {
 	"package-json/require-repository": [
