@@ -25,8 +25,13 @@ Example of **correct** code for this rule:
 
 ## Options
 
-You can set the `ignorePrivate` option to `true` to ignore package.json files with `"private": true`.
-This is the default.
+<!-- begin auto-generated rule options list -->
+
+| Name            | Description                                                                                 | Type    | Default |
+| :-------------- | :------------------------------------------------------------------------------------------ | :------ | :------ |
+| `ignorePrivate` | Determines if this rule should be enforced when the package's `private` property is `true`. | Boolean | `true`  |
+
+<!-- end auto-generated rule options list -->
 
 ```json
 {
