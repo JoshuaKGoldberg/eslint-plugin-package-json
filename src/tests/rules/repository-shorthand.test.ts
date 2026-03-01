@@ -8,7 +8,7 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					column: 17,
-					endColumn: 19,
+					line: 1,
 					messageId: "preferObject",
 				},
 			],
@@ -18,7 +18,7 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					column: 17,
-					endColumn: 26,
+					line: 1,
 					messageId: "preferObject",
 				},
 			],
@@ -28,7 +28,7 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					column: 17,
-					endColumn: 27,
+					line: 1,
 					messageId: "preferObject",
 				},
 			],
@@ -40,7 +40,7 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					column: 19,
-					endColumn: 58,
+					line: 2,
 					messageId: "preferObject",
 				},
 			],
@@ -58,7 +58,7 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					column: 19,
-					endColumn: 65,
+					line: 2,
 					messageId: "preferObject",
 				},
 			],
