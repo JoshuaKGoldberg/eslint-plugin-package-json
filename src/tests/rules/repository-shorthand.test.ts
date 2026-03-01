@@ -8,7 +8,7 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					column: 17,
-					endColumn: 19,
+					line: 1,
 					messageId: "preferObject",
 				},
 			],
@@ -18,7 +18,7 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					column: 17,
-					endColumn: 26,
+					line: 1,
 					messageId: "preferObject",
 				},
 			],
@@ -28,50 +28,50 @@ ruleTester.run("repository-shorthand", rule, {
 			errors: [
 				{
 					column: 17,
-					endColumn: 27,
+					line: 1,
 					messageId: "preferObject",
 				},
 			],
 		},
 		{
 			code: `{
-				"repository": "JoshuaKGoldberg/create-typescript-app"
+				"repository": "michaelfaith/eslint-plugin-package-json"
 			}`,
 			errors: [
 				{
 					column: 19,
-					endColumn: 58,
+					line: 2,
 					messageId: "preferObject",
 				},
 			],
 			output: `{
 				"repository": {
   "type": "git",
-  "url": "https://github.com/JoshuaKGoldberg/create-typescript-app"
+  "url": "https://github.com/michaelfaith/eslint-plugin-package-json"
 }
 			}`,
 		},
 		{
 			code: `{
-				"repository": "github:JoshuaKGoldberg/create-typescript-app"
+				"repository": "github:michaelfaith/eslint-plugin-package-json"
 			}`,
 			errors: [
 				{
 					column: 19,
-					endColumn: 65,
+					line: 2,
 					messageId: "preferObject",
 				},
 			],
 			output: `{
 				"repository": {
   "type": "git",
-  "url": "https://github.com/JoshuaKGoldberg/create-typescript-app"
+  "url": "https://github.com/michaelfaith/eslint-plugin-package-json"
 }
 			}`,
 		},
 		{
 			code: `{
-				"repository": "gibberish:JoshuaKGoldberg/create-typescript-app"
+				"repository": "gibberish:michaelfaith/eslint-plugin-package-json"
 			}`,
 			errors: [
 				{
@@ -81,7 +81,7 @@ ruleTester.run("repository-shorthand", rule, {
 			output: `{
 				"repository": {
   "type": "git",
-  "url": "https://github.com/gibberish:JoshuaKGoldberg/create-typescript-app"
+  "url": "https://github.com/gibberish:michaelfaith/eslint-plugin-package-json"
 }
 			}`,
 		},
@@ -89,7 +89,7 @@ ruleTester.run("repository-shorthand", rule, {
 			code: `{
 				"repository": {
 					"type": "git",
-					"url": "https://github.com/JoshuaKGoldberg/create-typescript-app"
+					"url": "https://github.com/michaelfaith/eslint-plugin-package-json"
 				}
 			}`,
 			errors: [
@@ -100,14 +100,14 @@ ruleTester.run("repository-shorthand", rule, {
 			filename: "package.json",
 			options: [{ form: "shorthand" }],
 			output: `{
-				"repository": "github:JoshuaKGoldberg/create-typescript-app"
+				"repository": "github:michaelfaith/eslint-plugin-package-json"
 			}`,
 		},
 		{
 			code: `{
 				"repository": {
 					"type": "git",
-					"url": "git+https://github.com/JoshuaKGoldberg/create-typescript-app.git"
+					"url": "git+https://github.com/michaelfaith/eslint-plugin-package-json.git"
 				}
 			}`,
 			errors: [
@@ -118,14 +118,14 @@ ruleTester.run("repository-shorthand", rule, {
 			filename: "package.json",
 			options: [{ form: "shorthand" }],
 			output: `{
-				"repository": "github:JoshuaKGoldberg/create-typescript-app"
+				"repository": "github:michaelfaith/eslint-plugin-package-json"
 			}`,
 		},
 		{
 			code: `{
 				"repository": {
 					"type": "git",
-					"url": "git+ssh://git@github.com/JoshuaKGoldberg/create-typescript-app.git"
+					"url": "git+ssh://git@github.com/michaelfaith/eslint-plugin-package-json.git"
 				}
 			}`,
 			errors: [
@@ -136,7 +136,7 @@ ruleTester.run("repository-shorthand", rule, {
 			filename: "package.json",
 			options: [{ form: "shorthand" }],
 			output: `{
-				"repository": "github:JoshuaKGoldberg/create-typescript-app"
+				"repository": "github:michaelfaith/eslint-plugin-package-json"
 			}`,
 		},
 		{
@@ -158,7 +158,7 @@ ruleTester.run("repository-shorthand", rule, {
 			code: `{
 				"repository": {
 					"type": "git",
-					"url": "https://gitlab.com/JoshuaKGoldberg/create-typescript-app"
+					"url": "https://gitlab.com/michaelfaith/eslint-plugin-package-json"
 				}
 		}`,
 			errors: [
@@ -169,7 +169,7 @@ ruleTester.run("repository-shorthand", rule, {
 			filename: "package.json",
 			options: [{ form: "shorthand" }],
 			output: `{
-				"repository": "gitlab:JoshuaKGoldberg/create-typescript-app"
+				"repository": "gitlab:michaelfaith/eslint-plugin-package-json"
 		}`,
 		},
 		{
@@ -219,38 +219,38 @@ ruleTester.run("repository-shorthand", rule, {
 		}`,
 		`{
 			"repository": {
-				"url": "https://github.com/JoshuaKGoldberg/create-typescript-app"
+				"url": "https://github.com/michaelfaith/eslint-plugin-package-json"
 			}
 		}`,
 		`{
 			"repository": {
 				"type": "git",
-				"url": "https://github.com/JoshuaKGoldberg/create-typescript-app"
+				"url": "https://github.com/michaelfaith/eslint-plugin-package-json"
 			}
 		}`,
 		`{
 			"repository": {
 				"type": "git",
-				"url": "https://gist.github.com/JoshuaKGoldberg/1234567890abcdef"
+				"url": "https://gist.github.com/michaelfaith/1234567890abcdef"
 			}
 		}`,
 		`{
 			"repository": {
 				"type": "git",
-				"url": "https://bitbucket.org/JoshuaKGoldberg/create-typescript-app"
+				"url": "https://bitbucket.org/michaelfaith/eslint-plugin-package-json"
 			}
 		}`,
 		`{
 			"repository": {
 				"type": "git",
-				"url": "https://gitlab.com/JoshuaKGoldberg/create-typescript-app"
+				"url": "https://gitlab.com/michaelfaith/eslint-plugin-package-json"
 			}
 		}`,
 		{
 			code: `{
 				"repository": {
 					"type": "git",
-					"url": "https://github.com/JoshuaKGoldberg/create-typescript-app"
+					"url": "https://github.com/michaelfaith/eslint-plugin-package-json"
 				}
 			}`,
 			options: [{ form: "object" }],

@@ -17,7 +17,7 @@ Example of **incorrect** code for this rule:
 ```json
 {
 	"repository": {
-		"url": "git+https://github.com/JoshuaKGoldberg/eslint-plugin-package-json.git"
+		"url": "git+https://github.com/michaelfaith/eslint-plugin-package-json.git"
 	}
 }
 ```
@@ -26,7 +26,7 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"repository": "github:JoshuaKGoldberg/eslint-plugin-package-json"
+	"repository": "github:michaelfaith/eslint-plugin-package-json"
 }
 ```
 
@@ -34,7 +34,7 @@ Example of **correct** code for this rule:
 {
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/JoshuaKGoldberg/eslint-plugin-package-json.git"
+		"url": "git+https://github.com/michaelfaith/eslint-plugin-package-json.git"
 	}
 }
 ```

@@ -10,14 +10,14 @@ This rule enforces that `repository` entries in a `package.json` use either obje
 
 ## Rule Details
 
-npm previously allowed a "shorthand" form like `"JoshuaKGoldberg/eslint-plugin-package-json"` to specifying a full URL to a GitHub repository like `"https://github.com/JoshuaKGoldberg/eslint-plugin-package-json"`.
+npm previously allowed a "shorthand" form like `"michaelfaith/eslint-plugin-package-json"` to specifying a full URL to a GitHub repository like `"https://github.com/michaelfaith/eslint-plugin-package-json"`.
 However, current versions of npm now normalize that form to the object longhand with `type` and `url` and warn against the shorthand.
 
 Examples of **incorrect** code for this rule with the default options:
 
 ```json
 {
-	"repository": "JoshuaKGoldberg/eslint-plugin-package-json"
+	"repository": "michaelfaith/eslint-plugin-package-json"
 }
 ```
 
@@ -27,7 +27,7 @@ Examples of **correct** code for this rule with the default options:
 {
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json"
+		"url": "https://github.com/michaelfaith/eslint-plugin-package-json"
 	}
 }
 ```
@@ -58,5 +58,5 @@ The `object` form is generally recommended as that's what `npm publish` prefers.
 
 ## Further Reading
 
-- [JoshuaKGoldberg/eslint-plugin-package-json#223 🐛 Bug: prefer-repository-shorthand in conflict with npm publish requirements](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues/223)
+- [michaelfaith/eslint-plugin-package-json#223 🐛 Bug: prefer-repository-shorthand in conflict with npm publish requirements](https://github.com/michaelfaith/eslint-plugin-package-json/issues/223)
 - [npm/cli#7299 [DOCS] package.json#repository should clarify normalization steps and future plans.](https://github.com/npm/cli/issues/7299)

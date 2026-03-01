@@ -95,7 +95,7 @@ ruleTester.run("valid-repository", rules["valid-repository"], {
 	"repository": {
         "": "packages/lib-a",
         "  ": "git",
-        "    ": "git+https://github.com/JoshuaKGoldberg/package-json-validator.git"
+        "    ": "git+https://github.com/michaelfaith/eslint-plugin-package-json.git"
     }
 }
 `,
@@ -162,13 +162,13 @@ ruleTester.run("valid-repository", rules["valid-repository"], {
 	valid: [
 		"{}",
 		...[
-			"git+https://github.com/JoshuaKGoldberg/package-json-validator.git",
-			"https://github.com/JoshuaKGoldberg/package-json-validator",
-			"https://github.com/JoshuaKGoldberg/package-json-validator.git",
-			"http://github.com/JoshuaKGoldberg/package-json-validator.git",
-			"git://github.com/JoshuaKGoldberg/package-json-validator.git",
-			"git://github.com/JoshuaKGoldberg/package-json-validator",
-			"git@github.com:JoshuaKGoldberg/package-json-validator.git",
+			"git+https://github.com/michaelfaith/eslint-plugin-package-json.git",
+			"https://github.com/michaelfaith/eslint-plugin-package-json",
+			"https://github.com/michaelfaith/eslint-plugin-package-json.git",
+			"http://github.com/michaelfaith/eslint-plugin-package-json.git",
+			"git://github.com/michaelfaith/eslint-plugin-package-json.git",
+			"git://github.com/michaelfaith/eslint-plugin-package-json",
+			"git@github.com:michaelfaith/eslint-plugin-package-json.git",
 		].flatMap((value) => [
 			{
 				code: `{

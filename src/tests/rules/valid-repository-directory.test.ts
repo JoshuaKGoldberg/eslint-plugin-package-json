@@ -66,8 +66,8 @@ ruleTester.run("valid-repository-directory (no repository)", rule, {
 	valid: [
 		`{}`,
 		`{ "repository": "" }`,
-		`{ "repository": "JoshuaKGoldberg/eslint-plugin-package-json" }`,
-		`{ "repository": "https://github.com/JoshuaKGoldberg/eslint-plugin-package-json" }`,
+		`{ "repository": "michaelfaith/eslint-plugin-package-json" }`,
+		`{ "repository": "https://github.com/michaelfaith/eslint-plugin-package-json" }`,
 		`{ "repository": { "directory": null } }`,
 		`{ "repository": { "directory": {} } }`,
 		`{

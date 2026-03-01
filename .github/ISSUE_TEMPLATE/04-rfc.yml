@@ -11,7 +11,7 @@ body:
       description: If any of these required steps are not taken, we may not be able to review your issue. Help us to help you!
       label: RFC Checklist
       options:
-        - label: I have [searched for related issues](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/issues?q=is%3Aissue) and found none that matched my issue.
+        - label: I have [searched for related issues](https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=is%3Aissue) and found none that matched my issue.
           required: true
     type: checkboxes
   - attributes:
