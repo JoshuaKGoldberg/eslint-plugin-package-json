@@ -89,7 +89,7 @@ jobs:
 
             The release is available on:
 
-            * [GitHub releases](https://github.com/JoshuaKGoldberg/eslint-plugin-package-json/releases/tag/{release_tag})
+            * [GitHub releases](https://github.com/michaelfaith/eslint-plugin-package-json/releases/tag/{release_tag})
             * [npm package (@${{ needs.publish.outputs.dist_tag }} dist-tag)](https://www.npmjs.com/package/eslint-plugin-package-json/v/${{ env.npm_version }})
 
             Cheers! 📦🚀
