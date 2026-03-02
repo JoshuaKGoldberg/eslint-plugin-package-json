@@ -68,10 +68,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: pnpm install -D eslint@${{ matrix.eslint-version }}
       - run: pnpm run test --coverage
-      - env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - uses: codecov/codecov-action@v5
         if: always()
-        uses: codecov/codecov-action@v5
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
   type_check:
     name: Type Check (ESLint ${{ matrix.eslint-version }})
     runs-on: ubuntu-latest
