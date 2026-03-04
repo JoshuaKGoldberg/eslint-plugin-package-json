@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.0.0-beta.1](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v1.0.0-beta.0...v1.0.0-beta.1) (2026-03-04)
+
+
+### 🚀 Features
+
+* enable `ignorePrivate` on more `require-` rules ([#1607](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1607)) ([a187fa8](https://github.com/michaelfaith/eslint-plugin-package-json/commit/a187fa893154c89c3b9dde28d9d0fd6dc1d1173b))
+
+
+### 🩹 Bug Fixes
+
+* update repo references ([#1613](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1613)) ([079d3af](https://github.com/michaelfaith/eslint-plugin-package-json/commit/079d3af2c67a38ef476121158047e42d9c7ae4c7))
+
 ## [0.89.2](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.89.1...v0.89.2) (2026-02-27)
 
 
