@@ -5,7 +5,6 @@ import vitest from "@vitest/eslint-plugin";
 import eslintPlugin from "eslint-plugin-eslint-plugin";
 import jsdoc from "eslint-plugin-jsdoc";
 import jsonc from "eslint-plugin-jsonc";
-import markdownLinks from "eslint-plugin-markdown-links";
 import n from "eslint-plugin-n";
 import nodeDependencies from "eslint-plugin-node-dependencies";
 import perfectionist from "eslint-plugin-perfectionist";
@@ -94,7 +93,6 @@ export default defineConfig(
 		extends: [packageJson.configs["recommended-publishable"]],
 		files: ["package.json"],
 		plugins: {
-			// @ts-expect-error types mismatch: https://github.com/ota-meshi/eslint-plugin-node-dependencies/issues/236
 			"node-dependencies": nodeDependencies,
 		},
 		rules: {
@@ -161,25 +159,6 @@ export default defineConfig(
 		files: ["./eslint.config.ts", "./**/*.test.*"],
 		rules: {
 			"n/no-unsupported-features/node-builtins": "off",
-		},
-	},
-	{
-		extends: [markdownLinks.configs.recommended],
-		files: ["**/*.md"],
-		ignores: ["CHANGELOG.md"],
-		rules: {
-			"markdown-links/no-dead-urls": [
-				"error",
-				{
-					checkAnchor: false,
-					ignoreUrls: [
-						// In case a not yet merged rule doc page is linked
-						"/^https://(?:www\\.)?github.com/JoshuaKGoldberg/eslint-plugin-package-json/blob/[^/]+/docs/rules/[\\w-]+.md([?#].*)?$/i",
-					],
-					maxRetries: 3,
-					timeout: 5000,
-				},
-			],
 		},
 	},
 );

@@ -179,7 +179,8 @@ Examples of **correct** code for this rule with default options:
 
 ### ignorePrivate
 
-When enabled, `ignorePrivate` skips all attribution checks for packages that have `"private": true` set. This is useful for internal packages that won't be published to npm.
+When enabled, `ignorePrivate` skips all attribution checks for packages that have `"private": true` set.
+This is useful for internal packages that won't be published to npm.
 
 ```json
 {
