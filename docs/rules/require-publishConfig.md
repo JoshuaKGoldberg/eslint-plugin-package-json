@@ -21,11 +21,11 @@ Example of **correct** code for this rule:
 	"version": "13.0.0",
 	"publishConfig": {
 		"exports": {
-            ".": "./index.js"
-        },
+			".": "./index.js"
+		}
 	}
 }
-``
+```
 
 ## Options
 
@@ -36,7 +36,6 @@ Example of **correct** code for this rule:
 | `ignorePrivate` | Determines if this rule should be enforced when the package's `private` property is `true`. | Boolean | `true`  |
 
 <!-- end auto-generated rule options list -->
-```
 
 ```json
 {
