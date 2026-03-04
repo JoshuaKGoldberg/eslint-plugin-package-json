@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.89.3](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.89.2...v0.89.3) (2026-03-04)
+
+
+### 🚀 Features
+
+* add `require-packageManager` rule ([#1620](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1620)) ([7626cd9](https://github.com/michaelfaith/eslint-plugin-package-json/commit/7626cd9814cad3bcb1285e37e83af05fb0c067e5))
+
+
+### 🩹 Bug Fixes
+
+* update repo references ([#1613](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1613)) ([b382fc1](https://github.com/michaelfaith/eslint-plugin-package-json/commit/b382fc11eef19cddc4e1f46861752cc831cd29b8))
+
 ## [0.89.2](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.89.1...v0.89.2) (2026-02-27)
 
 
