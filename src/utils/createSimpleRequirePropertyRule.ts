@@ -113,20 +113,23 @@ export const createSimpleRequirePropertyRule = (
 			messages: {
 				missing: "Property '{{property}}' is required.",
 			},
-			schema: [
-				{
-					additionalProperties: false,
-					properties: {
-						ignorePrivate: {
-							default: ignorePrivateDefault,
-							description:
-								"Determines if this rule should be enforced when the package's `private` property is `true`.",
-							type: "boolean",
-						},
-					},
-					type: "object",
-				},
-			],
+			schema:
+				propertyName === "private"
+					? []
+					: [
+							{
+								additionalProperties: false,
+								properties: {
+									ignorePrivate: {
+										default: ignorePrivateDefault,
+										description:
+											"Determines if this rule should be enforced when the package's `private` property is `true`.",
+										type: "boolean",
+									},
+								},
+								type: "object",
+							},
+						],
 			type: "suggestion",
 		},
 		name: ruleName,
