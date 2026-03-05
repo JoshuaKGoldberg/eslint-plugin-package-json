@@ -23,6 +23,7 @@ export const propertyConfig: [
 	["optionalDependencies"],
 	["packageManager"],
 	["peerDependencies"],
+	["private", { excludeOptions: true, fixValue: false }],
 	["repository", { ignorePrivateDefault: true, isRecommended: true }],
 	["scripts"],
 	["sideEffects", { ignorePrivateDefault: true, isRecommended: true }],

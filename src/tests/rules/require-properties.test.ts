@@ -12,6 +12,7 @@ for (const ruleName of ruleNames) {
 		([name]) => name === propertyName,
 	)?.[1];
 	const fixValue = propertyOptions?.fixValue;
+	const excludeOptions = propertyOptions?.excludeOptions;
 
 	const emitOutputIfFixable = (expectedOutput: string) =>
 		fixValue === undefined ? {} : { output: expectedOutput };
@@ -76,254 +77,262 @@ for (const ruleName of ruleNames) {
   }
 }`),
 			},
-			{
-				code: `{
+			...(propertyName === "private"
+				? []
+				: [
+						{
+							code: `{
   "private": true
 }`,
-				errors: [
-					{
-						data: { property: propertyName },
-						line: 1,
-						messageId: "missing",
-					},
-				],
-				name: "missing property with private: true > ignorePrivate: false",
-				options: [{ ignorePrivate: false }],
-				...emitOutputIfFixable(`{
+							errors: [
+								{
+									data: { property: propertyName },
+									line: 1,
+									messageId: "missing",
+								},
+							],
+							name: "missing property with private: true > enforceForPrivate: true",
+							...emitOutputIfFixable(`{
   "${propertyName}": ${JSON.stringify(fixValue)},
   "private": true
 }`),
-			},
-			{
-				code: `{
+							settings: {
+								packageJson: {
+									enforceForPrivate: true,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
+						{
+							code: `{
   "private": false
 }`,
-				errors: [
-					{
-						data: { property: propertyName },
-						line: 1,
-						messageId: "missing",
-					},
-				],
-				name: "missing property with private: false > ignorePrivate: true",
-				options: [{ ignorePrivate: true }],
-				...emitOutputIfFixable(`{
+							errors: [
+								{
+									data: { property: propertyName },
+									line: 1,
+									messageId: "missing",
+								},
+							],
+							name: "missing property with private: false > enforceForPrivate: false",
+							...emitOutputIfFixable(`{
   "${propertyName}": ${JSON.stringify(fixValue)},
   "private": false
 }`),
-			},
-			{
-				code: `{
+							settings: {
+								packageJson: {
+									enforceForPrivate: false,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
+					]),
+			...(excludeOptions
+				? []
+				: [
+						{
+							code: `{
+  "private": true
+}`,
+							errors: [
+								{
+									data: { property: propertyName },
+									line: 1,
+									messageId: "missing",
+								},
+							],
+							name: "missing property with private: true > ignorePrivate: false",
+							options: [{ ignorePrivate: false }],
+							...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "private": true
+}`),
+						},
+						{
+							code: `{
+  "private": false
+}`,
+							errors: [
+								{
+									data: { property: propertyName },
+									line: 1,
+									messageId: "missing",
+								},
+							],
+							name: "missing property with private: false > ignorePrivate: true",
+							options: [{ ignorePrivate: true }],
+							...emitOutputIfFixable(`{
+  "${propertyName}": ${JSON.stringify(fixValue)},
+  "private": false
+}`),
+						},
+						{
+							code: `{
   "private": "true"
 }`,
-				errors: [
-					{
-						data: { property: propertyName },
-						line: 1,
-						messageId: "missing",
-					},
-				],
-				name: "missing property with private: true > ignorePrivate: true",
-				options: [{ ignorePrivate: true }],
-				...emitOutputIfFixable(`{
+							errors: [
+								{
+									data: { property: propertyName },
+									line: 1,
+									messageId: "missing",
+								},
+							],
+							name: "missing property with private: true > ignorePrivate: true",
+							options: [{ ignorePrivate: true }],
+							...emitOutputIfFixable(`{
   "${propertyName}": ${JSON.stringify(fixValue)},
   "private": "true"
 }`),
-			},
-			{
-				code: `{}`,
-				errors: [
-					{
-						data: { property: propertyName },
-						line: 1,
-						messageId: "missing",
-					},
-				],
-				name: "empty object > ignorePrivate: true",
-				options: [{ ignorePrivate: true }],
-				...emitOutputIfFixable(`{
+						},
+						{
+							code: `{}`,
+							errors: [
+								{
+									data: { property: propertyName },
+									line: 1,
+									messageId: "missing",
+								},
+							],
+							name: "empty object > ignorePrivate: true",
+							options: [{ ignorePrivate: true }],
+							...emitOutputIfFixable(`{
   "${propertyName}": ${JSON.stringify(fixValue)}
 }`),
-			},
-			{
-				code: `{
+						},
+						{
+							code: `{
   "private": true
 }`,
-				errors: [
-					{
-						data: { property: propertyName },
-						line: 1,
-						messageId: "missing",
-					},
-				],
-				name: "missing property with private: true > enforceForPrivate: true",
-				...emitOutputIfFixable(`{
+							errors: [
+								{
+									data: { property: propertyName },
+									line: 1,
+									messageId: "missing",
+								},
+							],
+							name: "missing property with private: true > ignorePrivate: false, enforceForPrivate: true",
+							options: [{ ignorePrivate: false }],
+							...emitOutputIfFixable(`{
   "${propertyName}": ${JSON.stringify(fixValue)},
   "private": true
 }`),
-				settings: {
-					packageJson: {
-						enforceForPrivate: true,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
-			{
-				code: `{
-  "private": true
-}`,
-				errors: [
-					{
-						data: { property: propertyName },
-						line: 1,
-						messageId: "missing",
-					},
-				],
-				name: "missing property with private: true > ignorePrivate: false, enforceForPrivate: true",
-				options: [{ ignorePrivate: false }],
-				...emitOutputIfFixable(`{
-  "${propertyName}": ${JSON.stringify(fixValue)},
-  "private": true
-}`),
-				settings: {
-					packageJson: {
-						enforceForPrivate: true,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
-			{
-				code: `{
+							settings: {
+								packageJson: {
+									enforceForPrivate: true,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
+						{
+							code: `{
   "private": false
 }`,
-				errors: [
-					{
-						data: { property: propertyName },
-						line: 1,
-						messageId: "missing",
-					},
-				],
-				name: "missing property with private: false > ignorePrivate: true, enforceForPrivate: true",
-				options: [{ ignorePrivate: true }],
-				...emitOutputIfFixable(`{
+							errors: [
+								{
+									data: { property: propertyName },
+									line: 1,
+									messageId: "missing",
+								},
+							],
+							name: "missing property with private: false > ignorePrivate: true, enforceForPrivate: true",
+							options: [{ ignorePrivate: true }],
+							...emitOutputIfFixable(`{
   "${propertyName}": ${JSON.stringify(fixValue)},
   "private": false
 }`),
-				settings: {
-					packageJson: {
-						enforceForPrivate: true,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
-			{
-				code: `{}`,
-				errors: [
-					{
-						data: { property: propertyName },
-						line: 1,
-						messageId: "missing",
-					},
-				],
-				name: "empty object > ignorePrivate: true, enforceForPrivate: true",
-				options: [{ ignorePrivate: true }],
-				...emitOutputIfFixable(`{
+							settings: {
+								packageJson: {
+									enforceForPrivate: true,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
+						{
+							code: `{}`,
+							errors: [
+								{
+									data: { property: propertyName },
+									line: 1,
+									messageId: "missing",
+								},
+							],
+							name: "empty object > ignorePrivate: true, enforceForPrivate: true",
+							options: [{ ignorePrivate: true }],
+							...emitOutputIfFixable(`{
   "${propertyName}": ${JSON.stringify(fixValue)}
 }`),
-				settings: {
-					packageJson: {
-						enforceForPrivate: true,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
-			{
-				code: `{
+							settings: {
+								packageJson: {
+									enforceForPrivate: true,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
+						{
+							code: `{
   "private": true
 }`,
-				errors: [
-					{
-						data: { property: propertyName },
-						line: 1,
-						messageId: "missing",
-					},
-				],
-				name: "missing property with private: true > ignorePrivate: false, enforceForPrivate: false",
-				options: [{ ignorePrivate: false }],
-				...emitOutputIfFixable(`{
+							errors: [
+								{
+									data: { property: propertyName },
+									line: 1,
+									messageId: "missing",
+								},
+							],
+							name: "missing property with private: true > ignorePrivate: false, enforceForPrivate: false",
+							options: [{ ignorePrivate: false }],
+							...emitOutputIfFixable(`{
   "${propertyName}": ${JSON.stringify(fixValue)},
   "private": true
 }`),
-				settings: {
-					packageJson: {
-						enforceForPrivate: false,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
-			{
-				code: `{
+							settings: {
+								packageJson: {
+									enforceForPrivate: false,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
+						{
+							code: `{
   "private": false
 }`,
-				errors: [
-					{
-						data: { property: propertyName },
-						line: 1,
-						messageId: "missing",
-					},
-				],
-				name: "missing property with private: false > enforceForPrivate: false",
-				...emitOutputIfFixable(`{
+							errors: [
+								{
+									data: { property: propertyName },
+									line: 1,
+									messageId: "missing",
+								},
+							],
+							name: "missing property with private: false > ignorePrivate: false, enforceForPrivate: false",
+							options: [{ ignorePrivate: false }],
+							...emitOutputIfFixable(`{
   "${propertyName}": ${JSON.stringify(fixValue)},
   "private": false
 }`),
-				settings: {
-					packageJson: {
-						enforceForPrivate: false,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
-			{
-				code: `{
+							settings: {
+								packageJson: {
+									enforceForPrivate: false,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
+						{
+							code: `{
   "private": false
 }`,
-				errors: [
-					{
-						data: { property: propertyName },
-						line: 1,
-						messageId: "missing",
-					},
-				],
-				name: "missing property with private: false > ignorePrivate: false, enforceForPrivate: false",
-				options: [{ ignorePrivate: false }],
-				...emitOutputIfFixable(`{
+							errors: [
+								{
+									data: { property: propertyName },
+									line: 1,
+									messageId: "missing",
+								},
+							],
+							name: "missing property with private: false > ignorePrivate: true, enforceForPrivate: false",
+							options: [{ ignorePrivate: true }],
+							...emitOutputIfFixable(`{
   "${propertyName}": ${JSON.stringify(fixValue)},
   "private": false
 }`),
-				settings: {
-					packageJson: {
-						enforceForPrivate: false,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
-			{
-				code: `{
-  "private": false
-}`,
-				errors: [
-					{
-						data: { property: propertyName },
-						line: 1,
-						messageId: "missing",
-					},
-				],
-				name: "missing property with private: false > ignorePrivate: true, enforceForPrivate: false",
-				options: [{ ignorePrivate: true }],
-				...emitOutputIfFixable(`{
-  "${propertyName}": ${JSON.stringify(fixValue)},
-  "private": false
-}`),
-				settings: {
-					packageJson: {
-						enforceForPrivate: false,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
+							settings: {
+								packageJson: {
+									enforceForPrivate: false,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
+					]),
 		],
 		valid: [
 			`{ "foo": "./index.js", "${propertyName}": "Sophie Trudeau" }`,
@@ -336,45 +345,6 @@ for (const ruleName of ruleNames) {
   "${propertyName}": "Jessica Moss"
 }`,
 				name: "with private: false",
-			},
-			{
-				code: `{
-  "private": true
-}`,
-				name: "missing property with private: true > ignorePrivate: true",
-				options: [{ ignorePrivate: true }],
-			},
-			{
-				code: `{
-  "private": true,
-  "${propertyName}": "Jessica Moss"
-}`,
-				name: "with private: true > ignorePrivate: false",
-				options: [{ ignorePrivate: false }],
-			},
-			{
-				code: `{
-  "private": false,
-  "${propertyName}": "Jessica Moss"
-}`,
-				name: "with private: false > ignorePrivate: true",
-				options: [{ ignorePrivate: true }],
-			},
-			{
-				code: `{
-  "private": false,
-  "${propertyName}": "Jessica Moss"
-}`,
-				name: "with private: false > ignorePrivate: false",
-				options: [{ ignorePrivate: false }],
-			},
-			{
-				code: `{
-  "private": "true",
-  "${propertyName}": "Jessica Moss"
-}`,
-				name: "with private: true > ignorePrivate: true",
-				options: [{ ignorePrivate: true }],
 			},
 			{
 				code: `{
@@ -392,31 +362,6 @@ for (const ruleName of ruleNames) {
 				code: `{
   "private": true
 }`,
-				name: "missing property with private: true > ignorePrivate: true, enforceForPrivate: true",
-				options: [{ ignorePrivate: true }],
-				settings: {
-					packageJson: {
-						enforceForPrivate: true,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
-			{
-				code: `{
-  "private": true,
-  "${propertyName}": "Jessica Moss"
-}`,
-				name: "with private: true > ignorePrivate: false, enforceForPrivate: true",
-				options: [{ ignorePrivate: false }],
-				settings: {
-					packageJson: {
-						enforceForPrivate: true,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
-			{
-				code: `{
-  "private": true
-}`,
 				name: "missing property with private: true > enforceForPrivate: true",
 				settings: {
 					packageJson: {
@@ -424,31 +369,99 @@ for (const ruleName of ruleNames) {
 					} satisfies PackageJsonPluginSettings,
 				},
 			},
-			{
-				code: `{
+			...(excludeOptions
+				? []
+				: [
+						{
+							code: `{
   "private": true
 }`,
-				name: "missing property with private: true > ignorePrivate: true, enforceForPrivate: false",
-				options: [{ ignorePrivate: true }],
-				settings: {
-					packageJson: {
-						enforceForPrivate: false,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
-			{
-				code: `{
+							name: "missing property with private: true > ignorePrivate: true",
+							options: [{ ignorePrivate: true }],
+						},
+						{
+							code: `{
   "private": true,
   "${propertyName}": "Jessica Moss"
 }`,
-				name: "with private: true > ignorePrivate: false, enforceForPrivate: false",
-				options: [{ ignorePrivate: false }],
-				settings: {
-					packageJson: {
-						enforceForPrivate: false,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
+							name: "with private: true > ignorePrivate: false",
+							options: [{ ignorePrivate: false }],
+						},
+						{
+							code: `{
+  "private": false,
+  "${propertyName}": "Jessica Moss"
+}`,
+							name: "with private: false > ignorePrivate: true",
+							options: [{ ignorePrivate: true }],
+						},
+						{
+							code: `{
+  "private": false,
+  "${propertyName}": "Jessica Moss"
+}`,
+							name: "with private: false > ignorePrivate: false",
+							options: [{ ignorePrivate: false }],
+						},
+						{
+							code: `{
+  "private": "true",
+  "${propertyName}": "Jessica Moss"
+}`,
+							name: "with private: true > ignorePrivate: true",
+							options: [{ ignorePrivate: true }],
+						},
+						{
+							code: `{
+  "private": true
+}`,
+							name: "missing property with private: true > ignorePrivate: true, enforceForPrivate: true",
+							options: [{ ignorePrivate: true }],
+							settings: {
+								packageJson: {
+									enforceForPrivate: true,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
+						{
+							code: `{
+  "private": true,
+  "${propertyName}": "Jessica Moss"
+}`,
+							name: "with private: true > ignorePrivate: false, enforceForPrivate: true",
+							options: [{ ignorePrivate: false }],
+							settings: {
+								packageJson: {
+									enforceForPrivate: true,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
+						{
+							code: `{
+  "private": true
+}`,
+							name: "missing property with private: true > ignorePrivate: true, enforceForPrivate: false",
+							options: [{ ignorePrivate: true }],
+							settings: {
+								packageJson: {
+									enforceForPrivate: false,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
+						{
+							code: `{
+  "private": true,
+  "${propertyName}": "Jessica Moss"
+}`,
+							name: "with private: true > ignorePrivate: false, enforceForPrivate: false",
+							options: [{ ignorePrivate: false }],
+							settings: {
+								packageJson: {
+									enforceForPrivate: false,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
+					]),
 		],
 	});
 }
