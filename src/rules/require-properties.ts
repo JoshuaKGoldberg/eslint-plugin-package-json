@@ -24,6 +24,7 @@ export const propertyConfig: [
 	["packageManager"],
 	["peerDependencies"],
 	["private", { fixValue: false }],
+	["publishConfig", { ignorePrivateDefault: true }],
 	["repository", { ignorePrivateDefault: true, isRecommended: true }],
 	["scripts"],
 	["sideEffects", { ignorePrivateDefault: true, isRecommended: true }],
