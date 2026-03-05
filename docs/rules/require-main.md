@@ -2,8 +2,6 @@
 
 <!-- end auto-generated rule header -->
 
-## Options
-
 This rule checks for the existence of the `"main"` property in a package.json, and reports a violation if it doesn't exist.
 
 Example of **incorrect** code for this rule:
@@ -24,6 +22,8 @@ Example of **correct** code for this rule:
 	"main": "./index.js"
 }
 ```
+
+## Options
 
 <!-- begin auto-generated rule options list -->
 
