@@ -9,9 +9,6 @@ export interface CreateRequirePropertyRuleOptions {
 	 */
 	category?: "Publishable" | (string & {});
 
-	/** Whether or not to include options in the */
-	excludeOptions?: boolean;
-
 	/** The value to use when fixing a violation when this property is missing */
 	fixValue?: unknown;
 
@@ -36,7 +33,6 @@ export const createSimpleRequirePropertyRule = (
 	propertyName: string,
 	{
 		category,
-		excludeOptions = false,
 		fixValue,
 		ignorePrivateDefault = false,
 		isRecommended,
@@ -117,22 +113,23 @@ export const createSimpleRequirePropertyRule = (
 			messages: {
 				missing: "Property '{{property}}' is required.",
 			},
-			schema: excludeOptions
-				? []
-				: [
-						{
-							additionalProperties: false,
-							properties: {
-								ignorePrivate: {
-									default: ignorePrivateDefault,
-									description:
-										"Determines if this rule should be enforced when the package's `private` property is `true`.",
-									type: "boolean",
+			schema:
+				propertyName === "private"
+					? []
+					: [
+							{
+								additionalProperties: false,
+								properties: {
+									ignorePrivate: {
+										default: ignorePrivateDefault,
+										description:
+											"Determines if this rule should be enforced when the package's `private` property is `true`.",
+										type: "boolean",
+									},
 								},
+								type: "object",
 							},
-							type: "object",
-						},
-					],
+						],
 			type: "suggestion",
 		},
 		name: ruleName,

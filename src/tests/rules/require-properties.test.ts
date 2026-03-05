@@ -12,7 +12,6 @@ for (const ruleName of ruleNames) {
 		([name]) => name === propertyName,
 	)?.[1];
 	const fixValue = propertyOptions?.fixValue;
-	const excludeOptions = propertyOptions?.excludeOptions;
 
 	const emitOutputIfFixable = (expectedOutput: string) =>
 		fixValue === undefined ? {} : { output: expectedOutput };
@@ -124,10 +123,6 @@ for (const ruleName of ruleNames) {
 								} satisfies PackageJsonPluginSettings,
 							},
 						},
-					]),
-			...(excludeOptions
-				? []
-				: [
 						{
 							code: `{
   "private": true
@@ -339,39 +334,39 @@ for (const ruleName of ruleNames) {
 			`{ "${propertyName}": "Jessica Moss" }`,
 			`{ "${propertyName}": 123 }`,
 			`{ "${propertyName}": { "name": "Jessica Moss" } }`,
-			{
-				code: `{
-  "private": true,
-  "${propertyName}": "Jessica Moss"
-}`,
-				name: "with private: false",
-			},
-			{
-				code: `{
-  "private": true,
-  "${propertyName}": "Jessica Moss"
-}`,
-				name: "with private: true > enforceForPrivate: true",
-				settings: {
-					packageJson: {
-						enforceForPrivate: true,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
-			{
-				code: `{
-  "private": true
-}`,
-				name: "missing property with private: true > enforceForPrivate: true",
-				settings: {
-					packageJson: {
-						enforceForPrivate: false,
-					} satisfies PackageJsonPluginSettings,
-				},
-			},
-			...(excludeOptions
+			...(propertyName === "private"
 				? []
 				: [
+						{
+							code: `{
+  "private": true,
+  "${propertyName}": "Jessica Moss"
+}`,
+							name: "with private: false",
+						},
+						{
+							code: `{
+  "private": true,
+  "${propertyName}": "Jessica Moss"
+}`,
+							name: "with private: true > enforceForPrivate: true",
+							settings: {
+								packageJson: {
+									enforceForPrivate: true,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
+						{
+							code: `{
+  "private": true
+}`,
+							name: "missing property with private: true > enforceForPrivate: true",
+							settings: {
+								packageJson: {
+									enforceForPrivate: false,
+								} satisfies PackageJsonPluginSettings,
+							},
+						},
 						{
 							code: `{
   "private": true
