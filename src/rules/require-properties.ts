@@ -21,6 +21,7 @@ export const propertyConfig: [
 	["license", { ignorePrivateDefault: true, isRecommended: true }],
 	["name", { ignorePrivateDefault: true, isRecommended: true }],
 	["optionalDependencies"],
+	["os"],
 	["packageManager"],
 	["peerDependencies"],
 	["private", { fixValue: false }],
