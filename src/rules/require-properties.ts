@@ -19,6 +19,7 @@ export const propertyConfig: [
 	["homepage", { ignorePrivateDefault: true }],
 	["keywords", { ignorePrivateDefault: true }],
 	["license", { ignorePrivateDefault: true, isRecommended: true }],
+	["main"],
 	["name", { ignorePrivateDefault: true, isRecommended: true }],
 	["optionalDependencies"],
 	["os"],
