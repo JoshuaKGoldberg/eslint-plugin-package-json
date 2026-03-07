@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.89.4](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.89.3...v0.89.4) (2026-03-07)
+
+
+### 🚀 Features
+
+* add `require-main` rule ([#1631](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1631)) ([f3ea3e6](https://github.com/michaelfaith/eslint-plugin-package-json/commit/f3ea3e6ad7de445449ccfab8fb2472b382b600d5))
+* add `require-os` rule ([#1632](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1632)) ([9b5e25d](https://github.com/michaelfaith/eslint-plugin-package-json/commit/9b5e25dad3d2e5af5882d706d52bce99de0f63b5))
+* add `require-private` rule ([#1630](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1630)) ([770cc51](https://github.com/michaelfaith/eslint-plugin-package-json/commit/770cc51bdfe93782ae67ddb3183250c0afe33a3d))
+* add `require-publishConfig` rule ([#1629](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1629)) ([ebc187a](https://github.com/michaelfaith/eslint-plugin-package-json/commit/ebc187ae5bde43c7b1f3f27eadfdeea2e67917a9))
+
 ## [0.89.3](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.89.2...v0.89.3) (2026-03-04)
 
 
