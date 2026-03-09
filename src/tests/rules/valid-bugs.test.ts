@@ -66,7 +66,7 @@ ruleTester.run("valid-bugs", rules["valid-bugs"], {
 		{
 			code: `{
 	"bugs": {
-      "invalid": "some@email.com
+      "invalid": "some@email.com"
     }
 }
 `,
@@ -80,7 +80,7 @@ ruleTester.run("valid-bugs", rules["valid-bugs"], {
 				},
 				{
 					data: {
-						error: 'unexpected property `invalid` in bugs object. Only "email" and "url" are allowed',
+						error: 'unexpected property "invalid". Only "email" and "url" are allowed',
 					},
 					line: 3,
 					messageId: "validationError",
