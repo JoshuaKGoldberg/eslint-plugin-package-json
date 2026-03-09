@@ -61,8 +61,8 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": false }` 
 {
 	"private": true,
 	"bugs": {
-		"url": "https://github.com/owner/project/issues",
-		"email": "project@hostname.com"
+		"email": "project@hostname.com",
+		"url": "https://github.com/owner/project/issues"
 	}
 }
 ```
