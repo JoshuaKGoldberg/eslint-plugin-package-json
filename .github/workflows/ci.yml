@@ -16,6 +16,13 @@ jobs:
       - uses: ./.github/actions/prepare
       - run: pnpm build
       - run: node lib/index.mjs
+  dedupe_check:
+    name: Dedupe Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: ./.github/actions/prepare
+      - run: pnpm dedupe --check --prefer-offline
   lint:
     name: Lint
     runs-on: ubuntu-latest
