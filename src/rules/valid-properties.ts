@@ -17,6 +17,7 @@ import {
 	validateMain,
 	validateMan,
 	validateOs,
+	validatePackageManager,
 	validatePrivate,
 	validatePublishConfig,
 	validateRepository,
@@ -66,6 +67,7 @@ const properties = [
 	["module", validateMain], // Reuse `validateMain` for `module`
 	["optionalDependencies", validateDependencies],
 	["os", validateOs],
+	["packageManager", validatePackageManager],
 	["peerDependencies", validateDependencies],
 	["private", validatePrivate],
 	["publishConfig", validatePublishConfig],

@@ -24,7 +24,7 @@ importers:
         specifier: ~0.4.1
         version: 0.4.2(@types/estree@1.0.8)(eslint@10.0.0(jiti@2.6.1))
       package-json-validator:
-        specifier: ^1.0.1
+        specifier: ^1.1.0
         version: 1.1.0
       semver:
         specifier: ^7.7.3
