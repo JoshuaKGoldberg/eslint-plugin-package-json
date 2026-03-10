@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.90.0](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.89.4...v0.90.0) (2026-03-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* add `valid-funding` rule ([#1643](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1643))
+* add `valid-bugs` rule ([#1644](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1644))
+* add `valid-packageManager` rule ([#1640](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1640))
+
+### 🚀 Features
+
+* add `valid-bugs` rule ([#1644](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1644)) ([f981fa3](https://github.com/michaelfaith/eslint-plugin-package-json/commit/f981fa38ab4f1630c6db0933d859974d0a6ec0b3))
+* add `valid-funding` rule ([#1643](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1643)) ([5b3c77d](https://github.com/michaelfaith/eslint-plugin-package-json/commit/5b3c77da9b8edcd659a1fd9b3e51d1e43803aa5e))
+* add `valid-packageManager` rule ([#1640](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1640)) ([9a65480](https://github.com/michaelfaith/eslint-plugin-package-json/commit/9a65480cb55a4d03043916def549cfd7fc4b604b))
+
 ## [0.89.4](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.89.3...v0.89.4) (2026-03-07)
 
 
