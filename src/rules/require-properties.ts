@@ -14,6 +14,7 @@ export const propertyConfig: [
 	["dependencies"],
 	["description", { isRecommended: true }],
 	["devDependencies"],
+	["devEngines"],
 	["engines"],
 	["exports", { ignorePrivateDefault: true, isRecommended: true }],
 	["files", { ignorePrivateDefault: true, isRecommended: true }],
