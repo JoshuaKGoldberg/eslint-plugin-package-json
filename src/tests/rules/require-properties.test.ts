@@ -55,7 +55,7 @@ for (const ruleName of ruleNames) {
 				code: `{
   "foo": "bar",
   "baz": "1.0.0",
-  "bin": {
+  "bat": {
     "${propertyName}": "./cli.js"
   }
 }`,
@@ -71,7 +71,7 @@ for (const ruleName of ruleNames) {
   "${propertyName}": ${JSON.stringify(fixValue)},
   "foo": "bar",
   "baz": "1.0.0",
-  "bin": {
+  "bat": {
     "${propertyName}": "./cli.js"
   }
 }`),
