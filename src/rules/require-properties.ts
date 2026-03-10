@@ -16,6 +16,7 @@ export const propertyConfig: [
 	["engines"],
 	["exports", { ignorePrivateDefault: true, isRecommended: true }],
 	["files", { ignorePrivateDefault: true, isRecommended: true }],
+	["funding"],
 	["homepage", { ignorePrivateDefault: true }],
 	["keywords", { ignorePrivateDefault: true }],
 	["license", { ignorePrivateDefault: true, isRecommended: true }],
