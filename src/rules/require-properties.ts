@@ -23,6 +23,7 @@ export const propertyConfig: [
 	["keywords", { ignorePrivateDefault: true }],
 	["license", { ignorePrivateDefault: true, isRecommended: true }],
 	["main"],
+	["man"],
 	["name", { ignorePrivateDefault: true, isRecommended: true }],
 	["optionalDependencies"],
 	["os"],
