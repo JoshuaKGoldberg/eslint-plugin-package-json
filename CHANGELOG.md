@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.90.1](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.90.0...v0.90.1) (2026-03-10)
+
+
+### 🚀 Features
+
+* add `require-bin` rule ([#1652](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1652)) ([434e605](https://github.com/michaelfaith/eslint-plugin-package-json/commit/434e60523a067128e92baa8debf0362ef06c89c6))
+* add `require-contributors` rule ([#1648](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1648)) ([4a666ea](https://github.com/michaelfaith/eslint-plugin-package-json/commit/4a666ea9487c4afcc9a0ca0e730d51368266c06a))
+* add `require-devEngines` rule ([#1649](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1649)) ([608744c](https://github.com/michaelfaith/eslint-plugin-package-json/commit/608744c3cb29f2dd9808a91cfb99def404a9bdf2))
+* add `require-directories` rule ([#1654](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1654)) ([91369d6](https://github.com/michaelfaith/eslint-plugin-package-json/commit/91369d614c72707eeb9f42d73e971645e3ab590f))
+* add `require-funding` rule ([#1647](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1647)) ([d2405a1](https://github.com/michaelfaith/eslint-plugin-package-json/commit/d2405a1e6e05ef27bcca850ff5cc034c78c51780))
+* add `require-man` rule ([#1653](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1653)) ([e1cdd8a](https://github.com/michaelfaith/eslint-plugin-package-json/commit/e1cdd8ae35e768772fba92e0188798ac4870099d))
+
 ## [0.90.0](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.89.4...v0.90.0) (2026-03-10)
 
 
