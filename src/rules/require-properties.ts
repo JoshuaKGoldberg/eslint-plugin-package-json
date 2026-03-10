@@ -8,6 +8,7 @@ export const propertyConfig: [
 	options?: CreateRequirePropertyRuleOptions,
 ][] = [
 	["author"],
+	["bin"],
 	["bugs", { ignorePrivateDefault: true }],
 	["bundleDependencies"],
 	["contributors"],
