@@ -10,6 +10,7 @@ export const propertyConfig: [
 	["author"],
 	["bugs", { ignorePrivateDefault: true }],
 	["bundleDependencies"],
+	["contributors"],
 	["dependencies"],
 	["description", { isRecommended: true }],
 	["devDependencies"],
