@@ -26,6 +26,7 @@ export const propertyConfig: [
 	["license", { ignorePrivateDefault: true, isRecommended: true }],
 	["main"],
 	["man"],
+	["module"],
 	["name", { ignorePrivateDefault: true, isRecommended: true }],
 	["optionalDependencies"],
 	["os"],
