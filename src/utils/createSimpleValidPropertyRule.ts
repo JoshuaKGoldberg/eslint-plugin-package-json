@@ -49,7 +49,7 @@ export const createSimpleValidPropertyRule = (
 				) {
 					for (const childResult of childrenWithIssues) {
 						const childNode = node.properties[childResult.index];
-						reportIssues(childResult, childNode);
+						reportIssues(childResult, childNode.value);
 					}
 				}
 				// If the value is an array, and has child results with issues, then report those too
