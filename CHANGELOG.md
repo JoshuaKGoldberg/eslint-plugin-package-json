@@ -1,5 +1,42 @@
 # Changelog
 
+## [1.0.0-beta.2](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2026-03-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* add `valid-devEngines` rule ([#1663](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1663))
+* add `valid-funding` rule ([#1643](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1643))
+* add `valid-bugs` rule ([#1644](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1644))
+* add `valid-packageManager` rule ([#1640](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1640))
+
+* merge `main` into `beta` ([4c41fc1](https://github.com/michaelfaith/eslint-plugin-package-json/commit/4c41fc192b4371c1000ad482f5f817cce3599666))
+
+
+### 🚀 Features
+
+* add `require-bin` rule ([#1652](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1652)) ([434e605](https://github.com/michaelfaith/eslint-plugin-package-json/commit/434e60523a067128e92baa8debf0362ef06c89c6))
+* add `require-contributors` rule ([#1648](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1648)) ([4a666ea](https://github.com/michaelfaith/eslint-plugin-package-json/commit/4a666ea9487c4afcc9a0ca0e730d51368266c06a))
+* add `require-cpu` rule ([#1659](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1659)) ([40ed2f6](https://github.com/michaelfaith/eslint-plugin-package-json/commit/40ed2f6a97040bcf5d516bcf1ac3e1a3a580c5ee))
+* add `require-devEngines` rule ([#1649](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1649)) ([608744c](https://github.com/michaelfaith/eslint-plugin-package-json/commit/608744c3cb29f2dd9808a91cfb99def404a9bdf2))
+* add `require-directories` rule ([#1654](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1654)) ([91369d6](https://github.com/michaelfaith/eslint-plugin-package-json/commit/91369d614c72707eeb9f42d73e971645e3ab590f))
+* add `require-funding` rule ([#1647](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1647)) ([d2405a1](https://github.com/michaelfaith/eslint-plugin-package-json/commit/d2405a1e6e05ef27bcca850ff5cc034c78c51780))
+* add `require-main` rule ([#1631](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1631)) ([f3ea3e6](https://github.com/michaelfaith/eslint-plugin-package-json/commit/f3ea3e6ad7de445449ccfab8fb2472b382b600d5))
+* add `require-man` rule ([#1653](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1653)) ([e1cdd8a](https://github.com/michaelfaith/eslint-plugin-package-json/commit/e1cdd8ae35e768772fba92e0188798ac4870099d))
+* add `require-os` rule ([#1632](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1632)) ([9b5e25d](https://github.com/michaelfaith/eslint-plugin-package-json/commit/9b5e25dad3d2e5af5882d706d52bce99de0f63b5))
+* add `require-private` rule ([#1630](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1630)) ([770cc51](https://github.com/michaelfaith/eslint-plugin-package-json/commit/770cc51bdfe93782ae67ddb3183250c0afe33a3d))
+* add `require-publishConfig` rule ([#1629](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1629)) ([ebc187a](https://github.com/michaelfaith/eslint-plugin-package-json/commit/ebc187ae5bde43c7b1f3f27eadfdeea2e67917a9))
+* add `valid-bugs` rule ([#1644](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1644)) ([f981fa3](https://github.com/michaelfaith/eslint-plugin-package-json/commit/f981fa38ab4f1630c6db0933d859974d0a6ec0b3))
+* add `valid-devEngines` rule ([#1663](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1663)) ([7325be2](https://github.com/michaelfaith/eslint-plugin-package-json/commit/7325be2c6d3bc77467e8da7019ac24861261e27a))
+* add `valid-funding` rule ([#1643](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1643)) ([5b3c77d](https://github.com/michaelfaith/eslint-plugin-package-json/commit/5b3c77da9b8edcd659a1fd9b3e51d1e43803aa5e))
+* add `valid-packageManager` rule ([#1640](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1640)) ([9a65480](https://github.com/michaelfaith/eslint-plugin-package-json/commit/9a65480cb55a4d03043916def549cfd7fc4b604b))
+* add require-module rule ([#1656](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1656)) ([557254c](https://github.com/michaelfaith/eslint-plugin-package-json/commit/557254cac267d1f37fe019662f8293d123aa0e60))
+
+
+### 🩹 Bug Fixes
+
+* **valid-publishConfig:** rule not reporting violations for deeply nested objects ([#1662](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1662)) ([4c78698](https://github.com/michaelfaith/eslint-plugin-package-json/commit/4c786980b3efc2c25bc9a767a826ec43c3912c2e))
+
 ## [0.91.0](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.90.1...v0.91.0) (2026-03-13)
 
 
