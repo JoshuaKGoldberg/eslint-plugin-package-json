@@ -1,8 +1,8 @@
-# require-bugs
+# require-contributors
 
 <!-- end auto-generated rule header -->
 
-This rule checks for the existence of the `"bugs"` property in a package.json, and reports a violation if it doesn't exist.
+This rule checks for the existence of the `"contributors"` property in a package.json, and reports a violation if it doesn't exist.
 
 Example of **incorrect** code for this rule:
 
@@ -19,12 +19,18 @@ Example of **correct** code for this rule:
 {
 	"name": "thee-silver-mt-zion",
 	"version": "13.0.0",
-	"bugs": {
-		"url": "https://github.com/owner/project/issues",
-		"email": "project@hostname.com"
-	}
+	"contributors": [
+		{
+			"name": "Trent Reznor",
+			"email": "treznor@nin.com",
+			"url": "https://nin.com"
+		}
+	]
 }
 ```
+
+> [!NOTE]
+> For publishable packages, consider using the `require-attribution` rule instead, which requires that _either_ `author` or `contributors` is present.
 
 ## Options
 
@@ -32,13 +38,13 @@ Example of **correct** code for this rule:
 
 | Name            | Description                                                                                 | Type    | Default |
 | :-------------- | :------------------------------------------------------------------------------------------ | :------ | :------ |
-| `ignorePrivate` | Determines if this rule should be enforced when the package's `private` property is `true`. | Boolean | `true`  |
+| `ignorePrivate` | Determines if this rule should be enforced when the package's `private` property is `true`. | Boolean | `false` |
 
 <!-- end auto-generated rule options list -->
 
 ```json
 {
-	"package-json/require-bugs": [
+	"package-json/require-contributors": [
 		"error",
 		{
 			"ignorePrivate": false
@@ -60,10 +66,13 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": false }` 
 ```json
 {
 	"private": true,
-	"bugs": {
-		"email": "project@hostname.com",
-		"url": "https://github.com/owner/project/issues"
-	}
+	"contributors": [
+		{
+			"name": "Trent Reznor",
+			"email": "treznor@nin.com",
+			"url": "https://nin.com"
+		}
+	]
 }
 ```
 
@@ -73,6 +82,10 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": true }`
 {
 	"private": false
 }
+```
+
+```json
+{}
 ```
 
 Example of **correct** code for this rule with the `{ "ignorePrivate": true }` option:

@@ -82,9 +82,37 @@ ruleTester.run("valid-publishConfig", rules["valid-publishConfig"], {
 				},
 				{
 					data: {
+						error: "item at index 0 is empty, but should be the name of a CPU architecture",
+					},
+					line: 5,
+					messageId: "validationError",
+				},
+				{
+					data: {
+						error: "item at index 1 is empty, but should be the name of a CPU architecture",
+					},
+					line: 5,
+					messageId: "validationError",
+				},
+				{
+					data: {
 						error: "the value is empty, but should be the path to a subdirectory",
 					},
 					line: 6,
+					messageId: "validationError",
+				},
+				{
+					data: {
+						error: "property 0 has an empty key, but should be an export condition",
+					},
+					line: 8,
+					messageId: "validationError",
+				},
+				{
+					data: {
+						error: 'the value of "./secondary" is empty, but should be an entry point path',
+					},
+					line: 9,
 					messageId: "validationError",
 				},
 				{
@@ -154,6 +182,20 @@ ruleTester.run("valid-publishConfig", rules["valid-publishConfig"], {
 						error: "the type should be a `string`, not `number`",
 					},
 					line: 6,
+					messageId: "validationError",
+				},
+				{
+					data: {
+						error: "the value of property 0 should be either an entry point path or an object of export conditions",
+					},
+					line: 8,
+					messageId: "validationError",
+				},
+				{
+					data: {
+						error: "property 0 has an empty key, but should be an export condition",
+					},
+					line: 8,
 					messageId: "validationError",
 				},
 				{

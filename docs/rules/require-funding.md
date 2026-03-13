@@ -1,8 +1,8 @@
-# require-bugs
+# require-funding
 
 <!-- end auto-generated rule header -->
 
-This rule checks for the existence of the `"bugs"` property in a package.json, and reports a violation if it doesn't exist.
+This rule checks for the existence of the `"funding"` property in a package.json, and reports a violation if it doesn't exist.
 
 Example of **incorrect** code for this rule:
 
@@ -19,9 +19,9 @@ Example of **correct** code for this rule:
 {
 	"name": "thee-silver-mt-zion",
 	"version": "13.0.0",
-	"bugs": {
-		"url": "https://github.com/owner/project/issues",
-		"email": "project@hostname.com"
+	"funding": {
+		"type": "patreon",
+		"url": "https://patreon.com/treznor"
 	}
 }
 ```
@@ -32,13 +32,13 @@ Example of **correct** code for this rule:
 
 | Name            | Description                                                                                 | Type    | Default |
 | :-------------- | :------------------------------------------------------------------------------------------ | :------ | :------ |
-| `ignorePrivate` | Determines if this rule should be enforced when the package's `private` property is `true`. | Boolean | `true`  |
+| `ignorePrivate` | Determines if this rule should be enforced when the package's `private` property is `true`. | Boolean | `false` |
 
 <!-- end auto-generated rule options list -->
 
 ```json
 {
-	"package-json/require-bugs": [
+	"package-json/require-funding": [
 		"error",
 		{
 			"ignorePrivate": false
@@ -60,9 +60,9 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": false }` 
 ```json
 {
 	"private": true,
-	"bugs": {
-		"email": "project@hostname.com",
-		"url": "https://github.com/owner/project/issues"
+	"funding": {
+		"type": "patreon",
+		"url": "https://patreon.com/treznor"
 	}
 }
 ```
@@ -73,6 +73,10 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": true }`
 {
 	"private": false
 }
+```
+
+```json
+{}
 ```
 
 Example of **correct** code for this rule with the `{ "ignorePrivate": true }` option:

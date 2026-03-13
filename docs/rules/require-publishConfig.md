@@ -1,8 +1,8 @@
-# require-bugs
+# require-publishConfig
 
 <!-- end auto-generated rule header -->
 
-This rule checks for the existence of the `"bugs"` property in a package.json, and reports a violation if it doesn't exist.
+This rule checks for the existence of the `"publishConfig"` property in a package.json, and reports a violation if it doesn't exist.
 
 Example of **incorrect** code for this rule:
 
@@ -19,9 +19,10 @@ Example of **correct** code for this rule:
 {
 	"name": "thee-silver-mt-zion",
 	"version": "13.0.0",
-	"bugs": {
-		"url": "https://github.com/owner/project/issues",
-		"email": "project@hostname.com"
+	"publishConfig": {
+		"exports": {
+			".": "./index.js"
+		}
 	}
 }
 ```
@@ -38,7 +39,7 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"package-json/require-bugs": [
+	"package-json/require-publishConfig": [
 		"error",
 		{
 			"ignorePrivate": false
@@ -60,9 +61,10 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": false }` 
 ```json
 {
 	"private": true,
-	"bugs": {
-		"email": "project@hostname.com",
-		"url": "https://github.com/owner/project/issues"
+	"publishConfig": {
+		"exports": {
+			".": "./index.js"
+		}
 	}
 }
 ```
@@ -73,6 +75,10 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": true }`
 {
 	"private": false
 }
+```
+
+```json
+{}
 ```
 
 Example of **correct** code for this rule with the `{ "ignorePrivate": true }` option:
