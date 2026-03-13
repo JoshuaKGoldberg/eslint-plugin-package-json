@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.91.0](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.90.1...v0.91.0) (2026-03-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* add `valid-devEngines` rule ([#1663](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1663))
+
+### 🚀 Features
+
+* add `require-cpu` rule ([#1659](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1659)) ([40ed2f6](https://github.com/michaelfaith/eslint-plugin-package-json/commit/40ed2f6a97040bcf5d516bcf1ac3e1a3a580c5ee))
+* add `valid-devEngines` rule ([#1663](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1663)) ([7325be2](https://github.com/michaelfaith/eslint-plugin-package-json/commit/7325be2c6d3bc77467e8da7019ac24861261e27a))
+* add require-module rule ([#1656](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1656)) ([557254c](https://github.com/michaelfaith/eslint-plugin-package-json/commit/557254cac267d1f37fe019662f8293d123aa0e60))
+
+
+### 🩹 Bug Fixes
+
+* **valid-publishConfig:** rule not reporting violations for deeply nested objects ([#1662](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1662)) ([4c78698](https://github.com/michaelfaith/eslint-plugin-package-json/commit/4c786980b3efc2c25bc9a767a826ec43c3912c2e))
+
 ## [0.90.1](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.90.0...v0.90.1) (2026-03-10)
 
 
