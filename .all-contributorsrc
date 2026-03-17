@@ -410,6 +410,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "ClementValot",
+      "name": "Clément Valot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/65364056?v=4",
+      "profile": "https://github.com/ClementValot",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsSortAlphabetically": true,
