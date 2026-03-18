@@ -9,13 +9,15 @@
 This rule flags all empty arrays and objects in a `package.json`, as such empty expressions do nothing, and are often the result of a mistake.
 It will report both named properties that are empty, as well as nested arrays and objects that are empty.
 
+Exceptions include the `files` property, which can be left empty as the files can be inferred; see `no-redundant-files`
+
 Example of **incorrect** code for this rule:
 
 ```json
 {
 	"main": "lib/index.js",
 	"scripts": {},
-	"files": [],
+	"browserlist": [],
 	"simple-git-hooks": {
 		"pre-commit": "pnpm exec nano-staged --allow-empty",
 		"preserveUnused": []

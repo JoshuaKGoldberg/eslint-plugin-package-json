@@ -94,9 +94,14 @@ const getTopLevelProperty = (
 		: undefined;
 };
 
+// `files` can be empty since its contents can be inferred by `npm pack`
+const exceptions = ["files"];
+
 export const rule = createRule({
 	create(context) {
-		const ignoreProperties = context.options[0]?.ignoreProperties ?? [];
+		const ignoreProperties = new Set(
+			exceptions.concat(context.options[0]?.ignoreProperties ?? []),
+		);
 
 		return {
 			JSONArrayExpression(node) {
@@ -107,7 +112,7 @@ export const rule = createRule({
 				}
 				if (!node.elements.length) {
 					const topLevelPropertyName = topLevelProperty.value;
-					if (!ignoreProperties.includes(topLevelPropertyName)) {
+					if (!ignoreProperties.has(topLevelPropertyName)) {
 						report(context, getNode(node));
 					}
 				}
@@ -120,7 +125,7 @@ export const rule = createRule({
 				}
 				if (!node.properties.length) {
 					const topLevelPropertyName = topLevelProperty.value;
-					if (!ignoreProperties.includes(topLevelPropertyName)) {
+					if (!ignoreProperties.has(topLevelPropertyName)) {
 						report(context, getNode(node));
 					}
 				}
