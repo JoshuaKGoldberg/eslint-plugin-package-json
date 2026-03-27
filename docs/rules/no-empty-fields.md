@@ -42,7 +42,10 @@ Pass an array of top-level package properties to ignore.
 When provided, the rule won't report violations for the specified properties.
 This can be useful if you're using tools that take configuration from package.json and accept an empty array or object as valid non-default configuration.
 
-Defaults to `["files"]`, since that field can be left empty as the files can be inferred; see `no-redundant-files`
+**Default:** `["files"]` 
+
+> [!NOTE]
+> `files` is included by default since an empty array value is meaningfully different than not including it at all.  See [`no-redundant-files`](https://github.com/michaelfaith/eslint-plugin-package-json/blob/main/docs/rules/no-redundant-files.md) for more.
 
 Example of excluding the browserslist property used by [browserslist](https://www.npmjs.com/package/browserslist):
 
