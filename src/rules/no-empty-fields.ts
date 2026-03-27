@@ -95,12 +95,12 @@ const getTopLevelProperty = (
 };
 
 // `files` can be empty since its contents can be inferred by `npm pack`
-const exceptions = ["files"];
+const defaultIgnoreProperties = ["files"];
 
 export const rule = createRule({
 	create(context) {
 		const ignoreProperties = new Set(
-			exceptions.concat(context.options[0]?.ignoreProperties ?? []),
+			context.options[0]?.ignoreProperties ?? defaultIgnoreProperties,
 		);
 
 		return {
@@ -133,7 +133,7 @@ export const rule = createRule({
 		};
 	},
 	meta: {
-		defaultOptions: [{ ignoreProperties: [] }],
+		defaultOptions: [{ ignoreProperties: defaultIgnoreProperties }],
 		docs: {
 			category: "Best Practices",
 			description: "Reports on unnecessary empty arrays and objects.",

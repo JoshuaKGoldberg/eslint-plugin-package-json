@@ -310,6 +310,7 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t"name": "test",
 \t\t"workspaces": [],
 \t\t"browserslist": [],
+\t\t"files": [],
 \t\t"scripts": {}
 }
 `,
@@ -324,6 +325,24 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t"name": "test",
 \t\t
 \t\t"browserslist": [],
+\t\t"files": [],
+\t\t"scripts": {}
+}
+`,
+						},
+					],
+				},
+				{
+					data: { field: "files" },
+					messageId: "emptyFields",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+\t\t"name": "test",
+\t\t"workspaces": [],
+\t\t"browserslist": [],
+\t\t
 \t\t"scripts": {}
 }
 `,
@@ -339,7 +358,8 @@ ruleTester.run("no-empty-fields", rule, {
 							output: `{
 \t\t"name": "test",
 \t\t"workspaces": [],
-\t\t"browserslist": []
+\t\t"browserslist": [],
+\t\t"files": []
 \t\t
 }
 `,
