@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.91.1](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.91.0...v0.91.1) (2026-03-27)
+
+
+### 🩹 Bug Fixes
+
+* **no-empty-fields:** Allow `files` to be an empty list ([#1682](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1682)) ([4311f74](https://github.com/michaelfaith/eslint-plugin-package-json/commit/4311f743a79b6fc792822680720106a2a84953d4))
+
 ## [0.91.0](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.90.1...v0.91.0) (2026-03-13)
 
 
