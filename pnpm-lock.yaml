@@ -46,8 +46,8 @@ importers:
         specifier: 10.0.1
         version: 10.0.1(eslint@10.1.0(jiti@2.6.1))
       '@eslint/markdown':
-        specifier: 8.0.0
-        version: 8.0.0
+        specifier: 8.0.1
+        version: 8.0.1
       '@types/estree':
         specifier: 1.0.8
         version: 1.0.8
@@ -257,8 +257,8 @@ packages:
       eslint:
         optional: true
 
-  '@eslint/markdown@8.0.0':
-    resolution: {integrity: sha512-Rh3+76uHdnkk/ocLMZfWHXoPA/MK+GOqqjCAioiyNk2eYBC8UniRHdTMbM+2XZqTLWAcQo/SuU1CsXtdIOTX1g==}
+  '@eslint/markdown@8.0.1':
+    resolution: {integrity: sha512-WWKmld/EyNdEB8GMq7JMPX1SDWgyJAM1uhtCi5ySrqYQM4HQjmg11EX/q3ZpnpRXHfdccFtli3NBvvGaYjWyQw==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
   '@eslint/object-schema@3.0.3':
@@ -2879,7 +2879,7 @@ snapshots:
     optionalDependencies:
       eslint: 10.1.0(jiti@2.6.1)
 
-  '@eslint/markdown@8.0.0':
+  '@eslint/markdown@8.0.1':
     dependencies:
       '@eslint/core': 1.1.1
       '@eslint/plugin-kit': 0.6.1
