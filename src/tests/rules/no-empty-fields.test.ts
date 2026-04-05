@@ -6,7 +6,7 @@ ruleTester.run("no-empty-fields", rule, {
 		{
 			code: `{
 \t\t"name": "test",
-\t\t"files": [],
+\t\t"workspaces": [],
 \t\t"dependencies": {
 \t\t\t\t"@altano/repository-tools": "^0.1.1"
 \t\t}
@@ -14,7 +14,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
-					data: { field: "files" },
+					data: { field: "workspaces" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -259,7 +259,7 @@ ruleTester.run("no-empty-fields", rule, {
 		{
 			code: `{
 \t\t"name": "test",
-\t\t"files": [],
+\t\t"workspaces": [],
 \t\t"dependencies": {
 \t\t\t\t"@altano/repository-tools": "^0.1.1",
 \t\t\t\t"test": []
@@ -268,7 +268,7 @@ ruleTester.run("no-empty-fields", rule, {
 `,
 			errors: [
 				{
-					data: { field: "files" },
+					data: { field: "workspaces" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -293,7 +293,7 @@ ruleTester.run("no-empty-fields", rule, {
 							messageId: "remove",
 							output: `{
 \t\t"name": "test",
-\t\t"files": [],
+\t\t"workspaces": [],
 \t\t"dependencies": {
 \t\t\t\t"@altano/repository-tools": "^0.1.1"
 \t\t\t\t
@@ -308,14 +308,15 @@ ruleTester.run("no-empty-fields", rule, {
 		{
 			code: `{
 \t\t"name": "test",
-\t\t"files": [],
+\t\t"workspaces": [],
 \t\t"browserslist": [],
+\t\t"files": [],
 \t\t"scripts": {}
 }
 `,
 			errors: [
 				{
-					data: { field: "files" },
+					data: { field: "workspaces" },
 					messageId: "emptyFields",
 					suggestions: [
 						{
@@ -324,6 +325,24 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t"name": "test",
 \t\t
 \t\t"browserslist": [],
+\t\t"files": [],
+\t\t"scripts": {}
+}
+`,
+						},
+					],
+				},
+				{
+					data: { field: "files" },
+					messageId: "emptyFields",
+					suggestions: [
+						{
+							messageId: "remove",
+							output: `{
+\t\t"name": "test",
+\t\t"workspaces": [],
+\t\t"browserslist": [],
+\t\t
 \t\t"scripts": {}
 }
 `,
@@ -338,8 +357,9 @@ ruleTester.run("no-empty-fields", rule, {
 							messageId: "remove",
 							output: `{
 \t\t"name": "test",
-\t\t"files": [],
-\t\t"browserslist": []
+\t\t"workspaces": [],
+\t\t"browserslist": [],
+\t\t"files": []
 \t\t
 }
 `,
@@ -391,6 +411,7 @@ ruleTester.run("no-empty-fields", rule, {
 	valid: [
 		`{}`,
 		`[]`,
+		`{ "name": "test", "files": [] }`,
 		`{ "name": "test", "files": ["index.js"] }`,
 		`{ "name": "test", "peerDependencies": { "eslint": ">=8.0.0" } }`,
 		`{ "name": "test", "dependencies": { "eslint": ">=8.0.0" } }`,

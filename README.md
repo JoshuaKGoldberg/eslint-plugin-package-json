@@ -8,7 +8,7 @@
 <p align="center">
 	<!-- prettier-ignore-start -->
 	<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-	<a href="#contributors" target="_blank"><img alt="👪 All Contributors: 40" src="https://img.shields.io/badge/%F0%9F%91%AA_all_contributors-40-21bb42.svg" /></a>
+	<a href="#contributors" target="_blank"><img alt="👪 All Contributors: 41" src="https://img.shields.io/badge/%F0%9F%91%AA_all_contributors-41-21bb42.svg" /></a>
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 	<!-- prettier-ignore-end -->
 	<a href="https://github.com/michaelfaith/eslint-plugin-package-json/blob/main/.github/CODE_OF_CONDUCT.md" target="_blank"><img alt="🤝 Code of Conduct: Kept" src="https://img.shields.io/badge/%F0%9F%A4%9D_code_of_conduct-kept-21bb42" /></a>
@@ -18,139 +18,9 @@
 	<img alt="💪 TypeScript: Strict" src="https://img.shields.io/badge/%F0%9F%92%AA_typescript-strict-21bb42.svg" />
 </p>
 
-## Installation
+## Getting Started
 
-This package requires [ESLint](http://eslint.org) >=8:
-
-```shell
-npm install eslint eslint-plugin-package-json --save-dev
-```
-
-## Usage
-
-### Recommended Config
-
-This plugin's recommended configuration enables its rules on `**/package.json` files, parsing them with [`jsonc-eslint-parser`](https://github.com/ota-meshi/jsonc-eslint-parser).
-
-```ts
-// eslint.config.ts
-import packageJson from "eslint-plugin-package-json";
-import { defineConfig } from "eslint/config";
-
-export default defineConfig([
-	// your other ESLint configurations
-	packageJson.configs.recommended,
-]);
-```
-
-If you want to override the recommended rules:
-
-```ts
-// eslint.config.ts
-import packageJson from "eslint-plugin-package-json";
-import { defineConfig } from "eslint/config";
-
-export default defineConfig([
-	// your other ESLint configurations
-	{
-		extends: [packageJson.configs.recommended],
-		files: ["package.json"],
-		rules: {
-			"package-json/require-author": "error",
-		},
-	},
-]);
-```
-
-See [ESLint's _Configuration Files_ guide](https://eslint.org/docs/latest/use/configure/configuration-files-new) for details on how to customize your rules and other config settings.
-
-### Recommended Config for Publishable Packages
-
-> [!NOTE]
-> This config was recently made redundant and is now the same as `recommended`.
-> However, we're keeping it as its own config for now, in the event that we add new rules unique to the publishable use case.
-
-The `recommended-publishable` configuration has everything in it from the standard `recommended` config, with some additional rules added that are geared towards packages that are intended to be published.
-
-```ts
-// eslint.config.ts
-import packageJson from "eslint-plugin-package-json";
-import { defineConfig } from "eslint/config";
-
-export default defineConfig([
-	// your other ESLint configurations
-	packageJson.configs["recommended-publishable"],
-]);
-```
-
-### Stylistic Config
-
-The `stylistic` configuration sets up the parser and files similar to the recommended config, but includes rules that are more opinionated about the style of a package.json.
-This can be used in addition to the recommended config, or on its own.
-
-```ts
-// eslint.config.ts
-import packageJson from "eslint-plugin-package-json";
-import { defineConfig } from "eslint/config";
-
-export default defineConfig([
-	// your other ESLint configurations
-	packageJson.configs.recommended, // or packageJson.configs["recommended-publishable"]
-	packageJson.configs.stylistic,
-]);
-```
-
-### Settings
-
-Some rules can be configured in ESLint shared settings.
-You can set them in `settings.packageJson` in an ESLint flat config.
-
-Example:
-
-```ts
-// eslint.config.ts
-import packageJson from "eslint-plugin-package-json";
-import { defineConfig } from "eslint/config";
-
-export default defineConfig({
-	plugins: {
-		"package-json": packageJson,
-	},
-	rules: {
-		// `description` won't be required in package.json with `"private": true`
-		"package-json/require-description": "error",
-	},
-	settings: {
-		packageJson: {
-			enforceForPrivate: false,
-		},
-	},
-});
-```
-
-#### `enforceForPrivate`
-
-- **Type:** `boolean`
-- **Default:** [see below]
-
-When a package.json file has a `"private": true` field, it indicates that the package will not be published to npm (or another online registry).
-Some fields that are nice to have in public packages become less relevant when a package is private.
-This option determines whether `require-*` rules, if used, should enforce the presence of the corresponding property in package.json files that have `"private": true`.
-
-By default, this is:
-
-- `false` for [`require-name`](docs/rules/require-name.md) and [`require-version`](docs/rules/require-version.md).
-- `true` for every other `require-*` rule.
-
-By specifying this setting as `true` or `false`, it will override the defaults and apply the setting for ALL rules.
-In that case, either all `require-*` rules will be applied to private packages or no `require-*` rules will be applied to private packages.
-Even then, you can override the setting again at the rule level, by using the rule's `ignorePrivate` option, which will take precedence over this global setting.
-
-### Usage Alongside Prettier
-
-**[`prettier-plugin-packagejson`](https://github.com/matzkoh/prettier-plugin-packagejson)** is a [Prettier plugin](https://prettier.io/docs/en/plugins) that enforces the same `package.json` keys ordering as the [`order-properties`](docs/rules/order-properties.md) and [sort-collections](docs/rules/sort-collections.md) rules with default options.
-We recommend using both the Prettier plugin and `eslint-plugin-package-json`'s recommended configuration.
-The default settings don't conflict, and Prettier plugins can quickly fix up ordering in your editor on save and/or as a Git hook.
+See [Getting Started](https://github.com/michaelfaith/eslint-plugin-package-json/blob/main/docs/getting-started.md) for details.
 
 ## Supported Rules
 
@@ -302,41 +172,42 @@ Thanks! 🗂
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://christopher-buss.gitbook.io/portfolio"><img src="https://avatars.githubusercontent.com/u/32301681?v=4?s=100" width="100px;" alt="Christopher Buss"/><br /><sub><b>Christopher Buss</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3Achristopher-buss" title="Bug reports">🐛</a> <a href="#ideas-christopher-buss" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=christopher-buss" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ClementValot"><img src="https://avatars.githubusercontent.com/u/65364056?v=4?s=100" width="100px;" alt="Clément Valot"/><br /><sub><b>Clément Valot</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3AClementValot" title="Bug reports">🐛</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=ClementValot" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://www.curtisjewell.dev/"><img src="https://avatars.githubusercontent.com/u/67483?v=4?s=100" width="100px;" alt="Curtis Jewell"/><br /><sub><b>Curtis Jewell</b></sub></a><br /><a href="#ideas-csjewell" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://davidlj95.com"><img src="https://avatars.githubusercontent.com/u/8050648?v=4?s=100" width="100px;" alt="David LJ"/><br /><sub><b>David LJ</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=davidlj95" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://lishaduck.github.io"><img src="https://avatars.githubusercontent.com/u/88557639?v=4?s=100" width="100px;" alt="Eli"/><br /><sub><b>Eli</b></sub></a><br /><a href="#ideas-lishaduck" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3Alishaduck" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://open-fixture-library.org"><img src="https://avatars.githubusercontent.com/u/202916?v=4?s=100" width="100px;" alt="Flo Edelmann"/><br /><sub><b>Flo Edelmann</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=FloEdelmann" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://heggria.site"><img src="https://avatars.githubusercontent.com/u/34475327?v=4?s=100" width="100px;" alt="Heggria"/><br /><sub><b>Heggria</b></sub></a><br /><a href="#ideas-heggria" title="Ideas, Planning, & Feedback">🤔</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://hirok.io"><img src="https://avatars.githubusercontent.com/u/1075694?v=4?s=100" width="100px;" alt="Hiroki Osame"/><br /><sub><b>Hiroki Osame</b></sub></a><br /><a href="#ideas-privatenumber" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=privatenumber" title="Code">💻</a></td>
     </tr>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://hirok.io"><img src="https://avatars.githubusercontent.com/u/1075694?v=4?s=100" width="100px;" alt="Hiroki Osame"/><br /><sub><b>Hiroki Osame</b></sub></a><br /><a href="#ideas-privatenumber" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=privatenumber" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://vanyauhalin.me/"><img src="https://avatars.githubusercontent.com/u/56481109?v=4?s=100" width="100px;" alt="Ivan Uhalin"/><br /><sub><b>Ivan Uhalin</b></sub></a><br /><a href="#ideas-vanyauhalin" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Zamiell"><img src="https://avatars.githubusercontent.com/u/5511220?v=4?s=100" width="100px;" alt="James"/><br /><sub><b>James</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=Zamiell" title="Code">💻</a> <a href="#ideas-Zamiell" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3AZamiell" title="Bug reports">🐛</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=Zamiell" title="Documentation">📖</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/zetlen"><img src="https://avatars.githubusercontent.com/u/1643758?v=4?s=100" width="100px;" alt="James Zetlen"/><br /><sub><b>James Zetlen</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=zetlen" title="Code">💻</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3Azetlen" title="Bug reports">🐛</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=zetlen" title="Documentation">📖</a> <a href="#infra-zetlen" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-zetlen" title="Maintenance">🚧</a> <a href="#tool-zetlen" title="Tools">🔧</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://piranna.github.io/"><img src="https://avatars.githubusercontent.com/u/532414?v=4?s=100" width="100px;" alt="Jesús Leganés-Combarro"/><br /><sub><b>Jesús Leganés-Combarro</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=piranna" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="http://www.joshuakgoldberg.com/"><img src="https://avatars.githubusercontent.com/u/3335181?v=4?s=100" width="100px;" alt="Josh Goldberg ✨"/><br /><sub><b>Josh Goldberg ✨</b></sub></a><br /><a href="#tool-JoshuaKGoldberg" title="Tools">🔧</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3AJoshuaKGoldberg" title="Bug reports">🐛</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=JoshuaKGoldberg" title="Code">💻</a> <a href="#infra-JoshuaKGoldberg" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=JoshuaKGoldberg" title="Documentation">📖</a> <a href="#maintenance-JoshuaKGoldberg" title="Maintenance">🚧</a> <a href="#ideas-JoshuaKGoldberg" title="Ideas, Planning, & Feedback">🤔</a> <a href="#content-JoshuaKGoldberg" title="Content">🖋</a> <a href="#projectManagement-JoshuaKGoldberg" title="Project Management">📆</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/kendallgassner"><img src="https://avatars.githubusercontent.com/u/15275462?v=4?s=100" width="100px;" alt="Kendall Gassner"/><br /><sub><b>Kendall Gassner</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=kendallgassner" title="Code">💻</a> <a href="#maintenance-kendallgassner" title="Maintenance">🚧</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/KristjanESPERANTO"><img src="https://avatars.githubusercontent.com/u/35647502?v=4?s=100" width="100px;" alt="Kristjan ESPERANTO"/><br /><sub><b>Kristjan ESPERANTO</b></sub></a><br /><a href="#ideas-kristjanesperanto" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3Akristjanesperanto" title="Bug reports">🐛</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=kristjanesperanto" title="Code">💻</a></td>
     </tr>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/KristjanESPERANTO"><img src="https://avatars.githubusercontent.com/u/35647502?v=4?s=100" width="100px;" alt="Kristjan ESPERANTO"/><br /><sub><b>Kristjan ESPERANTO</b></sub></a><br /><a href="#ideas-kristjanesperanto" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3Akristjanesperanto" title="Bug reports">🐛</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=kristjanesperanto" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/marcalexiei"><img src="https://avatars.githubusercontent.com/u/24919330?v=4?s=100" width="100px;" alt="Marco Pasqualetti"/><br /><sub><b>Marco Pasqualetti</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=marcalexiei" title="Code">💻</a> <a href="#tool-marcalexiei" title="Tools">🔧</a> <a href="#maintenance-marcalexiei" title="Maintenance">🚧</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/lo1tuma"><img src="https://avatars.githubusercontent.com/u/169170?v=4?s=100" width="100px;" alt="Mathias Schreck"/><br /><sub><b>Mathias Schreck</b></sub></a><br /><a href="#ideas-lo1tuma" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Cellule"><img src="https://avatars.githubusercontent.com/u/4157103?v=4?s=100" width="100px;" alt="Michael "Mike" Ferris"/><br /><sub><b>Michael "Mike" Ferris</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=cellule" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://morrisoncole.co.uk"><img src="https://avatars.githubusercontent.com/u/963368?v=4?s=100" width="100px;" alt="Morrison Cole"/><br /><sub><b>Morrison Cole</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3AMorrisonCole" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/nschonni"><img src="https://avatars.githubusercontent.com/u/1297909?v=4?s=100" width="100px;" alt="Nick Schonning"/><br /><sub><b>Nick Schonning</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=nschonni" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/OlivierZal"><img src="https://avatars.githubusercontent.com/u/88216225?v=4?s=100" width="100px;" alt="Olivier Zalmanski"/><br /><sub><b>Olivier Zalmanski</b></sub></a><br /><a href="#maintenance-olivierzal" title="Maintenance">🚧</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=olivierzal" title="Documentation">📖</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="http://patrikcsak.com"><img src="https://avatars.githubusercontent.com/u/4766244?v=4?s=100" width="100px;" alt="Patrik Csak"/><br /><sub><b>Patrik Csak</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3Apatrik-csak" title="Bug reports">🐛</a></td>
     </tr>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="http://patrikcsak.com"><img src="https://avatars.githubusercontent.com/u/4766244?v=4?s=100" width="100px;" alt="Patrik Csak"/><br /><sub><b>Patrik Csak</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3Apatrik-csak" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/rakleed"><img src="https://avatars.githubusercontent.com/u/19418601?v=4?s=100" width="100px;" alt="Pavel"/><br /><sub><b>Pavel</b></sub></a><br /><a href="#ideas-rakleed" title="Ideas, Planning, & Feedback">🤔</a> <a href="#tool-rakleed" title="Tools">🔧</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=rakleed" title="Documentation">📖</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=rakleed" title="Code">💻</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3Arakleed" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://sasial.dev"><img src="https://avatars.githubusercontent.com/u/44125644?v=4?s=100" width="100px;" alt="Sasial"/><br /><sub><b>Sasial</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=sasial-dev" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://shayan-zamani.me"><img src="https://avatars.githubusercontent.com/u/81762186?v=4?s=100" width="100px;" alt="Shayan Zamani"/><br /><sub><b>Shayan Zamani</b></sub></a><br /><a href="#ideas-ShayanTheNerd" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=ShayanTheNerd" title="Documentation">📖</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=ShayanTheNerd" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Sigmabrogz"><img src="https://avatars.githubusercontent.com/u/122412346?v=4?s=100" width="100px;" alt="Sigmabro"/><br /><sub><b>Sigmabro</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=Sigmabrogz" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/sirugh"><img src="https://avatars.githubusercontent.com/u/1278869?v=4?s=100" width="100px;" alt="Stephen"/><br /><sub><b>Stephen</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=sirugh" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://hyoban.cc"><img src="https://avatars.githubusercontent.com/u/38493346?v=4?s=100" width="100px;" alt="Stephen Zhou"/><br /><sub><b>Stephen Zhou</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3Ahyoban" title="Bug reports">🐛</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=hyoban" title="Code">💻</a> <a href="#ideas-hyoban" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=hyoban" title="Documentation">📖</a></td>
-      <td align="center" valign="top" width="14.28%"><a href="https://ota-meshi.github.io/"><img src="https://avatars.githubusercontent.com/u/16508807?v=4?s=100" width="100px;" alt="Yosuke Ota"/><br /><sub><b>Yosuke Ota</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3Aota-meshi" title="Bug reports">🐛</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=ota-meshi" title="Code">💻</a></td>
     </tr>
     <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://ota-meshi.github.io/"><img src="https://avatars.githubusercontent.com/u/16508807?v=4?s=100" width="100px;" alt="Yosuke Ota"/><br /><sub><b>Yosuke Ota</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3Aota-meshi" title="Bug reports">🐛</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=ota-meshi" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/b3rnhard"><img src="https://avatars.githubusercontent.com/u/10774404?v=4?s=100" width="100px;" alt="b3rnhard"/><br /><sub><b>b3rnhard</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3Ab3rnhard" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/chouchouji"><img src="https://avatars.githubusercontent.com/u/70570907?v=4?s=100" width="100px;" alt="chouchouji"/><br /><sub><b>chouchouji</b></sub></a><br /><a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=chouchouji" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/michaelfaith"><img src="https://avatars.githubusercontent.com/u/8071845?v=4?s=100" width="100px;" alt="michael faith"/><br /><sub><b>michael faith</b></sub></a><br /><a href="#infra-michaelfaith" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=michaelfaith" title="Code">💻</a> <a href="#maintenance-michaelfaith" title="Maintenance">🚧</a> <a href="#ideas-michaelfaith" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/issues?q=author%3Amichaelfaith" title="Bug reports">🐛</a> <a href="#tool-michaelfaith" title="Tools">🔧</a> <a href="https://github.com/michaelfaith/eslint-plugin-package-json/commits?author=michaelfaith" title="Documentation">📖</a> <a href="#projectManagement-michaelfaith" title="Project Management">📆</a></td>

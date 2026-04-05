@@ -15,7 +15,7 @@ Example of **incorrect** code for this rule:
 {
 	"main": "lib/index.js",
 	"scripts": {},
-	"files": [],
+	"browserslist": [],
 	"simple-git-hooks": {
 		"pre-commit": "pnpm exec nano-staged --allow-empty",
 		"preserveUnused": []
@@ -41,6 +41,12 @@ Example of **correct** code for this rule:
 Pass an array of top-level package properties to ignore.
 When provided, the rule won't report violations for the specified properties.
 This can be useful if you're using tools that take configuration from package.json and accept an empty array or object as valid non-default configuration.
+
+**Default:** `["files"]`
+
+> [!NOTE]
+> `files` is included by default since an empty array value is meaningfully different than not including it at all.
+> See [`no-redundant-files`](https://github.com/michaelfaith/eslint-plugin-package-json/blob/main/docs/rules/no-redundant-files.md) for more.
 
 Example of excluding the browserslist property used by [browserslist](https://www.npmjs.com/package/browserslist):
 

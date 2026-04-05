@@ -12,6 +12,7 @@ concurrency:
 jobs:
   release_please:
     name: Manage Release PR
+    if: github.event.repository.fork != true
     runs-on: ubuntu-latest
     permissions:
       contents: write
