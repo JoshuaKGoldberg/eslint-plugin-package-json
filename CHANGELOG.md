@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.0.0-beta.4](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2026-04-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* **order-properties:** remove legacy order option
+* remove `valid-package-definition` rule ([#1707](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1707))
+
+### 🚀 Features
+
+* **order-properties:** remove legacy order option ([935f6dc](https://github.com/michaelfaith/eslint-plugin-package-json/commit/935f6dccccdfe7d61deb43e083647a0a1dc8e953))
+* remove `valid-package-definition` rule ([#1707](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1707)) ([a4a5b86](https://github.com/michaelfaith/eslint-plugin-package-json/commit/a4a5b86e94b1fd41da8b113f49c96a8149e30fa6))
+
 ## [1.0.0-beta.3](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2026-04-05)
 
 
