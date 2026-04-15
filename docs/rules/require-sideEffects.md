@@ -37,7 +37,7 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"package-json/require-files": [
+	"package-json/require-sideEffects": [
 		"error",
 		{
 			"ignorePrivate": false
