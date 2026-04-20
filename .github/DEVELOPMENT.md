@@ -101,7 +101,7 @@ pnpm tsc --watch
 
 ## Working on the Site
 
-If you'd like to work aspects of the website, these commands might come in helpful.
+If you'd like to work on aspects of the website, these commands might come in helpful.
 The site is built using ✨ [Starlight](https://starlight.astro.build/) for Astro.
 
 ### Run Dev Server
@@ -116,7 +116,7 @@ pnpm site:dev
 
 ### Build the Site for Production
 
-To create a production build for testing, you can run a combination of "build" and "preview" commands.
+To create a production build for testing, you can run a combination of the "build" and "preview" commands.
 This will create a production build of the site, and serve the statically generated assets locally on the dev server.
 This, importantly, is _not_ running in "watch" mode, and won't react to changes to the source files.
 
