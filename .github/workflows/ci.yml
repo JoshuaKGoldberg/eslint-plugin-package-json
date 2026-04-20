@@ -16,6 +16,7 @@ jobs:
       - uses: ./.github/actions/prepare
       - run: pnpm build
       - run: node lib/index.mjs
+
   dedupe_check:
     name: Dedupe Check
     runs-on: ubuntu-latest
@@ -23,6 +24,7 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: ./.github/actions/prepare
       - run: pnpm dedupe --check --prefer-offline
+
   format_check:
     name: Format Check
     runs-on: ubuntu-latest
@@ -30,6 +32,7 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: ./.github/actions/prepare
       - run: pnpm format --list-different
+
   lint:
     name: Lint
     runs-on: ubuntu-latest
@@ -38,6 +41,7 @@ jobs:
       - uses: ./.github/actions/prepare
       - run: pnpm site:sync
       - run: pnpm lint
+
   lint_docs:
     name: Lint Docs
     runs-on: ubuntu-latest
@@ -45,6 +49,7 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: ./.github/actions/prepare
       - run: pnpm docs:generate --check
+
   lint_knip:
     name: Lint Knip
     runs-on: ubuntu-latest
@@ -52,6 +57,7 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: ./.github/actions/prepare
       - run: pnpm lint:knip
+
   test:
     name: Test (Node.js ${{ matrix.node-version }}, ESLint ${{ matrix.eslint-version }}, ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
@@ -81,7 +87,7 @@ jobs:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
   type_check:
-    name: Type Check (ESLint ${{ matrix.eslint-version }})
+    name: Type-check (ESLint ${{ matrix.eslint-version }})
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -96,7 +102,7 @@ jobs:
       - run: pnpm typecheck
 
   type_check_site:
-    name: Type Check Site
+    name: Type-check Site
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6

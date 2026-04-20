@@ -3,7 +3,7 @@ import { defineConfig } from "astro/config";
 import starlight from "@astrojs/starlight";
 import starlightCatppuccin from "@catppuccin/starlight";
 
-const site = "https://esling-plugin-package-json.com";
+const site = "https://esling-plugin-package-json.dev";
 
 export default defineConfig({
 	integrations: [
