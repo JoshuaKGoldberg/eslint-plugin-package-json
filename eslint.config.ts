@@ -23,8 +23,10 @@ const JS_TS_FILES = [...JS_FILES, ...TS_FILES];
 export default defineConfig(
 	globalIgnores([
 		"**/*.snap",
+		"site/.astro",
 		".eslint-doc-generatorrc.js",
 		"coverage",
+		"dist-site",
 		"docs/rules/*/*.ts",
 		"lib",
 		"node_modules",

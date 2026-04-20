@@ -23,12 +23,20 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: ./.github/actions/prepare
       - run: pnpm dedupe --check --prefer-offline
+  format_check:
+    name: Format Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: ./.github/actions/prepare
+      - run: pnpm format --list-different
   lint:
     name: Lint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: ./.github/actions/prepare
+      - run: pnpm site:sync
       - run: pnpm lint
   lint_docs:
     name: Lint Docs
@@ -36,8 +44,7 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: ./.github/actions/prepare
-      - run: pnpm build || exit 0
-      - run: pnpm lint:docs
+      - run: pnpm docs:generate --check
   lint_knip:
     name: Lint Knip
     runs-on: ubuntu-latest
@@ -45,13 +52,6 @@ jobs:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - uses: ./.github/actions/prepare
       - run: pnpm lint:knip
-  prettier:
-    name: Prettier
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
-      - uses: ./.github/actions/prepare
-      - run: pnpm format --list-different
   test:
     name: Test (Node.js ${{ matrix.node-version }}, ESLint ${{ matrix.eslint-version }}, ${{ matrix.os }})
     runs-on: ${{ matrix.os }}
@@ -94,3 +94,11 @@ jobs:
       - uses: ./.github/actions/prepare
       - run: pnpm install -D eslint@${{ matrix.eslint-version }}
       - run: pnpm typecheck
+
+  type_check_site:
+    name: Type Check Site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+      - uses: ./.github/actions/prepare
+      - run: pnpm site:typecheck

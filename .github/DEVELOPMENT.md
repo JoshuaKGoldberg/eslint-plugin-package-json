@@ -46,22 +46,19 @@ pnpm format --write
 
 ## Linting
 
-This package includes several forms of linting to enforce consistent code quality and styling.
+This package includes a couple forms of linting to enforce consistent code quality and styling.
 Each should be shown in VS Code, and can be run manually on the command-line:
 
 - `pnpm lint` ([ESLint](https://eslint.org) with [typescript-eslint](https://typescript-eslint.io)): Lints JavaScript and TypeScript source files
-- `pnpm lint:docs` ([eslint-doc-generator](https://github.com/bmish/eslint-doc-generator)): Generates and validates documentation for ESLint rules
 - `pnpm lint:knip` ([knip](https://github.com/webpro/knip)): Detects unused files, dependencies, and code exports
 
-Read the individual documentation for each linter to understand how it can be configured and used best.
+Read the individual documentation for each tool to understand how it can be configured and used best.
 
 For example, ESLint can be run with `--fix` to auto-fix some lint rule complaints:
 
 ```shell
 pnpm run lint --fix
 ```
-
-Note that you'll need to run `pnpm build` before `pnpm lint` so that lint rules which check the file system can pick up on any built files.
 
 ## Testing
 
@@ -100,4 +97,30 @@ Add `--watch` to keep the type checker running in a watch mode that updates the 
 
 ```shell
 pnpm tsc --watch
+```
+
+## Working on the Site
+
+If you'd like to work aspects of the website, these commands might come in helpful.
+The site is built using ✨ [Starlight](https://starlight.astro.build/) for Astro.
+
+### Run Dev Server
+
+You can spin up a local instance of the server by running `astro dev`.
+This will serve the site in "watch" mode, so that updates you make will reflect in the site as you make them.
+This will serve the site on `http://localhost:3000/`.
+
+```shell
+pnpm site:dev
+```
+
+### Build the Site for Production
+
+To create a production build for testing, you can run a combination of "build" and "preview" commands.
+This will create a production build of the site, and serve the statically generated assets locally on the dev server.
+This, importantly, is _not_ running in "watch" mode, and won't react to changes to the source files.
+
+```shell
+pnpm site:build
+pnpm site:preview
 ```
