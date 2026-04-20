@@ -421,6 +421,15 @@
         "bug",
         "code"
       ]
+    },
+    {
+      "login": "belozer",
+      "name": "Sergey Belozyorcev",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1655916?v=4",
+      "profile": "https://github.com/belozer",
+      "contributions": [
+        "ideas"
+      ]
     }
   ],
   "contributorsSortAlphabetically": true,
