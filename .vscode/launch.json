@@ -10,6 +10,12 @@
 			"skipFiles": ["<node_internals>/**", "**/node_modules/**"],
 			"smartStep": true,
 			"type": "node"
+		},
+		{
+			"command": "./node_modules/.bin/astro dev",
+			"name": "Development Server",
+			"request": "launch",
+			"type": "node-terminal"
 		}
 	],
 	"version": "0.2.0"

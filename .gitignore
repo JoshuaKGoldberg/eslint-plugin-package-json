@@ -1,3 +1,18 @@
-/coverage
-/lib
-/node_modules
+# build output
+lib/
+dist-site/
+
+# generated types
+.astro/
+
+# dependencies
+node_modules/
+
+# test output
+coverage/
+
+# logs
+pnpm-debug.log*
+
+# macOS-specific files
+.DS_Store
