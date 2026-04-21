@@ -100,8 +100,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(eslint@10.2.0(jiti@2.6.1))
       eslint-plugin-perfectionist:
-        specifier: 5.8.0
-        version: 5.8.0(eslint@10.2.0(jiti@2.6.1))(typescript@6.0.2)
+        specifier: 5.9.0
+        version: 5.9.0(eslint@10.2.0(jiti@2.6.1))(typescript@6.0.2)
       eslint-plugin-regexp:
         specifier: 3.1.0
         version: 3.1.0(eslint@10.2.0(jiti@2.6.1))
@@ -2308,8 +2308,8 @@ packages:
     peerDependencies:
       eslint: '>=9.38.0'
 
-  eslint-plugin-perfectionist@5.8.0:
-    resolution: {integrity: sha512-k8uIptWIxkUclonCFGyDzgYs9NI+Qh0a7cUXS3L7IYZDEsjXuimFBVbxXPQQngWqMiaxJRwbtYB4smMGMqF+cw==}
+  eslint-plugin-perfectionist@5.9.0:
+    resolution: {integrity: sha512-8TWzg02zmnBdZwCkWLi8jhzqXI+fE7Z/RwV8SL6xD45tJ8Bp3wGuYL2XtQgfe/Wd0eBqOUX+s6ey73IyszvKTA==}
     engines: {node: ^20.0.0 || >=22.0.0}
     peerDependencies:
       eslint: ^8.45.0 || ^9.0.0 || ^10.0.0
@@ -6175,7 +6175,7 @@ snapshots:
     transitivePeerDependencies:
       - '@eslint/json'
 
-  eslint-plugin-perfectionist@5.8.0(eslint@10.2.0(jiti@2.6.1))(typescript@6.0.2):
+  eslint-plugin-perfectionist@5.9.0(eslint@10.2.0(jiti@2.6.1))(typescript@6.0.2):
     dependencies:
       '@typescript-eslint/utils': 8.58.2(eslint@10.2.0(jiti@2.6.1))(typescript@6.0.2)
       eslint: 10.2.0(jiti@2.6.1)
