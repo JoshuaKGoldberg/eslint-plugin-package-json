@@ -7,6 +7,8 @@
 This rule allows you to disallow specific top-level properties in `package.json`.
 This is useful when you want to keep `package.json` minimal and enforce that certain tool configurations live in their own dedicated files.
 
+<!-- prettier-ignore-start -->
+
 ```ts
 export default [
 	{
@@ -15,8 +17,7 @@ export default [
 			{
 				ban: [
 					{
-						message:
-							"Configure pnpm options in pnpm-workspace.yaml.",
+						message: "Configure pnpm options in pnpm-workspace.yaml.",
 						property: "pnpm",
 					},
 					"prettier",
@@ -27,18 +28,21 @@ export default [
 ];
 ```
 
+<!-- prettier-ignore-end -->
+
 ## Options
 
+<!-- prettier-ignore-start -->
 <!-- begin auto-generated rule options list -->
 
-| Name                                                                                                       | Description                                   | Type   | Default | Required |
-| :--------------------------------------------------------------------------------------------------------- | :-------------------------------------------- | :----- | :------ | :------- |
-| `ban`                                                                                                      | List of top-level properties to ban.          |
-| Each entry can be a property name string or an object with a property name and an optional custom message. | Array                                         | `[]`   |         |
-| `message`                                                                                                  | Custom message to append to the error report. | String |         |          |
-| `property`                                                                                                 | The top-level property name to ban.           | String |         | Yes      |
+| Name       | Description                                                                                                                                     | Type   | Default | Required |
+| :--------- | :---------------------------------------------------------------------------------------------------------------------------------------------- | :----- | :------ | :------- |
+| `ban`      | List of top-level properties to ban. Each entry can be a property name string or an object with a property name and an optional custom message. | Array  | `[]`    |          |
+| `message`  | Custom message to append to the error report.                                                                                                   | String |         |          |
+| `property` | The top-level property name to ban.                                                                                                             | String |         | Yes      |
 
 <!-- end auto-generated rule options list -->
+<!-- prettier-ignore-end -->
 
 ### `ban`
 
