@@ -76,38 +76,27 @@ ruleTester.run("valid-peerDependencies", rules["valid-peerDependencies"], {
 `,
 			errors: [
 				{
+					column: 18,
 					data: {
-						error: "invalid version range for dependency david: bowie",
-					},
-					line: 3,
-					messageId: "validationError",
-				},
-				{
-					data: {
-						error: "dependency version for trent should be a string: 123",
+						error: "dependency version for `trent` should be a string: 123",
 					},
 					line: 4,
 					messageId: "validationError",
 				},
 				{
+					column: 24,
 					data: {
-						error: "dependency version for the-fragile should be a string: null",
+						error: "dependency version for `the-fragile` should be a string: null",
 					},
 					line: 5,
 					messageId: "validationError",
 				},
 				{
+					column: 23,
 					data: {
-						error: "dependency version for pink-floyd should be a string: [object Object]",
+						error: "dependency version for `pink-floyd` should be a string: [object Object]",
 					},
 					line: 6,
-					messageId: "validationError",
-				},
-				{
-					data: {
-						error: "invalid version range for dependency childish-gambino: workspace",
-					},
-					line: 7,
 					messageId: "validationError",
 				},
 			],
@@ -126,7 +115,8 @@ ruleTester.run("valid-peerDependencies", rules["valid-peerDependencies"], {
     "alt-j": "workspace:~",
     "run-the-jewels": "workspace:*",
     "thee-silver-mt-zion": "workspace:^1.2.3",
-    "efrim-manuel-menuck": "npm:bar@^1.0.0"
+    "efrim-manuel-menuck": "npm:bar@^1.0.0",
+    "jessica-moss": "beta"
   }
 }`,
 		`{ "peerDependencies": {} }`,
