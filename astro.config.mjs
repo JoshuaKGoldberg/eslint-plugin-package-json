@@ -9,6 +9,11 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: "ESLint Plugin: Package JSON",
+			logo: {
+				dark: "./src/assets/logo/logo-dark.svg",
+				light: "./src/assets/logo/logo-light.svg",
+			},
+			favicon: "/images/favicon.svg",
 			plugins: [starlightCatppuccin()],
 			social: [
 				{
