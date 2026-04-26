@@ -15,9 +15,9 @@ Example of **incorrect** code for this rule for a `package.json` located at `pac
 
 ```json
 {
-	"repository": {
-		"directory": "something-else"
-	}
+  "repository": {
+    "directory": "something-else"
+  }
 }
 ```
 
@@ -25,8 +25,8 @@ Example of **correct** code for this rule for a `package.json` located at `packa
 
 ```json
 {
-	"repository": {
-		"directory": "packages/example"
-	}
+  "repository": {
+    "directory": "packages/example"
+  }
 }
 ```

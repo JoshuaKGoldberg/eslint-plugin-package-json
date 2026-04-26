@@ -16,7 +16,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"os": ["x64"]
+  "os": ["x64"]
 }
 ```
 
@@ -24,6 +24,6 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"os": ["linux", "win32"]
+  "os": ["linux", "win32"]
 }
 ```

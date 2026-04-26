@@ -15,16 +15,16 @@ Examples of **incorrect** code for this rule:
 
 ```json
 {
-	"author": "",
-	"description": "",
-	"keywords": [],
-	"license": "ISC",
-	"main": "index.js",
-	"name": "noncompliant-version",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"version": "1.X.0"
+  "author": "",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "noncompliant-version",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.X.0"
 }
 ```
 
@@ -32,16 +32,16 @@ Examples of **correct** code for this rule:
 
 ```json
 {
-	"author": "",
-	"description": "",
-	"keywords": [],
-	"license": "ISC",
-	"main": "index.js",
-	"name": "compliant-version",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"version": "1.0.0"
+  "author": "",
+  "description": "",
+  "keywords": [],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "compliant-version",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
 }
 ```
 
@@ -58,11 +58,11 @@ Example of excluding the bin property:
 
 ```json
 {
-	"package-json/valid-bin": "error",
-	"package-json/validate-package-definition": [
-		"error",
-		{ "ignoreProperties": ["bin"] }
-	]
+  "package-json/valid-bin": "error",
+  "package-json/validate-package-definition": [
+    "error",
+    { "ignoreProperties": ["bin"] }
+  ]
 }
 ```
 

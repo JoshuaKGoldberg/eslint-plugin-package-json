@@ -14,9 +14,9 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"publishConfig": {
-		"provenance": "true"
-	}
+  "publishConfig": {
+    "provenance": "true"
+  }
 }
 ```
 
@@ -24,8 +24,8 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"publishConfig": {
-		"provenance": true
-	}
+  "publishConfig": {
+    "provenance": true
+  }
 }
 ```

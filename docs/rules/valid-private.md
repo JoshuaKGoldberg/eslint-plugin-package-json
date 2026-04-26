@@ -10,7 +10,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"private": "true"
+  "private": "true"
 }
 ```
 
@@ -18,6 +18,6 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"private": true
+  "private": true
 }
 ```

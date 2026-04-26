@@ -8,8 +8,8 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"name": "thee-silver-mt-zion",
-	"version": "13.0.0"
+  "name": "thee-silver-mt-zion",
+  "version": "13.0.0"
 }
 ```
 
@@ -17,9 +17,9 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"name": "thee-silver-mt-zion",
-	"version": "13.0.0",
-	"cpu": ["x64", "arm64"]
+  "name": "thee-silver-mt-zion",
+  "version": "13.0.0",
+  "cpu": ["x64", "arm64"]
 }
 ```
 
@@ -35,12 +35,12 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"package-json/require-cpu": [
-		"error",
-		{
-			"ignorePrivate": false
-		}
-	]
+  "package-json/require-cpu": [
+    "error",
+    {
+      "ignorePrivate": false
+    }
+  ]
 }
 ```
 
@@ -48,7 +48,7 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": false }
 
 ```json
 {
-	"private": true
+  "private": true
 }
 ```
 
@@ -56,8 +56,8 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": false }` 
 
 ```json
 {
-	"private": true,
-	"cpu": ["x64", "arm64"]
+  "private": true,
+  "cpu": ["x64", "arm64"]
 }
 ```
 
@@ -65,7 +65,7 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": true }`
 
 ```json
 {
-	"private": false
+  "private": false
 }
 ```
 
@@ -77,6 +77,6 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": true }` o
 
 ```json
 {
-	"private": true
+  "private": true
 }
 ```

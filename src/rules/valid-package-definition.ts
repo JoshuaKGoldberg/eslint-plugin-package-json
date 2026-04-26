@@ -6,68 +6,67 @@ import { createRule } from "../createRule.ts";
 // it also enforces a stricter code for npm than is really appropriate,
 // so we disable some other errors here.
 const ignoredErrors = [
-	/^Url not valid/i,
-	/^Invalid version range for .+?: file:/i,
-	/^author field should have name/i,
+  /^Url not valid/i,
+  /^Invalid version range for .+?: file:/i,
+  /^author field should have name/i,
 ];
 
 const isUsableError = (errorText: string) =>
-	ignoredErrors.every((pattern) => !pattern.test(errorText));
+  ignoredErrors.every((pattern) => !pattern.test(errorText));
 
 export const rule = createRule({
-	create(context) {
-		const ignoreProperties = context.options[0]?.ignoreProperties ?? [];
+  create(context) {
+    const ignoreProperties = context.options[0]?.ignoreProperties ?? [];
 
-		return {
-			"Program:exit"() {
-				const validation = validate(context.sourceCode.text);
+    return {
+      "Program:exit"() {
+        const validation = validate(context.sourceCode.text);
 
-				const usableErrors =
-					validation.errors?.filter((error) => {
-						return (
-							isUsableError(error.message) &&
-							!ignoreProperties.includes(error.field)
-						);
-					}) ?? [];
+        const usableErrors =
+          validation.errors?.filter((error) => {
+            return (
+              isUsableError(error.message) &&
+              !ignoreProperties.includes(error.field)
+            );
+          }) ?? [];
 
-				for (const error of usableErrors) {
-					if (error.message) {
-						context.report({
-							// eslint-disable-next-line eslint-plugin/prefer-message-ids
-							message: error.message,
-							node: context.sourceCode.ast,
-						});
-					}
-				}
-			},
-		};
-	},
-	// eslint-disable-next-line eslint-plugin/prefer-message-ids
-	meta: {
-		defaultOptions: [{ ignoreProperties: [] }],
-		deprecated: true,
-		docs: {
-			category: "Best Practices",
-			description:
-				"Enforce that package.json has all properties required by the npm spec",
-		},
-		schema: [
-			{
-				additionalProperties: false,
-				properties: {
-					ignoreProperties: {
-						description:
-							"Array of top-level package properties to ignore.",
-						items: {
-							type: "string",
-						},
-						type: "array",
-					},
-				},
-				type: "object",
-			},
-		],
-		type: "problem",
-	},
-	name: "valid-package-definition",
+        for (const error of usableErrors) {
+          if (error.message) {
+            context.report({
+              // eslint-disable-next-line eslint-plugin/prefer-message-ids
+              message: error.message,
+              node: context.sourceCode.ast,
+            });
+          }
+        }
+      },
+    };
+  },
+  // eslint-disable-next-line eslint-plugin/prefer-message-ids
+  meta: {
+    defaultOptions: [{ ignoreProperties: [] }],
+    deprecated: true,
+    docs: {
+      category: "Best Practices",
+      description:
+        "Enforce that package.json has all properties required by the npm spec",
+    },
+    schema: [
+      {
+        additionalProperties: false,
+        properties: {
+          ignoreProperties: {
+            description: "Array of top-level package properties to ignore.",
+            items: {
+              type: "string",
+            },
+            type: "array",
+          },
+        },
+        type: "object",
+      },
+    ],
+    type: "problem",
+  },
+  name: "valid-package-definition",
 });

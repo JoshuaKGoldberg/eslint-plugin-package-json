@@ -10,7 +10,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"config": true
+  "config": true
 }
 ```
 
@@ -18,11 +18,11 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"config": {
-		"name": "foo",
-		"config": {
-			"port": "8080"
-		}
-	}
+  "config": {
+    "name": "foo",
+    "config": {
+      "port": "8080"
+    }
+  }
 }
 ```

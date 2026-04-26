@@ -13,7 +13,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"workspaces": "./packages/*"
+  "workspaces": "./packages/*"
 }
 ```
 
@@ -21,6 +21,6 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"workspaces": ["./app", "./packages/*"]
+  "workspaces": ["./app", "./packages/*"]
 }
 ```

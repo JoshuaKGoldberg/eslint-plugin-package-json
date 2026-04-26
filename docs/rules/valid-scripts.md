@@ -10,9 +10,9 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"scripts": {
-		"invalid-script": 123
-	}
+  "scripts": {
+    "invalid-script": 123
+  }
 }
 ```
 
@@ -20,8 +20,8 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"script": {
-		"lint": "eslint ."
-	}
+  "script": {
+    "lint": "eslint ."
+  }
 }
 ```

@@ -15,7 +15,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"packageManager": "pnpm@>=10"
+  "packageManager": "pnpm@>=10"
 }
 ```
 
@@ -23,12 +23,12 @@ Examples of **correct** code for this rule:
 
 ```json
 {
-	"packageManager": "pnpm@10.3.0"
+  "packageManager": "pnpm@10.3.0"
 }
 ```
 
 ```json
 {
-	"packageManager": "pnpm@10.3.0+sha224.953c8233f7a92884eee2de69a1b92d1f2ec1655e66d08071ba9a02fa"
+  "packageManager": "pnpm@10.3.0+sha224.953c8233f7a92884eee2de69a1b92d1f2ec1655e66d08071ba9a02fa"
 }
 ```

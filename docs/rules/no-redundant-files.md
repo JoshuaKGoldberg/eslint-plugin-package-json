@@ -28,8 +28,8 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"files": ["README.md", "CHANGELOG.md", "lib/index.js"],
-	"main": "lib/index.js"
+  "files": ["README.md", "CHANGELOG.md", "lib/index.js"],
+  "main": "lib/index.js"
 }
 ```
 
@@ -37,7 +37,7 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"files": ["CHANGELOG.md"],
-	"main": "lib/index.js"
+  "files": ["CHANGELOG.md"],
+  "main": "lib/index.js"
 }
 ```

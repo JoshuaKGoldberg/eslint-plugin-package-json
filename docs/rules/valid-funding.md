@@ -14,10 +14,10 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"funding": {
-		"email": "some@mail.com",
-		"type": "patreon"
-	}
+  "funding": {
+    "email": "some@mail.com",
+    "type": "patreon"
+  }
 }
 ```
 
@@ -25,31 +25,31 @@ Examples of **correct** code for this rule:
 
 ```json
 {
-	"funding": {
-		"type": "patreon",
-		"url": "https://patreon.com/treznor"
-	}
+  "funding": {
+    "type": "patreon",
+    "url": "https://patreon.com/treznor"
+  }
 }
 ```
 
 ```json
 {
-	"funding": "http://npmjs.com/donate"
+  "funding": "http://npmjs.com/donate"
 }
 ```
 
 ```json
 {
-	"funding": [
-		{
-			"type": "individual",
-			"url": "http://npmjs.com/donate"
-		},
-		"http://npmjs.com/donate-also",
-		{
-			"type": "patreon",
-			"url": "https://patreon.com/treznor"
-		}
-	]
+  "funding": [
+    {
+      "type": "individual",
+      "url": "http://npmjs.com/donate"
+    },
+    "http://npmjs.com/donate-also",
+    {
+      "type": "patreon",
+      "url": "https://patreon.com/treznor"
+    }
+  ]
 }
 ```

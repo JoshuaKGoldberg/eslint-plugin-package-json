@@ -2,9 +2,9 @@ import { rule } from "../../rules/specify-peers-locally.ts";
 import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("specify-peers-locally", rule, {
-	invalid: [
-		{
-			code: `{
+  invalid: [
+    {
+      code: `{
   "peerDependencies": {
     "abc": "4.5.6"
   },
@@ -13,16 +13,16 @@ ruleTester.run("specify-peers-locally", rule, {
     "ghi": "1.2.3"
   }
 }`,
-			errors: [
-				{
-					data: { name: "abc" },
-					line: 3,
-					messageId: "devDependencyNotDefined",
-					suggestions: [
-						{
-							data: { name: "abc" },
-							messageId: "addToDevDependencies",
-							output: `{
+      errors: [
+        {
+          data: { name: "abc" },
+          line: 3,
+          messageId: "devDependencyNotDefined",
+          suggestions: [
+            {
+              data: { name: "abc" },
+              messageId: "addToDevDependencies",
+              output: `{
   "peerDependencies": {
     "abc": "4.5.6"
   },
@@ -32,29 +32,29 @@ ruleTester.run("specify-peers-locally", rule, {
     "ghi": "1.2.3"
   }
 }`,
-						},
-					],
-				},
-			],
-			filename: "package.json",
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+      filename: "package.json",
+    },
+    {
+      code: `{
   "peerDependencies": {
     "abc": "1.2.3"
   },
   "devDependencies": {}
 }`,
-			errors: [
-				{
-					data: { name: "abc" },
-					line: 3,
-					messageId: "devDependencyNotDefined",
-					suggestions: [
-						{
-							data: { name: "abc" },
-							messageId: "addToDevDependencies",
-							output: `{
+      errors: [
+        {
+          data: { name: "abc" },
+          line: 3,
+          messageId: "devDependencyNotDefined",
+          suggestions: [
+            {
+              data: { name: "abc" },
+              messageId: "addToDevDependencies",
+              output: `{
   "peerDependencies": {
     "abc": "1.2.3"
   },
@@ -62,52 +62,52 @@ ruleTester.run("specify-peers-locally", rule, {
     "abc": "1.2.3"
   }
 }`,
-						},
-					],
-				},
-			],
-			filename: "package.json",
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+      filename: "package.json",
+    },
+    {
+      code: `{
 	"peerDependencies": {
 		"abc": "1.2.3"
 	},
 }`,
-			errors: [
-				{
-					data: { name: "abc" },
-					line: 3,
-					messageId: "devDependencyNotDefined",
-					suggestions: [],
-				},
-			],
-			filename: "package.json",
-		},
-	],
+      errors: [
+        {
+          data: { name: "abc" },
+          line: 3,
+          messageId: "devDependencyNotDefined",
+          suggestions: [],
+        },
+      ],
+      filename: "package.json",
+    },
+  ],
 
-	valid: [
-		`{}`,
-		`{
+  valid: [
+    `{}`,
+    `{
 	"peerDependencies": {}
 }`,
-		`{
+    `{
 	"peerDependencies": { 123: "invalid" }
 }`,
-		`{
+    `{
 	"devDependencies": {
 		"abc": "1.2.3",
         123: "1.2.3"
 	}
 }`,
-		`{
+    `{
     "peerDependencies": {},
 	"devDependencies": {
 		"abc": "1.2.3",
 		"def": "1.2.3"
 	}
 }`,
-		`{
+    `{
 	"peerDependencies": {
         "abc": "1.2.3"
     },
@@ -116,7 +116,7 @@ ruleTester.run("specify-peers-locally", rule, {
 		"def": "1.2.3"
 	}
 }`,
-		`{
+    `{
 	"peerDependencies": {
         "abc": "1.2.3"
     },
@@ -124,5 +124,5 @@ ruleTester.run("specify-peers-locally", rule, {
 		"abc": "1.2.3"
 	}
 }`,
-	],
+  ],
 });

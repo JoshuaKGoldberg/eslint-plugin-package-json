@@ -1,2 +1,2 @@
 export const isPackageJson = (filePath: string) =>
-	/(?:^|[/\\])package.json$/.test(filePath);
+  /(?:^|[/\\])package.json$/.test(filePath);

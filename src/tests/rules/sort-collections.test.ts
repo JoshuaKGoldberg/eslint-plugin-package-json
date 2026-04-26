@@ -6,30 +6,30 @@ import { ruleTester } from "./ruleTester.ts";
 //------------------------------------------------------------------------------
 
 ruleTester.run("sort-collections", rule, {
-	invalid: [
-		{
-			code: `{
+  invalid: [
+    {
+      code: `{
 	"scripts": {
 		"watch": "webpack-dev-server",
 		"build": "webpack"
 	}
 }`,
-			errors: [
-				{
-					data: { key: "scripts" },
-					messageId: "unsortedScripts",
-				},
-			],
-			filename: "package.json",
-			output: `{
+      errors: [
+        {
+          data: { key: "scripts" },
+          messageId: "unsortedScripts",
+        },
+      ],
+      filename: "package.json",
+      output: `{
 	"scripts": {
     "build": "webpack",
     "watch": "webpack-dev-server"
   }
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"scripts": {
 		"build": "webpack",
 		"postwatch": "echo test",
@@ -37,14 +37,14 @@ ruleTester.run("sort-collections", rule, {
 		"watch": "webpack-dev-server"
 	}
 }`,
-			errors: [
-				{
-					data: { key: "scripts" },
-					messageId: "unsortedScripts",
-				},
-			],
-			filename: "package.json",
-			output: `{
+      errors: [
+        {
+          data: { key: "scripts" },
+          messageId: "unsortedScripts",
+        },
+      ],
+      filename: "package.json",
+      output: `{
 	"scripts": {
     "prebuild": "echo test",
     "build": "webpack",
@@ -52,93 +52,93 @@ ruleTester.run("sort-collections", rule, {
     "postwatch": "echo test"
   }
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"scripts": {
 		"postbuild": "echo test",
 		"build": "echo test"
 	}
 }`,
-			errors: [
-				{
-					data: { key: "scripts" },
-					messageId: "unsortedScripts",
-				},
-			],
-			filename: "package.json",
-			output: `{
+      errors: [
+        {
+          data: { key: "scripts" },
+          messageId: "unsortedScripts",
+        },
+      ],
+      filename: "package.json",
+      output: `{
 	"scripts": {
     "build": "echo test",
     "postbuild": "echo test"
   }
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"scripts": {
 		"build": "echo test",
 		"prebuild": "echo test"
 	}
 }`,
-			errors: [
-				{
-					data: { key: "scripts" },
-					messageId: "unsortedScripts",
-				},
-			],
-			filename: "package.json",
-			output: `{
+      errors: [
+        {
+          data: { key: "scripts" },
+          messageId: "unsortedScripts",
+        },
+      ],
+      filename: "package.json",
+      output: `{
 	"scripts": {
     "prebuild": "echo test",
     "build": "echo test"
   }
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"scripts": {
 		"prebuild": "echo test",
 		"postbuild": "echo test"
 	}
 }`,
-			errors: [
-				{
-					data: { key: "scripts" },
-					messageId: "unsortedScripts",
-				},
-			],
-			filename: "package.json",
-			output: `{
+      errors: [
+        {
+          data: { key: "scripts" },
+          messageId: "unsortedScripts",
+        },
+      ],
+      filename: "package.json",
+      output: `{
 	"scripts": {
     "postbuild": "echo test",
     "prebuild": "echo test"
   }
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"scripts": {
 		"postinstall": "echo test",
 		"preinstall": "echo test"
 	}
 }`,
-			errors: [
-				{
-					data: { key: "scripts" },
-					messageId: "unsortedScripts",
-				},
-			],
-			filename: "package.json",
-			output: `{
+      errors: [
+        {
+          data: { key: "scripts" },
+          messageId: "unsortedScripts",
+        },
+      ],
+      filename: "package.json",
+      output: `{
 	"scripts": {
     "preinstall": "echo test",
     "postinstall": "echo test"
   }
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"exports": {
 		"./package.json": "./package.json",
 		".": {
@@ -148,14 +148,14 @@ ruleTester.run("sort-collections", rule, {
 		}
 	}
 }`,
-			errors: [
-				{
-					data: { key: "exports" },
-					messageId: "unsortedKeys",
-				},
-			],
-			filename: "package.json",
-			output: `{
+      errors: [
+        {
+          data: { key: "exports" },
+          messageId: "unsortedKeys",
+        },
+      ],
+      filename: "package.json",
+      output: `{
 	"exports": {
     ".": {
       "import": "./index.mjs",
@@ -165,9 +165,9 @@ ruleTester.run("sort-collections", rule, {
     "./package.json": "./package.json"
   }
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"pnpm": {
 		"patchedDependencies": {
 			"typescript@4.8.4": "patches/typescript@4.8.4.patch",
@@ -175,15 +175,15 @@ ruleTester.run("sort-collections", rule, {
 		}
 	}
 }`,
-			errors: [
-				{
-					data: { key: "pnpm.patchedDependencies" },
-					messageId: "unsortedKeys",
-				},
-			],
-			filename: "package.json",
-			options: [["pnpm.patchedDependencies"]],
-			output: `{
+      errors: [
+        {
+          data: { key: "pnpm.patchedDependencies" },
+          messageId: "unsortedKeys",
+        },
+      ],
+      filename: "package.json",
+      options: [["pnpm.patchedDependencies"]],
+      output: `{
 	"pnpm": {
 		"patchedDependencies": {
     "eslint-plugin-package-json@0.31.0": "patches/eslint-plugin-package-json@0.31.0.patch",
@@ -191,9 +191,9 @@ ruleTester.run("sort-collections", rule, {
   }
 	}
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"pnpm": {
 		"peerDependencyRules": {
             "allowedVersions": {
@@ -203,15 +203,15 @@ ruleTester.run("sort-collections", rule, {
 		}
 	}
 }`,
-			errors: [
-				{
-					data: { key: "pnpm.peerDependencyRules.allowedVersions" },
-					messageId: "unsortedKeys",
-				},
-			],
-			filename: "package.json",
-			options: [["pnpm.peerDependencyRules.allowedVersions"]],
-			output: `{
+      errors: [
+        {
+          data: { key: "pnpm.peerDependencyRules.allowedVersions" },
+          messageId: "unsortedKeys",
+        },
+      ],
+      filename: "package.json",
+      options: [["pnpm.peerDependencyRules.allowedVersions"]],
+      output: `{
 	"pnpm": {
 		"peerDependencyRules": {
             "allowedVersions": {
@@ -221,80 +221,80 @@ ruleTester.run("sort-collections", rule, {
 		}
 	}
 }`,
-		},
-	],
+    },
+  ],
 
-	valid: [
-		{
-			code: `{
+  valid: [
+    {
+      code: `{
 	"scripts": {
 		"build": "webpack",
 		"watch": "webpack-dev-server"
 	}
 }`,
-			filename: "package.json",
-		},
-		// ignore if custom include rule
-		{
-			code: `{
+      filename: "package.json",
+    },
+    // ignore if custom include rule
+    {
+      code: `{
 	"scripts": {
 		"build": "webpack",
 		"watch": "webpack-dev-server"
 	}
 }`,
-			filename: "package.json",
-			options: [["devDependencies"]],
-		},
-		{
-			code: `{
+      filename: "package.json",
+      options: [["devDependencies"]],
+    },
+    {
+      code: `{
 		"scripts": { "watch": "out of order...", "build": "but okay" }
 }`,
-			filename: "not-a-package.json",
-			options: [["devDependencies"]],
-		},
-		{
-			code: `{
+      filename: "not-a-package.json",
+      options: [["devDependencies"]],
+    },
+    {
+      code: `{
 	"scripts": {
 		"lint": "echo test",
         "poster": "echo test"
 	}
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"scripts": {
 		"pretest": "echo test",
         "watch": "echo test"
 	}
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"scripts": {
         "postwatch": "echo test",
 		"pretest": "echo test"
 	}
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"scripts": {
         "prebuild": "echo test",
 		"build": "echo test",
         "postbuild": "echo test"
 	}
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"scripts": {
         "preinstall": "echo test",
         "postinstall": "echo test"
 	}
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"nested": {
 		"devDependencies": {
 			"typescript": "4.8.4",
@@ -302,9 +302,9 @@ ruleTester.run("sort-collections", rule, {
 		}
 	}
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"pnpm": {
 		"patchedDependencies": {
 			"eslint-plugin-package-json@0.31.0": "patches/eslint-plugin-package-json@0.31.0.patch",
@@ -312,9 +312,9 @@ ruleTester.run("sort-collections", rule, {
 		}
 	}
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"pnpm": {
 		"peerDependencyRules": {
             "allowedVersions": {
@@ -324,9 +324,9 @@ ruleTester.run("sort-collections", rule, {
 		}
 	}
 }`,
-		},
-		{
-			code: `{
+    },
+    {
+      code: `{
 	"pnpm": {
 		"peerDependencyRules": {
             "allowedVersions": {
@@ -336,11 +336,11 @@ ruleTester.run("sort-collections", rule, {
 		}
 	}
 }`,
-			options: [["pnpm.peerDependencyRules.allowedVersions"]],
-		},
+      options: [["pnpm.peerDependencyRules.allowedVersions"]],
+    },
 
-		{
-			code: `{
+    {
+      code: `{
   "foo": [
     {
       "bar": {
@@ -350,10 +350,10 @@ ruleTester.run("sort-collections", rule, {
     }
   ]
 }`,
-			options: [["foo.bar"]],
-		},
-		{
-			code: `{
+      options: [["foo.bar"]],
+    },
+    {
+      code: `{
   "foo": [
     {
       "bar": {
@@ -363,7 +363,7 @@ ruleTester.run("sort-collections", rule, {
     }
   ]
 }`,
-			options: [["foo.0.bar"]],
-		},
-	],
+      options: [["foo.0.bar"]],
+    },
+  ],
 });

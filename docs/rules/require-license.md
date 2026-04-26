@@ -10,8 +10,8 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"name": "my-package",
-	"version": "13.0.0"
+  "name": "my-package",
+  "version": "13.0.0"
 }
 ```
 
@@ -19,9 +19,9 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"name": "my-package",
-	"license": "MIT",
-	"version": "13.0.0"
+  "name": "my-package",
+  "license": "MIT",
+  "version": "13.0.0"
 }
 ```
 
@@ -37,12 +37,12 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"package-json/require-license": [
-		"error",
-		{
-			"ignorePrivate": true
-		}
-	]
+  "package-json/require-license": [
+    "error",
+    {
+      "ignorePrivate": true
+    }
+  ]
 }
 ```
 
@@ -50,7 +50,7 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": false }
 
 ```json
 {
-	"private": true
+  "private": true
 }
 ```
 
@@ -58,8 +58,8 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": false }` 
 
 ```json
 {
-	"private": true,
-	"license": "MIT"
+  "private": true,
+  "license": "MIT"
 }
 ```
 
@@ -67,7 +67,7 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": true }`
 
 ```json
 {
-	"private": false
+  "private": false
 }
 ```
 
@@ -79,6 +79,6 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": true }` o
 
 ```json
 {
-	"private": true
+  "private": true
 }
 ```
