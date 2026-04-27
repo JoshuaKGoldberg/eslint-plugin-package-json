@@ -11,6 +11,7 @@ ruleTester.run("restrict-top-level-properties", rule, {
 			errors: [
 				{
 					data: { customMessage: "", property: "prettier" },
+					line: 3,
 					messageId: "bannedProperty",
 					suggestions: [
 						{
@@ -40,6 +41,7 @@ ruleTester.run("restrict-top-level-properties", rule, {
 							": Migrate pnpm config to pnpm-workspace.yaml.",
 						property: "pnpm",
 					},
+					line: 3,
 					messageId: "bannedProperty",
 					suggestions: [
 						{
@@ -71,6 +73,7 @@ ruleTester.run("restrict-top-level-properties", rule, {
 			errors: [
 				{
 					data: { customMessage: "", property: "lint-staged" },
+					line: 1,
 					messageId: "bannedProperty",
 					suggestions: [
 						{
@@ -93,6 +96,7 @@ ruleTester.run("restrict-top-level-properties", rule, {
 			errors: [
 				{
 					data: { customMessage: "", property: "prettier" },
+					line: 3,
 					messageId: "bannedProperty",
 					suggestions: [
 						{
@@ -108,6 +112,7 @@ ruleTester.run("restrict-top-level-properties", rule, {
 				},
 				{
 					data: { customMessage: "", property: "eslintConfig" },
+					line: 4,
 					messageId: "bannedProperty",
 					suggestions: [
 						{
@@ -133,6 +138,7 @@ ruleTester.run("restrict-top-level-properties", rule, {
 						customMessage: ": Use pnpm-workspace.yaml instead.",
 						property: "pnpm",
 					},
+					line: 1,
 					messageId: "bannedProperty",
 					suggestions: [
 						{
@@ -161,6 +167,7 @@ ruleTester.run("restrict-top-level-properties", rule, {
 			errors: [
 				{
 					data: { customMessage: "", property: "pnpm" },
+					line: 1,
 					messageId: "bannedProperty",
 					suggestions: [
 						{
@@ -179,6 +186,7 @@ ruleTester.run("restrict-top-level-properties", rule, {
 			errors: [
 				{
 					data: { customMessage: "", property: "pnpm" },
+					line: 1,
 					messageId: "bannedProperty",
 					suggestions: [
 						{
@@ -200,6 +208,7 @@ ruleTester.run("restrict-top-level-properties", rule, {
 						customMessage: ": Second message.",
 						property: "pnpm",
 					},
+					line: 1,
 					messageId: "bannedProperty",
 					suggestions: [
 						{
@@ -225,6 +234,7 @@ ruleTester.run("restrict-top-level-properties", rule, {
 			errors: [
 				{
 					data: { customMessage: "", property: "pnpm" },
+					line: 1,
 					messageId: "bannedProperty",
 					suggestions: [
 						{
@@ -253,6 +263,7 @@ ruleTester.run("restrict-top-level-properties", rule, {
 			errors: [
 				{
 					data: { customMessage: "", property: "description" },
+					line: 1,
 					messageId: "bannedProperty",
 					suggestions: [
 						{
@@ -275,6 +286,7 @@ ruleTester.run("restrict-top-level-properties", rule, {
 							": This is not a valid package.json property.",
 						property: "constructor",
 					},
+					line: 1,
 					messageId: "bannedProperty",
 					suggestions: [
 						{
