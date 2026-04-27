@@ -8,6 +8,7 @@ import { isJSONStringLiteral } from "../utils/predicates.ts";
 export const rule = createRule({
 	create(context) {
 		const banList = Object.fromEntries(
+			/* v8 ignore next - not possible to cover due to presence of `defaultOptions` */
 			(context.options[0]?.ban ?? []).map((entry) =>
 				typeof entry === "string"
 					? [entry, ""]
