@@ -15,6 +15,7 @@ import { rule as requireAttribution } from "./rules/require-attribution.ts";
 import { rules as requireRules } from "./rules/require-properties.ts";
 import { rule as restrictDependencyRanges } from "./rules/restrict-dependency-ranges.ts";
 import { rule as restrictPrivateProperties } from "./rules/restrict-private-properties.ts";
+import { rule as restrictTopLevelProperties } from "./rules/restrict-top-level-properties.ts";
 import { rule as scriptsNameCasing } from "./rules/scripts-name-casing.ts";
 import { rule as sortCollections } from "./rules/sort-collections.ts";
 import { rule as specifyPeersLocally } from "./rules/specify-peers-locally.ts";
@@ -39,6 +40,7 @@ const rules: Record<string, PackageJsonRuleModule> = {
 	"repository-shorthand": preferRepositoryShorthand,
 	"restrict-dependency-ranges": restrictDependencyRanges,
 	"restrict-private-properties": restrictPrivateProperties,
+	"restrict-top-level-properties": restrictTopLevelProperties,
 	"scripts-name-casing": scriptsNameCasing,
 	"sort-collections": sortCollections,
 	"specify-peers-locally": specifyPeersLocally,
