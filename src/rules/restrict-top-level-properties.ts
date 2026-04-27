@@ -26,31 +26,29 @@ export const rule = createRule({
 
 					const propertyName = property.key.value;
 
-					if (!Object.hasOwn(banList, propertyName)) {
-						continue;
-					}
+					if (Object.hasOwn(banList, propertyName)) {
+						const customMessage = banList[propertyName];
 
-					const customMessage = banList[propertyName];
-
-					context.report({
-						data: {
-							customMessage: customMessage
-								? `: ${customMessage}`
-								: "",
-							property: propertyName,
-						},
-						messageId: "bannedProperty",
-						node: property.key,
-						suggest: [
-							{
-								fix: fixRemoveObjectProperty(
-									context,
-									property as unknown as ObjectProperty,
-								),
-								messageId: "removePropertySuggestion",
+						context.report({
+							data: {
+								customMessage: customMessage
+									? `: ${customMessage}`
+									: "",
+								property: propertyName,
 							},
-						],
-					});
+							messageId: "bannedProperty",
+							node: property.key,
+							suggest: [
+								{
+									fix: fixRemoveObjectProperty(
+										context,
+										property as unknown as ObjectProperty,
+									),
+									messageId: "removePropertySuggestion",
+								},
+							],
+						});
+					}
 				}
 			},
 		};
