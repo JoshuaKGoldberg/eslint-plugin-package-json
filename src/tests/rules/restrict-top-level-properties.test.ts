@@ -337,5 +337,10 @@ ruleTester.run("restrict-top-level-properties", rule, {
 			name: "empty package",
 			options: [{ ban: ["prettier"] }],
 		},
+		{
+			code: `{ "name": "test", 1: "value" }`,
+			name: "non-string literal key is skipped",
+			options: [{ ban: ["1"] }],
+		},
 	],
 });
