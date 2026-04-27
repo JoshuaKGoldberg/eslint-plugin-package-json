@@ -43,7 +43,6 @@ export const rule = createRule({
 						node: property.key,
 						suggest: [
 							{
-								data: { property: propertyName },
 								fix: fixRemoveObjectProperty(
 									context,
 									property as unknown as ObjectProperty,
@@ -68,7 +67,7 @@ export const rule = createRule({
 		messages: {
 			bannedProperty:
 				"The `{{ property }}` property is not allowed{{ customMessage }}",
-			removePropertySuggestion: "Remove the `{{ property }}` property.",
+			removePropertySuggestion: "Remove the property.",
 		},
 		schema: [
 			{
