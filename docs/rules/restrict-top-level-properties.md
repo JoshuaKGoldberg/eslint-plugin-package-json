@@ -58,21 +58,21 @@ Examples of **incorrect** code for this rule, given the config above:
 
 ```json
 {
-	"name": "my-app",
-	"version": "1.0.0",
-	"prettier": {
-		"semi": false
-	}
+  "name": "my-app",
+  "version": "1.0.0",
+  "prettier": {
+    "semi": false
+  }
 }
 ```
 
 ```json
 {
-	"name": "my-app",
-	"version": "1.0.0",
-	"pnpm": {
-		"overrides": {}
-	}
+  "name": "my-app",
+  "version": "1.0.0",
+  "pnpm": {
+    "overrides": {}
+  }
 }
 ```
 
@@ -80,8 +80,8 @@ Examples of **correct** code for this rule:
 
 ```json
 {
-	"name": "my-app",
-	"version": "1.0.0"
+  "name": "my-app",
+  "version": "1.0.0"
 }
 ```
 
@@ -95,18 +95,18 @@ Below is a ready-to-use `ban` list of commonly used tool-specific properties tha
 
 ```json
 [
-	"babel",
-	"browserslist",
-	"commitlint",
-	"eslintConfig",
-	"jest",
-	"lint-staged",
-	"pnpm",
-	"prettier",
-	"release-it",
-	"renovate",
-	"stylelint",
-	"typedoc"
+  "babel",
+  "browserslist",
+  "commitlint",
+  "eslintConfig",
+  "jest",
+  "lint-staged",
+  "pnpm",
+  "prettier",
+  "release-it",
+  "renovate",
+  "stylelint",
+  "typedoc"
 ]
 ```
 
@@ -117,54 +117,54 @@ Below is a ready-to-use `ban` list of commonly used tool-specific properties tha
 
 ```json
 [
-	{
-		"property": "babel",
-		"message": "Configure Babel in a dedicated config file."
-	},
-	{
-		"property": "browserslist",
-		"message": "Configure Browserslist in a dedicated config file."
-	},
-	{
-		"property": "commitlint",
-		"message": "Configure commitlint in a dedicated config file."
-	},
-	{
-		"property": "eslintConfig",
-		"message": "Configure ESLint in a dedicated config file."
-	},
-	{
-		"property": "jest",
-		"message": "Configure Jest in a dedicated config file."
-	},
-	{
-		"property": "lint-staged",
-		"message": "Configure lint-staged in a dedicated config file."
-	},
-	{
-		"property": "pnpm",
-		"message": "Configure pnpm in a dedicated config file."
-	},
-	{
-		"property": "prettier",
-		"message": "Configure Prettier in a dedicated config file."
-	},
-	{
-		"property": "release-it",
-		"message": "Configure release-it in a dedicated config file."
-	},
-	{
-		"property": "renovate",
-		"message": "Configure Renovate in a dedicated config file."
-	},
-	{
-		"property": "stylelint",
-		"message": "Configure Stylelint in a dedicated config file."
-	},
-	{
-		"property": "typedoc",
-		"message": "Configure TypeDoc in a dedicated config file."
-	}
+  {
+    "property": "babel",
+    "message": "Configure Babel in a dedicated config file."
+  },
+  {
+    "property": "browserslist",
+    "message": "Configure Browserslist in a dedicated config file."
+  },
+  {
+    "property": "commitlint",
+    "message": "Configure commitlint in a dedicated config file."
+  },
+  {
+    "property": "eslintConfig",
+    "message": "Configure ESLint in a dedicated config file."
+  },
+  {
+    "property": "jest",
+    "message": "Configure Jest in a dedicated config file."
+  },
+  {
+    "property": "lint-staged",
+    "message": "Configure lint-staged in a dedicated config file."
+  },
+  {
+    "property": "pnpm",
+    "message": "Configure pnpm in a dedicated config file."
+  },
+  {
+    "property": "prettier",
+    "message": "Configure Prettier in a dedicated config file."
+  },
+  {
+    "property": "release-it",
+    "message": "Configure release-it in a dedicated config file."
+  },
+  {
+    "property": "renovate",
+    "message": "Configure Renovate in a dedicated config file."
+  },
+  {
+    "property": "stylelint",
+    "message": "Configure Stylelint in a dedicated config file."
+  },
+  {
+    "property": "typedoc",
+    "message": "Configure TypeDoc in a dedicated config file."
+  }
 ]
 ```
 

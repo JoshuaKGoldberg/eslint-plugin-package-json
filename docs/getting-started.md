@@ -24,8 +24,8 @@ import packageJson from "eslint-plugin-package-json";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-	// your other ESLint configurations
-	packageJson.configs.recommended,
+  // your other ESLint configurations
+  packageJson.configs.recommended,
 ]);
 ```
 
@@ -37,14 +37,14 @@ import packageJson from "eslint-plugin-package-json";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-	// your other ESLint configurations
-	{
-		extends: [packageJson.configs.recommended],
-		files: ["package.json"],
-		rules: {
-			"package-json/require-author": "error",
-		},
-	},
+  // your other ESLint configurations
+  {
+    extends: [packageJson.configs.recommended],
+    files: ["package.json"],
+    rules: {
+      "package-json/require-author": "error",
+    },
+  },
 ]);
 ```
 
@@ -64,8 +64,8 @@ import packageJson from "eslint-plugin-package-json";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-	// your other ESLint configurations
-	packageJson.configs["recommended-publishable"],
+  // your other ESLint configurations
+  packageJson.configs["recommended-publishable"],
 ]);
 ```
 
@@ -80,9 +80,9 @@ import packageJson from "eslint-plugin-package-json";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-	// your other ESLint configurations
-	packageJson.configs.recommended, // or packageJson.configs["recommended-publishable"]
-	packageJson.configs.stylistic,
+  // your other ESLint configurations
+  packageJson.configs.recommended, // or packageJson.configs["recommended-publishable"]
+  packageJson.configs.stylistic,
 ]);
 ```
 
@@ -99,18 +99,18 @@ import packageJson from "eslint-plugin-package-json";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig({
-	plugins: {
-		"package-json": packageJson,
-	},
-	rules: {
-		// `description` won't be required in package.json with `"private": true`
-		"package-json/require-description": "error",
-	},
-	settings: {
-		packageJson: {
-			enforceForPrivate: false,
-		},
-	},
+  plugins: {
+    "package-json": packageJson,
+  },
+  rules: {
+    // `description` won't be required in package.json with `"private": true`
+    "package-json/require-description": "error",
+  },
+  settings: {
+    packageJson: {
+      enforceForPrivate: false,
+    },
+  },
 });
 ```
 

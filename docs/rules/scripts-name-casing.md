@@ -13,10 +13,10 @@ Example of **incorrect** code:
 
 ```json
 {
-	"scripts": {
-		"invalidName": "node ./scripts/build.js",
-		"another:invalidCommand": "node ./scripts/another.js"
-	}
+  "scripts": {
+    "invalidName": "node ./scripts/build.js",
+    "another:invalidCommand": "node ./scripts/another.js"
+  }
 }
 ```
 
@@ -24,9 +24,9 @@ Example of **correct** code:
 
 ```json
 {
-	"scripts": {
-		"valid-command": "node ./scripts/build.js",
-		"another:valid-command": "node ./scripts/another.js"
-	}
+  "scripts": {
+    "valid-command": "node ./scripts/build.js",
+    "another:valid-command": "node ./scripts/another.js"
+  }
 }
 ```

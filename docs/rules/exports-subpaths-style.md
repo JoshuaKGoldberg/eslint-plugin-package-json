@@ -16,9 +16,9 @@ The Node.js `exports` field supports two equivalent formats for defining a singl
 
 ```json
 {
-	"exports": {
-		".": "./index.js"
-	}
+  "exports": {
+    ".": "./index.js"
+  }
 }
 ```
 
@@ -26,7 +26,7 @@ The Node.js `exports` field supports two equivalent formats for defining a singl
 
 ```json
 {
-	"exports": "./index.js"
+  "exports": "./index.js"
 }
 ```
 
@@ -40,16 +40,16 @@ Examples of **incorrect** code with default options:
 
 ```json
 {
-	"exports": "./index.js"
+  "exports": "./index.js"
 }
 ```
 
 ```json
 {
-	"exports": {
-		"import": "./index.mjs",
-		"require": "./index.cjs"
-	}
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.cjs"
+  }
 }
 ```
 
@@ -57,29 +57,29 @@ Examples of **correct** code with default options:
 
 ```json
 {
-	"exports": {
-		".": "./index.js"
-	}
+  "exports": {
+    ".": "./index.js"
+  }
 }
 ```
 
 ```json
 {
-	"exports": {
-		".": {
-			"import": "./index.mjs",
-			"require": "./index.cjs"
-		}
-	}
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.cjs"
+    }
+  }
 }
 ```
 
 ```json
 {
-	"exports": {
-		".": "./index.js",
-		"./utils": "./utils.js"
-	}
+  "exports": {
+    ".": "./index.js",
+    "./utils": "./utils.js"
+  }
 }
 ```
 
@@ -89,20 +89,20 @@ Examples of **incorrect** code with `{ "prefer": "implicit" }`:
 
 ```json
 {
-	"exports": {
-		".": "./index.js"
-	}
+  "exports": {
+    ".": "./index.js"
+  }
 }
 ```
 
 ```json
 {
-	"exports": {
-		".": {
-			"import": "./index.mjs",
-			"require": "./index.cjs"
-		}
-	}
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.cjs"
+    }
+  }
 }
 ```
 
@@ -110,25 +110,25 @@ Examples of **correct** code with `{ "prefer": "implicit" }`:
 
 ```json
 {
-	"exports": "./index.js"
+  "exports": "./index.js"
 }
 ```
 
 ```json
 {
-	"exports": {
-		"import": "./index.mjs",
-		"require": "./index.cjs"
-	}
+  "exports": {
+    "import": "./index.mjs",
+    "require": "./index.cjs"
+  }
 }
 ```
 
 ```json
 {
-	"exports": {
-		".": "./index.js",
-		"./utils": "./utils.js"
-	}
+  "exports": {
+    ".": "./index.js",
+    "./utils": "./utils.js"
+  }
 }
 ```
 
@@ -153,12 +153,12 @@ The `prefer` option specifies which format to enforce:
 
 ```json
 {
-	"package-json/exports-subpaths-style": [
-		"error",
-		{
-			"prefer": "explicit"
-		}
-	]
+  "package-json/exports-subpaths-style": [
+    "error",
+    {
+      "prefer": "explicit"
+    }
+  ]
 }
 ```
 

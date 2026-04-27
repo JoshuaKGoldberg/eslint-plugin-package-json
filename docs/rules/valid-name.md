@@ -13,7 +13,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"name": "Exciting! Package! Name!"
+  "name": "Exciting! Package! Name!"
 }
 ```
 
@@ -21,6 +21,6 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"name": "exciting-package-name"
+  "name": "exciting-package-name"
 }
 ```

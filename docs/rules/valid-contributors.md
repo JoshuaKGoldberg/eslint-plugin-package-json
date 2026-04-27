@@ -14,7 +14,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"contributors": "Trent Reznor"
+  "contributors": "Trent Reznor"
 }
 ```
 
@@ -22,12 +22,12 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"contributors": [
-		{
-			"name": "Trent Reznor",
-			"email": "treznor@nin.com",
-			"url": "https://nin.com"
-		}
-	]
+  "contributors": [
+    {
+      "name": "Trent Reznor",
+      "email": "treznor@nin.com",
+      "url": "https://nin.com"
+    }
+  ]
 }
 ```

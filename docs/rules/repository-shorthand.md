@@ -17,7 +17,7 @@ Examples of **incorrect** code for this rule with the default options:
 
 ```json
 {
-	"repository": "michaelfaith/eslint-plugin-package-json"
+  "repository": "michaelfaith/eslint-plugin-package-json"
 }
 ```
 
@@ -25,10 +25,10 @@ Examples of **correct** code for this rule with the default options:
 
 ```json
 {
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/michaelfaith/eslint-plugin-package-json"
-	}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michaelfaith/eslint-plugin-package-json"
+  }
 }
 ```
 
@@ -36,12 +36,12 @@ Examples of **correct** code for this rule with the default options:
 
 ```json
 {
-	"package-json/order-properties": [
-		"error",
-		{
-			"form": "shorthand"
-		}
-	]
+  "package-json/order-properties": [
+    "error",
+    {
+      "form": "shorthand"
+    }
+  ]
 }
 ```
 

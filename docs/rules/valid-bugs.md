@@ -15,7 +15,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"bugs": "some@email.com"
+  "bugs": "some@email.com"
 }
 ```
 
@@ -23,9 +23,9 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"bugs": {
-		"email": "support@nin.com",
-		"url": "https://nin.com/support"
-	}
+  "bugs": {
+    "email": "support@nin.com",
+    "url": "https://nin.com/support"
+  }
 }
 ```

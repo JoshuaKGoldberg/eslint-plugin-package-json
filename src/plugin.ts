@@ -29,109 +29,109 @@ import { rule as validVersion } from "./rules/valid-version.ts";
 const require = createRequire(import.meta.url);
 
 const rules: Record<string, PackageJsonRuleModule> = {
-	"bin-name-casing": binNameCasing,
-	"exports-subpaths-style": exportsSubpathsStyle,
-	"no-empty-fields": noEmptyFields,
-	"no-redundant-files": noRedundantFiles,
-	"no-redundant-publishConfig": noRedundantPublishConfig,
-	"order-properties": orderProperties,
-	"require-attribution": requireAttribution,
-	...requireRules,
-	"repository-shorthand": preferRepositoryShorthand,
-	"restrict-dependency-ranges": restrictDependencyRanges,
-	"restrict-private-properties": restrictPrivateProperties,
-	"restrict-top-level-properties": restrictTopLevelProperties,
-	"scripts-name-casing": scriptsNameCasing,
-	"sort-collections": sortCollections,
-	"specify-peers-locally": specifyPeersLocally,
-	"unique-dependencies": uniqueDependencies,
-	...basicValidRules,
-	"valid-name": validName,
-	"valid-package-definition": validPackageDefinition,
-	"valid-repository-directory": validRepositoryDirectory,
-	"valid-version": validVersion,
+  "bin-name-casing": binNameCasing,
+  "exports-subpaths-style": exportsSubpathsStyle,
+  "no-empty-fields": noEmptyFields,
+  "no-redundant-files": noRedundantFiles,
+  "no-redundant-publishConfig": noRedundantPublishConfig,
+  "order-properties": orderProperties,
+  "require-attribution": requireAttribution,
+  ...requireRules,
+  "repository-shorthand": preferRepositoryShorthand,
+  "restrict-dependency-ranges": restrictDependencyRanges,
+  "restrict-private-properties": restrictPrivateProperties,
+  "restrict-top-level-properties": restrictTopLevelProperties,
+  "scripts-name-casing": scriptsNameCasing,
+  "sort-collections": sortCollections,
+  "specify-peers-locally": specifyPeersLocally,
+  "unique-dependencies": uniqueDependencies,
+  ...basicValidRules,
+  "valid-name": validName,
+  "valid-package-definition": validPackageDefinition,
+  "valid-repository-directory": validRepositoryDirectory,
+  "valid-version": validVersion,
 };
 
 const recommendedRules = {
-	...Object.fromEntries(
-		Object.entries(rules)
-			.filter(([, rule]) => rule.meta.docs?.recommended)
-			.map(([name]) => ["package-json/" + name, "error" as const]),
-	),
+  ...Object.fromEntries(
+    Object.entries(rules)
+      .filter(([, rule]) => rule.meta.docs?.recommended)
+      .map(([name]) => ["package-json/" + name, "error" as const]),
+  ),
 } satisfies Linter.RulesRecord;
 
 const recommendedPublishableRules = {
-	...recommendedRules,
-	...Object.fromEntries(
-		Object.entries(rules)
-			.filter(([, rule]) => rule.meta.docs?.category === "Publishable")
-			.map(([name]) => ["package-json/" + name, "error" as const]),
-	),
+  ...recommendedRules,
+  ...Object.fromEntries(
+    Object.entries(rules)
+      .filter(([, rule]) => rule.meta.docs?.category === "Publishable")
+      .map(([name]) => ["package-json/" + name, "error" as const]),
+  ),
 } satisfies Linter.RulesRecord;
 
 const stylisticRules = {
-	...Object.fromEntries(
-		Object.entries(rules)
-			.filter(([, rule]) => rule.meta.docs?.category === "Stylistic")
-			.map(([name]) => ["package-json/" + name, "error" as const]),
-	),
+  ...Object.fromEntries(
+    Object.entries(rules)
+      .filter(([, rule]) => rule.meta.docs?.category === "Stylistic")
+      .map(([name]) => ["package-json/" + name, "error" as const]),
+  ),
 } satisfies Linter.RulesRecord;
 
 const { name, version } = require("../package.json") as {
-	name: string;
-	version: string;
+  name: string;
+  version: string;
 };
 
 export const plugin = {
-	configs: {
-		/** @deprecated please use the recommended (flat) config. This will be removed in early 2026 */
-		"legacy-recommended": {
-			plugins: ["package-json"],
-			rules: recommendedRules,
-		},
-		recommended: {
-			files: ["**/package.json"],
-			languageOptions: {
-				parser: parserJsonc,
-			},
-			name: "package-json/recommended",
-			plugins: {
-				get "package-json"(): ESLint.Plugin {
-					return plugin;
-				},
-			},
-			rules: recommendedRules,
-		},
-		"recommended-publishable": {
-			files: ["**/package.json"],
-			languageOptions: {
-				parser: parserJsonc,
-			},
-			name: "package-json/recommended-publishable",
-			plugins: {
-				get "package-json"(): ESLint.Plugin {
-					return plugin;
-				},
-			},
-			rules: recommendedPublishableRules,
-		},
-		stylistic: {
-			files: ["**/package.json"],
-			languageOptions: {
-				parser: parserJsonc,
-			},
-			name: "package-json/stylistic",
-			plugins: {
-				get "package-json"(): ESLint.Plugin {
-					return plugin;
-				},
-			},
-			rules: stylisticRules,
-		},
-	},
-	meta: {
-		name,
-		version,
-	},
-	rules,
+  configs: {
+    /** @deprecated please use the recommended (flat) config. This will be removed in early 2026 */
+    "legacy-recommended": {
+      plugins: ["package-json"],
+      rules: recommendedRules,
+    },
+    recommended: {
+      files: ["**/package.json"],
+      languageOptions: {
+        parser: parserJsonc,
+      },
+      name: "package-json/recommended",
+      plugins: {
+        get "package-json"(): ESLint.Plugin {
+          return plugin;
+        },
+      },
+      rules: recommendedRules,
+    },
+    "recommended-publishable": {
+      files: ["**/package.json"],
+      languageOptions: {
+        parser: parserJsonc,
+      },
+      name: "package-json/recommended-publishable",
+      plugins: {
+        get "package-json"(): ESLint.Plugin {
+          return plugin;
+        },
+      },
+      rules: recommendedPublishableRules,
+    },
+    stylistic: {
+      files: ["**/package.json"],
+      languageOptions: {
+        parser: parserJsonc,
+      },
+      name: "package-json/stylistic",
+      plugins: {
+        get "package-json"(): ESLint.Plugin {
+          return plugin;
+        },
+      },
+      rules: stylisticRules,
+    },
+  },
+  meta: {
+    name,
+    version,
+  },
+  rules,
 } satisfies ESLint.Plugin;

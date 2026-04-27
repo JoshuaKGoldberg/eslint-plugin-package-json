@@ -2,9 +2,9 @@ import { rule } from "../../rules/no-empty-fields.ts";
 import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("no-empty-fields", rule, {
-	invalid: [
-		{
-			code: `{
+  invalid: [
+    {
+      code: `{
 \t\t"name": "test",
 \t\t"workspaces": [],
 \t\t"dependencies": {
@@ -12,14 +12,14 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t}
 }
 `,
-			errors: [
-				{
-					data: { field: "workspaces" },
-					messageId: "emptyFields",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+      errors: [
+        {
+          data: { field: "workspaces" },
+          messageId: "emptyFields",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test",
 \t\t
 \t\t"dependencies": {
@@ -27,96 +27,96 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t}
 }
 `,
-						},
-					],
-				},
-			],
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+    },
+    {
+      code: `{
 \t\t"name": "test",
 \t\t"config": [ [], ["test"] ]
 }
 `,
-			errors: [
-				{
-					data: { expressionType: "array" },
-					messageId: "emptyExpression",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+      errors: [
+        {
+          data: { expressionType: "array" },
+          messageId: "emptyExpression",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test",
 \t\t"config": [  ["test"] ]
 }
 `,
-						},
-					],
-				},
-			],
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+    },
+    {
+      code: `{
 \t\t"name": "test",
 \t\t"config": [ {}, ["test"], [] ]
 }
 `,
-			errors: [
-				{
-					data: { expressionType: "object" },
-					messageId: "emptyExpression",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+      errors: [
+        {
+          data: { expressionType: "object" },
+          messageId: "emptyExpression",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test",
 \t\t"config": [  ["test"], [] ]
 }
 `,
-						},
-					],
-				},
-				{
-					data: { expressionType: "array" },
-					messageId: "emptyExpression",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+            },
+          ],
+        },
+        {
+          data: { expressionType: "array" },
+          messageId: "emptyExpression",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test",
 \t\t"config": [ {}, ["test"]  ]
 }
 `,
-						},
-					],
-				},
-			],
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+    },
+    {
+      code: `{
 \t\t"name": "test",
 \t\t"dependencies": {}
 }
 `,
-			errors: [
-				{
-					data: { field: "dependencies" },
-					messageId: "emptyFields",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+      errors: [
+        {
+          data: { field: "dependencies" },
+          messageId: "emptyFields",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test"
 \t\t
 }
 `,
-						},
-					],
-				},
-			],
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+    },
+    {
+      code: `{
 \t\t"name": "test",
 \t\t"files": [
 \t\t\t\t"index.js"
@@ -124,14 +124,14 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t"peerDependencies": {}
 }
 `,
-			errors: [
-				{
-					data: { field: "peerDependencies" },
-					messageId: "emptyFields",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+      errors: [
+        {
+          data: { field: "peerDependencies" },
+          messageId: "emptyFields",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test",
 \t\t"files": [
 \t\t\t\t"index.js"
@@ -139,59 +139,59 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t
 }
 `,
-						},
-					],
-				},
-			],
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+    },
+    {
+      code: `{
 \t\t"name": "test",
 \t\t"scripts": {}
 }
 `,
-			errors: [
-				{
-					data: { field: "scripts" },
-					messageId: "emptyFields",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+      errors: [
+        {
+          data: { field: "scripts" },
+          messageId: "emptyFields",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test"
 \t\t
 }
 `,
-						},
-					],
-				},
-			],
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+    },
+    {
+      code: `{
 \t\t"name": "test",
 \t\t"devDependencies": {}
 }
 `,
-			errors: [
-				{
-					data: { field: "devDependencies" },
-					messageId: "emptyFields",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+      errors: [
+        {
+          data: { field: "devDependencies" },
+          messageId: "emptyFields",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test"
 \t\t
 }
 `,
-						},
-					],
-				},
-			],
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+    },
+    {
+      code: `{
 \t\t"name": "test",
 \t\t"peerDependencyMeta": {
 \t\t\t\t"@altano/repository-tools": {
@@ -201,14 +201,14 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t}
 }
 `,
-			errors: [
-				{
-					data: { field: "nin" },
-					messageId: "emptyFields",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+      errors: [
+        {
+          data: { field: "nin" },
+          messageId: "emptyFields",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test",
 \t\t"peerDependencyMeta": {
 \t\t\t\t"@altano/repository-tools": {
@@ -218,13 +218,13 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t}
 }
 `,
-						},
-					],
-				},
-			],
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+    },
+    {
+      code: `{
 \t\t"name": "test",
 \t\t"peerDependencyMeta": {
 \t\t\t\t"@altano/repository-tools": {
@@ -234,14 +234,14 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t}
 }
 `,
-			errors: [
-				{
-					data: { field: "nin" },
-					messageId: "emptyFields",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+      errors: [
+        {
+          data: { field: "nin" },
+          messageId: "emptyFields",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test",
 \t\t"peerDependencyMeta": {
 \t\t\t\t"@altano/repository-tools": {
@@ -251,13 +251,13 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t}
 }
 `,
-						},
-					],
-				},
-			],
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+    },
+    {
+      code: `{
 \t\t"name": "test",
 \t\t"workspaces": [],
 \t\t"dependencies": {
@@ -266,14 +266,14 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t}
 }
 `,
-			errors: [
-				{
-					data: { field: "workspaces" },
-					messageId: "emptyFields",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+      errors: [
+        {
+          data: { field: "workspaces" },
+          messageId: "emptyFields",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test",
 \t\t
 \t\t"dependencies": {
@@ -282,16 +282,16 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t}
 }
 `,
-						},
-					],
-				},
-				{
-					data: { field: "test" },
-					messageId: "emptyFields",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+            },
+          ],
+        },
+        {
+          data: { field: "test" },
+          messageId: "emptyFields",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test",
 \t\t"workspaces": [],
 \t\t"dependencies": {
@@ -300,13 +300,13 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t}
 }
 `,
-						},
-					],
-				},
-			],
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+    },
+    {
+      code: `{
 \t\t"name": "test",
 \t\t"workspaces": [],
 \t\t"browserslist": [],
@@ -314,14 +314,14 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t"scripts": {}
 }
 `,
-			errors: [
-				{
-					data: { field: "workspaces" },
-					messageId: "emptyFields",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+      errors: [
+        {
+          data: { field: "workspaces" },
+          messageId: "emptyFields",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test",
 \t\t
 \t\t"browserslist": [],
@@ -329,16 +329,16 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t"scripts": {}
 }
 `,
-						},
-					],
-				},
-				{
-					data: { field: "files" },
-					messageId: "emptyFields",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+            },
+          ],
+        },
+        {
+          data: { field: "files" },
+          messageId: "emptyFields",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test",
 \t\t"workspaces": [],
 \t\t"browserslist": [],
@@ -346,16 +346,16 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t"scripts": {}
 }
 `,
-						},
-					],
-				},
-				{
-					data: { field: "scripts" },
-					messageId: "emptyFields",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+            },
+          ],
+        },
+        {
+          data: { field: "scripts" },
+          messageId: "emptyFields",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test",
 \t\t"workspaces": [],
 \t\t"browserslist": [],
@@ -363,18 +363,18 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t
 }
 `,
-						},
-					],
-				},
-			],
-			options: [
-				{
-					ignoreProperties: ["browserslist"],
-				},
-			],
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+      options: [
+        {
+          ignoreProperties: ["browserslist"],
+        },
+      ],
+    },
+    {
+      code: `{
 \t\t"name": "test",
 \t\t"browserslist": {
 \t\t\t"development": [],
@@ -382,14 +382,14 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t}
 }
 `,
-			errors: [
-				{
-					data: { field: "development" },
-					messageId: "emptyFields",
-					suggestions: [
-						{
-							messageId: "remove",
-							output: `{
+      errors: [
+        {
+          data: { field: "development" },
+          messageId: "emptyFields",
+          suggestions: [
+            {
+              messageId: "remove",
+              output: `{
 \t\t"name": "test",
 \t\t"browserslist": {
 \t\t\t
@@ -397,44 +397,44 @@ ruleTester.run("no-empty-fields", rule, {
 \t\t}
 }
 `,
-						},
-					],
-				},
-			],
-			options: [
-				{
-					ignoreProperties: ["development"],
-				},
-			],
-		},
-	],
-	valid: [
-		`{}`,
-		`[]`,
-		`{ "name": "test", "files": [] }`,
-		`{ "name": "test", "files": ["index.js"] }`,
-		`{ "name": "test", "peerDependencies": { "eslint": ">=8.0.0" } }`,
-		`{ "name": "test", "dependencies": { "eslint": ">=8.0.0" } }`,
-		`{ "name": "test", "devDependencies": { "eslint": ">=8.0.0" } }`,
-		`{ "name": "test", "scripts": { "lint": "eslint --fix ." } }`,
-		`{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true } } }`,
-		`{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true, "test": [{"test": ["1"]}] } } }`,
-		`{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true, "test": ["field1"] } } }`,
-		{
-			code: `{ "name": "test", "browserslist": [] }`,
-			options: [
-				{
-					ignoreProperties: ["browserslist"],
-				},
-			],
-		},
-		{
-			code: `{ "name": "test", "browserslist": { "development": [], "production": [ "last 1 version", "> 1%", "not dead" ] } }`,
-			options: [
-				{
-					ignoreProperties: ["browserslist"],
-				},
-			],
-		},
-	],
+            },
+          ],
+        },
+      ],
+      options: [
+        {
+          ignoreProperties: ["development"],
+        },
+      ],
+    },
+  ],
+  valid: [
+    `{}`,
+    `[]`,
+    `{ "name": "test", "files": [] }`,
+    `{ "name": "test", "files": ["index.js"] }`,
+    `{ "name": "test", "peerDependencies": { "eslint": ">=8.0.0" } }`,
+    `{ "name": "test", "dependencies": { "eslint": ">=8.0.0" } }`,
+    `{ "name": "test", "devDependencies": { "eslint": ">=8.0.0" } }`,
+    `{ "name": "test", "scripts": { "lint": "eslint --fix ." } }`,
+    `{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true } } }`,
+    `{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true, "test": [{"test": ["1"]}] } } }`,
+    `{ "name": "test", "peerDependencyMeta": { "@altano/repository-tools": { "optional": true, "test": ["field1"] } } }`,
+    {
+      code: `{ "name": "test", "browserslist": [] }`,
+      options: [
+        {
+          ignoreProperties: ["browserslist"],
+        },
+      ],
+    },
+    {
+      code: `{ "name": "test", "browserslist": { "development": [], "production": [ "last 1 version", "> 1%", "not dead" ] } }`,
+      options: [
+        {
+          ignoreProperties: ["browserslist"],
+        },
+      ],
+    },
+  ],
 });

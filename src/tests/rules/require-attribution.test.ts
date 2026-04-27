@@ -2,55 +2,55 @@ import { rule } from "../../rules/require-attribution.ts";
 import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("require-attribution", rule, {
-	invalid: [
-		{
-			code: "{}",
-			errors: [
-				{
-					line: 1,
-					messageId: "missing",
-				},
-			],
-			name: "neither",
-		},
-		{
-			code: "{}",
-			errors: [
-				{
-					line: 1,
-					messageId: "missingContributor",
-				},
-			],
-			name: "neither (preferContributorsOnly: true)",
-			options: [{ preferContributorsOnly: true }],
-		},
-		{
-			code: `{
+  invalid: [
+    {
+      code: "{}",
+      errors: [
+        {
+          line: 1,
+          messageId: "missing",
+        },
+      ],
+      name: "neither",
+    },
+    {
+      code: "{}",
+      errors: [
+        {
+          line: 1,
+          messageId: "missingContributor",
+        },
+      ],
+      name: "neither (preferContributorsOnly: true)",
+      options: [{ preferContributorsOnly: true }],
+    },
+    {
+      code: `{
 	"contributors": null
 }
 `,
-			errors: [
-				{
-					line: 2,
-					messageId: "noContributors",
-				},
-			],
-		},
-		{
-			code: `{
+      errors: [
+        {
+          line: 2,
+          messageId: "noContributors",
+        },
+      ],
+    },
+    {
+      code: `{
     "author": "Trent Reznor",
 	"contributors": null
 }
 `,
-			errors: [
-				{
-					line: 3,
-					messageId: "noContributors",
-				},
-			],
-		},
-		{
-			code: `{
+      errors: [
+        {
+          line: 3,
+          messageId: "noContributors",
+        },
+      ],
+    },
+    {
+      code: `{
 \t\t"author": "Trent Reznor",
 	"contributors": [
         {
@@ -61,14 +61,14 @@ ruleTester.run("require-attribution", rule, {
     ]
 }
 `,
-			errors: [
-				{
-					line: 2,
-					messageId: "contributorsOnly",
-					suggestions: [
-						{
-							messageId: "removeAuthor",
-							output: `{
+      errors: [
+        {
+          line: 2,
+          messageId: "contributorsOnly",
+          suggestions: [
+            {
+              messageId: "removeAuthor",
+              output: `{
 \t\t
 	"contributors": [
         {
@@ -79,29 +79,29 @@ ruleTester.run("require-attribution", rule, {
     ]
 }
 `,
-						},
-					],
-				},
-			],
-			name: "author and contributors (preferContributorsOnly: true)",
-			options: [{ preferContributorsOnly: true }],
-		},
-		{
-			code: `{
+            },
+          ],
+        },
+      ],
+      name: "author and contributors (preferContributorsOnly: true)",
+      options: [{ preferContributorsOnly: true }],
+    },
+    {
+      code: `{
     "private": false
 }`,
-			errors: [
-				{
-					line: 1,
-					messageId: "missing",
-				},
-			],
-			name: "missing attribution with private: false (ignorePrivate: true)",
-			options: [{ ignorePrivate: true }],
-		},
-	],
-	valid: [
-		`{
+      errors: [
+        {
+          line: 1,
+          messageId: "missing",
+        },
+      ],
+      name: "missing attribution with private: false (ignorePrivate: true)",
+      options: [{ ignorePrivate: true }],
+    },
+  ],
+  valid: [
+    `{
     "contributors": [
         {
             "name": "Trent Reznor",
@@ -115,7 +115,7 @@ ruleTester.run("require-attribution", rule, {
         }
     ]
 }`,
-		`{
+    `{
     "author": "Trent Reznor",
     "contributors": [
         {
@@ -131,15 +131,15 @@ ruleTester.run("require-attribution", rule, {
     ]
 }`,
 
-		{
-			code: `{
+    {
+      code: `{
     "name": "package-with-no-attribution",
     "private": true,
 }`,
-			name: "private package without attribution",
-		},
-		{
-			code: `{
+      name: "private package without attribution",
+    },
+    {
+      code: `{
     "contributors": [
         {
             "name": "Trent Reznor",
@@ -153,34 +153,34 @@ ruleTester.run("require-attribution", rule, {
         }
     ]
 }`,
-			name: "contributors only (preferContributorsOnly: true)",
-			options: [{ preferContributorsOnly: true }],
-		},
-		`{
+      name: "contributors only (preferContributorsOnly: true)",
+      options: [{ preferContributorsOnly: true }],
+    },
+    `{
     "author": "Trent Reznor"
 }`,
-		{
-			code: `{
+    {
+      code: `{
     "private": true
 }`,
-			name: "private package without attribution (ignorePrivate: true)",
-			options: [{ ignorePrivate: true }],
-		},
-		{
-			code: `{
+      name: "private package without attribution (ignorePrivate: true)",
+      options: [{ ignorePrivate: true }],
+    },
+    {
+      code: `{
     "private": true,
     "author": "Trent Reznor"
 }`,
-			name: "private package with author (ignorePrivate: true)",
-			options: [{ ignorePrivate: true }],
-		},
-		{
-			code: `{
+      name: "private package with author (ignorePrivate: true)",
+      options: [{ ignorePrivate: true }],
+    },
+    {
+      code: `{
     "private": false,
     "author": "Trent Reznor"
 }`,
-			name: "private package with author (ignorePrivate: false)",
-			options: [{ ignorePrivate: false }],
-		},
-	],
+      name: "private package with author (ignorePrivate: false)",
+      options: [{ ignorePrivate: false }],
+    },
+  ],
 });

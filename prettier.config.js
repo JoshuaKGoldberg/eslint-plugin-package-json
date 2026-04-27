@@ -3,13 +3,12 @@
  * @type {import("prettier").Config}
  */
 const config = {
-	overrides: [{ files: ".nvmrc", options: { parser: "yaml" } }],
-	plugins: [
-		"prettier-plugin-curly",
-		"prettier-plugin-packagejson",
-		"prettier-plugin-sentences-per-line",
-		"prettier-plugin-sh",
-	],
-	useTabs: true,
+  overrides: [{ files: ".nvmrc", options: { parser: "yaml" } }],
+  plugins: [
+    "prettier-plugin-curly",
+    "prettier-plugin-packagejson",
+    "prettier-plugin-sentences-per-line",
+    "prettier-plugin-sh",
+  ],
 };
 export default config;

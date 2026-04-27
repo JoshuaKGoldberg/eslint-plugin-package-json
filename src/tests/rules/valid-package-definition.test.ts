@@ -2,38 +2,38 @@ import { rule } from "../../rules/valid-package-definition.ts";
 import { ruleTester } from "./ruleTester.ts";
 
 ruleTester.run("valid-package-definition", rule, {
-	invalid: [
-		{
-			code: `{ "mane": "invalid-package" }`,
+  invalid: [
+    {
+      code: `{ "mane": "invalid-package" }`,
 
-			errors: [
-				{
-					message: "Missing required field: name",
-				},
-				{
-					message: "Missing required field: version",
-				},
-			],
-			filename: "package.json",
-		},
-		{
-			code: `{ "horizon": "wireless" }`,
+      errors: [
+        {
+          message: "Missing required field: name",
+        },
+        {
+          message: "Missing required field: version",
+        },
+      ],
+      filename: "package.json",
+    },
+    {
+      code: `{ "horizon": "wireless" }`,
 
-			errors: [
-				{
-					message: "Missing required field: name",
-				},
-				{
-					message: "Missing required field: version",
-				},
-			],
-			filename: "packages/nested/package.json",
-		},
-	],
+      errors: [
+        {
+          message: "Missing required field: name",
+        },
+        {
+          message: "Missing required field: version",
+        },
+      ],
+      filename: "packages/nested/package.json",
+    },
+  ],
 
-	valid: [
-		{
-			code: `{
+  valid: [
+    {
+      code: `{
   "name": "pandas",
   "version": "1.0.0",
   "description": "lorem ipsum",
@@ -42,10 +42,10 @@ ruleTester.run("valid-package-definition", rule, {
   "author": "me!",
   "license": "ISC"
 }`,
-			filename: "package.json",
-		},
-		{
-			code: `{
+      filename: "package.json",
+    },
+    {
+      code: `{
   "name": "pandas-sub-panda",
   "version": "1.0.0",
   "description": "lorem ipsum",
@@ -54,15 +54,15 @@ ruleTester.run("valid-package-definition", rule, {
   "author": "me!",
   "license": "ISC"
 }`,
-			filename: "packages/nested/package.json",
-		},
-		{
-			code: `({ "whatever": "cuz its not a package file" })`,
+      filename: "packages/nested/package.json",
+    },
+    {
+      code: `({ "whatever": "cuz its not a package file" })`,
 
-			filename: "not-a-package.json",
-		},
-		{
-			code: `{
+      filename: "not-a-package.json",
+    },
+    {
+      code: `{
   "name": "pandas",
   "version": "1.0.0",
   "description": "lorem ipsum",
@@ -76,16 +76,16 @@ ruleTester.run("valid-package-definition", rule, {
     "bar": "workspace:*"
   }
 }`,
-			filename: "package.json",
-		},
-		{
-			code: `{ "thee-silver": "mt-zion" }`,
-			filename: "packages/nested/package.json",
-			options: [
-				{
-					ignoreProperties: ["name", "version"],
-				},
-			],
-		},
-	],
+      filename: "package.json",
+    },
+    {
+      code: `{ "thee-silver": "mt-zion" }`,
+      filename: "packages/nested/package.json",
+      options: [
+        {
+          ignoreProperties: ["name", "version"],
+        },
+      ],
+    },
+  ],
 });

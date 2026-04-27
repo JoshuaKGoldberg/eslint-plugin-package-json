@@ -13,7 +13,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"type": "esm"
+  "type": "esm"
 }
 ```
 
@@ -21,7 +21,7 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"type": "module"
+  "type": "module"
 }
 ```
 

@@ -13,13 +13,13 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"main": "lib/index.js",
-	"scripts": {},
-	"browserslist": [],
-	"simple-git-hooks": {
-		"pre-commit": "pnpm exec nano-staged --allow-empty",
-		"preserveUnused": []
-	}
+  "main": "lib/index.js",
+  "scripts": {},
+  "browserslist": [],
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec nano-staged --allow-empty",
+    "preserveUnused": []
+  }
 }
 ```
 
@@ -27,10 +27,10 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"main": "lib/index.js",
-	"simple-git-hooks": {
-		"pre-commit": "pnpm exec nano-staged --allow-empty"
-	}
+  "main": "lib/index.js",
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec nano-staged --allow-empty"
+  }
 }
 ```
 
@@ -52,9 +52,9 @@ Example of excluding the browserslist property used by [browserslist](https://ww
 
 ```json
 {
-	"package-json/no-empty-fields": [
-		"error",
-		{ "ignoreProperties": ["browserslist"] }
-	]
+  "package-json/no-empty-fields": [
+    "error",
+    { "ignoreProperties": ["browserslist"] }
+  ]
 }
 ```

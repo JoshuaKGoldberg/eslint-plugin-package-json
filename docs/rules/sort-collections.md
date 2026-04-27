@@ -23,11 +23,11 @@ The following patterns are considered errors:
 
 ```json
 {
-	"scripts": {
-		"lint": "eslint .",
-		"test": "jest",
-		"start": "node server.js"
-	}
+  "scripts": {
+    "lint": "eslint .",
+    "test": "jest",
+    "start": "node server.js"
+  }
 }
 ```
 
@@ -35,14 +35,14 @@ In the above `scripts` collection, `test` should be moved to the last line, afte
 
 ```json
 {
-	"devDependencies": {
-		"eslint": "^5.8.0",
-		"lodash": "^4.17.11",
-		"lodash.debounce": "4.17.11",
-		"mocha": "^5.2.0",
-		"nyc": "^13.1.0",
-		"prettier": "^1.14.3"
-	}
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "lodash": "^4.17.11",
+    "lodash.debounce": "4.17.11",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "prettier": "^1.14.3"
+  }
 }
 ```
 
@@ -52,24 +52,24 @@ The following patterns are **not** considered errors:
 
 ```json
 {
-	"scripts": {
-		"lint": "eslint .",
-		"start": "node server.js",
-		"test": "jest"
-	}
+  "scripts": {
+    "lint": "eslint .",
+    "start": "node server.js",
+    "test": "jest"
+  }
 }
 ```
 
 ```json
 {
-	"devDependencies": {
-		"eslint": "^5.8.0",
-		"lodash": "^4.17.11",
-		"lodash.debounce": "4.17.11",
-		"mocha": "^5.2.0",
-		"nyc": "^13.1.0",
-		"prettier": "^1.14.3"
-	}
+  "devDependencies": {
+    "eslint": "^5.8.0",
+    "lodash": "^4.17.11",
+    "lodash.debounce": "4.17.11",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "prettier": "^1.14.3"
+  }
 }
 ```
 
@@ -90,11 +90,11 @@ Example (missing main script (`install`); group still kept together):
 
 ```json
 {
-	"scripts": {
-		"preinstall": "echo pre",
-		"postinstall": "echo post",
-		"prepare": "echo prepare"
-	}
+  "scripts": {
+    "preinstall": "echo pre",
+    "postinstall": "echo post",
+    "prepare": "echo prepare"
+  }
 }
 ```
 
@@ -104,11 +104,11 @@ Incorrect:
 
 ```json
 {
-	"scripts": {
-		"build": "echo build",
-		"postbuild": "echo post",
-		"prebuild": "echo pre"
-	}
+  "scripts": {
+    "build": "echo build",
+    "postbuild": "echo post",
+    "prebuild": "echo pre"
+  }
 }
 ```
 
@@ -116,11 +116,11 @@ Correct:
 
 ```json
 {
-	"scripts": {
-		"prebuild": "echo pre",
-		"build": "echo build",
-		"postbuild": "echo post"
-	}
+  "scripts": {
+    "prebuild": "echo pre",
+    "build": "echo build",
+    "postbuild": "echo post"
+  }
 }
 ```
 
@@ -134,10 +134,10 @@ Example of only sorting `devDependencies` and `pnpm.patchedDependencies`:
 
 ```json
 {
-	"package-json/sort-collections": [
-		"error",
-		["devDependencies", "pnpm.patchedDependencies"]
-	]
+  "package-json/sort-collections": [
+    "error",
+    ["devDependencies", "pnpm.patchedDependencies"]
+  ]
 }
 ```
 
@@ -145,15 +145,15 @@ Defaults:
 
 ```json
 [
-	"config",
-	"dependencies",
-	"devDependencies",
-	"exports",
-	"optionalDependencies",
-	"overrides",
-	"peerDependencies",
-	"peerDependenciesMeta",
-	"scripts"
+  "config",
+  "dependencies",
+  "devDependencies",
+  "exports",
+  "optionalDependencies",
+  "overrides",
+  "peerDependencies",
+  "peerDependenciesMeta",
+  "scripts"
 ]
 ```
 

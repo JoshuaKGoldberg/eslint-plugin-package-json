@@ -23,27 +23,27 @@ Examples of **incorrect** code for this rule with default options:
 
 ```json
 {
-	"name": "my-app",
-	"private": true,
-	"files": ["dist"]
+  "name": "my-app",
+  "private": true,
+  "files": ["dist"]
 }
 ```
 
 ```json
 {
-	"name": "my-app",
-	"private": true,
-	"publishConfig": {
-		"access": "public"
-	}
+  "name": "my-app",
+  "private": true,
+  "publishConfig": {
+    "access": "public"
+  }
 }
 ```
 
 ```json
 {
-	"name": "my-app",
-	"private": true,
-	"files": []
+  "name": "my-app",
+  "private": true,
+  "files": []
 }
 ```
 
@@ -51,15 +51,15 @@ Examples of **correct** code for this rule with default options:
 
 ```json
 {
-	"name": "my-app",
-	"private": true
+  "name": "my-app",
+  "private": true
 }
 ```
 
 ```json
 {
-	"name": "my-library",
-	"files": ["dist"]
+  "name": "my-library",
+  "files": ["dist"]
 }
 ```
 
@@ -81,12 +81,12 @@ For example, to also flag `dependencies` in private packages:
 
 ```json
 {
-	"package-json/restrict-private-properties": [
-		"error",
-		{
-			"blockedProperties": ["files", "publishConfig", "dependencies"]
-		}
-	]
+  "package-json/restrict-private-properties": [
+    "error",
+    {
+      "blockedProperties": ["files", "publishConfig", "dependencies"]
+    }
+  ]
 }
 ```
 
@@ -96,12 +96,12 @@ Or to check for different properties entirely:
 
 ```json
 {
-	"package-json/restrict-private-properties": [
-		"error",
-		{
-			"blockedProperties": ["main", "exports"]
-		}
-	]
+  "package-json/restrict-private-properties": [
+    "error",
+    {
+      "blockedProperties": ["main", "exports"]
+    }
+  ]
 }
 ```
 

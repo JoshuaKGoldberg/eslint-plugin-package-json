@@ -10,7 +10,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"directories": true
+  "directories": true
 }
 ```
 
@@ -18,9 +18,9 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"directories": {
-		"bin": "dist/bin",
-		"man": "docs"
-	}
+  "directories": {
+    "bin": "dist/bin",
+    "man": "docs"
+  }
 }
 ```
