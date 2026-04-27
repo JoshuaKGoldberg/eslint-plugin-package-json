@@ -54,7 +54,7 @@ Each entry is either:
 
 If the same property is listed multiple times, the last declaration takes precedence.
 
-Examples of **incorrect** code for this rule:
+Examples of **incorrect** code for this rule, given the config above:
 
 ```json
 {
