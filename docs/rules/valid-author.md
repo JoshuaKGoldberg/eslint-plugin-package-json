@@ -18,55 +18,55 @@ Examples of **incorrect** code for this rule:
 
 ```json
 {
-	"author": ""
+  "author": ""
 }
 ```
 
 ```json
 {
-	"author": null
+  "author": null
 }
 ```
 
 ```json
 {
-	"author": "John <invalid>"
+  "author": "John <invalid>"
 }
 ```
 
 ```json
 {
-	"author": "John (not-url)"
+  "author": "John (not-url)"
 }
 ```
 
 ```json
 {
-	"author": {}
+  "author": {}
 }
 ```
 
 ```json
 {
-	"author": { "email": "john@example.com" }
+  "author": { "email": "john@example.com" }
 }
 ```
 
 ```json
 {
-	"author": { "name": "", "email": "john@example.com" }
+  "author": { "name": "", "email": "john@example.com" }
 }
 ```
 
 ```json
 {
-	"author": { "name": "John", "email": "invalid" }
+  "author": { "name": "John", "email": "invalid" }
 }
 ```
 
 ```json
 {
-	"author": { "name": "John", "url": "invalid" }
+  "author": { "name": "John", "url": "invalid" }
 }
 ```
 
@@ -74,53 +74,53 @@ Examples of **correct** code for this rule:
 
 ```json
 {
-	"author": "John Doe"
+  "author": "John Doe"
 }
 ```
 
 ```json
 {
-	"author": "John <john@example.com>"
+  "author": "John <john@example.com>"
 }
 ```
 
 ```json
 {
-	"author": "John (https://example.com)"
+  "author": "John (https://example.com)"
 }
 ```
 
 ```json
 {
-	"author": "John <john@example.com> (https://example.com)"
+  "author": "John <john@example.com> (https://example.com)"
 }
 ```
 
 ```json
 {
-	"author": { "name": "John" }
+  "author": { "name": "John" }
 }
 ```
 
 ```json
 {
-	"author": { "name": "John", "email": "john@example.com" }
+  "author": { "name": "John", "email": "john@example.com" }
 }
 ```
 
 ```json
 {
-	"author": { "name": "John", "url": "https://example.com" }
+  "author": { "name": "John", "url": "https://example.com" }
 }
 ```
 
 ```json
 {
-	"author": {
-		"name": "John",
-		"email": "john@example.com",
-		"url": "https://example.com"
-	}
+  "author": {
+    "name": "John",
+    "email": "john@example.com",
+    "url": "https://example.com"
+  }
 }
 ```
 

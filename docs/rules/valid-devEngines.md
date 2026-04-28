@@ -25,9 +25,9 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"devEngines": {
-		"node": ">=24.0.0"
-	}
+  "devEngines": {
+    "node": ">=24.0.0"
+  }
 }
 ```
 
@@ -35,17 +35,17 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"devEngines": {
-		"runtime": {
-			"name": "node",
-			"version": "^20.19.0 || >=22.12.0",
-			"onFail": "download"
-		},
-		"packageManager": {
-			"name": "pnpm",
-			"version": "^10.0.0",
-			"onFail": "error"
-		}
-	}
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^20.19.0 || >=22.12.0",
+      "onFail": "download"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^10.0.0",
+      "onFail": "error"
+    }
+  }
 }
 ```

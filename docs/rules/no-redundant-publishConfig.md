@@ -23,25 +23,25 @@ Examples of **incorrect** code for this rule:
 
 ```json
 {
-	"name": "my-package",
-	"publishConfig": { "access": "public" }
+  "name": "my-package",
+  "publishConfig": { "access": "public" }
 }
 ```
 
 ```json
 {
-	"name": "my-package",
-	"publishConfig": { "access": "restricted" }
+  "name": "my-package",
+  "publishConfig": { "access": "restricted" }
 }
 ```
 
 ```json
 {
-	"name": "my-package",
-	"publishConfig": {
-		"access": "public",
-		"registry": "https://example.com"
-	}
+  "name": "my-package",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://example.com"
+  }
 }
 ```
 
@@ -49,30 +49,30 @@ Examples of **correct** code for this rule:
 
 ```json
 {
-	"name": "@myorg/my-package",
-	"publishConfig": { "access": "public" }
+  "name": "@myorg/my-package",
+  "publishConfig": { "access": "public" }
 }
 ```
 
 ```json
 {
-	"name": "@myorg/my-package",
-	"publishConfig": { "access": "restricted" }
+  "name": "@myorg/my-package",
+  "publishConfig": { "access": "restricted" }
 }
 ```
 
 ```json
 {
-	"name": "my-package",
-	"publishConfig": {
-		"registry": "https://example.com"
-	}
+  "name": "my-package",
+  "publishConfig": {
+    "registry": "https://example.com"
+  }
 }
 ```
 
 ```json
 {
-	"name": "my-package"
+  "name": "my-package"
 }
 ```
 

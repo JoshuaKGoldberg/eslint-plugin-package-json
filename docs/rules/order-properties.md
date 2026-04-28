@@ -20,8 +20,8 @@ Examples of **incorrect** code for this rule:
 
 ```json
 {
-	"version": "1.0.0",
-	"name": "my-package"
+  "version": "1.0.0",
+  "name": "my-package"
 }
 ```
 
@@ -31,8 +31,8 @@ Examples of **correct** code for this rule:
 
 ```json
 {
-	"name": "my-package",
-	"version": "1.0.0"
+  "name": "my-package",
+  "version": "1.0.0"
 }
 ```
 
@@ -57,11 +57,11 @@ Pass in:
 
 ```json
 {
-	"package-json/order-properties": [
-		"error",
-		{
-			"order": "sort-package-json"
-		}
-	]
+  "package-json/order-properties": [
+    "error",
+    {
+      "order": "sort-package-json"
+    }
+  ]
 }
 ```

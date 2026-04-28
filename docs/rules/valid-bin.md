@@ -13,9 +13,9 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"bin": {
-		"invalid-bin": 123
-	}
+  "bin": {
+    "invalid-bin": 123
+  }
 }
 ```
 
@@ -23,14 +23,14 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"bin": "./bin/cli.js"
+  "bin": "./bin/cli.js"
 }
 ```
 
 ```json
 {
-	"bin": {
-		"my-cli": "./bin/cli.js"
-	}
+  "bin": {
+    "my-cli": "./bin/cli.js"
+  }
 }
 ```

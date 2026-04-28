@@ -13,9 +13,9 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"engines": {
-		"node": 24
-	}
+  "engines": {
+    "node": 24
+  }
 }
 ```
 
@@ -23,8 +23,8 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"engines": {
-		"node": "^24.11.0"
-	}
+  "engines": {
+    "node": "^24.11.0"
+  }
 }
 ```

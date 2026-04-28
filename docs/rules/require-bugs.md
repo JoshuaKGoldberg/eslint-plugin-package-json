@@ -8,8 +8,8 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"name": "thee-silver-mt-zion",
-	"version": "13.0.0"
+  "name": "thee-silver-mt-zion",
+  "version": "13.0.0"
 }
 ```
 
@@ -17,12 +17,12 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"name": "thee-silver-mt-zion",
-	"version": "13.0.0",
-	"bugs": {
-		"url": "https://github.com/owner/project/issues",
-		"email": "project@hostname.com"
-	}
+  "name": "thee-silver-mt-zion",
+  "version": "13.0.0",
+  "bugs": {
+    "url": "https://github.com/owner/project/issues",
+    "email": "project@hostname.com"
+  }
 }
 ```
 
@@ -38,12 +38,12 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"package-json/require-bugs": [
-		"error",
-		{
-			"ignorePrivate": false
-		}
-	]
+  "package-json/require-bugs": [
+    "error",
+    {
+      "ignorePrivate": false
+    }
+  ]
 }
 ```
 
@@ -51,7 +51,7 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": false }
 
 ```json
 {
-	"private": true
+  "private": true
 }
 ```
 
@@ -59,11 +59,11 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": false }` 
 
 ```json
 {
-	"private": true,
-	"bugs": {
-		"email": "project@hostname.com",
-		"url": "https://github.com/owner/project/issues"
-	}
+  "private": true,
+  "bugs": {
+    "email": "project@hostname.com",
+    "url": "https://github.com/owner/project/issues"
+  }
 }
 ```
 
@@ -71,7 +71,7 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": true }`
 
 ```json
 {
-	"private": false
+  "private": false
 }
 ```
 
@@ -79,6 +79,6 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": true }` o
 
 ```json
 {
-	"private": true
+  "private": true
 }
 ```

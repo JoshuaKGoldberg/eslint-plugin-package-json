@@ -18,9 +18,9 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"peerDependencies": {
-		"eslint": ">=8.0.0"
-	}
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
+  }
 }
 ```
 
@@ -28,11 +28,11 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"peerDependencies": {
-		"eslint": ">=8.0.0"
-	},
-	"devDependencies": {
-		"eslint": "9.39.1"
-	}
+  "peerDependencies": {
+    "eslint": ">=8.0.0"
+  },
+  "devDependencies": {
+    "eslint": "9.39.1"
+  }
 }
 ```

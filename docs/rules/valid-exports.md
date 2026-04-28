@@ -14,9 +14,9 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"exports": {
-		"import": true
-	}
+  "exports": {
+    "import": true
+  }
 }
 ```
 
@@ -24,32 +24,32 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"exports": "./index.js"
+  "exports": "./index.js"
 }
 ```
 
 ```json
 {
-	"exports": {
-		".": "./index.js",
-		"./secondary": "./secondary.js"
-	}
+  "exports": {
+    ".": "./index.js",
+    "./secondary": "./secondary.js"
+  }
 }
 ```
 
 ```json
 {
-	"exports": {
-		".": {
-			"import": {
-				"types": "./esm/index.d.mts",
-				"default": "./esm/index.mjs"
-			},
-			"require": {
-				"types": "./cjs/index.d.cts",
-				"default": "./cjs/index.cjs"
-			}
-		}
-	}
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./esm/index.d.mts",
+        "default": "./esm/index.mjs"
+      },
+      "require": {
+        "types": "./cjs/index.d.cts",
+        "default": "./cjs/index.cjs"
+      }
+    }
+  }
 }
 ```

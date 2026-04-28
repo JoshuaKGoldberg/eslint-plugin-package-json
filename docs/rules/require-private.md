@@ -10,8 +10,8 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"name": "thee-silver-mt-zion",
-	"version": "13.0.0"
+  "name": "thee-silver-mt-zion",
+  "version": "13.0.0"
 }
 ```
 
@@ -19,8 +19,8 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"name": "thee-silver-mt-zion",
-	"version": "13.0.0",
-	"private": false
+  "name": "thee-silver-mt-zion",
+  "version": "13.0.0",
+  "private": false
 }
 ```

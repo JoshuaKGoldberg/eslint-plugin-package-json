@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.91.2](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v0.91.1...v0.91.2) (2026-04-28)
+
+
+### 🚀 Features
+
+* add `restrict-top-level-properties` rule ([#1736](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1736)) ([8b29974](https://github.com/michaelfaith/eslint-plugin-package-json/commit/8b29974311212d87c47a0efe4176a9f9506aaf00))
+
+
+### 🩹 Bug Fixes
+
+* **valid-dependencies:** dependencies should be able to use disttags ([#1749](https://github.com/michaelfaith/eslint-plugin-package-json/issues/1749)) ([316b253](https://github.com/michaelfaith/eslint-plugin-package-json/commit/316b253a978beee05d4055ed73d614546d33f5cd))
+
 ## [1.0.0-beta.4](https://github.com/michaelfaith/eslint-plugin-package-json/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2026-04-06)
 
 

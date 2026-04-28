@@ -12,19 +12,19 @@ Examples of **incorrect** code for this rule:
 
 ```json
 {
-	"description": ""
+  "description": ""
 }
 ```
 
 ```json
 {
-	"description": null
+  "description": null
 }
 ```
 
 ```json
 {
-	"description": {}
+  "description": {}
 }
 ```
 
@@ -32,6 +32,6 @@ Examples of **correct** code for this rule:
 
 ```json
 {
-	"description": "The Fragile"
+  "description": "The Fragile"
 }
 ```

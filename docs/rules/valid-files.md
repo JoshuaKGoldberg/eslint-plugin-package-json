@@ -13,7 +13,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"files": "dist/*"
+  "files": "dist/*"
 }
 ```
 
@@ -21,6 +21,6 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"files": ["CHANGELOG.md", "dist/"]
+  "files": ["CHANGELOG.md", "dist/"]
 }
 ```

@@ -14,22 +14,22 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"dependencies": {
-		"foo": "1.0.0",
-		"bar": "2.0.0",
-		"foo": "1.0.0"
-	}
+  "dependencies": {
+    "foo": "1.0.0",
+    "bar": "2.0.0",
+    "foo": "1.0.0"
+  }
 }
 ```
 
 ```json
 {
-	"dependencies": {
-		"foo": "1.0.0"
-	},
-	"devDependencies": {
-		"foo": "1.0.0"
-	}
+  "dependencies": {
+    "foo": "1.0.0"
+  },
+  "devDependencies": {
+    "foo": "1.0.0"
+  }
 }
 ```
 
@@ -37,8 +37,8 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"dependencies": {
-		"foo": "1.0.0"
-	}
+  "dependencies": {
+    "foo": "1.0.0"
+  }
 }
 ```

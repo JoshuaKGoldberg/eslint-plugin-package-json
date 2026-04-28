@@ -10,8 +10,8 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"version": "13.0.0",
-	"author": "Jessica Moss"
+  "version": "13.0.0",
+  "author": "Jessica Moss"
 }
 ```
 
@@ -19,9 +19,9 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"version": "13.0.0",
-	"author": "Jessica Moss",
-	"description": "Thee Silver Mt. Zion."
+  "version": "13.0.0",
+  "author": "Jessica Moss",
+  "description": "Thee Silver Mt. Zion."
 }
 ```
 
@@ -37,12 +37,12 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"package-json/require-description": [
-		"error",
-		{
-			"ignorePrivate": false
-		}
-	]
+  "package-json/require-description": [
+    "error",
+    {
+      "ignorePrivate": false
+    }
+  ]
 }
 ```
 
@@ -50,7 +50,7 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": false }
 
 ```json
 {
-	"private": true
+  "private": true
 }
 ```
 
@@ -58,8 +58,8 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": false }` 
 
 ```json
 {
-	"private": true,
-	"description": "Thee Silver Mt. Zion."
+  "private": true,
+  "description": "Thee Silver Mt. Zion."
 }
 ```
 
@@ -67,7 +67,7 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": true }`
 
 ```json
 {
-	"private": false
+  "private": false
 }
 ```
 
@@ -79,6 +79,6 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": true }` o
 
 ```json
 {
-	"private": true
+  "private": true
 }
 ```

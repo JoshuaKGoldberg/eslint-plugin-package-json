@@ -8,8 +8,8 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"name": "Thee Silver Mt. Zion",
-	"version": "13.0.0"
+  "name": "Thee Silver Mt. Zion",
+  "version": "13.0.0"
 }
 ```
 
@@ -17,9 +17,9 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"name": "Thee Silver Mt. Zion",
-	"version": "13.0.0",
-	"types": "./index.d.ts"
+  "name": "Thee Silver Mt. Zion",
+  "version": "13.0.0",
+  "types": "./index.d.ts"
 }
 ```
 
@@ -37,12 +37,12 @@ See [TypeScript Handbook > Publishing](https://www.typescriptlang.org/docs/handb
 
 ```json
 {
-	"package-json/require-types": [
-		"error",
-		{
-			"ignorePrivate": false
-		}
-	]
+  "package-json/require-types": [
+    "error",
+    {
+      "ignorePrivate": false
+    }
+  ]
 }
 ```
 
@@ -50,7 +50,7 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": false }
 
 ```json
 {
-	"private": true
+  "private": true
 }
 ```
 
@@ -58,8 +58,8 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": false }` 
 
 ```json
 {
-	"private": true,
-	"types": "./index.d.ts"
+  "private": true,
+  "types": "./index.d.ts"
 }
 ```
 
@@ -67,7 +67,7 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": true }`
 
 ```json
 {
-	"private": false
+  "private": false
 }
 ```
 
@@ -79,6 +79,6 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": true }` o
 
 ```json
 {
-	"private": true
+  "private": true
 }
 ```

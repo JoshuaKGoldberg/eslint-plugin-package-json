@@ -13,7 +13,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"sideEffects": "false"
+  "sideEffects": "false"
 }
 ```
 
@@ -21,12 +21,12 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"sideEffects": false
+  "sideEffects": false
 }
 ```
 
 ```json
 {
-	"sideEffects": ["./dist/polyfills.js"]
+  "sideEffects": ["./dist/polyfills.js"]
 }
 ```

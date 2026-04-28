@@ -24,14 +24,14 @@ Examples of **incorrect** code for this rule with default options:
 
 ```json
 {
-	"name": "nin"
+  "name": "nin"
 }
 ```
 
 ```json
 {
-	"author": "Trent Reznor <treznor@nin.com> (https://nin.com)",
-	"contributors": []
+  "author": "Trent Reznor <treznor@nin.com> (https://nin.com)",
+  "contributors": []
 }
 ```
 
@@ -39,56 +39,56 @@ Examples of **correct** code for this rule with default options:
 
 ```json
 {
-	"author": "Trent Reznor <treznor@nin.com> (https://nin.com)"
+  "author": "Trent Reznor <treznor@nin.com> (https://nin.com)"
 }
 ```
 
 ```json
 {
-	"author": {
-		"name": "Trent Reznor",
-		"email": "treznor@nin.com",
-		"url": "https://nin.com"
-	}
+  "author": {
+    "name": "Trent Reznor",
+    "email": "treznor@nin.com",
+    "url": "https://nin.com"
+  }
 }
 ```
 
 ```json
 {
-	"contributors": [
-		{
-			"name": "Trent Reznor",
-			"email": "treznor@nin.com",
-			"url": "https://nin.com"
-		},
-		{
-			"name": "Atticus Ross",
-			"email": "atticus@nin.com",
-			"url": "https://nin.com"
-		}
-	]
+  "contributors": [
+    {
+      "name": "Trent Reznor",
+      "email": "treznor@nin.com",
+      "url": "https://nin.com"
+    },
+    {
+      "name": "Atticus Ross",
+      "email": "atticus@nin.com",
+      "url": "https://nin.com"
+    }
+  ]
 }
 ```
 
 ```json
 {
-	"author": {
-		"name": "Trent Reznor",
-		"email": "treznor@nin.com",
-		"url": "https://nin.com"
-	},
-	"contributors": [
-		{
-			"name": "Trent Reznor",
-			"email": "treznor@nin.com",
-			"url": "https://nin.com"
-		},
-		{
-			"name": "Atticus Ross",
-			"email": "atticus@nin.com",
-			"url": "https://nin.com"
-		}
-	]
+  "author": {
+    "name": "Trent Reznor",
+    "email": "treznor@nin.com",
+    "url": "https://nin.com"
+  },
+  "contributors": [
+    {
+      "name": "Trent Reznor",
+      "email": "treznor@nin.com",
+      "url": "https://nin.com"
+    },
+    {
+      "name": "Atticus Ross",
+      "email": "atticus@nin.com",
+      "url": "https://nin.com"
+    }
+  ]
 }
 ```
 
@@ -98,52 +98,52 @@ Examples of **incorrect** code for this rule with default options:
 
 ```json
 {
-	"name": "nin"
+  "name": "nin"
 }
 ```
 
 ```json
 {
-	"author": "Trent Reznor <treznor@nin.com> (https://nin.com)",
-	"contributors": []
+  "author": "Trent Reznor <treznor@nin.com> (https://nin.com)",
+  "contributors": []
 }
 ```
 
 ```json
 {
-	"author": "Trent Reznor <treznor@nin.com> (https://nin.com)"
+  "author": "Trent Reznor <treznor@nin.com> (https://nin.com)"
 }
 ```
 
 ```json
 {
-	"author": {
-		"name": "Trent Reznor",
-		"email": "treznor@nin.com",
-		"url": "https://nin.com"
-	}
+  "author": {
+    "name": "Trent Reznor",
+    "email": "treznor@nin.com",
+    "url": "https://nin.com"
+  }
 }
 ```
 
 ```json
 {
-	"author": {
-		"name": "Trent Reznor",
-		"email": "treznor@nin.com",
-		"url": "https://nin.com"
-	},
-	"contributors": [
-		{
-			"name": "Trent Reznor",
-			"email": "treznor@nin.com",
-			"url": "https://nin.com"
-		},
-		{
-			"name": "Atticus Ross",
-			"email": "atticus@nin.com",
-			"url": "https://nin.com"
-		}
-	]
+  "author": {
+    "name": "Trent Reznor",
+    "email": "treznor@nin.com",
+    "url": "https://nin.com"
+  },
+  "contributors": [
+    {
+      "name": "Trent Reznor",
+      "email": "treznor@nin.com",
+      "url": "https://nin.com"
+    },
+    {
+      "name": "Atticus Ross",
+      "email": "atticus@nin.com",
+      "url": "https://nin.com"
+    }
+  ]
 }
 ```
 
@@ -151,18 +151,18 @@ Examples of **correct** code for this rule with default options:
 
 ```json
 {
-	"contributors": [
-		{
-			"name": "Trent Reznor",
-			"email": "treznor@nin.com",
-			"url": "https://nin.com"
-		},
-		{
-			"name": "Atticus Ross",
-			"email": "atticus@nin.com",
-			"url": "https://nin.com"
-		}
-	]
+  "contributors": [
+    {
+      "name": "Trent Reznor",
+      "email": "treznor@nin.com",
+      "url": "https://nin.com"
+    },
+    {
+      "name": "Atticus Ross",
+      "email": "atticus@nin.com",
+      "url": "https://nin.com"
+    }
+  ]
 }
 ```
 
@@ -184,12 +184,12 @@ This is useful for internal packages that won't be published to npm.
 
 ```json
 {
-	"package-json/require-attribution": [
-		"error",
-		{
-			"ignorePrivate": true
-		}
-	]
+  "package-json/require-attribution": [
+    "error",
+    {
+      "ignorePrivate": true
+    }
+  ]
 }
 ```
 
@@ -201,12 +201,12 @@ When enabled, `preferContributorsOnly` requires that only `contributors` may be 
 
 ```json
 {
-	"package-json/require-attribution": [
-		"error",
-		{
-			"preferContributorsOnly": true
-		}
-	]
+  "package-json/require-attribution": [
+    "error",
+    {
+      "preferContributorsOnly": true
+    }
+  ]
 }
 ```
 

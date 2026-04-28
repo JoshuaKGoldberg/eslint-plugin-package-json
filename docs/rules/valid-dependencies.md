@@ -14,9 +14,9 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"dependencies": {
-		"invalid-version": "catalob:"
-	}
+  "dependencies": {
+    "invalid-version": "catalob:"
+  }
 }
 ```
 
@@ -24,10 +24,10 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"dependencies": {
-		"nin": "catalog:",
-		"thee-silver-mt-zion": "^1.2.3",
-		"david-bowie": "*"
-	}
+  "dependencies": {
+    "nin": "catalog:",
+    "thee-silver-mt-zion": "^1.2.3",
+    "david-bowie": "*"
+  }
 }
 ```

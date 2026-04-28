@@ -13,7 +13,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"bundleDependencies": [123]
+  "bundleDependencies": [123]
 }
 ```
 
@@ -21,12 +21,12 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"bundleDependencies": ["valid-dependency"]
+  "bundleDependencies": ["valid-dependency"]
 }
 ```
 
 ```json
 {
-	"bundleDependencies": true
+  "bundleDependencies": true
 }
 ```

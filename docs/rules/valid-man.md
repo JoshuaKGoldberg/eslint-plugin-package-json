@@ -13,7 +13,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"man": ["./man/doc.md"]
+  "man": ["./man/doc.md"]
 }
 ```
 
@@ -21,12 +21,12 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"man": ["./man/doc.1", "./man/doc.2"]
+  "man": ["./man/doc.1", "./man/doc.2"]
 }
 ```
 
 ```json
 {
-	"man": "./man/doc.1"
+  "man": "./man/doc.1"
 }
 ```

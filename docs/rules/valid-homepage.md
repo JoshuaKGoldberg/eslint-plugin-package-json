@@ -13,7 +13,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"homepage": "trent@nin.com"
+  "homepage": "trent@nin.com"
 }
 ```
 
@@ -21,6 +21,6 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"homepage": "https://nin.com"
+  "homepage": "https://nin.com"
 }
 ```

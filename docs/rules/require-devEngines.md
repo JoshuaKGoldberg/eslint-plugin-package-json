@@ -8,8 +8,8 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"name": "thee-silver-mt-zion",
-	"version": "13.0.0"
+  "name": "thee-silver-mt-zion",
+  "version": "13.0.0"
 }
 ```
 
@@ -17,20 +17,20 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"name": "thee-silver-mt-zion",
-	"version": "13.0.0",
-	"devEngines": {
-		"runtime": {
-			"name": "node",
-			"version": "^20.19.0 || >=22.12.0",
-			"onFail": "download"
-		},
-		"packageManager": {
-			"name": "pnpm",
-			"version": "^10.0.0",
-			"onFail": "error"
-		}
-	}
+  "name": "thee-silver-mt-zion",
+  "version": "13.0.0",
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^20.19.0 || >=22.12.0",
+      "onFail": "download"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^10.0.0",
+      "onFail": "error"
+    }
+  }
 }
 ```
 
@@ -46,12 +46,12 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"package-json/require-devEngines": [
-		"error",
-		{
-			"ignorePrivate": false
-		}
-	]
+  "package-json/require-devEngines": [
+    "error",
+    {
+      "ignorePrivate": false
+    }
+  ]
 }
 ```
 
@@ -59,7 +59,7 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": false }
 
 ```json
 {
-	"private": true
+  "private": true
 }
 ```
 
@@ -67,19 +67,19 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": false }` 
 
 ```json
 {
-	"private": true,
-	"devEngines": {
-		"runtime": {
-			"name": "node",
-			"version": "^20.19.0 || >=22.12.0",
-			"onFail": "download"
-		},
-		"packageManager": {
-			"name": "pnpm",
-			"version": "^10.0.0",
-			"onFail": "error"
-		}
-	}
+  "private": true,
+  "devEngines": {
+    "runtime": {
+      "name": "node",
+      "version": "^20.19.0 || >=22.12.0",
+      "onFail": "download"
+    },
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^10.0.0",
+      "onFail": "error"
+    }
+  }
 }
 ```
 
@@ -87,7 +87,7 @@ Example of **incorrect** code for this rule with the `{ "ignorePrivate": true }`
 
 ```json
 {
-	"private": false
+  "private": false
 }
 ```
 
@@ -99,6 +99,6 @@ Example of **correct** code for this rule with the `{ "ignorePrivate": true }` o
 
 ```json
 {
-	"private": true
+  "private": true
 }
 ```

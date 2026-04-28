@@ -1,15 +1,15 @@
 {
-	"compilerOptions": {
-		"declaration": true,
-		"esModuleInterop": true,
-		"module": "nodenext",
-		"moduleResolution": "nodenext",
-		"noEmit": true,
-		"resolveJsonModule": true,
-		"skipLibCheck": true,
-		"strict": true,
-		"target": "ES2024",
-		"rewriteRelativeImportExtensions": true
-	},
-	"include": ["src", "*.config.ts"]
+  "compilerOptions": {
+    "declaration": true,
+    "esModuleInterop": true,
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2024",
+    "rewriteRelativeImportExtensions": true
+  },
+  "include": ["src", "*.config.ts"]
 }

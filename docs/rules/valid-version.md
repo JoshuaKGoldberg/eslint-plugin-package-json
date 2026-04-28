@@ -13,7 +13,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"version": "1"
+  "version": "1"
 }
 ```
 
@@ -21,6 +21,6 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"version": "1.2.3"
+  "version": "1.2.3"
 }
 ```

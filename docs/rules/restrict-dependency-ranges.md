@@ -9,16 +9,16 @@ There are several options for specifying which dependencies a range type restric
 
 ```ts
 export default [
-	{
-		"package-json/restrict-dependency-ranges": [
-			"error",
-			// Require that packages with 0.x.x versions are pinned
-			{
-				forVersions: "<1",
-				rangeType: "pin",
-			},
-		],
-	},
+  {
+    "package-json/restrict-dependency-ranges": [
+      "error",
+      // Require that packages with 0.x.x versions are pinned
+      {
+        forVersions: "<1",
+        rangeType: "pin",
+      },
+    ],
+  },
 ];
 ```
 
@@ -52,16 +52,16 @@ Options are
 
 ```ts
 export default [
-	{
-		"package-json/restrict-dependency-ranges": [
-			"error",
-			// Require that all dev dependencies are pinned
-			{
-				forDependencyTypes: ["devDependencies"],
-				rangeType: "pin",
-			},
-		],
-	},
+  {
+    "package-json/restrict-dependency-ranges": [
+      "error",
+      // Require that all dev dependencies are pinned
+      {
+        forDependencyTypes: ["devDependencies"],
+        rangeType: "pin",
+      },
+    ],
+  },
 ];
 ```
 
@@ -71,16 +71,16 @@ This can be the exact name of a package, or a regex pattern used to match a grou
 
 ```ts
 export default [
-	{
-		"package-json/restrict-dependency-ranges": [
-			"error",
-			// Restrict typescript to tilde ranges
-			{
-				forPackages: ["typescript"],
-				rangeType: "tilde",
-			},
-		],
-	},
+  {
+    "package-json/restrict-dependency-ranges": [
+      "error",
+      // Restrict typescript to tilde ranges
+      {
+        forPackages: ["typescript"],
+        rangeType: "tilde",
+      },
+    ],
+  },
 ];
 ```
 
@@ -92,15 +92,15 @@ You can do this by setting `forVersions` to `'<1'`.
 
 ```ts
 export default [
-	{
-		"package-json/restrict-dependency-ranges": [
-			"error",
-			// Require that all deps should use ^
-			{
-				rangeType: "caret",
-			},
-		],
-	},
+  {
+    "package-json/restrict-dependency-ranges": [
+      "error",
+      // Require that all deps should use ^
+      {
+        rangeType: "caret",
+      },
+    ],
+  },
 ];
 ```
 
@@ -110,15 +110,15 @@ This is the only required option, and identifies which range type or types you w
 
 ```ts
 export default [
-	{
-		"package-json/restrict-dependency-ranges": [
-			"error",
-			// Require that all deps should use ^
-			{
-				rangeType: "caret",
-			},
-		],
-	},
+  {
+    "package-json/restrict-dependency-ranges": [
+      "error",
+      // Require that all deps should use ^
+      {
+        rangeType: "caret",
+      },
+    ],
+  },
 ];
 ```
 
@@ -126,29 +126,29 @@ export default [
 
 ```ts
 export default [
-	{
-		"package-json/restrict-dependency-ranges": [
-			"error",
-			[
-				// Apply base requirement that all deps should use ^
-				{
-					rangeType: "caret",
-				},
+  {
+    "package-json/restrict-dependency-ranges": [
+      "error",
+      [
+        // Apply base requirement that all deps should use ^
+        {
+          rangeType: "caret",
+        },
 
-				// Restrict typescript to tilde ranges
-				{
-					forPackages: ["typescript"],
-					rangeType: "tilde",
-				},
+        // Restrict typescript to tilde ranges
+        {
+          forPackages: ["typescript"],
+          rangeType: "tilde",
+        },
 
-				// Require that packages with 0.x.x versions are pinned
-				{
-					forVersions: "<1",
-					rangeType: "pin",
-				},
-			],
-		],
-	},
+        // Require that packages with 0.x.x versions are pinned
+        {
+          forVersions: "<1",
+          rangeType: "pin",
+        },
+      ],
+    ],
+  },
 ];
 ```
 
@@ -156,11 +156,11 @@ Example of **incorrect** code for the above configuration:
 
 ```json
 {
-	"devDependencies": {
-		"eslint": "^9.18.0",
-		"markdownlint": "^0.37.4",
-		"typescript": "^5.8.0"
-	}
+  "devDependencies": {
+    "eslint": "^9.18.0",
+    "markdownlint": "^0.37.4",
+    "typescript": "^5.8.0"
+  }
 }
 ```
 
@@ -168,10 +168,10 @@ Example of **correct** code for the above configuration:
 
 ```json
 {
-	"devDependencies": {
-		"eslint": "^9.18.0",
-		"markdownlint": "0.37.4",
-		"typescript": "~5.8.0"
-	}
+  "devDependencies": {
+    "eslint": "^9.18.0",
+    "markdownlint": "0.37.4",
+    "typescript": "~5.8.0"
+  }
 }
 ```

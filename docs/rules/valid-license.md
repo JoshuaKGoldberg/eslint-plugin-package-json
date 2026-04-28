@@ -13,7 +13,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"license": "GPL3"
+  "license": "GPL3"
 }
 ```
 
@@ -21,7 +21,7 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"license": "GPL-3.0-only"
+  "license": "GPL-3.0-only"
 }
 ```
 

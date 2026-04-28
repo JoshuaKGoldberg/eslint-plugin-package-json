@@ -10,7 +10,7 @@ Example of **incorrect** code for this rule:
 
 ```json
 {
-	"module": ["index.js", "secondary.js"]
+  "module": ["index.js", "secondary.js"]
 }
 ```
 
@@ -18,6 +18,6 @@ Example of **correct** code for this rule:
 
 ```json
 {
-	"module": "index.js"
+  "module": "index.js"
 }
 ```

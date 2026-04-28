@@ -12,9 +12,9 @@ Example of **incorrect** code:
 
 ```json
 {
-	"bin": {
-		"invalidCommand": "./bin/cli.js"
-	}
+  "bin": {
+    "invalidCommand": "./bin/cli.js"
+  }
 }
 ```
 
@@ -22,8 +22,8 @@ Example of **correct** code:
 
 ```json
 {
-	"bin": {
-		"valid-command": "./bin/cli.js"
-	}
+  "bin": {
+    "valid-command": "./bin/cli.js"
+  }
 }
 ```
