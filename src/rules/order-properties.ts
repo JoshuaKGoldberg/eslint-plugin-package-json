@@ -89,7 +89,7 @@ export const rule = createRule({
           order: {
             anyOf: [
               {
-                enum: ["legacy", "sort-package-json"],
+                enum: ["sort-package-json"],
                 type: ["string"],
               },
               {
