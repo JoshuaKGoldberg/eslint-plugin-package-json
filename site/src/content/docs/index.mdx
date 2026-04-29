@@ -1,5 +1,5 @@
 ---
-title: ESLint Plugin&colon; Package JSON
+title: ESLint Plugin&colon; Package&nbsp;JSON
 description: Rules for consistent, readable, and valid package.json files. 🗂️
 template: splash
 hero:
@@ -17,6 +17,7 @@ hero:
 ---
 
 import { Card, CardGrid } from "@astrojs/starlight/components";
+import GetStartedAction from "~/components/get-started-action.astro";
 
 ## Benefits
 
@@ -42,7 +43,10 @@ Rules for consistent, readable, and valid package.json files.
     where possible. Spend less time nitpicking in code reviews and more time
     shipping.
   </Card>
-  <Card title="Get Started" icon="open-book">
-    Learn more in our [getting started guide](/getting-started/).
-  </Card>
 </CardGrid>
+
+<GetStartedAction
+  title="Interested in learning more?"
+  action="/getting-started/"
+  actionText="Get Started Now"
+/>
